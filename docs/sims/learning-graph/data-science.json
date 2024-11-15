@@ -759,6 +759,16 @@
             "id": 152,
             "label": "Intelligent Agents",
             "group": "goal"
+        },
+        {
+            "id": 153,
+            "label": "Jupyter Notebooks",
+            "group": "data"
+        },
+        {
+            "id": 154,
+            "label": "VS Code",
+            "group": "data"
         }
     ],
     "edges": [
@@ -1469,6 +1479,18 @@
         {
             "from": 152,
             "to": 53
+        },
+        {
+            "from": 151,
+            "to": 6
+        },
+        {
+            "from": 153,
+            "to": 6
+        },
+        {
+            "from": 154,
+            "to": 6
         }
     ]
 }
