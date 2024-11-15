@@ -1,14 +1,19 @@
-# Glossary of Terms
+# Glossary Generation
 
-#### ISO Definition
+## Prompt
 
-A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:
+```linenums="0"
+That was excellent.  Now we need a Glossary of Terms.
 
-1. Precise
-2. Concise
-3. Distinct
-4. Non-circular
-5. Unencumbered with business rules
+Please generate an alphabetical glossary of the 100 most
+frequently used terms for this course.  Each term should
+have a term name in a level-4 markdown (####) and the
+definition placed in the body text.  If appropriate,
+create an **Example:** of how that term is used in the
+Introduction to Data Science with Python course.
+```
+
+## ChatGPT o1-preview Response
 
 #### Accuracy
 
