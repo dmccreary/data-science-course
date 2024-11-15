@@ -33,8 +33,7 @@ The key Python libraries for data analysis include:
 
 You can import a CSV file using the `read_csv()` function from Pandas:
 
-```
-python
+```python
 Copy code
 
 `import pandas as pd

@@ -9,12 +9,22 @@ edit_uri: 'blob/master/docs'
 nav:
   - Home: index.md
   - About: about.md
+  - Concepts:
+    - Intro: concepts/index.md
+    - concepts/concept-enumeration.md
+    - concepts/concept-dependencies.md
+    - concepts/concept-taxonomy.md
   - Sims:
     - Introduction: sims/index.md
     - Learning Graph: sims/learning-graph/index.md
+  - Prompts:
+    - FAQ: prompts/faqs.md
+    - Glossary: prompts/glossary.md
+  
   - Frequently Asked Questions: faqs.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
+  - License: license.md
   - References: references.md
   - Contact: contact.md
  

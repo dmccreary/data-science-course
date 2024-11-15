@@ -84,6 +84,8 @@ plt.title('Simple Line Plot')
 plt.show()
 ```
 
+![](img/line-plot.png)
+
 #### What is the purpose of the `groupby()` function in Pandas?
 
 The `groupby()` function is used to split data into groups based on some criteria, perform operations on each group independently, and then combine the results. It is useful for aggregation, transformation, and filtration of data.
