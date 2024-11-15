@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/data-science-course/faqs/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/data-science-course/glossary/</loc>
          <lastmod>2024-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -57,6 +62,16 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/concepts/concept-taxonomy/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/prompts/faqs/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/prompts/glossary/</loc>
          <lastmod>2024-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
