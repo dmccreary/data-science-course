@@ -1,0 +1,699 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Using generative AI to teach data science with Pyton. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/concepts/concept-enumeration/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Concept Enumeration - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concept-enumeration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/concepts/concept-enumeration.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="concept-enumeration">Concept Enumeration</h1>
+<h2 id="prompt">Prompt</h2>
+<p>```linenums="0"
+I would like to develop a new course called 
+"Introduction to Data Science with Python using AI". </p>
+<p>I would like you to generate a list of all the core concepts
+that we would cover in this course and the dependency
+relationships between these concepts so we could order
+them and create an learning graph. This course would assume
+that students have basic Python programming experience. 
+This course would be a class that covers the following topics: </p>
+<ol>
+<li>What is data science? </li>
+<li>Summary of business needs for employees with data science skills. </li>
+<li>Review of Python concepts </li>
+<li>How generative AI can help you learn Python </li>
+<li>Basic Python libraries for handling data such as NumPy </li>
+<li>Python statistical libraries </li>
+<li>Python libraries for machine learning </li>
+<li>Python libraries for working with graph data </li>
+<li>Python libraries for visualization with a focus on Plotly </li>
+<li>Python libraries for NLP </li>
+<li>Python libraries for vector stores </li>
+<li>Python libraries for GenAI including LangChain and LlamaIndex </li>
+</ol>
+<p>Please create a numbered list of the 150 most important topics 
+that would be taught in this course. Begin with the prerequisite
+concepts and then proceed to defining key terms. Then include
+the core concepts used in Python data analysis.
+Finally, close with some potential final project concepts 
+that students could create. Think carefully about the ordering 
+of the concepts from simple to more abstract. For each concept, 
+return a conceptID followed by short name which would be the
+label for the concept in a learning graph (concept dependency).
+Feel free to use short names and abbreviations.</p>
+<p>ChatGPT</p>
+<p>Thought for 1m 34s</p>
+<ol>
+<li><strong>DS Definition</strong> - Definition of Data Science</li>
+<li><strong>DS Importance</strong> - Importance of Data Science</li>
+<li><strong>DS vs DA</strong> - Data Science vs. Data Analysis</li>
+<li><strong>DS Workflow</strong> - Data Science Workflow</li>
+<li><strong>DS Roles</strong> - Roles in Data Science</li>
+<li><strong>DS DataCollection</strong> - Data Collection Methods</li>
+<li><strong>DS DataCleaning</strong> - Data Cleaning Processes</li>
+<li><strong>DS DataExploration</strong> - Exploratory Data Analysis</li>
+<li><strong>DS FeatureEngineering</strong> - Feature Engineering</li>
+<li><strong>DS Modeling</strong> - Modeling and Algorithms</li>
+<li><strong>DS Evaluation</strong> - Model Evaluation Techniques</li>
+<li><strong>DS Deployment</strong> - Model Deployment Strategies</li>
+<li><strong>Business DS Needs</strong> - Business Needs for Data Science Skills</li>
+<li><strong>Business DS Impact</strong> - Impact on Decision Making</li>
+<li><strong>Business DS Examples</strong> - Business Applications of Data Science</li>
+<li><strong>Python DataTypes</strong> - Data Types in Python</li>
+<li><strong>Python DataStructures</strong> - Data Structures (List, Dict, Set)</li>
+<li><strong>Python Control</strong> - Control Structures (Loops, Conditionals)</li>
+<li><strong>Python Functions</strong> - Functions and Modules</li>
+<li><strong>Python OOP</strong> - Object-Oriented Programming</li>
+<li><strong>Python FileHandling</strong> - File Handling</li>
+<li><strong>Python Exceptions</strong> - Exception Handling</li>
+<li><strong>Python Debugging</strong> - Debugging Techniques</li>
+<li><strong>Python LibrariesIntro</strong> - Introduction to Python Libraries</li>
+<li><strong>AI Intro</strong> - Introduction to Generative AI</li>
+<li><strong>AI LearnPython</strong> - AI Tools for Learning Python</li>
+<li><strong>AI CodeAssistants</strong> - Using AI Assistants for Coding</li>
+<li><strong>AI LearningResources</strong> - AI-Generated Learning Resources</li>
+<li><strong>AI Ethics</strong> - Ethical Considerations of AI</li>
+<li><strong>NumPy Intro</strong> - Introduction to NumPy</li>
+<li><strong>NumPy Arrays</strong> - NumPy Arrays and Operations</li>
+<li><strong>NumPy Broadcasting</strong> - Broadcasting in NumPy</li>
+<li><strong>NumPy AdvancedIndexing</strong> - Advanced Indexing</li>
+<li><strong>NumPy MathFunctions</strong> - Mathematical Functions</li>
+<li><strong>Pandas Intro</strong> - Introduction to Pandas</li>
+<li><strong>Pandas DataFrames</strong> - DataFrames and Series</li>
+<li><strong>Pandas IO</strong> - Reading and Writing Data</li>
+<li><strong>Pandas Selection</strong> - Data Selection and Filtering</li>
+<li><strong>Pandas Cleaning</strong> - Data Cleaning in Pandas</li>
+<li><strong>Pandas MissingData</strong> - Handling Missing Data</li>
+<li><strong>Pandas Merging</strong> - Merging and Joining DataFrames</li>
+<li><strong>Pandas Grouping</strong> - Data Aggregation and Grouping</li>
+<li><strong>Pandas Pivot</strong> - Pivot Tables</li>
+<li><strong>Pandas TimeSeries</strong> - Time Series Data</li>
+<li><strong>Stats Intro</strong> - Introduction to Statistics</li>
+<li><strong>Stats Descriptive</strong> - Descriptive Statistics</li>
+<li><strong>Stats Inferential</strong> - Inferential Statistics</li>
+<li><strong>Stats Distributions</strong> - Probability Distributions</li>
+<li><strong>SciPy Intro</strong> - SciPy for Statistical Analysis</li>
+<li><strong>Statsmodels Intro</strong> - Statsmodels Library</li>
+<li><strong>Stats Hypothesis</strong> - Hypothesis Testing</li>
+<li><strong>Stats Regression</strong> - Regression Analysis</li>
+<li><strong>ML Intro</strong> - Introduction to Machine Learning</li>
+<li><strong>ML Supervised</strong> - Supervised Learning</li>
+<li><strong>ML Unsupervised</strong> - Unsupervised Learning</li>
+<li><strong>Sklearn Intro</strong> - scikit-learn Library</li>
+<li><strong>ML Preprocessing</strong> - Data Preprocessing</li>
+<li><strong>ML FeatureSelection</strong> - Feature Selection Techniques</li>
+<li><strong>ML CrossValidation</strong> - Cross-Validation Methods</li>
+<li><strong>ML Classification</strong> - Classification Algorithms</li>
+<li><strong>ML Regression</strong> - Regression Algorithms</li>
+<li><strong>ML Clustering</strong> - Clustering Algorithms</li>
+<li><strong>ML Evaluation</strong> - Model Evaluation and Validation</li>
+<li><strong>NetworkX Intro</strong> - NetworkX Library</li>
+<li><strong>NetworkX Create</strong> - Creating Graphs</li>
+<li><strong>NetworkX Algorithms</strong> - Graph Algorithms</li>
+<li><strong>NetworkX Visualize</strong> - Graph Visualization</li>
+<li><strong>Viz Importance</strong> - Importance of Data Visualization</li>
+<li><strong>Matplotlib Intro</strong> - Introduction to Matplotlib</li>
+<li><strong>Seaborn Intro</strong> - Introduction to Seaborn</li>
+<li><strong>Plotly Intro</strong> - Introduction to Plotly</li>
+<li><strong>Plotly Basic</strong> - Basic Plots with Plotly</li>
+<li><strong>Plotly Interactive</strong> - Interactive Visualizations</li>
+<li><strong>Plotly Dash</strong> - Plotly Dash for Web Apps</li>
+<li><strong>NLP Intro</strong> - Introduction to NLP</li>
+<li><strong>NLP TextPreprocessing</strong> - Text Preprocessing Techniques</li>
+<li><strong>NLP Tokenization</strong> - Tokenization Methods</li>
+<li><strong>NLP WordEmbeddings</strong> - Word Embeddings</li>
+<li><strong>NLTK Intro</strong> - NLTK Library</li>
+<li><strong>Spacy Intro</strong> - spaCy Library</li>
+<li><strong>NLP Sentiment</strong> - Sentiment Analysis</li>
+<li><strong>NLP TextClassify</strong> - Text Classification</li>
+<li><strong>VectorStores Intro</strong> - Introduction to Vector Stores</li>
+<li><strong>Faiss Intro</strong> - FAISS Library</li>
+<li><strong>Annoy Intro</strong> - Annoy Library</li>
+<li><strong>VectorStores Apps</strong> - Vector Store Applications</li>
+<li><strong>GenAI Intro</strong> - Introduction to Generative AI</li>
+<li><strong>LangChain Intro</strong> - LangChain Library</li>
+<li><strong>LangChain Pipelines</strong> - Creating Pipelines</li>
+<li><strong>LangChain COT</strong> - Chain-of-thought Prompting</li>
+<li><strong>LlamaIndex Intro</strong> - LlamaIndex Library</li>
+<li><strong>LlamaIndex Indexing</strong> - Indexing Data</li>
+<li><strong>LlamaIndex Querying</strong> - Querying Data</li>
+<li><strong>Project Ideas</strong> - Potential Final Projects Overview</li>
+<li><strong>Project DataAnalysis</strong> - Data Analysis Project</li>
+<li><strong>Project MLModel</strong> - Machine Learning Model Project</li>
+<li><strong>Project NLP</strong> - NLP Application Project</li>
+<li><strong>Project Visualization</strong> - Data Visualization Dashboard</li>
+<li><strong>Project GraphAnalysis</strong> - Graph Analysis Project</li>
+<li><strong>Project AIChatbot</strong> - AI-Powered Chatbot Project</li>
+<li><strong>Project Planning</strong> - Planning a Data Science Project</li>
+<li><strong>Project Dataset</strong> - Choosing Datasets</li>
+<li><strong>Project Teams</strong> - Team Collaboration</li>
+<li><strong>Project Presentation</strong> - Presenting Findings</li>
+<li><strong>Project Documentation</strong> - Project Documentation</li>
+<li><strong>Project Deployment</strong> - Deploying Projects</li>
+<li><strong>ML DeepLearning</strong> - Introduction to Deep Learning</li>
+<li><strong>TensorFlow Intro</strong> - TensorFlow Library</li>
+<li><strong>PyTorch Intro</strong> - PyTorch Library</li>
+<li><strong>DL NeuralNetworks</strong> - Neural Network Fundamentals</li>
+<li><strong>DL CNNs</strong> - Convolutional Neural Networks</li>
+<li><strong>DL RNNs</strong> - Recurrent Neural Networks</li>
+<li><strong>DL TransferLearning</strong> - Transfer Learning</li>
+<li><strong>DL NLP Transformers</strong> - Transformers Architecture</li>
+<li><strong>DL NLP BERT</strong> - BERT Model</li>
+<li><strong>TimeSeries Intro</strong> - Time Series Analysis</li>
+<li><strong>TimeSeries Decomposition</strong> - Time Series Decomposition</li>
+<li><strong>TimeSeries ARIMA</strong> - ARIMA Models</li>
+<li><strong>TimeSeries Forecasting</strong> - Forecasting Techniques</li>
+<li><strong>Recommender Intro</strong> - Recommender Systems</li>
+<li><strong>Recommender CollabFilter</strong> - Collaborative Filtering</li>
+<li><strong>Recommender ContentBased</strong> - Content-Based Filtering</li>
+<li><strong>Recommender Hybrid</strong> - Hybrid Recommenders</li>
+<li><strong>DataEng Intro</strong> - Introduction to Data Engineering</li>
+<li><strong>DataEng ETL</strong> - ETL Processes</li>
+<li><strong>DataEng DataWarehouses</strong> - Data Warehouses</li>
+<li><strong>DataEng DataLakes</strong> - Data Lakes</li>
+<li><strong>ML Reinforcement</strong> - Reinforcement Learning Basics</li>
+<li><strong>ML GANs</strong> - Generative Adversarial Networks</li>
+<li><strong>ML AutoML</strong> - Automated Machine Learning</li>
+<li><strong>ML Explainability</strong> - Model Explainability</li>
+<li><strong>BigData Intro</strong> - Introduction to Big Data</li>
+<li><strong>PySpark Intro</strong> - Introduction to PySpark</li>
+<li><strong>Cloud Intro</strong> - Cloud Computing Basics</li>
+<li><strong>AWS Intro</strong> - AWS Overview</li>
+<li><strong>Docker Intro</strong> - Introduction to Docker</li>
+<li><strong>Ethics AI</strong> - Ethical Considerations in AI</li>
+<li><strong>Privacy Data</strong> - Data Privacy and Security</li>
+<li><strong>Bias Fairness</strong> - Bias and Fairness in ML</li>
+<li><strong>Git Intro</strong> - Introduction to Git</li>
+<li><strong>GitHub Intro</strong> - Using GitHub</li>
+<li><strong>Viz BestPractices</strong> - Visualization Best Practices</li>
+<li><strong>Dask Intro</strong> - Dask for Parallel Computing</li>
+<li><strong>CaseStudies Intro</strong> - Case Studies Overview</li>
+<li><strong>Communication Skills</strong> - Communication Skills</li>
+<li><strong>CriticalThinking Skills</strong> - Critical Thinking</li>
+<li><strong>Leadership Skills</strong> - Leadership in Data Science</li>
+<li><strong>Final Review</strong> - Course Summary and Review</li>
+<li><strong>Next Steps</strong> - Next Steps in Learning</li>
+<li><strong>Course Evaluation</strong> - Course Feedback and Evaluation</li>
+</ol>
+<p>o1</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  </body>
+</html>

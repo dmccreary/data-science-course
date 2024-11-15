@@ -40,4 +40,34 @@
          <lastmod>2024-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/concepts/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/concepts/concept-dependencies/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/concepts/concept-enumeration/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/concepts/concept-taxonomy/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/learning-graph/</loc>
+         <lastmod>2024-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
