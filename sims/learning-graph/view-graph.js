@@ -58,9 +58,9 @@ function drawGraph() {
         },
       nodes: {
         shape: 'dot',
-        size: 20,
+        size: 16,
         font: {
-          size: 14,
+          size: 20,
           color: 'black'
         },
         borderWidth: 2,
