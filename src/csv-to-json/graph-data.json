@@ -1,0 +1,1448 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "label": "DS Definition",
+            "group": 1
+        },
+        {
+            "id": 2,
+            "label": "DS Importance",
+            "group": 1
+        },
+        {
+            "id": 3,
+            "label": "DS vs DA",
+            "group": 2
+        },
+        {
+            "id": 4,
+            "label": "DS Workflow",
+            "group": 1
+        },
+        {
+            "id": 5,
+            "label": "DS Roles",
+            "group": 1
+        },
+        {
+            "id": 6,
+            "label": "DS Data Collection",
+            "group": 5
+        },
+        {
+            "id": 7,
+            "label": "DS Data Cleaning",
+            "group": 5
+        },
+        {
+            "id": 8,
+            "label": "DS Data Exploration",
+            "group": 5
+        },
+        {
+            "id": 9,
+            "label": "DS Feature Engineering",
+            "group": 5
+        },
+        {
+            "id": 10,
+            "label": "DS Modeling",
+            "group": 7
+        },
+        {
+            "id": 11,
+            "label": "DS Evaluation",
+            "group": 7
+        },
+        {
+            "id": 12,
+            "label": "DS Deployment",
+            "group": 7
+        },
+        {
+            "id": 13,
+            "label": "Business DS Needs",
+            "group": 2
+        },
+        {
+            "id": 14,
+            "label": "Business DS Impact",
+            "group": 2
+        },
+        {
+            "id": 15,
+            "label": "Business DS Examples",
+            "group": 2
+        },
+        {
+            "id": 16,
+            "label": "Python DataTypes",
+            "group": 3
+        },
+        {
+            "id": 17,
+            "label": "Python Data Structures",
+            "group": 3
+        },
+        {
+            "id": 18,
+            "label": "Python Control",
+            "group": 3
+        },
+        {
+            "id": 19,
+            "label": "Python Functions",
+            "group": 3
+        },
+        {
+            "id": 20,
+            "label": "Python OOP",
+            "group": 3
+        },
+        {
+            "id": 21,
+            "label": "Python File Handling",
+            "group": 3
+        },
+        {
+            "id": 22,
+            "label": "Python Exceptions",
+            "group": 3
+        },
+        {
+            "id": 23,
+            "label": "Python Debugging",
+            "group": 3
+        },
+        {
+            "id": 24,
+            "label": "Python Libraries Intro",
+            "group": 4
+        },
+        {
+            "id": 25,
+            "label": "AI Intro",
+            "group": 10
+        },
+        {
+            "id": 26,
+            "label": "AI Learn Python",
+            "group": 10
+        },
+        {
+            "id": 27,
+            "label": "AI Code Assistants",
+            "group": 10
+        },
+        {
+            "id": 28,
+            "label": "AI Learning Resources",
+            "group": 10
+        },
+        {
+            "id": 29,
+            "label": "AI Ethics",
+            "group": 10
+        },
+        {
+            "id": 30,
+            "label": "NumPy Intro",
+            "group": 4
+        },
+        {
+            "id": 31,
+            "label": "NumPy Arrays",
+            "group": 4
+        },
+        {
+            "id": 32,
+            "label": "NumPy Broadcasting",
+            "group": 4
+        },
+        {
+            "id": 33,
+            "label": "NumPy Advanced Indexing",
+            "group": 4
+        },
+        {
+            "id": 34,
+            "label": "NumPy Math Functions",
+            "group": 4
+        },
+        {
+            "id": 35,
+            "label": "Pandas Intro",
+            "group": 4
+        },
+        {
+            "id": 36,
+            "label": "Pandas DataFrames",
+            "group": 5
+        },
+        {
+            "id": 37,
+            "label": "Pandas IO",
+            "group": 5
+        },
+        {
+            "id": 38,
+            "label": "Pandas Selection",
+            "group": 5
+        },
+        {
+            "id": 39,
+            "label": "Pandas Cleaning",
+            "group": 5
+        },
+        {
+            "id": 40,
+            "label": "Pandas Missing Data",
+            "group": 5
+        },
+        {
+            "id": 41,
+            "label": "Pandas Merging",
+            "group": 5
+        },
+        {
+            "id": 42,
+            "label": "Pandas Grouping",
+            "group": 5
+        },
+        {
+            "id": 43,
+            "label": "Pandas Pivot",
+            "group": 5
+        },
+        {
+            "id": 44,
+            "label": "Pandas Time Series",
+            "group": 5
+        },
+        {
+            "id": 45,
+            "label": "Stats Intro",
+            "group": 6
+        },
+        {
+            "id": 46,
+            "label": "Stats Descriptive",
+            "group": 6
+        },
+        {
+            "id": 47,
+            "label": "Stats Inferential",
+            "group": 6
+        },
+        {
+            "id": 48,
+            "label": "Stats Distributions",
+            "group": 6
+        },
+        {
+            "id": 49,
+            "label": "SciPy Intro",
+            "group": 4
+        },
+        {
+            "id": 50,
+            "label": "Statsmodels Intro",
+            "group": 4
+        },
+        {
+            "id": 51,
+            "label": "Stats Hypothesis",
+            "group": 6
+        },
+        {
+            "id": 52,
+            "label": "Stats Regression",
+            "group": 6
+        },
+        {
+            "id": 53,
+            "label": "ML Intro",
+            "group": 7
+        },
+        {
+            "id": 54,
+            "label": "ML Supervised",
+            "group": 7
+        },
+        {
+            "id": 55,
+            "label": "ML Unsupervised",
+            "group": 7
+        },
+        {
+            "id": 56,
+            "label": "Sklearn Intro",
+            "group": 4
+        },
+        {
+            "id": 57,
+            "label": "ML Preprocessing",
+            "group": 7
+        },
+        {
+            "id": 58,
+            "label": "ML Feature Selection",
+            "group": 7
+        },
+        {
+            "id": 59,
+            "label": "ML Cross Validation",
+            "group": 7
+        },
+        {
+            "id": 60,
+            "label": "ML Classification",
+            "group": 7
+        },
+        {
+            "id": 61,
+            "label": "ML Regression",
+            "group": 7
+        },
+        {
+            "id": 62,
+            "label": "ML Clustering",
+            "group": 7
+        },
+        {
+            "id": 63,
+            "label": "ML Evaluation",
+            "group": 7
+        },
+        {
+            "id": 64,
+            "label": "NetworkX Intro",
+            "group": 4
+        },
+        {
+            "id": 65,
+            "label": "NetworkX Create",
+            "group": 4
+        },
+        {
+            "id": 66,
+            "label": "NetworkX Algorithms",
+            "group": 7
+        },
+        {
+            "id": 67,
+            "label": "NetworkX Visualize",
+            "group": 8
+        },
+        {
+            "id": 68,
+            "label": "Viz Importance",
+            "group": 8
+        },
+        {
+            "id": 69,
+            "label": "Matplotlib Intro",
+            "group": 4
+        },
+        {
+            "id": 70,
+            "label": "Seaborn Intro",
+            "group": 4
+        },
+        {
+            "id": 71,
+            "label": "Plotly Intro",
+            "group": 4
+        },
+        {
+            "id": 72,
+            "label": "Plotly Basic",
+            "group": 8
+        },
+        {
+            "id": 73,
+            "label": "Plotly Interactive",
+            "group": 8
+        },
+        {
+            "id": 74,
+            "label": "Plotly Dash",
+            "group": 8
+        },
+        {
+            "id": 75,
+            "label": "NLP Intro",
+            "group": 9
+        },
+        {
+            "id": 76,
+            "label": "NLP Text Preprocessing",
+            "group": 9
+        },
+        {
+            "id": 77,
+            "label": "NLP Tokenization",
+            "group": 9
+        },
+        {
+            "id": 78,
+            "label": "NLP Word Embeddings",
+            "group": 9
+        },
+        {
+            "id": 79,
+            "label": "NLTK Intro",
+            "group": 4
+        },
+        {
+            "id": 80,
+            "label": "Spacy Intro",
+            "group": 4
+        },
+        {
+            "id": 81,
+            "label": "NLP Sentiment",
+            "group": 9
+        },
+        {
+            "id": 82,
+            "label": "NLP Text Classify",
+            "group": 9
+        },
+        {
+            "id": 83,
+            "label": "VectorStores Intro",
+            "group": 10
+        },
+        {
+            "id": 84,
+            "label": "Faiss Intro",
+            "group": 4
+        },
+        {
+            "id": 85,
+            "label": "Annoy Intro",
+            "group": 4
+        },
+        {
+            "id": 86,
+            "label": "VectorStores Apps",
+            "group": 10
+        },
+        {
+            "id": 87,
+            "label": "GenAI Intro",
+            "group": 10
+        },
+        {
+            "id": 88,
+            "label": "LangChain Intro",
+            "group": 4
+        },
+        {
+            "id": 89,
+            "label": "LangChain Pipelines",
+            "group": 10
+        },
+        {
+            "id": 90,
+            "label": "LangChain COT",
+            "group": 10
+        },
+        {
+            "id": 91,
+            "label": "LlamaIndex Intro",
+            "group": 4
+        },
+        {
+            "id": 92,
+            "label": "LlamaIndex Indexing",
+            "group": 10
+        },
+        {
+            "id": 93,
+            "label": "LlamaIndex Querying",
+            "group": 10
+        },
+        {
+            "id": 94,
+            "label": "Project Ideas",
+            "group": 1
+        },
+        {
+            "id": 95,
+            "label": "Project Data Analysis",
+            "group": 5
+        },
+        {
+            "id": 96,
+            "label": "Project ML Model",
+            "group": 7
+        },
+        {
+            "id": 97,
+            "label": "Project NLP",
+            "group": 9
+        },
+        {
+            "id": 98,
+            "label": "Project Visualization",
+            "group": 8
+        },
+        {
+            "id": 99,
+            "label": "Project Graph Analysis",
+            "group": 7
+        },
+        {
+            "id": 100,
+            "label": "Project AI Chatbot",
+            "group": 10
+        },
+        {
+            "id": 101,
+            "label": "Project Planning",
+            "group": 1
+        },
+        {
+            "id": 102,
+            "label": "Project Dataset",
+            "group": 5
+        },
+        {
+            "id": 103,
+            "label": "Project Teams",
+            "group": 1
+        },
+        {
+            "id": 104,
+            "label": "Project Presentation",
+            "group": 8
+        },
+        {
+            "id": 105,
+            "label": "Project Documentation",
+            "group": 1
+        },
+        {
+            "id": 106,
+            "label": "Project Deployment",
+            "group": 7
+        },
+        {
+            "id": 107,
+            "label": "ML Deep Learning",
+            "group": 7
+        },
+        {
+            "id": 108,
+            "label": "TensorFlow Intro",
+            "group": 4
+        },
+        {
+            "id": 109,
+            "label": "PyTorch Intro",
+            "group": 4
+        },
+        {
+            "id": 110,
+            "label": "DL Neural Networks",
+            "group": 7
+        },
+        {
+            "id": 111,
+            "label": "DL CNNs",
+            "group": 7
+        },
+        {
+            "id": 112,
+            "label": "DL RNNs",
+            "group": 7
+        },
+        {
+            "id": 113,
+            "label": "DL Transfer Learning",
+            "group": 7
+        },
+        {
+            "id": 114,
+            "label": "DL NLP Transformers",
+            "group": 9
+        },
+        {
+            "id": 115,
+            "label": "DL NLP BERT",
+            "group": 9
+        },
+        {
+            "id": 116,
+            "label": "Time Series Intro",
+            "group": 5
+        },
+        {
+            "id": 117,
+            "label": "Time Series Decomposition",
+            "group": 5
+        },
+        {
+            "id": 118,
+            "label": "Time Series ARIMA",
+            "group": 5
+        },
+        {
+            "id": 119,
+            "label": "Time Series Forecasting",
+            "group": 5
+        },
+        {
+            "id": 120,
+            "label": "Recommender Intro",
+            "group": 7
+        },
+        {
+            "id": 121,
+            "label": "Recommender Collab Filter",
+            "group": 7
+        },
+        {
+            "id": 122,
+            "label": "Recommender Content Based",
+            "group": 7
+        },
+        {
+            "id": 123,
+            "label": "Recommender Hybrid",
+            "group": 7
+        },
+        {
+            "id": 124,
+            "label": "DataEng Intro",
+            "group": 5
+        },
+        {
+            "id": 125,
+            "label": "DataEng ETL",
+            "group": 5
+        },
+        {
+            "id": 126,
+            "label": "DataEng Data Warehouses",
+            "group": 5
+        },
+        {
+            "id": 127,
+            "label": "DataEng Data Lakes",
+            "group": 5
+        },
+        {
+            "id": 128,
+            "label": "ML Reinforcement",
+            "group": 7
+        },
+        {
+            "id": 129,
+            "label": "ML GANs",
+            "group": 7
+        },
+        {
+            "id": 130,
+            "label": "ML AutoML",
+            "group": 7
+        },
+        {
+            "id": 131,
+            "label": "ML Explainability",
+            "group": 7
+        },
+        {
+            "id": 132,
+            "label": "Big Data Intro",
+            "group": 5
+        },
+        {
+            "id": 133,
+            "label": "PySpark Intro",
+            "group": 4
+        },
+        {
+            "id": 134,
+            "label": "Cloud Intro",
+            "group": 10
+        },
+        {
+            "id": 135,
+            "label": "AWS Intro",
+            "group": 10
+        },
+        {
+            "id": 136,
+            "label": "Docker Intro",
+            "group": 10
+        },
+        {
+            "id": 137,
+            "label": "Ethics AI",
+            "group": 10
+        },
+        {
+            "id": 138,
+            "label": "Privacy Data",
+            "group": 1
+        },
+        {
+            "id": 139,
+            "label": "Bias Fairness",
+            "group": 7
+        },
+        {
+            "id": 140,
+            "label": "Git Intro",
+            "group": 3
+        },
+        {
+            "id": 141,
+            "label": "GitHub Intro",
+            "group": 3
+        },
+        {
+            "id": 142,
+            "label": "Viz Best Practices",
+            "group": 8
+        },
+        {
+            "id": 143,
+            "label": "Dask Intro",
+            "group": 4
+        },
+        {
+            "id": 144,
+            "label": "CaseStudies Intro",
+            "group": 1
+        },
+        {
+            "id": 145,
+            "label": "Communication Skills",
+            "group": 1
+        },
+        {
+            "id": 146,
+            "label": "Critical Thinking Skills",
+            "group": 1
+        },
+        {
+            "id": 147,
+            "label": "Leadership Skills",
+            "group": 1
+        },
+        {
+            "id": 148,
+            "label": "Final Review",
+            "group": 1
+        },
+        {
+            "id": 149,
+            "label": "Next Steps",
+            "group": 1
+        },
+        {
+            "id": 150,
+            "label": "Course Evaluation",
+            "group": 1
+        }
+    ],
+    "edges": [
+        {
+            "from": 2,
+            "to": 1
+        },
+        {
+            "from": 3,
+            "to": 1
+        },
+        {
+            "from": 4,
+            "to": 1
+        },
+        {
+            "from": 4,
+            "to": 2
+        },
+        {
+            "from": 4,
+            "to": 3
+        },
+        {
+            "from": 5,
+            "to": 1
+        },
+        {
+            "from": 5,
+            "to": 2
+        },
+        {
+            "from": 6,
+            "to": 4
+        },
+        {
+            "from": 7,
+            "to": 6
+        },
+        {
+            "from": 8,
+            "to": 7
+        },
+        {
+            "from": 9,
+            "to": 8
+        },
+        {
+            "from": 10,
+            "to": 9
+        },
+        {
+            "from": 11,
+            "to": 10
+        },
+        {
+            "from": 12,
+            "to": 11
+        },
+        {
+            "from": 13,
+            "to": 1
+        },
+        {
+            "from": 13,
+            "to": 2
+        },
+        {
+            "from": 14,
+            "to": 13
+        },
+        {
+            "from": 15,
+            "to": 13
+        },
+        {
+            "from": 17,
+            "to": 16
+        },
+        {
+            "from": 18,
+            "to": 16
+        },
+        {
+            "from": 19,
+            "to": 17
+        },
+        {
+            "from": 19,
+            "to": 18
+        },
+        {
+            "from": 20,
+            "to": 19
+        },
+        {
+            "from": 21,
+            "to": 19
+        },
+        {
+            "from": 22,
+            "to": 19
+        },
+        {
+            "from": 23,
+            "to": 22
+        },
+        {
+            "from": 24,
+            "to": 19
+        },
+        {
+            "from": 26,
+            "to": 25
+        },
+        {
+            "from": 27,
+            "to": 26
+        },
+        {
+            "from": 28,
+            "to": 26
+        },
+        {
+            "from": 29,
+            "to": 25
+        },
+        {
+            "from": 30,
+            "to": 24
+        },
+        {
+            "from": 31,
+            "to": 30
+        },
+        {
+            "from": 32,
+            "to": 31
+        },
+        {
+            "from": 33,
+            "to": 31
+        },
+        {
+            "from": 34,
+            "to": 31
+        },
+        {
+            "from": 35,
+            "to": 24
+        },
+        {
+            "from": 36,
+            "to": 35
+        },
+        {
+            "from": 37,
+            "to": 36
+        },
+        {
+            "from": 38,
+            "to": 36
+        },
+        {
+            "from": 39,
+            "to": 36
+        },
+        {
+            "from": 40,
+            "to": 39
+        },
+        {
+            "from": 41,
+            "to": 36
+        },
+        {
+            "from": 42,
+            "to": 36
+        },
+        {
+            "from": 43,
+            "to": 36
+        },
+        {
+            "from": 44,
+            "to": 36
+        },
+        {
+            "from": 46,
+            "to": 45
+        },
+        {
+            "from": 47,
+            "to": 46
+        },
+        {
+            "from": 48,
+            "to": 47
+        },
+        {
+            "from": 49,
+            "to": 24
+        },
+        {
+            "from": 50,
+            "to": 24
+        },
+        {
+            "from": 51,
+            "to": 47
+        },
+        {
+            "from": 51,
+            "to": 48
+        },
+        {
+            "from": 51,
+            "to": 49
+        },
+        {
+            "from": 51,
+            "to": 50
+        },
+        {
+            "from": 52,
+            "to": 51
+        },
+        {
+            "from": 53,
+            "to": 52
+        },
+        {
+            "from": 54,
+            "to": 53
+        },
+        {
+            "from": 55,
+            "to": 53
+        },
+        {
+            "from": 56,
+            "to": 54
+        },
+        {
+            "from": 56,
+            "to": 55
+        },
+        {
+            "from": 57,
+            "to": 56
+        },
+        {
+            "from": 58,
+            "to": 57
+        },
+        {
+            "from": 59,
+            "to": 57
+        },
+        {
+            "from": 60,
+            "to": 54
+        },
+        {
+            "from": 60,
+            "to": 56
+        },
+        {
+            "from": 61,
+            "to": 54
+        },
+        {
+            "from": 61,
+            "to": 56
+        },
+        {
+            "from": 62,
+            "to": 55
+        },
+        {
+            "from": 62,
+            "to": 56
+        },
+        {
+            "from": 63,
+            "to": 60
+        },
+        {
+            "from": 63,
+            "to": 61
+        },
+        {
+            "from": 63,
+            "to": 62
+        },
+        {
+            "from": 64,
+            "to": 24
+        },
+        {
+            "from": 65,
+            "to": 64
+        },
+        {
+            "from": 66,
+            "to": 65
+        },
+        {
+            "from": 67,
+            "to": 66
+        },
+        {
+            "from": 69,
+            "to": 68
+        },
+        {
+            "from": 69,
+            "to": 24
+        },
+        {
+            "from": 70,
+            "to": 69
+        },
+        {
+            "from": 71,
+            "to": 69
+        },
+        {
+            "from": 72,
+            "to": 71
+        },
+        {
+            "from": 73,
+            "to": 72
+        },
+        {
+            "from": 74,
+            "to": 73
+        },
+        {
+            "from": 76,
+            "to": 75
+        },
+        {
+            "from": 77,
+            "to": 76
+        },
+        {
+            "from": 78,
+            "to": 77
+        },
+        {
+            "from": 79,
+            "to": 75
+        },
+        {
+            "from": 80,
+            "to": 75
+        },
+        {
+            "from": 81,
+            "to": 77
+        },
+        {
+            "from": 81,
+            "to": 78
+        },
+        {
+            "from": 81,
+            "to": 79
+        },
+        {
+            "from": 81,
+            "to": 80
+        },
+        {
+            "from": 82,
+            "to": 81
+        },
+        {
+            "from": 84,
+            "to": 83
+        },
+        {
+            "from": 85,
+            "to": 83
+        },
+        {
+            "from": 86,
+            "to": 84
+        },
+        {
+            "from": 86,
+            "to": 85
+        },
+        {
+            "from": 88,
+            "to": 87
+        },
+        {
+            "from": 89,
+            "to": 88
+        },
+        {
+            "from": 90,
+            "to": 88
+        },
+        {
+            "from": 91,
+            "to": 87
+        },
+        {
+            "from": 92,
+            "to": 91
+        },
+        {
+            "from": 93,
+            "to": 92
+        },
+        {
+            "from": 94,
+            "to": 93
+        },
+        {
+            "from": 95,
+            "to": 35
+        },
+        {
+            "from": 95,
+            "to": 36
+        },
+        {
+            "from": 95,
+            "to": 44
+        },
+        {
+            "from": 96,
+            "to": 53
+        },
+        {
+            "from": 96,
+            "to": 63
+        },
+        {
+            "from": 97,
+            "to": 75
+        },
+        {
+            "from": 97,
+            "to": 82
+        },
+        {
+            "from": 98,
+            "to": 68
+        },
+        {
+            "from": 98,
+            "to": 69
+        },
+        {
+            "from": 98,
+            "to": 70
+        },
+        {
+            "from": 98,
+            "to": 71
+        },
+        {
+            "from": 98,
+            "to": 72
+        },
+        {
+            "from": 98,
+            "to": 73
+        },
+        {
+            "from": 98,
+            "to": 74
+        },
+        {
+            "from": 99,
+            "to": 64
+        },
+        {
+            "from": 99,
+            "to": 67
+        },
+        {
+            "from": 100,
+            "to": 87
+        },
+        {
+            "from": 100,
+            "to": 88
+        },
+        {
+            "from": 100,
+            "to": 89
+        },
+        {
+            "from": 100,
+            "to": 90
+        },
+        {
+            "from": 100,
+            "to": 91
+        },
+        {
+            "from": 100,
+            "to": 92
+        },
+        {
+            "from": 100,
+            "to": 93
+        },
+        {
+            "from": 101,
+            "to": 1
+        },
+        {
+            "from": 101,
+            "to": 4
+        },
+        {
+            "from": 102,
+            "to": 6
+        },
+        {
+            "from": 102,
+            "to": 36
+        },
+        {
+            "from": 103,
+            "to": 101
+        },
+        {
+            "from": 104,
+            "to": 98
+        },
+        {
+            "from": 105,
+            "to": 101
+        },
+        {
+            "from": 106,
+            "to": 12
+        },
+        {
+            "from": 107,
+            "to": 53
+        },
+        {
+            "from": 108,
+            "to": 107
+        },
+        {
+            "from": 109,
+            "to": 107
+        },
+        {
+            "from": 110,
+            "to": 107
+        },
+        {
+            "from": 111,
+            "to": 110
+        },
+        {
+            "from": 112,
+            "to": 110
+        },
+        {
+            "from": 113,
+            "to": 110
+        },
+        {
+            "from": 114,
+            "to": 112
+        },
+        {
+            "from": 115,
+            "to": 114
+        },
+        {
+            "from": 117,
+            "to": 116
+        },
+        {
+            "from": 118,
+            "to": 117
+        },
+        {
+            "from": 119,
+            "to": 118
+        },
+        {
+            "from": 120,
+            "to": 53
+        },
+        {
+            "from": 121,
+            "to": 120
+        },
+        {
+            "from": 122,
+            "to": 120
+        },
+        {
+            "from": 123,
+            "to": 121
+        },
+        {
+            "from": 123,
+            "to": 122
+        },
+        {
+            "from": 125,
+            "to": 124
+        },
+        {
+            "from": 126,
+            "to": 125
+        },
+        {
+            "from": 127,
+            "to": 125
+        },
+        {
+            "from": 128,
+            "to": 53
+        },
+        {
+            "from": 129,
+            "to": 107
+        },
+        {
+            "from": 130,
+            "to": 53
+        },
+        {
+            "from": 131,
+            "to": 53
+        },
+        {
+            "from": 133,
+            "to": 132
+        },
+        {
+            "from": 135,
+            "to": 134
+        },
+        {
+            "from": 136,
+            "to": 12
+        },
+        {
+            "from": 137,
+            "to": 25
+        },
+        {
+            "from": 139,
+            "to": 53
+        },
+        {
+            "from": 141,
+            "to": 140
+        },
+        {
+            "from": 142,
+            "to": 68
+        },
+        {
+            "from": 142,
+            "to": 69
+        },
+        {
+            "from": 143,
+            "to": 35
+        },
+        {
+            "from": 143,
+            "to": 132
+        },
+        {
+            "from": 148,
+            "to": 1
+        },
+        {
+            "from": 149,
+            "to": 148
+        },
+        {
+            "from": 150,
+            "to": 148
+        }
+    ]
+}
