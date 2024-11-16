@@ -12,8 +12,9 @@ Python is widely used in data science due to its simplicity and versatility. It 
 
 The key Python libraries for data analysis include:
 
--   **NumPy**: For numerical computing and array operations.
--   **Pandas**: For data manipulation and analysis using data structures like DataFrames.
+- **NumPy**: For numerical computing and array operations.
+- **Pandas**: For data manipulation and analysis using data structures like DataFrames.
+- **Plotly**: Modern interactive data visualization within a browser
 -   **Matplotlib**: For creating static, animated, and interactive visualizations.
 -   **Seaborn**: For statistical data visualization built on top of Matplotlib.
 -   **scikit-learn**: For machine learning algorithms and predictive data analysis.
