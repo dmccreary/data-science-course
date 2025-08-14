@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/concepts/concept-dependencies/">
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/06-models/">
       
       
-        <link rel="prev" href="../concept-enumeration/">
+        <link rel="prev" href="../05-linear-regression/">
       
       
-        <link rel="next" href="../concept-taxonomy/">
+        <link rel="next" href="../07-multiple-linear-regression/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Concept Dependencies - AI Based Data Science with Python</title>
+        <title>Model Evaluation - AI Based Data Science with Python</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#concept-dependencies" class="md-skip">
+        <a href="#model-evaluation-and-validation" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Concept Dependencies
+              Model Evaluation
             
           </span>
         </div>
@@ -249,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about.md" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -298,7 +298,67 @@
         
       
         
+          
+        
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
         
@@ -321,7 +381,7 @@
               
   
   <span class="md-ellipsis">
-    Concepts
+    Chapters
   </span>
   
 
@@ -337,7 +397,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Concepts
+            Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -350,11 +410,116 @@
   
   
     <li class="md-nav__item">
-      <a href="../concept-enumeration/" class="md-nav__link">
+      <a href="../00-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Concept Enumeration
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-data-exploration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Exploration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-data-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linear Regression
   </span>
   
 
@@ -380,54 +545,15 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Concept Dependencies
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Concept Dependencies
+    Model Evaluation
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -441,11 +567,200 @@
   
   
     <li class="md-nav__item">
-      <a href="../concept-taxonomy/" class="md-nav__link">
+      <a href="../07-multiple-linear-regression/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Concept Taxonomy
+    Multiple Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-nonlinear-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-linear Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-regularization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regularization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-neural-networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capstone Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matplotlib-vs-plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib vs Plotly
   </span>
   
 
@@ -476,6 +791,12 @@
         
       
         
+      
+        
+          
+        
+      
+        
           
         
       
@@ -496,7 +817,7 @@
       
   
   <span class="md-ellipsis">
-    Sims
+    MicroSims
   </span>
   
 
@@ -519,6 +840,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -537,7 +868,7 @@
         
   
   
-    <a href="../../prompts/faqs/" class="md-nav__link">
+    <a href="../../prompts/course-description/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -552,26 +883,6 @@
   
 
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faqs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Frequently Asked Questions
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -696,23 +1007,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -726,7 +1020,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/concepts/concept-dependencies.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/06-models/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -734,23 +1028,16 @@
   
 
 
-<h1 id="concept-dependencies">Concept Dependencies</h1>
-<h2 id="prompt">Prompt</h2>
-<div class="highlight"><pre><span></span><code>That was perfect.  Thank you very much.
-The next step is to create a dependency graph
-of all the 150 concepts on the list. 
-For each concept, think about other concepts
-that this concept depends upon for understanding.
-
-For each of the 150 concepts return a single row in CSV format.
-
-Column 1 is the ConceptID (the integer 1 to 150)
-Column 2 is the ConceptLabel
-Column 3 is the Dependencies in the form of pipe-delimited list of ConceptIDs
-
-Make sure that Foundation Concepts (prerequisites) like knowledge of Python don&#39;t have any dependencies.
-Make sure that every concept except Foundation Concepts have at least one dependency.
-</code></pre></div>
+<h1 id="model-evaluation-and-validation">Model Evaluation and Validation</h1>
+<ol>
+<li>Measuring model performance (R², MSE, MAE)</li>
+<li>Training and testing data splits</li>
+<li>MicroSim: Cross-validation simulation</li>
+<li>Understanding overfitting and underfitting</li>
+<li>Bias-variance trade-off</li>
+<li>Model selection criteria</li>
+<li>Performance metrics for different problem types</li>
+</ol>
 
 
 
@@ -786,7 +1073,7 @@ Make sure that every concept except Foundation Concepts have at least one depend
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../concept-enumeration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Concept Enumeration">
+          <a href="../05-linear-regression/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linear Regression">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -796,20 +1083,20 @@ Make sure that every concept except Foundation Concepts have at least one depend
                 Previous
               </span>
               <div class="md-ellipsis">
-                Concept Enumeration
+                Linear Regression
               </div>
             </div>
           </a>
         
         
           
-          <a href="../concept-taxonomy/" class="md-footer__link md-footer__link--next" aria-label="Next: Concept Taxonomy">
+          <a href="../07-multiple-linear-regression/" class="md-footer__link md-footer__link--next" aria-label="Next: Multiple Regression">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Concept Taxonomy
+                Multiple Regression
               </div>
             </div>
             <div class="md-footer__button md-icon">

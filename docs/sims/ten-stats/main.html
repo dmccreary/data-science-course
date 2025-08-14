@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ten Basic Statistics MicroSims – Progression Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --text: #e6eefc;
+      --muted: #b4c2e2;
+      --edge: #9fb4d9;
+      --accent: #7aa2ff;
+      --warn: #ffd54f;
+      --pre: #81c784; /* prerequisites */
+      --next: #64b5f6; /* next concepts */
+    }
+    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    header { padding: 14px 18px; background: linear-gradient(90deg, #0b1020, #0d1731 45%, #0b1020); border-bottom: 1px solid #1f2a49; }
+    header h1 { font-size: 18px; margin: 0; letter-spacing: .2px; font-weight: 650; }
+    #controls { display: grid; grid-template-columns: repeat(6, max-content) 1fr; gap: 10px 14px; align-items: center; padding: 12px 16px; background: var(--panel); border-bottom: 1px solid #1f2a49; }
+    #controls label { font-size: 13px; color: var(--muted); }
+    #controls button, #controls select, #controls input[type="checkbox"] { background: #0e1630; color: var(--text); border: 1px solid #1e2a4b; border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+    #controls button:hover { border-color: var(--accent); cursor: pointer; }
+    #legend { display:flex; gap: 14px; align-items:center; font-size:12px; color: var(--muted); }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius: 999px; background:#0e1630; border:1px solid #1e2a4b; }
+    .dot { width:12px; height:12px; border-radius:3px; display:inline-block; border:1px solid #233258; }
+    #layoutInfo { font-size: 12px; color: var(--muted); justify-self:end; }
+    #main { display: grid; grid-template-columns: 1fr 320px; gap: 0; height: calc(100% - 118px); }
+    #network { height: 100%; background: #0b1020; }
+    #side { border-left: 1px solid #1f2a49; background: #0e152a; padding: 14px; display:flex; flex-direction:column; gap:12px; }
+    #side h2 { font-size: 14px; margin: 0; letter-spacing: .2px; color: var(--muted); }
+    #side .card { background:#0c1326; border:1px solid #1e2a4b; border-radius:12px; padding:12px; }
+    #side .mini { font-size:12px; color: var(--muted); }
+    #side ul { margin:6px 0 0 16px; padding:0; }
+    #side li { margin: 2px 0; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; color: #b9c8ea; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Student Progression Map · Ten Basic Statistics MicroSims</h1>
+  </header>
+  <div id="controls">
+    <label><input id="toggleHier" type="checkbox" checked /> Hierarchical layout (L→R)</label>
+    <label><input id="togglePhys" type="checkbox" /> Enable physics</label>
+    <button id="fitBtn" title="Fit graph to screen">Fit to View</button>
+    <button id="resetBtn" title="Reset all styling">Reset Styling</button>
+    <button id="exportBtn" title="Download nodes/edges + event log">Export JSON</button>
+    <div id="legend">
+      <span class="chip"><span class="dot" style="background:#112a4c"></span> Fundamentals</span>
+      <span class="chip"><span class="dot" style="background:#123b2a"></span> Distributions</span>
+      <span class="chip"><span class="dot" style="background:#3b2a12"></span> Relationships</span>
+      <span class="chip"><span class="dot" style="background:#2a233b"></span> Regression</span>
+      <span class="chip"><span class="dot" style="background:#2b1f34"></span> Evaluation</span>
+      <span class="chip"><span class="dot" style="background:#1f2b34"></span> Sampling</span>
+      <span class="chip"><span class="dot" style="background:#342b1f"></span> Inference</span>
+    </div>
+    <div id="layoutInfo">Tip: click a node to highlight its prerequisites (green) and next concepts (blue).</div>
+  </div>
+
+  <div id="main">
+    <div id="network"></div>
+    <aside id="side">
+      <div class="card">
+        <h2>Selected Concept</h2>
+        <div id="selTitle" class="mono">(none)</div>
+        <div id="selDesc" class="mini">Click a node to see details, prerequisites, and next steps.</div>
+      </div>
+      <div class="card">
+        <h2>Prerequisites</h2>
+        <ul id="preList"></ul>
+      </div>
+      <div class="card">
+        <h2>Next Concepts</h2>
+        <ul id="nextList"></ul>
+      </div>
+      <div class="card">
+        <h2>Event Log</h2>
+        <div class="mini">Interactions are logged (clicks, drags, toggles) to support learning analytics.</div>
+        <div id="logCount" class="mono">0 events</div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script>
+    // ----- Data -----
+    // Node groups with dark theme backgrounds
+    const groupStyles = {
+      fundamentals: { color: { background: '#112a4c', border: '#2d64b3' }, font: { color: '#e6eefc' } },
+      distributions: { color: { background: '#123b2a', border: '#2e7d50' }, font: { color: '#e6eefc' } },
+      relationships: { color: { background: '#3b2a12', border: '#a77b2d' }, font: { color: '#fff2d5' } },
+      regression:    { color: { background: '#2a233b', border: '#7b6bb3' }, font: { color: '#ece8ff' } },
+      evaluation:    { color: { background: '#2b1f34', border: '#a259cf' }, font: { color: '#f6e9ff' } },
+      sampling:      { color: { background: '#1f2b34', border: '#4aaad6' }, font: { color: '#e6f7ff' } },
+      inference:     { color: { background: '#342b1f', border: '#d9a86b' }, font: { color: '#fff0e1' } }
+    };
+
+    const nodeData = [
+      { id: 1, label: 'Exploring Data Points', group: 'fundamentals', title: 'Click to add/remove points; build intuition about observations and coordinates.' },
+      { id: 2, label: 'Histogram Builder', group: 'distributions', title: 'Adjust bin size to see frequency distributions.' },
+      { id: 3, label: 'Mean & Median Explorer', group: 'distributions', title: 'Drag points to compare mean vs. median; explore outlier effects.' },
+      { id: 4, label: 'Distribution Shape Explorer', group: 'distributions', title: 'Morph among distribution shapes; understand skewness and kurtosis.' },
+      { id: 5, label: 'Correlation Playground', group: 'relationships', title: 'Drag clusters to alter correlation; see coefficient update.' },
+      { id: 6, label: 'Least Squares Line Fitter', group: 'regression', title: 'Tune slope/intercept to minimize squared residuals.' },
+      { id: 7, label: 'R² Intuition Builder', group: 'evaluation', title: 'Vary noise to see R² respond to fit quality.' },
+      { id: 8, label: 'Sampling Bias Demonstrator', group: 'sampling', title: 'Sample biased vs. random and observe effects on estimates.' },
+      { id: 9, label: 'Hypothesis Testing Visualizer', group: 'inference', title: 'Adjust sample statistics and observe p-values under a null.' },
+      { id: 10, label: 'Confidence Interval Explorer', group: 'inference', title: 'Simulate many samples and visualize interval coverage.' }
+    ];
+
+    const edgeData = [
+      { id:'e1', from:1, to:2 },
+      { id:'e2', from:1, to:3 },
+      { id:'e3', from:2, to:4 },
+      { id:'e4', from:3, to:4 },
+      { id:'e5', from:1, to:5 },
+      { id:'e6', from:4, to:5 },
+      { id:'e7', from:5, to:6 },
+      { id:'e8', from:6, to:7 },
+      { id:'e9', from:2, to:8 },
+      { id:'e10', from:3, to:8 },
+      { id:'e11', from:4, to:8 },
+      { id:'e12', from:8, to:9 },
+      { id:'e13', from:4, to:9 },
+      { id:'e14', from:3, to:9 },
+      { id:'e15', from:9, to:10 },
+      { id:'e16', from:4, to:10 },
+      { id:'e17', from:8, to:10 }
+    ];
+
+    // DataSets
+    const nodes = new vis.DataSet(nodeData.map(n => ({...n, shape:'box', margin: 8})));
+    const edges = new vis.DataSet(edgeData);
+
+    // Network
+    const container = document.getElementById('network');
+    const data = { nodes, edges };
+
+    const baseOptions = {
+      autoResize: true,
+      height: '100%',
+      layout: { hierarchical: { enabled: true, direction: 'LR', sortMethod: 'directed', nodeSpacing: 180, levelSeparation: 150 } },
+      physics: { enabled: false },
+      nodes: { borderWidth: 1.5, shape: 'box', color: { border: '#4b5c8d' }, font: { face: 'Inter', size: 14 } },
+      edges: { arrows: 'to', color: { color: '#5f7db3', highlight: '#a8c6ff' }, width: 1.4, smooth: { type: 'cubicBezier', roundness: 0.25 } },
+      interaction: { hover: true, tooltipDelay: 80, navigationButtons: false, keyboard: {enabled: true, bindToWindow: true} }
+    };
+
+    // Apply group styles
+    Object.entries(groupStyles).forEach(([name, style]) => nodes.forEach(node => {
+      if (node.group === name) nodes.update({ id: node.id, color: style.color, font: style.font });
+    }));
+
+    const network = new vis.Network(container, data, baseOptions);
+
+    // ----- Interaction logging -----
+    const eventsLog = [];
+    const logCount = document.getElementById('logCount');
+    function logEvent(type, payload) {
+      eventsLog.push({ t: new Date().toISOString(), type, payload });
+      logCount.textContent = `${eventsLog.length} event${eventsLog.length === 1 ? '' : 's'}`;
+    }
+
+    // ----- UI controls -----
+    const toggleHier = document.getElementById('toggleHier');
+    const togglePhys = document.getElementById('togglePhys');
+    const fitBtn = document.getElementById('fitBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const exportBtn = document.getElementById('exportBtn');
+
+    toggleHier.addEventListener('change', (e) => {
+      const enabled = e.target.checked;
+      network.setOptions({ layout: { hierarchical: enabled ? { enabled: true, direction: 'LR', sortMethod: 'directed', nodeSpacing: 180, levelSeparation: 150 } : false } });
+      logEvent('toggleHierarchical', { enabled });
+      setTimeout(() => network.fit({ animation: { duration: 400, easingFunction: 'easeInOutCubic' } }), 20);
+    });
+
+    togglePhys.addEventListener('change', (e) => {
+      const enabled = e.target.checked;
+      network.setOptions({ physics: { enabled } });
+      logEvent('togglePhysics', { enabled });
+    });
+
+    fitBtn.addEventListener('click', () => { network.fit({ animation: true }); logEvent('fit'); });
+
+    resetBtn.addEventListener('click', () => { resetStyling(); logEvent('resetStyling'); });
+
+    exportBtn.addEventListener('click', () => {
+      const payload = {
+        nodes: nodes.get(),
+        edges: edges.get(),
+        events: eventsLog
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'progression-map-export.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      logEvent('export');
+    });
+
+    // ----- Selection behavior & highlighting -----
+    const selTitle = document.getElementById('selTitle');
+    const selDesc = document.getElementById('selDesc');
+    const preList = document.getElementById('preList');
+    const nextList = document.getElementById('nextList');
+
+    function resetStyling() {
+      nodes.forEach(n => {
+        const g = n.group; const style = groupStyles[g];
+        nodes.update({ id: n.id, color: style.color });
+      });
+      edges.forEach(e => edges.update({ id: e.id, color: { color: '#5f7db3', highlight: '#a8c6ff' }, width: 1.4, dashes: false }));
+      preList.innerHTML = '';
+      nextList.innerHTML = '';
+      selTitle.textContent = '(none)';
+      selDesc.textContent = 'Click a node to see details, prerequisites, and next steps.';
+    }
+
+    function setList(ul, ids) {
+      ul.innerHTML = '';
+      ids.forEach(id => {
+        const n = nodes.get(id);
+        const li = document.createElement('li');
+        li.textContent = n ? n.label : id;
+        ul.appendChild(li);
+      });
+    }
+
+    function highlightNeighborhood(centerId) {
+      const successors = network.getConnectedNodes(centerId, 'to');
+      const predecessors = network.getConnectedNodes(centerId, 'from');
+
+      nodes.forEach(n => {
+        let bg = '#0b1020'; let border = '#233258';
+        if (n.id === centerId) { bg = 'var(--warn)'; border = '#856404'; }
+        else if (predecessors.includes(n.id)) { bg = 'var(--pre)'; border = '#2e7d32'; }
+        else if (successors.includes(n.id)) { bg = 'var(--next)'; border = '#1e88e5'; }
+        else { const g = n.group; bg = groupStyles[g].color.background; border = '#232f52'; }
+        nodes.update({ id: n.id, color: { background: bg, border } });
+      });
+
+      edges.forEach(e => {
+        const active = (e.from === centerId) || (e.to === centerId) || predecessors.includes(e.from) && e.to === centerId || successors.includes(e.to) && e.from === centerId;
+        edges.update({ id: e.id, color: { color: active ? '#cfe4ff' : '#35507e', highlight: '#ffffff' }, width: active ? 2.6 : 1.2, dashes: !active });
+      });
+
+      setList(preList, predecessors);
+      setList(nextList, successors);
+    }
+
+    network.on('selectNode', (params) => {
+      const id = params.nodes[0];
+      const n = nodes.get(id);
+      selTitle.textContent = n.label;
+      selDesc.textContent = n.title || '';
+      highlightNeighborhood(id);
+      logEvent('selectNode', { id });
+    });
+
+    network.on('deselectNode', () => { resetStyling(); logEvent('deselectNode'); });
+    network.on('dragEnd', (params) => logEvent('dragEnd', params));
+    network.on('doubleClick', (params) => logEvent('doubleClick', params));
+
+    // Initialize
+    resetStyling();
+    network.fit({ animation: true });
+  </script>
+</body>
+</html>
