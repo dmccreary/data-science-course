@@ -1,9 +1,13 @@
-# Python and Visual Studio Code Environment Setup
+# Setting up Python, Visual Studio Code and Jupyter Notebooks
 
-In this course will will use both Python and Visual Studio code to do our classroom work.
+In this course will will use, Python, Visual Studio Code and Jupyter Notebooks to do our classroom work.
 We selected these tools because they are the most popular development environments
 in data science today.  You are free to use other tools in this course, however
 you may need to use generative AI to translate our code into other systems.
+In addition, we strongly recommend each student create their own personal
+GitHub repository to store their work.  Because GitHub is backed up the
+students only need to check their code into GitHub using either a command line
+or Source Control section of Visual Studio Code.
 
 We will be using the following tools for our desktop setup:
 
@@ -12,6 +16,8 @@ We will be using the following tools for our desktop setup:
 3. Pip - Python installer package
 
 ## Conda
+
+Create a "Data Science" conda environment.
 
 ```sh
 conda create -n "ds" python=3

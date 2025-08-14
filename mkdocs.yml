@@ -29,19 +29,19 @@ nav:
     - Advanced Evaluation: chapters/14-model-evaluation/index.md
     - Capstone Projects: chapters/15-projects/index.md
     - Matplotlib vs Plotly: chapters/matplotlib-vs-plotly.md
-  - Concepts:
-    - Intro: concepts/index.md
-    - concepts/concept-enumeration.md
-    - concepts/concept-dependencies.md
-    - concepts/concept-taxonomy.md
-  - Sims:
+  - MicroSims:
     - Introduction: sims/index.md
+    - 100 MicroSims: sims/100-microsims/index.md
     - Learning Graph: sims/learning-graph/index.md
   - Prompts:
-    - FAQ: prompts/faqs.md
-    - Glossary: prompts/glossary.md
-  
-  - Frequently Asked Questions: faqs.md
+      - Course Description: prompts/course-description.md
+
+      - Concept Enumeration: prompts/concept-enumeration.md
+      - Concept Dependencies: prompts/concept-dependencies.md
+      - Concept Taxonomy: prompts/concept-taxonomy.md
+      - FAQ: prompts/faqs.md
+      - Glossary: prompts/glossary.md
+      - Frequently Asked Questions: faqs.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - License: license.md

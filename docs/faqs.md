@@ -4,9 +4,37 @@
 
 Data science is an interdisciplinary field that combines domain expertise, programming skills, and knowledge of mathematics and statistics to extract meaningful insights from data. It is important because it enables organizations to make informed decisions, predict trends, and solve complex problems by analyzing large datasets.
 
-#### How is Python used in data science?
+#### Why is Python used in data science?
 
 Python is widely used in data science due to its simplicity and versatility. It offers a vast ecosystem of libraries and frameworks like NumPy, Pandas, Matplotlib, and scikit-learn, which facilitate data manipulation, analysis, visualization, and machine learning tasks.
+
+#### What are Jupyter Notebooks?
+
+Jupyter Notebooks are interactive web-based computing environments that allow you to create and share documents containing live code, equations, visualizations, and narrative text. They are particularly popular in data science, research, and education for their ability to combine code execution with rich documentation.
+
+**Key Features:**
+- **Interactive Code Execution**: Run code cells individually and see results immediately
+- **Multiple Language Support**: Primarily Python, but also supports R, Julia, Scala, and 40+ other languages
+- **Rich Output Display**: Show plots, tables, HTML, images, and interactive widgets inline
+- **Markdown Support**: Write formatted text, equations (LaTeX), and documentation alongside code
+- **Easy Sharing**: Export to HTML, PDF, or share via GitHub, making collaboration simple
+
+**Why Use Jupyter Notebooks for Data Science?**
+- **Exploratory Data Analysis**: Perfect for iterative data exploration and visualization
+- **Prototyping**: Quickly test ideas and algorithms before building production code
+- **Documentation**: Combine code with explanations, making analysis reproducible and understandable
+- **Education**: Ideal for learning and teaching data science concepts with immediate feedback
+- **Presentation**: Create compelling data stories with code, visualizations, and narrative
+
+**Common Use Cases:**
+- Data cleaning and preprocessing
+- Statistical analysis and modeling
+- Machine learning experimentation
+- Creating reproducible research
+- Building interactive dashboards
+- Educational tutorials and assignments
+
+In this course, you'll use Jupyter Notebooks extensively for hands-on exercises, MicroSims, and project work, allowing you to experiment with data science concepts in an interactive environment.
 
 #### What are the key Python libraries for data analysis?
 
@@ -15,9 +43,9 @@ The key Python libraries for data analysis include:
 - **NumPy**: For numerical computing and array operations.
 - **Pandas**: For data manipulation and analysis using data structures like DataFrames.
 - **Plotly**: Modern interactive data visualization within a browser
--   **Matplotlib**: For creating static, animated, and interactive visualizations.
--   **Seaborn**: For statistical data visualization built on top of Matplotlib.
--   **scikit-learn**: For machine learning algorithms and predictive data analysis.
+- **Matplotlib**: For creating static, animated, and interactive visualizations.
+- **Seaborn**: For statistical data visualization built on top of Matplotlib.
+- **scikit-learn**: For machine learning algorithms and predictive data analysis.
 
 #### How do you import a CSV file into a Pandas DataFrame?
 
