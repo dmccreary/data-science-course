@@ -32,6 +32,7 @@ nav:
   - MicroSims:
     - Introduction: sims/index.md
     - 100 MicroSims: sims/100-microsims/index.md
+    - Least Squares: sims/least-squares/index.md
     - Learning Graph: sims/learning-graph/index.md
   - Prompts:
       - Course Description: prompts/course-description.md

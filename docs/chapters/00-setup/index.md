@@ -24,10 +24,112 @@ conda create -n "ds" python=3
 conda activate ds
 ```
 
-## Pip Install Commands
+## Installing Jupyter Notebooks
+
+Jupyter Notebooks are essential for this course as they provide an interactive environment for data science work. There are several ways to install and use Jupyter Notebooks:
+
+### Method 1: Install via Conda (Recommended)
+
+After activating your conda environment, install Jupyter:
 
 ```sh
-pip install matplotlib
+conda activate ds
+conda install jupyter
+```
+
+### Method 2: Install via Pip
+
+Alternatively, you can install using pip:
+
+```sh
+pip install jupyter
+```
+
+### Method 3: Install JupyterLab (Enhanced Interface)
+
+For a more modern interface, you can install JupyterLab:
+
+```sh
+pip install jupyterlab
+```
+
+## Running Jupyter Notebooks
+
+### Starting Jupyter Notebook Server
+
+To start the Jupyter Notebook server:
+
+```sh
+# Activate your environment first
+conda activate ds
+
+# Start Jupyter Notebook
+jupyter notebook
+```
+
+This will:
+1. Start a local server (usually at `http://localhost:8888`)
+2. Automatically open your web browser to the Jupyter interface
+3. Display your file system where you can create new notebooks or open existing ones
+
+### Starting JupyterLab
+
+If you installed JupyterLab:
+
+```sh
+jupyter lab
+```
+
+## Using Jupyter Notebooks in Visual Studio Code
+
+Visual Studio Code provides excellent built-in support for Jupyter Notebooks, offering a seamless development experience.
+
+### Installing the Jupyter Extension
+
+1. Open Visual Studio Code
+2. Go to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+3. Search for "Jupyter" 
+4. Install the official "Jupyter" extension by Microsoft
+
+### Working with Notebooks in VS Code
+
+**Creating a New Notebook:**
+1. Open VS Code
+2. Create a new file with `.ipynb` extension (e.g., `my_analysis.ipynb`)
+3. VS Code will automatically recognize it as a Jupyter notebook
+
+**Selecting Python Interpreter:**
+1. Open a notebook file
+2. Click on "Select Kernel" in the top-right corner
+3. Choose your conda environment (`ds`) as the Python interpreter
+
+**Running Code Cells:**
+- **Run Single Cell**: Click the play button next to a cell or press `Shift+Enter`
+- **Run All Cells**: Use `Ctrl+Shift+P` (or `Cmd+Shift+P`) and search "Jupyter: Run All Cells"
+- **Add New Cell**: Click the `+ Code` or `+ Markdown` buttons between cells
+
+### Advantages of Using Jupyter in VS Code
+
+- **Integrated Development**: Code editing, debugging, and notebook execution in one interface
+- **Git Integration**: Easy version control for notebook files
+- **IntelliSense**: Code completion and syntax highlighting
+- **Variable Explorer**: View variables and data structures in real-time
+- **Debugging Support**: Set breakpoints and debug notebook code
+- **Extensions**: Access to VS Code's rich extension ecosystem
+
+### Installing Essential Data Science Packages
+
+Install the core packages you'll need for this course:
+
+```sh
+# Activate your environment
+conda activate ds
+
+# Install essential data science packages
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+
+# Optional: Install additional useful packages
+pip install plotly ipywidgets
 ```
 
 ## Transcript
