@@ -2,40 +2,76 @@
 
 ## Prompt
 
-```linenums="0"
-That was excellent.  Now we need a Glossary of Terms.
+!!! prompt
+    Please generate an glossary of terms for the 250 most frequently used terms used in an introductory course 
+    in introduction to data science with Python.
+    Make sure to include the names of Python libraries used in data science.
+    The target audience for this glossary is college freshmen.
+    Each term should have a term name in a level-4 markdown (####) and the
+    definition placed in the body text.
+    Do not use the term in the definition of the term.
+    The definition should be precise, concise and distinct.
+    If appropriate, create an **Example:** of how that term is used in the
+    Introduction to Data Science with Python course.  Do not place a newline after the Example:
+    Return the glossary of terms in alphabetical order.
+    A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:
 
-Please generate an alphabetical glossary of the 100 most
-frequently used terms for this course.  Each term should
-have a term name in a level-4 markdown (####) and the
-definition placed in the body text.  If appropriate,
-create an **Example:** of how that term is used in the
-Introduction to Data Science with Python course.
+    1. Precise
+    2. Concise
+    3. Distinct
+    4. Non-circular
+    5. Unencumbered with business rules
+
+#### Accuracy
+
+A metric used to evaluate classification models, representing the proportion of correct predictions over the total number of predictions.
+
+**Example:** In a spam email classifier, if the model correctly identifies 90 out of 100 emails, the accuracy is 90%.
+
+#### Algorithm
+
+A step-by-step procedure or set of rules designed to perform a specific task or solve a problem.
+
+**Example:** Implementing the k-means clustering algorithm to group similar data points in an unsupervised learning task.
+
+#### Anaconda
+
+A free and open-source distribution of Python and R programming languages for scientific computing and data science.
+
+**Example:** Using Anaconda to manage Python packages and environments for data analysis projects in the course.
+
+#### Analytics
+
+The examining data sets to draw conclusions about the information they contain, often using specialized software and statistical techniques.
+
+**Example:** Performing customer behavior analytics using Pandas and Matplotlib to improve marketing strategies.
+
+
 ```
 
 ## ChatGPT o1-preview Response
 
 #### Accuracy
 
-Accuracy is a metric used to evaluate classification models, representing the proportion of correct predictions over the total number of predictions.
+A metric used to evaluate classification models, representing the proportion of correct predictions over the total number of predictions.
 
 **Example:** In a spam email classifier, if the model correctly identifies 90 out of 100 emails, the accuracy is 90%.
 
 #### Algorithm
 
-An algorithm is a step-by-step procedure or set of rules designed to perform a specific task or solve a problem.
+A step-by-step procedure or set of rules designed to perform a specific task or solve a problem.
 
 **Example:** Implementing the k-means clustering algorithm to group similar data points in an unsupervised learning task.
 
 #### Anaconda
 
-Anaconda is a free and open-source distribution of Python and R programming languages for scientific computing and data science.
+A free and open-source distribution of Python and R programming languages for scientific computing and data science.
 
 **Example:** Using Anaconda to manage Python packages and environments for data analysis projects in the course.
 
 #### Analytics
 
-Analytics involves examining data sets to draw conclusions about the information they contain, often using specialized software and statistical techniques.
+The examining data sets to draw conclusions about the information they contain, often using specialized software and statistical techniques.
 
 **Example:** Performing customer behavior analytics using Pandas and Matplotlib to improve marketing strategies.
 

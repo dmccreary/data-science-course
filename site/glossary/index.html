@@ -1,0 +1,3708 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Using generative AI to teach data science with Pyton. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/glossary/">
+      
+      
+        <link rel="prev" href="../faqs/">
+      
+      
+        <link rel="next" href="../how-we-built-this-site/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Glossary - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glossary-of-terms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Glossary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../concepts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../prompts/faqs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iso-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISO Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accuracy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anaconda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-application-programming-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      API (Application Programming Interface)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artificial Intelligence (AI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auc-area-under-the-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUC (Area Under the Curve)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bagging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bar Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias-variance-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias-Variance Tradeoff
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#box-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Box Plot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bootstrapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clustering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion Matrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correlation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-comma-separated-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV (Comma-Separated Values)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Mining
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensionality-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensionality Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dummy-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dummy Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensemble-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ensemble Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploratory-data-analysis-eda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploratory Data Analysis (EDA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f1-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Boosting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Descent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grid Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histogram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperparameter Tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypothesis Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imputation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imputation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inferential-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inferential Statistics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-javascript-object-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON (JavaScript Object Notation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      k-means Clustering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Nearest Neighbors (KNN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Rate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logistic Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matplotlib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multicollinearity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multicollinearity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Processing (NLP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normal Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-hot-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-Hot Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overfitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pandas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca-principal-component-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA (Principal Component Analysis)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predictive-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predictive Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probability-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probability Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Forest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regularization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roc-curve-receiver-operating-characteristic-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC Curve (Receiver Operating Characteristic Curve)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-mean-squared-error-rmse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Mean Squared Error (RMSE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scikit-learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seaborn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smote-synthetic-minority-over-sampling-technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMOTE (Synthetic Minority Over-sampling Technique)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-deviation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Deviation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standardscaler" class="md-nav__link">
+    <span class="md-ellipsis">
+      StandardScaler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistical-significance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistical Significance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Series
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      T-test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#underfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Underfitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unsupervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unsupervised Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weight
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xgboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      XGBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion Matrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperparameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lasso-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lasso Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean-absolute-error-mae" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mean Absolute Error (MAE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overfitting_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overfitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pearson-correlation-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pearson Correlation Coefficient
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-squared-coefficient-of-determination" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-Squared (Coefficient of Determination)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling Bias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#univariate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Univariate Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variance-inflation-factor-vif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variance Inflation Factor (VIF)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#white-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      White Noise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-entropy-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Entropy Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epoch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Epoch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperplane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Curve
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loss Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-Batch Gradient Descent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multivariate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multivariate Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Processing (NLP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision-recall-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision-Recall Curve
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stratified-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratified Sampling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-vector-machine-svm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support Vector Machine (SVM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthetic-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synthetic Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-i-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type I Error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-ii-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type II Error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weight-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weight Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xgboost_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      XGBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z-score-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-score Normalization
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iso-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISO Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accuracy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anaconda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-application-programming-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      API (Application Programming Interface)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artificial Intelligence (AI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auc-area-under-the-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUC (Area Under the Curve)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bagging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bar Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias-variance-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias-Variance Tradeoff
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#box-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Box Plot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bootstrapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clustering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion Matrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correlation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-comma-separated-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV (Comma-Separated Values)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Mining
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensionality-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensionality Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dummy-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dummy Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensemble-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ensemble Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploratory-data-analysis-eda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploratory Data Analysis (EDA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f1-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Boosting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Descent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grid Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histogram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperparameter Tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypothesis Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imputation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imputation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inferential-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inferential Statistics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-javascript-object-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON (JavaScript Object Notation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      k-means Clustering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Nearest Neighbors (KNN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Rate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logistic Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matplotlib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multicollinearity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multicollinearity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Processing (NLP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normal Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-hot-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-Hot Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overfitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pandas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca-principal-component-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA (Principal Component Analysis)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predictive-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predictive Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probability-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probability Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Forest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regularization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roc-curve-receiver-operating-characteristic-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC Curve (Receiver Operating Characteristic Curve)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-mean-squared-error-rmse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Mean Squared Error (RMSE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scikit-learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seaborn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smote-synthetic-minority-over-sampling-technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMOTE (Synthetic Minority Over-sampling Technique)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-deviation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Deviation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standardscaler" class="md-nav__link">
+    <span class="md-ellipsis">
+      StandardScaler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistical-significance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistical Significance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Series
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      T-test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#underfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Underfitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unsupervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unsupervised Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weight
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xgboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      XGBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion Matrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperparameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lasso-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lasso Regression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean-absolute-error-mae" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mean Absolute Error (MAE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overfitting_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overfitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pearson-correlation-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pearson Correlation Coefficient
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-squared-coefficient-of-determination" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-Squared (Coefficient of Determination)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling Bias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#univariate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Univariate Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variance-inflation-factor-vif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variance Inflation Factor (VIF)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#white-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      White Noise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-entropy-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Entropy Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epoch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Epoch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperplane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Curve
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loss Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-Batch Gradient Descent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multivariate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multivariate Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Processing (NLP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision-recall-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision-Recall Curve
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stratified-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratified Sampling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-vector-machine-svm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support Vector Machine (SVM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthetic-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synthetic Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-i-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type I Error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-ii-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type II Error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weight-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weight Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xgboost_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      XGBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z-score-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-score Normalization
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/glossary.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="glossary-of-terms">Glossary of Terms</h1>
+<h4 id="iso-definition">ISO Definition</h4>
+<p>A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:</p>
+<ol>
+<li>Precise</li>
+<li>Concise</li>
+<li>Distinct</li>
+<li>Non-circular</li>
+<li>Unencumbered with business rules</li>
+</ol>
+<h4 id="accuracy">Accuracy</h4>
+<p>Accuracy is a metric used to evaluate classification models, representing the proportion of correct predictions over the total number of predictions.</p>
+<p><strong>Example:</strong> In a spam email classifier, if the model correctly identifies 90 out of 100 emails, the accuracy is 90%.</p>
+<h4 id="algorithm">Algorithm</h4>
+<p>An algorithm is a step-by-step procedure or set of rules designed to perform a specific task or solve a problem.</p>
+<p><strong>Example:</strong> Implementing the k-means clustering algorithm to group similar data points in an unsupervised learning task.</p>
+<h4 id="anaconda">Anaconda</h4>
+<p>Anaconda is a free and open-source distribution of Python and R programming languages for scientific computing and data science.</p>
+<p><strong>Example:</strong> Using Anaconda to manage Python packages and environments for data analysis projects in the course.</p>
+<h4 id="analytics">Analytics</h4>
+<p>Analytics involves examining data sets to draw conclusions about the information they contain, often using specialized software and statistical techniques.</p>
+<p><strong>Example:</strong> Performing customer behavior analytics using Pandas and Matplotlib to improve marketing strategies.</p>
+<h4 id="api-application-programming-interface">API (Application Programming Interface)</h4>
+<p>An API is a set of protocols and tools that allow different software applications to communicate with each other.</p>
+<p><strong>Example:</strong> Utilizing the Twitter API to collect real-time tweets for sentiment analysis in Python.</p>
+<h4 id="array">Array</h4>
+<p>An array is a data structure that stores a collection of items at contiguous memory locations, allowing for efficient indexing.</p>
+<p><strong>Example:</strong> Using NumPy arrays to perform vectorized operations for faster numerical computations.</p>
+<h4 id="artificial-intelligence-ai">Artificial Intelligence (AI)</h4>
+<p>AI is the simulation of human intelligence processes by machines, especially computer systems, enabling them to perform tasks that typically require human intelligence.</p>
+<p><strong>Example:</strong> Exploring AI concepts by implementing machine learning models that can recognize images or understand natural language.</p>
+<h4 id="attribute">Attribute</h4>
+<p>An attribute refers to a variable or feature in a dataset that represents a characteristic of the data points.</p>
+<p><strong>Example:</strong> In a dataset of cars, attributes might include horsepower, weight, and fuel efficiency.</p>
+<h4 id="auc-area-under-the-curve">AUC (Area Under the Curve)</h4>
+<p>AUC is a performance metric for classification models, representing the area under the Receiver Operating Characteristic (ROC) curve.</p>
+<p><strong>Example:</strong> Comparing models by evaluating their AUC scores to determine which has better classification performance.</p>
+<h4 id="bagging">Bagging</h4>
+<p>Bagging, short for Bootstrap Aggregating, is an ensemble learning technique that improves model stability and accuracy by combining predictions from multiple models trained on random subsets of the data.</p>
+<p><strong>Example:</strong> Implementing bagging with decision trees to reduce variance and prevent overfitting in the course project.</p>
+<h4 id="bar-chart">Bar Chart</h4>
+<p>A bar chart is a graphical representation of data using rectangular bars to show the frequency or value of different categories.</p>
+<p><strong>Example:</strong> Creating a bar chart with Matplotlib to visualize the count of different species in an ecological dataset.</p>
+<h4 id="bias">Bias</h4>
+<p>Bias refers to the error introduced by approximating a real-world problem, which may be complex, by a much simpler model.</p>
+<p><strong>Example:</strong> Recognizing high bias in a linear model that underfits the data during regression analysis.</p>
+<h4 id="bias-variance-tradeoff">Bias-Variance Tradeoff</h4>
+<p>The bias-variance tradeoff is the balance between a model's ability to generalize to new data (variance) and its accuracy on the training data (bias).</p>
+<p><strong>Example:</strong> Adjusting the complexity of a model to find the optimal point where both bias and variance are minimized.</p>
+<h4 id="big-data">Big Data</h4>
+<p>Big Data refers to datasets that are too large or complex for traditional data-processing software to handle efficiently.</p>
+<p><strong>Example:</strong> Discussing how tools like Hadoop or Spark can process big data in the context of data science.</p>
+<h4 id="box-plot">Box Plot</h4>
+<p>A box plot is a graphical representation of data that displays the distribution's quartiles and averages, highlighting the median and outliers.</p>
+<p><strong>Example:</strong> Using Seaborn to create box plots for visualizing the distribution of test scores across different classrooms.</p>
+<h4 id="bootstrapping">Bootstrapping</h4>
+<p>Bootstrapping is a statistical resampling technique that involves repeatedly drawing samples from a dataset with replacement to estimate a population parameter.</p>
+<p><strong>Example:</strong> Applying bootstrapping methods to estimate confidence intervals for a sample mean in a data analysis assignment.</p>
+<h4 id="classification">Classification</h4>
+<p>Classification is a supervised learning task where the goal is to predict discrete labels or categories for given input data.</p>
+<p><strong>Example:</strong> Building a logistic regression model to classify emails as spam or not spam.</p>
+<h4 id="clustering">Clustering</h4>
+<p>Clustering is an unsupervised learning technique that groups similar data points together based on their features.</p>
+<p><strong>Example:</strong> Using k-means clustering to segment customers into different groups based on purchasing behavior.</p>
+<h4 id="confusion-matrix">Confusion Matrix</h4>
+<p>A confusion matrix is a table used to evaluate the performance of a classification model by comparing predicted and actual labels.</p>
+<p><strong>Example:</strong> Analyzing a confusion matrix to calculate precision and recall for a disease diagnosis model.</p>
+<h4 id="correlation">Correlation</h4>
+<p>Correlation measures the statistical relationship between two variables, indicating how one may predict the other.</p>
+<p><strong>Example:</strong> Calculating the correlation coefficient between hours studied and exam scores to determine their relationship.</p>
+<h4 id="cross-validation">Cross-Validation</h4>
+<p>Cross-validation is a technique for assessing how a predictive model will perform on an independent dataset by partitioning the data into complementary subsets for training and validation.</p>
+<p><strong>Example:</strong> Using k-fold cross-validation to evaluate the generalization performance of a machine learning model.</p>
+<h4 id="csv-comma-separated-values">CSV (Comma-Separated Values)</h4>
+<p>CSV is a file format that uses commas to separate values, commonly used for storing tabular data.</p>
+<p><strong>Example:</strong> Importing a CSV file into a Pandas DataFrame to begin data analysis.</p>
+<h4 id="dataframe">DataFrame</h4>
+<p>A DataFrame is a two-dimensional labeled data structure in Pandas, similar to a spreadsheet or SQL table.</p>
+<p><strong>Example:</strong> Manipulating data stored in a DataFrame to clean and prepare it for analysis.</p>
+<h4 id="data-mining">Data Mining</h4>
+<p>Data mining is the process of discovering patterns and knowledge from large amounts of data.</p>
+<p><strong>Example:</strong> Extracting useful information from a large customer database to identify purchasing trends.</p>
+<h4 id="data-science">Data Science</h4>
+<p>Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract insights from structured and unstructured data.</p>
+<p><strong>Example:</strong> Applying data science techniques to analyze social media data for sentiment analysis.</p>
+<h4 id="data-visualization">Data Visualization</h4>
+<p>Data visualization is the graphical representation of data to help people understand complex data easily.</p>
+<p><strong>Example:</strong> Creating interactive dashboards using Matplotlib or Seaborn to present findings.</p>
+<h4 id="decision-tree">Decision Tree</h4>
+<p>A decision tree is a flowchart-like structure used for making decisions or predictions based on input features.</p>
+<p><strong>Example:</strong> Building a decision tree classifier to predict whether a loan application should be approved.</p>
+<h4 id="deep-learning">Deep Learning</h4>
+<p>Deep learning is a subset of machine learning involving neural networks with multiple layers that can learn representations from data.</p>
+<p><strong>Example:</strong> Exploring deep learning concepts by creating a neural network for image recognition tasks.</p>
+<h4 id="dimensionality-reduction">Dimensionality Reduction</h4>
+<p>Dimensionality reduction involves reducing the number of input variables in a dataset while retaining as much information as possible.</p>
+<p><strong>Example:</strong> Using Principal Component Analysis (PCA) to reduce features before training a model.</p>
+<h4 id="distribution">Distribution</h4>
+<p>A distribution describes how values of a variable are spread or dispersed.</p>
+<p><strong>Example:</strong> Plotting the normal distribution of test scores to analyze class performance.</p>
+<h4 id="dummy-variable">Dummy Variable</h4>
+<p>A dummy variable is a binary variable created to include categorical data in regression models.</p>
+<p><strong>Example:</strong> Converting categorical variables like 'Gender' into dummy variables for a regression analysis.</p>
+<h4 id="encoding">Encoding</h4>
+<p>Encoding transforms data into a different format using a specific scheme.</p>
+<p><strong>Example:</strong> Applying one-hot encoding to convert categorical variables into numerical format for machine learning models.</p>
+<h4 id="ensemble-learning">Ensemble Learning</h4>
+<p>Ensemble learning combines predictions from multiple machine learning models to improve overall performance.</p>
+<p><strong>Example:</strong> Using a random forest, which is an ensemble of decision trees, to enhance prediction accuracy.</p>
+<h4 id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h4>
+<p>EDA is an approach to analyzing data sets to summarize their main characteristics, often using visual methods.</p>
+<p><strong>Example:</strong> Performing EDA to detect anomalies and patterns before building predictive models.</p>
+<h4 id="feature-engineering">Feature Engineering</h4>
+<p>Feature engineering involves creating new input features from existing ones to improve model performance.</p>
+<p><strong>Example:</strong> Combining 'Date of Birth' and 'Current Date' to create a new feature 'Age' for a predictive model.</p>
+<h4 id="feature-scaling">Feature Scaling</h4>
+<p>Feature scaling adjusts the range of features in the data to ensure they contribute equally to the model.</p>
+<p><strong>Example:</strong> Applying standardization to features before using gradient descent algorithms.</p>
+<h4 id="feature-selection">Feature Selection</h4>
+<p>Feature selection is the process of selecting a subset of relevant features for model construction.</p>
+<p><strong>Example:</strong> Using correlation analysis to remove redundant features that do not improve the model.</p>
+<h4 id="function">Function</h4>
+<p>In programming, a function is a block of organized, reusable code that performs a single action.</p>
+<p><strong>Example:</strong> Defining a Python function to calculate the mean of a list of numbers in data analysis.</p>
+<h4 id="f1-score">F1 Score</h4>
+<p>The F1 score is the harmonic mean of precision and recall, used as a measure of a test's accuracy.</p>
+<p><strong>Example:</strong> Evaluating a classification model with imbalanced classes using the F1 score.</p>
+<h4 id="gradient-boosting">Gradient Boosting</h4>
+<p>Gradient Boosting is an ensemble technique that builds models sequentially, each correcting the errors of the previous one.</p>
+<p><strong>Example:</strong> Implementing Gradient Boosting Machines (GBM) to improve prediction accuracy on complex datasets.</p>
+<h4 id="gradient-descent">Gradient Descent</h4>
+<p>Gradient descent is an optimization algorithm used to minimize the cost function in machine learning models.</p>
+<p><strong>Example:</strong> Using gradient descent to find the optimal weights in a linear regression model.</p>
+<h4 id="grid-search">Grid Search</h4>
+<p>Grid search is a hyperparameter optimization technique that exhaustively searches through a specified subset of hyperparameters.</p>
+<p><strong>Example:</strong> Applying grid search to find the best combination of parameters for a support vector machine classifier.</p>
+<h4 id="histogram">Histogram</h4>
+<p>A histogram is a graphical representation showing the distribution of numerical data by depicting the number of data points that fall within specified ranges.</p>
+<p><strong>Example:</strong> Creating a histogram to visualize the frequency distribution of ages in a dataset.</p>
+<h4 id="hyperparameter-tuning">Hyperparameter Tuning</h4>
+<p>Hyperparameter tuning involves adjusting the parameters that govern the training process of a model to improve performance.</p>
+<p><strong>Example:</strong> Tuning the number of trees and depth in a random forest model to achieve better accuracy.</p>
+<h4 id="hypothesis-testing">Hypothesis Testing</h4>
+<p>Hypothesis testing is a statistical method used to make decisions about the properties of a population based on sample data.</p>
+<p><strong>Example:</strong> Conducting a t-test to determine if there is a significant difference between two groups' means.</p>
+<h4 id="imputation">Imputation</h4>
+<p>Imputation is the process of replacing missing data with substituted values.</p>
+<p><strong>Example:</strong> Filling missing values in a dataset with the mean or median of the column.</p>
+<h4 id="inferential-statistics">Inferential Statistics</h4>
+<p>Inferential statistics use a random sample of data taken from a population to describe and make inferences about the population.</p>
+<p><strong>Example:</strong> Estimating the average height of all students in a university by sampling a subset.</p>
+<h4 id="interpolation">Interpolation</h4>
+<p>Interpolation is a method of estimating unknown values that fall between known data points.</p>
+<p><strong>Example:</strong> Using interpolation to estimate missing temperature readings in a time series dataset.</p>
+<h4 id="json-javascript-object-notation">JSON (JavaScript Object Notation)</h4>
+<p>JSON is a lightweight data-interchange format that is easy for humans to read and write and for machines to parse and generate.</p>
+<p><strong>Example:</strong> Reading data from a JSON file into a Pandas DataFrame for analysis.</p>
+<h4 id="jupyter-notebook">Jupyter Notebook</h4>
+<p>Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text.</p>
+<p><strong>Example:</strong> Using Jupyter Notebook to write Python code and document the data analysis process.</p>
+<h4 id="k-means-clustering">k-means Clustering</h4>
+<p>k-means clustering is an unsupervised learning algorithm that partitions data into k distinct clusters based on feature similarity.</p>
+<p><strong>Example:</strong> Segmenting customers into groups based on purchasing behavior using k-means clustering.</p>
+<h4 id="k-nearest-neighbors-knn">K-Nearest Neighbors (KNN)</h4>
+<p>KNN is a simple, supervised machine learning algorithm that classifies new cases based on the majority class of their k nearest neighbors.</p>
+<p><strong>Example:</strong> Implementing KNN to predict whether a patient has a certain disease based on symptoms.</p>
+<h4 id="label-encoding">Label Encoding</h4>
+<p>Label encoding converts categorical text data into numerical values by assigning a unique integer to each category.</p>
+<p><strong>Example:</strong> Transforming the 'Color' feature into numerical labels before model training.</p>
+<h4 id="learning-rate">Learning Rate</h4>
+<p>The learning rate is a hyperparameter that controls how much we adjust the model weights with respect to the loss gradient.</p>
+<p><strong>Example:</strong> Setting an appropriate learning rate in gradient descent to ensure the model converges.</p>
+<h4 id="linear-regression">Linear Regression</h4>
+<p>Linear regression is a supervised learning algorithm that models the relationship between a dependent variable and one or more independent variables.</p>
+<p><strong>Example:</strong> Predicting house prices based on features like size and location using linear regression.</p>
+<h4 id="logistic-regression">Logistic Regression</h4>
+<p>Logistic regression is a classification algorithm used to predict the probability of a categorical dependent variable.</p>
+<p><strong>Example:</strong> Using logistic regression to determine the likelihood of a customer churning.</p>
+<h4 id="machine-learning">Machine Learning</h4>
+<p>Machine learning is a subset of AI that focuses on building systems that learn from and make decisions based on data.</p>
+<p><strong>Example:</strong> Implementing various machine learning algorithms to solve classification and regression problems in the course.</p>
+<h4 id="matplotlib">Matplotlib</h4>
+<p>Matplotlib is a Python library used for creating static, animated, and interactive visualizations.</p>
+<p><strong>Example:</strong> Plotting data trends using Matplotlib to support data analysis conclusions.</p>
+<h4 id="missing-data">Missing Data</h4>
+<p>Missing data occurs when no value is stored for a variable in an observation, which can impact data analysis.</p>
+<p><strong>Example:</strong> Identifying and handling missing data in a dataset before model training.</p>
+<h4 id="model-selection">Model Selection</h4>
+<p>Model selection involves choosing the best model from a set of candidates based on their predictive performance.</p>
+<p><strong>Example:</strong> Comparing different algorithms like decision trees and logistic regression to select the best model for a classification task.</p>
+<h4 id="multicollinearity">Multicollinearity</h4>
+<p>Multicollinearity occurs when independent variables in a regression model are highly correlated, which can affect the model's stability.</p>
+<p><strong>Example:</strong> Detecting multicollinearity using the Variance Inflation Factor (VIF) and addressing it in the dataset.</p>
+<h4 id="natural-language-processing-nlp">Natural Language Processing (NLP)</h4>
+<p>NLP is a field of AI that gives computers the ability to understand, interpret, and generate human language.</p>
+<p><strong>Example:</strong> Analyzing text data for sentiment analysis using NLP techniques.</p>
+<h4 id="neural-network">Neural Network</h4>
+<p>A neural network is a series of algorithms that mimic the operations of a human brain to recognize patterns and solve complex problems.</p>
+<p><strong>Example:</strong> Building a simple neural network to classify images of handwritten digits.</p>
+<h4 id="normal-distribution">Normal Distribution</h4>
+<p>The normal distribution is a continuous probability distribution characterized by a symmetrical, bell-shaped curve.</p>
+<p><strong>Example:</strong> Assuming normal distribution of residuals in linear regression models.</p>
+<h4 id="normalization">Normalization</h4>
+<p>Normalization scales data to fit within a specific range, often between 0 and 1, to ensure all features contribute equally.</p>
+<p><strong>Example:</strong> Applying Min-Max normalization to features before training a neural network.</p>
+<h4 id="numpy">NumPy</h4>
+<p>NumPy is a Python library used for working with arrays and providing functions for mathematical operations on large, multi-dimensional arrays and matrices.</p>
+<p><strong>Example:</strong> Using NumPy arrays for efficient numerical computations in data science projects.</p>
+<h4 id="one-hot-encoding">One-Hot Encoding</h4>
+<p>One-hot encoding converts categorical variables into a binary matrix representation.</p>
+<p><strong>Example:</strong> Transforming the 'Country' feature into multiple binary columns representing each country.</p>
+<h4 id="optimization">Optimization</h4>
+<p>Optimization involves adjusting the inputs or parameters of a model to minimize or maximize some objective function.</p>
+<p><strong>Example:</strong> Optimizing the weights in a neural network to reduce the loss function during training.</p>
+<h4 id="outlier">Outlier</h4>
+<p>An outlier is a data point that differs significantly from other observations, potentially indicating variability in measurement or experimental errors.</p>
+<p><strong>Example:</strong> Identifying outliers in a dataset using box plots and deciding whether to remove or transform them.</p>
+<h4 id="overfitting">Overfitting</h4>
+<p>Overfitting occurs when a model learns the training data too well, capturing noise and details that negatively impact its performance on new data.</p>
+<p><strong>Example:</strong> Preventing overfitting by using regularization techniques and cross-validation.</p>
+<h4 id="pandas">Pandas</h4>
+<p>Pandas is a Python library providing high-performance, easy-to-use data structures and data analysis tools.</p>
+<p><strong>Example:</strong> Using Pandas DataFrames to manipulate and analyze tabular data in the course.</p>
+<h4 id="parameter">Parameter</h4>
+<p>A parameter is a configuration variable that is internal to the model and estimated from data.</p>
+<p><strong>Example:</strong> The coefficients in a linear regression model are parameters learned during training.</p>
+<h4 id="pca-principal-component-analysis">PCA (Principal Component Analysis)</h4>
+<p>PCA is a dimensionality reduction technique that transforms data into a new coordinate system, reducing the number of variables while retaining most information.</p>
+<p><strong>Example:</strong> Applying PCA to reduce the dimensionality of a dataset before clustering.</p>
+<h4 id="pipeline">Pipeline</h4>
+<p>A pipeline is a sequence of data processing components or steps, where the output of one component is the input to the next.</p>
+<p><strong>Example:</strong> Creating a scikit-learn pipeline to standardize data and train a model in a single workflow.</p>
+<h4 id="precision">Precision</h4>
+<p>Precision is a metric that measures the proportion of true positives among all positive predictions.</p>
+<p><strong>Example:</strong> Calculating precision to evaluate a model where false positives are costly, such as in fraud detection.</p>
+<h4 id="predictive-modeling">Predictive Modeling</h4>
+<p>Predictive modeling uses statistics and data to predict outcomes with data models.</p>
+<p><strong>Example:</strong> Building a predictive model to forecast sales based on historical data.</p>
+<h4 id="probability-distribution">Probability Distribution</h4>
+<p>A probability distribution describes how the values of a random variable are distributed.</p>
+<p><strong>Example:</strong> Using the normal distribution to model the heights of individuals in a population.</p>
+<h4 id="python">Python</h4>
+<p>Python is a high-level, interpreted programming language known for its readability and versatility in data science.</p>
+<p><strong>Example:</strong> Writing Python scripts to automate data cleaning and analysis tasks.</p>
+<h4 id="random-forest">Random Forest</h4>
+<p>Random Forest is an ensemble learning method that constructs multiple decision trees during training and outputs the mode of the classes for classification tasks.</p>
+<p><strong>Example:</strong> Implementing a random forest classifier to improve accuracy over a single decision tree.</p>
+<h4 id="regression">Regression</h4>
+<p>Regression is a set of statistical processes for estimating the relationships among variables.</p>
+<p><strong>Example:</strong> Performing linear regression to understand how the price of a house varies with its size.</p>
+<h4 id="regularization">Regularization</h4>
+<p>Regularization adds a penalty to the loss function to prevent overfitting by discouraging complex models.</p>
+<p><strong>Example:</strong> Applying Lasso regularization to reduce overfitting in a regression model.</p>
+<h4 id="recall">Recall</h4>
+<p>Recall is a metric that measures the proportion of actual positives correctly identified.</p>
+<p><strong>Example:</strong> Evaluating recall in a medical diagnosis model where missing a positive case is critical.</p>
+<h4 id="roc-curve-receiver-operating-characteristic-curve">ROC Curve (Receiver Operating Characteristic Curve)</h4>
+<p>An ROC curve is a graphical plot illustrating the diagnostic ability of a binary classifier as its discrimination threshold is varied.</p>
+<p><strong>Example:</strong> Plotting the ROC curve to select the optimal threshold for a classification model.</p>
+<h4 id="root-mean-squared-error-rmse">Root Mean Squared Error (RMSE)</h4>
+<p>RMSE is a metric used to measure the difference between values predicted by a model and the actual values.</p>
+<p><strong>Example:</strong> Using RMSE to assess the performance of a regression model predicting housing prices.</p>
+<h4 id="sampling">Sampling</h4>
+<p>Sampling involves selecting a subset of data from a larger dataset to estimate characteristics of the whole population.</p>
+<p><strong>Example:</strong> Drawing a random sample from a large dataset to make computations more manageable.</p>
+<h4 id="scikit-learn">Scikit-learn</h4>
+<p>Scikit-learn is a Python library for machine learning that provides simple and efficient tools for data analysis and modeling.</p>
+<p><strong>Example:</strong> Using scikit-learn to implement machine learning algorithms like SVMs and random forests.</p>
+<h4 id="seaborn">Seaborn</h4>
+<p>Seaborn is a Python data visualization library based on Matplotlib that provides a high-level interface for drawing attractive statistical graphics.</p>
+<p><strong>Example:</strong> Creating complex visualizations like heatmaps and violin plots using Seaborn.</p>
+<h4 id="smote-synthetic-minority-over-sampling-technique">SMOTE (Synthetic Minority Over-sampling Technique)</h4>
+<p>SMOTE is a technique used to address class imbalance by generating synthetic samples of the minority class.</p>
+<p><strong>Example:</strong> Applying SMOTE to balance the dataset before training a classifier on imbalanced data.</p>
+<h4 id="standard-deviation">Standard Deviation</h4>
+<p>Standard deviation measures the amount of variation or dispersion in a set of values.</p>
+<p><strong>Example:</strong> Calculating the standard deviation to understand the spread of exam scores in a class.</p>
+<h4 id="standardscaler">StandardScaler</h4>
+<p>StandardScaler is a scikit-learn tool that standardizes features by removing the mean and scaling to unit variance.</p>
+<p><strong>Example:</strong> Using StandardScaler to preprocess data before feeding it into a machine learning algorithm.</p>
+<h4 id="statistical-significance">Statistical Significance</h4>
+<p>Statistical significance indicates that the result of a test is unlikely to have occurred by chance alone.</p>
+<p><strong>Example:</strong> Interpreting p-values to determine if the difference between two groups is statistically significant.</p>
+<h4 id="supervised-learning">Supervised Learning</h4>
+<p>Supervised learning is a type of machine learning where models are trained using labeled data.</p>
+<p><strong>Example:</strong> Training a supervised learning model to predict house prices based on historical data.</p>
+<h4 id="time-series">Time Series</h4>
+<p>Time series data is a sequence of data points collected or recorded at time intervals.</p>
+<p><strong>Example:</strong> Analyzing stock prices over time to forecast future market trends.</p>
+<h4 id="tokenization">Tokenization</h4>
+<p>Tokenization is the process of breaking text into smaller units called tokens, often words or phrases.</p>
+<p><strong>Example:</strong> Tokenizing text data for input into a natural language processing model.</p>
+<h4 id="training-set">Training Set</h4>
+<p>A training set is a subset of the dataset used to train machine learning models.</p>
+<p><strong>Example:</strong> Splitting data into training and test sets to build and evaluate a model.</p>
+<h4 id="t-test">T-test</h4>
+<p>A t-test is a statistical test used to compare the means of two groups.</p>
+<p><strong>Example:</strong> Performing a t-test to determine if there is a significant difference in test scores between two classes.</p>
+<h4 id="underfitting">Underfitting</h4>
+<p>Underfitting occurs when a model is too simple and fails to capture the underlying pattern of the data.</p>
+<p><strong>Example:</strong> Addressing underfitting by increasing the complexity of the model or adding more features.</p>
+<h4 id="unsupervised-learning">Unsupervised Learning</h4>
+<p>Unsupervised learning involves training models on data without labeled responses, aiming to find hidden patterns.</p>
+<p><strong>Example:</strong> Using unsupervised learning techniques like clustering to segment customers.</p>
+<h4 id="validation-set">Validation Set</h4>
+<p>A validation set is a subset of the dataset used to tune hyperparameters and prevent overfitting during model training.</p>
+<p><strong>Example:</strong> Using a validation set to adjust the learning rate and number of layers in a neural network.</p>
+<h4 id="variance">Variance</h4>
+<p>Variance measures how far a set of numbers is spread out from their average value.</p>
+<p><strong>Example:</strong> Calculating the variance to understand the variability in a dataset.</p>
+<h4 id="visualization">Visualization</h4>
+<p>Visualization refers to the graphical representation of information and data.</p>
+<p><strong>Example:</strong> Creating line charts and scatter plots to visualize trends and relationships in the data.</p>
+<h4 id="weight">Weight</h4>
+<p>In machine learning models, weights are parameters that are learned during training to map input features to outputs.</p>
+<p><strong>Example:</strong> Adjusting weights in a neural network during training to minimize the loss function.</p>
+<h4 id="z-score">Z-score</h4>
+<p>A z-score indicates how many standard deviations an element is from the mean.</p>
+<p><strong>Example:</strong> Calculating z-scores to identify outliers in a dataset.</p>
+<h4 id="xgboost">XGBoost</h4>
+<p>XGBoost is an optimized distributed gradient boosting library designed to be highly efficient and flexible.</p>
+<p><strong>Example:</strong> Implementing XGBoost to improve model performance on a classification task.</p>
+<h4 id="confusion-matrix_1">Confusion Matrix</h4>
+<p>A confusion matrix is a table used to describe the performance of a classification model.</p>
+<p><strong>Example:</strong> Using a confusion matrix to calculate precision, recall, and F1 score for a classifier.</p>
+<h4 id="hyperparameter">Hyperparameter</h4>
+<p>A hyperparameter is a configuration that is external to the model and whose value cannot be estimated from data.</p>
+<p><strong>Example:</strong> Setting the number of neighbors in a KNN algorithm as a hyperparameter to tune.</p>
+<h4 id="kernel">Kernel</h4>
+<p>In machine learning, a kernel is a function used in algorithms like SVM to transform data into a higher-dimensional space.</p>
+<p><strong>Example:</strong> Choosing a radial basis function (RBF) kernel for an SVM to handle non-linear data.</p>
+<h4 id="lasso-regression">Lasso Regression</h4>
+<p>Lasso regression is a type of linear regression that uses L1 regularization to reduce overfitting and perform feature selection.</p>
+<p><strong>Example:</strong> Applying lasso regression to identify the most important features in a dataset.</p>
+<h4 id="mean-absolute-error-mae">Mean Absolute Error (MAE)</h4>
+<p>MAE is a measure of errors between paired observations expressing the same phenomenon.</p>
+<p><strong>Example:</strong> Evaluating a regression model by calculating the MAE between predicted and actual values.</p>
+<h4 id="overfitting_1">Overfitting</h4>
+<p>Overfitting occurs when a model learns the training data too well, capturing noise and details that negatively impact performance on new data.</p>
+<p><strong>Example:</strong> Observing overfitting in a model that performs well on training data but poorly on test data.</p>
+<h4 id="pearson-correlation-coefficient">Pearson Correlation Coefficient</h4>
+<p>The Pearson correlation coefficient measures the linear correlation between two variables.</p>
+<p><strong>Example:</strong> Calculating the Pearson coefficient to assess the strength of the relationship between two features.</p>
+<h4 id="r-squared-coefficient-of-determination">R-Squared (Coefficient of Determination)</h4>
+<p>R-squared is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by independent variables.</p>
+<p><strong>Example:</strong> Interpreting an R-squared value of 0.85 to mean that 85% of the variance in the dependent variable is predictable.</p>
+<h4 id="sampling-bias">Sampling Bias</h4>
+<p>Sampling bias occurs when some members of a population are systematically more likely to be selected in a sample than others.</p>
+<p><strong>Example:</strong> Ensuring random sampling in data collection to avoid sampling bias.</p>
+<h4 id="tokenization_1">Tokenization</h4>
+<p>Tokenization is the process of splitting text into individual units (tokens), such as words or phrases.</p>
+<p><strong>Example:</strong> Tokenizing customer reviews to prepare text data for sentiment analysis.</p>
+<h4 id="univariate-analysis">Univariate Analysis</h4>
+<p>Univariate analysis examines each variable individually to summarize and find patterns.</p>
+<p><strong>Example:</strong> Performing univariate analysis on the 'Age' feature to understand its distribution.</p>
+<h4 id="variance-inflation-factor-vif">Variance Inflation Factor (VIF)</h4>
+<p>VIF quantifies the severity of multicollinearity in regression analysis.</p>
+<p><strong>Example:</strong> Calculating VIF to detect multicollinearity and decide whether to remove correlated features.</p>
+<h4 id="white-noise">White Noise</h4>
+<p>White noise refers to a time series of random data points that have a constant mean and variance.</p>
+<p><strong>Example:</strong> Checking residuals for white noise to validate the assumptions of a time series model.</p>
+<h4 id="cross-entropy-loss">Cross-Entropy Loss</h4>
+<p>Cross-entropy loss measures the performance of a classification model whose output is a probability between 0 and 1.</p>
+<p><strong>Example:</strong> Using cross-entropy loss as the loss function in a logistic regression model.</p>
+<h4 id="epoch">Epoch</h4>
+<p>An epoch refers to one complete pass through the entire training dataset.</p>
+<p><strong>Example:</strong> Training a neural network for 10 epochs to optimize the weights.</p>
+<h4 id="fitting">Fitting</h4>
+<p>Fitting a model involves adjusting its parameters to best match the data.</p>
+<p><strong>Example:</strong> Fitting a linear regression model to the training data by minimizing the cost function.</p>
+<h4 id="hyperplane">Hyperplane</h4>
+<p>A hyperplane is a flat affine subspace of one dimension less than its ambient space, used in SVMs to separate classes.</p>
+<p><strong>Example:</strong> Understanding how an SVM finds the optimal hyperplane to classify data points.</p>
+<h4 id="iteration">Iteration</h4>
+<p>An iteration refers to one update of the model's parameters during training.</p>
+<p><strong>Example:</strong> Observing loss reduction after each iteration in gradient descent optimization.</p>
+<h4 id="learning-curve">Learning Curve</h4>
+<p>A learning curve plots the model's performance on the training and validation sets over time or as the training set size increases.</p>
+<p><strong>Example:</strong> Analyzing the learning curve to diagnose if a model is overfitting or underfitting.</p>
+<h4 id="loss-function">Loss Function</h4>
+<p>A loss function measures how well a machine learning model performs, guiding the optimization process.</p>
+<p><strong>Example:</strong> Using Mean Squared Error (MSE) as the loss function in a regression model.</p>
+<h4 id="mini-batch-gradient-descent">Mini-Batch Gradient Descent</h4>
+<p>Mini-batch gradient descent is an optimization algorithm that updates the model parameters using small batches of data.</p>
+<p><strong>Example:</strong> Accelerating training by using mini-batches instead of the entire dataset in each iteration.</p>
+<h4 id="multivariate-analysis">Multivariate Analysis</h4>
+<p>Multivariate analysis examines the relationship between multiple variables simultaneously.</p>
+<p><strong>Example:</strong> Performing multivariate regression to understand how multiple features affect the target variable.</p>
+<h4 id="natural-language-processing-nlp_1">Natural Language Processing (NLP)</h4>
+<p>NLP focuses on the interaction between computers and human language.</p>
+<p><strong>Example:</strong> Using NLP techniques to analyze customer feedback and extract key themes.</p>
+<h4 id="optimization-algorithm">Optimization Algorithm</h4>
+<p>An optimization algorithm adjusts the parameters of a model to minimize the loss function.</p>
+<p><strong>Example:</strong> Choosing Adam optimizer for faster convergence in training a neural network.</p>
+<h4 id="precision-recall-curve">Precision-Recall Curve</h4>
+<p>A precision-recall curve plots the trade-off between precision and recall for different threshold settings.</p>
+<p><strong>Example:</strong> Using the precision-recall curve to select the threshold that balances precision and recall.</p>
+<h4 id="reinforcement-learning">Reinforcement Learning</h4>
+<p>Reinforcement learning is a type of machine learning where an agent learns to make decisions by performing actions and receiving rewards.</p>
+<p><strong>Example:</strong> Discussing reinforcement learning concepts as an advanced topic in the course.</p>
+<h4 id="stratified-sampling">Stratified Sampling</h4>
+<p>Stratified sampling involves dividing the population into subgroups and sampling from each to ensure representation.</p>
+<p><strong>Example:</strong> Using stratified sampling to maintain the class distribution in training and test sets.</p>
+<h4 id="support-vector-machine-svm">Support Vector Machine (SVM)</h4>
+<p>SVM is a supervised learning algorithm that finds the hyperplane that best separates classes.</p>
+<p><strong>Example:</strong> Implementing an SVM classifier for a binary classification problem in the course.</p>
+<h4 id="synthetic-data">Synthetic Data</h4>
+<p>Synthetic data is artificially generated data that mimics the properties of real data.</p>
+<p><strong>Example:</strong> Generating synthetic data to augment the dataset and improve model training.</p>
+<h4 id="training-loss">Training Loss</h4>
+<p>Training loss measures the error on the training dataset during model training.</p>
+<p><strong>Example:</strong> Monitoring training loss to assess how well the model is learning from the training data.</p>
+<h4 id="type-i-error">Type I Error</h4>
+<p>A Type I error occurs when the null hypothesis is true but is incorrectly rejected.</p>
+<p><strong>Example:</strong> Understanding Type I errors when interpreting p-values in hypothesis testing.</p>
+<h4 id="type-ii-error">Type II Error</h4>
+<p>A Type II error occurs when the null hypothesis is false but erroneously fails to be rejected.</p>
+<p><strong>Example:</strong> Recognizing the implications of Type II errors in statistical testing.</p>
+<h4 id="validation-loss">Validation Loss</h4>
+<p>Validation loss measures the error on the validation dataset, used to tune model hyperparameters.</p>
+<p><strong>Example:</strong> Observing validation loss to detect overfitting during model training.</p>
+<h4 id="weight-initialization">Weight Initialization</h4>
+<p>Weight initialization is the process of setting the initial values of the weights before training a neural network.</p>
+<p><strong>Example:</strong> Using random initialization methods to start training a deep learning model.</p>
+<h4 id="word-embedding">Word Embedding</h4>
+<p>Word embedding is a representation of text where words with similar meaning have similar vector representations.</p>
+<p><strong>Example:</strong> Implementing word embeddings like Word2Vec in NLP tasks.</p>
+<h4 id="xgboost_1">XGBoost</h4>
+<p>XGBoost is an optimized gradient boosting library designed for performance and speed.</p>
+<p><strong>Example:</strong> Using XGBoost to improve model accuracy in classification problems.</p>
+<h4 id="z-score-normalization">Z-score Normalization</h4>
+<p>Z-score normalization scales data based on mean and standard deviation.</p>
+<p><strong>Example:</strong> Applying z-score normalization to standardize features before training a model.</p>
+<p>o1</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../faqs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frequently Asked Questions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Frequently Asked Questions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../how-we-built-this-site/" class="md-footer__link md-footer__link--next" aria-label="Next: How We Built This Site">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                How We Built This Site
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

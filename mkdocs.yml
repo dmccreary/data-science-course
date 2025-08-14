@@ -1,5 +1,5 @@
 site_name: "AI Based Data Science with Python"
-site_description: 'Using generative AI to teach data science with Pyton. All content licensed Creative Commons ShareAlike Attribution Noncommercial'
+site_description: 'An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn.'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/data-science-course/'
@@ -9,6 +9,7 @@ edit_uri: 'blob/master/docs'
 nav:
   - Home: index.md
   - About: about.md
+  - Course Description: course-description.md
   - Concepts:
     - Intro: concepts/index.md
     - concepts/concept-enumeration.md
@@ -34,8 +35,8 @@ theme:
   name: material
   extra_css:
     - styles/custom.css
-  logo: img/logo.png
-  # favicon: img/my-icon.png
+  logo: img/logo-192.png
+  favicon: img/favicon.ico
   palette:
     primary: 'blue'
     accent: 'orange'

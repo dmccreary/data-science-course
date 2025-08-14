@@ -1,0 +1,4085 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Using generative AI to teach data science with Pyton. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/faqs/">
+      
+      
+        <link rel="prev" href="../prompts/glossary/">
+      
+      
+        <link rel="next" href="../glossary/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Frequently Asked Questions - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-data-science-faqs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frequently Asked Questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../concepts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../prompts/faqs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-science-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data science, and why is it important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-python-used-in-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is Python used in data science?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-key-python-libraries-for-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the key Python libraries for data analysis?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-import-a-csv-file-into-a-pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you import a CSV file into a Pandas DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-dataframe-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a DataFrame in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-missing-data-in-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle missing data in a dataset?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-numpy-arrays-and-python-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between NumPy arrays and Python lists?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-select-a-subset-of-data-from-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you select a subset of data from a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-visualization-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data visualization, and why is it important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-simple-line-plot-using-matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a simple line plot using Matplotlib?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-groupby-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the groupby() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-merge-two-dataframes-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you merge two DataFrames in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-merge-and-concat-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between merge() and concat() in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-basic-statistical-measures-like-mean-and-median-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate basic statistical measures like mean and median in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-apply-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the apply() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-pivot-table-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a pivot table in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-supervised-and-unsupervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between supervised and unsupervised learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-linear-regression-using-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform linear regression using scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-overfitting-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is overfitting in machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-you-prevent-overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can you prevent overfitting?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is cross-validation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-evaluate-the-performance-of-a-regression-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you evaluate the performance of a regression model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-feature-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of feature scaling?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-feature-scaling-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform feature scaling in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-one-hot-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is one-hot encoding?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-one-hot-encoding-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform one-hot encoding in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a confusion matrix?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-accuracy-precision-and-recall-from-a-confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate accuracy, precision, and recall from a confusion matrix?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-train_test_split-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the train_test_split function?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-split-data-into-training-and-testing-sets-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you split data into training and testing sets in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-classification-and-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between classification and regression?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-categorical-variables-in-machine-learning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle categorical variables in machine learning models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is k-means clustering?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-determine-the-optimal-number-of-clusters-in-k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you determine the optimal number of clusters in k-means?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-principal-component-analysis-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is principal component analysis (PCA)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-pca-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform PCA in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-bias-variance-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the bias-variance tradeoff?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-regularization-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is regularization in machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-ridge-regression-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you implement Ridge regression in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is logistic regression?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-evaluate-the-performance-of-a-classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you evaluate the performance of a classification model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-receiver-operating-characteristic-roc-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Receiver Operating Characteristic (ROC) curve?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-imbalanced-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle imbalanced datasets?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-time-series-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is time series analysis?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-deal-with-date-and-time-data-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you deal with date and time data in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-autocorrelation-in-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is autocorrelation in time series data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-forecasting-using-arima-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform forecasting using ARIMA models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is natural language processing (NLP)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-text-preprocessing-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform text preprocessing in NLP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-tf-idf" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is TF-IDF?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-large-datasets-that-dont-fit-into-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle large datasets that don't fit into memory?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pipeline-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a pipeline in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-save-and-load-trained-models-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you save and load trained models in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is gradient descent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-batch-stochastic-and-mini-batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between batch, stochastic, and mini-batch gradient descent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-multicollinearity-in-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle multicollinearity in regression analysis?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-central-limit-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Central Limit Theorem?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is hypothesis testing?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-p-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is p-value?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-a-t-test-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform a t-test in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-type-i-and-type-ii-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between Type I and Type II errors?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-anova-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an ANOVA test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-an-anova-test-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform an ANOVA test in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-bootstrapping-in-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is bootstrapping in statistics?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-law-of-large-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the law of large numbers?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-probability-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a probability distribution?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-common-probability-distributions-used-in-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are common probability distributions used in data science?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-generate-random-numbers-following-a-normal-distribution-in-numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you generate random numbers following a normal distribution in NumPy?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-curse-of-dimensionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the curse of dimensionality?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-reduce-dimensionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you reduce dimensionality?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-bagging-and-boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between bagging and boosting?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a decision tree?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-prevent-a-decision-tree-from-overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you prevent a decision tree from overfitting?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is random forest?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-a-random-forest-classifier-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you implement a random forest classifier in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ensemble-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ensemble learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a neural network?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-deep-learning-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between deep learning and machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-class-imbalance-in-classification-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle class imbalance in classification problems?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-map-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the map() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-sort-a-dataframe-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you sort a DataFrame in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-apply-and-applymap-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between apply() and applymap() in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-remove-duplicates-from-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you remove duplicates from a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-outlier-and-how-do-you-detect-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an outlier, and how do you detect them?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-outliers-in-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle outliers in data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data normalization?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-data-normalization-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform data normalization in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-heatmap-and-when-do-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a heatmap, and when do you use it?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-heatmap-in-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a heatmap in Seaborn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pairplot-in-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a pairplot in Seaborn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-interpret-a-correlation-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you interpret a correlation coefficient?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-describe-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the describe() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-datetime-features-for-machine-learning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle date/time features for machine learning models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-loc-and-iloc-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between .loc and .iloc in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-rename-columns-in-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you rename columns in a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-astype-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the astype() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-detect-missing-values-in-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you detect missing values in a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ensemble-method-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an ensemble method in machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-gradient-boosting-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you implement Gradient Boosting in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-xgboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is XGBoost?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-install-and-use-xgboost-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you install and use XGBoost in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-cross-entropy-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is cross-entropy loss?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-the-learning-rate-in-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate the learning rate in gradient descent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-epochs-batches-and-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between epochs, batches, and iterations?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform hyperparameter tuning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-pipeline-module-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the pipeline module in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-evaluate-a-clustering-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you evaluate a clustering algorithm?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-dummy-variable-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a dummy variable trap?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-correlation-matrix-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a correlation matrix in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-roc-curve-and-how-do-you-plot-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an ROC curve, and how do you plot it?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-type-i-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a type I error?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-type-ii-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a type II error?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-the-p-value-in-a-hypothesis-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate the p-value in a hypothesis test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-parametric-and-non-parametric-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between parametric and non-parametric tests?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-a-chi-squared-test-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform a chi-squared test in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-seaborn-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the seaborn library?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-box-plot-in-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a box plot in Seaborn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-violin-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a violin plot?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-multivariate-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle multivariate time series data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ab-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an A/B test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-analyze-ab-test-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you analyze A/B test results?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-bonferroni-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Bonferroni correction?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-survivorship-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is survivorship bias?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data leakage?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-prevent-data-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you prevent data leakage?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a hash table?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-memoization" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is memoization?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-reverse-a-linked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you reverse a linked list?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-time-complexity-of-quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the time complexity of quicksort?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-generator-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a generator in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-exceptions-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle exceptions in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-decorator-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a decorator in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-read-and-write-json-files-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you read and write JSON files in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-multithreading-and-how-do-you-implement-it-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is multithreading, and how do you implement it in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-global-interpreter-lock-gil-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Global Interpreter Lock (GIL) in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-file-operations-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle file operations in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-lambda-functions-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are lambda functions in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-work-with-databases-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you work with databases in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-virtual-environments-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of virtual environments in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-install-packages-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you install packages in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-common-data-types-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the common data types in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-class-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a class in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-inheritance-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is inheritance in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-polymorphism-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is polymorphism in Python?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-science-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data science, and why is it important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-python-used-in-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is Python used in data science?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-key-python-libraries-for-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the key Python libraries for data analysis?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-import-a-csv-file-into-a-pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you import a CSV file into a Pandas DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-dataframe-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a DataFrame in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-missing-data-in-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle missing data in a dataset?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-numpy-arrays-and-python-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between NumPy arrays and Python lists?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-select-a-subset-of-data-from-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you select a subset of data from a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-visualization-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data visualization, and why is it important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-simple-line-plot-using-matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a simple line plot using Matplotlib?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-groupby-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the groupby() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-merge-two-dataframes-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you merge two DataFrames in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-merge-and-concat-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between merge() and concat() in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-basic-statistical-measures-like-mean-and-median-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate basic statistical measures like mean and median in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-apply-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the apply() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-pivot-table-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a pivot table in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-supervised-and-unsupervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between supervised and unsupervised learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-linear-regression-using-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform linear regression using scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-overfitting-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is overfitting in machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-you-prevent-overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can you prevent overfitting?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is cross-validation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-evaluate-the-performance-of-a-regression-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you evaluate the performance of a regression model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-feature-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of feature scaling?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-feature-scaling-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform feature scaling in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-one-hot-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is one-hot encoding?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-one-hot-encoding-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform one-hot encoding in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a confusion matrix?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-accuracy-precision-and-recall-from-a-confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate accuracy, precision, and recall from a confusion matrix?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-train_test_split-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the train_test_split function?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-split-data-into-training-and-testing-sets-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you split data into training and testing sets in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-classification-and-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between classification and regression?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-categorical-variables-in-machine-learning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle categorical variables in machine learning models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is k-means clustering?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-determine-the-optimal-number-of-clusters-in-k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you determine the optimal number of clusters in k-means?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-principal-component-analysis-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is principal component analysis (PCA)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-pca-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform PCA in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-bias-variance-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the bias-variance tradeoff?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-regularization-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is regularization in machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-ridge-regression-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you implement Ridge regression in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is logistic regression?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-evaluate-the-performance-of-a-classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you evaluate the performance of a classification model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-receiver-operating-characteristic-roc-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Receiver Operating Characteristic (ROC) curve?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-imbalanced-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle imbalanced datasets?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-time-series-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is time series analysis?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-deal-with-date-and-time-data-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you deal with date and time data in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-autocorrelation-in-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is autocorrelation in time series data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-forecasting-using-arima-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform forecasting using ARIMA models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is natural language processing (NLP)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-text-preprocessing-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform text preprocessing in NLP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-tf-idf" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is TF-IDF?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-large-datasets-that-dont-fit-into-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle large datasets that don't fit into memory?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pipeline-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a pipeline in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-save-and-load-trained-models-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you save and load trained models in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is gradient descent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-batch-stochastic-and-mini-batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between batch, stochastic, and mini-batch gradient descent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-multicollinearity-in-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle multicollinearity in regression analysis?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-central-limit-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Central Limit Theorem?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is hypothesis testing?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-p-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is p-value?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-a-t-test-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform a t-test in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-type-i-and-type-ii-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between Type I and Type II errors?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-anova-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an ANOVA test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-an-anova-test-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform an ANOVA test in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-bootstrapping-in-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is bootstrapping in statistics?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-law-of-large-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the law of large numbers?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-probability-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a probability distribution?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-common-probability-distributions-used-in-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are common probability distributions used in data science?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-generate-random-numbers-following-a-normal-distribution-in-numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you generate random numbers following a normal distribution in NumPy?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-curse-of-dimensionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the curse of dimensionality?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-reduce-dimensionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you reduce dimensionality?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-bagging-and-boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between bagging and boosting?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a decision tree?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-prevent-a-decision-tree-from-overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you prevent a decision tree from overfitting?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is random forest?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-a-random-forest-classifier-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you implement a random forest classifier in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ensemble-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ensemble learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a neural network?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-deep-learning-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between deep learning and machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-class-imbalance-in-classification-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle class imbalance in classification problems?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-map-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the map() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-sort-a-dataframe-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you sort a DataFrame in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-apply-and-applymap-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between apply() and applymap() in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-remove-duplicates-from-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you remove duplicates from a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-outlier-and-how-do-you-detect-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an outlier, and how do you detect them?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-outliers-in-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle outliers in data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data normalization?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-data-normalization-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform data normalization in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-heatmap-and-when-do-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a heatmap, and when do you use it?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-heatmap-in-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a heatmap in Seaborn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pairplot-in-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a pairplot in Seaborn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-interpret-a-correlation-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you interpret a correlation coefficient?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-describe-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the describe() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-datetime-features-for-machine-learning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle date/time features for machine learning models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-loc-and-iloc-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between .loc and .iloc in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-rename-columns-in-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you rename columns in a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-astype-function-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the astype() function in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-detect-missing-values-in-a-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you detect missing values in a DataFrame?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ensemble-method-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an ensemble method in machine learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-gradient-boosting-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you implement Gradient Boosting in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-xgboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is XGBoost?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-install-and-use-xgboost-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you install and use XGBoost in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-cross-entropy-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is cross-entropy loss?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-the-learning-rate-in-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate the learning rate in gradient descent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-epochs-batches-and-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between epochs, batches, and iterations?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform hyperparameter tuning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-pipeline-module-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the pipeline module in scikit-learn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-evaluate-a-clustering-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you evaluate a clustering algorithm?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-dummy-variable-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a dummy variable trap?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-correlation-matrix-in-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a correlation matrix in Pandas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-roc-curve-and-how-do-you-plot-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an ROC curve, and how do you plot it?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-type-i-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a type I error?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-type-ii-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a type II error?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-calculate-the-p-value-in-a-hypothesis-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you calculate the p-value in a hypothesis test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-parametric-and-non-parametric-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between parametric and non-parametric tests?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-perform-a-chi-squared-test-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you perform a chi-squared test in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-seaborn-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the seaborn library?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-box-plot-in-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a box plot in Seaborn?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-violin-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a violin plot?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-multivariate-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle multivariate time series data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ab-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an A/B test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-analyze-ab-test-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you analyze A/B test results?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-bonferroni-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Bonferroni correction?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-survivorship-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is survivorship bias?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is data leakage?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-prevent-data-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you prevent data leakage?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a hash table?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-memoization" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is memoization?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-reverse-a-linked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you reverse a linked list?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-time-complexity-of-quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the time complexity of quicksort?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-generator-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a generator in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-exceptions-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle exceptions in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-decorator-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a decorator in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-read-and-write-json-files-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you read and write JSON files in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-multithreading-and-how-do-you-implement-it-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is multithreading, and how do you implement it in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-global-interpreter-lock-gil-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Global Interpreter Lock (GIL) in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-handle-file-operations-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you handle file operations in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-lambda-functions-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are lambda functions in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-work-with-databases-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you work with databases in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-virtual-environments-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of virtual environments in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-install-packages-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you install packages in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-common-data-types-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the common data types in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-create-a-class-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do you create a class in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-inheritance-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is inheritance in Python?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-polymorphism-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is polymorphism in Python?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/faqs.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="introduction-to-data-science-faqs">Introduction to Data Science FAQs</h1>
+<h4 id="what-is-data-science-and-why-is-it-important">What is data science, and why is it important?</h4>
+<p>Data science is an interdisciplinary field that combines domain expertise, programming skills, and knowledge of mathematics and statistics to extract meaningful insights from data. It is important because it enables organizations to make informed decisions, predict trends, and solve complex problems by analyzing large datasets.</p>
+<h4 id="how-is-python-used-in-data-science">How is Python used in data science?</h4>
+<p>Python is widely used in data science due to its simplicity and versatility. It offers a vast ecosystem of libraries and frameworks like NumPy, Pandas, Matplotlib, and scikit-learn, which facilitate data manipulation, analysis, visualization, and machine learning tasks.</p>
+<h4 id="what-are-the-key-python-libraries-for-data-analysis">What are the key Python libraries for data analysis?</h4>
+<p>The key Python libraries for data analysis include:</p>
+<ul>
+<li><strong>NumPy</strong>: For numerical computing and array operations.</li>
+<li><strong>Pandas</strong>: For data manipulation and analysis using data structures like DataFrames.</li>
+<li><strong>Plotly</strong>: Modern interactive data visualization within a browser</li>
+<li><strong>Matplotlib</strong>: For creating static, animated, and interactive visualizations.</li>
+<li><strong>Seaborn</strong>: For statistical data visualization built on top of Matplotlib.</li>
+<li><strong>scikit-learn</strong>: For machine learning algorithms and predictive data analysis.</li>
+</ul>
+<h4 id="how-do-you-import-a-csv-file-into-a-pandas-dataframe">How do you import a CSV file into a Pandas DataFrame?</h4>
+<p>You can import a CSV file using the <code>read_csv()</code> function from Pandas:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;file_name.csv&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Replace <code>'file_name.csv'</code> with the path to your CSV file.</p>
+<h4 id="what-is-a-dataframe-in-pandas">What is a DataFrame in Pandas?</h4>
+<p>A DataFrame is a two-dimensional, size-mutable, and heterogeneous tabular data structure with labeled axes (rows and columns). It is similar to a spreadsheet or SQL table and is the primary data structure used in Pandas for data manipulation.</p>
+<h4 id="how-do-you-handle-missing-data-in-a-dataset">How do you handle missing data in a dataset?</h4>
+<p>Missing data can be handled by:</p>
+<ul>
+<li><strong>Removing missing values</strong>: Using <code>dropna()</code> to remove rows or columns with missing values.</li>
+<li><strong>Imputing missing values</strong>: Using <code>fillna()</code> to replace missing values with a specific value, mean, median, or mode.</li>
+<li><strong>Interpolate missing values</strong>: Using <code>interpolate()</code> to estimate missing values based on other data points.</li>
+</ul>
+<h4 id="what-is-the-difference-between-numpy-arrays-and-python-lists">What is the difference between NumPy arrays and Python lists?</h4>
+<p>NumPy arrays are fixed-size, homogeneous collections of elements (all of the same data type) optimized for numerical computations. Python lists are dynamic, heterogeneous collections that can contain elements of different data types. NumPy arrays offer better performance for mathematical operations.</p>
+<h4 id="how-do-you-select-a-subset-of-data-from-a-dataframe">How do you select a subset of data from a DataFrame?</h4>
+<p>You can select subsets using two methods:</p>
+<ol>
+<li>Label-based indexing</li>
+<li>
+<p>Integer-based indexing</p>
+</li>
+<li>
+<p><strong>Label-based indexing with <code>.loc</code></strong>:</p>
+</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>df_subset = df.loc[row_labels, column_labels]
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Integer-based indexing with <code>.iloc</code></strong>:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_indices</span><span class="p">,</span> <span class="n">column_indices</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-data-visualization-and-why-is-it-important">What is data visualization, and why is it important?</h4>
+<p>Data visualization is the graphical representation of data to communicate information clearly and efficiently. It is important because it helps identify patterns, trends, and outliers in data, making complex data more accessible and understandable.</p>
+<h4 id="how-do-you-create-a-simple-line-plot-using-matplotlib">How do you create a simple line plot using Matplotlib?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X-axis Label&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y-axis Label&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simple Line Plot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="../img/line-plot.png" /></p>
+<h4 id="what-is-the-purpose-of-the-groupby-function-in-pandas">What is the purpose of the <code>groupby()</code> function in Pandas?</h4>
+<p>The <code>groupby()</code> function is used to split data into groups based on some criteria, perform operations on each group independently, and then combine the results. It is useful for aggregation, transformation, and filtration of data.</p>
+<h4 id="how-do-you-merge-two-dataframes-in-pandas">How do you merge two DataFrames in Pandas?</h4>
+<p>You can merge two DataFrames using the <code>merge()</code> function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;common_column&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Replace <code>'common_column'</code> with the column name that is common to both DataFrames.</p>
+<h4 id="what-is-the-difference-between-merge-and-concat-in-pandas">What is the difference between <code>merge()</code> and <code>concat()</code> in Pandas?</h4>
+<ul>
+<li><strong><code>merge()</code></strong>: Combines two DataFrames based on the values of common columns (similar to SQL joins).</li>
+<li><strong><code>concat()</code></strong>: Concatenates DataFrames either vertically or horizontally, stacking them along an axis.</li>
+</ul>
+<h4 id="how-do-you-calculate-basic-statistical-measures-like-mean-and-median-in-pandas">How do you calculate basic statistical measures like mean and median in Pandas?</h4>
+<p>You can use built-in functions:</p>
+<ul>
+<li><strong>Mean</strong>:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mean_value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Median</strong>:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">median_value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-purpose-of-the-apply-function-in-pandas">What is the purpose of the <code>apply()</code> function in Pandas?</h4>
+<p>The <code>apply()</code> function allows you to apply a function along an axis of the DataFrame (either rows or columns). It is useful for performing complex operations on DataFrame elements.</p>
+<h4 id="how-do-you-create-a-pivot-table-in-pandas">How do you create a pivot table in Pandas?</h4>
+<p>You can create a pivot table using the <code>pivot_table()</code> function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;value_column&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;index_column&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;columns_column&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-difference-between-supervised-and-unsupervised-learning">What is the difference between supervised and unsupervised learning?</h4>
+<ul>
+<li><strong>Supervised Learning</strong>: Involves training a model on labeled data, where the target outcome is known. Examples include regression and classification.</li>
+<li><strong>Unsupervised Learning</strong>: Involves finding patterns in unlabeled data without predefined outcomes. Examples include clustering and dimensionality reduction.</li>
+</ul>
+<h4 id="how-do-you-perform-linear-regression-using-scikit-learn">How do you perform linear regression using scikit-learn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-overfitting-in-machine-learning">What is overfitting in machine learning?</h4>
+<p>Overfitting occurs when a model learns the training data too well, including its noise and outliers, resulting in poor generalization to new, unseen data. It performs well on training data but poorly on test data.</p>
+<h4 id="how-can-you-prevent-overfitting">How can you prevent overfitting?</h4>
+<p>Overfitting can be prevented by:</p>
+<ul>
+<li><strong>Cross-validation</strong>: Splitting data into training and validation sets.</li>
+<li><strong>Regularization</strong>: Adding penalties for complex models (e.g., Lasso, Ridge).</li>
+<li><strong>Simplifying the model</strong>: Reducing the number of features.</li>
+<li><strong>Early stopping</strong>: Halting training when performance on a validation set starts to degrade.</li>
+</ul>
+<h4 id="what-is-cross-validation">What is cross-validation?</h4>
+<p>Cross-validation is a technique for assessing how a model will generalize to an independent dataset. It involves partitioning the data into subsets, training the model on some subsets, and validating it on the remaining ones.</p>
+<h4 id="how-do-you-evaluate-the-performance-of-a-regression-model">How do you evaluate the performance of a regression model?</h4>
+<p>Common metrics include:</p>
+<ul>
+<li><strong>Mean Absolute Error (MAE)</strong></li>
+<li><strong>Mean Squared Error (MSE)</strong></li>
+<li><strong>Root Mean Squared Error (RMSE)</strong></li>
+<li><strong>R-squared (Coefficient of Determination)</strong></li>
+</ul>
+<h4 id="what-is-the-purpose-of-feature-scaling">What is the purpose of feature scaling?</h4>
+<p>Feature scaling standardizes the range of independent variables, improving the performance and convergence speed of some machine learning algorithms that are sensitive to the scale of data, such as gradient descent optimization.</p>
+<h4 id="how-do-you-perform-feature-scaling-in-python">How do you perform feature scaling in Python?</h4>
+<p>Using scikit-learn's <code>StandardScaler</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaled_data</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-one-hot-encoding">What is one-hot encoding?</h4>
+<p>One-hot encoding is a process of converting categorical variables into a binary (0 or 1) representation. Each category becomes a new column, and a value of 1 indicates the presence of that category.</p>
+<h4 id="how-do-you-perform-one-hot-encoding-in-pandas">How do you perform one-hot encoding in Pandas?</h4>
+<p>Using the <code>get_dummies()</code> function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">encoded_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;categorical_column&#39;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-a-confusion-matrix">What is a confusion matrix?</h4>
+<p>A confusion matrix is a table used to evaluate the performance of a classification model. It displays the true positives, true negatives, false positives, and false negatives, providing insight into the types of errors made by the model.</p>
+<h4 id="how-do-you-calculate-accuracy-precision-and-recall-from-a-confusion-matrix">How do you calculate accuracy, precision, and recall from a confusion matrix?</h4>
+<ul>
+<li><strong>Accuracy</strong>: (TP + TN) / (TP + TN + FP + FN)</li>
+<li><strong>Precision</strong>: TP / (TP + FP)</li>
+<li><strong>Recall</strong>: TP / (TP + FN)</li>
+</ul>
+<p>where:</p>
+<ul>
+<li>TP=True Positives</li>
+<li>TN=True Negatives</li>
+<li>FP=False Positives</li>
+<li>FN=False Negatives.</li>
+</ul>
+<h4 id="what-is-the-purpose-of-the-train_test_split-function">What is the purpose of the <code>train_test_split</code> function?</h4>
+<p>The <code>train_test_split</code> function splits a dataset into training and testing sets, allowing you to train the model on one subset and evaluate its performance on another to prevent overfitting.</p>
+<h4 id="how-do-you-split-data-into-training-and-testing-sets-in-scikit-learn">How do you split data into training and testing sets in scikit-learn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-difference-between-classification-and-regression">What is the difference between classification and regression?</h4>
+<ul>
+<li><strong>Classification</strong>: Predicts categorical labels or classes.</li>
+<li><strong>Regression</strong>: Predicts continuous numerical values.</li>
+</ul>
+<h4 id="how-do-you-handle-categorical-variables-in-machine-learning-models">How do you handle categorical variables in machine learning models?</h4>
+<p>Categorical variables can be handled by:</p>
+<ul>
+<li><strong>Label Encoding</strong>: Assigning a unique integer to each category.</li>
+<li><strong>One-Hot Encoding</strong>: Creating binary columns for each category.</li>
+</ul>
+<h4 id="what-is-k-means-clustering">What is k-means clustering?</h4>
+<p>K-means clustering is an unsupervised learning algorithm that partitions data into <strong>k</strong> clusters, where each data point belongs to the cluster with the nearest mean. It aims to minimize the within-cluster sum of squares.</p>
+<h4 id="how-do-you-determine-the-optimal-number-of-clusters-in-k-means">How do you determine the optimal number of clusters in k-means?</h4>
+<p>Common methods include:</p>
+<ul>
+<li><strong>Elbow Method</strong>: Plotting the explained variance as a function of the number of clusters and looking for an "elbow" point.</li>
+<li><strong>Silhouette Score</strong>: Measuring how similar a data point is to its own cluster compared to other clusters.</li>
+</ul>
+<h4 id="what-is-principal-component-analysis-pca">What is principal component analysis (PCA)?</h4>
+<p>PCA is a dimensionality reduction technique that transforms a large set of variables into a smaller one that still contains most of the information by identifying the principal components (directions of maximum variance).</p>
+<h4 id="how-do-you-perform-pca-in-scikit-learn">How do you perform PCA in scikit-learn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">principal_components</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-bias-variance-tradeoff">What is the bias-variance tradeoff?</h4>
+<p>The bias-variance tradeoff is the balance between a model's ability to generalize to new data (low variance) and its accuracy on training data (low bias). High bias can lead to underfitting, while high variance can lead to overfitting.</p>
+<h4 id="what-is-regularization-in-machine-learning">What is regularization in machine learning?</h4>
+<p>Regularization involves adding a penalty term to the loss function to prevent overfitting by discouraging complex models. Common regularization techniques include Lasso (L1) and Ridge (L2) regression.</p>
+<h4 id="how-do-you-implement-ridge-regression-in-scikit-learn">How do you implement Ridge regression in scikit-learn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-logistic-regression">What is logistic regression?</h4>
+<p>Logistic regression is a classification algorithm used to predict binary outcomes (0 or 1) by modeling the probability of a certain class using a logistic function.</p>
+<h4 id="how-do-you-evaluate-the-performance-of-a-classification-model">How do you evaluate the performance of a classification model?</h4>
+<p>Common metrics include:</p>
+<ul>
+<li><strong>Accuracy</strong></li>
+<li><strong>Precision</strong></li>
+<li><strong>Recall</strong></li>
+<li><strong>F1 Score</strong></li>
+<li><strong>ROC AUC Score</strong></li>
+</ul>
+<h4 id="what-is-the-receiver-operating-characteristic-roc-curve">What is the Receiver Operating Characteristic (ROC) curve?</h4>
+<p>The ROC curve plots the true positive rate (sensitivity) against the false positive rate (1 - specificity) at various threshold settings. It illustrates the diagnostic ability of a binary classifier.</p>
+<h4 id="how-do-you-handle-imbalanced-datasets">How do you handle imbalanced datasets?</h4>
+<p>Techniques include:</p>
+<ul>
+<li><strong>Resampling Methods</strong>: Oversampling the minority class or undersampling the majority class.</li>
+<li><strong>Synthetic Data Generation</strong>: Using methods like SMOTE to generate synthetic examples.</li>
+<li><strong>Using Appropriate Evaluation Metrics</strong>: Focusing on precision, recall, or F1 score instead of accuracy.</li>
+</ul>
+<h4 id="what-is-time-series-analysis">What is time series analysis?</h4>
+<p>Time series analysis involves analyzing data points collected or recorded at specific time intervals to identify trends, cycles, and seasonal variations for forecasting and other purposes.</p>
+<h4 id="how-do-you-deal-with-date-and-time-data-in-pandas">How do you deal with date and time data in Pandas?</h4>
+<p>Pandas provides the <code>to_datetime()</code> function to convert strings to datetime objects, and you can use datetime properties and methods to manipulate date and time data.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_column&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_column&#39;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-autocorrelation-in-time-series-data">What is autocorrelation in time series data?</h4>
+<p>Autocorrelation is the correlation of a signal with a delayed copy of itself. In time series data, it measures the relationship between a variable's current value and its past values.</p>
+<h4 id="how-do-you-perform-forecasting-using-arima-models">How do you perform forecasting using ARIMA models?</h4>
+<p>Using the <code>statsmodels</code> library:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">statsmodels.tsa.arima.model</span> <span class="kn">import</span> <span class="n">ARIMA</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">time_series_data</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="n">model_fit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">forecast</span> <span class="o">=</span> <span class="n">model_fit</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-natural-language-processing-nlp">What is natural language processing (NLP)?</h4>
+<p>NLP is a field of artificial intelligence that focuses on the interaction between computers and humans through natural language, enabling machines to understand, interpret, and generate human language.</p>
+<h4 id="how-do-you-perform-text-preprocessing-in-nlp">How do you perform text preprocessing in NLP?</h4>
+<p>Common steps include:</p>
+<ul>
+<li><strong>Tokenization</strong>: Splitting text into words or sentences.</li>
+<li><strong>Stop Word Removal</strong>: Removing common words that add little meaning.</li>
+<li><strong>Stemming/Lemmatization</strong>: Reducing words to their base or root form.</li>
+<li><strong>Encoding</strong>: Converting text to numerical representation using methods like TF-IDF or word embeddings.</li>
+</ul>
+<h4 id="what-is-tf-idf">What is TF-IDF?</h4>
+<p>Term Frequency-Inverse Document Frequency (TF-IDF) is a numerical statistic that reflects how important a word is to a document in a collection. It balances the frequency of a word in a document with how common the word is across all documents.</p>
+<h4 id="how-do-you-handle-large-datasets-that-dont-fit-into-memory">How do you handle large datasets that don't fit into memory?</h4>
+<p>Techniques include:</p>
+<ul>
+<li><strong>Data Sampling</strong>: Working with a subset of the data.</li>
+<li><strong>Batch Processing</strong>: Processing data in chunks.</li>
+<li><strong>Distributed Computing</strong>: Using tools like Apache Spark.</li>
+<li><strong>Out-of-core Learning</strong>: Using algorithms that can learn from data incrementally.</li>
+</ul>
+<h4 id="what-is-a-pipeline-in-scikit-learn">What is a pipeline in scikit-learn?</h4>
+<p>A pipeline is a sequence of data processing steps assembled into a single object. It ensures that all steps are applied consistently during training and testing, simplifying the workflow.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+<span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-save-and-load-trained-models-in-scikit-learn">How do you save and load trained models in scikit-learn?</h4>
+<p>Using the <code>joblib</code> library:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">joblib</span>
+
+<span class="c1"># Save model</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;model.pkl&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.pkl&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-gradient-descent">What is gradient descent?</h4>
+<p>Gradient descent is an optimization algorithm used to minimize the cost function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient.</p>
+<h4 id="what-is-the-difference-between-batch-stochastic-and-mini-batch-gradient-descent">What is the difference between batch, stochastic, and mini-batch gradient descent?</h4>
+<ul>
+<li><strong>Batch Gradient Descent</strong>: Uses the entire dataset to compute gradients.</li>
+<li><strong>Stochastic Gradient Descent (SGD)</strong>: Uses one sample at a time.</li>
+<li><strong>Mini-Batch Gradient Descent</strong>: Uses a small subset (batch) of the data.</li>
+</ul>
+<h4 id="how-do-you-handle-multicollinearity-in-regression-analysis">How do you handle multicollinearity in regression analysis?</h4>
+<p>Techniques include:</p>
+<ul>
+<li><strong>Removing correlated features</strong>.</li>
+<li><strong>Principal Component Analysis (PCA)</strong> to reduce dimensionality.</li>
+<li><strong>Regularization methods</strong> like Ridge regression.</li>
+</ul>
+<h4 id="what-is-the-central-limit-theorem">What is the Central Limit Theorem?</h4>
+<p>The Central Limit Theorem states that the sampling distribution of the sample means approaches a normal distribution as the sample size becomes large, regardless of the population's distribution.</p>
+<h4 id="what-is-hypothesis-testing">What is hypothesis testing?</h4>
+<p>Hypothesis testing is a statistical method used to decide whether there is enough evidence to reject a null hypothesis in favor of an alternative hypothesis based on sample data.</p>
+<h4 id="what-is-p-value">What is p-value?</h4>
+<p>A p-value is the probability of observing results at least as extreme as those measured when the null hypothesis is true. A low p-value indicates that the observed data is unlikely under the null hypothesis.</p>
+<h4 id="how-do-you-perform-a-t-test-in-python">How do you perform a t-test in Python?</h4>
+<p>Using <code>scipy.stats</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">t_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-difference-between-type-i-and-type-ii-errors">What is the difference between Type I and Type II errors?</h4>
+<ul>
+<li><strong>Type I Error</strong>: Rejecting a true null hypothesis (false positive).</li>
+<li><strong>Type II Error</strong>: Failing to reject a false null hypothesis (false negative).</li>
+</ul>
+<h4 id="what-is-an-anova-test">What is an ANOVA test?</h4>
+<p>Analysis of Variance (ANOVA) is a statistical method used to compare means across three or more groups to see if at least one mean is different from the others.</p>
+<h4 id="how-do-you-perform-an-anova-test-in-python">How do you perform an ANOVA test in Python?</h4>
+<p>Using <code>scipy.stats</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">f_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">,</span> <span class="n">group3</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-bootstrapping-in-statistics">What is bootstrapping in statistics?</h4>
+<p>Bootstrapping is a resampling technique used to estimate statistics on a population by sampling a dataset with replacement. It allows estimation of the sampling distribution of almost any statistic.</p>
+<h4 id="what-is-the-law-of-large-numbers">What is the law of large numbers?</h4>
+<p>The law of large numbers states that as the number of trials increases, the sample mean will converge to the expected value (population mean).</p>
+<h4 id="what-is-a-probability-distribution">What is a probability distribution?</h4>
+<p>A probability distribution describes how the values of a random variable are distributed. It defines the probabilities of different outcomes.</p>
+<h4 id="what-are-common-probability-distributions-used-in-data-science">What are common probability distributions used in data science?</h4>
+<ul>
+<li><strong>Normal Distribution</strong></li>
+<li><strong>Binomial Distribution</strong></li>
+<li><strong>Poisson Distribution</strong></li>
+<li><strong>Exponential Distribution</strong></li>
+</ul>
+<h4 id="how-do-you-generate-random-numbers-following-a-normal-distribution-in-numpy">How do you generate random numbers following a normal distribution in NumPy?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">random_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">std_dev</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">num_samples</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-curse-of-dimensionality">What is the curse of dimensionality?</h4>
+<p>The curse of dimensionality refers to various phenomena that arise when analyzing data in high-dimensional spaces, often leading to challenges like overfitting and increased computational cost.</p>
+<h4 id="how-do-you-reduce-dimensionality">How do you reduce dimensionality?</h4>
+<p>Techniques include:</p>
+<ul>
+<li><strong>Feature Selection</strong>: Choosing a subset of relevant features.</li>
+<li><strong>Feature Extraction</strong>: Transforming data into a lower-dimensional space (e.g., PCA).</li>
+</ul>
+<h4 id="what-is-the-difference-between-bagging-and-boosting">What is the difference between bagging and boosting?</h4>
+<ul>
+<li><strong>Bagging</strong>: Combines multiple models (usually of the same type) trained on different subsets of the data to reduce variance.</li>
+<li><strong>Boosting</strong>: Sequentially trains models, where each new model focuses on correcting errors made by previous ones, reducing bias.</li>
+</ul>
+<h4 id="what-is-a-decision-tree">What is a decision tree?</h4>
+<p>A decision tree is a flowchart-like structure used for classification and regression that splits data into branches based on feature values to make predictions.</p>
+<h4 id="how-do-you-prevent-a-decision-tree-from-overfitting">How do you prevent a decision tree from overfitting?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Pruning</strong>: Removing branches that have little power in predicting target variables.</li>
+<li><strong>Setting a maximum depth</strong>: Limiting the depth of the tree.</li>
+<li><strong>Setting a minimum number of samples per leaf</strong>.</li>
+</ul>
+<h4 id="what-is-random-forest">What is random forest?</h4>
+<p>Random Forest is an ensemble learning method that constructs multiple decision trees during training and outputs the mode of the classes (classification) or mean prediction (regression) of the individual trees.</p>
+<h4 id="how-do-you-implement-a-random-forest-classifier-in-scikit-learn">How do you implement a random forest classifier in scikit-learn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-ensemble-learning">What is ensemble learning?</h4>
+<p>Ensemble learning combines predictions from multiple machine learning algorithms to produce a more accurate prediction than any individual model.</p>
+<h4 id="what-is-a-neural-network">What is a neural network?</h4>
+<p>A neural network is a computational model inspired by the human brain, consisting of layers of interconnected nodes (neurons) that can learn complex patterns through training.</p>
+<h4 id="what-is-the-difference-between-deep-learning-and-machine-learning">What is the difference between deep learning and machine learning?</h4>
+<ul>
+<li><strong>Machine Learning</strong>: Involves algorithms that parse data, learn from it, and make decisions.</li>
+<li><strong>Deep Learning</strong>: A subset of machine learning using neural networks with multiple layers to model complex patterns.</li>
+</ul>
+<h4 id="how-do-you-handle-class-imbalance-in-classification-problems">How do you handle class imbalance in classification problems?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Resampling the dataset</strong>: Oversampling the minority class or undersampling the majority class.</li>
+<li><strong>Using appropriate evaluation metrics</strong>: Such as ROC AUC, precision-recall curve.</li>
+<li><strong>Using algorithms that handle imbalance</strong>: Like XGBoost.</li>
+</ul>
+<h4 id="what-is-the-purpose-of-the-map-function-in-pandas">What is the purpose of the <code>map()</code> function in Pandas?</h4>
+<p>The <code>map()</code> function is used to map values of a Series according to an input mapping or function, useful for substituting values or applying a function element-wise.</p>
+<h4 id="how-do-you-sort-a-dataframe-in-pandas">How do you sort a DataFrame in Pandas?</h4>
+<p>Using the <code>sort_values()</code> function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">sorted_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;column_name&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-difference-between-apply-and-applymap-in-pandas">What is the difference between <code>apply()</code> and <code>applymap()</code> in Pandas?</h4>
+<ul>
+<li><strong><code>apply()</code></strong>: Applies a function along an axis of the DataFrame (rows or columns).</li>
+<li><strong><code>applymap()</code></strong>: Applies a function element-wise to the entire DataFrame.</li>
+</ul>
+<h4 id="how-do-you-remove-duplicates-from-a-dataframe">How do you remove duplicates from a DataFrame?</h4>
+<p>Using the <code>drop_duplicates()</code> function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df_unique</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-an-outlier-and-how-do-you-detect-them">What is an outlier, and how do you detect them?</h4>
+<p>An outlier is a data point significantly different from others. Detection methods include:</p>
+<ul>
+<li><strong>Statistical methods</strong>: Using Z-scores or IQR.</li>
+<li><strong>Visualization</strong>: Box plots or scatter plots.</li>
+</ul>
+<h4 id="how-do-you-handle-outliers-in-data">How do you handle outliers in data?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Removing them</strong>: If they are errors.</li>
+<li><strong>Transforming data</strong>: Using log or square root transformations.</li>
+<li><strong>Using robust algorithms</strong>: That are less sensitive to outliers.</li>
+</ul>
+<h4 id="what-is-data-normalization">What is data normalization?</h4>
+<p>Data normalization scales numerical data into a specific range, typically [0,1], ensuring that each feature contributes equally to the analysis.</p>
+<h4 id="how-do-you-perform-data-normalization-in-scikit-learn">How do you perform data normalization in scikit-learn?</h4>
+<p>Using <code>MinMaxScaler</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">normalized_data</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-a-heatmap-and-when-do-you-use-it">What is a heatmap, and when do you use it?</h4>
+<p>A heatmap is a graphical representation of data where individual values are represented as colors. It is used to visualize correlation matrices or to display patterns in data.</p>
+<h4 id="how-do-you-create-a-heatmap-in-seaborn">How do you create a heatmap in Seaborn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-a-pairplot-in-seaborn">What is a pairplot in Seaborn?</h4>
+<p>A pairplot creates a grid of Axes such that each variable in the data is shared across the y-axes across a single row and the x-axes across a single column, visualizing pairwise relationships.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-interpret-a-correlation-coefficient">How do you interpret a correlation coefficient?</h4>
+<p>A correlation coefficient measures the strength and direction of a linear relationship between two variables. Values range from -1 to 1:</p>
+<ul>
+<li><strong>-1</strong>: Perfect negative correlation.</li>
+<li><strong>0</strong>: No correlation.</li>
+<li><strong>1</strong>: Perfect positive correlation.</li>
+</ul>
+<h4 id="what-is-the-purpose-of-the-describe-function-in-pandas">What is the purpose of the <code>describe()</code> function in Pandas?</h4>
+<p>The <code>describe()</code> function generates descriptive statistics, including count, mean, standard deviation, min, max, and quartile values for numerical columns.</p>
+<h4 id="how-do-you-handle-datetime-features-for-machine-learning-models">How do you handle date/time features for machine learning models?</h4>
+<p>By extracting meaningful components:</p>
+<ul>
+<li><strong>Year, Month, Day</strong></li>
+<li><strong>Weekday</strong></li>
+<li><strong>Hour, Minute, Second</strong></li>
+<li><strong>Time since a specific date</strong></li>
+</ul>
+<h4 id="what-is-the-difference-between-loc-and-iloc-in-pandas">What is the difference between <code>.loc</code> and <code>.iloc</code> in Pandas?</h4>
+<ul>
+<li><strong><code>.loc</code></strong>: Label-based indexing to select data by row and column labels.</li>
+<li><strong><code>.iloc</code></strong>: Integer-based indexing to select data by row and column positions.</li>
+</ul>
+<h4 id="how-do-you-rename-columns-in-a-dataframe">How do you rename columns in a DataFrame?</h4>
+<p>Using the <code>rename()</code> function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;old_name&#39;</span><span class="p">:</span> <span class="s1">&#39;new_name&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-purpose-of-the-astype-function-in-pandas">What is the purpose of the <code>astype()</code> function in Pandas?</h4>
+<p>The <code>astype()</code> function is used to change the data type of a Series or DataFrame columns.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-detect-missing-values-in-a-dataframe">How do you detect missing values in a DataFrame?</h4>
+<p>Using <code>isnull()</code> or <code>isna()</code> functions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">missing_values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-an-ensemble-method-in-machine-learning">What is an ensemble method in machine learning?</h4>
+<p>An ensemble method combines predictions from multiple machine learning models to improve performance over a single model. Examples include Random Forest, Gradient Boosting.</p>
+<h4 id="how-do-you-implement-gradient-boosting-in-scikit-learn">How do you implement Gradient Boosting in scikit-learn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-xgboost">What is XGBoost?</h4>
+<p>XGBoost (Extreme Gradient Boosting) is an optimized gradient boosting library designed to be highly efficient, flexible, and portable, widely used for its performance and speed.</p>
+<h4 id="how-do-you-install-and-use-xgboost-in-python">How do you install and use XGBoost in Python?</h4>
+<p>Install using pip:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bash
+pip install xgboost
+</code></pre></div></td></tr></table></div>
+<p>Use in code:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-cross-entropy-loss">What is cross-entropy loss?</h4>
+<p>Cross-entropy loss measures the performance of a classification model whose output is a probability between 0 and 1. It increases as the predicted probability diverges from the actual label.</p>
+<h4 id="how-do-you-calculate-the-learning-rate-in-gradient-descent">How do you calculate the learning rate in gradient descent?</h4>
+<p>The learning rate is a hyperparameter that you set manually. It determines the step size at each iteration while moving toward a minimum of a loss function.</p>
+<h4 id="what-is-the-difference-between-epochs-batches-and-iterations">What is the difference between epochs, batches, and iterations?</h4>
+<ul>
+<li><strong>Epoch</strong>: One complete pass through the entire training dataset.</li>
+<li><strong>Batch</strong>: A subset of the training data used in one iteration.</li>
+<li><strong>Iteration</strong>: One update of the model's parameters.</li>
+</ul>
+<h4 id="how-do-you-perform-hyperparameter-tuning">How do you perform hyperparameter tuning?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Grid Search</strong>: Exhaustively searching through a specified subset of hyperparameters.</li>
+<li><strong>Random Search</strong>: Randomly sampling hyperparameter combinations.</li>
+<li><strong>Bayesian Optimization</strong>: Using probabilistic models to select hyperparameters.</li>
+</ul>
+<h4 id="what-is-the-purpose-of-the-pipeline-module-in-scikit-learn">What is the purpose of the <code>pipeline</code> module in scikit-learn?</h4>
+<p>It allows you to chain preprocessing steps and estimators in a sequential manner, ensuring consistent application of transformations during training and testing.</p>
+<h4 id="how-do-you-evaluate-a-clustering-algorithm">How do you evaluate a clustering algorithm?</h4>
+<p>Using metrics like:</p>
+<ul>
+<li><strong>Silhouette Score</strong></li>
+<li><strong>Calinski-Harabasz Index</strong></li>
+<li><strong>Davies-Bouldin Index</strong></li>
+</ul>
+<h4 id="what-is-a-dummy-variable-trap">What is a dummy variable trap?</h4>
+<p>The dummy variable trap occurs when multicollinearity is introduced in a regression model due to the inclusion of dummy variables that are linearly dependent. It can be avoided by dropping one dummy variable.</p>
+<h4 id="how-do-you-create-a-correlation-matrix-in-pandas">How do you create a correlation matrix in Pandas?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-an-roc-curve-and-how-do-you-plot-it">What is an ROC curve, and how do you plot it?</h4>
+<p>An ROC (Receiver Operating Characteristic) curve plots the true positive rate against the false positive rate at various threshold settings. You can plot it using scikit-learn:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-a-type-i-error">What is a type I error?</h4>
+<p>A type I error occurs when the null hypothesis is true, but we incorrectly reject it (false positive).</p>
+<h4 id="what-is-a-type-ii-error">What is a type II error?</h4>
+<p>A type II error occurs when the null hypothesis is false, but we fail to reject it (false negative).</p>
+<h4 id="how-do-you-calculate-the-p-value-in-a-hypothesis-test">How do you calculate the p-value in a hypothesis test?</h4>
+<p>Using statistical tests from libraries like <code>scipy.stats</code>, which return the p-value as part of the output.</p>
+<h4 id="what-is-the-difference-between-parametric-and-non-parametric-tests">What is the difference between parametric and non-parametric tests?</h4>
+<ul>
+<li><strong>Parametric Tests</strong>: Assume underlying statistical distributions (e.g., t-test).</li>
+<li><strong>Non-Parametric Tests</strong>: Do not assume any specific distribution (e.g., Mann-Whitney U test).</li>
+</ul>
+<h4 id="how-do-you-perform-a-chi-squared-test-in-python">How do you perform a chi-squared test in Python?</h4>
+<p>Using <code>scipy.stats</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">observed_values</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-purpose-of-the-seaborn-library">What is the purpose of the <code>seaborn</code> library?</h4>
+<p>Seaborn is a Python data visualization library based on Matplotlib that provides a high-level interface for drawing attractive statistical graphics.</p>
+<h4 id="how-do-you-create-a-box-plot-in-seaborn">How do you create a box plot in Seaborn?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;categorical_column&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;numerical_column&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-a-violin-plot">What is a violin plot?</h4>
+<p>A violin plot combines a box plot and a kernel density plot to provide a richer depiction of the data distribution.</p>
+<h4 id="how-do-you-handle-multivariate-time-series-data">How do you handle multivariate time series data?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Using models designed for multivariate data</strong>: Like VAR (Vector Autoregression).</li>
+<li><strong>Feature engineering</strong>: Creating lag features for each variable.</li>
+</ul>
+<h4 id="what-is-an-ab-test">What is an A/B test?</h4>
+<p>An A/B test is an experiment comparing two variants (A and B) to determine which one performs better regarding a specific metric.</p>
+<h4 id="how-do-you-analyze-ab-test-results">How do you analyze A/B test results?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Calculating the difference in metrics between groups</strong>.</li>
+<li><strong>Performing statistical tests</strong>: Like t-tests or chi-squared tests.</li>
+<li><strong>Checking for statistical significance</strong>: Using p-values and confidence intervals.</li>
+</ul>
+<h4 id="what-is-the-bonferroni-correction">What is the Bonferroni correction?</h4>
+<p>A method to adjust p-values when multiple comparisons are made to reduce the chances of obtaining false-positive results (Type I errors).</p>
+<h4 id="what-is-survivorship-bias">What is survivorship bias?</h4>
+<p>Survivorship bias occurs when analyses are conducted only on surviving subjects, leading to skewed results due to the overlooking of those that did not survive or were not included.</p>
+<h4 id="what-is-data-leakage">What is data leakage?</h4>
+<p>Data leakage occurs when information from outside the training dataset is used to create the model, leading to overly optimistic performance estimates that won't generalize to new data.</p>
+<h4 id="how-do-you-prevent-data-leakage">How do you prevent data leakage?</h4>
+<p>By:</p>
+<ul>
+<li><strong>Separating training and testing data properly</strong>.</li>
+<li><strong>Performing data preprocessing steps within cross-validation</strong>.</li>
+<li><strong>Avoiding using future data in model training</strong>.</li>
+</ul>
+<h4 id="what-is-a-hash-table">What is a hash table?</h4>
+<p>A hash table is a data structure that implements an associative array, mapping keys to values using a hash function to compute an index into an array of buckets.</p>
+<h4 id="what-is-memoization">What is memoization?</h4>
+<p>Memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.</p>
+<h4 id="how-do-you-reverse-a-linked-list">How do you reverse a linked list?</h4>
+<p>By iterating through the list and reversing the pointers of each node to point to the previous node.</p>
+<h4 id="what-is-the-time-complexity-of-quicksort">What is the time complexity of quicksort?</h4>
+<p>The average time complexity is <strong>O(n log n)</strong>, while the worst-case is <strong>O(n^2)</strong>.</p>
+<h4 id="what-is-a-generator-in-python">What is a generator in Python?</h4>
+<p>A generator is a special type of function that returns an iterator object which can iterate over a sequence of values. It uses the <code>yield</code> keyword.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">my_generator</span><span class="p">():</span>
+    <span class="k">yield</span> <span class="n">value</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-handle-exceptions-in-python">How do you handle exceptions in Python?</h4>
+<p>Using try-except blocks:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Code that may raise an exception</span>
+<span class="k">except</span> <span class="n">ExceptionType</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># Code to handle the exception</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-a-decorator-in-python">What is a decorator in Python?</h4>
+<p>A decorator is a function that modifies the behavior of another function or method. It allows for the addition of functionality to existing code in a modular way.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">decorator_function</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="c1"># Code before function call</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="c1"># Code after function call</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-read-and-write-json-files-in-python">How do you read and write JSON files in Python?</h4>
+<p>Using the <code>json</code> module:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Read JSON</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Write JSON</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-multithreading-and-how-do-you-implement-it-in-python">What is multithreading, and how do you implement it in Python?</h4>
+<p>Multithreading allows concurrent execution of threads (lightweight processes) to improve performance. In Python, you can use the <code>threading</code> module:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="k">def</span> <span class="nf">function_to_run</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">function_to_run</span><span class="p">)</span>
+<span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-the-global-interpreter-lock-gil-in-python">What is the Global Interpreter Lock (GIL) in Python?</h4>
+<p>The GIL is a mutex that protects access to Python objects, preventing multiple native threads from executing Python bytecodes at once. It simplifies memory management but can limit performance in CPU-bound multi-threaded programs.</p>
+<h4 id="how-do-you-handle-file-operations-in-python">How do you handle file operations in Python?</h4>
+<p>Using <code>open()</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-are-lambda-functions-in-python">What are lambda functions in Python?</h4>
+<p>Lambda functions are anonymous functions defined using the <code>lambda</code> keyword, useful for short, simple functions.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-work-with-databases-in-python">How do you work with databases in Python?</h4>
+<p>By using database connectors and ORMs like:</p>
+<ul>
+<li><strong>SQLite</strong>: Using <code>sqlite3</code> module.</li>
+<li><strong>MySQL</strong>: Using <code>mysql-connector-python</code>.</li>
+<li><strong>ORMs</strong>: Using libraries like SQLAlchemy.</li>
+</ul>
+<h4 id="what-is-the-purpose-of-virtual-environments-in-python">What is the purpose of virtual environments in Python?</h4>
+<p>Virtual environments allow you to create isolated Python environments with specific packages and dependencies, preventing conflicts between projects.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bash
+python -m venv myenv
+</code></pre></div></td></tr></table></div>
+<h4 id="how-do-you-install-packages-in-python">How do you install packages in Python?</h4>
+<p>Using <code>pip</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bash
+pip install package_name
+</code></pre></div></td></tr></table></div>
+<h4 id="what-are-the-common-data-types-in-python">What are the common data types in Python?</h4>
+<ul>
+<li><strong>Numeric Types</strong>: int, float, complex</li>
+<li><strong>Sequence Types</strong>: list, tuple, range</li>
+<li><strong>Text Type</strong>: str</li>
+<li><strong>Mapping Type</strong>: dict</li>
+<li><strong>Set Types</strong>: set, frozenset</li>
+<li><strong>Boolean Type</strong>: bool</li>
+</ul>
+<h4 id="how-do-you-create-a-class-in-python">How do you create a class in Python?</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribute</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-inheritance-in-python">What is inheritance in Python?</h4>
+<p>Inheritance allows a class (child) to inherit attributes and methods from another class (parent), promoting code reusability.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ChildClass</span><span class="p">(</span><span class="n">ParentClass</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="what-is-polymorphism-in-python">What is polymorphism in Python?</h4>
+<p>Polymorphism allows methods to have the same name but behave differently in different classes. It enables methods to be used interchangeably.</p>
+<p>o1</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../prompts/glossary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Glossary">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
