@@ -1,5 +1,14 @@
 {
     "cSpell.words": [
-        "explainability"
+        "collinearity",
+        "convolutional",
+        "explainability",
+        "interpretability",
+        "Kolmogorov",
+        "Matplotlib",
+        "overfitting",
+        "scikit",
+        "Smirnov",
+        "underfitting"
     ]
 }
