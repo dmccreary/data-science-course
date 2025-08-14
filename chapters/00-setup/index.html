@@ -12,9 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/setup/">
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/00-setup/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../01-foundations/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Python Environment Setup - AI Based Data Science with Python</title>
+        <title>Setup - AI Based Data Science with Python</title>
       
     
     
@@ -74,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-environment-setup" class="md-skip">
+        <a href="#setting-up-python-visual-studio-code-and-jupyter-notebooks" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python Environment Setup
+              Setup
             
           </span>
         </div>
@@ -245,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about.md" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -282,6 +286,8 @@
       
   
   
+    
+  
   
   
     
@@ -292,7 +298,67 @@
         
       
         
+          
+        
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
         
@@ -301,29 +367,594 @@
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="../../concepts/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
-    Concepts
+    Chapters
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-        <span class="md-nav__icon md-icon"></span>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-    </a>
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-jupyter-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Jupyter Notebooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Jupyter Notebooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-install-via-conda-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Install via Conda (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-install-via-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Install via Pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-install-jupyterlab-enhanced-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: Install JupyterLab (Enhanced Interface)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-jupyter-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Jupyter Notebooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Jupyter Notebooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-jupyter-notebook-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting Jupyter Notebook Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-jupyterlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting JupyterLab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-jupyter-notebooks-in-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Jupyter Notebooks in Visual Studio Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Jupyter Notebooks in Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-jupyter-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the Jupyter Extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-notebooks-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Notebooks in VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-jupyter-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Using Jupyter in VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-essential-data-science-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Essential Data Science Packages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transcript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip-install-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pip Install Transcript
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-data-exploration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Exploration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-data-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-multiple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-nonlinear-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-linear Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-regularization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regularization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-neural-networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capstone Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matplotlib-vs-plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib vs Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -337,6 +968,12 @@
   
     
     
+      
+        
+          
+        
+      
+        
       
         
           
@@ -363,7 +1000,7 @@
       
   
   <span class="md-ellipsis">
-    Sims
+    MicroSims
   </span>
   
 
@@ -386,6 +1023,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -404,7 +1051,7 @@
         
   
   
-    <a href="../../prompts/faqs/" class="md-nav__link">
+    <a href="../../prompts/course-description/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -419,26 +1066,6 @@
   
 
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faqs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Frequently Asked Questions
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -579,11 +1206,128 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pip-install-commands" class="md-nav__link">
+  <a href="#installing-jupyter-notebooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Pip Install Commands
+      Installing Jupyter Notebooks
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Installing Jupyter Notebooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-install-via-conda-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Install via Conda (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-install-via-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Install via Pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-install-jupyterlab-enhanced-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: Install JupyterLab (Enhanced Interface)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-jupyter-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Jupyter Notebooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Jupyter Notebooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-jupyter-notebook-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting Jupyter Notebook Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-jupyterlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting JupyterLab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-jupyter-notebooks-in-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Jupyter Notebooks in Visual Studio Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Jupyter Notebooks in Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-jupyter-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the Jupyter Extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-notebooks-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Notebooks in VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-jupyter-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Using Jupyter in VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-essential-data-science-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Essential Data Science Packages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -620,7 +1364,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/setup.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/00-setup/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -628,20 +1372,112 @@
   
 
 
-<h1 id="python-environment-setup">Python Environment Setup</h1>
+<h1 id="setting-up-python-visual-studio-code-and-jupyter-notebooks">Setting up Python, Visual Studio Code and Jupyter Notebooks</h1>
+<p>In this course will will use, Python, Visual Studio Code and Jupyter Notebooks to do our classroom work.
+We selected these tools because they are the most popular development environments
+in data science today.  You are free to use other tools in this course, however
+you may need to use generative AI to translate our code into other systems.
+In addition, we strongly recommend each student create their own personal
+GitHub repository to store their work.  Because GitHub is backed up the
+students only need to check their code into GitHub using either a command line
+or Source Control section of Visual Studio Code.</p>
 <p>We will be using the following tools for our desktop setup:</p>
 <ol>
-<li>Visual Studio Code - integrated development environment</li>
+<li><a href="../../glossary/#visual-studio-code">Visual Studio Code</a> - integrated development environment</li>
 <li>Conda - virtual environment</li>
 <li>Pip - Python installer package</li>
 </ol>
 <h2 id="conda">Conda</h2>
+<p>Create a "Data Science" conda environment.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;ds&quot;</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 conda<span class="w"> </span>activate<span class="w"> </span>ds
 </code></pre></div></td></tr></table></div>
-<h2 id="pip-install-commands">Pip Install Commands</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
+<h2 id="installing-jupyter-notebooks">Installing Jupyter Notebooks</h2>
+<p>Jupyter Notebooks are essential for this course as they provide an interactive environment for data science work. There are several ways to install and use Jupyter Notebooks:</p>
+<h3 id="method-1-install-via-conda-recommended">Method 1: Install via Conda (Recommended)</h3>
+<p>After activating your conda environment, install Jupyter:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>ds
+conda<span class="w"> </span>install<span class="w"> </span>jupyter
+</code></pre></div></td></tr></table></div>
+<h3 id="method-2-install-via-pip">Method 2: Install via Pip</h3>
+<p>Alternatively, you can install using pip:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>jupyter
+</code></pre></div></td></tr></table></div>
+<h3 id="method-3-install-jupyterlab-enhanced-interface">Method 3: Install JupyterLab (Enhanced Interface)</h3>
+<p>For a more modern interface, you can install JupyterLab:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
+</code></pre></div></td></tr></table></div>
+<h2 id="running-jupyter-notebooks">Running Jupyter Notebooks</h2>
+<h3 id="starting-jupyter-notebook-server">Starting Jupyter Notebook Server</h3>
+<p>To start the Jupyter Notebook server:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Activate your environment first</span>
+conda<span class="w"> </span>activate<span class="w"> </span>ds
+
+<span class="c1"># Start Jupyter Notebook</span>
+jupyter<span class="w"> </span>notebook
+</code></pre></div></td></tr></table></div>
+<p>This will:
+1. Start a local server (usually at <code>http://localhost:8888</code>)
+2. Automatically open your web browser to the Jupyter interface
+3. Display your file system where you can create new notebooks or open existing ones</p>
+<h3 id="starting-jupyterlab">Starting JupyterLab</h3>
+<p>If you installed JupyterLab:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>jupyter<span class="w"> </span>lab
+</code></pre></div></td></tr></table></div>
+<h2 id="using-jupyter-notebooks-in-visual-studio-code">Using Jupyter Notebooks in Visual Studio Code</h2>
+<p>Visual Studio Code provides excellent built-in support for Jupyter Notebooks, offering a seamless development experience.</p>
+<h3 id="installing-the-jupyter-extension">Installing the Jupyter Extension</h3>
+<ol>
+<li>Open Visual Studio Code</li>
+<li>Go to the Extensions view (<code>Ctrl+Shift+X</code> or <code>Cmd+Shift+X</code>)</li>
+<li>Search for "Jupyter" </li>
+<li>Install the official "Jupyter" extension by Microsoft</li>
+</ol>
+<h3 id="working-with-notebooks-in-vs-code">Working with Notebooks in VS Code</h3>
+<p><strong>Creating a New Notebook:</strong>
+1. Open VS Code
+2. Create a new file with <code>.ipynb</code> extension (e.g., <code>my_analysis.ipynb</code>)
+3. VS Code will automatically recognize it as a Jupyter notebook</p>
+<p><strong>Selecting Python Interpreter:</strong>
+1. Open a notebook file
+2. Click on "Select Kernel" in the top-right corner
+3. Choose your conda environment (<code>ds</code>) as the Python interpreter</p>
+<p><strong>Running Code Cells:</strong>
+- <strong>Run Single Cell</strong>: Click the play button next to a cell or press <code>Shift+Enter</code>
+- <strong>Run All Cells</strong>: Use <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code>) and search "Jupyter: Run All Cells"
+- <strong>Add New Cell</strong>: Click the <code>+ Code</code> or <code>+ Markdown</code> buttons between cells</p>
+<h3 id="advantages-of-using-jupyter-in-vs-code">Advantages of Using Jupyter in VS Code</h3>
+<ul>
+<li><strong>Integrated Development</strong>: Code editing, debugging, and notebook execution in one interface</li>
+<li><strong>Git Integration</strong>: Easy version control for notebook files</li>
+<li><strong>IntelliSense</strong>: Code completion and syntax highlighting</li>
+<li><strong>Variable Explorer</strong>: View variables and data structures in real-time</li>
+<li><strong>Debugging Support</strong>: Set breakpoints and debug notebook code</li>
+<li><strong>Extensions</strong>: Access to VS Code's rich extension ecosystem</li>
+</ul>
+<h3 id="installing-essential-data-science-packages">Installing Essential Data Science Packages</h3>
+<p>Install the core packages you'll need for this course:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Activate your environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>ds
+
+<span class="c1"># Install essential data science packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>scikit-learn<span class="w"> </span>jupyter
+
+<span class="c1"># Optional: Install additional useful packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>plotly<span class="w"> </span>ipywidgets
 </code></pre></div></td></tr></table></div>
 <h2 id="transcript">Transcript</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -924,6 +1760,44 @@ Successfully installed contourpy-1.3.1 cycler-0.12.1 fonttools-4.55.0 kiwisolver
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Table of Contents">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Table of Contents
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../01-foundations/" class="md-footer__link md-footer__link--next" aria-label="Next: Foundations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Foundations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
