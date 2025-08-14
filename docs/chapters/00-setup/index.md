@@ -1,8 +1,13 @@
-# Python Environment Setup
+# Python and Visual Studio Code Environment Setup
+
+In this course will will use both Python and Visual Studio code to do our classroom work.
+We selected these tools because they are the most popular development environments
+in data science today.  You are free to use other tools in this course, however
+you may need to use generative AI to translate our code into other systems.
 
 We will be using the following tools for our desktop setup:
 
-1. Visual Studio Code - integrated development environment
+1. [Visual Studio Code](../../glossary.md#visual-studio-code) - integrated development environment
 2. Conda - virtual environment
 3. Pip - Python installer package
 

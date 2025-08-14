@@ -6,7 +6,11 @@
 
 ## Course Overview
 
-This introductory course provides students with foundational knowledge and practical skills in data science using Python. Through hands-on experience with interactive simulations (MicroSims) and real-world datasets, students will develop competency in data analysis, visualization, and predictive modeling. The course emphasizes the critical balance between model explainability and predictive accuracy, guiding students to identify the simplest effective solutions to data-driven problems.
+This introductory course provides students with foundational knowledge and practical skills in data science using Python. 
+Through hands-on experience with interactive simulations [MicroSims](glossary.md#microsimulation) and real-world datasets, 
+students will develop competency in data analysis, visualization, and predictive modeling. 
+The course emphasizes the critical balance between model explainability and predictive accuracy, 
+guiding students to identify the simplest effective solutions to data-driven problems.
 
 ## Learning Objectives
 
@@ -48,7 +52,7 @@ By the end of this course, students will be able to:
 - Develop data-driven solutions to complex problems
 - Generate original insights from exploratory data analysis
 
-## Weekly Schedule
+## Sample Weekly Schedule
 
 ### Week 1: Foundations of Data Science
 - Introduction to data science and its applications

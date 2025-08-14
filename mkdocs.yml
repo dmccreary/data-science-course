@@ -10,6 +10,25 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  - Chapters:
+    - Table of Contents: chapters/index.md
+    - Setup: chapters/00-setup/index.md
+    - Foundations: chapters/01-foundations/index.md
+    - Data Exploration: chapters/02-data-exploration/index.md
+    - Data Visualization: chapters/03-data-visualization/index.md
+    - Statistics: chapters/04-statistics/index.md
+    - Linear Regression: chapters/05-linear-regression/index.md
+    - Model Evaluation: chapters/06-models/index.md
+    - Multiple Regression: chapters/07-multiple-linear-regression/index.md
+    - NumPy: chapters/08-numpy/index.md
+    - Non-linear Models: chapters/09-nonlinear-models/index.md
+    - Regularization: chapters/10-regularization/index.md
+    - Machine Learning: chapters/11-machine-learning/index.md
+    - Neural Networks: chapters/12-neural-networks/index.md
+    - PyTorch: chapters/13-pytorch/index.md
+    - Advanced Evaluation: chapters/14-model-evaluation/index.md
+    - Capstone Projects: chapters/15-projects/index.md
+    - Matplotlib vs Plotly: chapters/matplotlib-vs-plotly.md
   - Concepts:
     - Intro: concepts/index.md
     - concepts/concept-enumeration.md

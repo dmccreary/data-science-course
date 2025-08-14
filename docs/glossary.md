@@ -586,6 +586,14 @@ A regression metric that measures the average squared difference between predict
 The middle value when data is ordered from smallest to largest.
 **Example:** The median of 1, 3, 5 is 3.
 
+#### MicroSimulation
+
+An interactive simulation that runs in your browser that helps you learn a
+data science concept.
+
+**Example:** You can visualize the [least squares method](#least-squares-method) of liner regression by changing
+the slope and intercept of a line through a series of points.
+
 #### Min-Max Scaling
 
 A feature scaling technique that rescales values to a given range, usually \[0, 1].
@@ -1044,6 +1052,16 @@ Performing operations on entire arrays rather than using loops.
 
 The graphical representation of data to reveal patterns and insights.
 **Example:** Using Matplotlib to plot a scatter diagram of height vs. weight.
+
+#### Visual Studio Code
+
+A free integrated development environment that is used widely by programmers and data science science professionals.
+
+Visual Studio Code (VS-Code) also has many extensions for editing different languages and data types.
+
+Other examples of AI-based IDEs include Cursor and Windsurf.  The Cline extension is also useful.
+
+**Example:** We use VS-Code to edit, run, debug and test our Python code.
 
 #### Weighted Average
 
