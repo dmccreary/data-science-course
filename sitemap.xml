@@ -2,87 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/data-science-course/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/checklist/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/code-highlight-test/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/contact/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/course-description/</loc>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/faqs/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/glossary/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/how-we-built-this-site/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/license/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/references/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/chapters/matplotlib-vs-plotly/</loc>
+         <lastmod>2025-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/chapters/setup/</loc>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/concepts/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/concepts/concept-dependencies/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/concepts/concept-enumeration/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/concepts/concept-taxonomy/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/prompts/course-description/</loc>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/faqs/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/glossary/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/learning-graph/</loc>
-         <lastmod>2024-11-15</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-08-14</lastmod>
     </url>
 </urlset>

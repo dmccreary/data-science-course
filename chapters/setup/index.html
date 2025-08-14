@@ -12,13 +12,9 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/concepts/concept-dependencies/">
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/setup/">
       
       
-        <link rel="prev" href="../concept-enumeration/">
-      
-      
-        <link rel="next" href="../concept-taxonomy/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Concept Dependencies - AI Based Data Science with Python</title>
+        <title>Python Environment Setup - AI Based Data Science with Python</title>
       
     
     
@@ -78,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#concept-dependencies" class="md-skip">
+        <a href="#python-environment-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Concept Dependencies
+              Python Environment Setup
             
           </span>
         </div>
@@ -266,8 +262,6 @@
       
   
   
-    
-  
   
   
     
@@ -287,156 +281,29 @@
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../../concepts/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Concepts
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Concepts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concept-enumeration/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Concept Enumeration
-  </span>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Concept Dependencies
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Concept Dependencies
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concept-taxonomy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Concept Taxonomy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -683,9 +550,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
+  <a href="#conda" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt
+      Conda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip-install-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pip Install Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transcript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip-install-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pip Install Transcript
     </span>
   </a>
   
@@ -706,7 +600,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/concepts/concept-dependencies.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/setup.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -714,23 +608,272 @@
   
 
 
-<h1 id="concept-dependencies">Concept Dependencies</h1>
-<h2 id="prompt">Prompt</h2>
-<div class="highlight"><pre><span></span><code>That was perfect.  Thank you very much.
-The next step is to create a dependency graph
-of all the 150 concepts on the list. 
-For each concept, think about other concepts
-that this concept depends upon for understanding.
+<h1 id="python-environment-setup">Python Environment Setup</h1>
+<p>We will be using the following tools for our desktop setup:</p>
+<ol>
+<li>Visual Studio Code - integrated development environment</li>
+<li>Conda - virtual environment</li>
+<li>Pip - Python installer package</li>
+</ol>
+<h2 id="conda">Conda</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;ds&quot;</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>
+conda<span class="w"> </span>activate<span class="w"> </span>ds
+</code></pre></div></td></tr></table></div>
+<h2 id="pip-install-commands">Pip Install Commands</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
+</code></pre></div></td></tr></table></div>
+<h2 id="transcript">Transcript</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span></pre></div></td><td class="code"><div><pre><span></span><code>Retrieving notices: ...working... done
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
 
-For each of the 150 concepts return a single row in CSV format.
 
-Column 1 is the ConceptID (the integer 1 to 150)
-Column 2 is the ConceptLabel
-Column 3 is the Dependencies in the form of pipe-delimited list of ConceptIDs
+==&gt; WARNING: A newer version of conda exists. &lt;==
+  current version: 23.5.2
+  latest version: 24.9.2
 
-Make sure that Foundation Concepts (prerequisites) like knowledge of Python don&#39;t have any dependencies.
-Make sure that every concept except Foundation Concepts have at least one dependency.
-</code></pre></div>
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+Or to minimize the number of packages updated during conda update use
+
+     conda install conda=24.9.2
+
+
+## Package Plan ##
+
+  environment location: /Users/danmccreary/miniconda3/envs/ds
+
+  added / updated specs:
+    - python=3
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2024.9.24  |       hca03da5_0         131 KB
+    expat-2.6.3                |       h313beb8_0         154 KB
+    libmpdec-4.0.0             |       h80987f9_0          69 KB
+    openssl-3.0.15             |       h80987f9_0         4.3 MB
+    pip-24.2                   |  py313hca03da5_0         2.4 MB
+    python-3.13.0              |h4862095_100_cp313        13.7 MB
+    python_abi-3.13            |          0_cp313           7 KB
+    setuptools-75.1.0          |  py313hca03da5_0         1.9 MB
+    tzdata-2024b               |       h04d1e81_0         115 KB
+    wheel-0.44.0               |  py313hca03da5_0         139 KB
+    ------------------------------------------------------------
+                                           Total:        23.0 MB
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              pkgs/main/osx-arm64::bzip2-1.0.8-h80987f9_6 
+  ca-certificates    pkgs/main/osx-arm64::ca-certificates-2024.9.24-hca03da5_0 
+  expat              pkgs/main/osx-arm64::expat-2.6.3-h313beb8_0 
+  libcxx             pkgs/main/osx-arm64::libcxx-14.0.6-h848a8c0_0 
+  libffi             pkgs/main/osx-arm64::libffi-3.4.4-hca03da5_1 
+  libmpdec           pkgs/main/osx-arm64::libmpdec-4.0.0-h80987f9_0 
+  ncurses            pkgs/main/osx-arm64::ncurses-6.4-h313beb8_0 
+  openssl            pkgs/main/osx-arm64::openssl-3.0.15-h80987f9_0 
+  pip                pkgs/main/osx-arm64::pip-24.2-py313hca03da5_0 
+  python             pkgs/main/osx-arm64::python-3.13.0-h4862095_100_cp313 
+  python_abi         pkgs/main/osx-arm64::python_abi-3.13-0_cp313 
+  readline           pkgs/main/osx-arm64::readline-8.2-h1a28f6b_0 
+  setuptools         pkgs/main/osx-arm64::setuptools-75.1.0-py313hca03da5_0 
+  sqlite             pkgs/main/osx-arm64::sqlite-3.45.3-h80987f9_0 
+  tk                 pkgs/main/osx-arm64::tk-8.6.14-h6ba3021_0 
+  tzdata             pkgs/main/noarch::tzdata-2024b-h04d1e81_0 
+  wheel              pkgs/main/osx-arm64::wheel-0.44.0-py313hca03da5_0 
+  xz                 pkgs/main/osx-arm64::xz-5.4.6-h80987f9_1 
+  zlib               pkgs/main/osx-arm64::zlib-1.2.13-h18a0788_1 
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: done                                                                          
+Verifying transaction: done                                                                          
+Executing transaction: done                                                                        
+#                                                                                                    
+# To activate this environment, use                                                                  
+#                                                                                                    
+#     $ conda activate ds                                                                            
+#                                                                                                    
+# To deactivate an active environment, use                                                           
+#
+#     $ conda deactivate
+</code></pre></div></td></tr></table></div>
+<h2 id="pip-install-transcript">Pip Install Transcript</h2>
+<p>(ds) src/line-plot $ pip install matplotlib</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code>Collecting matplotlib
+  Downloading matplotlib-3.9.2-cp313-cp313-macosx_11_0_arm64.whl.metadata (11 kB)
+Collecting contourpy&gt;=1.0.1 (from matplotlib)
+  Downloading contourpy-1.3.1-cp313-cp313-macosx_11_0_arm64.whl.metadata (5.4 kB)
+Collecting cycler&gt;=0.10 (from matplotlib)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools&gt;=4.22.0 (from matplotlib)
+  Downloading fonttools-4.55.0-cp313-cp313-macosx_10_13_universal2.whl.metadata (164 kB)
+Collecting kiwisolver&gt;=1.3.1 (from matplotlib)
+  Downloading kiwisolver-1.4.7-cp313-cp313-macosx_11_0_arm64.whl.metadata (6.3 kB)
+Collecting numpy&gt;=1.23 (from matplotlib)
+  Downloading numpy-2.1.3-cp313-cp313-macosx_14_0_arm64.whl.metadata (62 kB)
+Collecting packaging&gt;=20.0 (from matplotlib)
+  Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting pillow&gt;=8 (from matplotlib)
+  Downloading pillow-11.0.0-cp313-cp313-macosx_11_0_arm64.whl.metadata (9.1 kB)
+Collecting pyparsing&gt;=2.3.1 (from matplotlib)
+  Downloading pyparsing-3.2.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil&gt;=2.7 (from matplotlib)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six&gt;=1.5 (from python-dateutil&gt;=2.7-&gt;matplotlib)
+  Using cached six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Downloading matplotlib-3.9.2-cp313-cp313-macosx_11_0_arm64.whl (7.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.8/7.8 MB 35.2 MB/s eta 0:00:00
+Downloading contourpy-1.3.1-cp313-cp313-macosx_11_0_arm64.whl (255 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.55.0-cp313-cp313-macosx_10_13_universal2.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 19.8 MB/s eta 0:00:00
+Downloading kiwisolver-1.4.7-cp313-cp313-macosx_11_0_arm64.whl (63 kB)
+Downloading numpy-2.1.3-cp313-cp313-macosx_14_0_arm64.whl (5.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 33.8 MB/s eta 0:00:00
+Downloading packaging-24.2-py3-none-any.whl (65 kB)
+Downloading pillow-11.0.0-cp313-cp313-macosx_11_0_arm64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 28.6 MB/s eta 0:00:00
+Downloading pyparsing-3.2.0-py3-none-any.whl (106 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, contourpy, matplotlib
+Successfully installed contourpy-1.3.1 cycler-0.12.1 fonttools-4.55.0 kiwisolver-1.4.7 matplotlib-3.9.2 numpy-2.1.3 packaging-24.2 pillow-11.0.0 pyparsing-3.2.0 python-dateutil-2.9.0.post0 six-1.16.0
+(ds) src/line-plot $ python line-plot.py   
+2024-11-15 07:14:21.701 python[53332:2841291] +[IMKClient subclass]: chose IMKClient_Legacy
+2024-11-15 07:14:21.701 python[53332:2841291] +[IMKInputSession subclass]: chose IMKInputSession_Legacy
+</code></pre></div></td></tr></table></div>
 
 
 
@@ -761,44 +904,6 @@ Make sure that every concept except Foundation Concepts have at least one depend
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../concept-enumeration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Concept Enumeration">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Concept Enumeration
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../concept-taxonomy/" class="md-footer__link md-footer__link--next" aria-label="Next: Concept Taxonomy">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Concept Taxonomy
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
