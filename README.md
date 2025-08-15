@@ -1,7 +1,7 @@
 # AI Based Data Science with Python
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fdmccreary.github.io%2Fdata-science-course%2F)](https://dmccreary.github.io/data-science-course/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-green)](https://dmccreary.github.io/data-science-course/)
 [![MkDocs](https://img.shields.io/badge/Made%20with-MkDocs-blue)](https://www.mkdocs.org/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
@@ -154,7 +154,16 @@ We welcome contributions! Please see our contributing guidelines for details on:
 
 ## 📄 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](license.md) file for details.
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License - see the [LICENSE](docs/license.md) file for details.
+
+**You are free to:**
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
+
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit and indicate if changes were made
+- **NonCommercial** — You may not use the material for commercial purposes  
+- **ShareAlike** — You must distribute contributions under the same license
 
 ## 🙏 Acknowledgments
 
