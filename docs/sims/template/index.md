@@ -3,21 +3,18 @@ title: Social Media Preview Test
 description: A test to see if a local image will be used to generate a social media card.
 image: formatting-tests/social-preview-test.png
 hide:
-  - title          # Hide the page title (used on the cover) but does not currently work so use CSS
-  - navigation     # Hide the left side navigation sidebar
   - toc           # Hide the table of contents on the right
-  - footer        # Hide the footer
 ---
 # MicroSim Template
 
-<iframe src="main.html" height="400"  scrolling="no"></iframe>
+<iframe src="main.html" height="500"  scrolling="no"></iframe>
 
 ## Sample iframe
 
 You can include the following in your HTML to use this MicroSim
 
 ```html
-<iframe src="DOC_ROOT/docs/sims/MICROSIM_NAME/main.html" height="400px" scrolling="no"></iframe>
+<iframe src="/data-science-course/docs/sims/MICROSIM_NAME/main.html" height="400px" scrolling="no"></iframe>
 ```
 
 [Run the MicroSim](main.html){ .md-button .md-button--primary }
