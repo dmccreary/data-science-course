@@ -1,15 +1,26 @@
 {
     "cSpell.words": [
+        "ARIMA",
         "collinearity",
         "convolutional",
+        "counterfactuals",
+        "Dendrogram",
+        "dendrograms",
         "explainability",
         "interpretability",
         "Kolmogorov",
         "Matplotlib",
+        "microsim",
         "microsims",
+        "Multicollinearity",
+        "overcorrelated",
         "overfitting",
         "scikit",
+        "SHAP",
         "Smirnov",
+        "Stopword",
+        "sublayer",
+        "subword",
         "underfitting"
     ]
 }
