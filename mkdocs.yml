@@ -31,15 +31,26 @@ nav:
     - Matplotlib vs Plotly: chapters/matplotlib-vs-plotly.md
   - MicroSims:
     - Introduction: sims/index.md
-    - 100 MicroSims: sims/100-microsims.md
+    - MicroSim Lists:
+        - Intro: sims/microsim-lists/index.md
+        - sims/microsim-lists/10-stats-review-microsims.md
+        - sims/microsim-lists/100-data-science-microsims.md
+        - 100 MicroSims: sims/100-microsims.md
     - Least Squares: sims/least-squares/index.md
     - Learning Graph: sims/learning-graph/index.md
     - 10 Stats MicroSims Map: sims/ten-stats/index.md
+    - Distribution MicroSims:
+      - Normal Distribution: sims/normal-dice-distribution/index.md
+      - Triangular Distribution: sims/pair-dice-sum-distribution/index.md
+      - Bell Curve Emergence: sims/bell-curve/index.md
+    - Data Profile
+    - Template: sims/template/index.md
   - Prompts:
       - Course Description: prompts/course-description.md
       - Concept Enumeration: prompts/concept-enumeration.md
       - Concept Dependencies: prompts/concept-dependencies.md
       - Concept Taxonomy: prompts/concept-taxonomy.md
+      - Generate MicroSims: prompts/generate-microsims.md
       - FAQ: prompts/faqs.md
       - Glossary: prompts/glossary.md
       - Frequently Asked Questions: faqs.md
