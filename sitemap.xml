@@ -2,174 +2,186 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/data-science-course/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/about/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/checklist/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/contact/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/course-description/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/faqs/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/glossary/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/how-we-built-this-site/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/license/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/references/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/matplotlib-vs-plotly/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/00-setup/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/01-foundations/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/02-data-exploration/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/03-data-visualization/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/04-statistics/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/05-linear-regression/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/06-models/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/07-multiple-linear-regression/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/08-numpy/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/09-nonlinear-models/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/10-regularization/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/11-machine-learning/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/12-neural-networks/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/13-pytorch/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/14-model-evaluation/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/chapters/15-projects/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/concept-dependencies/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/concept-enumeration/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/concept-taxonomy/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/course-description/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/faqs/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/generate-microsims/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/prompts/glossary/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/bell-curve/</loc>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/learning-graph/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/least-squares/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/microsim-lists/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/microsim-lists/10-stats-review-microsims/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/microsim-lists/100-data-science-microsims/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/normal-dice-distribution/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/pair-dice-sum-distribution/</loc>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/template/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/ten-stats/</loc>
-         <lastmod>2025-08-14</lastmod>
+         <lastmod>2025-08-15</lastmod>
     </url>
 </urlset>
