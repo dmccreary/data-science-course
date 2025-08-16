@@ -46,15 +46,10 @@ nav:
     - Data Profile
     - Template: sims/template/index.md
   - Prompts:
-      - Course Description: prompts/course-description.md
-      - Concept Enumeration: prompts/concept-enumeration.md
-      - Concept Dependencies: prompts/concept-dependencies.md
-      - Concept Taxonomy: prompts/concept-taxonomy.md
-      - Generate MicroSims: prompts/generate-microsims.md
-      - FAQ: prompts/faqs.md
-      - Glossary: prompts/glossary.md
-      - Frequently Asked Questions: faqs.md
-  - FAQs: faqs.md
+    - FAQ: prompts/faqs.md
+    - Glossary: prompts/glossary.md
+  
+  - Frequently Asked Questions: faqs.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - License: license.md
