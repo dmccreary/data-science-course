@@ -29,6 +29,7 @@ nav:
     - Advanced Evaluation: chapters/14-model-evaluation/index.md
     - Capstone Projects: chapters/15-projects/index.md
     - Matplotlib vs Plotly: chapters/matplotlib-vs-plotly.md
+  
   - MicroSims:
     - Introduction: sims/index.md
     - MicroSim Lists:
@@ -46,17 +47,25 @@ nav:
     - Data Profile
     - Template: sims/template/index.md
   - Prompts:
-    - FAQ: prompts/faqs.md
+    - prompts/course-description.md
+    - prompts/concept-dependencies.md
+    - prompts/concept-enumeration.md
+    - prompts/concept-taxonomy.md
+    - prompts/generate-microsims.md
+    - FAQs: prompts/faqs.md
     - Glossary: prompts/glossary.md
-  
+    - prompts/library-comparison-prompt.md
+    - prompts/quiz.md
   - Frequently Asked Questions: faqs.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - License: license.md
   - References: references.md
+  - Customization Checklist: checklist.md
   - Contact: contact.md
- 
-# CoderDojo Microsite Standards from here down
+
+
+# Dan's Microsite Standards from here down
 
 theme:
   name: material
