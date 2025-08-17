@@ -2,6 +2,9 @@
 
 ## Steps
 
+These steps assume you have setup your desktop using an IDE such as Visual Studio Code.
+See the [Setup Chapter](../chapters/00-setup/index.md) for details.
+
 ### Step 1: Load the following dataset using your IDE such as Visual Studio Code
 
 https://github.com/dmccreary/data-science-course/blob/main/data/lab-01/healthcare-per-capita-2022.csv
