@@ -7,18 +7,18 @@ hide:
 ---
 # MicroSim Template
 
-<iframe src="main.html" height="500"  scrolling="no"></iframe>
+<iframe src="main.html" height="300"  scrolling="no"></iframe>
 
 ## Sample iframe
 
 You can include the following in your HTML to use this MicroSim
 
 ```html
-<iframe src="/data-science-course/docs/sims/MICROSIM_NAME/main.html" height="400px" scrolling="no"></iframe>
+<iframe src="/data-science-course/docs/data-science-workflow/main.html" height="300px" scrolling="no"></iframe>
 ```
 
-[Run the MicroSim](main.html){ .md-button .md-button--primary }
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID)
+[Run the Data Science Workflow MicroSim](main.html){ .md-button .md-button--primary }
+[Edit the Data Science Workflow MicroSim](https://editor.p5js.org/dmccreary/sketches/mdwWEzuaZ)
 
 
 ```html

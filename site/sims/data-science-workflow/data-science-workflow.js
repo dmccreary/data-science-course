@@ -1,5 +1,3 @@
-// Interactive infographic showing a linear six-step data science workflow
-
 // Global layout variables
 let containerWidth;
 let containerHeight = 290;
@@ -294,6 +292,6 @@ function windowResized() {
 
 function updateCanvasSize() {
   const rect = document.querySelector("main").getBoundingClientRect();
-  containerWidth = Math.floor(rect.width);
+  containerWidth = Math.floor(rect.width) - 40; // Account for padding
   canvasWidth = containerWidth;
 }
