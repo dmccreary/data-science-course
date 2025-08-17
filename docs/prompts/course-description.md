@@ -1,8 +1,7 @@
 # Course Description for Introduction to Data Science with Python
 
 !!! prompt
-   Please generate a detailed course description for a 10-week class on the subject of introduction to data science with Python.
-
+    Please generate a detailed course description for a 10-week class on the subject of introduction to data science with Python.
     The course description should be written in Markdown.  Follow Bloom's 2001 taxonomy.
 
     The course description follows an  online textbook about data science using the Python programming language.  The audience is advanced high-school students or freshmen in college.  The focus of the textbook is a series of interactive simulations (MicroSims) that allow the students to interact with data.  We start with simple linear regression and then build increasingly complicated predictive models with Python libraries like NumPy and PyTorch.  The focus is to find the simplest model that combines expandability with prediction fidelity.
