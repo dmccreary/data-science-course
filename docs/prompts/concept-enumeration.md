@@ -2,40 +2,40 @@
 
 ## Prompt
 
-```linenums="0"
-I would like to develop a new course called 
-"Introduction to Data Science with Python using AI". 
+``` prompt
+    I would like to develop a new course called 
+    "Introduction to Data Science with Python using AI". 
 
-I would like you to generate a list of all the core concepts
-that we would cover in this course and the dependency
-relationships between these concepts so we could order
-them and create an learning graph. This course would assume
-that students have basic Python programming experience. 
-This course would be a class that covers the following topics: 
+    I would like you to generate a list of all the core concepts
+    that we would cover in this course and the dependency
+    relationships between these concepts so we could order
+    them and create an learning graph. This course would assume
+    that students have basic Python programming experience. 
+    This course would be a class that covers the following topics: 
 
-1. What is data science? 
-2. Summary of business needs for employees with data science skills. 
-3. Review of Python concepts 
-4. How generative AI can help you learn Python 
-5. Basic Python libraries for handling data such as NumPy 
-6. Python statistical libraries 
-7. Python libraries for machine learning 
-8. Python libraries for working with graph data 
-9. Python libraries for visualization with a focus on Plotly 
-10. Python libraries for NLP 
-11. Python libraries for vector stores 
-12. Python libraries for GenAI including LangChain and LlamaIndex 
+    1. What is data science? 
+    2. Summary of business needs for employees with data science skills. 
+    3. Review of Python concepts 
+    4. How generative AI can help you learn Python 
+    5. Basic Python libraries for handling data such as NumPy 
+    6. Python statistical libraries 
+    7. Python libraries for machine learning 
+    8. Python libraries for working with graph data 
+    9. Python libraries for visualization with a focus on Plotly 
+    10. Python libraries for NLP 
+    11. Python libraries for vector stores 
+    12. Python libraries for GenAI including LangChain and LlamaIndex 
 
-Please create a numbered list of the 150 most important topics 
-that would be taught in this course. Begin with the prerequisite
-concepts and then proceed to defining key terms. Then include
-the core concepts used in Python data analysis.
-Finally, close with some potential final project concepts 
-that students could create. Think carefully about the ordering 
-of the concepts from simple to more abstract. For each concept, 
-return a conceptID followed by short name which would be the
-label for the concept in a learning graph (concept dependency).
-Feel free to use short names and abbreviations.
+    Please create a numbered list of the 250 most important topics 
+    that would be taught in this course. Begin with the prerequisite
+    concepts and then proceed to defining key terms. Then include
+    the core concepts used in Python data analysis.
+    Finally, close with some potential final project concepts 
+    that students could create. Think carefully about the ordering 
+    of the concepts from simple to more abstract. For each concept, 
+    return a conceptID followed by short name which would be the
+    label for the concept in a learning graph (concept dependency).
+    Feel free to use short names and abbreviations.
 
 ChatGPT
 
@@ -191,5 +191,3 @@ Thought for 1m 34s
 148.  **Final Review** - Course Summary and Review
 149.  **Next Steps** - Next Steps in Learning
 150.  **Course Evaluation** - Course Feedback and Evaluation
-
-o1
