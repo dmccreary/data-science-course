@@ -42,7 +42,13 @@ Note that this list from the World Bank.
 
 This exercise introduces **data cleaning**, **exploration**, and **visualization**, which form the foundation of every data science project.
 
-*Suggested MicroSim:* **Exploring Data Points** (students add/remove points on a scatter plot to see how the distribution changes).
+## Data Science Workflow
+
+<iframe src="../../sims/data-science-workflow/main.html" height="300px" scrolling="no"></iframe>
+
+Above is an interactive infographic that allows you to explore the six steps in a typical data
+science workflow.  For each step, hover over the step and view the text description below the
+step.
 
 ## Why Python for Data Science?
 
