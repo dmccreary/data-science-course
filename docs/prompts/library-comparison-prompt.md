@@ -1,15 +1,18 @@
 # Comparison of Matplotlib and Plotly for GenAI-Created Plots and Animations
 
-The wonderful thing about using Python for data science is the vast selection
-of libraries that are available to use for free.  Unfortunately, this also
-comes with a tradeoff.  You have to have a deep understanding of each
-library, what it's original intended purpose was and what its limitations
-are.
+## Prompt
 
-In this section we will look at two of the most popular Python libraries for generating charts and other visualizations: [Mathplotlib](../glossary.md#matplotlib) and [Plotly](../glossary.md#pl
+```linenums="0"
+Compare the Python libraries matplotlib with plotly.
+What are the pros and cons for GenAI created plots and animations?
 
-## Matplotlib
+When choosing between **Matplotlib** and **Plotly** for creating
+plots and animations with generative AI, here are their pros and cons?
+```
 
+## ChatGPT Response
+
+### **Matplotlib**
 Matplotlib is a versatile and widely-used Python library for creating static, animated, and interactive visualizations.
 
 #### **Pros**

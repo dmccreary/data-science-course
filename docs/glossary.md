@@ -609,7 +609,7 @@ Values not recorded in a dataset.
 The most frequently occurring value in a dataset.
 **Example:** In 2, 3, 3, 4, 5, the mode is 3.
 
-#### Model
+**Example:** Creating a scikit-learn pipeline to standardize data and train a model in a single workflow.
 
 A mathematical representation of a process or system built from data to make predictions or decisions.
 **Example:** A linear regression equation predicting house prices.

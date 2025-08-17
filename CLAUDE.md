@@ -24,18 +24,23 @@ This is a data science education website built with MkDocs Material. The site se
 
 ## Development Commands
 
-### MkDocs Commands
+### Primary MkDocs Commands
 
 ```bash
+# Run development server with live reload (main development command)
+mkdocs serve
+
 # Build the site locally (generates site/ directory)
 mkdocs build
 
-# Run development server with live reload
-mkdocs serve
-
-# Deploy to GitHub Pages (does not commit source changes)
+# Deploy to GitHub Pages (builds and pushes to gh-pages branch)
 mkdocs gh-deploy
 ```
+
+### Testing and Validation
+- No formal test suite - validation is done by building successfully with `mkdocs build`
+- Interactive components are tested manually by running `mkdocs serve` and checking functionality
+- MicroSims require browser testing for JavaScript functionality
 
 ### Python Environment Setup
 
@@ -75,12 +80,18 @@ The course follows a 10-week curriculum progression:
 1. Foundations → Statistical concepts → Linear regression → Model evaluation
 2. Multiple regression → NumPy → Non-linear models → PyTorch → Capstone projects
 
-### MicroSims Integration
+### MicroSims Architecture
 
-Interactive simulations are embedded throughout the course:
-- Learning graph visualization (`docs/sims/learning-graph/`)
-- Concept dependency networks with vis.js
-- Real-time parameter manipulation for educational concepts
+Interactive JavaScript simulations embedded throughout the course:
+- **Learning Graph**: `docs/sims/learning-graph/` - vis.js network visualization of concept dependencies
+- **Statistical Simulations**: Various probability and distribution visualizations
+- **Template Structure**: `docs/sims/template/` - Base template for new MicroSims
+
+**MicroSim Development Pattern**:
+- Each sim has `index.md` (documentation) and `main.html` (interactive component)
+- JavaScript files handle simulation logic and visualization
+- Data flows: CSV → Python processing → JSON → JavaScript visualization
+- Standard libraries: vis.js for networks, native HTML5 Canvas for custom graphics
 
 ### Content Creation Workflow
 
@@ -92,12 +103,16 @@ Interactive simulations are embedded throughout the course:
 
 ### Data Science Concepts Management
 
-Concept definitions and dependencies are managed through CSV files in `docs/concepts/`:
-- `ds-concepts.csv` - Core concept definitions
-- `dependencies.csv` - Concept prerequisite relationships
+Concept definitions and dependencies are managed through CSV files in `docs/prompts/` (note: not `docs/concepts/`):
+- `ds-concepts.csv` - Core concept definitions with ConceptID, ConceptLabel, Dependencies, TaxonomyID
+- `dependencies.csv` - Concept prerequisite relationships  
 - `enumerated-concepts.csv` - Categorized concept listings
 
-Use `src/csv-to-json/csv-to-json.py` to convert CSV data to JSON format for interactive visualizations.
+**Data Processing Workflow**:
+1. Edit CSV files in `docs/prompts/` to update concept data
+2. Run `cd src/csv-to-json && python csv-to-json.py` to convert CSV to JSON
+3. Generated JSON feeds into vis.js learning graph visualization
+4. CSV format: pipe-separated dependencies (e.g., "1|2|3" for multiple prerequisites)
 
 ## Development Environment
 
@@ -117,8 +132,17 @@ Deployment process:
 
 ## Key Libraries and Dependencies
 
-- **MkDocs Material**: Documentation site generator with modern theme
-- **vis.js**: Interactive network/graph visualization library for learning graphs
-- **Python standard libraries**: csv, json for data processing
-- **matplotlib**: Basic plotting examples and course content
-- **pandas, numpy**: Referenced in course materials (install as needed for examples)
+### Core Site Technology
+- **MkDocs Material**: Static site generator with modern responsive theme
+- **vis.js**: Interactive network/graph visualization library for concept dependency graphs
+- **Native HTML5/CSS3/JavaScript**: MicroSims use vanilla web technologies, no heavy frameworks
+
+### Python Dependencies
+- **Python standard libraries**: csv, json for data processing utilities
+- **matplotlib**: Basic plotting examples referenced in course content
+- **pandas, numpy**: Referenced in course materials (students install as needed)
+- **No requirements.txt**: Dependencies managed via conda or manual pip installation
+
+### Build and Deployment
+- **GitHub Pages**: Automatic deployment via `mkdocs gh-deploy` command
+- **No CI/CD**: Manual build and deploy process, no automated testing
