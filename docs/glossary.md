@@ -10,201 +10,242 @@ https://chatgpt.com/share/689de02c-693c-8001-ae02-787321501954
 #### Accuracy
 
 A metric used to evaluate classification models, representing the proportion of correct predictions over the total number of predictions.
+
+
 **Example:** In a spam email classifier, if the model correctly identifies 90 out of 100 emails, the accuracy is 90%.
 
 #### Algorithm
 
 A step-by-step procedure or set of rules designed to perform a specific task or solve a problem.
+
 **Example:** Implementing the k-means clustering algorithm to group similar data points in an unsupervised learning task.
 
 #### Anaconda
 
 A free and open-source distribution of Python and R programming languages for scientific computing and data science.
+
 **Example:** Using Anaconda to manage Python packages and environments for data analysis projects in the course.
 
 #### Analytics
 
 The process of examining datasets to draw conclusions about the information they contain, often using specialized software and statistical techniques.
+
 **Example:** Performing customer behavior analytics using Pandas and Matplotlib to improve marketing strategies.
 
 #### Anomaly Detection
 
 The process of identifying unusual patterns or observations in data that do not conform to expected behavior.
+
 **Example:** Detecting fraudulent credit card transactions using an isolation forest model.
 
 #### API (Application Programming Interface)
 
 A set of functions and protocols that allows software applications to communicate with each other.
+
 **Example:** Using the OpenWeather API to import real-time temperature data into a Python program.
 
 #### Application Layer
 
 The highest level in a computing system that interacts directly with user-facing applications and services.
+
 **Example:** A Python script running in Jupyter Notebook is executed at the application layer.
 
 #### Area Under the Curve (AUC)
 
 A performance metric for classification models that measures the ability to distinguish between classes, calculated from the ROC curve.
+
 **Example:** A model with an AUC of 0.95 is better at distinguishing positive from negative cases than one with 0.70.
 
 #### Array
 
 A data structure that stores a collection of items, typically of the same type, at contiguous memory locations.
+
 **Example:** Using NumPy arrays for fast vectorized mathematical computations.
 
 #### Artificial Intelligence (AI)
 
 The field of computer science focused on creating systems capable of performing tasks that normally require human intelligence.
+
 **Example:** Building a neural network to recognize handwritten digits.
 
 #### Association Rule Mining
 
 A method for finding relationships between variables in large datasets.
+
 **Example:** Identifying that customers who buy bread often also purchase butter.
 
 #### Attribute
 
 A property or characteristic of an object, often represented as a column in a dataset.
+
 **Example:** In a dataset of houses, "number of bedrooms" is an attribute.
 
 #### Autocorrelation
 
 A measure of how related a variable is with a lagged version of itself over time.
+
 **Example:** Detecting repeating seasonal patterns in monthly sales data.
 
 #### Bagging (Bootstrap Aggregating)
 
 A machine learning ensemble technique that combines predictions from multiple models trained on different subsets of the data.
+
 **Example:** Using bagging with decision trees to create a random forest classifier.
 
 #### Bar Chart
 
 A visualization that uses rectangular bars to represent data values for different categories.
+
 **Example:** Displaying average exam scores for different majors in a bar chart.
 
 #### Baseline Model
 
 A simple model used as a reference point for comparing the performance of more complex models.
+
 **Example:** Using the mean value of the target variable as predictions to compare against a regression model.
 
 #### Batch Processing
 
 A method of processing large volumes of data in groups instead of in real time.
+
 **Example:** Running a nightly script to clean and aggregate all transaction data from the previous day.
 
 #### Bayes’ Theorem
 
 A formula used to update probabilities based on new evidence.
+
 **Example:** Updating the probability of having a disease after a positive test result.
 
 #### Bias (in Machine Learning)
 
 The error introduced when a model makes assumptions that oversimplify the problem, potentially leading to underfitting.
+
 **Example:** Using a linear model for a highly non-linear dataset can introduce high bias.
 
 #### Bias-Variance Tradeoff
 
 The balance between underfitting (high bias) and overfitting (high variance) when building predictive models.
+
 **Example:** Choosing a model complexity that minimizes both bias and variance.
 
 #### Big Data
 
 Extremely large datasets that require specialized storage and processing methods.
+
 **Example:** Analyzing petabytes of social media data for sentiment analysis.
 
 #### Bin
 
 A grouping of continuous numerical values into intervals for analysis or visualization.
+
 **Example:** Grouping ages into bins like 0–18, 19–35, and 36–60 for analysis.
 
 #### Binary Classification
 
 A classification problem with only two possible outcomes.
+
 **Example:** Predicting whether an email is spam or not spam.
 
 #### Binary Variable
 
 A variable with only two possible values, often represented as 0 and 1.
+
 **Example:** "Passed Exam" variable coded as 1 for pass and 0 for fail.
 
 #### Box Plot
 
 A graphical summary of data distribution showing median, quartiles, and potential outliers.
+
 **Example:** Using a box plot to compare exam scores across different classes.
 
 #### Categorical Data
 
 Data that represents discrete groups or categories.
+
 **Example:** "Car color" with values red, blue, or green.
 
 #### Causal Relationship
 
 A relationship where a change in one variable directly produces a change in another.
+
 **Example:** Increasing advertising budget directly increasing sales.
 
 #### Central Limit Theorem (CLT)
 
 A statistical theory stating that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases.
+
 **Example:** Using the CLT to justify using normal-based confidence intervals.
 
 #### Class (in Classification)
 
 A label assigned to a group of similar data points in a classification task.
+
 **Example:** "Cat" and "Dog" are two classes in an animal image classifier.
 
 #### Classification
 
 The process of predicting a categorical label for new observations based on training data.
+
 **Example:** Using logistic regression to classify emails as spam or not spam.
 
 #### Classification Report
 
 A summary of a classification model’s performance, including precision, recall, and F1-score.
+
 **Example:** Generating a classification report in scikit-learn after model training.
 
 #### Clustering
 
 An unsupervised learning method that groups data points into clusters based on similarity.
+
 **Example:** Segmenting customers into groups based on purchasing habits.
 
 #### Coefficient
 
 A numerical value representing the strength and direction of the relationship between a predictor and the response variable in a regression model.
+
 **Example:** In a linear regression, a coefficient of 2.5 for "hours studied" means each extra hour increases predicted score by 2.5 points.
 
 #### Collinearity
 
 A situation where two or more predictor variables are highly correlated, which can affect model stability.
+
 **Example:** Including both height in inches and height in centimeters in a regression model creates collinearity.
 
 #### Column
 
 A vertical arrangement of data values in a table, representing a single attribute.
+
 **Example:** In a Pandas DataFrame, each column holds one variable’s data.
 
 #### Confusion Matrix
 
 A table used to evaluate classification performance by showing counts of true positives, false positives, true negatives, and false negatives.
+
 **Example:** A confusion matrix showing that a model misclassified 5 out of 100 test emails.
 
 #### Correlation
 
 A statistical measure that describes the strength and direction of a linear relationship between two variables.
+
 **Example:** A correlation coefficient of 0.9 between height and weight indicates a strong positive relationship.
 
 #### Correlation Coefficient
 
 A numerical value between -1 and 1 that indicates the degree of linear association between two variables.
+
 **Example:** A value of -0.75 shows a strong negative correlation.
 
 #### Cross-Validation
 
 A technique for assessing how well a model generalizes by dividing data into multiple training and testing subsets.
+
 **Example:** Using 5-fold cross-validation to evaluate a regression model’s accuracy.
 
 #### CSV (Comma-Separated Values)
 
 A simple file format for storing tabular data where each line represents a row and values are separated by commas.
+
 **Example:** Importing a CSV file of sales data into Pandas for analysis.
 
 ## D–H
@@ -212,211 +253,253 @@ A simple file format for storing tabular data where each line represents a row a
 #### Data Cleaning
 
 The process of detecting and correcting inaccurate, incomplete, or irrelevant data in a dataset.
+
 **Example:** Removing duplicate rows and correcting misspelled city names in a dataset.
 
 #### Data Exploration
 
 The initial phase of data analysis where patterns, trends, and relationships are identified through visualization and statistics.
+
 **Example:** Using Pandas and Matplotlib to examine sales trends by month.
 
 #### Data Frame
 
 A two-dimensional labeled data structure in Pandas that can hold different data types in columns.
+
 **Example:** Loading a CSV file into a Pandas DataFrame for manipulation.
 
 #### Data Mining
 
 The process of discovering patterns, correlations, and insights from large datasets using statistical and computational techniques.
+
 **Example:** Finding product purchase patterns from transaction logs.
 
 #### Data Normalization
 
 Adjusting values in a dataset to a common scale without distorting differences in ranges.
+
 **Example:** Scaling features between 0 and 1 before training a machine learning model.
 
 #### Data Preprocessing
 
 Transforming raw data into a clean and usable format for analysis or modeling.
+
 **Example:** Encoding categorical variables as integers before running a regression.
 
 #### Data Science
 
 An interdisciplinary field that combines statistics, programming, and domain knowledge to extract insights from data.
+
 **Example:** Using Python to analyze and visualize health survey data.
 
 #### Data Type
 
 A classification specifying the kind of value a variable can hold, such as integer, float, or string.
+
 **Example:** In Python, `3` is an integer, and `3.14` is a float.
 
 #### Dataset
 
 A structured collection of data, typically organized in rows and columns.
+
 **Example:** The Iris dataset is commonly used for classification demonstrations.
 
 #### Decision Tree
 
 A model that makes decisions by splitting data into branches based on feature values.
+
 **Example:** Predicting loan approval using a decision tree classifier.
 
 #### Deep Learning
 
 A subfield of machine learning that uses multi-layered neural networks to model complex patterns.
+
 **Example:** Training a convolutional neural network to recognize handwritten digits.
 
 #### Dependent Variable
 
 The outcome variable being predicted or explained in a model.
+
 **Example:** Predicting "house price" based on features like size and location.
 
 #### Descriptive Statistics
 
 Statistical methods for summarizing and describing data features.
+
 **Example:** Calculating mean, median, and standard deviation for exam scores.
 
 #### Dimension Reduction
 
 Techniques for reducing the number of variables while preserving relevant information.
+
 **Example:** Using Principal Component Analysis (PCA) to reduce feature count before clustering.
 
 #### Discrete Data
 
 Data that can only take on specific, distinct values.
+
 **Example:** Number of students in a classroom.
 
 #### Distribution
 
 The way values of a variable are spread or arranged.
+
 **Example:** A bell-shaped distribution for students’ test scores.
 
 #### Dummy Variable
 
 A binary variable created to represent categorical data for modeling purposes.
+
 **Example:** Encoding "Gender" as 0 for male and 1 for female.
 
 #### EDA (Exploratory Data Analysis)
 
 The process of visually and statistically summarizing a dataset to uncover patterns and insights.
+
 **Example:** Plotting histograms and scatter plots to explore data before modeling.
 
 #### Epoch
 
 One complete pass through the entire training dataset in machine learning.
+
 **Example:** Training a neural network for 50 epochs to achieve better accuracy.
 
 #### Evaluation Metric
 
 A standard of measurement used to assess model performance.
+
 **Example:** Mean Squared Error (MSE) for regression models.
 
 #### Evidence-Based Decision
 
 A decision guided by analysis and data rather than intuition alone.
+
 **Example:** Allocating marketing budget based on data-driven campaign performance.
 
 #### Explanatory Variable
 
 A variable used to predict or explain the dependent variable.
+
 **Example:** In predicting crop yield, rainfall amount is an explanatory variable.
 
 #### Exponential Smoothing
 
 A forecasting method that applies decreasing weights to older observations.
+
 **Example:** Forecasting monthly sales using exponential smoothing.
 
 #### Feature
 
 An individual measurable property of the data used in modeling.
+
 **Example:** "Age" and "Income" as features in predicting spending habits.
 
 #### Feature Engineering
 
 The process of creating new features or transforming existing ones to improve model performance.
+
 **Example:** Creating a "BMI" feature from height and weight columns.
 
 #### Feature Scaling
 
 Adjusting feature values to the same scale to ensure fair model training.
+
 **Example:** Standardizing all features to have zero mean and unit variance.
 
 #### Feature Selection
 
 Choosing the most relevant features to improve model efficiency and accuracy.
+
 **Example:** Removing features with low correlation to the target variable.
 
 #### F1-Score
 
 A metric that combines precision and recall into a single value.
+
 **Example:** An F1-score of 0.85 indicates a balanced model performance.
 
 #### False Negative
 
 A prediction that incorrectly classifies a positive case as negative.
+
 **Example:** A medical test failing to detect a disease when it is present.
 
 #### False Positive
 
 A prediction that incorrectly classifies a negative case as positive.
+
 **Example:** A spam filter marking a legitimate email as spam.
 
 #### Feature Matrix
 
 A two-dimensional array containing feature values for all observations in a dataset.
+
 **Example:** A NumPy array where each row is a sample and each column is a feature.
 
 #### Forecasting
 
 Predicting future values based on historical data.
+
 **Example:** Using time series models to forecast next month’s sales.
 
 #### Function (Python)
 
 A reusable block of code that performs a specific task.
+
 **Example:** Defining a function to calculate the mean of a list.
 
 #### Gaussian Distribution
 
 A symmetric, bell-shaped probability distribution characterized by mean and standard deviation.
+
 **Example:** Heights of adult men following a Gaussian distribution.
 
 #### Generalization
 
 The ability of a model to perform well on new, unseen data.
+
 **Example:** A model that predicts accurately on both training and test datasets generalizes well.
 
 #### Gradient Descent
 
 An optimization algorithm used to minimize a function by iteratively moving toward the lowest point.
+
 **Example:** Training linear regression by adjusting weights with gradient descent.
 
 #### Ground Truth
 
 The actual, verified values used to evaluate predictions.
+
 **Example:** Comparing model predictions to actual customer purchase data.
 
 #### GroupBy (Pandas)
 
 A Pandas method for splitting data into groups for aggregation or transformation.
+
 **Example:** Grouping sales data by region and summing total revenue.
 
 #### Heatmap
 
 A graphical representation of data values using color shading.
+
 **Example:** A correlation heatmap showing relationships between features.
 
 #### Heuristic
 
 A rule-of-thumb strategy for solving problems quickly, though not always optimally.
+
 **Example:** Using a decision tree depth limit of 5 as a heuristic for speed.
 
 #### Histogram
 
 A plot that groups numerical data into intervals (bins) and shows their frequency.
+
 **Example:** Plotting the distribution of exam scores in bins of 10 points.
 
 #### Hyperparameter
 
 A parameter set before training that controls model behavior.
+
 **Example:** Setting the learning rate in gradient descent.
 
 ## I–M
@@ -424,166 +507,199 @@ A parameter set before training that controls model behavior.
 #### Imbalanced Dataset
 
 A dataset where some classes have significantly more samples than others.
+
 **Example:** A fraud detection dataset with 99% non-fraud and 1% fraud cases.
 
 #### Imputation
 
 The process of replacing missing data with substituted values.
+
 **Example:** Filling missing ages with the mean age of the dataset.
 
 #### Independent Variable
 
 A variable used as an input to predict another variable.
+
 **Example:** Study time as an independent variable in predicting test scores.
 
 #### Index (Pandas)
 
 Labels that identify rows in a Pandas DataFrame or Series.
+
 **Example:** Setting the "date" column as the index for a time series.
 
 #### Inferential Statistics
 
 Statistical methods for making predictions or inferences about a population from a sample.
+
 **Example:** Using a sample of voters to predict an election outcome.
 
 #### Information Gain
 
 A measure of how much a feature improves classification by reducing uncertainty.
+
 **Example:** A decision tree choosing a feature with the highest information gain for the first split.
 
 #### Interpolation
 
 Estimating unknown values within the range of known data points.
+
 **Example:** Estimating missing temperature readings between two known days.
 
 #### Iteration
 
 A single pass through a loop or process in programming.
+
 **Example:** Each pass through a `for` loop is an iteration.
 
 #### Jupyter Notebook
 
 An interactive environment for writing and running Python code, combining code, visualizations, and text.
+
 **Example:** Running data analysis and visualizations in a Jupyter Notebook.
 
 #### JSON (JavaScript Object Notation)
 
 A lightweight data format for storing and exchanging structured data.
+
 **Example:** Importing JSON-formatted API data into Pandas.
 
 #### k-Fold Cross-Validation
 
 A method of splitting data into k subsets for training and testing to evaluate model performance.
+
 **Example:** Using 10-fold cross-validation to assess a regression model.
 
 #### k-Means Clustering
 
 An unsupervised learning algorithm that groups data into k clusters based on similarity.
+
 **Example:** Segmenting customers into 4 clusters using purchase history.
 
 #### Kernel (in Computing)
 
 The central component of an operating system or computational environment.
+
 **Example:** Restarting the Python kernel in Jupyter Notebook to clear variables.
 
 #### Keyword Argument (Python)
 
 An argument passed to a function by explicitly naming the parameter.
+
 **Example:** Calling `plot(x, y, color="blue")` uses a keyword argument.
 
 #### Kolmogorov-Smirnov Test
 
 A statistical test to compare a sample distribution with a reference probability distribution.
+
 **Example:** Checking if a dataset follows a normal distribution.
 
 #### Label (in Machine Learning)
 
 The output or target variable in supervised learning.
+
 **Example:** "Species" in the Iris dataset is the label.
 
 #### Label Encoding
 
 Converting categorical values into numeric codes.
+
 **Example:** Encoding "low", "medium", "high" as 0, 1, 2.
 
 #### Lasso Regression
 
 A linear regression method with L1 regularization that can reduce coefficients to zero.
+
 **Example:** Using Lasso to perform feature selection in a high-dimensional dataset.
 
 #### Learning Rate
 
 A hyperparameter controlling how much to adjust model weights during training.
+
 **Example:** Setting a learning rate of 0.01 for gradient descent.
 
 #### Least Squares Method
 
 A method for estimating regression coefficients by minimizing the sum of squared residuals.
+
 **Example:** Fitting a line to data points using least squares.
 
 #### Legend (in Visualization)
 
 An element in a chart that explains the meaning of colors, symbols, or line styles.
+
 **Example:** A legend identifying which line corresponds to each city in a temperature chart.
 
 #### Library (Python)
 
 A collection of modules that provide specific functionality.
+
 **Example:** NumPy is a library for numerical computing.
 
 #### Linear Regression
 
 A method for modeling the relationship between a dependent variable and one or more independent variables using a linear equation.
+
 **Example:** Predicting house prices from square footage.
 
 #### Logistic Regression
 
 A statistical model used for binary classification that predicts probabilities using a logistic function.
+
 **Example:** Predicting whether a student passes an exam based on study hours.
 
 #### Loss Function
 
 A function that measures the error between predicted and actual values.
+
 **Example:** Mean Squared Error is a loss function for regression.
 
 #### Machine Learning
 
 A subset of AI where models improve their performance by learning from data.
+
 **Example:** Training a decision tree to classify loan applications.
 
 #### MAE (Mean Absolute Error)
 
 A regression metric measuring the average absolute difference between predicted and actual values.
+
 **Example:** An MAE of 5 means predictions are off by 5 units on average.
 
 #### Map Function (Python)
 
 A function that applies another function to each item in an iterable.
+
 **Example:** Using `map(str.upper, words)` to convert all words to uppercase.
 
 #### Matplotlib
 
 A Python library for creating static, animated, and interactive visualizations.
+
 **Example:** Plotting a line chart of sales over time using Matplotlib.
 
 #### Matrix
 
 A two-dimensional array of numbers arranged in rows and columns.
+
 **Example:** A 3×3 NumPy array representing a matrix.
 
 #### Mean
 
 The average value of a dataset, found by summing all values and dividing by the count.
+
 **Example:** The mean of 2, 4, and 6 is 4.
 
 #### Mean Squared Error (MSE)
 
 A regression metric that measures the average squared difference between predicted and actual values.
+
 **Example:** An MSE of 9 means the average squared error is 9 units.
 
 #### Median
 
 The middle value when data is ordered from smallest to largest.
+
 **Example:** The median of 1, 3, 5 is 3.
 
 #### MicroSimulation
@@ -591,62 +707,75 @@ The middle value when data is ordered from smallest to largest.
 An interactive simulation that runs in your browser that helps you learn a
 data science concept.
 
+
 **Example:** You can visualize the [least squares method](#least-squares-method) of liner regression by changing
 the slope and intercept of a line through a series of points.
 
 #### Min-Max Scaling
 
 A feature scaling technique that rescales values to a given range, usually \[0, 1].
+
 **Example:** Converting exam scores from a 0–100 scale to 0–1.
 
 #### Missing Data
 
 Values not recorded in a dataset.
+
 **Example:** A blank entry for "age" in a survey response.
 
 #### Mode
 
 The most frequently occurring value in a dataset.
+
 **Example:** In 2, 3, 3, 4, 5, the mode is 3.
+
 
 **Example:** Creating a scikit-learn pipeline to standardize data and train a model in a single workflow.
 
 A mathematical representation of a process or system built from data to make predictions or decisions.
+
 **Example:** A linear regression equation predicting house prices.
 
 #### Model Complexity
 
 The level of detail and number of parameters in a model.
+
 **Example:** A deep neural network is more complex than a simple linear regression.
 
 #### Model Evaluation
 
 The process of assessing a model’s performance using metrics and validation techniques.
+
 **Example:** Evaluating a classification model with precision and recall.
 
 #### Model Overfitting
 
 When a model learns noise in the training data, reducing performance on new data.
+
 **Example:** A decision tree that memorizes training examples but fails on test data.
 
 #### Model Underfitting
 
 When a model is too simple to capture the underlying structure of the data.
+
 **Example:** Using a straight line to fit highly curved data.
 
 #### Module (Python)
 
 A file containing Python definitions and functions.
+
 **Example:** Importing the `math` module to use mathematical functions.
 
 #### Multicollinearity
 
 A situation where predictor variables in a regression model are highly correlated with each other.
+
 **Example:** Including both temperature in Celsius and Fahrenheit in the same model.
 
 #### Multiple Linear Regression
 
 A linear regression model with two or more independent variables.
+
 **Example:** Predicting house price using square footage, number of bedrooms, and location.
 
 ## N–S
@@ -654,276 +783,331 @@ A linear regression model with two or more independent variables.
 #### Naive Bayes
 
 A probabilistic classification algorithm based on Bayes’ theorem with the assumption of feature independence.
+
 **Example:** Classifying text documents into categories using Naive Bayes.
 
 #### Natural Language Processing (NLP)
 
 A field of AI focused on enabling computers to understand and process human language.
+
 **Example:** Using NLP to analyze sentiment in customer reviews.
 
 #### Neural Network
 
 A computational model inspired by the human brain, consisting of interconnected nodes (neurons) organized in layers.
+
 **Example:** A neural network classifying handwritten digits.
 
 #### Noise (Data)
 
 Random variations or irrelevant information in data that obscure patterns.
+
 **Example:** Sensor measurement errors in temperature readings.
 
 #### Nominal Data
 
 Categorical data without an inherent order.
+
 **Example:** Car brands such as Toyota, Ford, and Honda.
 
 #### Normal Distribution
 
 A symmetric, bell-shaped probability distribution characterized by mean and standard deviation.
+
 **Example:** Adult human heights often approximate a normal distribution.
 
 #### Normalization
 
 The process of scaling numerical data to a standard range or format.
+
 **Example:** Scaling all features to a 0–1 range before training.
 
 #### Null Hypothesis
 
 A default statistical assumption that there is no effect or relationship between variables.
+
 **Example:** Testing whether two teaching methods result in the same average test score.
 
 #### NumPy
 
 A Python library for numerical computing, providing array objects and mathematical functions.
+
 **Example:** Performing matrix multiplication using NumPy arrays.
 
 #### Observation
 
 A single record or row in a dataset.
+
 **Example:** One student's exam scores in a class dataset.
 
 #### One-Hot Encoding
 
 A method of converting categorical variables into binary indicator variables.
+
 **Example:** Encoding "red", "blue", "green" into three separate binary columns.
 
 #### Open Source Software
 
 Software with source code made freely available for modification and distribution.
+
 **Example:** Pandas is open source.
 
 #### Optimization
 
 The process of adjusting model parameters to minimize or maximize an objective function.
+
 **Example:** Using gradient descent to minimize prediction error.
 
 #### Outlier
 
 A data point significantly different from other observations.
+
 **Example:** A monthly sales value 10 times higher than all others.
 
 #### Overfitting
 
 When a model fits training data too closely, capturing noise rather than general patterns.
+
 **Example:** A polynomial regression curve that perfectly passes through all training points but fails on test data.
 
 #### Overfitting Prevention
 
 Techniques used to reduce overfitting, such as regularization, pruning, and cross-validation.
+
 **Example:** Using Lasso regression to reduce unnecessary model complexity.
 
 #### p-Value
 
 A statistical measure of the probability of obtaining results at least as extreme as the observed results, assuming the null hypothesis is true.
+
 **Example:** A p-value of 0.03 suggests statistical significance at the 5% level.
 
 #### Pandas
 
 A Python library for data manipulation and analysis with DataFrame and Series objects.
+
 **Example:** Loading and cleaning a CSV dataset with Pandas.
 
 #### Parameter (Model)
 
 A value learned from data that defines how the model makes predictions.
+
 **Example:** The slope in a linear regression equation.
 
 #### Parameter Tuning
 
 Adjusting model hyperparameters to optimize performance.
+
 **Example:** Testing multiple learning rates to find the best one.
 
 #### Parsing
 
 Breaking down data or text into structured components for processing.
+
 **Example:** Parsing JSON data from an API response.
 
 #### Pearson Correlation Coefficient
 
 A statistic measuring the linear relationship between two variables.
+
 **Example:** A Pearson coefficient of 0.8 indicates a strong positive relationship.
 
 #### Performance Metric
 
 A quantitative measure used to evaluate the effectiveness of a model.
+
 **Example:** Accuracy, precision, and recall are performance metrics for classification.
 
 #### Pipeline (Machine Learning)
 
 A sequence of data processing and modeling steps applied consistently to training and test data.
+
 **Example:** A pipeline for scaling features and then applying logistic regression.
 
 #### Pivot Table
 
 A table that summarizes data by grouping and aggregating values.
+
 **Example:** Summarizing sales by region and month using a Pandas pivot table.
 
 #### Polynomial Regression
 
 A regression method where the relationship between variables is modeled as an nth-degree polynomial.
+
 **Example:** Fitting a quadratic curve to non-linear data.
 
 #### Population
 
 The entire set of items or individuals of interest in a study.
+
 **Example:** All registered voters in a country.
 
 #### Precision
 
 The proportion of positive predictions that are actually correct.
+
 **Example:** A precision of 0.9 means 90% of predicted positives were correct.
 
 #### Predictive Modeling
 
 The process of creating models to forecast outcomes based on historical data.
+
 **Example:** Using past sales data to predict next month’s revenue.
 
 #### Predictor Variable
 
 An independent variable used to forecast the dependent variable.
+
 **Example:** Advertising spend as a predictor of sales.
 
 #### Preprocessing
 
 Preparing raw data for analysis or modeling through cleaning, transformation, and encoding.
+
 **Example:** Removing missing values and scaling features.
 
 #### Pre-Trained Model
 
 A model that has been previously trained on a large dataset and can be fine-tuned for a new task.
+
 **Example:** Using a pre-trained image classifier for a smaller dataset.
 
 #### Probability
 
 A measure of the likelihood that an event will occur, ranging from 0 to 1.
+
 **Example:** A probability of 0.75 means a 75% chance of occurrence.
 
 #### Probability Distribution
 
 A function that describes the likelihood of all possible outcomes.
+
 **Example:** A uniform distribution gives equal probability to all values.
 
 #### PyTorch
 
 An open-source machine learning library for deep learning and tensor computation.
+
 **Example:** Building a neural network in PyTorch for image recognition.
 
 #### Quantile
 
 A cut point dividing data into equal-sized intervals.
+
 **Example:** The median is the 0.5 quantile.
 
 #### Quartile
 
 One of three points that divide data into four equal groups.
+
 **Example:** The first quartile is the 25th percentile.
 
 #### Query (Database)
 
 A request for specific information from a database.
+
 **Example:** Using SQL to retrieve rows where sales exceed \$500.
 
 #### R² (Coefficient of Determination)
 
 A metric indicating the proportion of variance in the dependent variable explained by the model.
+
 **Example:** An R² of 0.85 means 85% of the variation is explained by the model.
 
 #### Random Forest
 
 An ensemble learning method combining multiple decision trees for better performance.
+
 **Example:** Classifying emails using a random forest model.
 
 #### Recall
 
 The proportion of actual positives correctly identified by the model.
+
 **Example:** A recall of 0.8 means the model identified 80% of actual positives.
 
 #### Recursive Feature Elimination (RFE)
 
 A method for selecting features by recursively removing the least important ones.
+
 **Example:** Using RFE to reduce feature count before training.
 
 #### Regression
 
 A statistical method for modeling relationships between variables to predict numerical outcomes.
+
 **Example:** Predicting car prices from mileage and age.
 
 #### Regularization
 
 A technique for reducing model complexity to prevent overfitting by adding a penalty term to the loss function.
+
 **Example:** L2 regularization in Ridge regression.
 
 #### Residual
 
 The difference between the observed value and the value predicted by a model.
+
 **Example:** If actual sales are 200 and predicted sales are 180, the residual is 20.
 
 #### Root Mean Squared Error (RMSE)
 
 A regression metric measuring the square root of the average squared prediction error.
+
 **Example:** An RMSE of 3 means predictions are off by 3 units on average.
 
 #### Sample
 
 A subset of a population used for analysis.
+
 **Example:** Surveying 500 people from a city of 100,000 residents.
 
 #### Sampling
 
 Selecting a subset of data from a larger dataset or population.
+
 **Example:** Randomly selecting 100 customers for a feedback survey.
 
 #### Sampling Bias
 
 A bias introduced when the sample is not representative of the population.
+
 **Example:** Surveying only morning shoppers to estimate daily spending.
 
 #### Scatter Plot
 
 A graph showing data points on an x-y axis to visualize relationships between variables.
+
 **Example:** Plotting height against weight to explore correlation.
 
 #### Scikit-learn
 
 A Python library for machine learning, providing tools for modeling, preprocessing, and evaluation.
+
 **Example:** Building a decision tree classifier with Scikit-learn.
 
 #### Scripting
 
 Writing and executing code to automate tasks.
+
 **Example:** Writing a Python script to download and clean data files.
 
 #### Series (Pandas)
 
 A one-dimensional labeled array in Pandas.
+
 **Example:** A Series of student grades with names as labels.
 
 #### Standard Deviation
 
 A measure of the dispersion of values around the mean.
+
 **Example:** A standard deviation of 2 means most values fall within ±2 units of the mean.
 
 #### Standardization
 
 Scaling features so they have zero mean and unit variance.
+
 **Example:** Standardizing exam scores before analysis.
 
 ## T–Z
@@ -931,126 +1115,151 @@ Scaling features so they have zero mean and unit variance.
 #### Target Variable
 
 The variable a model aims to predict.
+
 **Example:** Predicting "exam score" as the target variable using study hours and sleep.
 
 #### t-Statistic
 
 A value used in hypothesis testing to determine if sample means differ significantly.
+
 **Example:** Using a t-statistic to compare average weights of two groups.
 
 #### Tensor
 
 A multi-dimensional array used in deep learning frameworks like PyTorch.
+
 **Example:** Representing a batch of images as a 4D tensor.
 
 #### Test Data
 
 A dataset used to evaluate model performance after training.
+
 **Example:** Testing a spam filter on previously unseen emails.
 
 #### Test-Train Split
 
 The process of dividing data into separate training and testing subsets.
+
 **Example:** Using 80% of data for training and 20% for testing.
 
 #### Text Mining
 
 Extracting useful information from text data through statistical and computational methods.
+
 **Example:** Identifying frequent keywords in news articles.
 
 #### Time Series
 
 A sequence of data points collected over time intervals.
+
 **Example:** Daily stock prices over a year.
 
 #### Tokenization
 
 Breaking text into smaller units such as words or phrases.
+
 **Example:** Splitting "Data Science is fun" into \["Data", "Science", "is", "fun"].
 
 #### Training Data
 
 The dataset used to fit or train a model.
+
 **Example:** Using past sales data to train a revenue prediction model.
 
 #### Training Epoch
 
 One complete pass of the training dataset through the model during learning.
+
 **Example:** Training a neural network for 10 epochs.
 
 #### Transformation
 
 Applying a mathematical function to change data format or scale.
+
 **Example:** Applying a logarithmic transformation to skewed data.
 
 #### Tree-Based Models
 
 Models that use decision trees or ensembles of trees for prediction.
+
 **Example:** Random forest and gradient boosting are tree-based models.
 
 #### Trend (Time Series)
 
 A long-term movement or pattern in time series data.
+
 **Example:** Increasing monthly sales over several years.
 
 #### True Negative
 
 A case where a model correctly predicts a negative outcome.
+
 **Example:** A medical test correctly identifying a healthy patient.
 
 #### True Positive
 
 A case where a model correctly predicts a positive outcome.
+
 **Example:** A cancer detection test correctly identifying a patient with cancer.
 
 #### t-Test
 
 A statistical test comparing the means of two groups.
+
 **Example:** Testing whether two different diets result in different average weight loss.
 
 #### Underfitting
 
 When a model is too simple to capture the underlying data patterns.
+
 **Example:** Using a straight line to predict a highly curved dataset.
 
 #### Univariate Analysis
 
 Analysis of a single variable to summarize and find patterns.
+
 **Example:** Plotting a histogram of exam scores.
 
 #### Unsupervised Learning
 
 A machine learning approach where models find structure in data without labeled outcomes.
+
 **Example:** Using k-means clustering to group customers.
 
 #### Validation Data
 
 A dataset used during training to tune model hyperparameters.
+
 **Example:** Using validation data to choose the number of decision tree splits.
 
 #### Value Counts (Pandas)
 
 A method to count occurrences of each unique value in a Pandas Series.
+
 **Example:** Counting how many times each grade appears in a class.
 
 #### Variable
 
 A storage location identified by a name that holds a value.
+
 **Example:** In Python, `age = 20` assigns 20 to the variable `age`.
 
 #### Variance
 
 A measure of the spread of data points around the mean.
+
 **Example:** A variance of 4 means average squared deviations are 4 units².
 
 #### Vectorization
 
 Performing operations on entire arrays rather than using loops.
+
 **Example:** Adding two NumPy arrays without explicit loops.
 
 #### Visualization
 
 The graphical representation of data to reveal patterns and insights.
+
 **Example:** Using Matplotlib to plot a scatter diagram of height vs. weight.
 
 #### Visual Studio Code
@@ -1061,44 +1270,53 @@ Visual Studio Code (VS-Code) also has many extensions for editing different lang
 
 Other examples of AI-based IDEs include Cursor and Windsurf.  The Cline extension is also useful.
 
+
 **Example:** We use VS-Code to edit, run, debug and test our Python code.
 
 #### Weighted Average
 
 An average where each value contributes according to its assigned weight.
+
 **Example:** Calculating a final grade with different weights for assignments and exams.
 
 #### Weight (Model)
 
 A parameter that determines the influence of a feature in a model’s prediction.
+
 **Example:** A weight of 0.5 for "hours studied" in a regression model.
 
 #### White Noise (Time Series)
 
 A random sequence of values with no predictable pattern.
+
 **Example:** Fluctuations in daily stock prices without a trend.
 
 #### Wilcoxon Test
 
 A non-parametric test for comparing paired samples.
+
 **Example:** Comparing pre- and post-training test scores without assuming normality.
 
 #### YAML (YAML Ain’t Markup Language)
 
 A human-readable data serialization format.
+
 **Example:** Storing configuration settings in a YAML file.
 
 #### z-Score
 
 A standardized score indicating how many standard deviations a value is from the mean.
+
 **Example:** A z-score of 2 means the value is two standard deviations above the mean.
 
 #### Zero-Inflated Data
 
 Data with an excess number of zero values compared to a standard distribution.
+
 **Example:** A dataset of monthly purchases where many customers have zero purchases.
 
 #### Zero-Shot Learning
 
 A machine learning method where a model makes predictions for classes it was not explicitly trained on.
+
 **Example:** A text classifier identifying a new topic without prior examples.
