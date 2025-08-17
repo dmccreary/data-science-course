@@ -1,6 +1,8 @@
 # Healthcare Costs Per Capita
 
-Source: World Bank
+Data Source: World Bank Download in Aug of 2025
+
+Note that many countries did not have data for the year 2023 yet.
 
 | Feature         | Details                                                                                            |
 | --------------- | -------------------------------------------------------------------------------------------------- |
@@ -13,5 +15,5 @@ Source: World Bank
 [1]: https://en.wikipedia.org/wiki/List_of_countries_by_total_health_expenditure_per_capita?utm_source=chatgpt.com "List of countries by total health expenditure per capita"
 [2]: https://en.wikipedia.org/wiki/World_Development_Indicators?utm_source=chatgpt.com "World Development Indicators"
 [3]: https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SH.XPD.PCAP?utm_source=chatgpt.com "Health expenditure per capita (current US$)"
-[4]: https://data.worldbank.org/indicator/SH.XPD.CHEX.PP.CD?locations=1W&utm_source=chatgpt.com "Current health expenditure per capita, PPP ..."
+[4]: https://data.worldbank.org/indicator/SH.XPD.CHEX.PP.CD "Current health expenditure per capita, PPP ..."
 [5]: https://ourworldindata.org/grapher/annual-healthcare-expenditure-per-capita?utm_source=chatgpt.com "Total health spending per person"

@@ -38,6 +38,7 @@ nav:
         - sims/microsim-lists/100-data-science-microsims.md
         - 100 MicroSims: sims/100-microsims.md
     - Data Science Workflow: sims/data-science-workflow/index.md
+    - Data Science Language Popularity: sims/ds-prog-lang/index.md
     - Book Generation Workflow: sims/book-gen-workflow/index.md
     - Least Squares: sims/least-squares/index.md
     - Learning Graph: sims/learning-graph/index.md
