@@ -30,6 +30,11 @@ nav:
     - Capstone Projects: chapters/15-projects/index.md
     - Matplotlib vs Plotly: chapters/matplotlib-vs-plotly.md
   
+  - Labs:
+    - Labs: labs/index.md
+    - Lab 1 - Dataframes: labs/01-dataframe/index.md
+    - Lab 2 - Explore Data: labs/02-explore-data/index.md
+    - Lab 3 - Statistics: labs/03-statistics/index.md
   - MicroSims:
     - Introduction: sims/index.md
     - MicroSim Lists:
@@ -56,6 +61,8 @@ nav:
     - prompts/concept-enumeration.md
     - prompts/concept-taxonomy.md
     - prompts/generate-microsims.md
+    - prompts/data-science-language-popularity.md
+    - prompts/data-science-workflow.md
     - FAQs: prompts/faqs.md
     - Glossary: prompts/glossary.md
     - prompts/library-comparison-prompt.md
