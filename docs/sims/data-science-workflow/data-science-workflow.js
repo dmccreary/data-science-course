@@ -171,7 +171,7 @@ function drawBoxes() {
     fill(b.tcolor);
     textSize(fontSize);
     textAlign(CENTER, CENTER);
-    text(b.label, b.x + b.w / 2, b.y + b.h / 2);
+    text(b.label, b.x + b.w / 2, b.y + b.h/2 + 5);
   }
 }
 
