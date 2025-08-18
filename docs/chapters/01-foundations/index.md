@@ -66,10 +66,11 @@ different types of information.
 
 These types are:
 
-1. **Images**
-2. **Sequences**
-3. **Tabular**
-4. **Graph**
+1. **Images** - Visual data represented as pixel arrays with RGB color values. Each pixel contains red, green, and blue color components. Common in computer vision, medical imaging, satellite imagery, and photo recognition. Neural networks like CNNs are specifically designed to process this type of spatial data structure.
+2. **Sequences** - Sequences: Ordered data where position and timing matter critically. Examples include time series data, natural language text, DNA sequences, audio signals, and stock prices. RNNs, LSTMs, and Transformers are designed to capture temporal dependencies and patterns in sequential data.
+3. **Tabular** -  Structured data organized in rows and columns, similar to spreadsheets or databases. Each row represents an observation and each column represents a feature or variable. This is the most common data type in traditional machine learning, handled well by algorithms like random forests, SVM, and gradient boosting.  We can use Python data frames to manipulate tabular data.
+4. **Graph** - Graph: Network data representing relationships and connections between entities. Nodes represent objects (people, websites, molecules) while edges represent relationships (friendships, links, bonds). Used in social network analysis, recommendation systems, knowledge graphs, and molecular modeling. Graph Neural Networks (GNNs) are specialized for this data type.
+
 
 Future chapters will focus on different ways we represent this information and how our models vary based on the type of data we are working with.
 
