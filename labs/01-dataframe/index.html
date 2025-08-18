@@ -12,24 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/labs/01-dataframes/01-dataframe/">
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/labs/01-dataframe/">
       
       
+        <link rel="prev" href="../">
       
       
-      <link rel="icon" href="../../../img/favicon.ico">
+        <link rel="next" href="../02-explore-data/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
-        <title>Lab 1: Dataframes - AI Based Data Science with Python</title>
+        <title>Lab 1 - Dataframes - AI Based Data Science with Python</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -90,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
       
-  <img src="../../../img/logo-192.png" alt="logo">
+  <img src="../../img/logo-192.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 1: Dataframes
+              Lab 1 - Dataframes
             
           </span>
         </div>
@@ -196,9 +200,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
       
-  <img src="../../../img/logo-192.png" alt="logo">
+  <img src="../../img/logo-192.png" alt="logo">
 
     </a>
     AI Based Data Science with Python
@@ -225,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -265,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-description/" class="md-nav__link">
+      <a href="../../course-description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -370,7 +374,7 @@
         
   
   
-    <a href="../../../chapters/" class="md-nav__link">
+    <a href="../../chapters/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -384,6 +388,234 @@
     </a>
   
 
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lab 1 - Dataframes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1 - Dataframes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-load-the-following-dataset-using-your-ide-such-as-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Load the following dataset using your IDE such as Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-load-the-rainbow-csv-extension-into-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Load the Rainbow CSV Extension into Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-load-python-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Load Python Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-run-python-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Run Python Code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-explore-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2 - Explore Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3 - Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -453,7 +685,7 @@
         
   
   
-    <a href="../../../sims/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -499,6 +731,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -512,7 +748,7 @@
         
   
   
-    <a href="../../../prompts/course-description/" class="md-nav__link">
+    <a href="../../prompts/course-description/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -538,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faqs/" class="md-nav__link">
+      <a href="../../faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/" class="md-nav__link">
+      <a href="../../glossary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-we-built-this-site/" class="md-nav__link">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -598,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../checklist/" class="md-nav__link">
+      <a href="../../checklist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -618,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../references/" class="md-nav__link">
+      <a href="../../references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../checklist/" class="md-nav__link">
+      <a href="../../checklist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -678,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -783,7 +1019,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/labs/01-dataframes/01-dataframe.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/labs/01-dataframe/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -797,7 +1033,7 @@
 See the <a href="../chapters/00-setup/index.md">Setup Chapter</a> for details.</p>
 <h3 id="step-1-load-the-following-dataset-using-your-ide-such-as-visual-studio-code">Step 1: Load the following dataset using your IDE such as Visual Studio Code</h3>
 <h3 id="step-2-load-the-rainbow-csv-extension-into-visual-studio-code">Step 2: Load the Rainbow CSV Extension into Visual Studio Code</h3>
-<p><img alt="" src="../csv-file-view.png" /></p>
+<p><img alt="" src="csv-file-view.png" /></p>
 <h3 id="step-3-load-python-code">Step 3: Load Python Code</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -908,6 +1144,44 @@ Column names: [&#39;Country_Name&#39;, &#39;Country_Code&#39;, &#39;Health_Exp_P
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Labs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Labs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-explore-data/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 2 - Explore Data">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Explore Data
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -931,10 +1205,10 @@ Column names: [&#39;Country_Name&#39;, &#39;Country_Code&#39;, &#39;Health_Exp_P
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
