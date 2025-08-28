@@ -6,7 +6,7 @@
 [![MkDocs](https://img.shields.io/badge/Made%20with-MkDocs-blue)](https://www.mkdocs.org/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 
-An interactive online course on **AI-Based Data Science with Python** featuring comprehensive learning materials, MicroSims (interactive simulations), and hands-on exercises designed for high school and college students.
+This GitHub repo hosts an interactive online course on **AI-Based Data Science with Python** featuring comprehensive learning materials covered under a [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. The focus of the site is high-quality interactive MicroSims (interactive simulations), and hands-on exercises designed for high school and college students.  The site is designed to be quickly customized to your schools's needs.  
 
 🌐 **Live Site**: [https://dmccreary.github.io/data-science-course/](https://dmccreary.github.io/data-science-course/)
 
