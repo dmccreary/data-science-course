@@ -1,3 +1,10 @@
+---
+title: Least Squares MicroSim
+description: A Microsim to demonstrate how the least-squares algorithm works with interactive sliders for controlling the slope and intercept.
+image: /sims/least-squares/least-squares.png
+og:image: /sims/least-squares/least-squares.png
+twitter:image: /sims/least-squares/least-squares.png
+---
 # Least Squares
 
 <iframe src="main.html" height="565px" scrolling="no"></iframe>
