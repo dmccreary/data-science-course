@@ -12,6 +12,43 @@ Applications of data science span nearly every field:
 * **Transportation:** Route optimization and autonomous vehicle navigation.
 * **Environmental Science:** Climate modeling and resource management.
 
+<<<<<<< HEAD
+=======
+### First Lab: Exploring Sample Datasets
+
+To begin, we will explore real datasets. A simple but practical task is to generate a **CSV file** of **per-capita annual healthcare costs for 2023** across the 100 largest countries. You will then use Python to:
+
+1. Load the data into a Pandas **DataFrame**.
+2. Compute summary statistics such as mean, median, and standard deviation.
+3. Create visualizations such as bar charts and scatter plots.
+4. Ask ChatGPT (or another LLM) to interpret the results and suggest insights.
+
+[World Bank Per Capita Healthcare Costs](https://data.worldbank.org/indicator/SH.XPD.CHEX.PP.CD)
+
+Here is a sample of what this data looks like:
+
+```csv
+Country Name,Country Code,health_exp_pc_ppp_2022
+Africa Eastern and Southern,AFE,228
+Afghanistan,AFG,383
+Africa Western and Central,AFW,201
+Angola,AGO,217
+Albania,ALB,1186
+Andorra,AND,5136
+Arab World,ARB,776
+United Arab Emirates,ARE,3814
+Argentina,ARG,2664
+Armenia,ARM,1824
+Antigua and Barbuda,ATG,1436
+```
+
+Note that this list from the World Bank contains not only countries but also regions.
+
+This exercise introduces **data cleaning**, **exploration**, and **visualization**, which form the foundation of every data science project.
+
+*Suggested MicroSim:* **Exploring Data Points** (students add/remove points on a scatter plot to see how the distribution changes).
+
+>>>>>>> 7836e01 (updates)
 ## Why Python for Data Science?
 
 Python is the most widely used programming language for data science. It is popular because of:
@@ -24,7 +61,10 @@ Over the past 15 years, Python has steadily risen to become the dominant languag
 
 Here is an interactive time-series chart showing the change in popularity of different languages used in data science.  You can hover over each year to see what percent each language had in data science that year.
 
+<<<<<<< HEAD
 <iframe src="../../sims/ds-prog-lang/main.html" height="590px" scrolling="no"></iframe>
+=======
+>>>>>>> 7836e01 (updates)
 
 📊 Key Insights from Chart:
 
@@ -93,10 +133,32 @@ Core **data structures** include:
 
 Later in the course, we will rely heavily on **NumPy arrays** and **Pandas DataFrames**, which are optimized for data manipulation.
 
+<<<<<<< HEAD
+=======
+
+## Understanding the Data Science Workflow
+
+Every data science project follows a structured workflow:
+
+1. **Define the problem** – Clarify what question is being answered.
+2. **Collect data** – Gather raw data from reliable sources.
+3. **Clean and preprocess data** – Handle missing values, errors, and inconsistencies.
+4. **Explore and visualize** – Use plots and descriptive statistics to understand patterns.
+5. **Modeling** – Build predictive or explanatory models.
+6. **Evaluate** – Use metrics to test accuracy and generalizability.
+7. **Deploy and communicate results** – Share findings with stakeholders.
+
+This workflow is iterative. A failed model often sends us back to collect new data or engineer better features.
+
+>>>>>>> 7836e01 (updates)
 ### MicroSim – Data Science Workflow Infographic
 
 Students can explore an **interactive infographic** where clicking each stage of the workflow reveals its purpose, key tools, and example questions.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7836e01 (updates)
 ## Data Science Roles and Career Paths
 
 Data science is a team effort, involving many specialized roles:
@@ -109,6 +171,10 @@ Data science is a team effort, involving many specialized roles:
 
 These roles often overlap, and many entry-level positions expect a blend of programming, statistics, and communication skills.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7836e01 (updates)
 ## Ethics and Best Practices in Data Science
 
 Data science has great potential, but also significant risks. Poorly designed or biased models can reinforce inequalities or cause harm. To practice **ethical data science**, we must:
@@ -119,6 +185,7 @@ Data science has great potential, but also significant risks. Poorly designed or
 * **Ensure reproducibility**: Use version control and pipelines so results can be verified.
 * **Balance efficiency and responsibility**: Consider environmental and social impacts.
 
+<<<<<<< HEAD
 ### Sample Hands-On Lab: Exploring Sample Datasets with Python Dataframes
 
 To begin, we will explore a real-world datasets.  Let's say a friend of yours complained that the
@@ -161,3 +228,8 @@ This exercise introduces **data cleaning**, **exploration**, and **visualization
 ✅ This completes the **Foundations of Data Science** chapter, preparing students for Week 1 of the course.
 
 
+=======
+
+✅ This completes the **Foundations of Data Science** chapter, preparing students for Week 1 of the course.
+
+>>>>>>> 7836e01 (updates)

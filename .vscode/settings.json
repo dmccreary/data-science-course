@@ -4,6 +4,7 @@
         "concat",
         "Explainability",
         "genai",
+        "generalizability",
         "groupby",
         "joblib",
         "Lemmatization",
