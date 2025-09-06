@@ -5,13 +5,13 @@ image: /sims/least-squares/least-squares.png
 og:image: /sims/least-squares/least-squares.png
 twitter:image: /sims/least-squares/least-squares.png
 ---
-# Least Squares
+# Least Squares MicroSim
 
 <iframe src="main.html" height="565px" scrolling="no"></iframe>
 
-[Run the Least Squares MicroSim](./main.html){.md-button .md-button--primary}
+[Run the Least Squares MicroSim in Fullscreen](./main.html){.md-button .md-button--primary}
 <br/>
-[Edit the Least Squares MicroSim](https://editor.p5js.org/dmccreary/sketches/voN2RROfE)
+[Edit the Least Squares MicroSim in the p5.js editor](https://editor.p5js.org/dmccreary/sketches/voN2RROfE)
 
 ## Lesson Plan for High School Algebra
 
