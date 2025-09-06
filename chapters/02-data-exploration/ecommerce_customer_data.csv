@@ -1,0 +1,504 @@
+customer_id,age,gender,annual_income,education_level,city,registration_date,total_purchases,total_spent,favorite_category,satisfaction_score,email_domain,phone_number,credit_score,premium_member,last_review
+CUST_00001,40.0,F,39014.42,PhD,Houston,2021-08-17,6,507.58381617871675,Automotive,6,yahoo.com,8803569270,850.0,True,Outstanding customer service experience.
+CUST_00002,33.0,F,14113.47,Bachelor's Degree,Chicago,2021-02-21,7,62.25954085604543,Fashion,8,work.net,912-220-7232,699.0,False,Excellent service and fast delivery.
+CUST_00003,42.0,M,32209.27,Master's Degree,City_27,2022-07-18,10,112.3338976357269,Home & Garden,4,outlook.com,4048612358,565.0,False,Good value for money.
+CUST_00004,53.0,female,9823.8,High School,City_18,2022-05-17,12,553.9549277750183,Home & Garden,5,yahoo.com,560.505.7389,839.0,True,Not satisfied with the quality.
+CUST_00005,32.0,male,82285.71,Associate Degree,Dallas,2022-04-03,9,103.84139953066015,Automotive,4,work.net,(629) 751-9947,768.0,True,"Product arrived damaged, disappointed. Needs improvement."
+CUST_00006,32.0,M,6319.73,Master's Degree,City_5,2021-10-13,9,223.94399024894471,Fashion,10,business.org,(817) 425-8999,658.0,True,"Could be better, but acceptable."
+CUST_00007,53.0,M,71963.93,Some College,San Antonio,2021-07-29,6,853.3749336528658,Books,6,business.org,2942408767,645.0,False,Excellent service and fast delivery. Would shop here again.
+CUST_00008,44.0,Male,79501.31,High School,San Jose,2021-06-28,2,449.94467182568366,Fashion,6,corp.com,3871901278,773.0,False,"Product arrived damaged, disappointed."
+CUST_00009,29.0,M,104298.44,Master's Degree,City_1,2023-05-15,5,79.70113903924548,Sports,1,company.com,229.598.6507,700.0,True,"Product arrived damaged, disappointed."
+CUST_00010,41.0,Male,38928.71,Master's Degree,San Diego,2021-03-07,8,595.9212378812794,Home & Garden,4,work.net,884.895.7624,565.0,False,"Great product, highly recommend!"
+CUST_00011,150.0,Female,75606.9,Bachelor's Degree,City_41,2021-03-03,8,501.4405953864485,Books,6,gmail.com,(941) 369-8657,850.0,True,
+CUST_00012,29.0,Other,31958.79,Bachelor's Degree,New York,2021-07-11,9,407.9239891846697,Sports,3,business.org,330-837-9751,685.0,False,
+CUST_00013,37.0,Female,14053.72,High School,City_29,2022-03-24,6,438.2304066277982,Automotive,7,work.net,(227) 603-1444,839.0,False,Good value for money. Would shop here again.
+CUST_00014,18.0,Female,,Master's Degree,Chicago,2022-04-22,9,128.0089309781376,Gaming,7,hotmail.com,285-858-8022,822.0,False,"Fast shipping, product as described."
+CUST_00015,18.0,Female,33607.06,Bachelor's Degree,City_30,2023-11-01,16,464.5642273704195,Fashion,8,gmail.com,338.672.3977,639.0,False,"Great product, highly recommend! Exceeded expectations."
+CUST_00016,,Male,11759.2,High School,City_12,2021-02-24,10,708.1934978916076,Home & Garden,8,business.org,251.466.7211,802.0,False,"Fast shipping, product as described."
+CUST_00017,22.0,F,24997.92,Master's Degree,City_35,2022-02-12,9,213.08073431481773,Fashion,6,gmail.com,535.416.8449,667.0,False,Excellent service and fast delivery. Needs improvement.
+CUST_00018,38.0,Male,25800.27,Bachelor's Degree,Los Angeles,2023-05-10,8,188.68431168392962,Electronics,5,gmail.com,534.545.7211,570.0,False,
+CUST_00019,24.0,Male,52541.44,High School,City_6,2022-03-28,8,206.47079227525998,Sports,8,yahoo.com,,686.0,False,Excellent service and fast delivery. Needs improvement.
+CUST_00020,18.0,Female,237432.34,Some College,City_1,2023-07-09,9,403.68244057909493,Gaming,8,business.org,484-970-7906,751.0,True,Good value for money. Would shop here again.
+CUST_00021,52.0,F,55156.78,Some College,City_21,2022-07-24,9,447.93510119856086,Home & Garden,4,gmail.com,458-283-8705,682.0,False,Amazing! Will definitely buy again.
+CUST_00022,32.0,F,42850.61,Bachelor's Degree,City_4,2021-01-14,11,147.33605802381214,Home & Garden,9,hotmail.com,219.967.9837,695.0,False,"Product arrived damaged, disappointed."
+CUST_00023,35.0,Male,259009.74,High School,City_5,2021-11-23,8,35.22595535489136,Automotive,3,gmail.com,253.558.4673,,True,
+CUST_00024,18.0,Female,79468.41,PhD,Dallas,2023-05-16,11,162.8925792110512,Gaming,3,gmail.com,(865) 270-1659,728.0,True,"Fast shipping, product as described."
+CUST_00025,28.0,Female,44506.89,Bachelor's Degree,San Antonio,2022-11-28,5,165.3856855931764,Electronics,5,corp.com,972-231-5051,652.0,False,"Product arrived damaged, disappointed."
+CUST_00026,5.0,M,24747.27,Bachelor's Degree,San Jose,2022-07-24,10,449.022061486611,Sports,9,corp.com,404.220.3496,776.0,True,
+CUST_00027,21.0,M,46768.26,Bachelor's Degree,Chicago,2021-11-15,8,377.12836595480667,Electronics,7,gmail.com,444.329.8758,735.0,False,Amazing! Will definitely buy again.
+CUST_00028,,Female,34437.03,Bachelor's Degree,City_47,2022-03-17,9,303.18624186321216,Home & Garden,8,corp.com,(885) 317-4571,518.0,False,"Product arrived damaged, disappointed."
+CUST_00029,27.0,Female,39071.45,Master's Degree,City_22,2022-11-21,6,272.31005036797546,Fashion,5,outlook.com,(676) 916-5198,754.0,False,"Fast shipping, product as described."
+CUST_00030,31.0,Female,103935.1,Bachelor's Degree,City_46,2021-07-29,6,336.9574481495931,Electronics,7,hotmail.com,5293802269,751.0,False,Good value for money.
+CUST_00031,27.0,f,23570.29,Master's Degree,Phoenix,2021-07-09,11,508.39543329246067,Electronics,6,yahoo.com,(371) 820-2876,721.0,False,Good value for money. Needs improvement.
+CUST_00032,57.0,Female,54766.42,Some College,City_38,2023-02-18,11,468.3701713399646,Electronics,9,gmail.com,996.367.6096,791.0,False,"Product arrived damaged, disappointed."
+CUST_00033,34.0,Female,77586.75,Bachelor's Degree,City_31,2021-07-18,7,144.24070887881842,Fashion,2,gmail.com,310.792.1420,666.0,True,
+CUST_00034,22.0,Female,21382.11,Master's Degree,City_18,2023-01-06,9,223.609500041718,Electronics,5,gmail.com,519.789.7149,746.0,False,"Fast shipping, product as described."
+CUST_00035,44.0,Female,18805.47,Associate Degree,City_13,2022-12-06,4,178.84753561533557,Home & Garden,4,corp.com,7998585123,594.0,True,Outstanding customer service experience.
+CUST_00036,20.0,m,,Bachelor's Degree,San Antonio,2022-06-26,13,282.38961882814687,Fashion,9,corp.com,(932) 403-2245,752.0,True,"Great product, highly recommend!"
+CUST_00037,37.0,Female,25101.84,Bachelor's Degree,City_32,2021-03-30,5,368.8537901392882,Fashion,7,gmail.com,806-907-4978,850.0,False,"Could be better, but acceptable."
+CUST_00038,18.0,M,91296.35,Master's Degree,City_1,2023-07-30,5,12.359334592774562,Gaming,6,outlook.com,6732630060,640.0,True,
+CUST_00039,19.0,F,16294.54,Master's Degree,Los Angeles,2021-09-13,7,146.580854970865,Fashion,6,company.com,991.508.2983,659.0,False,
+CUST_00040,37.0,Female,38360.25,Associate Degree,San Antonio,2023-02-15,8,450.4465244751262,Electronics,10,business.org,,,True,Not satisfied with the quality. Needs improvement.
+CUST_00041,43.0,Female,278406.81,Bachelor's Degree,City_44,2021-06-11,6,126.70196618210261,Fashion,9,business.org,9714737142,730.0,True,"Product arrived damaged, disappointed. Would shop here again."
+CUST_00042,37.0,f,50536.2,Elementary,City_36,2022-08-24,11,82.1033319681306,Fashion,8,outlook.com,8725629088,634.0,True,Outstanding customer service experience.
+CUST_00043,,Female,57724.22,High School,City_49,2023-01-11,8,123.98164456868392,Health,5,outlook.com,242.555.9728,753.0,True,Outstanding customer service experience. Exceeded expectations.
+CUST_00044,,Female,91908.24,High School,City_13,2022-01-29,10,409.102017899923,Health,4,gmail.com,8134836840,,False,"Product arrived damaged, disappointed."
+CUST_00045,18.0,Other,25075.35,Master's Degree,Phoenix,2021-05-23,5,53.374651374455134,Electronics,10,hotmail.com,579-270-9289,762.0,False,Good value for money. Exceeded expectations.
+CUST_00046,26.0,Male,15288.62,Bachelor's Degree,Houston,2021-04-04,7,637.7361670616706,Fashion,6,gmail.com,4781177100,578.0,False,Amazing! Will definitely buy again.
+CUST_00047,29.0,Male,41823.31,High School,Houston,2022-04-12,6,339.00494165368474,Electronics,5,outlook.com,(212) 630-9031,,False,Good value for money.
+CUST_00048,,Female,44905.84,Bachelor's Degree,New York,2022-08-16,7,365.82004646747197,Health,7,corp.com,(308) 643-6934,794.0,True,
+CUST_00049,39.0,male,9951.03,Bachelor's Degree,San Diego,2021-06-13,8,143.05601978833474,Automotive,9,business.org,9024784536,786.0,False,"Product arrived damaged, disappointed."
+CUST_00050,,Male,49023.62,High School,Houston,2022-04-22,11,259.6538257562388,Electronics,6,gmail.com,,749.0,True,Outstanding customer service experience.
+CUST_00051,38.0,Male,85466.55,Some College,Dallas,2021-07-26,9,431.80626017405797,Automotive,7,work.net,5559270786,737.0,False,Outstanding customer service experience. Very pleased overall.
+CUST_00052,30.0,Male,17494.5,High School,City_44,2023-02-18,8,389.7445956908605,Fashion,9,work.net,5037867512,802.0,False,
+CUST_00053,26.0,Male,51454.06,Master's Degree,Dallas,2022-07-24,7,164.61987097390568,Electronics,6,gmail.com,3870403050,850.0,False,
+CUST_00054,42.0,Male,74147.45,PhD,City_38,2023-07-18,6,762.1378177793159,Fashion,5,yahoo.com,951.734.5425,643.0,False,
+CUST_00055,47.0,Female,58066.41,Some College,City_11,2023-01-18,5,301.7475463617242,Automotive,10,yahoo.com,830-751-8921,806.0,False,Excellent service and fast delivery. Needs improvement.
+CUST_00056,,Female,62617.81,High School,Phoenix,2021-11-30,9,405.2570853220283,Home & Garden,10,gmail.com,676.646.5397,713.0,False,Excellent service and fast delivery. Exceeded expectations.
+CUST_00057,24.0,Male,29856.56,Associate Degree,San Diego,2023-01-29,6,358.80148434136294,Electronics,9,hotmail.com,530-451-2419,709.0,False,
+CUST_00058,31.0,Female,14735.23,Bachelor's Degree,Los Angeles,2022-12-29,5,91.76726032440921,Fashion,8,yahoo.com,(485) 661-4995,,True,Outstanding customer service experience.
+CUST_00059,38.0,Male,25394.37,Master's Degree,San Antonio,2022-03-06,3,216.8911926281811,Fashion,5,work.net,968-675-7209,,False,Excellent service and fast delivery.
+CUST_00060,46.0,Female,22723.49,Master's Degree,City_18,2022-07-01,11,100.35534810945276,Electronics,9,yahoo.com,(544) 229-9098,640.0,False,"Product arrived damaged, disappointed."
+CUST_00061,,Female,34057.06,Associate Degree,Los Angeles,2021-05-27,8,404.4860676701548,Health,5,outlook.com,5654814605,682.0,False,Excellent service and fast delivery. Needs improvement.
+CUST_00062,32.0,F,87082.98,Bachelor's Degree,Phoenix,2021-12-17,9,157.7619914634781,Fashion,9,gmail.com,,632.0,True,Amazing! Will definitely buy again. Needs improvement.
+CUST_00063,21.0,Male,12714.88,Master's Degree,San Diego,2023-12-30,7,334.8006734434233,Electronics,9,gmail.com,,684.0,False,"Product arrived damaged, disappointed. Exceeded expectations."
+CUST_00064,20.0,Female,40757.7,Bachelor's Degree,City_49,2022-05-17,5,140.03942792970466,Sports,7,gmail.com,386.699.4475,687.0,False,"Great product, highly recommend!"
+CUST_00065,44.0,Male,15510.6,PhD,City_29,2021-12-01,9,345.2723620201703,Home & Garden,9,yahoo.com,7818928902,727.0,False,"Great product, highly recommend! Would shop here again."
+CUST_00066,51.0,f,20089.7,Elementary,City_24,2023-08-05,7,42.03700345873907,Electronics,8,corp.com,464.548.5581,590.0,True,Not satisfied with the quality.
+CUST_00067,34.0,F,56783.02,High School,Chicago,2023-02-17,5,573.8696266114019,Home & Garden,5,outlook.com,810.918.5526,604.0,False,"Product arrived damaged, disappointed. Exceeded expectations."
+CUST_00068,47.0,Female,14017.25,Elementary,City_29,2022-07-07,9,148.5896092966779,Fashion,8,company.com,769.210.9464,748.0,False,"Could be better, but acceptable."
+CUST_00069,39.0,Male,65342.34,High School,City_29,2022-03-26,7,656.1548271176888,Electronics,3,work.net,395-287-4954,656.0,False,Not satisfied with the quality.
+CUST_00070,27.0,male,,High School,City_11,2022-10-27,2,131.9270644383501,Fashion,7,yahoo.com,(937) 616-9004,805.0,False,"Poor quality, would not recommend. Very pleased overall."
+CUST_00071,39.0,Male,,High School,City_50,2021-04-25,6,128.3466675636322,Fashion,4,gmail.com,8679430948,,False,
+CUST_00072,53.0,Male,10513.07,Bachelor's Degree,San Antonio,2022-04-15,6,93.78474724267231,Health,6,gmail.com,446.907.8800,768.0,True,Outstanding customer service experience.
+CUST_00073,34.0,Female,22153.48,Master's Degree,City_45,2021-03-07,7,286.5480043113389,Home & Garden,9,hotmail.com,9069099107,832.0,True,"Poor quality, would not recommend."
+CUST_00074,53.0,Male,165577.64,High School,City_42,2022-10-09,10,667.3942837568333,Home & Garden,10,gmail.com,(702) 658-1282,695.0,False,"Could be better, but acceptable."
+CUST_00075,18.0,female,142462.93,High School,New York,2023-04-02,13,158.12715365647537,Gaming,6,work.net,,674.0,False,Outstanding customer service experience.
+CUST_00076,44.0,F,26107.56,Some College,San Jose,2022-07-03,8,384.76238615338303,Fashion,7,work.net,(295) 501-4630,789.0,True,Amazing! Will definitely buy again. Very pleased overall.
+CUST_00077,36.0,Male,49611.03,Associate Degree,City_48,2021-05-16,6,411.41532125745823,Electronics,7,yahoo.com,614.908.4986,760.0,False,
+CUST_00078,31.0,Female,,Associate Degree,Chicago,2022-03-09,10,69.8843138841716,Fashion,10,work.net,513.879.7046,705.0,False,"Could be better, but acceptable. Very pleased overall."
+CUST_00079,36.0,female,62632.33,Associate Degree,City_5,2022-10-07,10,193.1024389819497,Automotive,7,company.com,,,False,Not satisfied with the quality.
+CUST_00080,,f,,Master's Degree,City_48,2022-03-12,6,311.37530912999097,Health,8,yahoo.com,(684) 766-9698,703.0,True,Not satisfied with the quality.
+CUST_00081,32.0,M,19952.14,High School,City_6,2023-10-20,7,182.6968198648171,Home & Garden,10,yahoo.com,552.635.6419,722.0,True,Not satisfied with the quality.
+CUST_00082,39.0,male,72728.06,Bachelor's Degree,Houston,2023-03-22,10,559.5097856519308,Fashion,6,corp.com,,721.0,False,Excellent service and fast delivery.
+CUST_00083,,female,89730.2,Master's Degree,City_9,2023-07-29,11,120.18682697717625,Home & Garden,9,corp.com,7805981993,645.0,False,Excellent service and fast delivery. Would shop here again.
+CUST_00084,28.0,F,143280.78,Bachelor's Degree,Phoenix,2021-10-20,10,342.0861919152151,Electronics,9,yahoo.com,(664) 477-6023,726.0,False,Amazing! Will definitely buy again. Exceeded expectations.
+CUST_00085,25.0,Male,9416.33,Master's Degree,City_2,2022-06-27,5,131.14981179732817,Fashion,10,work.net,,831.0,False,Not satisfied with the quality.
+CUST_00086,28.0,Female,13326.37,High School,Los Angeles,2021-10-13,8,194.75826825234432,Electronics,5,company.com,(457) 436-2976,755.0,False,"Fast shipping, product as described."
+CUST_00087,45.0,m,91999.54,Bachelor's Degree,City_11,2022-05-21,18,254.31125984031542,Electronics,6,yahoo.com,938.397.6169,722.0,False,
+CUST_00088,38.0,Male,10496.27,Bachelor's Degree,City_2,2022-06-23,7,163.24359244739225,Automotive,9,outlook.com,322-960-9779,707.0,False,Good value for money.
+CUST_00089,28.0,m,97815.66,Master's Degree,City_25,2023-05-28,5,653.8479730363952,Electronics,6,hotmail.com,4964229896,746.0,False,Outstanding customer service experience.
+CUST_00090,41.0,Male,30578.55,Master's Degree,City_14,2023-03-29,2,226.68025011615,Electronics,7,hotmail.com,(396) 421-8933,779.0,False,"Fast shipping, product as described."
+CUST_00091,36.0,Male,23939.11,Master's Degree,City_5,2023-01-12,8,680.8993466049367,Home & Garden,4,hotmail.com,(483) 941-9595,768.0,True,
+CUST_00092,46.0,Female,42802.12,High School,City_19,2022-03-26,6,477.0156913692619,Electronics,3,yahoo.com,4563196714,693.0,False,"Product arrived damaged, disappointed. Needs improvement."
+CUST_00093,26.0,Male,12378.36,High School,Chicago,2021-10-11,5,40.7180645832133,Electronics,6,gmail.com,6211261115,745.0,True,"Poor quality, would not recommend."
+CUST_00094,31.0,female,70207.6,Associate Degree,City_10,2023-11-10,4,55.49399113738253,Home & Garden,7,gmail.com,5576111591,758.0,False,Excellent service and fast delivery.
+CUST_00095,30.0,m,,Master's Degree,Houston,2023-10-08,10,145.72684597846913,Electronics,6,corp.com,(503) 432-6912,639.0,False,"Fast shipping, product as described."
+CUST_00096,18.0,m,,High School,City_43,2021-07-06,9,322.9710029619013,Fashion,7,work.net,(383) 509-1231,733.0,True,Good value for money. Would shop here again.
+CUST_00097,38.0,M,29815.78,Associate Degree,Los Angeles,2021-04-07,10,72.82330149586309,Home & Garden,7,corp.com,925.746.3073,547.0,False,Not satisfied with the quality.
+CUST_00098,38.0,Male,10610.2,High School,Dallas,2021-08-13,6,140.41857067907947,Electronics,8,company.com,480.246.1893,,False,Excellent service and fast delivery.
+CUST_00099,35.0,Female,10941.63,Bachelor's Degree,City_20,2021-11-10,5,249.20518696313098,Fashion,7,gmail.com,766-499-3068,772.0,False,Excellent service and fast delivery.
+CUST_00100,32.0,Female,12535.07,High School,San Jose,2021-11-24,8,819.5836043712782,Fashion,6,outlook.com,(853) 970-9042,779.0,True,Outstanding customer service experience.
+CUST_00101,18.0,Female,35960.54,Master's Degree,Los Angeles,2023-05-15,7,420.96577509904955,Sports,6,yahoo.com,305-212-5658,688.0,False,Not satisfied with the quality. Needs improvement.
+CUST_00102,29.0,Male,39764.11,Master's Degree,City_6,2021-05-11,4,791.4364174201422,Electronics,4,outlook.com,(680) 690-8216,744.0,True,Excellent service and fast delivery.
+CUST_00103,30.0,Female,72747.86,High School,City_15,2023-02-28,8,300.06920205132747,Fashion,7,yahoo.com,3463320861,833.0,True,Good value for money.
+CUST_00104,25.0,Female,8631.53,Associate Degree,City_21,2023-02-21,4,274.62870944330876,Gaming,7,company.com,252-458-8827,833.0,True,"Great product, highly recommend!"
+CUST_00105,33.0,Other,103670.01,Bachelor's Degree,San Diego,2023-08-17,8,226.9685535582472,Electronics,7,work.net,316-266-7565,,True,Good value for money. Exceeded expectations.
+CUST_00106,39.0,f,63292.69,Bachelor's Degree,City_7,2023-12-20,6,269.01358994484417,Electronics,6,work.net,(703) 275-1878,731.0,False,
+CUST_00107,57.0,Female,27960.02,High School,San Jose,2022-05-30,15,89.39372534865369,Home & Garden,8,company.com,355.352.5978,808.0,False,Excellent service and fast delivery. Very pleased overall.
+CUST_00108,37.0,M,14019.31,Bachelor's Degree,City_18,2021-01-24,5,375.6862714481109,Electronics,3,gmail.com,6660816486,599.0,False,
+CUST_00109,38.0,F,98647.93,High School,City_9,2021-08-23,6,187.5812220149229,Electronics,9,gmail.com,,694.0,False,"Great product, highly recommend!"
+CUST_00110,34.0,Male,28564.64,Master's Degree,City_3,2022-07-01,5,197.6330437584957,Fashion,2,outlook.com,454.321.7818,826.0,True,Not satisfied with the quality.
+CUST_00111,18.0,f,,Associate Degree,Phoenix,2022-11-28,5,141.29840772858918,Electronics,10,outlook.com,820-810-4697,798.0,False,"Fast shipping, product as described."
+CUST_00112,34.0,f,49359.7,Bachelor's Degree,New York,2021-08-17,9,85.82428216251559,Automotive,7,yahoo.com,(994) 735-7232,749.0,True,"Could be better, but acceptable."
+CUST_00113,35.0,Female,17490.98,High School,Houston,2022-08-25,9,149.47720724616687,Electronics,6,company.com,(661) 653-5871,599.0,False,Excellent service and fast delivery.
+CUST_00114,64.0,Female,28976.94,High School,Chicago,2023-06-10,8,92.67566257660727,Home & Garden,5,corp.com,9989355001,716.0,False,Amazing! Will definitely buy again.
+CUST_00115,32.0,Male,72566.13,High School,Dallas,2021-11-20,9,338.229730925828,Automotive,1,gmail.com,639.512.1986,672.0,True,"Could be better, but acceptable."
+CUST_00116,38.0,Female,66921.59,Bachelor's Degree,City_12,2023-07-19,9,128.90389788037368,Automotive,5,corp.com,(824) 957-2625,,False,Not satisfied with the quality. Very pleased overall.
+CUST_00117,34.0,Male,67405.76,PhD,Phoenix,2021-01-07,7,577.1385940248264,Home & Garden,4,company.com,981.412.4457,,True,Excellent service and fast delivery.
+CUST_00118,20.0,f,14412.57,High School,City_44,2022-06-24,7,134.7028909985133,Electronics,8,gmail.com,470-876-2330,637.0,False,
+CUST_00119,48.0,Male,30053.54,Master's Degree,New York,2023-10-23,6,794.3803867325101,Automotive,6,yahoo.com,2674555072,554.0,True,
+CUST_00120,44.0,Female,26446.65,Associate Degree,City_28,2022-01-01,7,402.0574509722546,Home & Garden,8,yahoo.com,377.765.2229,817.0,False,Good value for money.
+CUST_00121,44.0,male,51028.68,Bachelor's Degree,City_13,2023-11-06,4,209.591481743336,Electronics,5,gmail.com,360-202-7693,688.0,True,
+CUST_00122,24.0,F,47501.97,Associate Degree,San Diego,2021-08-06,7,111.10857947344249,Gaming,9,business.org,(661) 905-8699,,False,"Poor quality, would not recommend."
+CUST_00123,51.0,Male,41123.78,Master's Degree,Los Angeles,2022-09-04,8,240.8311250772002,Health,7,work.net,498.233.4792,719.0,False,
+CUST_00124,18.0,Male,261081.31,Master's Degree,City_13,2023-11-06,8,401.06957404309406,Fashion,4,corp.com,7532368359,634.0,False,Good value for money. Very pleased overall.
+CUST_00125,42.0,Male,28777.67,Bachelor's Degree,San Diego,2022-02-12,7,310.0566511439799,Home & Garden,6,gmail.com,489-919-8438,619.0,False,Outstanding customer service experience.
+CUST_00126,61.0,M,26205.94,Bachelor's Degree,City_44,2021-11-10,11,358.7136446044032,Health,5,work.net,272-903-4824,639.0,False,"Poor quality, would not recommend. Very pleased overall."
+CUST_00127,23.0,Male,14394.48,High School,City_5,2023-02-05,5,314.80935630298603,Gaming,5,work.net,(470) 840-4241,662.0,False,Not satisfied with the quality.
+CUST_00128,28.0,Female,10611.8,Bachelor's Degree,City_44,2021-11-27,1,283.0143722863297,Fashion,7,gmail.com,3825957977,749.0,True,Outstanding customer service experience. Needs improvement.
+CUST_00129,36.0,female,13680.76,Bachelor's Degree,Phoenix,2023-12-23,6,128.42871353638418,Automotive,8,company.com,757-430-3441,656.0,True,"Great product, highly recommend!"
+CUST_00130,28.0,Male,,Master's Degree,City_23,2021-01-02,9,80.08100613412861,Electronics,9,corp.com,5901597465,850.0,False,
+CUST_00131,18.0,f,103575.75,High School,City_12,2022-10-26,5,308.26384457927594,Electronics,7,yahoo.com,5550353803,802.0,False,"Poor quality, would not recommend."
+CUST_00132,35.0,Other,37471.32,Some College,City_24,2023-09-28,8,30.377658600351662,Electronics,10,gmail.com,273-261-3718,784.0,False,
+CUST_00133,22.0,Male,42389.86,Master's Degree,Phoenix,2021-02-09,10,50.093688370735904,Sports,10,corp.com,(514) 809-5728,710.0,True,Not satisfied with the quality.
+CUST_00134,40.0,f,33623.53,Bachelor's Degree,City_17,2021-08-18,12,184.55382292959084,Automotive,9,hotmail.com,649-327-8679,,False,
+CUST_00135,23.0,Female,48641.91,High School,San Jose,2023-01-14,5,556.8527436495482,Electronics,7,gmail.com,(905) 511-7594,702.0,True,Outstanding customer service experience. Very pleased overall.
+CUST_00136,53.0,male,111486.38,Associate Degree,City_25,2022-09-22,4,75.86871893934965,Home & Garden,4,hotmail.com,478.712.9847,717.0,False,Good value for money. Needs improvement.
+CUST_00137,25.0,Female,7367.66,Associate Degree,San Antonio,2022-05-06,11,95.59659550911672,Electronics,5,yahoo.com,4120834317,733.0,False,Outstanding customer service experience.
+CUST_00138,31.0,M,96246.69,Master's Degree,City_40,2021-04-29,8,629.9209695913031,Fashion,7,outlook.com,282-812-1653,776.0,True,"Product arrived damaged, disappointed."
+CUST_00139,44.0,Female,4855.99,Bachelor's Degree,Los Angeles,2022-05-09,15,592.7605350482289,Electronics,6,gmail.com,5820042236,770.0,False,
+CUST_00140,20.0,f,,Bachelor's Degree,City_31,2021-06-11,5,167.33595114278395,Sports,4,gmail.com,,681.0,True,
+CUST_00141,37.0,F,209719.43,High School,City_37,2021-06-25,12,143.96210966419474,Fashion,7,gmail.com,952-530-5102,677.0,False,"Could be better, but acceptable."
+CUST_00142,50.0,Female,62600.36,High School,City_32,2023-09-23,5,129.6387406863193,Home & Garden,1,business.org,226.293.4750,771.0,False,Good value for money.
+CUST_00143,18.0,f,48944.74,PhD,City_2,2021-05-22,5,208.29275943248763,Electronics,8,company.com,890-789-1339,777.0,False,"Poor quality, would not recommend."
+CUST_00144,37.0,Male,180152.1,Master's Degree,Dallas,2023-12-27,10,213.70365698653077,Electronics,3,yahoo.com,983.888.5415,,False,"Fast shipping, product as described."
+CUST_00145,38.0,Male,,Master's Degree,City_50,2021-09-15,6,190.69455129431114,Fashion,7,hotmail.com,(790) 241-3870,593.0,True,
+CUST_00146,44.0,Male,51388.72,Associate Degree,Phoenix,2021-09-20,11,466.27459626566645,Fashion,8,gmail.com,8315752939,703.0,False,"Fast shipping, product as described."
+CUST_00147,20.0,Female,57670.07,Master's Degree,City_5,2023-09-01,8,46.21611090721678,Electronics,4,outlook.com,4798211967,769.0,False,"Could be better, but acceptable."
+CUST_00148,19.0,Male,23910.63,Bachelor's Degree,City_18,2021-12-05,7,245.65666514361885,Electronics,7,yahoo.com,(484) 385-8141,850.0,False,"Great product, highly recommend!"
+CUST_00149,41.0,male,25660.6,Bachelor's Degree,City_21,2022-06-27,9,615.5350819172819,Electronics,8,hotmail.com,850.703.2494,624.0,True,
+CUST_00150,38.0,Male,23505.19,Some College,Phoenix,2023-12-17,13,100.78309034108385,Automotive,5,business.org,4018679284,685.0,False,"Poor quality, would not recommend."
+CUST_00151,38.0,M,38942.91,High School,City_16,2023-05-17,5,347.374267288078,Home & Garden,4,business.org,618-541-6260,688.0,False,
+CUST_00152,39.0,Male,56238.3,Some College,City_32,2022-03-10,5,83.83598789542026,Home & Garden,6,business.org,886-307-3634,828.0,False,
+CUST_00153,26.0,f,40078.06,Associate Degree,Los Angeles,2022-02-16,15,335.98608705594285,Electronics,7,yahoo.com,537.621.9117,717.0,False,"Great product, highly recommend!"
+CUST_00154,37.0,female,64059.62,High School,City_42,2022-10-01,4,451.1409003003121,Home & Garden,7,gmail.com,7532853311,647.0,False,Good value for money. Exceeded expectations.
+CUST_00155,38.0,Female,7515.19,Master's Degree,New York,2023-03-29,7,386.4056913696056,Electronics,4,company.com,610.978.1601,764.0,False,Amazing! Will definitely buy again.
+CUST_00156,26.0,f,30497.47,Associate Degree,San Diego,2023-02-04,11,309.2374956245583,Fashion,7,gmail.com,665-290-6153,687.0,False,Amazing! Will definitely buy again.
+CUST_00157,57.0,Male,16014.74,Master's Degree,New York,2023-06-17,10,402.41662894082157,Home & Garden,5,business.org,3084044802,622.0,True,Not satisfied with the quality.
+CUST_00158,40.0,m,46229.71,Some College,Los Angeles,2023-11-26,10,643.4205293491528,Fashion,9,business.org,318.991.7622,648.0,False,Outstanding customer service experience.
+CUST_00159,20.0,Male,45685.4,Some College,City_42,2023-07-14,18,193.3590087371455,Fashion,6,business.org,726.201.9889,850.0,False,Good value for money.
+CUST_00160,42.0,male,33107.08,Bachelor's Degree,San Diego,2021-09-05,14,321.84882155478437,Electronics,9,gmail.com,(673) 623-1888,750.0,False,"Great product, highly recommend! Very pleased overall."
+CUST_00161,23.0,Male,54623.7,Bachelor's Degree,Dallas,2022-05-23,6,323.31323127315295,Sports,6,company.com,(392) 730-6927,728.0,False,"Could be better, but acceptable. Very pleased overall."
+CUST_00162,44.0,Female,80680.34,Some College,Phoenix,2022-04-06,7,837.3762966271698,Electronics,8,gmail.com,837-974-9167,700.0,False,"Product arrived damaged, disappointed."
+CUST_00163,,F,34599.12,Master's Degree,City_10,2021-05-12,7,4.128365074790909,Health,7,business.org,(840) 652-1845,743.0,True,"Poor quality, would not recommend."
+CUST_00164,25.0,Male,15656.54,High School,City_10,2022-11-24,9,353.7962908457848,Electronics,7,hotmail.com,408-473-9998,742.0,False,"Fast shipping, product as described. Needs improvement."
+CUST_00165,46.0,Male,10249.6,High School,San Diego,2021-02-13,4,359.784943857896,Electronics,6,outlook.com,334-494-8178,743.0,False,
+CUST_00166,39.0,Male,37379.89,Master's Degree,San Antonio,2022-04-17,6,581.9372839415674,Home & Garden,8,gmail.com,915.696.2989,729.0,False,Outstanding customer service experience. Very pleased overall.
+CUST_00167,44.0,Female,44068.18,Some College,City_39,2022-03-28,10,216.7456764444952,Electronics,6,yahoo.com,(229) 845-4920,789.0,False,
+CUST_00168,57.0,Female,16720.33,Associate Degree,San Diego,2021-01-15,10,398.7935192320178,Books,7,business.org,926-362-6091,,False,
+CUST_00169,32.0,Male,64900.69,Master's Degree,San Jose,2021-05-26,4,160.65980308698673,Home & Garden,7,hotmail.com,764.214.7684,641.0,True,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00170,25.0,Female,25155.57,High School,Philadelphia,2021-05-01,9,96.47198506809262,Fashion,9,company.com,295.430.2858,671.0,False,Amazing! Will definitely buy again.
+CUST_00171,24.0,Male,9651.36,Bachelor's Degree,City_29,2022-04-14,10,396.7707913732468,Fashion,8,business.org,672.320.3522,561.0,False,Excellent service and fast delivery. Would shop here again.
+CUST_00172,25.0,m,99225.38,Associate Degree,San Diego,2021-05-19,4,93.74037103932827,Electronics,6,outlook.com,(710) 933-5781,850.0,False,Good value for money.
+CUST_00173,34.0,Male,90688.91,High School,City_2,2021-03-06,11,200.02904339671417,Electronics,8,work.net,721.922.5479,789.0,False,Not satisfied with the quality. Very pleased overall.
+CUST_00174,39.0,Male,7241.04,Bachelor's Degree,Philadelphia,2022-11-08,8,77.14465525709718,Electronics,7,company.com,8079484715,653.0,True,"Fast shipping, product as described."
+CUST_00175,38.0,Male,23153.93,High School,City_49,2021-05-26,7,53.402307476148714,Home & Garden,10,corp.com,694-683-4993,697.0,True,"Product arrived damaged, disappointed. Exceeded expectations."
+CUST_00176,44.0,Female,22442.98,Master's Degree,Philadelphia,2023-11-19,12,133.0002026256342,Automotive,9,gmail.com,667-764-3369,669.0,False,
+CUST_00177,35.0,m,134805.86,Some College,City_28,2022-05-03,6,604.8885598991911,Home & Garden,7,hotmail.com,(592) 395-9327,843.0,False,Amazing! Will definitely buy again.
+CUST_00178,52.0,Female,33542.41,Bachelor's Degree,Dallas,2022-07-25,9,823.487557260397,Books,6,outlook.com,9500269373,606.0,False,"Product arrived damaged, disappointed."
+CUST_00179,31.0,Male,10974.15,Bachelor's Degree,Phoenix,2023-09-22,5,389.8100107216334,Automotive,8,work.net,339.271.5526,729.0,False,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00180,67.0,F,73547.29,Master's Degree,City_30,2022-03-15,8,332.0234853186784,Home & Garden,7,yahoo.com,991-624-6568,711.0,False,Not satisfied with the quality. Exceeded expectations.
+CUST_00181,42.0,F,,Elementary,San Antonio,2021-09-28,8,706.5910261142644,Automotive,10,gmail.com,(719) 473-1042,786.0,False,
+CUST_00182,24.0,Male,29487.67,High School,City_37,2023-08-27,6,238.0249321890743,Sports,5,gmail.com,489-943-5891,711.0,True,
+CUST_00183,22.0,F,19617.65,Bachelor's Degree,City_42,2022-05-13,6,236.0194999767895,Electronics,3,gmail.com,(801) 793-9022,579.0,False,Amazing! Will definitely buy again.
+CUST_00184,40.0,male,23193.7,Bachelor's Degree,City_36,2023-08-27,11,178.75116055019325,Automotive,3,work.net,,699.0,False,Outstanding customer service experience.
+CUST_00185,32.0,Male,,Associate Degree,New York,2023-04-14,9,503.37883478910953,Electronics,7,corp.com,,642.0,True,"Great product, highly recommend!"
+CUST_00186,43.0,F,122646.82,Bachelor's Degree,City_29,2022-01-25,13,491.77565565471576,Electronics,10,yahoo.com,352.657.9824,726.0,False,
+CUST_00187,40.0,F,13101.8,High School,Dallas,2021-07-13,7,604.3169342207934,Fashion,1,hotmail.com,695-553-6446,834.0,False,Not satisfied with the quality. Would shop here again.
+CUST_00188,34.0,Female,59925.72,Master's Degree,City_38,2021-07-18,5,136.24818703797754,Home & Garden,8,company.com,(765) 981-9903,580.0,False,"Fast shipping, product as described."
+CUST_00189,24.0,Male,20207.26,PhD,City_14,2023-06-02,10,234.2617956025124,Electronics,8,gmail.com,(586) 666-6272,655.0,True,"Great product, highly recommend!"
+CUST_00190,18.0,Male,20716.02,High School,City_34,2022-12-27,7,442.23827038368233,Fashion,8,yahoo.com,393-914-4912,675.0,False,"Product arrived damaged, disappointed."
+CUST_00191,29.0,f,53772.04,Associate Degree,San Jose,2023-05-18,9,1007.6171354962654,Sports,6,gmail.com,(785) 592-4826,689.0,True,"Great product, highly recommend!"
+CUST_00192,45.0,Other,15957.4,High School,City_4,2023-04-22,10,250.36233446091717,Fashion,9,business.org,994.620.1715,779.0,True,"Could be better, but acceptable. Needs improvement."
+CUST_00193,37.0,M,52917.11,Master's Degree,Chicago,2023-08-15,7,38.39680946869977,Fashion,2,gmail.com,525.962.8749,,False,Amazing! Will definitely buy again.
+CUST_00194,20.0,Female,65126.75,Bachelor's Degree,City_29,2021-04-21,6,455.58640393256496,Gaming,8,business.org,9323897968,753.0,False,"Poor quality, would not recommend."
+CUST_00195,37.0,M,25693.01,Master's Degree,Dallas,2021-07-21,8,42.19383337757182,Home & Garden,5,gmail.com,590-595-3492,669.0,False,"Could be better, but acceptable."
+CUST_00196,39.0,Female,104994.42,Bachelor's Degree,City_1,2021-05-05,7,823.364360518515,Electronics,7,hotmail.com,8422387631,738.0,False,Amazing! Will definitely buy again.
+CUST_00197,24.0,Female,13118.0,Associate Degree,City_29,2023-04-05,6,408.80902885124925,Sports,9,corp.com,237.329.9229,782.0,False,"Could be better, but acceptable."
+CUST_00198,36.0,Male,106545.24,Master's Degree,City_10,2022-11-26,10,384.3394025446493,Fashion,5,corp.com,7720873683,661.0,False,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00199,35.0,m,7667.99,Master's Degree,Phoenix,2021-08-12,9,242.56757744474024,Electronics,5,corp.com,6726029952,782.0,False,Amazing! Will definitely buy again. Very pleased overall.
+CUST_00200,21.0,Female,314824.72,PhD,City_10,2022-05-25,4,134.69950350514904,Fashion,8,work.net,650.302.9617,724.0,False,
+CUST_00201,39.0,m,26239.95,PhD,Dallas,2022-01-28,9,371.75816928318955,Automotive,7,business.org,667.215.3361,803.0,False,
+CUST_00202,41.0,Male,14330.63,High School,San Jose,2022-01-25,14,69.66661881444092,Automotive,7,gmail.com,8055812046,703.0,False,
+CUST_00203,47.0,Male,30147.66,Bachelor's Degree,New York,2023-07-08,5,118.81095742896771,Fashion,5,gmail.com,870-358-2225,750.0,True,Outstanding customer service experience.
+CUST_00204,47.0,Male,,Some College,Phoenix,2021-10-15,11,456.4749545689867,Electronics,2,yahoo.com,680-471-6546,716.0,False,Good value for money. Very pleased overall.
+CUST_00205,18.0,Female,49492.29,High School,Philadelphia,2023-05-15,2,172.58051987601422,Gaming,6,corp.com,8971846039,712.0,False,Amazing! Will definitely buy again.
+CUST_00206,23.0,male,108458.82,Master's Degree,City_22,2022-01-11,4,305.42741916760866,Gaming,4,gmail.com,(607) 865-2315,740.0,False,
+CUST_00207,41.0,Male,16403.25,Some College,New York,2022-07-25,9,302.3545416323802,Home & Garden,9,gmail.com,536-890-9742,762.0,False,Excellent service and fast delivery.
+CUST_00208,41.0,f,57729.26,High School,Dallas,2023-08-06,2,250.82617673177933,Automotive,2,business.org,7927095219,620.0,True,Not satisfied with the quality.
+CUST_00209,41.0,Female,10655.29,Master's Degree,City_43,2022-05-27,10,232.75332747314366,Automotive,6,outlook.com,524.841.8994,834.0,False,
+CUST_00210,81.0,m,82980.74,Bachelor's Degree,Chicago,2021-06-04,8,420.7966297588025,Electronics,3,work.net,754.236.2121,,False,Amazing! Will definitely buy again.
+CUST_00211,41.0,Male,50664.92,Master's Degree,City_2,2023-06-27,13,429.4277149252604,Automotive,3,outlook.com,(440) 846-5708,665.0,True,"Fast shipping, product as described. Exceeded expectations."
+CUST_00212,48.0,m,85900.65,High School,City_29,2021-07-20,6,110.92919081850047,Fashion,8,gmail.com,(432) 964-2480,712.0,False,Excellent service and fast delivery. Very pleased overall.
+CUST_00213,46.0,F,32929.44,High School,City_45,2021-04-14,11,165.10599663934664,Fashion,7,gmail.com,644.300.2646,752.0,False,"Product arrived damaged, disappointed."
+CUST_00214,42.0,Male,25639.12,Master's Degree,City_25,2021-01-31,7,170.5385075237489,Home & Garden,2,gmail.com,654.370.5906,846.0,False,"Great product, highly recommend! Would shop here again."
+CUST_00215,31.0,Male,69765.43,Associate Degree,City_23,2021-07-11,4,136.53441403485198,Fashion,1,gmail.com,(229) 247-6314,571.0,False,"Great product, highly recommend!"
+CUST_00216,44.0,f,12753.5,PhD,City_33,2022-04-30,4,457.6763810657777,Fashion,3,gmail.com,257-500-6873,679.0,False,"Great product, highly recommend!"
+CUST_00217,,female,9006.85,Bachelor's Degree,Dallas,2021-12-07,4,245.98042177935935,Electronics,8,yahoo.com,3609930218,549.0,False,Not satisfied with the quality.
+CUST_00218,32.0,Male,36171.63,High School,City_31,2023-04-13,6,41.541215334973536,Home & Garden,7,corp.com,2625217504,722.0,False,"Poor quality, would not recommend."
+CUST_00219,29.0,F,26590.86,Master's Degree,New York,2023-09-22,5,569.4740873054511,Electronics,2,hotmail.com,743-621-3950,741.0,False,Excellent service and fast delivery.
+CUST_00220,35.0,male,,High School,City_43,2023-09-13,11,113.93262253797992,Home & Garden,7,yahoo.com,374-379-2293,847.0,False,
+CUST_00221,62.0,f,86963.27,Some College,Dallas,2022-03-14,11,46.08578447352999,Health,8,corp.com,824-591-4945,729.0,False,
+CUST_00222,18.0,female,55626.29,Associate Degree,City_6,2023-04-02,4,312.3858140140892,Sports,9,business.org,8432431852,803.0,False,
+CUST_00223,43.0,F,81594.95,Master's Degree,Philadelphia,2021-05-01,6,123.81027351537365,Electronics,10,work.net,(797) 346-4804,766.0,False,"Could be better, but acceptable."
+CUST_00224,18.0,Female,,Some College,City_25,2021-12-04,7,108.34810711635723,Electronics,6,business.org,8275591099,685.0,False,Good value for money. Needs improvement.
+CUST_00225,29.0,Female,53942.64,High School,Los Angeles,2023-02-16,6,330.1702093119959,Fashion,4,gmail.com,3090824373,,False,Excellent service and fast delivery.
+CUST_00226,48.0,Female,33079.67,Master's Degree,City_38,2021-01-05,8,292.4043083693654,Electronics,5,gmail.com,461.882.1153,742.0,False,"Great product, highly recommend!"
+CUST_00227,,F,52682.38,Bachelor's Degree,City_33,2023-03-11,7,347.18568597228386,Books,8,company.com,676-494-9955,600.0,True,"Great product, highly recommend!"
+CUST_00228,22.0,F,41494.75,Some College,Phoenix,2022-06-28,4,181.1569130633486,Fashion,10,gmail.com,2678500147,823.0,True,Outstanding customer service experience.
+CUST_00229,26.0,Male,47105.33,Bachelor's Degree,City_31,2023-07-21,8,526.4986746322676,Electronics,7,corp.com,(652) 553-5901,707.0,True,Excellent service and fast delivery. Would shop here again.
+CUST_00230,43.0,f,31780.9,Master's Degree,City_29,2022-08-08,4,434.19186450400565,Electronics,6,outlook.com,9039188121,,True,
+CUST_00231,26.0,F,69365.39,Associate Degree,City_14,2023-05-17,13,470.60274708104936,Fashion,6,business.org,634-906-5097,681.0,False,
+CUST_00232,37.0,Female,20571.01,High School,San Diego,2023-09-24,7,53.21295654210846,Fashion,6,gmail.com,8257062147,741.0,True,
+CUST_00233,35.0,Female,35786.31,Bachelor's Degree,Philadelphia,2021-11-14,7,480.2920822563292,Home & Garden,5,corp.com,(509) 403-7302,736.0,False,Amazing! Will definitely buy again. Needs improvement.
+CUST_00234,27.0,Female,103717.6,PhD,Phoenix,2022-01-24,6,554.0291369901099,Gaming,7,yahoo.com,694.309.4886,716.0,True,"Product arrived damaged, disappointed."
+CUST_00235,60.0,Male,17000.92,Bachelor's Degree,San Antonio,2022-08-31,9,189.46520753367253,Home & Garden,1,yahoo.com,590.785.6881,,False,Amazing! Will definitely buy again. Needs improvement.
+CUST_00236,42.0,Male,6441.54,Bachelor's Degree,City_41,2022-03-22,7,92.80301498499804,Electronics,5,gmail.com,788-502-5837,751.0,False,
+CUST_00237,18.0,Male,48686.92,High School,Los Angeles,2021-04-30,7,41.09226483448426,Electronics,8,gmail.com,222.874.7484,645.0,True,Good value for money. Needs improvement.
+CUST_00238,37.0,Male,29567.66,High School,City_33,2021-05-05,10,128.79209629203692,Fashion,2,hotmail.com,3178884276,623.0,False,"Product arrived damaged, disappointed. Would shop here again."
+CUST_00239,27.0,Female,81527.02,Associate Degree,San Antonio,2022-10-05,10,267.7396678663801,Electronics,3,hotmail.com,(779) 902-1803,819.0,True,Excellent service and fast delivery. Would shop here again.
+CUST_00240,45.0,Female,32714.97,Master's Degree,City_3,2021-04-28,10,263.24101396488294,Automotive,5,gmail.com,5200490039,778.0,False,"Could be better, but acceptable."
+CUST_00241,,Male,22393.56,High School,City_30,2021-04-13,3,105.34375951865248,Health,9,hotmail.com,9871983133,725.0,False,"Fast shipping, product as described."
+CUST_00242,33.0,F,34178.3,Bachelor's Degree,City_39,2023-09-04,9,79.10074092078645,Home & Garden,8,gmail.com,493-994-4770,850.0,False,Good value for money. Exceeded expectations.
+CUST_00243,41.0,Male,87068.89,Bachelor's Degree,San Antonio,2023-10-27,10,516.6799669952694,Fashion,2,gmail.com,821.560.4588,698.0,True,"Great product, highly recommend!"
+CUST_00244,45.0,male,,High School,San Jose,2023-12-24,10,502.8318550381347,Automotive,7,yahoo.com,851-394-5106,,False,"Great product, highly recommend!"
+CUST_00245,20.0,female,5181.65,Bachelor's Degree,Dallas,2021-11-19,8,404.9831305725297,Electronics,5,yahoo.com,894-973-3240,734.0,False,Outstanding customer service experience.
+CUST_00246,30.0,Male,42134.16,Bachelor's Degree,New York,2021-04-27,9,226.516981707744,Electronics,7,hotmail.com,843.299.1645,638.0,False,Good value for money. Exceeded expectations.
+CUST_00247,29.0,Female,43853.5,Bachelor's Degree,Philadelphia,2023-11-07,14,499.2539359682086,Sports,8,corp.com,(516) 651-1546,850.0,False,
+CUST_00248,,Male,35789.15,Master's Degree,San Jose,2021-06-14,9,201.2094725867604,Health,9,outlook.com,4489250532,799.0,False,"Poor quality, would not recommend."
+CUST_00249,56.0,Female,,High School,Dallas,2022-01-16,11,91.29483546234388,Electronics,7,gmail.com,(949) 334-2476,710.0,False,"Product arrived damaged, disappointed. Needs improvement."
+CUST_00250,39.0,M,94431.08,Master's Degree,City_23,2021-05-21,9,99.33941833954601,Home & Garden,10,work.net,(502) 534-7807,778.0,True,Outstanding customer service experience.
+CUST_00251,19.0,Male,98245.74,Master's Degree,San Diego,2021-05-20,4,174.63843376820768,Fashion,10,gmail.com,(379) 405-3165,687.0,True,"Product arrived damaged, disappointed."
+CUST_00252,46.0,Female,6232.12,Master's Degree,San Jose,2022-04-27,8,131.01465551871848,Automotive,9,company.com,,786.0,False,Outstanding customer service experience.
+CUST_00253,60.0,Male,19180.17,Master's Degree,Dallas,2023-04-07,13,314.6824532121068,Books,7,yahoo.com,752.574.9697,528.0,True,Good value for money.
+CUST_00254,47.0,Male,32345.02,Bachelor's Degree,City_25,2021-09-03,3,15.036693160971689,Electronics,6,business.org,8450159391,638.0,True,Good value for money.
+CUST_00255,18.0,M,77559.96,Associate Degree,City_37,2022-05-20,9,398.1989810667259,Gaming,6,yahoo.com,479.368.5210,798.0,True,"Fast shipping, product as described."
+CUST_00256,29.0,Female,37342.31,Master's Degree,City_4,2021-03-23,8,209.91313036898296,Electronics,1,gmail.com,693.502.6549,700.0,False,"Fast shipping, product as described."
+CUST_00257,50.0,Female,21017.8,Bachelor's Degree,City_29,2021-06-17,7,123.99290336193499,Home & Garden,5,yahoo.com,317-679-2233,736.0,False,"Product arrived damaged, disappointed."
+CUST_00258,26.0,Female,64063.3,Associate Degree,Philadelphia,2023-05-09,5,194.81587600599073,Gaming,8,gmail.com,344-972-4696,612.0,False,Amazing! Will definitely buy again.
+CUST_00259,40.0,female,30666.65,Master's Degree,City_5,2023-12-07,2,191.0071403491673,Home & Garden,7,corp.com,892.941.7511,850.0,True,Amazing! Will definitely buy again.
+CUST_00260,44.0,Male,33060.0,Bachelor's Degree,San Antonio,2022-10-10,6,454.3614464602475,Electronics,9,gmail.com,770.574.2479,815.0,False,Not satisfied with the quality. Exceeded expectations.
+CUST_00261,23.0,Female,35534.99,High School,Dallas,2022-06-19,4,573.746483378335,Electronics,3,yahoo.com,604-214-5332,703.0,False,"Fast shipping, product as described."
+CUST_00262,34.0,M,57494.63,High School,City_24,2022-02-23,8,307.78819195548857,Fashion,4,company.com,4304560537,687.0,False,Amazing! Will definitely buy again.
+CUST_00263,18.0,Female,28372.07,Associate Degree,City_39,2022-10-06,10,514.4796755389767,Fashion,8,gmail.com,(665) 577-5295,802.0,False,Not satisfied with the quality.
+CUST_00264,22.0,female,62916.09,Master's Degree,Chicago,2022-05-04,7,344.7484770045137,Electronics,6,gmail.com,798-590-7086,850.0,False,"Great product, highly recommend! Would shop here again."
+CUST_00265,31.0,F,34253.53,Some College,City_14,2022-06-28,9,331.80273279646474,Fashion,4,yahoo.com,310-891-4830,,False,"Product arrived damaged, disappointed. Would shop here again."
+CUST_00266,20.0,M,15465.8,Master's Degree,City_9,2023-03-22,6,228.21918970311785,Electronics,10,corp.com,682-225-6374,850.0,True,"Could be better, but acceptable."
+CUST_00267,54.0,F,35262.63,Bachelor's Degree,Chicago,2021-09-26,8,329.5928888670528,Health,8,hotmail.com,7245732172,646.0,True,"Poor quality, would not recommend."
+CUST_00268,,female,16120.21,High School,Phoenix,2022-09-07,7,253.9297559689175,Books,6,yahoo.com,264-850-8606,654.0,True,Excellent service and fast delivery. Needs improvement.
+CUST_00269,29.0,male,37526.0,Master's Degree,San Antonio,2023-07-26,2,281.83879349168126,Electronics,9,gmail.com,7592864199,624.0,False,Excellent service and fast delivery.
+CUST_00270,36.0,F,70514.89,Master's Degree,Houston,2022-10-10,9,444.14715690813387,Home & Garden,8,outlook.com,3753617371,755.0,True,
+CUST_00271,52.0,F,15384.21,Elementary,Phoenix,2021-05-29,5,81.212114227399,Home & Garden,8,outlook.com,343.246.1609,734.0,False,"Fast shipping, product as described."
+CUST_00272,18.0,Male,48601.94,High School,Philadelphia,2021-01-20,11,507.4092099560651,Sports,9,yahoo.com,511-704-2902,707.0,True,Good value for money.
+CUST_00273,48.0,Male,18709.19,Bachelor's Degree,San Antonio,2023-07-28,10,397.86205941408673,Automotive,3,gmail.com,299-440-9807,,False,Amazing! Will definitely buy again. Needs improvement.
+CUST_00274,35.0,Female,42674.65,Master's Degree,City_25,2021-07-24,7,28.935194274320505,Home & Garden,7,gmail.com,2582672654,818.0,False,
+CUST_00275,23.0,Male,72269.93,Master's Degree,City_8,2021-05-31,9,225.58915548742266,Electronics,1,gmail.com,(664) 579-9850,597.0,False,Not satisfied with the quality.
+CUST_00276,40.0,Female,6610.33,Master's Degree,City_49,2022-03-13,5,75.88271056360244,Home & Garden,2,gmail.com,629.801.3531,672.0,False,Not satisfied with the quality.
+CUST_00277,37.0,Male,14889.62,PhD,Dallas,2023-11-03,6,209.99430131872262,Fashion,9,yahoo.com,,785.0,True,Amazing! Will definitely buy again. Very pleased overall.
+CUST_00278,27.0,Female,27033.08,High School,City_26,2022-06-28,4,557.7465878590607,Fashion,7,business.org,(624) 870-2622,682.0,False,"Product arrived damaged, disappointed."
+CUST_00279,,F,46724.9,Master's Degree,City_38,2021-09-29,8,75.35373863908342,Books,8,company.com,701.830.7686,656.0,True,
+CUST_00280,30.0,male,31789.56,Master's Degree,City_18,2022-12-16,9,167.92637229283008,Electronics,9,outlook.com,,801.0,False,Amazing! Will definitely buy again. Exceeded expectations.
+CUST_00281,36.0,Male,35006.72,Associate Degree,Dallas,2021-05-21,8,115.74909963168086,Fashion,10,yahoo.com,486.233.7070,,False,
+CUST_00282,42.0,Female,186164.81,Associate Degree,City_26,2022-05-16,9,186.70122135864617,Home & Garden,9,gmail.com,422.654.8285,695.0,True,Amazing! Will definitely buy again.
+CUST_00283,54.0,f,13767.06,Bachelor's Degree,Phoenix,2023-01-27,4,313.19550401801104,Health,7,gmail.com,441.571.2627,746.0,True,
+CUST_00284,,Male,90074.11,Bachelor's Degree,San Antonio,2022-08-07,9,32.639644156472826,Home & Garden,6,business.org,(902) 576-9920,674.0,False,Outstanding customer service experience. Very pleased overall.
+CUST_00285,60.0,m,,Elementary,City_5,2021-11-20,10,331.08856092894905,Books,4,work.net,860.567.1992,782.0,False,
+CUST_00286,18.0,Female,56363.66,Bachelor's Degree,City_8,2023-06-17,7,731.9634545525768,Fashion,6,yahoo.com,607-482-4109,674.0,False,Excellent service and fast delivery. Very pleased overall.
+CUST_00287,33.0,Female,199417.77,Some College,New York,2022-09-12,5,525.3137497327058,Electronics,6,gmail.com,325.665.2501,832.0,False,Excellent service and fast delivery.
+CUST_00288,42.0,female,63003.3,High School,City_45,2023-12-20,8,216.20599349622387,Home & Garden,7,gmail.com,(878) 417-1349,709.0,False,"Fast shipping, product as described."
+CUST_00289,38.0,Male,48922.69,Master's Degree,City_20,2021-01-17,9,151.43924098113428,Fashion,8,business.org,251.541.4990,773.0,True,Good value for money. Very pleased overall.
+CUST_00290,27.0,M,130522.1,Associate Degree,San Jose,2022-09-06,9,725.5461266208843,Fashion,10,gmail.com,328.778.4362,779.0,False,"Fast shipping, product as described."
+CUST_00291,32.0,m,89307.34,Some College,City_44,2021-08-01,7,246.33605202692047,Electronics,8,yahoo.com,270-983-4394,669.0,True,Not satisfied with the quality.
+CUST_00292,29.0,Male,19158.17,Bachelor's Degree,Dallas,2021-10-03,5,1013.7795067085104,Gaming,7,work.net,4518496186,555.0,False,"Fast shipping, product as described. Very pleased overall."
+CUST_00293,27.0,M,45964.28,Master's Degree,City_49,2022-06-26,10,210.3722637785144,Gaming,6,work.net,438-536-3417,748.0,False,"Product arrived damaged, disappointed. Needs improvement."
+CUST_00294,45.0,female,9191.21,Bachelor's Degree,City_2,2021-08-25,6,181.9049614170894,Electronics,2,business.org,(810) 202-5542,725.0,True,"Product arrived damaged, disappointed."
+CUST_00295,39.0,Male,23573.47,High School,Chicago,2021-08-08,10,98.73881152423922,Fashion,5,gmail.com,348.333.9850,,False,
+CUST_00296,26.0,f,46688.0,Master's Degree,City_27,2021-11-15,4,462.5086344190161,Electronics,8,work.net,456.378.2801,701.0,False,Not satisfied with the quality. Exceeded expectations.
+CUST_00297,45.0,Female,22433.61,Master's Degree,City_18,2022-07-12,7,281.5988412483249,Fashion,5,work.net,9134188237,685.0,False,Excellent service and fast delivery.
+CUST_00298,38.0,M,45192.82,Some College,City_28,2022-08-01,12,264.15653819210377,Automotive,8,company.com,226.334.1243,850.0,True,Good value for money. Would shop here again.
+CUST_00299,44.0,M,35928.72,Bachelor's Degree,City_46,2022-03-08,8,712.8920094924126,Electronics,7,yahoo.com,(566) 443-6304,602.0,True,"Product arrived damaged, disappointed."
+CUST_00300,42.0,Male,55777.92,High School,City_28,2022-12-04,7,306.6782642104206,Fashion,4,corp.com,2067779246,778.0,False,"Fast shipping, product as described. Would shop here again."
+CUST_00301,25.0,male,25864.87,High School,City_12,2022-02-21,6,542.7612163851308,Electronics,5,business.org,(471) 253-3076,674.0,False,"Poor quality, would not recommend. Exceeded expectations."
+CUST_00302,28.0,male,17117.92,Bachelor's Degree,City_36,2022-06-25,12,344.92926314052204,Electronics,7,gmail.com,(959) 631-9619,693.0,False,"Great product, highly recommend! Exceeded expectations."
+CUST_00303,43.0,M,118480.24,Bachelor's Degree,City_18,2023-11-02,5,357.13374586716566,Fashion,6,yahoo.com,316.963.2041,694.0,True,Amazing! Will definitely buy again. Needs improvement.
+CUST_00304,42.0,F,,PhD,Dallas,2023-09-28,6,85.2770579381972,Automotive,8,work.net,(687) 659-6931,655.0,False,Good value for money.
+CUST_00305,34.0,M,61574.83,Bachelor's Degree,City_39,2022-05-30,5,335.5163099058103,Electronics,8,gmail.com,8499307527,765.0,False,
+CUST_00306,36.0,Female,114484.83,Some College,Phoenix,2021-04-15,10,256.93563642690407,Electronics,7,business.org,311.662.9254,831.0,False,"Product arrived damaged, disappointed. Needs improvement."
+CUST_00307,,M,41362.75,Some College,City_22,2021-07-09,10,251.41535055080683,Home & Garden,9,yahoo.com,(426) 829-1710,757.0,False,Good value for money.
+CUST_00308,27.0,Female,18305.46,Master's Degree,City_39,2023-05-18,5,403.214962674951,Gaming,7,hotmail.com,944-874-9543,728.0,False,"Product arrived damaged, disappointed. Exceeded expectations."
+CUST_00309,41.0,Female,31480.14,Some College,City_24,2022-07-21,11,78.58266338616134,Fashion,10,gmail.com,508.669.1510,641.0,False,Outstanding customer service experience.
+CUST_00310,32.0,F,81963.78,PhD,City_20,2021-04-01,8,36.28856595451246,Fashion,5,outlook.com,6556210401,,False,
+CUST_00311,32.0,Female,42830.17,Bachelor's Degree,City_26,2021-01-08,4,243.07169043401808,Electronics,8,hotmail.com,8352178927,,False,
+CUST_00312,48.0,Male,13847.87,High School,San Jose,2022-11-15,8,760.6777925574212,Automotive,6,work.net,611.636.2768,689.0,False,Amazing! Will definitely buy again.
+CUST_00313,44.0,Male,58531.19,Bachelor's Degree,City_38,2021-09-25,3,95.64257406291607,Automotive,5,gmail.com,702.929.8267,689.0,False,"Poor quality, would not recommend."
+CUST_00314,44.0,Female,67213.22,Master's Degree,Phoenix,2022-06-21,4,101.23113610648778,Fashion,5,gmail.com,275-282-6277,675.0,False,"Fast shipping, product as described."
+CUST_00315,50.0,F,27330.28,Associate Degree,Chicago,2021-11-27,6,249.77327128156819,Home & Garden,7,gmail.com,822.351.2076,680.0,True,Amazing! Will definitely buy again. Very pleased overall.
+CUST_00316,35.0,Female,59171.51,Bachelor's Degree,Philadelphia,2023-06-24,13,208.5265569291927,Electronics,5,corp.com,(329) 481-9984,,True,Amazing! Will definitely buy again.
+CUST_00317,43.0,M,44179.44,Associate Degree,City_4,2023-05-26,6,455.5455060629276,Fashion,5,business.org,929.532.7240,752.0,True,"Poor quality, would not recommend. Would shop here again."
+CUST_00318,31.0,Female,,Master's Degree,City_2,2021-01-20,5,355.1937106554232,Fashion,10,work.net,(811) 743-5831,652.0,True,"Great product, highly recommend!"
+CUST_00319,38.0,M,12902.44,High School,City_33,2021-08-18,4,99.1988788882642,Electronics,9,work.net,664.717.8048,591.0,True,Good value for money.
+CUST_00320,33.0,Female,86022.41,Elementary,Dallas,2021-06-04,8,263.4050163395553,Fashion,8,outlook.com,(301) 918-2874,780.0,False,"Great product, highly recommend!"
+CUST_00321,36.0,Female,66660.56,Bachelor's Degree,San Jose,2021-11-02,5,55.69279454495396,Electronics,8,yahoo.com,870-866-4522,633.0,False,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00322,42.0,F,57936.86,Bachelor's Degree,New York,2021-03-15,6,249.77685355851617,Fashion,10,yahoo.com,3847136322,692.0,False,"Product arrived damaged, disappointed."
+CUST_00323,25.0,f,124943.99,Master's Degree,Dallas,2023-01-27,10,74.07920132735401,Electronics,7,hotmail.com,5814321889,837.0,True,Good value for money.
+CUST_00324,60.0,Female,77354.57,High School,City_15,2021-10-31,16,212.02454307592842,Home & Garden,5,business.org,623.547.8430,607.0,True,"Could be better, but acceptable."
+CUST_00325,22.0,Male,62896.94,Master's Degree,New York,2023-05-31,5,203.4570635092204,Electronics,9,outlook.com,608.625.2557,597.0,False,"Fast shipping, product as described. Needs improvement."
+CUST_00326,20.0,Male,6182.13,Bachelor's Degree,Philadelphia,2021-09-19,10,477.180239883855,Electronics,8,yahoo.com,(520) 637-6120,741.0,False,"Great product, highly recommend! Would shop here again."
+CUST_00327,48.0,Male,94609.76,Bachelor's Degree,Phoenix,2021-03-27,6,69.50006175848821,Electronics,6,gmail.com,4856616537,811.0,False,
+CUST_00328,44.0,M,38811.21,Some College,New York,2022-09-24,10,512.967922806196,Automotive,7,hotmail.com,(583) 356-8770,594.0,False,Outstanding customer service experience.
+CUST_00329,42.0,Female,46629.72,Bachelor's Degree,San Jose,2023-01-17,6,89.67272342080751,Electronics,6,outlook.com,(268) 293-2398,752.0,False,
+CUST_00330,42.0,Female,46885.63,High School,Houston,2021-03-23,9,15.685036325531259,Home & Garden,10,gmail.com,2400420225,,False,Excellent service and fast delivery.
+CUST_00331,34.0,Female,67444.9,Bachelor's Degree,City_25,2023-01-03,11,389.2084227292943,Electronics,6,gmail.com,298.962.7105,555.0,False,"Poor quality, would not recommend."
+CUST_00332,24.0,Male,89120.09,Some College,City_35,2022-03-07,4,555.9058531813859,Fashion,10,work.net,333.769.1982,783.0,False,
+CUST_00333,35.0,Female,60318.43,High School,City_5,2022-05-27,12,335.95670790072046,Electronics,9,corp.com,(800) 775-6400,790.0,False,
+CUST_00334,26.0,Male,53115.73,High School,City_49,2021-07-30,10,449.7570029954845,Fashion,7,gmail.com,(886) 325-7730,695.0,False,"Great product, highly recommend! Needs improvement."
+CUST_00335,46.0,Female,43704.67,High School,San Jose,2022-12-26,6,796.0980922689971,Fashion,7,outlook.com,7813659472,820.0,False,Excellent service and fast delivery.
+CUST_00336,33.0,Male,2486.7,High School,City_2,2023-04-13,12,260.0282044326137,Electronics,6,hotmail.com,881.968.7929,810.0,True,"Great product, highly recommend!"
+CUST_00337,25.0,m,28851.79,Associate Degree,City_49,2021-11-13,10,547.2994447289292,Sports,1,gmail.com,(938) 252-5712,728.0,False,Good value for money.
+CUST_00338,31.0,Male,17098.2,Master's Degree,Phoenix,2022-04-30,6,514.0977202812254,Electronics,4,gmail.com,814.519.6761,683.0,False,"Fast shipping, product as described."
+CUST_00339,39.0,female,95663.45,Bachelor's Degree,City_45,2021-11-29,10,337.7689079465224,Electronics,8,corp.com,306.791.9313,642.0,False,Good value for money. Would shop here again.
+CUST_00340,28.0,Female,59589.21,Master's Degree,New York,2021-12-29,8,529.2612737008782,Electronics,7,corp.com,417.358.8900,716.0,False,Amazing! Will definitely buy again.
+CUST_00341,25.0,m,25172.07,Bachelor's Degree,Dallas,2023-04-25,10,114.64649978286951,Gaming,4,outlook.com,7258091649,765.0,False,"Great product, highly recommend! Very pleased overall."
+CUST_00342,37.0,M,27277.74,Some College,Los Angeles,2021-02-20,6,807.136163056508,Fashion,5,outlook.com,2464794418,694.0,False,
+CUST_00343,37.0,F,26497.74,Some College,City_23,2022-01-03,5,342.5495984048678,Fashion,10,corp.com,769-576-2882,544.0,False,Excellent service and fast delivery.
+CUST_00344,28.0,F,26122.15,Bachelor's Degree,City_11,2022-11-12,15,251.7861302268169,Fashion,6,hotmail.com,(980) 485-4705,821.0,True,Good value for money.
+CUST_00345,29.0,Female,11434.08,Associate Degree,City_21,2023-04-24,11,99.49118085589973,Gaming,9,gmail.com,(639) 774-1430,735.0,False,"Fast shipping, product as described."
+CUST_00346,37.0,Female,9614.01,PhD,San Diego,2022-05-24,6,223.7758045794276,Electronics,6,gmail.com,823-873-5381,689.0,True,
+CUST_00347,18.0,Female,37169.26,Bachelor's Degree,San Diego,2022-07-01,10,165.1558970968859,Fashion,7,gmail.com,229.384.5477,788.0,True,Excellent service and fast delivery. Needs improvement.
+CUST_00348,18.0,Female,85840.94,High School,New York,2021-11-23,8,127.40035283668344,Sports,2,hotmail.com,9313035530,841.0,False,"Could be better, but acceptable. Very pleased overall."
+CUST_00349,26.0,Male,,Bachelor's Degree,San Antonio,2021-08-10,13,267.5140723937195,Electronics,7,hotmail.com,,495.0,True,"Product arrived damaged, disappointed."
+CUST_00350,32.0,Female,46293.45,PhD,City_43,2023-02-23,5,187.65677882094235,Automotive,7,yahoo.com,516-547-6751,754.0,False,Not satisfied with the quality. Would shop here again.
+CUST_00351,38.0,M,65343.2,Some College,San Diego,2021-03-21,10,286.43543762839664,Electronics,5,hotmail.com,2026224160,605.0,True,
+CUST_00352,52.0,Female,16404.28,PhD,City_34,2023-08-22,10,329.4185658412617,Electronics,7,outlook.com,(346) 779-7566,,True,Amazing! Will definitely buy again. Exceeded expectations.
+CUST_00353,45.0,F,35739.78,Associate Degree,City_35,2022-04-01,2,380.9933163707862,Fashion,7,gmail.com,2298867122,730.0,False,
+CUST_00354,33.0,M,21306.84,Master's Degree,San Diego,2022-02-13,9,356.81202739436384,Fashion,8,corp.com,958.848.1502,770.0,False,Good value for money.
+CUST_00355,34.0,Other,131254.78,Associate Degree,City_14,2023-08-01,8,643.0477077255351,Electronics,8,gmail.com,6689063550,680.0,False,"Poor quality, would not recommend."
+CUST_00356,22.0,Male,,PhD,Los Angeles,2022-12-18,12,139.06861995305016,Fashion,6,company.com,743-420-7163,570.0,False,Outstanding customer service experience. Very pleased overall.
+CUST_00357,,Female,,Bachelor's Degree,Chicago,2022-09-18,7,279.8143478952052,Electronics,7,outlook.com,(629) 664-6585,,False,Amazing! Will definitely buy again. Very pleased overall.
+CUST_00358,31.0,Female,49449.51,Master's Degree,New York,2022-04-12,11,215.47823303370365,Home & Garden,10,outlook.com,361.578.6105,752.0,False,"Great product, highly recommend!"
+CUST_00359,38.0,Female,85312.77,Associate Degree,City_9,2022-04-02,7,136.91879809079882,Fashion,9,hotmail.com,938-532-2391,801.0,False,Amazing! Will definitely buy again.
+CUST_00360,25.0,m,,High School,Dallas,2021-02-18,8,279.7826450201316,Gaming,10,outlook.com,253.359.3579,626.0,False,Amazing! Will definitely buy again. Exceeded expectations.
+CUST_00361,41.0,Male,38764.12,Associate Degree,City_5,2022-01-31,10,465.1087555738145,Electronics,6,gmail.com,9535244723,802.0,False,Excellent service and fast delivery.
+CUST_00362,53.0,F,103284.85,High School,City_3,2023-03-28,7,266.45144253686175,Health,8,work.net,250.890.2336,668.0,True,Outstanding customer service experience.
+CUST_00363,,Female,17612.92,Bachelor's Degree,San Diego,2022-11-04,9,258.0908497798484,Health,7,company.com,3168672809,748.0,False,Good value for money. Exceeded expectations.
+CUST_00364,39.0,M,28496.19,Associate Degree,City_18,2022-07-25,8,158.92150500518613,Electronics,3,company.com,(877) 634-8957,679.0,False,Outstanding customer service experience.
+CUST_00365,43.0,M,17995.66,Bachelor's Degree,City_26,2021-05-23,7,191.48377969370532,Electronics,9,work.net,4607371597,734.0,False,Good value for money.
+CUST_00366,30.0,Female,67913.82,High School,New York,2022-07-26,9,153.86359856367366,Home & Garden,8,gmail.com,3778905619,791.0,False,"Could be better, but acceptable."
+CUST_00367,37.0,Female,22785.75,Bachelor's Degree,Phoenix,2022-12-21,10,154.64953994092053,Home & Garden,5,yahoo.com,420-973-9394,621.0,False,
+CUST_00368,35.0,Female,31666.06,Associate Degree,City_22,2023-11-10,6,495.0344720953351,Fashion,3,hotmail.com,316-553-8043,665.0,False,
+CUST_00369,36.0,Male,59524.08,High School,San Diego,2023-03-30,3,190.98261888062973,Electronics,9,yahoo.com,2476267947,734.0,False,Good value for money.
+CUST_00370,25.0,Female,63487.6,Some College,City_17,2022-11-10,7,243.70325454589542,Gaming,3,hotmail.com,9207890957,850.0,True,Not satisfied with the quality.
+CUST_00371,35.0,Male,17576.16,High School,San Antonio,2021-02-26,2,192.69445930455595,Electronics,3,yahoo.com,(807) 698-9633,650.0,True,"Great product, highly recommend!"
+CUST_00372,40.0,Female,84569.1,Elementary,San Diego,2021-08-25,10,126.71375658837592,Fashion,6,hotmail.com,883-515-1744,850.0,False,
+CUST_00373,52.0,Female,52289.55,Some College,Houston,2022-06-19,4,60.26480640471266,Health,4,hotmail.com,2947119487,850.0,False,Not satisfied with the quality. Very pleased overall.
+CUST_00374,46.0,Female,15285.16,Bachelor's Degree,Philadelphia,2022-01-01,7,595.3743862194498,Electronics,9,hotmail.com,(813) 256-1125,712.0,True,"Could be better, but acceptable."
+CUST_00375,60.0,M,12554.41,Bachelor's Degree,City_11,2022-06-28,13,264.85677481696223,Home & Garden,7,gmail.com,409-508-4460,696.0,True,Outstanding customer service experience.
+CUST_00376,25.0,Male,,Bachelor's Degree,Dallas,2021-03-20,7,22.95052556318879,Sports,7,gmail.com,5295741120,664.0,False,
+CUST_00377,45.0,M,71687.75,Master's Degree,City_28,2021-08-11,8,231.733342034243,Automotive,10,outlook.com,5282046063,714.0,False,Not satisfied with the quality. Very pleased overall.
+CUST_00378,37.0,Female,,High School,City_36,2023-06-09,5,121.23966407730701,Electronics,7,corp.com,496.535.2965,607.0,False,
+CUST_00379,61.0,Female,48287.77,High School,City_5,2022-12-09,8,486.60878154222377,Health,6,hotmail.com,2033199694,,False,"Fast shipping, product as described."
+CUST_00380,25.0,f,37757.52,High School,City_26,2022-10-05,8,347.6182318419431,Electronics,8,company.com,964-640-3878,839.0,True,"Poor quality, would not recommend."
+CUST_00381,24.0,Male,54687.48,Bachelor's Degree,San Antonio,2023-06-13,6,109.63187003575655,Fashion,6,outlook.com,(332) 589-9725,671.0,False,"Poor quality, would not recommend."
+CUST_00382,27.0,Female,18319.76,Bachelor's Degree,Dallas,2023-11-14,9,270.78522452561344,Sports,6,outlook.com,(920) 435-9196,700.0,True,
+CUST_00383,18.0,Female,140026.97,Master's Degree,City_22,2021-08-25,13,179.85934854218178,Gaming,8,hotmail.com,772.884.6802,583.0,True,"Poor quality, would not recommend. Would shop here again."
+CUST_00384,28.0,Female,138572.75,Elementary,San Diego,2023-02-28,9,127.25821838530003,Electronics,9,outlook.com,273-606-1693,749.0,False,Good value for money. Needs improvement.
+CUST_00385,25.0,Male,51177.22,Bachelor's Degree,City_9,2022-01-25,10,525.7414808148826,Gaming,8,yahoo.com,,741.0,False,"Great product, highly recommend!"
+CUST_00386,36.0,Male,,Master's Degree,Houston,2022-06-06,11,478.5897716957161,Electronics,10,corp.com,646.219.8532,725.0,True,"Great product, highly recommend!"
+CUST_00387,39.0,f,26130.62,Bachelor's Degree,City_10,2021-04-01,8,205.95129688129032,Fashion,8,business.org,5956362540,702.0,True,
+CUST_00388,57.0,Female,,Associate Degree,City_37,2023-06-13,7,96.12728819892477,Health,8,gmail.com,520.789.8033,696.0,False,Excellent service and fast delivery.
+CUST_00389,46.0,Female,20888.33,Some College,City_37,2021-01-04,4,308.4331133098147,Home & Garden,9,gmail.com,(787) 614-7843,760.0,False,
+CUST_00390,28.0,Female,6130.98,Associate Degree,City_23,2023-12-01,3,545.7863719344251,Electronics,1,yahoo.com,(496) 317-7636,717.0,True,
+CUST_00391,24.0,M,4141.09,Some College,City_25,2022-02-08,10,78.35510650407274,Fashion,6,company.com,6384545514,745.0,False,"Poor quality, would not recommend."
+CUST_00392,40.0,Male,19156.58,High School,City_6,2023-01-16,12,523.6788458905504,Fashion,8,hotmail.com,(532) 375-8538,737.0,True,Outstanding customer service experience.
+CUST_00393,19.0,Female,41155.07,Associate Degree,City_9,2023-06-03,8,148.31812547174655,Sports,7,hotmail.com,(906) 570-2443,809.0,False,Amazing! Will definitely buy again. Exceeded expectations.
+CUST_00394,56.0,Female,47362.09,PhD,Chicago,2021-05-24,10,557.4300952569844,Home & Garden,4,hotmail.com,647-308-4986,774.0,False,"Fast shipping, product as described."
+CUST_00395,49.0,male,24602.28,High School,Dallas,2022-11-08,6,213.98510925296762,Automotive,6,gmail.com,646.803.7560,735.0,False,
+CUST_00396,29.0,Male,40679.04,Some College,San Jose,2022-10-05,6,207.61563880595784,Electronics,6,gmail.com,736.280.7484,841.0,False,Good value for money.
+CUST_00397,18.0,Female,29161.87,High School,City_46,2021-09-13,8,163.2775559790967,Sports,7,hotmail.com,517.963.6562,753.0,False,
+CUST_00398,51.0,Female,16326.58,Master's Degree,Dallas,2022-09-08,8,286.15422347833777,Home & Garden,9,gmail.com,(426) 541-3754,,False,Excellent service and fast delivery. Very pleased overall.
+CUST_00399,33.0,M,34787.19,High School,City_5,2023-11-05,11,274.527217590525,Electronics,10,corp.com,278.722.2868,768.0,True,"Fast shipping, product as described. Very pleased overall."
+CUST_00400,49.0,Female,69589.27,Bachelor's Degree,City_4,2022-09-26,7,247.16425009480037,Home & Garden,8,work.net,8573897662,572.0,True,Not satisfied with the quality.
+CUST_00401,,Female,16928.44,Master's Degree,City_14,2023-04-17,9,229.30282268298052,Health,9,business.org,7127777357,824.0,False,
+CUST_00402,27.0,F,16934.64,Master's Degree,City_25,2022-10-31,10,107.51252210775876,Sports,7,gmail.com,994.557.6752,730.0,True,
+CUST_00403,35.0,F,15438.19,Bachelor's Degree,Phoenix,2023-04-05,8,380.0001413761242,Home & Garden,6,yahoo.com,(944) 860-3419,715.0,False,
+CUST_00404,35.0,Female,7713.95,Bachelor's Degree,City_3,2022-08-29,4,361.8537631357334,Electronics,6,work.net,3014766981,742.0,False,"Fast shipping, product as described."
+CUST_00405,29.0,f,24731.63,Associate Degree,City_33,2021-09-18,9,209.07624813261114,Electronics,7,work.net,349.462.4232,692.0,False,"Could be better, but acceptable."
+CUST_00406,42.0,Female,64297.04,High School,San Jose,2022-01-28,3,65.26837087675362,Fashion,4,gmail.com,377-816-3504,738.0,False,
+CUST_00407,22.0,Female,41736.56,Bachelor's Degree,Philadelphia,2023-05-12,12,108.81242804818747,Sports,7,corp.com,978.977.2234,,False,Good value for money. Needs improvement.
+CUST_00408,33.0,Male,31716.72,Some College,City_16,2023-02-16,9,421.2926364699151,Electronics,8,company.com,381.991.9095,821.0,False,Good value for money. Would shop here again.
+CUST_00409,36.0,female,40265.56,Associate Degree,City_33,2021-12-23,7,84.94901893582833,Electronics,6,corp.com,675.972.8354,710.0,True,
+CUST_00410,41.0,Male,24558.54,Bachelor's Degree,Los Angeles,2022-09-09,9,291.4999332086143,Fashion,10,gmail.com,897.778.6295,689.0,False,"Product arrived damaged, disappointed."
+CUST_00411,,Male,,PhD,City_28,2023-04-12,4,337.96052585989423,Home & Garden,7,outlook.com,842.523.3473,646.0,True,
+CUST_00412,21.0,Male,67980.42,Associate Degree,City_33,2021-01-01,6,176.2128613267745,Fashion,5,yahoo.com,(650) 269-8682,741.0,True,
+CUST_00413,18.0,M,85553.71,Associate Degree,San Jose,2022-09-15,5,268.86613137907545,Fashion,7,gmail.com,,734.0,False,
+CUST_00414,50.0,Male,20281.71,Bachelor's Degree,City_49,2022-08-11,9,452.852317699754,Home & Garden,8,company.com,652.846.5961,751.0,True,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00415,38.0,Male,32187.44,High School,City_29,2022-03-07,12,229.40454640242797,Home & Garden,6,outlook.com,5420209944,637.0,True,"Fast shipping, product as described."
+CUST_00416,26.0,Male,30043.47,Bachelor's Degree,City_28,2023-05-31,5,140.72643691781866,Sports,3,gmail.com,805.257.6766,591.0,True,"Could be better, but acceptable."
+CUST_00417,53.0,Male,48099.69,Bachelor's Degree,City_25,2022-10-22,8,84.53865970588316,Home & Garden,7,business.org,(719) 275-6085,770.0,False,"Poor quality, would not recommend. Exceeded expectations."
+CUST_00418,36.0,Female,140352.83,Master's Degree,Houston,2023-08-11,7,183.8095451528833,Fashion,10,outlook.com,672-662-1616,838.0,False,"Product arrived damaged, disappointed."
+CUST_00419,49.0,M,91842.74,High School,Phoenix,2023-06-24,10,264.5000115630684,Electronics,7,outlook.com,2244340918,637.0,True,"Poor quality, would not recommend."
+CUST_00420,35.0,Female,26862.02,Master's Degree,San Jose,2023-06-25,8,27.664159035866778,Automotive,9,corp.com,(493) 278-2479,847.0,False,"Fast shipping, product as described. Very pleased overall."
+CUST_00421,59.0,Female,56048.41,Bachelor's Degree,Philadelphia,2022-03-14,8,315.72662798108735,Health,9,gmail.com,829-808-9307,742.0,True,
+CUST_00422,56.0,M,99060.44,Bachelor's Degree,Dallas,2023-11-13,10,244.27935977264517,Health,4,company.com,3651339677,,False,"Great product, highly recommend! Needs improvement."
+CUST_00423,32.0,Male,50346.08,Associate Degree,City_39,2023-08-28,10,230.28332598790072,Electronics,8,gmail.com,(794) 767-1672,688.0,False,"Fast shipping, product as described."
+CUST_00424,46.0,Female,36179.23,Bachelor's Degree,City_33,2021-12-14,7,138.40728401396285,Electronics,6,work.net,660.785.4084,609.0,False,"Poor quality, would not recommend."
+CUST_00425,42.0,female,51885.78,High School,City_14,2021-06-23,8,320.4650760893129,Home & Garden,5,business.org,(529) 819-8792,799.0,False,
+CUST_00426,,Female,,Associate Degree,City_36,2022-08-05,12,204.89206378008353,Health,8,business.org,4153356179,657.0,False,"Poor quality, would not recommend."
+CUST_00427,23.0,Male,23252.67,High School,City_29,2023-11-22,2,297.44145759160943,Fashion,8,company.com,(263) 661-2695,657.0,True,Good value for money. Very pleased overall.
+CUST_00428,43.0,Female,15502.75,Master's Degree,Dallas,2022-11-18,11,161.27790854702712,Automotive,4,yahoo.com,9778043224,799.0,False,"Great product, highly recommend!"
+CUST_00429,47.0,Female,46427.7,PhD,Phoenix,2021-07-11,10,316.6870373473176,Automotive,9,corp.com,5596507613,569.0,True,Good value for money.
+CUST_00430,18.0,Female,,Bachelor's Degree,City_2,2022-04-27,7,256.31831261474935,Electronics,8,gmail.com,931-286-9266,598.0,False,Excellent service and fast delivery.
+CUST_00431,20.0,Male,18798.0,Associate Degree,City_24,2022-09-28,15,952.5117963003645,Gaming,10,corp.com,861-376-1641,718.0,True,"Fast shipping, product as described."
+CUST_00432,18.0,Male,31845.66,Bachelor's Degree,Dallas,2022-04-06,5,532.4813916485479,Fashion,6,corp.com,453.924.8172,743.0,False,"Poor quality, would not recommend. Needs improvement."
+CUST_00433,31.0,Male,52891.54,Bachelor's Degree,City_17,2022-02-12,2,311.67609929361134,Electronics,10,gmail.com,649.736.9564,758.0,True,
+CUST_00434,43.0,male,168008.5,High School,Los Angeles,2021-10-29,9,711.5879306119431,Electronics,6,yahoo.com,4619094295,695.0,True,Excellent service and fast delivery.
+CUST_00435,53.0,F,81605.69,Bachelor's Degree,City_25,2021-02-20,14,156.0648725093611,Health,3,hotmail.com,572.581.5634,850.0,False,"Could be better, but acceptable."
+CUST_00436,35.0,Male,5841.14,Some College,City_32,2021-04-05,7,328.22238044128835,Electronics,8,gmail.com,596-618-6543,701.0,False,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00437,54.0,Male,43978.09,Bachelor's Degree,City_21,2022-05-17,5,174.61852495884276,Electronics,8,corp.com,9210810799,701.0,False,
+CUST_00438,18.0,F,113943.66,Bachelor's Degree,City_47,2023-09-01,9,600.7253426218801,Fashion,7,gmail.com,6519875470,656.0,False,
+CUST_00439,18.0,Male,12452.81,Bachelor's Degree,City_33,2021-05-30,8,139.26083681790746,Electronics,7,company.com,846-862-6482,729.0,False,"Poor quality, would not recommend."
+CUST_00440,34.0,Male,56457.73,Master's Degree,City_41,2023-07-22,9,491.1306969681186,Automotive,2,business.org,2283089268,769.0,True,
+CUST_00441,39.0,female,30052.05,High School,City_44,2023-04-29,8,152.94599618857805,Electronics,7,company.com,296.771.7333,816.0,True,"Fast shipping, product as described."
+CUST_00442,34.0,Male,91147.32,Bachelor's Degree,City_31,2022-02-03,7,43.460782629163035,Electronics,6,hotmail.com,490-458-3463,600.0,True,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00443,18.0,M,50181.7,Master's Degree,City_18,2023-02-26,8,344.91573550688906,Sports,7,outlook.com,3431779064,700.0,False,Outstanding customer service experience.
+CUST_00444,33.0,female,17904.15,High School,New York,2023-10-10,7,428.39193072900576,Electronics,6,gmail.com,8797814459,755.0,True,
+CUST_00445,19.0,Female,30924.96,High School,San Jose,2023-03-30,10,419.50591887811174,Fashion,10,gmail.com,(344) 558-6082,766.0,True,Amazing! Will definitely buy again.
+CUST_00446,43.0,Male,32423.65,High School,City_8,2022-05-15,8,62.61517683258161,Electronics,7,yahoo.com,9294915885,720.0,True,"Product arrived damaged, disappointed."
+CUST_00447,39.0,Male,32907.55,Bachelor's Degree,San Antonio,2021-10-30,5,315.0872470444063,Home & Garden,8,corp.com,3683446724,763.0,True,"Poor quality, would not recommend. Exceeded expectations."
+CUST_00448,23.0,m,88912.71,Associate Degree,San Antonio,2021-01-12,6,363.2238475580583,Gaming,10,hotmail.com,809-925-2388,655.0,False,"Could be better, but acceptable. Needs improvement."
+CUST_00449,28.0,f,18507.0,High School,City_47,2021-08-07,8,87.52853602075328,Gaming,7,outlook.com,517.772.7171,844.0,True,"Could be better, but acceptable. Needs improvement."
+CUST_00450,22.0,F,81019.17,High School,City_40,2023-05-21,8,401.12996932917775,Fashion,1,hotmail.com,858-536-3093,799.0,False,Excellent service and fast delivery.
+CUST_00451,34.0,Male,28515.42,Bachelor's Degree,City_35,2022-03-25,9,384.89849551397475,Home & Garden,2,yahoo.com,9173095319,612.0,False,Good value for money. Very pleased overall.
+CUST_00452,46.0,F,43425.79,Master's Degree,Dallas,2021-12-27,11,650.1018579736451,Home & Garden,8,gmail.com,(956) 901-9624,633.0,False,Excellent service and fast delivery.
+CUST_00453,23.0,male,38480.31,Master's Degree,New York,2023-11-27,12,20.685651529648183,Gaming,5,gmail.com,295-861-7937,636.0,True,
+CUST_00454,41.0,M,35687.5,Bachelor's Degree,Los Angeles,2023-08-10,9,58.62675357041333,Electronics,7,yahoo.com,4183941426,774.0,False,
+CUST_00455,28.0,male,35922.45,PhD,San Antonio,2021-04-13,5,141.31321214294,Electronics,5,hotmail.com,2078299575,617.0,True,
+CUST_00456,25.0,m,116528.0,Master's Degree,New York,2022-05-26,3,618.2879505617996,Sports,5,business.org,(516) 384-4509,693.0,False,"Could be better, but acceptable."
+CUST_00457,33.0,M,71250.7,Associate Degree,New York,2021-09-06,13,516.2267683504845,Automotive,7,gmail.com,,756.0,True,Good value for money.
+CUST_00458,22.0,Female,,Associate Degree,City_42,2023-07-24,12,430.6740526037996,Fashion,10,company.com,,714.0,False,Not satisfied with the quality.
+CUST_00459,28.0,Female,128827.53,Bachelor's Degree,City_21,2021-10-01,16,419.863346293852,Fashion,7,work.net,549.984.8967,740.0,False,
+CUST_00460,20.0,Male,45240.36,Bachelor's Degree,San Antonio,2023-08-10,8,652.4131430692845,Fashion,10,gmail.com,396.431.3253,634.0,False,"Fast shipping, product as described. Would shop here again."
+CUST_00461,58.0,M,48344.1,High School,Chicago,2023-12-24,13,111.49838413256093,Home & Garden,10,company.com,,767.0,False,
+CUST_00462,35.0,Female,18585.64,Bachelor's Degree,City_2,2022-10-12,10,471.22495331797177,Fashion,5,business.org,(358) 279-5846,670.0,False,
+CUST_00463,26.0,f,24391.77,Elementary,New York,2023-06-26,8,895.6923985217006,Sports,6,corp.com,9921759589,694.0,False,
+CUST_00464,37.0,Other,20935.41,Bachelor's Degree,City_44,2023-10-31,13,487.35336534208886,Fashion,8,gmail.com,303.719.9843,739.0,True,"Could be better, but acceptable."
+CUST_00465,33.0,F,38904.23,High School,Dallas,2023-05-24,10,159.73299547252216,Electronics,9,business.org,(956) 739-1618,728.0,False,Good value for money.
+CUST_00466,32.0,Male,60538.0,PhD,Dallas,2023-07-03,12,574.8760937016519,Electronics,7,outlook.com,(877) 544-3147,721.0,False,"Product arrived damaged, disappointed."
+CUST_00467,42.0,Male,,Bachelor's Degree,San Diego,2021-11-22,8,448.1437823768108,Electronics,10,work.net,(811) 585-3527,659.0,False,
+CUST_00468,44.0,Male,129370.46,High School,Los Angeles,2023-08-31,9,347.1964434313265,Electronics,1,hotmail.com,(366) 385-3712,696.0,True,
+CUST_00469,28.0,M,17850.62,Bachelor's Degree,City_14,2023-07-11,9,88.09883124005499,Sports,5,hotmail.com,,,False,Outstanding customer service experience.
+CUST_00470,28.0,F,39810.87,Bachelor's Degree,City_24,2022-06-15,6,191.6558935793949,Fashion,7,yahoo.com,938-648-1715,609.0,True,"Could be better, but acceptable."
+CUST_00471,31.0,male,13012.28,PhD,City_18,2022-05-22,6,235.62424886615008,Electronics,7,company.com,620.573.4891,682.0,True,"Poor quality, would not recommend."
+CUST_00472,18.0,Female,17370.06,High School,Chicago,2022-07-22,11,432.34111160541653,Electronics,4,gmail.com,654.825.5668,751.0,True,"Fast shipping, product as described."
+CUST_00473,18.0,male,99873.8,Bachelor's Degree,City_8,2023-12-04,7,279.71297840533526,Electronics,6,gmail.com,(970) 966-8355,617.0,True,
+CUST_00474,51.0,f,25071.03,Bachelor's Degree,City_7,2023-09-20,11,209.1053440197265,Health,2,business.org,439-746-4918,812.0,False,"Great product, highly recommend!"
+CUST_00475,54.0,Female,19097.43,Bachelor's Degree,City_37,2022-05-05,10,503.74238306056895,Books,7,corp.com,(516) 680-4178,821.0,False,Amazing! Will definitely buy again. Exceeded expectations.
+CUST_00476,32.0,f,6607.88,Master's Degree,San Diego,2022-07-17,7,86.94334192650595,Electronics,9,corp.com,(576) 894-8218,,True,Excellent service and fast delivery. Exceeded expectations.
+CUST_00477,41.0,Female,18945.4,Bachelor's Degree,San Diego,2023-06-20,5,108.49840478076032,Fashion,9,yahoo.com,(672) 987-5616,828.0,False,
+CUST_00478,38.0,Male,30815.58,Bachelor's Degree,City_12,2021-06-08,3,265.62933363961776,Home & Garden,8,work.net,5342017284,708.0,False,Outstanding customer service experience.
+CUST_00479,71.0,M,12259.76,Some College,City_14,2022-08-09,5,165.388723776064,Home & Garden,7,work.net,714.740.7859,753.0,False,Not satisfied with the quality.
+CUST_00480,48.0,Female,29430.1,Master's Degree,San Jose,2022-04-26,4,549.7108830892886,Automotive,7,yahoo.com,365-404-3267,680.0,False,"Product arrived damaged, disappointed."
+CUST_00481,33.0,M,100358.58,High School,Dallas,2022-07-11,9,106.65808608898611,Electronics,4,outlook.com,5749514711,,False,"Poor quality, would not recommend."
+CUST_00482,23.0,M,20622.87,Master's Degree,San Jose,2022-11-19,11,122.71516572755013,Sports,6,outlook.com,6519077837,752.0,True,"Product arrived damaged, disappointed. Very pleased overall."
+CUST_00483,18.0,Female,17073.68,PhD,City_37,2022-10-17,2,13.29562005665725,Fashion,5,hotmail.com,(692) 580-2680,654.0,False,Good value for money.
+CUST_00484,37.0,Female,14777.76,Master's Degree,San Jose,2021-06-15,11,349.9072552783711,Home & Garden,9,gmail.com,(928) 728-3042,626.0,False,"Fast shipping, product as described."
+CUST_00485,25.0,Female,14568.09,High School,City_44,2021-10-11,13,211.38279937472223,Sports,9,corp.com,3224336336,603.0,False,
+CUST_00486,18.0,Female,55740.48,Some College,City_1,2021-11-05,10,93.29636595319222,Gaming,7,company.com,981.364.5469,735.0,False,Good value for money.
+CUST_00487,27.0,Female,37757.33,Bachelor's Degree,City_45,2022-04-19,10,225.5092819871348,Gaming,8,business.org,8224778632,765.0,False,Good value for money.
+CUST_00488,22.0,Female,78079.71,High School,City_34,2023-02-24,10,920.2025635957283,Electronics,4,business.org,725.350.8167,772.0,False,Outstanding customer service experience.
+CUST_00489,55.0,Male,182749.26,High School,San Diego,2021-11-09,11,140.3863760499678,Home & Garden,7,yahoo.com,293.427.8391,710.0,True,
+CUST_00490,45.0,Female,8397.48,High School,City_37,2022-03-15,11,190.49702102341692,Fashion,8,gmail.com,557-227-7797,627.0,True,"Product arrived damaged, disappointed."
+CUST_00491,34.0,Male,49220.38,Associate Degree,Chicago,2021-05-12,8,108.8312721978563,Fashion,7,corp.com,2228736604,,False,"Product arrived damaged, disappointed."
+CUST_00492,52.0,M,14840.34,High School,City_43,2023-04-30,7,67.6876614703939,Home & Garden,5,outlook.com,4156104136,812.0,False,"Great product, highly recommend! Would shop here again."
+CUST_00493,35.0,F,68262.75,High School,City_14,2023-04-15,8,403.0420994325136,Home & Garden,9,hotmail.com,441-595-2337,681.0,False,Not satisfied with the quality.
+CUST_00494,24.0,Female,29215.96,Associate Degree,Los Angeles,2022-11-09,6,45.059879700426215,Gaming,8,gmail.com,583.429.1461,731.0,False,"Could be better, but acceptable."
+CUST_00495,,Female,37118.03,Bachelor's Degree,City_15,2023-08-13,11,460.3081356418327,Health,9,gmail.com,526-301-6493,633.0,False,Amazing! Will definitely buy again.
+CUST_00496,41.0,female,13009.8,High School,City_48,2023-05-02,7,465.5160510815864,Home & Garden,9,business.org,349.340.1627,746.0,False,Excellent service and fast delivery.
+CUST_00497,22.0,m,25818.8,High School,Los Angeles,2021-05-08,10,314.61012374716853,Gaming,10,outlook.com,(493) 683-3273,683.0,False,"Poor quality, would not recommend."
+CUST_00498,32.0,male,39016.11,High School,City_6,2022-02-28,9,220.19859353921103,Electronics,5,corp.com,977-922-8685,803.0,True,
+CUST_00499,24.0,m,107458.77,High School,City_25,2023-05-11,11,271.50772942507575,Fashion,3,corp.com,(659) 830-1086,781.0,False,Outstanding customer service experience.
+CUST_00500,18.0,Male,19232.4,Master's Degree,City_32,2023-03-09,6,41.859118202098166,Sports,6,company.com,5890628295,680.0,False,Amazing! Will definitely buy again.
+CUST_00051,38.0,Male,85466.55,Some College,Dallas,2021-07-26,9,431.80626017405797,Automotive,7,work.net,5559270786,737.0,False,Outstanding customer service experience. Very pleased overall.
+CUST_00151,38.0,M,38942.91,High School,City_16,2023-05-17,5,347.374267288078,Home & Garden,4,business.org,618-541-6260,688.0,False,
+CUST_00301,25.0,male,25864.87,High School,City_12,2022-02-21,6,542.7612163851308,Electronics,5,business.org,(471) 253-3076,674.0,False,"Poor quality, would not recommend. Exceeded expectations."
