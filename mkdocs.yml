@@ -101,7 +101,8 @@ theme:
     - content.action.edit
 plugins:
   - search
-#  - social
+  - social
+  - social_override # used to use the image in the metadata header
 markdown_extensions:
   - admonition
   - pymdownx.details
