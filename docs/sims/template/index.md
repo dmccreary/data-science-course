@@ -1,7 +1,10 @@
 ---
-title: Social Media Preview Test
+title: MicroSim metadata template
 description: A test to see if a local image will be used to generate a social media card.
-image: formatting-tests/social-preview-test.png
+title: Least Squares MicroSim
+image: /sims/least-squares/least-squares.png
+og:image: /sims/least-squares/least-squares.png
+twitter:image: /sims/least-squares/least-squares.png
 hide:
   - toc           # Hide the table of contents on the right
 ---
