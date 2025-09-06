@@ -39,9 +39,8 @@ nav:
     - Introduction: sims/index.md
     - MicroSim Lists:
         - Intro: sims/microsim-lists/index.md
-        - sims/microsim-lists/10-stats-review-microsims.md
-        - sims/microsim-lists/100-data-science-microsims.md
-        - 100 MicroSims: sims/100-microsims.md
+        - Top 10 Stats Review MicroSims: sims/microsim-lists/10-stats-review-microsims.md
+        - Top 100 Data Science MicroSims: sims/microsim-lists/100-data-science-microsims.md
     - Data Science Workflow: sims/data-science-workflow/index.md
     - Data Science Language Popularity: sims/ds-prog-lang/index.md
     - Four Types of Data: sims/four-types-of-data/index.md
