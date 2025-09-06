@@ -15,6 +15,7 @@ nav:
     - Setup: chapters/00-setup/index.md
     - Foundations: chapters/01-foundations/index.md
     - Data Exploration: chapters/02-data-exploration/index.md
+    - Data Profiling: chapters/data-profiling.md
     - Data Visualization: chapters/03-data-visualization/index.md
     - Statistics: chapters/04-statistics/index.md
     - Linear Regression: chapters/05-linear-regression/index.md
@@ -52,7 +53,7 @@ nav:
       - Normal Distribution: sims/normal-dice-distribution/index.md
       - Triangular Distribution: sims/pair-dice-sum-distribution/index.md
       - Bell Curve Emergence: sims/bell-curve/index.md
-    - Data Profile
+    # - Data Profile
     - Template: sims/template/index.md
   - Prompts:
     - prompts/course-description.md
