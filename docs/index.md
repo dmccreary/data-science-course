@@ -1,9 +1,9 @@
 ---
 title: Introduction to Data Science with Python and AI
-description: An intelligent textbook for learning data science
+description: An intelligent textbook for learning data science with Python and AI with a focus on interactive simulations.
 image: /img/cover.jpg
-og-image: /img/cover.jpg
-twitter-image: /img/cover.jpg
+og:image: /img/cover.jpg
+twitter:image: /img/cover.jpg
 hide:
   - title
   - toc
