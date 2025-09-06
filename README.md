@@ -24,7 +24,7 @@ This 15-week course provides a comprehensive introduction to data science using 
 
 ### Prerequisites
 - Python 3.8 or higher
-- Basic programming knowledge (helpful but not required)
+- Basic Python programming knowledge
 
 ### Local Development Setup
 
