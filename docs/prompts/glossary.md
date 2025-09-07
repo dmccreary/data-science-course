@@ -11,9 +11,11 @@
     definition placed in the body text.
     Do not use the term in the definition of the term.
     The definition should be precise, concise and distinct.
+    
     If appropriate, create an **Example:** of how that term is used in the
     Introduction to Data Science with Python course.  Do not place a newline after the Example:
     Return the glossary of terms in alphabetical order.
+
     A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:
 
     1. Precise

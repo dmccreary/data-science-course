@@ -10,11 +10,13 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  
   - Chapters:
     - Table of Contents: chapters/index.md
     - Setup: chapters/00-setup/index.md
     - Foundations: chapters/01-foundations/index.md
     - Data Exploration: chapters/02-data-exploration/index.md
+    - Data Profiling: chapters/02-data-exploration/ydata-profiling.md
     - Data Profiling: chapters/data-profiling.md
     - Data Visualization: chapters/03-data-visualization/index.md
     - Statistics: chapters/04-statistics/index.md
@@ -36,6 +38,7 @@ nav:
     - Lab 1 - Dataframes: labs/01-dataframe/index.md
     - Lab 2 - Explore Data: labs/02-explore-data/index.md
     - Lab 3 - Statistics: labs/03-statistics/index.md
+  
   - MicroSims:
     - Introduction: sims/index.md
     - MicroSim Lists:
@@ -53,20 +56,22 @@ nav:
       - Normal Distribution: sims/normal-dice-distribution/index.md
       - Triangular Distribution: sims/pair-dice-sum-distribution/index.md
       - Bell Curve Emergence: sims/bell-curve/index.md
-    # - Data Profile
     - Template: sims/template/index.md
-  - Prompts:
-    - prompts/course-description.md
-    - prompts/concept-dependencies.md
-    - prompts/concept-enumeration.md
-    - prompts/concept-taxonomy.md
-    - prompts/generate-microsims.md
-    - prompts/data-science-language-popularity.md
-    - prompts/data-science-workflow.md
+  
+  - Sample GenAI Prompts:
+    - Introduction: prompts/index.md
+    - Course Description: prompts/course-description.md
+    - Concept Enumeration: prompts/concept-enumeration.md
+    - Concept Dependencies: prompts/concept-dependencies.md
+    - Concept Taxonomy: prompts/concept-taxonomy.md
+    - Chapter Content: prompts/chapter-content.md
+    - Generate MicroSims: prompts/generate-microsims.md
+    - Data Science Language Popularity: prompts/data-science-language-popularity.md
+    - Data Science Workflow: prompts/data-science-workflow.md
     - FAQs: prompts/faqs.md
     - Glossary: prompts/glossary.md
-    - prompts/library-comparison-prompt.md
-    - prompts/quiz.md
+    - Library Comparison: prompts/library-comparison-prompt.md
+    - Quiz: prompts/quiz.md
   - Frequently Asked Questions: faqs.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
