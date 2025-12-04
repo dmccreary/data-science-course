@@ -1,102 +1,59 @@
 ---
 title: Four Types of Data Science Data
-description: An infographic that describes image, sequence, table and graph data.
-image: formatting-tests/social-preview-test.png
+description: An interactive infographic describing the four main types of data in data science - image, sequence, table, and graph data
+image: four-types-of-data.png
+quality_score: 70
 hide:
-  - toc           # Hide the table of contents on the right
+  - toc
 ---
 # Four Types of Data Science Data
 
-<iframe src="main.html" height="600"  scrolling="no"></iframe>
+<iframe src="main.html" height="600" scrolling="no"></iframe>
 
-## Sample iframe
+## Embed This MicroSim
 
-You can include the following in your HTML to use this MicroSim
-
-```html
-<iframe src="/data-science-course/docs/sims/four-types-of-data/main.html" height="600" scrolling="no"></iframe>
-```
-
-[Run the MicroSim](main.html){ .md-button .md-button--primary }
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID)
-
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/microsims/sims/spectrum-analyzer/main.html" height="400"  scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/four-types-of-data/main.html" height="600px" scrolling="no"></iframe>
 ```
 
-## About this MicroSim
+[Run the MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 
-This MicroSim teaches us how to
-specify the drawing of a static filled circle.
+## About This MicroSim
 
-## Sample Prompt
+This interactive infographic illustrates the four main types of data used in data science:
 
-!!! prompt
-  Create a single file p5.js sketch.
-  Draw a green circle on a 600x400 canvas with a radius of 200.
-
-## Sample Response
-
-```javascript
-// canvas regions setup
-// let canvasWidth = 750;
-let drawHeight = 400;
-let controlHeight = 50;
-let canvasHeight = drawHeight + controlHeight;
-let aspectRatio = 1.91; // Open Graph standard
-let canvasWidth = canvasHeight * aspectRatio;
-let radius = 200;
-
-function setup() {
-  const canvas = createCanvas(canvasWidth, canvasHeight);
-  var mainElement = document.querySelector('main');
-  canvas.parent(mainElement);
-}
-
-function draw() {
-  // background of drawing region
-  fill('aliceblue');
-  rect(0, 0, canvasWidth, drawHeight);
-
-  // background of controls
-  fill('whitegray');
-  rect(0, drawHeight, canvasWidth, controlHeight);
-  circle(canvasWidth/2, canvasHeight/2, radius);
-}
-```
+1. **Image Data** - Photographs, medical scans, satellite imagery
+2. **Sequence Data** - Time series, text, audio, DNA sequences
+3. **Tabular Data** - Spreadsheets, databases, structured records
+4. **Graph Data** - Networks, relationships, social connections
 
 ## Lesson Plan
 
 ### Grade Level, Subject and Topic
 
-9th grade geometry. Circle and radius.
+9th-12th grade introductory data science. Understanding data types.
+
+### Learning Objectives
+
+By the end of this lesson, students will be able to:
+
+- Identify the four main types of data used in data science
+- Give examples of each data type from real-world applications
+- Explain which machine learning approaches work best with each data type
 
 ### Activities
 
-#### Fill Color
+#### Data Type Classification
 
-Change the color in the prompt.  You
-can specify any one of the [140 named colors](https://www.w3schools.com/tags/ref_colornames.asp).
+Present students with various datasets and have them classify which of the four data types they represent.
 
-#### Border Weight
+#### Real-World Examples
 
-Change the prompt to include a black border of
-width 10.
-
-#### Border Color
-
-Change the prompt to make the border purple.
-
-#### Change the Radius
-
-Change the prompt to make the circle smaller
-or larger by changing the radius from 10 to 200.
-
-#### Change the Location
-
-Change the prompt to move the circle to the left or right.
+Research and present examples of how each data type is used in industry (medical imaging, natural language processing, database analytics, social network analysis).
 
 ## References
 
-* [Processing Wiki on Positioning Your Canvas](https://github.com/processing/p5.js/wiki/Positioning-your-canvas)
+1. [Types of Data in Data Science](https://en.wikipedia.org/wiki/Data_type) - Wikipedia - Overview of data types in computing
+2. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build this interactive simulation

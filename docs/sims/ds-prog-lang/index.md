@@ -1,33 +1,28 @@
 ---
-title: Social Media Preview Test
-description: A test to see if a local image will be used to generate a social media card.
-image: formatting-tests/social-preview-test.png
+title: Data Science Programming Language Popularity
+description: Interactive line chart showing the popularity trends of programming languages used in data science from 2010-2025
+image: ds-prog-lang.png
+quality_score: 78
 hide:
-  - toc           # Hide the table of contents on the right
+  - toc
 ---
 # Data Science Programming Language Popularity
 
-<iframe src="main.html" height="590px"  scrolling="no"></iframe>
+<iframe src="main.html" height="590px" scrolling="no"></iframe>
 
-## Sample iframe
+## Embed This MicroSim
 
-You can include the following in your HTML to use this MicroSim
-
-```html
-<iframe src="/data-science-course/docs/sims/da-prog-lang/main.html" height="590px" scrolling="no"></iframe>
-```
-
-[Run the MicroSim](main.html){ .md-button .md-button--primary }
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID)
-
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/microsims/sims/spectrum-analyzer/main.html" height="400"  scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/ds-prog-lang/main.html" height="590px" scrolling="no"></iframe>
 ```
 
-## About this MicroSim
+[Run the MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 
-This chart was created using Claude Sonnet 4 using the following prompt:
+## About This MicroSim
+
+This interactive Chart.js visualization shows the popularity trends of major programming languages used in data science from 2010 to 2025. The chart was created using Claude Sonnet 4 using the following prompt:
 
 !!! prompt
   Please generate a line plot that shows the popularity of different programming languages for use in data science over the last 15 years.  Make sure to include both Python and R.  Document the source of the dataset.  Make time be the horizontal axis and start at 2010.

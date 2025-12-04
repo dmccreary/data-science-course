@@ -1,105 +1,43 @@
 ---
-title: MicroSim metadata template
-description: A test to see if a local image will be used to generate a social media card.
-title: Least Squares MicroSim
-image: /sims/least-squares/least-squares.png
-og:image: /sims/least-squares/least-squares.png
-twitter:image: /sims/least-squares/least-squares.png
+title: MicroSim Template
+description: A template for creating new MicroSims with standard structure and formatting
+quality_score: 65
 hide:
-  - toc           # Hide the table of contents on the right
+  - toc
 ---
 # MicroSim Template
 
-<iframe src="main.html" height="500"  scrolling="no"></iframe>
+<iframe src="main.html" height="500" scrolling="no"></iframe>
 
-## Sample iframe
+## Embed This MicroSim
 
-You can include the following in your HTML to use this MicroSim
-
-```html
-<iframe src="/data-science-course/docs/sims/MICROSIM_NAME/main.html" height="400px" scrolling="no"></iframe>
-```
-
-[Run the MicroSim](main.html){ .md-button .md-button--primary }
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID)
-
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/microsims/sims/spectrum-analyzer/main.html" height="400"  scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/template/main.html" height="500px" scrolling="no"></iframe>
 ```
 
-## About this MicroSim
+[Run the MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 
-This MicroSim teaches us how to
-specify the drawing of a static filled circle.
+## About This MicroSim
 
-## Sample Prompt
+This is a template MicroSim that demonstrates the standard structure and formatting for creating new interactive simulations. Use this as a starting point when developing new MicroSims for the data science course.
+
+## How to Use This Template
+
+1. Copy the entire `template` directory to create a new MicroSim
+2. Rename the directory to your MicroSim name (use kebab-case)
+3. Update `metadata.json` with your MicroSim's information
+4. Replace `main.html` and the JavaScript file with your simulation code
+5. Update this `index.md` file with your documentation
+
+## Sample Prompt for Creating a MicroSim
 
 !!! prompt
-  Create a single file p5.js sketch.
-  Draw a green circle on a 600x400 canvas with a radius of 200.
-
-## Sample Response
-
-```javascript
-// canvas regions setup
-// let canvasWidth = 750;
-let drawHeight = 400;
-let controlHeight = 50;
-let canvasHeight = drawHeight + controlHeight;
-let aspectRatio = 1.91; // Open Graph standard
-let canvasWidth = canvasHeight * aspectRatio;
-let radius = 200;
-
-function setup() {
-  const canvas = createCanvas(canvasWidth, canvasHeight);
-  var mainElement = document.querySelector('main');
-  canvas.parent(mainElement);
-}
-
-function draw() {
-  // background of drawing region
-  fill('aliceblue');
-  rect(0, 0, canvasWidth, drawHeight);
-
-  // background of controls
-  fill('whitegray');
-  rect(0, drawHeight, canvasWidth, controlHeight);
-  circle(canvasWidth/2, canvasHeight/2, radius);
-}
-```
-
-## Lesson Plan
-
-### Grade Level, Subject and Topic
-
-9th grade geometry. Circle and radius.
-
-### Activities
-
-#### Fill Color
-
-Change the color in the prompt.  You
-can specify any one of the [140 named colors](https://www.w3schools.com/tags/ref_colornames.asp).
-
-#### Border Weight
-
-Change the prompt to include a black border of
-width 10.
-
-#### Border Color
-
-Change the prompt to make the border purple.
-
-#### Change the Radius
-
-Change the prompt to make the circle smaller
-or larger by changing the radius from 10 to 200.
-
-#### Change the Location
-
-Change the prompt to move the circle to the left or right.
+    Create a single file p5.js sketch.
+    Draw a green circle on a 600x400 canvas with a radius of 200.
 
 ## References
 
-* [Processing Wiki on Positioning Your Canvas](https://github.com/processing/p5.js/wiki/Positioning-your-canvas)
+1. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build interactive simulations
+2. [Processing Wiki on Positioning Your Canvas](https://github.com/processing/p5.js/wiki/Positioning-your-canvas) - Guide for canvas positioning

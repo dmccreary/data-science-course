@@ -1,0 +1,19 @@
+{
+  "title": "Book Generation Workflow",
+  "description": "Interactive visualization showing the workflow for generating intelligent textbooks",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["workflow", "book generation", "intelligent textbooks", "process visualization"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "infographic",
+  "audience": "educators, developers",
+  "bloomLevel": ["Remember", "Understand"],
+  "concepts": ["workflow design", "book generation", "content creation"],
+  "prerequisites": [],
+  "library": "p5.js"
+}

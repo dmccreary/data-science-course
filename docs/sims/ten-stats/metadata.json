@@ -1,0 +1,19 @@
+{
+  "title": "Ten Basic Statistics MicroSims",
+  "description": "Interactive progression map showing the learning pathway through ten fundamental statistics MicroSims",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["statistics", "learning path", "progression map", "data science", "visualization"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "learning map",
+  "audience": "students, educators",
+  "bloomLevel": ["Remember", "Understand", "Analyze"],
+  "concepts": ["learning progression", "statistics concepts", "concept dependencies", "prerequisite mapping"],
+  "prerequisites": [],
+  "library": "vis-network"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Normal Dice Distribution",
+  "description": "Interactive simulation showing the distribution of single dice rolls approaching normal distribution",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["probability", "dice", "distribution", "statistics", "uniform distribution"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "simulation",
+  "audience": "students, educators",
+  "bloomLevel": ["Understand", "Apply"],
+  "concepts": ["probability distribution", "uniform distribution", "discrete random variables"],
+  "prerequisites": ["basic probability"],
+  "library": "p5.js"
+}

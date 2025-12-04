@@ -1,22 +1,33 @@
 ---
+title: Book Generation Workflow
+description: Interactive visualization showing the workflow for generating intelligent textbooks
+image: book-gen-workflow.png
+quality_score: 68
 hide:
   - toc
 ---
-# Book Build Workflow
+# Book Generation Workflow
 
-Use these templates to create a MicroSim that can
-be added to any website with just a single ```iframe``` HTML element.
+This MicroSim illustrates the workflow for creating intelligent textbooks using generative AI tools.
 
-<iframe src="./main.html" height="610px" scrolling="no"
-  style="overflow: hidden;"></iframe>
+<iframe src="./main.html" height="610px" scrolling="no"></iframe>
 
-You can include this interactive infographic MicroSim in your textbook
-by adding the following HTML statement to your website:
+## Embed This MicroSim
+
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/intelligent-textbooks/sims/book-gen-workflow/main.html" height="610px" scrolling="no" style="overflow: hidden;"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/book-gen-workflow/main.html" height="610px" scrolling="no"></iframe>
 ```
 
-[Run the Circle Radius MicroSim](./main.html){ .md-button .md-button--primary }
+[Run the MicroSim in Fullscreen](./main.html){ .md-button .md-button--primary }
 
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/dJq4nTXE4)
+[Edit this MicroSim in the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/dJq4nTXE4)
+
+## About This MicroSim
+
+This interactive infographic shows the step-by-step process for generating intelligent textbooks, from initial concept development through final publication.
+
+## References
+
+1. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build this interactive simulation

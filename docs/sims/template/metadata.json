@@ -1,0 +1,19 @@
+{
+  "title": "MicroSim Template",
+  "description": "A template for creating new MicroSims with standard structure and formatting",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["template", "MicroSim", "p5.js", "tutorial"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "template",
+  "audience": "developers, educators",
+  "bloomLevel": ["Apply", "Create"],
+  "concepts": ["canvas setup", "drawing functions", "p5.js basics"],
+  "prerequisites": ["JavaScript basics", "HTML fundamentals"],
+  "library": "p5.js"
+}

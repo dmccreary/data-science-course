@@ -1,17 +1,30 @@
 ---
 title: Least Squares MicroSim
-description: A Microsim to demonstrate how the least-squares algorithm works with interactive sliders for controlling the slope and intercept.
+description: An interactive simulation demonstrating how the least-squares algorithm works with sliders for controlling slope and intercept
 image: /sims/least-squares/least-squares.png
 og:image: /sims/least-squares/least-squares.png
 twitter:image: /sims/least-squares/least-squares.png
+quality_score: 85
 ---
 # Least Squares MicroSim
 
 <iframe src="main.html" height="565px" scrolling="no"></iframe>
 
-[Run the Least Squares MicroSim in Fullscreen](./main.html){.md-button .md-button--primary}
-<br/>
-[Edit the Least Squares MicroSim in the p5.js editor](https://editor.p5js.org/dmccreary/sketches/voN2RROfE)
+## Embed This MicroSim
+
+Copy this iframe to embed this MicroSim in your website:
+
+```html
+<iframe src="https://dmccreary.github.io/data-science-course/sims/least-squares/main.html" height="565px" scrolling="no"></iframe>
+```
+
+[Run the Least Squares MicroSim in Fullscreen](./main.html){ .md-button .md-button--primary }
+
+[Edit the Least Squares MicroSim in the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/voN2RROfE)
+
+## About This MicroSim
+
+This interactive simulation helps students understand the least-squares regression algorithm by visualizing how changing the slope and intercept of a line affects its fit to a set of data points. Students can see the squared residuals (errors) displayed as colored squares, making the concept of "minimizing squared error" tangible and intuitive.
 
 ## Lesson Plan for High School Algebra
 
@@ -226,6 +239,13 @@ By the end of this lesson, students will be able to:
   4. Explain a situation where this model might break down or become unreliable for predictions
 
 ### Follow-Up Lesson Ideas
+
 - Comparing linear vs. non-linear relationships
 - Introduction to systems of linear equations
 - Linear regression with larger datasets
+
+## References
+
+1. [Least Squares Regression](https://en.wikipedia.org/wiki/Least_squares) - Wikipedia - Comprehensive overview of least squares method and its mathematical foundations
+2. [Khan Academy: Least Squares Approximation](https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/more-on-regression/v/calculating-the-equation-of-a-regression-line) - Khan Academy - Video tutorials explaining regression line calculation
+3. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build this interactive simulation

@@ -1,0 +1,19 @@
+{
+  "title": "Bell Curve Emergence",
+  "description": "Interactive simulation demonstrating how a bell curve emerges from the Central Limit Theorem when sampling from various distributions",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["normal distribution", "Central Limit Theorem", "statistics", "probability", "sampling distribution"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "simulation",
+  "audience": "students, educators",
+  "bloomLevel": ["Understand", "Apply", "Analyze"],
+  "concepts": ["normal distribution", "Central Limit Theorem", "sampling distribution", "z-scores", "standard deviation"],
+  "prerequisites": ["basic statistics", "mean", "standard deviation"],
+  "library": "p5.js"
+}

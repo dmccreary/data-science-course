@@ -1,102 +1,67 @@
 ---
-title: Six-Step Data Science Workflow InfoGraphic
-description: A six-step linear data science workflow infographic
-image: data-science-course/sims/data-sci
+title: Six-Step Data Science Workflow
+description: An interactive infographic showing the six-step linear data science workflow process
+quality_score: 70
 hide:
-  - toc           # Hide the table of contents on the right
+  - toc
 ---
-# MicroSim Template
+# Six-Step Data Science Workflow
 
-<iframe src="main.html" height="300"  scrolling="no"></iframe>
+<iframe src="main.html" height="300" scrolling="no"></iframe>
 
-## Sample iframe
+## Embed This MicroSim
 
-You can include the following in your HTML to use this MicroSim
-
-```html
-<iframe src="/data-science-course/docs/data-science-workflow/main.html" height="300px" scrolling="no"></iframe>
-```
-
-[Run the Data Science Workflow MicroSim](main.html){ .md-button .md-button--primary }
-[Edit the Data Science Workflow MicroSim](https://editor.p5js.org/dmccreary/sketches/mdwWEzuaZ)
-
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/microsims/sims/spectrum-analyzer/main.html" height="400"  scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/data-science-workflow/main.html" height="300px" scrolling="no"></iframe>
 ```
 
-## About this MicroSim
+[Run the Data Science Workflow MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 
-This MicroSim teaches us how to
-specify the drawing of a static filled circle.
+[Edit this MicroSim in the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/mdwWEzuaZ)
 
-## Sample Prompt
+## About This MicroSim
 
-!!! prompt
-  Create a single file p5.js sketch.
-  Draw a green circle on a 600x400 canvas with a radius of 200.
+This interactive infographic illustrates the six essential steps of the data science workflow:
 
-## Sample Response
-
-```javascript
-// canvas regions setup
-// let canvasWidth = 750;
-let drawHeight = 400;
-let controlHeight = 50;
-let canvasHeight = drawHeight + controlHeight;
-let aspectRatio = 1.91; // Open Graph standard
-let canvasWidth = canvasHeight * aspectRatio;
-let radius = 200;
-
-function setup() {
-  const canvas = createCanvas(canvasWidth, canvasHeight);
-  var mainElement = document.querySelector('main');
-  canvas.parent(mainElement);
-}
-
-function draw() {
-  // background of drawing region
-  fill('aliceblue');
-  rect(0, 0, canvasWidth, drawHeight);
-
-  // background of controls
-  fill('whitegray');
-  rect(0, drawHeight, canvasWidth, controlHeight);
-  circle(canvasWidth/2, canvasHeight/2, radius);
-}
-```
+1. **Define the Problem** - Clearly articulate the question you want to answer
+2. **Collect Data** - Gather relevant data from various sources
+3. **Clean Data** - Process and prepare data for analysis
+4. **Analyze Data** - Apply statistical and machine learning methods
+5. **Visualize Results** - Create charts and graphs to communicate findings
+6. **Communicate Insights** - Share conclusions with stakeholders
 
 ## Lesson Plan
 
 ### Grade Level, Subject and Topic
 
-9th grade geometry. Circle and radius.
+9th-12th grade introductory data science. Understanding the data science process.
+
+### Learning Objectives
+
+By the end of this lesson, students will be able to:
+
+- Identify the six steps of the data science workflow
+- Explain the purpose of each step in the process
+- Describe how the steps connect to form a complete analysis pipeline
 
 ### Activities
 
-#### Fill Color
+#### Step Identification
 
-Change the color in the prompt.  You
-can specify any one of the [140 named colors](https://www.w3schools.com/tags/ref_colornames.asp).
+Have students identify which step they are performing when working on a data project.
 
-#### Border Weight
+#### Real-World Examples
 
-Change the prompt to include a black border of
-width 10.
+Discuss real-world data science projects and map them to the six-step workflow.
 
-#### Border Color
+#### Process Ordering
 
-Change the prompt to make the border purple.
-
-#### Change the Radius
-
-Change the prompt to make the circle smaller
-or larger by changing the radius from 10 to 200.
-
-#### Change the Location
-
-Change the prompt to move the circle to the left or right.
+Provide students with scrambled workflow steps and have them arrange them in the correct order.
 
 ## References
 
-* [Processing Wiki on Positioning Your Canvas](https://github.com/processing/p5.js/wiki/Positioning-your-canvas)
+1. [What is Data Science?](https://en.wikipedia.org/wiki/Data_science) - Wikipedia - Overview of data science as a field
+2. [The Data Science Process](https://www.kdnuggets.com/2020/06/data-science-process.html) - KDnuggets - Detailed explanation of data science methodology
+3. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build this interactive simulation
