@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A test to see if a local image will be used to generate a social media card.">
+        <meta name="description" content="Interactive simulation demonstrating how a bell curve emerges from the Central Limit Theorem when sampling from various distributions">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,9 +75,9 @@
       
         <meta  property="og:title"  content="Bell Curve Emergence - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="A test to see if a local image will be used to generate a social media card." >
+        <meta  property="og:description"  content="Interactive simulation demonstrating how a bell curve emerges from the Central Limit Theorem when sampling from various distributions" >
       
-        <meta property="og:image" content="https://dmccreary.github.io/data-science-course/formatting-tests/social-preview-test.png">
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/sims/bell-curve/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -91,9 +91,9 @@
       
         <meta  name="twitter:title"  content="Bell Curve Emergence - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="A test to see if a local image will be used to generate a social media card." >
+        <meta  name="twitter:description"  content="Interactive simulation demonstrating how a bell curve emerges from the Central Limit Theorem when sampling from various distributions" >
       
-        <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/formatting-tests/social-preview-test.png">
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/sims/bell-curve/index.png" >
       
     
     
@@ -917,9 +917,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sample-iframe" class="md-nav__link">
+  <a href="#embed-this-microsim" class="md-nav__link">
     <span class="md-ellipsis">
-      Sample iframe
+      Embed This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1228,9 +1237,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sample-iframe" class="md-nav__link">
+  <a href="#embed-this-microsim" class="md-nav__link">
     <span class="md-ellipsis">
-      Sample iframe
+      Embed This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1260,14 +1278,13 @@
 
 
 <h1 id="bell-curve-emergence">Bell Curve Emergence</h1>
-<iframe src="main.html" height="450"  scrolling="no"></iframe>
+<iframe src="main.html" height="450" scrolling="no"></iframe>
 
-<h2 id="sample-iframe">Sample iframe</h2>
-<p>You can include the following in your HTML to use this MicroSim</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;DOC_ROOT/docs/sims/MICROSIM_NAME/main.html&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<h2 id="embed-this-microsim">Embed This MicroSim</h2>
+<p>Copy this iframe to embed this MicroSim in your website:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/bell-curve/main.html&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p><a class="md-button md-button--primary" href="main.html">Run the MicroSim</a>
-<a href="https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID">Edit this MicroSim</a></p>
+<p><a class="md-button md-button--primary" href="main.html">Run the MicroSim in Fullscreen</a></p>
 <p><strong>Topics:</strong> Normal distribution, Central Limit Theorem (CLT), sampling distribution of the mean, law of large numbers, z‑scores</p>
 <p><strong>Description:</strong>
 Students watch a true bell curve emerge in real time by repeatedly sampling from a <strong>non‑normal base distribution</strong> (choose Uniform, Skewed, Exponential, or Bernoulli). Each iteration draws <code>n</code> observations, computes their <strong>sample mean</strong>, and drops a small dot into a <strong>running histogram of sample means</strong>. As more means accumulate and/or as <code>n</code> increases, the histogram approaches a <strong>normal (Gaussian) curve</strong>. Overlay a <strong>theoretical normal</strong> with mean <code>μ</code> (of the base distribution) and standard deviation <code>σ/√n</code> to make the convergence explicit. Optional shading shows central probability regions (e.g., ±1σ, ±2σ).</p>
@@ -1360,6 +1377,13 @@ Students watch a true bell curve emerge in real time by repeatedly sampling from
 <p>A tiny <strong>QQ‑plot</strong> inset comparing sample means to a perfect normal line.</p>
 </li>
 </ul>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a> - Wikipedia - Mathematical foundation for why the bell curve emerges</li>
+<li><a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal Distribution</a> - Wikipedia - Properties of the Gaussian distribution</li>
+<li><a href="https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-means/v/central-limit-theorem">Khan Academy: Central Limit Theorem</a> - Khan Academy - Video explanation of the CLT</li>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - p5.js Documentation - JavaScript library used to build this interactive simulation</li>
+</ol>
 
 
 
