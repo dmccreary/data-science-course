@@ -1,28 +1,35 @@
 ---
 title: Normal Dice Distribution
-description: Dice distribution simulator with six labeled slots.
-image: formatting-tests/social-preview-test.png
+description: Interactive simulation showing the distribution of single dice rolls
+quality_score: 60
 hide:
-  - toc           # Hide the table of contents on the right
+  - toc
 ---
-# MicroSim Template
+# Normal Dice Distribution
 
-<iframe src="main.html" height="470"  scrolling="no"></iframe>
+<iframe src="main.html" height="470" scrolling="no"></iframe>
 
-## Sample iframe
+## Embed This MicroSim
 
-You can include the following in your HTML to use this MicroSim
-
-```html
-<iframe src="DOC_ROOT/docs/sims/MICROSIM_NAME/main.html" height="400px" scrolling="no"></iframe>
-```
-
-[Run the MicroSim](main.html){ .md-button .md-button--primary }
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID)
-
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/microsims/sims/spectrum-analyzer/main.html" height="400"  scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/normal-dice-distribution/main.html" height="470px" scrolling="no"></iframe>
 ```
 
-## About this MicroSim
+[Run the MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## About This MicroSim
+
+This interactive simulation demonstrates the probability distribution of rolling a single six-sided die. As more rolls accumulate, students can observe how the distribution approaches a uniform distribution with equal probability (1/6) for each outcome.
+
+## Learning Objectives
+
+- Understand uniform probability distribution
+- Observe how empirical results approach theoretical probability with more trials
+- Compare discrete uniform distribution to other distributions
+
+## References
+
+1. [Probability Distributions](https://en.wikipedia.org/wiki/Probability_distribution) - Wikipedia - Overview of probability distributions
+2. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build this interactive simulation

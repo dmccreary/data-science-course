@@ -1,24 +1,23 @@
 ---
 title: Bell Curve Emergence
-description: A test to see if a local image will be used to generate a social media card.
-image: formatting-tests/social-preview-test.png
+description: Interactive simulation demonstrating how a bell curve emerges from the Central Limit Theorem when sampling from various distributions
+quality_score: 72
 hide:
-  - toc           # Hide the table of contents on the right
+  - toc
 ---
 # Bell Curve Emergence
 
-<iframe src="main.html" height="450"  scrolling="no"></iframe>
+<iframe src="main.html" height="450" scrolling="no"></iframe>
 
-## Sample iframe
+## Embed This MicroSim
 
-You can include the following in your HTML to use this MicroSim
+Copy this iframe to embed this MicroSim in your website:
 
 ```html
-<iframe src="DOC_ROOT/docs/sims/MICROSIM_NAME/main.html" height="500px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/data-science-course/sims/bell-curve/main.html" height="450px" scrolling="no"></iframe>
 ```
 
-[Run the MicroSim](main.html){ .md-button .md-button--primary }
-[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/P5_EDITOR_ID)
+[Run the MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 
 **Topics:** Normal distribution, Central Limit Theorem (CLT), sampling distribution of the mean, law of large numbers, z‑scores
 
@@ -85,3 +84,10 @@ Students watch a true bell curve emerge in real time by repeatedly sampling from
 -   Snapshot button to **freeze and annotate** the current histogram with mean/SD labels.
 
 -   A tiny **QQ‑plot** inset comparing sample means to a perfect normal line.
+
+## References
+
+1. [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) - Wikipedia - Mathematical foundation for why the bell curve emerges
+2. [Normal Distribution](https://en.wikipedia.org/wiki/Normal_distribution) - Wikipedia - Properties of the Gaussian distribution
+3. [Khan Academy: Central Limit Theorem](https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/sample-means/v/central-limit-theorem) - Khan Academy - Video explanation of the CLT
+4. [p5.js Reference](https://p5js.org/reference/) - p5.js Documentation - JavaScript library used to build this interactive simulation

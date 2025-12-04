@@ -1,0 +1,19 @@
+{
+  "title": "Least Squares MicroSim",
+  "description": "An interactive simulation demonstrating how the least-squares algorithm works, with sliders for controlling slope and intercept to minimize squared residuals",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["linear regression", "least squares", "slope", "intercept", "residuals", "data science", "statistics"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "simulation",
+  "audience": "students, educators",
+  "bloomLevel": ["Understand", "Apply", "Analyze"],
+  "concepts": ["linear regression", "least squares", "slope-intercept form", "residuals", "model fitting"],
+  "prerequisites": ["coordinate plane", "plotting points", "linear equations"],
+  "library": "p5.js"
+}

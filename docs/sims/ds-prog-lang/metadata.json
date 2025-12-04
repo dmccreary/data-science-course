@@ -1,0 +1,19 @@
+{
+  "title": "Data Science Programming Language Popularity",
+  "description": "Interactive line chart showing the popularity trends of programming languages used in data science from 2010-2025",
+  "creator": "Dan McCreary",
+  "date": "2024-12-01",
+  "subject": ["programming languages", "Python", "R", "SQL", "data science trends", "TIOBE index"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "publisher": "dmccreary.github.io",
+  "educationalLevel": "high school",
+  "learningResourceType": "visualization",
+  "audience": "students, educators",
+  "bloomLevel": ["Remember", "Understand", "Analyze"],
+  "concepts": ["programming languages", "data visualization", "trend analysis", "Python", "R", "SQL"],
+  "prerequisites": [],
+  "library": "Chart.js"
+}
