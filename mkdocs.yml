@@ -68,11 +68,11 @@ nav:
     - Generate MicroSims: prompts/generate-microsims.md
     - Data Science Language Popularity: prompts/data-science-language-popularity.md
     - Data Science Workflow: prompts/data-science-workflow.md
-    - FAQs: prompts/faqs.md
+    - FAQ: prompts/faq.md
     - Glossary: prompts/glossary.md
     - Library Comparison: prompts/library-comparison-prompt.md
     - Quiz: prompts/quiz.md
-  - Frequently Asked Questions: faqs.md
+  - Frequently Asked Questions: faq.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - Customization Checklist: checklist.md
