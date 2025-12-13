@@ -11,6 +11,7 @@
         "lightgreen",
         "linenums",
         "Matplotlib",
+        "microsim",
         "microsims",
         "Microsite",
         "Multicollinearity",
@@ -22,6 +23,7 @@
         "Seaborn",
         "sklearn",
         "Spacy",
-        "underfitting"
+        "underfitting",
+        "ydata"
     ]
 }
