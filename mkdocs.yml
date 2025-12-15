@@ -12,26 +12,20 @@ nav:
   - Course Description: course-description.md
   
   - Chapters:
-    - Table of Contents: chapters/index.md
-    - Setup: chapters/00-setup/index.md
-    - Foundations: chapters/01-foundations/index.md
-    - Data Exploration: chapters/02-data-exploration/index.md
-    - Data Profiling: chapters/02-data-exploration/ydata-profiling.md
-    - Data Profiling: chapters/data-profiling.md
-    - Data Visualization: chapters/03-data-visualization/index.md
-    - Statistics: chapters/04-statistics/index.md
-    - Linear Regression: chapters/05-linear-regression/index.md
-    - Model Evaluation: chapters/06-models/index.md
-    - Multiple Regression: chapters/07-multiple-linear-regression/index.md
-    - NumPy: chapters/08-numpy/index.md
-    - Non-linear Models: chapters/09-nonlinear-models/index.md
-    - Regularization: chapters/10-regularization/index.md
-    - Machine Learning: chapters/11-machine-learning/index.md
-    - Neural Networks: chapters/12-neural-networks/index.md
-    - PyTorch: chapters/13-pytorch/index.md
-    - Advanced Evaluation: chapters/14-model-evaluation/index.md
-    - Capstone Projects: chapters/15-projects/index.md
-    - Matplotlib vs Plotly: chapters/matplotlib-vs-plotly.md
+    - Overview: chapters/index.md
+    - Introduction to Data Science: chapters/01-intro-to-data-science/index.md
+    - Python Environment: chapters/02-python-environment/index.md
+    - Python Data Structures: chapters/03-python-data-structures/index.md
+    - Data Cleaning: chapters/04-data-cleaning/index.md
+    - Data Visualization: chapters/05-data-visualization/index.md
+    - Statistical Foundations: chapters/06-statistical-foundations/index.md
+    - Simple Linear Regression: chapters/07-simple-linear-regression/index.md
+    - Model Evaluation: chapters/08-model-evaluation/index.md
+    - Multiple Linear Regression: chapters/09-multiple-linear-regression/index.md
+    - NumPy Computing: chapters/10-numpy-computing/index.md
+    - Non-linear Models: chapters/11-nonlinear-models-regularization/index.md
+    - Intro to Machine Learning: chapters/12-intro-to-machine-learning/index.md
+    - Neural Networks and PyTorch: chapters/13-neural-networks-pytorch/index.md
   
   - Labs:
     - Labs: labs/index.md
@@ -51,6 +45,7 @@ nav:
     - Book Generation Workflow: sims/book-gen-workflow/index.md
     - Least Squares: sims/least-squares/index.md
     - Learning Graph: sims/learning-graph/index.md
+    - Graph Viewer: sims/graph-viewer/index.md
     - 10 Stats MicroSims Map: sims/ten-stats/index.md
     - Distribution MicroSims:
       - Normal Distribution: sims/normal-dice-distribution/index.md
