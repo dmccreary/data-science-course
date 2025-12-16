@@ -220,7 +220,7 @@ function drawPlotArea() {
     textSize(12);
     textAlign(RIGHT, TOP);
     textStyle(ITALIC);
-    text('Click to add new student', canvasWidth - 120, 15);
+    text('Click to add new student', canvasWidth - 100, 15);
     textStyle(NORMAL);
 }
 
@@ -284,6 +284,11 @@ function drawDataPoints() {
     textSize(20);
     textAlign(CENTER, CENTER);
 
+    // Get current regression for dynamic outlier calculation
+    let { slope, intercept } = calculateRegression();
+    let stdError = students.length >= 3 ? calculateStdError(slope, intercept) : 15;
+    let outlierThreshold = stdError * 1.5;
+
     for (let i = 0; i < students.length; i++) {
         let s = students[i];
         let px = map(s.hours, 0, 10, plotLeft, plotRight);
@@ -295,8 +300,13 @@ function drawDataPoints() {
             hoveredStudent = { student: s, x: px, y: py, index: i };
         }
 
+        // Dynamically calculate if student is outlier based on current regression
+        let expectedScore = slope * s.hours + intercept;
+        let residual = Math.abs(s.score - expectedScore);
+        let isOutlier = residual > outlierThreshold;
+
         // Draw student emoji
-        text(s.isOutlier ? '🌟' : '🎓', px, py);
+        text(isOutlier ? '🌟' : '🎓', px, py);
     }
 
     // Draw hover tooltip

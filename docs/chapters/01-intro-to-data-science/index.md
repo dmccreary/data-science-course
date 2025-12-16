@@ -278,6 +278,9 @@ Understanding this relationship is HUGE. It's the foundation of prediction. If y
 
 #### Diagram: Independent vs Dependent Variable MicroSim
 
+<iframe src="../../sims/independent-dependent-variables/main.html" height="502px" width="100%" scrolling="no"></iframe>
+[Run the Independent vs Dependent Variable MicroSim Fullscreen](../../sims/independent-dependent-variables/main.html)
+
 <details markdown="1">
 <summary>Study Time vs Test Score Simulator</summary>
 Type: microsim
