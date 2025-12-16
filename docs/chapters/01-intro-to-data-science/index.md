@@ -60,40 +60,9 @@ By the end of this book, you'll be able to:
 
 Sound like a superpower? That's because it is.
 
-#### Diagram: Data Science Superpower Concept Map
+#### Data Science Superpower Concept Map
 
-<details markdown="1">
-<summary>Data Science Superpower Concept Map</summary>
-Type: infographic
-
-Bloom Taxonomy: Understand (L2)
-
-Learning Objective: Help students visualize how data science skills connect to real-world impact and career opportunities
-
-Purpose: Show data science as a central hub with superpowers radiating outward to real-world applications
-
-Layout: Central hub-and-spoke design with "Data Science" in the center
-
-Central node: "DATA SCIENCE" (styled as a glowing power core)
-
-Radiating spokes (6 superpowers):
-1. "Pattern Detection" → connects to "Fraud Detection, Disease Diagnosis"
-2. "Prediction" → connects to "Weather Forecasting, Stock Markets"
-3. "Optimization" → connects to "Route Planning, Resource Allocation"
-4. "Automation" → connects to "Self-Driving Cars, Smart Assistants"
-5. "Insight Discovery" → connects to "Customer Behavior, Scientific Research"
-6. "Decision Support" → connects to "Business Strategy, Policy Making"
-
-Interactive elements:
-- Hover over each superpower to see a brief description
-- Hover over applications to see real company examples (Netflix, Google, Amazon)
-- Pulsing animation on central node to draw attention
-
-Visual style: Comic book / superhero aesthetic with bold colors and action lines
-Color scheme: Blue core, radiating yellow/gold spokes, green application nodes
-
-Implementation: HTML/CSS/JavaScript with SVG graphics
-</details>
+<iframe src="../../sims/data-science-superpower/main.html" height="602px" width="100%" scrolling="no"></iframe>
 
 ## What Exactly Is Data Science?
 
@@ -410,71 +379,9 @@ The workflow has several key stages:
 6. **Evaluation**: Testing how well your model works
 7. **Communication**: Sharing your findings with others
 
-#### Diagram: Data Science Workflow Hero's Journey
+#### Data Science Workflow Hero's Journey
 
-<details markdown="1">
-<summary>Data Science Workflow as Hero's Journey</summary>
-Type: workflow
-
-Bloom Taxonomy: Understand (L2)
-
-Learning Objective: Help students understand the iterative nature of the data science workflow and see it as an adventure rather than a checklist
-
-Purpose: Present data science workflow as an engaging hero's journey with circular/iterative flow
-
-Visual style: Circular journey map with adventure game aesthetic
-
-Journey stages (arranged in circle):
-
-1. "The Call to Adventure" - PROBLEM DEFINITION
-   Icon: Question mark in a thought bubble
-   Hover text: "A mystery emerges! What question burns in your mind?"
-   Color: Purple
-
-2. "Gathering Allies" - DATA COLLECTION
-   Icon: Treasure chest opening
-   Hover text: "Seek out the data you need from databases, surveys, and APIs"
-   Color: Gold
-
-3. "Trials and Tribulations" - DATA CLEANING
-   Icon: Broom sweeping bugs
-   Hover text: "Face the chaos! Fix errors, handle missing values, tame the mess"
-   Color: Orange
-
-4. "The Revelation" - EXPLORATORY ANALYSIS
-   Icon: Magnifying glass with sparkles
-   Hover text: "Visualize and explore. Patterns begin to emerge from the fog"
-   Color: Blue
-
-5. "Forging the Weapon" - MODELING
-   Icon: Anvil with hammer
-   Hover text: "Build your predictive model—your weapon against uncertainty"
-   Color: Red
-
-6. "The Ultimate Test" - EVALUATION
-   Icon: Target with arrow
-   Hover text: "Does your model actually work? Time to find out!"
-   Color: Green
-
-7. "Return with the Elixir" - COMMUNICATION
-   Icon: Scroll with graph
-   Hover text: "Share your discoveries! Tell the story your data revealed"
-   Color: Teal
-
-Center of circle: "DATA SCIENCE QUEST"
-
-Arrows showing flow:
-- Forward arrows between each stage
-- Dotted "return" arrows from later stages back to earlier ones (showing iteration)
-- Labels on return arrows: "Need more data?", "Model not working?", "New questions?"
-
-Interactive elements:
-- Click each stage to see 2-3 real-world examples
-- Hover for detailed description
-- Animation: Glowing "current stage" effect that cycles through
-
-Implementation: SVG with JavaScript interactivity
-</details>
+<iframe src="../../sims/data-science-heros-journey/main.html" height="602px" width="100%" scrolling="no"></iframe>
 
 ### Problem Definition: Starting Your Quest
 

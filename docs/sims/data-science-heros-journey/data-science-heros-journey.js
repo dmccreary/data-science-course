@@ -312,8 +312,10 @@ function drawStageNodes() {
 }
 
 function drawForwardArrows() {
-  for (let i = 0; i < stages.length; i++) {
-    let nextI = (i + 1) % stages.length;
+  // Draw arrows between consecutive stages, but skip the last one (7 to 1)
+  // which would cross through the center
+  for (let i = 0; i < stages.length - 1; i++) {
+    let nextI = i + 1;
 
     let angle1 = -PI / 2 + (TWO_PI / stages.length) * i;
     let angle2 = -PI / 2 + (TWO_PI / stages.length) * nextI;
@@ -363,7 +365,8 @@ function drawForwardArrows() {
 }
 
 function drawReturnArrows() {
-  for (let arr of returnArrows) {
+  for (let idx = 0; idx < returnArrows.length; idx++) {
+    let arr = returnArrows[idx];
     let angle1 = -PI / 2 + (TWO_PI / stages.length) * arr.from;
     let angle2 = -PI / 2 + (TWO_PI / stages.length) * arr.to;
 
@@ -424,9 +427,10 @@ function drawReturnArrows() {
     textAlign(CENTER, CENTER);
     noStroke();
 
-    // Position label near control point
+    // Position label near control point with offset to prevent overlap
+    let labelOffset = (idx - 1) * 25; // Spread labels vertically
     let labelX = ctrlX;
-    let labelY = ctrlY;
+    let labelY = ctrlY + labelOffset;
 
     // Background for label
     let labelWidth = textWidth(arr.label) + 8;
