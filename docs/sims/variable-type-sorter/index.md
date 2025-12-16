@@ -4,7 +4,8 @@ An interactive quiz game that tests your ability to classify variables into thei
 
 <iframe src="./main.html" height="322px" width="100%" scrolling="no" style="overflow: hidden;"></iframe>
 
-[Run the Variable Type Sorter in Full Screen](./main.html){ .md-button .md-button--primary }
+[Run the Variable Type Sorter MicroSim in Full Screen](./main.html){ .md-button .md-button--primary }
+[Edit the Variable Type Sorter MicroSim using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/PjGSGGIFA)
 
 ## How to Play
 

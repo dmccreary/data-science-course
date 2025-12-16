@@ -107,6 +107,9 @@ Each of these is a variable. And here's where it gets interesting: the TYPE of v
 
 #### Diagram: Variable Types Decision Tree
 
+<iframe src="../../sims/variable-types-decision-tree/main.html" height="980px" width="100%" scrolling="no"></iframe>
+[Run the Variable Types Decision Tree Fullscreen](../../sims/variable-types-decision-tree/main.html)
+
 <details markdown="1">
 <summary>Variable Types Decision Tree</summary>
 Type: workflow
@@ -242,6 +245,10 @@ Visual style: 3D pyramid with glowing edges, game achievement aesthetic
 
 Implementation: CSS 3D transforms or SVG
 </details>
+#### Diagram: Variable Type Sorter
+
+<iframe src="../../sims/variable-type-sorter/main.html" height="322px" width="100%" scrolling="no"></iframe>
+[Run the Variable Types Sorter Fullscreen](../../sims/variable-type-sorter/main.html)
 
 ## Independent and Dependent Variables: Cause and Effect
 
