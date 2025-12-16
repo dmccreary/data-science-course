@@ -119,34 +119,34 @@ The `random_state` parameter is important—it ensures that every time you run t
 #### Diagram: Train-Test Split Visualization
 
 <details markdown="1">
-    <summary>Train-Test Split Visualization</summary>
-    Type: infographic
+<summary>Train-Test Split Visualization</summary>
+Type: infographic
 
-    Bloom Taxonomy: Understand
+Bloom Taxonomy: Understand
 
-    Learning Objective: Help students visualize how data is divided and why the testing portion must remain separate
+Learning Objective: Help students visualize how data is divided and why the testing portion must remain separate
 
-    Layout: Horizontal bar representation of full dataset with animated split
+Layout: Horizontal bar representation of full dataset with animated split
 
-    Visual Elements:
-    - Full dataset shown as a horizontal bar with 100 small squares (each representing a data point)
-    - Squares are randomly colored to show data variety
-    - Animation shows 80 squares sliding left (training) and 20 sliding right (testing)
-    - "Wall" appears between training and testing portions
-    - Icons show model can "see" training data (eye icon) but testing data is "hidden" (blindfold icon)
+Visual Elements:
+- Full dataset shown as a horizontal bar with 100 small squares (each representing a data point)
+- Squares are randomly colored to show data variety
+- Animation shows 80 squares sliding left (training) and 20 sliding right (testing)
+- "Wall" appears between training and testing portions
+- Icons show model can "see" training data (eye icon) but testing data is "hidden" (blindfold icon)
 
-    Interactive Elements:
-    - Slider to adjust split ratio from 50/50 to 90/10
-    - As slider moves, squares animate between groups
-    - Display updates showing "Training: X samples, Testing: Y samples"
-    - Warning appears if split becomes too extreme (< 60% or > 90% training)
+Interactive Elements:
+- Slider to adjust split ratio from 50/50 to 90/10
+- As slider moves, squares animate between groups
+- Display updates showing "Training: X samples, Testing: Y samples"
+- Warning appears if split becomes too extreme (< 60% or > 90% training)
 
-    Color Scheme:
-    - Training data: Green shades
-    - Testing data: Blue shades
-    - Warning states: Orange/Red
+Color Scheme:
+- Training data: Green shades
+- Testing data: Blue shades
+- Warning states: Orange/Red
 
-    Implementation: p5.js with smooth animations
+Implementation: p5.js with smooth animations
 </details>
 
 ## Validation Data: The Third Kingdom
@@ -245,47 +245,47 @@ MAE is also in the original units and is simpler to understand than RMSE. The ke
 #### Diagram: Metrics Comparison MicroSim
 
 <details markdown="1">
-    <summary>Metrics Comparison MicroSim</summary>
-    Type: microsim
+<summary>Metrics Comparison MicroSim</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply, Analyze
+Bloom Taxonomy: Apply, Analyze
 
-    Learning Objective: Help students understand how different error metrics respond to the same prediction errors, especially the difference between MAE and RMSE when outliers are present
+Learning Objective: Help students understand how different error metrics respond to the same prediction errors, especially the difference between MAE and RMSE when outliers are present
 
-    Canvas Layout (800x500):
-    - Left side (500x500): Scatter plot with regression line and interactive points
-    - Right side (300x500): Real-time metrics display
+Canvas Layout (800x500):
+- Left side (500x500): Scatter plot with regression line and interactive points
+- Right side (300x500): Real-time metrics display
 
-    Visual Elements:
-    - 10 data points that can be dragged
-    - Regression line that updates in real-time
-    - Vertical lines showing residuals (prediction errors)
-    - Residuals colored by size (green = small, yellow = medium, red = large)
+Visual Elements:
+- 10 data points that can be dragged
+- Regression line that updates in real-time
+- Vertical lines showing residuals (prediction errors)
+- Residuals colored by size (green = small, yellow = medium, red = large)
 
-    Interactive Controls:
-    - Draggable data points to create different error patterns
-    - Button: "Add Outlier" - adds a point far from the line
-    - Button: "Reset to Default" - returns to initial configuration
-    - Checkbox: "Show squared residuals" - visualizes MSE calculation
-    - Checkbox: "Show absolute residuals" - visualizes MAE calculation
+Interactive Controls:
+- Draggable data points to create different error patterns
+- Button: "Add Outlier" - adds a point far from the line
+- Button: "Reset to Default" - returns to initial configuration
+- Checkbox: "Show squared residuals" - visualizes MSE calculation
+- Checkbox: "Show absolute residuals" - visualizes MAE calculation
 
-    Metrics Display (updates in real-time):
-    - R²: X.XXX
-    - MSE: X.XX
-    - RMSE: X.XX
-    - MAE: X.XX
-    - Bar chart comparing metrics (normalized for visualization)
+Metrics Display (updates in real-time):
+- R²: X.XXX
+- MSE: X.XX
+- RMSE: X.XX
+- MAE: X.XX
+- Bar chart comparing metrics (normalized for visualization)
 
-    Key Learning Moments:
-    - Drag one point far away and watch RMSE spike more than MAE
-    - Create symmetrical errors and see they still contribute to metrics
-    - Notice how R² can decrease when predictions get worse
+Key Learning Moments:
+- Drag one point far away and watch RMSE spike more than MAE
+- Create symmetrical errors and see they still contribute to metrics
+- Notice how R² can decrease when predictions get worse
 
-    Default Parameters:
-    - 10 points roughly following y = 2x + 1 with small noise
-    - Initial R² around 0.85
+Default Parameters:
+- 10 points roughly following y = 2x + 1 with small noise
+- Initial R² around 0.85
 
-    Implementation: p5.js with real-time regression recalculation
+Implementation: p5.js with real-time regression recalculation
 </details>
 
 ## Calculating Metrics in Python
@@ -389,51 +389,51 @@ fig.show()
 #### Diagram: Residual Pattern Detective
 
 <details markdown="1">
-    <summary>Residual Pattern Detective</summary>
-    Type: infographic
+<summary>Residual Pattern Detective</summary>
+Type: infographic
 
-    Bloom Taxonomy: Analyze, Evaluate
+Bloom Taxonomy: Analyze, Evaluate
 
-    Learning Objective: Train students to recognize common residual patterns and diagnose what's wrong with their model
+Learning Objective: Train students to recognize common residual patterns and diagnose what's wrong with their model
 
-    Layout: 2x2 grid of residual plot examples with diagnostic labels
+Layout: 2x2 grid of residual plot examples with diagnostic labels
 
-    Panels:
-    1. Top-Left: "Healthy Residuals"
-       - Random scatter around horizontal line at 0
-       - Caption: "Random pattern = model is working well"
-       - Green checkmark icon
-       - Hover: "No systematic bias, assumptions met"
+Panels:
+1. Top-Left: "Healthy Residuals"
+   - Random scatter around horizontal line at 0
+   - Caption: "Random pattern = model is working well"
+   - Green checkmark icon
+   - Hover: "No systematic bias, assumptions met"
 
-    2. Top-Right: "Curved Pattern"
-       - U-shaped or wave pattern in residuals
-       - Caption: "Curved pattern = try polynomial features"
-       - Yellow warning icon
-       - Hover: "Linear model missing non-linear relationship"
+2. Top-Right: "Curved Pattern"
+   - U-shaped or wave pattern in residuals
+   - Caption: "Curved pattern = try polynomial features"
+   - Yellow warning icon
+   - Hover: "Linear model missing non-linear relationship"
 
-    3. Bottom-Left: "Funnel Shape"
-       - Residuals spread out as predictions increase
-       - Caption: "Funnel shape = variance problems"
-       - Orange warning icon
-       - Hover: "Consider log transformation of target"
+3. Bottom-Left: "Funnel Shape"
+   - Residuals spread out as predictions increase
+   - Caption: "Funnel shape = variance problems"
+   - Orange warning icon
+   - Hover: "Consider log transformation of target"
 
-    4. Bottom-Right: "Clustered Groups"
-       - Distinct groups of residuals at different levels
-       - Caption: "Clusters = missing categorical variable"
-       - Red warning icon
-       - Hover: "Include the grouping variable as a feature"
+4. Bottom-Right: "Clustered Groups"
+   - Distinct groups of residuals at different levels
+   - Caption: "Clusters = missing categorical variable"
+   - Red warning icon
+   - Hover: "Include the grouping variable as a feature"
 
-    Interactive Elements:
-    - Click each panel for expanded explanation
-    - Hover shows diagnostic advice
-    - "Quiz mode" button randomly shows a pattern and asks for diagnosis
+Interactive Elements:
+- Click each panel for expanded explanation
+- Hover shows diagnostic advice
+- "Quiz mode" button randomly shows a pattern and asks for diagnosis
 
-    Color Scheme:
-    - Residual points in blue
-    - Reference line in red (dashed)
-    - Background panels in light gray
+Color Scheme:
+- Residual points in blue
+- Reference line in red (dashed)
+- Background panels in light gray
 
-    Implementation: HTML/CSS/JavaScript with interactive panels
+Implementation: HTML/CSS/JavaScript with interactive panels
 </details>
 
 ## The Perils of Overfitting: When Your Model Studies Too Hard
@@ -490,45 +490,45 @@ Your goal is to find the sweet spot—a model complex enough to capture the real
 #### Diagram: Bias-Variance Dartboard
 
 <details markdown="1">
-    <summary>Bias-Variance Dartboard</summary>
-    Type: microsim
+<summary>Bias-Variance Dartboard</summary>
+Type: microsim
 
-    Bloom Taxonomy: Understand, Apply
+Bloom Taxonomy: Understand, Apply
 
-    Learning Objective: Visualize bias and variance using the intuitive dartboard analogy, and understand how model complexity affects this tradeoff
+Learning Objective: Visualize bias and variance using the intuitive dartboard analogy, and understand how model complexity affects this tradeoff
 
-    Canvas Layout (800x450):
-    - Left side: Four dartboard panels (2x2 grid, each 180x180)
-    - Right side: Interactive model complexity slider and explanation panel
+Canvas Layout (800x450):
+- Left side: Four dartboard panels (2x2 grid, each 180x180)
+- Right side: Interactive model complexity slider and explanation panel
 
-    Dartboard Panels:
-    1. Top-left: "Low Bias, Low Variance" - Darts clustered at center (bullseye)
-       - Label: "The Goal: Accurate and Consistent"
-    2. Top-right: "Low Bias, High Variance" - Darts scattered but centered on bullseye
-       - Label: "Accurate on Average, But Inconsistent"
-    3. Bottom-left: "High Bias, Low Variance" - Darts clustered but off-center
-       - Label: "Consistent but Systematically Wrong"
-    4. Bottom-right: "High Bias, High Variance" - Darts scattered and off-center
-       - Label: "The Worst: Wrong and Inconsistent"
+Dartboard Panels:
+1. Top-left: "Low Bias, Low Variance" - Darts clustered at center (bullseye)
+   - Label: "The Goal: Accurate and Consistent"
+2. Top-right: "Low Bias, High Variance" - Darts scattered but centered on bullseye
+   - Label: "Accurate on Average, But Inconsistent"
+3. Bottom-left: "High Bias, Low Variance" - Darts clustered but off-center
+   - Label: "Consistent but Systematically Wrong"
+4. Bottom-right: "High Bias, High Variance" - Darts scattered and off-center
+   - Label: "The Worst: Wrong and Inconsistent"
 
-    Interactive Elements:
-    - Slider: "Model Complexity" (1 to 10 scale)
-    - As slider moves left (simpler): highlight high-bias panels
-    - As slider moves right (complex): highlight high-variance panels
-    - Button: "Throw 10 Darts" - animates darts landing based on current complexity setting
-    - The fifth dartboard shows real-time results based on slider position
+Interactive Elements:
+- Slider: "Model Complexity" (1 to 10 scale)
+- As slider moves left (simpler): highlight high-bias panels
+- As slider moves right (complex): highlight high-variance panels
+- Button: "Throw 10 Darts" - animates darts landing based on current complexity setting
+- The fifth dartboard shows real-time results based on slider position
 
-    Real-time Display:
-    - Bias indicator bar
-    - Variance indicator bar
-    - Total Error = Bias² + Variance (visualized as stacked bar)
+Real-time Display:
+- Bias indicator bar
+- Variance indicator bar
+- Total Error = Bias² + Variance (visualized as stacked bar)
 
-    Animation:
-    - Darts "thrown" one at a time with slight delay
-    - Each dart leaves a mark on the board
-    - After all darts, metrics calculate and display
+Animation:
+- Darts "thrown" one at a time with slight delay
+- Each dart leaves a mark on the board
+- After all darts, metrics calculate and display
 
-    Implementation: p5.js with dart physics animation
+Implementation: p5.js with dart physics animation
 </details>
 
 ## Model Complexity: The Goldilocks Problem
@@ -564,48 +564,48 @@ Typically, you'll see training R² keep increasing with complexity, but test R²
 #### Diagram: Complexity Curve Explorer
 
 <details markdown="1">
-    <summary>Complexity Curve Explorer</summary>
-    Type: microsim
+<summary>Complexity Curve Explorer</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply, Evaluate
+Bloom Taxonomy: Apply, Evaluate
 
-    Learning Objective: Visualize how training and test error change as model complexity increases, and identify the optimal complexity level
+Learning Objective: Visualize how training and test error change as model complexity increases, and identify the optimal complexity level
 
-    Canvas Layout (800x500):
-    - Top (800x350): Main visualization showing data points and fitted curve
-    - Bottom (800x150): Error vs. Complexity chart
+Canvas Layout (800x500):
+- Top (800x350): Main visualization showing data points and fitted curve
+- Bottom (800x150): Error vs. Complexity chart
 
-    Top Panel Elements:
-    - 30 data points following a cubic relationship with noise
-    - Polynomial curve that updates with complexity slider
-    - Curve color indicates fit quality (green = good, red = overfit/underfit)
+Top Panel Elements:
+- 30 data points following a cubic relationship with noise
+- Polynomial curve that updates with complexity slider
+- Curve color indicates fit quality (green = good, red = overfit/underfit)
 
-    Bottom Panel Elements:
-    - X-axis: Model Complexity (polynomial degree 1-15)
-    - Y-axis: Error (MSE)
-    - Two lines: Training Error (blue) and Test Error (orange)
-    - Vertical marker showing current complexity selection
-    - Shaded regions: "Underfitting Zone" (left), "Sweet Spot" (middle), "Overfitting Zone" (right)
+Bottom Panel Elements:
+- X-axis: Model Complexity (polynomial degree 1-15)
+- Y-axis: Error (MSE)
+- Two lines: Training Error (blue) and Test Error (orange)
+- Vertical marker showing current complexity selection
+- Shaded regions: "Underfitting Zone" (left), "Sweet Spot" (middle), "Overfitting Zone" (right)
 
-    Interactive Controls:
-    - Slider: "Polynomial Degree" (1 to 15)
-    - Checkbox: "Show training error curve"
-    - Checkbox: "Show test error curve"
-    - Button: "Auto-find optimal" - animates to minimum test error
-    - Button: "Reset data" - generates new random dataset
+Interactive Controls:
+- Slider: "Polynomial Degree" (1 to 15)
+- Checkbox: "Show training error curve"
+- Checkbox: "Show test error curve"
+- Button: "Auto-find optimal" - animates to minimum test error
+- Button: "Reset data" - generates new random dataset
 
-    Real-time Metrics Display:
-    - Current degree: X
-    - Training MSE: X.XX
-    - Test MSE: X.XX
-    - Gap (Test - Train): X.XX (with color coding)
+Real-time Metrics Display:
+- Current degree: X
+- Training MSE: X.XX
+- Test MSE: X.XX
+- Gap (Test - Train): X.XX (with color coding)
 
-    Key Insights Highlighted:
-    - When gap is large (>threshold): "Overfitting Warning!" in red
-    - When both errors are high: "Underfitting Warning!" in yellow
-    - When gap is small and errors low: "Good fit!" in green
+Key Insights Highlighted:
+- When gap is large (>threshold): "Overfitting Warning!" in red
+- When both errors are high: "Underfitting Warning!" in yellow
+- When gap is small and errors low: "Good fit!" in green
 
-    Implementation: p5.js with polynomial regression calculation
+Implementation: p5.js with polynomial regression calculation
 </details>
 
 ## Cross-Validation: The Ultimate Fairness Test
@@ -645,54 +645,54 @@ The standard deviation tells you how stable your model's performance is. A low s
 #### Diagram: K-Fold Cross-Validation Animator
 
 <details markdown="1">
-    <summary>K-Fold Cross-Validation Animator</summary>
-    Type: microsim
+<summary>K-Fold Cross-Validation Animator</summary>
+Type: microsim
 
-    Bloom Taxonomy: Understand, Apply
+Bloom Taxonomy: Understand, Apply
 
-    Learning Objective: Visualize how K-fold cross-validation rotates through the data and why it provides a more reliable performance estimate
+Learning Objective: Visualize how K-fold cross-validation rotates through the data and why it provides a more reliable performance estimate
 
-    Canvas Layout (700x500):
-    - Main area (700x350): Visual representation of data folds
-    - Bottom area (700x150): Results table and summary statistics
+Canvas Layout (700x500):
+- Main area (700x350): Visual representation of data folds
+- Bottom area (700x150): Results table and summary statistics
 
-    Visual Elements:
-    - Data represented as 50 colored squares in a horizontal strip
-    - Squares grouped into K folds with subtle borders between groups
-    - Training folds colored green
-    - Test fold colored blue
-    - Animation shows the "window" of test data sliding across folds
+Visual Elements:
+- Data represented as 50 colored squares in a horizontal strip
+- Squares grouped into K folds with subtle borders between groups
+- Training folds colored green
+- Test fold colored blue
+- Animation shows the "window" of test data sliding across folds
 
-    Interactive Controls:
-    - Dropdown: "Number of folds (K)" - options: 3, 5, 10
-    - Button: "Run Cross-Validation" - starts animation
-    - Button: "Pause/Resume"
-    - Speed slider: controls animation speed
-    - Button: "Reset"
+Interactive Controls:
+- Dropdown: "Number of folds (K)" - options: 3, 5, 10
+- Button: "Run Cross-Validation" - starts animation
+- Button: "Pause/Resume"
+- Speed slider: controls animation speed
+- Button: "Reset"
 
-    Animation Sequence:
-    1. Show all data as neutral color
-    2. Divide into K folds with visual separation
-    3. For each iteration:
-       - Highlight test fold in blue
-       - Highlight training folds in green
-       - Show mini-chart of model being "trained"
-       - Display score for this fold
-       - Pause briefly, then move to next fold
-    4. After all folds complete, show final averaged score
+Animation Sequence:
+1. Show all data as neutral color
+2. Divide into K folds with visual separation
+3. For each iteration:
+   - Highlight test fold in blue
+   - Highlight training folds in green
+   - Show mini-chart of model being "trained"
+   - Display score for this fold
+   - Pause briefly, then move to next fold
+4. After all folds complete, show final averaged score
 
-    Results Display:
-    - Table showing each fold's score
-    - Running average line chart
-    - Final statistics: Mean, Std Dev, Min, Max
-    - Comparison to simple train-test split result
+Results Display:
+- Table showing each fold's score
+- Running average line chart
+- Final statistics: Mean, Std Dev, Min, Max
+- Comparison to simple train-test split result
 
-    Educational Callouts:
-    - "Every data point tested exactly once!"
-    - "Average gives more reliable estimate"
-    - When std is high: "High variance in scores - model might be unstable"
+Educational Callouts:
+- "Every data point tested exactly once!"
+- "Average gives more reliable estimate"
+- When std is high: "High variance in scores - model might be unstable"
 
-    Implementation: p5.js with step-by-step animation
+Implementation: p5.js with step-by-step animation
 </details>
 
 ### Leave-One-Out Cross-Validation
@@ -811,53 +811,53 @@ print(f"Score: {results_df.loc[best_idx, 'mean_score']:.4f}")
 #### Diagram: Model Selection Dashboard
 
 <details markdown="1">
-    <summary>Model Selection Dashboard</summary>
-    Type: microsim
+<summary>Model Selection Dashboard</summary>
+Type: microsim
 
-    Bloom Taxonomy: Evaluate, Analyze
+Bloom Taxonomy: Evaluate, Analyze
 
-    Learning Objective: Practice the complete model selection workflow, from training multiple models to selecting the best one based on validation performance
+Learning Objective: Practice the complete model selection workflow, from training multiple models to selecting the best one based on validation performance
 
-    Canvas Layout (900x600):
-    - Left panel (450x600): Model configuration and training
-    - Right panel (450x600): Results comparison and visualization
+Canvas Layout (900x600):
+- Left panel (450x600): Model configuration and training
+- Right panel (450x600): Results comparison and visualization
 
-    Left Panel Elements:
-    - Dataset selector: "Generate Data" button with options (linear, quadratic, sine wave, noisy)
-    - Model type selector: Linear, Polynomial (with degree slider 1-10)
-    - Train-Test split slider (60-90%)
-    - Cross-validation folds dropdown (3, 5, 10)
-    - "Train Model" button
-    - "Add to Comparison" button
+Left Panel Elements:
+- Dataset selector: "Generate Data" button with options (linear, quadratic, sine wave, noisy)
+- Model type selector: Linear, Polynomial (with degree slider 1-10)
+- Train-Test split slider (60-90%)
+- Cross-validation folds dropdown (3, 5, 10)
+- "Train Model" button
+- "Add to Comparison" button
 
-    Right Panel Elements:
-    - Table of trained models with columns: Model Name, Train R², Test R², CV Mean, CV Std
-    - Bar chart comparing CV scores across models
-    - Selected model's predictions vs actual scatter plot
-    - "Declare Winner" button highlights best model
-    - "Clear All" button resets comparison
+Right Panel Elements:
+- Table of trained models with columns: Model Name, Train R², Test R², CV Mean, CV Std
+- Bar chart comparing CV scores across models
+- Selected model's predictions vs actual scatter plot
+- "Declare Winner" button highlights best model
+- "Clear All" button resets comparison
 
-    Interactive Workflow:
-    1. Generate or load data
-    2. Configure model settings
-    3. Click "Train Model" to see individual results
-    4. Click "Add to Comparison" to add to leaderboard
-    5. Repeat with different configurations
-    6. Compare all models in the results table
-    7. Click "Declare Winner" to highlight the best performer
+Interactive Workflow:
+1. Generate or load data
+2. Configure model settings
+3. Click "Train Model" to see individual results
+4. Click "Add to Comparison" to add to leaderboard
+5. Repeat with different configurations
+6. Compare all models in the results table
+7. Click "Declare Winner" to highlight the best performer
 
-    Visual Feedback:
-    - Training progress animation when model trains
-    - Color coding: green for best model, yellow for good, red for poor
-    - Warning icons when overfitting detected (large train-test gap)
-    - Trophy icon next to winning model
+Visual Feedback:
+- Training progress animation when model trains
+- Color coding: green for best model, yellow for good, red for poor
+- Warning icons when overfitting detected (large train-test gap)
+- Trophy icon next to winning model
 
-    Educational Hints:
-    - Tooltip: "Look for high CV score with low standard deviation"
-    - Warning when user tries to compare models on different data
-    - Celebration animation when optimal model found
+Educational Hints:
+- Tooltip: "Look for high CV score with low standard deviation"
+- Warning when user tries to compare models on different data
+- Celebration animation when optimal model found
 
-    Implementation: p5.js with integrated ML calculations
+Implementation: p5.js with integrated ML calculations
 </details>
 
 ## Putting It All Together: The Model Evaluation Workflow
@@ -915,82 +915,82 @@ print(f"Residual std: {residuals.std():.4f}")
 #### Diagram: Model Evaluation Workflow
 
 <details markdown="1">
-    <summary>Model Evaluation Workflow</summary>
-    Type: workflow
+<summary>Model Evaluation Workflow</summary>
+Type: workflow
 
-    Bloom Taxonomy: Apply, Analyze
+Bloom Taxonomy: Apply, Analyze
 
-    Learning Objective: Understand the complete model evaluation pipeline and the order of operations to avoid data leakage
+Learning Objective: Understand the complete model evaluation pipeline and the order of operations to avoid data leakage
 
-    Visual Style: Vertical flowchart with swimlanes for different data subsets
+Visual Style: Vertical flowchart with swimlanes for different data subsets
 
-    Swimlanes:
-    - Full Dataset
-    - Training Data
-    - Validation/CV
-    - Test Data (final)
+Swimlanes:
+- Full Dataset
+- Training Data
+- Validation/CV
+- Test Data (final)
 
-    Steps:
-    1. Start: "Load Complete Dataset"
-       Hover: "All data before any splits"
-       Lane: Full Dataset
+Steps:
+1. Start: "Load Complete Dataset"
+   Hover: "All data before any splits"
+   Lane: Full Dataset
 
-    2. Process: "Split into Train and Test"
-       Hover: "Typically 80/20 split, test data is locked away"
-       Lane: Full Dataset → Training Data + Test Data
-       Color: Blue
+2. Process: "Split into Train and Test"
+   Hover: "Typically 80/20 split, test data is locked away"
+   Lane: Full Dataset → Training Data + Test Data
+   Color: Blue
 
-    3. Process: "Train Initial Model"
-       Hover: "Fit model on training data only"
-       Lane: Training Data
-       Color: Green
+3. Process: "Train Initial Model"
+   Hover: "Fit model on training data only"
+   Lane: Training Data
+   Color: Green
 
-    4. Process: "Cross-Validate"
-       Hover: "Get reliable performance estimate using K-fold CV"
-       Lane: Training Data (with internal splits shown)
-       Color: Green
+4. Process: "Cross-Validate"
+   Hover: "Get reliable performance estimate using K-fold CV"
+   Lane: Training Data (with internal splits shown)
+   Color: Green
 
-    5. Decision: "Try Different Models?"
-       Hover: "Compare polynomial degrees, feature sets, algorithms"
-       Lane: Validation/CV
-       Color: Yellow
+5. Decision: "Try Different Models?"
+   Hover: "Compare polynomial degrees, feature sets, algorithms"
+   Lane: Validation/CV
+   Color: Yellow
 
-    6. Process: "Hyperparameter Tuning"
-       Hover: "Use GridSearchCV or similar to find best settings"
-       Lane: Training Data
-       Color: Green
+6. Process: "Hyperparameter Tuning"
+   Hover: "Use GridSearchCV or similar to find best settings"
+   Lane: Training Data
+   Color: Green
 
-    7. Process: "Select Best Model"
-       Hover: "Choose based on validation/CV performance, not training!"
-       Lane: Validation/CV
-       Color: Yellow
+7. Process: "Select Best Model"
+   Hover: "Choose based on validation/CV performance, not training!"
+   Lane: Validation/CV
+   Color: Yellow
 
-    8. Process: "Final Evaluation"
-       Hover: "ONLY NOW touch test data - this is your honest grade"
-       Lane: Test Data
-       Color: Red
+8. Process: "Final Evaluation"
+   Hover: "ONLY NOW touch test data - this is your honest grade"
+   Lane: Test Data
+   Color: Red
 
-    9. Process: "Residual Analysis"
-       Hover: "Check for patterns, validate assumptions"
-       Lane: Test Data
-       Color: Red
+9. Process: "Residual Analysis"
+   Hover: "Check for patterns, validate assumptions"
+   Lane: Test Data
+   Color: Red
 
-    10. End: "Report Results"
-        Hover: "Report test metrics with confidence intervals"
-        Lane: All lanes
-        Color: Purple
+10. End: "Report Results"
+    Hover: "Report test metrics with confidence intervals"
+    Lane: All lanes
+    Color: Purple
 
-    Arrows and Flow:
-    - Main flow goes top to bottom
-    - Iteration loop from "Try Different Models?" back to "Train Initial Model"
-    - Clear visual barrier before "Final Evaluation" indicating "Point of No Return"
+Arrows and Flow:
+- Main flow goes top to bottom
+- Iteration loop from "Try Different Models?" back to "Train Initial Model"
+- Clear visual barrier before "Final Evaluation" indicating "Point of No Return"
 
-    Key Visual Elements:
-    - Lock icon on Test Data swimlane until step 8
-    - Warning symbol if any arrow tries to cross into Test Data early
-    - Checkmarks appearing as each step completes
+Key Visual Elements:
+- Lock icon on Test Data swimlane until step 8
+- Warning symbol if any arrow tries to cross into Test Data early
+- Checkmarks appearing as each step completes
 
-    Implementation: HTML/CSS/JavaScript with hover interactions
+Implementation: HTML/CSS/JavaScript with hover interactions
 </details>
 
 ## Common Pitfalls and How to Avoid Them

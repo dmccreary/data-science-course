@@ -21,5 +21,5 @@
 
 ## Results in ChatGPT using GPT-5
 
-[](../sims/microsim-lists/100-data-science-microsims.md)
+[100 data science microsims](../sims/microsim-lists/100-data-science-microsims.md)
 

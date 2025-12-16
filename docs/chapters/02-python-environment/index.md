@@ -59,62 +59,62 @@ Let's build your headquarters!
 #### Diagram: Data Science Environment Architecture
 
 <details markdown="1">
-    <summary>Data Science Environment Architecture</summary>
-    Type: diagram
+<summary>Data Science Environment Architecture</summary>
+Type: diagram
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students visualize how all components of their data science environment fit together
+Learning Objective: Help students visualize how all components of their data science environment fit together
 
-    Purpose: Show the layered architecture of a data science setup
+Purpose: Show the layered architecture of a data science setup
 
-    Layout: Vertical stack diagram showing layers from bottom to top
+Layout: Vertical stack diagram showing layers from bottom to top
 
-    Layers (bottom to top):
-    1. OPERATING SYSTEM (base layer)
-       - Windows, macOS, or Linux
-       - Color: Dark gray
-       - Icon: Computer
+Layers (bottom to top):
+1. OPERATING SYSTEM (base layer)
+   - Windows, macOS, or Linux
+   - Color: Dark gray
+   - Icon: Computer
 
-    2. PYTHON INSTALLATION
-       - Python interpreter (the engine)
-       - Color: Blue (Python blue)
-       - Icon: Python logo
+2. PYTHON INSTALLATION
+   - Python interpreter (the engine)
+   - Color: Blue (Python blue)
+   - Icon: Python logo
 
-    3. PACKAGE MANAGER
-       - pip or conda (the supply chain)
-       - Arrows showing packages flowing in
-       - Color: Orange
-       - Icon: Package box
+3. PACKAGE MANAGER
+   - pip or conda (the supply chain)
+   - Arrows showing packages flowing in
+   - Color: Orange
+   - Icon: Package box
 
-    4. VIRTUAL ENVIRONMENT
-       - Isolated workspace (the clean room)
-       - Shows boundary separating from other environments
-       - Color: Green
-       - Icon: Bubble/container
+4. VIRTUAL ENVIRONMENT
+   - Isolated workspace (the clean room)
+   - Shows boundary separating from other environments
+   - Color: Green
+   - Icon: Bubble/container
 
-    5. PYTHON LIBRARIES
-       - pandas, numpy, matplotlib (the tools)
-       - Multiple small icons representing different libraries
-       - Color: Various colors for each library
+5. PYTHON LIBRARIES
+   - pandas, numpy, matplotlib (the tools)
+   - Multiple small icons representing different libraries
+   - Color: Various colors for each library
 
-    6. IDE / JUPYTER (top layer)
-       - VS Code or Jupyter Notebook (the cockpit)
-       - Color: Purple
-       - Icon: Code editor window
+6. IDE / JUPYTER (top layer)
+   - VS Code or Jupyter Notebook (the cockpit)
+   - Color: Purple
+   - Icon: Code editor window
 
-    Side annotations:
-    - Arrow from user to IDE: "You work here"
-    - Arrow from libraries to IDE: "Tools you use"
-    - Bracket around virtual environment: "Keeps projects separate"
+Side annotations:
+- Arrow from user to IDE: "You work here"
+- Arrow from libraries to IDE: "Tools you use"
+- Bracket around virtual environment: "Keeps projects separate"
 
-    Interactive elements:
-    - Hover over each layer to see description and purpose
-    - Click to see common problems at each layer
+Interactive elements:
+- Hover over each layer to see description and purpose
+- Click to see common problems at each layer
 
-    Visual style: Modern, clean boxes with rounded corners, superhero HQ aesthetic
+Visual style: Modern, clean boxes with rounded corners, superhero HQ aesthetic
 
-    Implementation: SVG with CSS hover effects
+Implementation: SVG with CSS hover effects
 </details>
 
 ## Python Installation: Powering Up Your System
@@ -204,53 +204,53 @@ The syntax is almost identical to pip. So why use conda? Because some data scien
 #### Diagram: Package Manager Workflow
 
 <details markdown="1">
-    <summary>How Package Managers Work</summary>
-    Type: workflow
+<summary>How Package Managers Work</summary>
+Type: workflow
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students understand the flow of installing and using packages
+Learning Objective: Help students understand the flow of installing and using packages
 
-    Purpose: Visualize the package installation process from command to usage
+Purpose: Visualize the package installation process from command to usage
 
-    Visual style: Horizontal flowchart with icons
+Visual style: Horizontal flowchart with icons
 
-    Steps:
+Steps:
 
-    1. USER TYPES COMMAND
-       Icon: Keyboard
-       Example: "pip install pandas"
-       Color: Blue
+1. USER TYPES COMMAND
+   Icon: Keyboard
+   Example: "pip install pandas"
+   Color: Blue
 
-    2. PACKAGE MANAGER SEARCHES
-       Icon: Magnifying glass
-       Label: "Searches PyPI (pip) or Anaconda Cloud (conda)"
-       Color: Orange
+2. PACKAGE MANAGER SEARCHES
+   Icon: Magnifying glass
+   Label: "Searches PyPI (pip) or Anaconda Cloud (conda)"
+   Color: Orange
 
-    3. DOWNLOADS PACKAGE
-       Icon: Download arrow
-       Label: "Downloads package + all dependencies"
-       Color: Green
+3. DOWNLOADS PACKAGE
+   Icon: Download arrow
+   Label: "Downloads package + all dependencies"
+   Color: Green
 
-    4. INSTALLS TO ENVIRONMENT
-       Icon: Folder with checkmark
-       Label: "Saves files to your Python environment"
-       Color: Purple
+4. INSTALLS TO ENVIRONMENT
+   Icon: Folder with checkmark
+   Label: "Saves files to your Python environment"
+   Color: Purple
 
-    5. READY TO IMPORT
-       Icon: Python logo with sparkles
-       Label: "import pandas as pd"
-       Color: Gold
+5. READY TO IMPORT
+   Icon: Python logo with sparkles
+   Label: "import pandas as pd"
+   Color: Gold
 
-    Annotations:
-    - Between steps 2-3: "Internet connection required"
-    - Below step 3: "May download multiple packages (dependencies)"
+Annotations:
+- Between steps 2-3: "Internet connection required"
+- Below step 3: "May download multiple packages (dependencies)"
 
-    Interactive elements:
-    - Hover each step to see common errors and solutions
-    - Animation: Package icon traveling through pipeline
+Interactive elements:
+- Hover each step to see common errors and solutions
+- Animation: Package icon traveling through pipeline
 
-    Implementation: SVG with CSS animations
+Implementation: SVG with CSS animations
 </details>
 
 ## Virtual Environments: Your Clean Room
@@ -303,55 +303,55 @@ Once activated, anything you install goes into that environment only. Your other
 #### Diagram: Virtual Environment Isolation MicroSim
 
 <details markdown="1">
-    <summary>Virtual Environment Isolation Simulator</summary>
-    Type: microsim
+<summary>Virtual Environment Isolation Simulator</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Let students experiment with creating environments and installing packages to see how isolation works
+Learning Objective: Let students experiment with creating environments and installing packages to see how isolation works
 
-    Canvas layout (750x500px):
-    - Left side (500x500): Visual representation of environments
-    - Right side (250x500): Controls and terminal simulation
+Canvas layout (750x500px):
+- Left side (500x500): Visual representation of environments
+- Right side (250x500): Controls and terminal simulation
 
-    Visual elements:
-    - Base system shown as gray platform at bottom
-    - Virtual environments as colored bubbles floating above
-    - Packages shown as small icons inside environments
-    - Conflict indicators (red X) when same package different versions
+Visual elements:
+- Base system shown as gray platform at bottom
+- Virtual environments as colored bubbles floating above
+- Packages shown as small icons inside environments
+- Conflict indicators (red X) when same package different versions
 
-    Interactive controls:
-    - Button: "Create Environment" - Adds new bubble with name input
-    - Dropdown: "Select Environment" - Choose which env to work in
-    - Button: "Install Package" - Shows package picker
-    - Package picker: pandas, numpy, matplotlib with version selector
-    - Button: "Delete Environment" - Removes selected environment
-    - Toggle: "Show Conflicts" - Highlights version conflicts
+Interactive controls:
+- Button: "Create Environment" - Adds new bubble with name input
+- Dropdown: "Select Environment" - Choose which env to work in
+- Button: "Install Package" - Shows package picker
+- Package picker: pandas, numpy, matplotlib with version selector
+- Button: "Delete Environment" - Removes selected environment
+- Toggle: "Show Conflicts" - Highlights version conflicts
 
-    Terminal simulation (right panel):
-    - Shows conda commands being "typed"
-    - Displays output messages
-    - Command history
+Terminal simulation (right panel):
+- Shows conda commands being "typed"
+- Displays output messages
+- Command history
 
-    Default state:
-    - Base system with Python
-    - One environment "project-a" with pandas 1.5
-    - One environment "project-b" with pandas 2.0
-    - No conflicts (isolated!)
+Default state:
+- Base system with Python
+- One environment "project-a" with pandas 1.5
+- One environment "project-b" with pandas 2.0
+- No conflicts (isolated!)
 
-    Behavior:
-    - Creating environment adds new bubble
-    - Installing package adds icon to current environment bubble
-    - Installing conflicting versions in same env shows warning
-    - Different versions in different envs shows green checkmarks
-    - Hover over package shows version and description
+Behavior:
+- Creating environment adds new bubble
+- Installing package adds icon to current environment bubble
+- Installing conflicting versions in same env shows warning
+- Different versions in different envs shows green checkmarks
+- Hover over package shows version and description
 
-    Educational messages:
-    - "Notice: Each environment is completely separate!"
-    - "Try installing different pandas versions in different environments"
-    - "See? No conflicts when properly isolated!"
+Educational messages:
+- "Notice: Each environment is completely separate!"
+- "Try installing different pandas versions in different environments"
+- "See? No conflicts when properly isolated!"
 
-    Implementation: p5.js with interactive elements
+Implementation: p5.js with interactive elements
 </details>
 
 ## IDE Setup: Your Command Center
@@ -407,62 +407,62 @@ To install an extension:
 #### Diagram: VS Code Interface Tour
 
 <details markdown="1">
-    <summary>VS Code Interface Guided Tour</summary>
-    Type: infographic
+<summary>VS Code Interface Guided Tour</summary>
+Type: infographic
 
-    Bloom Taxonomy: Remember (L1)
+Bloom Taxonomy: Remember (L1)
 
-    Learning Objective: Help students identify and remember the key parts of the VS Code interface
+Learning Objective: Help students identify and remember the key parts of the VS Code interface
 
-    Purpose: Interactive labeled diagram of VS Code interface
+Purpose: Interactive labeled diagram of VS Code interface
 
-    Layout: Screenshot-style representation of VS Code with numbered callouts
+Layout: Screenshot-style representation of VS Code with numbered callouts
 
-    Main areas:
+Main areas:
 
-    1. ACTIVITY BAR (far left vertical strip)
-       - Explorer, Search, Git, Debug, Extensions icons
-       - Label: "Quick access to major features"
-       - Color highlight: Blue
+1. ACTIVITY BAR (far left vertical strip)
+   - Explorer, Search, Git, Debug, Extensions icons
+   - Label: "Quick access to major features"
+   - Color highlight: Blue
 
-    2. SIDE BAR (left panel)
-       - File explorer showing project structure
-       - Label: "Your project files and folders"
-       - Color highlight: Green
+2. SIDE BAR (left panel)
+   - File explorer showing project structure
+   - Label: "Your project files and folders"
+   - Color highlight: Green
 
-    3. EDITOR AREA (center, main area)
-       - Code with syntax highlighting
-       - Label: "Where you write code"
-       - Color highlight: Purple
+3. EDITOR AREA (center, main area)
+   - Code with syntax highlighting
+   - Label: "Where you write code"
+   - Color highlight: Purple
 
-    4. TABS (top of editor)
-       - Multiple file tabs
-       - Label: "Switch between open files"
-       - Color highlight: Orange
+4. TABS (top of editor)
+   - Multiple file tabs
+   - Label: "Switch between open files"
+   - Color highlight: Orange
 
-    5. MINIMAP (right edge of editor)
-       - Zoomed-out code preview
-       - Label: "Navigate large files quickly"
-       - Color highlight: Teal
+5. MINIMAP (right edge of editor)
+   - Zoomed-out code preview
+   - Label: "Navigate large files quickly"
+   - Color highlight: Teal
 
-    6. TERMINAL (bottom panel)
-       - Integrated command line
-       - Label: "Run commands without leaving VS Code"
-       - Color highlight: Red
+6. TERMINAL (bottom panel)
+   - Integrated command line
+   - Label: "Run commands without leaving VS Code"
+   - Color highlight: Red
 
-    7. STATUS BAR (bottom strip)
-       - Python version, line number, encoding
-       - Label: "Current file info and settings"
-       - Color highlight: Gray
+7. STATUS BAR (bottom strip)
+   - Python version, line number, encoding
+   - Label: "Current file info and settings"
+   - Color highlight: Gray
 
-    Interactive elements:
-    - Hover over each numbered area to see detailed description
-    - Click to see common tasks performed in that area
-    - "Hide Labels" toggle to test recall
+Interactive elements:
+- Hover over each numbered area to see detailed description
+- Click to see common tasks performed in that area
+- "Hide Labels" toggle to test recall
 
-    Visual style: Clean, modern, matching VS Code dark theme
+Visual style: Clean, modern, matching VS Code dark theme
 
-    Implementation: HTML/CSS with image map and tooltips
+Implementation: HTML/CSS with image map and tooltips
 </details>
 
 ## Jupyter Notebooks: Your Interactive Lab
@@ -570,51 +570,51 @@ The beauty of Markdown is that it's readable even before rendering. But when you
 #### Diagram: Notebook Cell Types Interactive Demo
 
 <details markdown="1">
-    <summary>Notebook Cell Types Interactive Demo</summary>
-    Type: microsim
+<summary>Notebook Cell Types Interactive Demo</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Let students practice creating, editing, and running different cell types
+Learning Objective: Let students practice creating, editing, and running different cell types
 
-    Canvas layout (700x550px):
-    - Main area (700x450): Notebook simulation
-    - Bottom panel (700x100): Controls and instructions
+Canvas layout (700x550px):
+- Main area (700x450): Notebook simulation
+- Bottom panel (700x100): Controls and instructions
 
-    Visual elements:
-    - Simulated notebook interface with cells
-    - Cell type indicator (Code/Markdown) on left side
-    - Run button for each cell
-    - Add cell buttons between cells
-    - Cell highlight when selected
+Visual elements:
+- Simulated notebook interface with cells
+- Cell type indicator (Code/Markdown) on left side
+- Run button for each cell
+- Add cell buttons between cells
+- Cell highlight when selected
 
-    Starting cells:
-    1. Markdown cell: "# My First Notebook\nWelcome to data science!"
-    2. Code cell: "x = 42\nprint(f'The answer is {x}')"
-    3. Empty code cell (ready for input)
+Starting cells:
+1. Markdown cell: "# My First Notebook\nWelcome to data science!"
+2. Code cell: "x = 42\nprint(f'The answer is {x}')"
+3. Empty code cell (ready for input)
 
-    Interactive controls:
-    - Click cell to select
-    - Button: "Run Cell" (or Shift+Enter simulation)
-    - Button: "Add Code Cell"
-    - Button: "Add Markdown Cell"
-    - Button: "Delete Cell"
-    - Button: "Change Cell Type"
-    - Text input area for editing selected cell
+Interactive controls:
+- Click cell to select
+- Button: "Run Cell" (or Shift+Enter simulation)
+- Button: "Add Code Cell"
+- Button: "Add Markdown Cell"
+- Button: "Delete Cell"
+- Button: "Change Cell Type"
+- Text input area for editing selected cell
 
-    Behavior:
-    - Running code cell shows output below
-    - Running markdown cell renders formatted text
-    - Variables persist between cells (running cell 2 sets x=42 for later use)
-    - Error messages shown if code has bugs
-    - Cell execution order numbers appear [1], [2], etc.
+Behavior:
+- Running code cell shows output below
+- Running markdown cell renders formatted text
+- Variables persist between cells (running cell 2 sets x=42 for later use)
+- Error messages shown if code has bugs
+- Cell execution order numbers appear [1], [2], etc.
 
-    Instructions panel:
-    - "Click a cell to select it"
-    - "Press Run Cell to execute"
-    - "Try changing the value of x and re-running!"
+Instructions panel:
+- "Click a cell to select it"
+- "Press Run Cell to execute"
+- "Try changing the value of x and re-running!"
 
-    Implementation: p5.js with text rendering and simple Python interpreter simulation
+Implementation: p5.js with text rendering and simple Python interpreter simulation
 </details>
 
 ## Cell Execution: Bringing Your Code to Life
@@ -691,46 +691,46 @@ The most common kernel operation: **Restart & Run All**. This verifies that your
 #### Diagram: Kernel State Visualization
 
 <details markdown="1">
-    <summary>How the Kernel Remembers Variables</summary>
-    Type: infographic
+<summary>How the Kernel Remembers Variables</summary>
+Type: infographic
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students understand that the kernel maintains state across cell executions
+Learning Objective: Help students understand that the kernel maintains state across cell executions
 
-    Purpose: Visualize the kernel as a memory bank that persists between cell runs
+Purpose: Visualize the kernel as a memory bank that persists between cell runs
 
-    Layout: Split view - notebook cells on left, kernel memory on right
+Layout: Split view - notebook cells on left, kernel memory on right
 
-    Left side (Notebook cells):
-    Cell 1: `name = "Alice"`
-    Cell 2: `age = 25`
-    Cell 3: `greeting = f"Hello {name}, you are {age}"`
-    Cell 4: `print(greeting)`
+Left side (Notebook cells):
+Cell 1: `name = "Alice"`
+Cell 2: `age = 25`
+Cell 3: `greeting = f"Hello {name}, you are {age}"`
+Cell 4: `print(greeting)`
 
-    Right side (Kernel Memory Bank):
-    Visual representation of memory slots:
-    - After Cell 1: name → "Alice"
-    - After Cell 2: name → "Alice", age → 25
-    - After Cell 3: name → "Alice", age → 25, greeting → "Hello Alice, you are 25"
+Right side (Kernel Memory Bank):
+Visual representation of memory slots:
+- After Cell 1: name → "Alice"
+- After Cell 2: name → "Alice", age → 25
+- After Cell 3: name → "Alice", age → 25, greeting → "Hello Alice, you are 25"
 
-    Animation flow:
-    - Running each cell shows variable flowing into memory bank
-    - Memory bank glows briefly when accessed
-    - Clear visual that all cells share the same memory
+Animation flow:
+- Running each cell shows variable flowing into memory bank
+- Memory bank glows briefly when accessed
+- Clear visual that all cells share the same memory
 
-    Bottom section:
-    "Restart Kernel" button → Memory bank empties → Variables gone
-    Message: "After restart, you must re-run cells to recreate variables"
+Bottom section:
+"Restart Kernel" button → Memory bank empties → Variables gone
+Message: "After restart, you must re-run cells to recreate variables"
 
-    Interactive elements:
-    - Step through button to simulate running each cell
-    - Restart button to clear memory visualization
-    - Hover over variable in memory to see when it was created
+Interactive elements:
+- Step through button to simulate running each cell
+- Restart button to clear memory visualization
+- Hover over variable in memory to see when it was created
 
-    Visual style: Clean, bright, "mind palace" aesthetic
+Visual style: Clean, bright, "mind palace" aesthetic
 
-    Implementation: HTML/CSS/JavaScript with animation
+Implementation: HTML/CSS/JavaScript with animation
 </details>
 
 ## Import Statements: Summoning Your Tools
@@ -826,58 +826,58 @@ The beauty of package management: when you need a new capability, you can probab
 #### Diagram: Python Data Science Ecosystem Map
 
 <details markdown="1">
-    <summary>Python Data Science Library Ecosystem</summary>
-    Type: graph-model
+<summary>Python Data Science Library Ecosystem</summary>
+Type: graph-model
 
-    Bloom Taxonomy: Remember (L1)
+Bloom Taxonomy: Remember (L1)
 
-    Learning Objective: Help students understand the landscape of Python data science libraries and how they relate
+Learning Objective: Help students understand the landscape of Python data science libraries and how they relate
 
-    Purpose: Show relationships between major libraries and their purposes
+Purpose: Show relationships between major libraries and their purposes
 
-    Node types:
-    1. Core (large gold hexagons)
-       - Python, NumPy
+Node types:
+1. Core (large gold hexagons)
+   - Python, NumPy
 
-    2. Data (blue rectangles)
-       - pandas, SQL connectors
+2. Data (blue rectangles)
+   - pandas, SQL connectors
 
-    3. Visualization (green circles)
-       - matplotlib, seaborn, plotly
+3. Visualization (green circles)
+   - matplotlib, seaborn, plotly
 
-    4. Machine Learning (purple diamonds)
-       - scikit-learn, XGBoost
+4. Machine Learning (purple diamonds)
+   - scikit-learn, XGBoost
 
-    5. Deep Learning (red stars)
-       - PyTorch, TensorFlow
+5. Deep Learning (red stars)
+   - PyTorch, TensorFlow
 
-    6. Utilities (gray rounded rectangles)
-       - Jupyter, requests, BeautifulSoup
+6. Utilities (gray rounded rectangles)
+   - Jupyter, requests, BeautifulSoup
 
-    Relationships (edges):
-    - NumPy → pandas (built on)
-    - NumPy → matplotlib (uses arrays)
-    - pandas → seaborn (data source)
-    - matplotlib → seaborn (built on)
-    - NumPy → scikit-learn (data format)
-    - scikit-learn → XGBoost (similar API)
-    - NumPy → PyTorch (similar arrays)
-    - NumPy → TensorFlow (similar arrays)
+Relationships (edges):
+- NumPy → pandas (built on)
+- NumPy → matplotlib (uses arrays)
+- pandas → seaborn (data source)
+- matplotlib → seaborn (built on)
+- NumPy → scikit-learn (data format)
+- scikit-learn → XGBoost (similar API)
+- NumPy → PyTorch (similar arrays)
+- NumPy → TensorFlow (similar arrays)
 
-    Layout: Hierarchical with Python/NumPy at center
+Layout: Hierarchical with Python/NumPy at center
 
-    Interactive features:
-    - Hover node: See library description and common use cases
-    - Click node: See example import statement
-    - Filter by category (checkboxes)
+Interactive features:
+- Hover node: See library description and common use cases
+- Click node: See example import statement
+- Filter by category (checkboxes)
 
-    Visual styling:
-    - Node size indicates popularity/importance
-    - Edge thickness shows strength of dependency
-    - Cluster by function area
+Visual styling:
+- Node size indicates popularity/importance
+- Edge thickness shows strength of dependency
+- Cluster by function area
 
-    Implementation: vis-network JavaScript
-    Canvas size: 800x600px
+Implementation: vis-network JavaScript
+Canvas size: 800x600px
 </details>
 
 ## Putting It All Together: Your First Complete Setup

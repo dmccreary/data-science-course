@@ -30,6 +30,8 @@ This textbook is organized into 13 chapters covering 300 concepts in data scienc
 
 13. [Neural Networks and PyTorch](13-neural-networks-pytorch/index.md) - Neural network architecture, PyTorch, and capstone projects.
 
+14. [Capstone Project](14-capstone-project/index.md) - Working in teams to create a final data science project and presenting to your classmates.
+
 ## How to Use This Textbook
 
 This textbook is designed to be read sequentially, as each chapter builds upon concepts from previous chapters. The learning graph ensures that prerequisite concepts are always introduced before they are needed. However, if you have prior experience with certain topics, you may skip ahead while referring back to earlier chapters as needed.

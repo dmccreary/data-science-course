@@ -191,7 +191,7 @@ Adjust polynomial degree to see bias--variance trade-off on train vs. test error
 3.  **Toggle Error Curves** (checkbox)
 
 
-## 10. $2Multiple Regression Plane
+## 10. $2 Multiple Regression Plane
 
 ### Description
 
@@ -254,6 +254,7 @@ Morph between uniform, normal, skewed, and bimodal distributions.
 2.  **Skewness Slider**
 
 3.  **Kurtosis Slider**
+
 
 
 ## 13. Box Plot Anatomy

@@ -158,65 +158,65 @@ print(f"would be predicted to score {intercept} points.")
 #### Diagram: Regression Line Anatomy
 
 <details markdown="1">
-    <summary>Interactive Regression Line Components</summary>
-    Type: infographic
+<summary>Interactive Regression Line Components</summary>
+Type: infographic
 
-    Bloom Taxonomy: Remember (L1)
+Bloom Taxonomy: Remember (L1)
 
-    Learning Objective: Help students identify and remember the components of a regression line and equation
+Learning Objective: Help students identify and remember the components of a regression line and equation
 
-    Purpose: Visual breakdown of regression line with labeled components
+Purpose: Visual breakdown of regression line with labeled components
 
-    Layout: Scatter plot with regression line and labeled callouts
+Layout: Scatter plot with regression line and labeled callouts
 
-    Main visual: Scatter plot (600x400px) showing:
-    - 10-15 data points with clear linear trend
-    - Regression line through points
-    - Y-axis intercept clearly marked
-    - Rise and run triangle showing slope
+Main visual: Scatter plot (600x400px) showing:
+- 10-15 data points with clear linear trend
+- Regression line through points
+- Y-axis intercept clearly marked
+- Rise and run triangle showing slope
 
-    Callouts (numbered with leader lines):
+Callouts (numbered with leader lines):
 
-    1. INTERCEPT (β₀) (pointing to y-axis crossing)
-       - "Where line crosses y-axis"
-       - "Predicted y when x = 0"
-       - "In equation: the constant term"
-       - Color: Blue
+1. INTERCEPT (β₀) (pointing to y-axis crossing)
+   - "Where line crosses y-axis"
+   - "Predicted y when x = 0"
+   - "In equation: the constant term"
+   - Color: Blue
 
-    2. SLOPE (β₁) (pointing to rise/run triangle)
-       - "Rise over run"
-       - "Change in y per unit change in x"
-       - "Positive = uphill, Negative = downhill"
-       - Shows: Δy / Δx calculation
-       - Color: Red
+2. SLOPE (β₁) (pointing to rise/run triangle)
+   - "Rise over run"
+   - "Change in y per unit change in x"
+   - "Positive = uphill, Negative = downhill"
+   - Shows: Δy / Δx calculation
+   - Color: Red
 
-    3. PREDICTED VALUE (ŷ) (pointing to a point on the line)
-       - "Value predicted by the model"
-       - "Falls exactly on the line"
-       - "ŷ = β₀ + β₁x"
-       - Color: Green
+3. PREDICTED VALUE (ŷ) (pointing to a point on the line)
+   - "Value predicted by the model"
+   - "Falls exactly on the line"
+   - "ŷ = β₀ + β₁x"
+   - Color: Green
 
-    4. ACTUAL VALUE (y) (pointing to a data point off the line)
-       - "Real observed value"
-       - "Usually not exactly on line"
-       - Color: Orange
+4. ACTUAL VALUE (y) (pointing to a data point off the line)
+   - "Real observed value"
+   - "Usually not exactly on line"
+   - Color: Orange
 
-    5. RESIDUAL (pointing to vertical line between actual and predicted)
-       - "Distance from actual to predicted"
-       - "Residual = y - ŷ"
-       - "What the model got wrong"
-       - Color: Purple
+5. RESIDUAL (pointing to vertical line between actual and predicted)
+   - "Distance from actual to predicted"
+   - "Residual = y - ŷ"
+   - "What the model got wrong"
+   - Color: Purple
 
-    Bottom equation display:
-    ŷ = β₀ + β₁x
-    With arrows pointing to each component in the equation
+Bottom equation display:
+ŷ = β₀ + β₁x
+With arrows pointing to each component in the equation
 
-    Interactive elements:
-    - Hover over each component for detailed explanation
-    - Click to highlight related elements
-    - Toggle to show/hide residuals for all points
+Interactive elements:
+- Hover over each component for detailed explanation
+- Click to highlight related elements
+- Toggle to show/hide residuals for all points
 
-    Implementation: SVG with JavaScript interactivity
+Implementation: SVG with JavaScript interactivity
 </details>
 
 ## Finding the Best Line: Least Squares Method
@@ -275,64 +275,64 @@ Don't worry about memorizing these—Python will calculate them for you. The imp
 #### Diagram: Least Squares MicroSim
 
 <details markdown="1">
-    <summary>Interactive Least Squares Line Fitting</summary>
-    Type: microsim
+<summary>Interactive Least Squares Line Fitting</summary>
+Type: microsim
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students understand how the least squares method finds the best-fit line by minimizing squared errors
+Learning Objective: Help students understand how the least squares method finds the best-fit line by minimizing squared errors
 
-    Canvas layout (900x600px):
-    - Main area (650x550): Interactive scatter plot with adjustable line
-    - Right panel (250x550): Controls and error display
-    - Bottom strip (900x50): SSE meter
+Canvas layout (900x600px):
+- Main area (650x550): Interactive scatter plot with adjustable line
+- Right panel (250x550): Controls and error display
+- Bottom strip (900x50): SSE meter
 
-    Visual elements:
-    - Scatter plot with 8-12 data points
-    - Adjustable regression line (can drag slope and intercept)
-    - Vertical lines from points to line showing residuals
-    - Squares drawn at each residual (area = squared error)
-    - Running SSE total displayed prominently
+Visual elements:
+- Scatter plot with 8-12 data points
+- Adjustable regression line (can drag slope and intercept)
+- Vertical lines from points to line showing residuals
+- Squares drawn at each residual (area = squared error)
+- Running SSE total displayed prominently
 
-    Interactive controls:
-    - Draggable line: Adjust slope by rotating, intercept by vertical drag
-    - Slider: Slope (-5 to +5)
-    - Slider: Intercept (0 to 100)
-    - Button: "Show Optimal Line" - animates to best fit
-    - Button: "Reset" - return to initial position
-    - Toggle: Show/hide residual squares
-    - Toggle: Show/hide residual values
+Interactive controls:
+- Draggable line: Adjust slope by rotating, intercept by vertical drag
+- Slider: Slope (-5 to +5)
+- Slider: Intercept (0 to 100)
+- Button: "Show Optimal Line" - animates to best fit
+- Button: "Reset" - return to initial position
+- Toggle: Show/hide residual squares
+- Toggle: Show/hide residual values
 
-    Display panels:
-    - Current slope and intercept
-    - Current SSE
-    - Optimal SSE (shown after clicking "Show Optimal")
-    - Percentage improvement from current to optimal
+Display panels:
+- Current slope and intercept
+- Current SSE
+- Optimal SSE (shown after clicking "Show Optimal")
+- Percentage improvement from current to optimal
 
-    SSE Meter (bottom):
-    - Visual bar showing current SSE
-    - Marker showing optimal SSE
-    - Color gradient: red (high error) → green (low error)
+SSE Meter (bottom):
+- Visual bar showing current SSE
+- Marker showing optimal SSE
+- Color gradient: red (high error) → green (low error)
 
-    Behavior:
-    - As line is adjusted, SSE updates in real-time
-    - Residual squares resize dynamically
-    - "Show Optimal Line" smoothly animates to least squares solution
-    - Highlight when current SSE is close to optimal
+Behavior:
+- As line is adjusted, SSE updates in real-time
+- Residual squares resize dynamically
+- "Show Optimal Line" smoothly animates to least squares solution
+- Highlight when current SSE is close to optimal
 
-    Educational annotations:
-    - "Each square's area = squared error for that point"
-    - "Total area of all squares = SSE"
-    - "OLS minimizes this total area"
+Educational annotations:
+- "Each square's area = squared error for that point"
+- "Total area of all squares = SSE"
+- "OLS minimizes this total area"
 
-    Challenge tasks:
-    - "Can you get SSE below 50?"
-    - "Find a line where all residuals are positive"
-    - "Match the optimal line within 5% SSE"
+Challenge tasks:
+- "Can you get SSE below 50?"
+- "Find a line where all residuals are positive"
+- "Match the optimal line within 5% SSE"
 
-    Visual style: Clean mathematical visualization
+Visual style: Clean mathematical visualization
 
-    Implementation: p5.js with real-time calculations
+Implementation: p5.js with real-time calculations
 </details>
 
 ## The Line of Best Fit
@@ -520,70 +520,70 @@ fig.show()
 #### Diagram: Regression Assumptions Checker MicroSim
 
 <details markdown="1">
-    <summary>Interactive Assumption Diagnostic Tool</summary>
-    Type: microsim
+<summary>Interactive Assumption Diagnostic Tool</summary>
+Type: microsim
 
-    Bloom Taxonomy: Analyze (L4)
+Bloom Taxonomy: Analyze (L4)
 
-    Learning Objective: Help students diagnose regression assumption violations through interactive visualizations
+Learning Objective: Help students diagnose regression assumption violations through interactive visualizations
 
-    Canvas layout (900x650px):
-    - Top left (450x300): Original scatter plot with regression line
-    - Top right (450x300): Residual vs fitted plot
-    - Bottom left (450x300): Residual histogram
-    - Bottom right (450x300): Q-Q plot of residuals
+Canvas layout (900x650px):
+- Top left (450x300): Original scatter plot with regression line
+- Top right (450x300): Residual vs fitted plot
+- Bottom left (450x300): Residual histogram
+- Bottom right (450x300): Q-Q plot of residuals
 
-    Visual elements:
-    - All four diagnostic plots update together
-    - Traffic light indicators (green/yellow/red) for each assumption
-    - Assumption status panel
+Visual elements:
+- All four diagnostic plots update together
+- Traffic light indicators (green/yellow/red) for each assumption
+- Assumption status panel
 
-    Interactive controls:
-    - Dropdown: Dataset selector
-      - "Good Data" (all assumptions met)
-      - "Non-linear" (curved relationship)
-      - "Heteroscedastic" (fan-shaped residuals)
-      - "Non-normal residuals" (skewed errors)
-      - "Outliers present"
-      - "Custom" (add/drag points)
-    - Button: "Diagnose" - highlights violations
-    - Toggle: Show/hide assumption guidelines
-    - Draggable points in custom mode
+Interactive controls:
+- Dropdown: Dataset selector
+  - "Good Data" (all assumptions met)
+  - "Non-linear" (curved relationship)
+  - "Heteroscedastic" (fan-shaped residuals)
+  - "Non-normal residuals" (skewed errors)
+  - "Outliers present"
+  - "Custom" (add/drag points)
+- Button: "Diagnose" - highlights violations
+- Toggle: Show/hide assumption guidelines
+- Draggable points in custom mode
 
-    Assumption indicators:
-    1. LINEARITY
-       - Green: Points follow line well
-       - Yellow: Slight curvature
-       - Red: Clear non-linear pattern
+Assumption indicators:
+1. LINEARITY
+   - Green: Points follow line well
+   - Yellow: Slight curvature
+   - Red: Clear non-linear pattern
 
-    2. INDEPENDENCE
-       - Note: "Cannot diagnose from plot alone"
-       - Checkbox: "Data is from independent observations"
+2. INDEPENDENCE
+   - Note: "Cannot diagnose from plot alone"
+   - Checkbox: "Data is from independent observations"
 
-    3. HOMOSCEDASTICITY
-       - Green: Constant spread in residual plot
-       - Yellow: Slight fanning
-       - Red: Clear funnel shape
+3. HOMOSCEDASTICITY
+   - Green: Constant spread in residual plot
+   - Yellow: Slight fanning
+   - Red: Clear funnel shape
 
-    4. NORMALITY
-       - Green: Histogram bell-shaped, Q-Q on line
-       - Yellow: Slight deviation
-       - Red: Clear non-normality
+4. NORMALITY
+   - Green: Histogram bell-shaped, Q-Q on line
+   - Yellow: Slight deviation
+   - Red: Clear non-normality
 
-    Behavior:
-    - Selecting dataset updates all four plots
-    - Traffic lights update based on diagnostic rules
-    - Tooltips explain what each violation means
-    - "Diagnose" button highlights specific problem areas
+Behavior:
+- Selecting dataset updates all four plots
+- Traffic lights update based on diagnostic rules
+- Tooltips explain what each violation means
+- "Diagnose" button highlights specific problem areas
 
-    Educational annotations:
-    - "Look for patterns in the residual plot"
-    - "Points should follow the diagonal in Q-Q plot"
-    - "Residuals should be roughly bell-shaped"
+Educational annotations:
+- "Look for patterns in the residual plot"
+- "Points should follow the diagonal in Q-Q plot"
+- "Residuals should be roughly bell-shaped"
 
-    Visual style: Dashboard layout with coordinated plots
+Visual style: Dashboard layout with coordinated plots
 
-    Implementation: p5.js with Plotly.js for statistical plots
+Implementation: p5.js with Plotly.js for statistical plots
 </details>
 
 | Assumption | What to Check | Good Sign | Bad Sign |
@@ -707,68 +707,68 @@ fig.show()
 #### Diagram: Scikit-learn Workflow
 
 <details markdown="1">
-    <summary>Machine Learning Pipeline Flowchart</summary>
-    Type: workflow
+<summary>Machine Learning Pipeline Flowchart</summary>
+Type: workflow
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Help students memorize and apply the standard scikit-learn workflow
+Learning Objective: Help students memorize and apply the standard scikit-learn workflow
 
-    Purpose: Visual guide for the fit-predict pattern
+Purpose: Visual guide for the fit-predict pattern
 
-    Visual style: Horizontal flowchart with code snippets
+Visual style: Horizontal flowchart with code snippets
 
-    Steps (left to right):
+Steps (left to right):
 
-    1. IMPORT
-       Icon: Package/box
-       Code: `from sklearn.linear_model import LinearRegression`
-       Hover text: "Import the model class you need"
-       Color: Blue
+1. IMPORT
+   Icon: Package/box
+   Code: `from sklearn.linear_model import LinearRegression`
+   Hover text: "Import the model class you need"
+   Color: Blue
 
-    2. PREPARE DATA
-       Icon: Table/spreadsheet
-       Code: `X = df[['feature']]` and `y = df['target']`
-       Hover text: "X must be 2D, y is 1D"
-       Color: Green
-       Warning note: "X needs double brackets!"
+2. PREPARE DATA
+   Icon: Table/spreadsheet
+   Code: `X = df[['feature']]` and `y = df['target']`
+   Hover text: "X must be 2D, y is 1D"
+   Color: Green
+   Warning note: "X needs double brackets!"
 
-    3. CREATE MODEL
-       Icon: Gear/factory
-       Code: `model = LinearRegression()`
-       Hover text: "Instantiate the model object"
-       Color: Orange
+3. CREATE MODEL
+   Icon: Gear/factory
+   Code: `model = LinearRegression()`
+   Hover text: "Instantiate the model object"
+   Color: Orange
 
-    4. FIT MODEL
-       Icon: Brain/learning
-       Code: `model.fit(X, y)`
-       Hover text: "Train on your data - learns coefficients"
-       Color: Purple
-       Output: "model.coef_, model.intercept_"
+4. FIT MODEL
+   Icon: Brain/learning
+   Code: `model.fit(X, y)`
+   Hover text: "Train on your data - learns coefficients"
+   Color: Purple
+   Output: "model.coef_, model.intercept_"
 
-    5. PREDICT
-       Icon: Crystal ball
-       Code: `y_pred = model.predict(X_new)`
-       Hover text: "Generate predictions for any X"
-       Color: Red
+5. PREDICT
+   Icon: Crystal ball
+   Code: `y_pred = model.predict(X_new)`
+   Hover text: "Generate predictions for any X"
+   Color: Red
 
-    6. EVALUATE
-       Icon: Checkmark/chart
-       Code: `model.score(X, y)` or metrics
-       Hover text: "Assess model quality"
-       Color: Teal
+6. EVALUATE
+   Icon: Checkmark/chart
+   Code: `model.score(X, y)` or metrics
+   Hover text: "Assess model quality"
+   Color: Teal
 
-    Annotations:
-    - Arrow from "FIT" to coefficients stored
-    - Note: "This pattern works for ALL sklearn models!"
-    - Common errors callout: "Forgot to reshape X?", "Wrong array shape?"
+Annotations:
+- Arrow from "FIT" to coefficients stored
+- Note: "This pattern works for ALL sklearn models!"
+- Common errors callout: "Forgot to reshape X?", "Wrong array shape?"
 
-    Interactive elements:
-    - Click each step to see full code example
-    - Hover for detailed explanation
-    - Toggle between LinearRegression and other model examples
+Interactive elements:
+- Click each step to see full code example
+- Hover for detailed explanation
+- Toggle between LinearRegression and other model examples
 
-    Implementation: SVG with JavaScript interactivity
+Implementation: SVG with JavaScript interactivity
 </details>
 
 ## Putting It All Together: A Complete Example
@@ -868,75 +868,75 @@ print("✓ Normality: Check residual histogram (code above)")
 #### Diagram: Interactive Regression Builder MicroSim
 
 <details markdown="1">
-    <summary>Build Your Own Regression Model</summary>
-    Type: microsim
+<summary>Build Your Own Regression Model</summary>
+Type: microsim
 
-    Bloom Taxonomy: Create (L6)
+Bloom Taxonomy: Create (L6)
 
-    Learning Objective: Let students build, visualize, and interpret their own regression models interactively
+Learning Objective: Let students build, visualize, and interpret their own regression models interactively
 
-    Canvas layout (950x700px):
-    - Left panel (600x700): Main visualization area
-      - Top (600x400): Scatter plot with regression line
-      - Bottom (600x300): Residual plot
-    - Right panel (350x700): Controls, coefficients, interpretation
+Canvas layout (950x700px):
+- Left panel (600x700): Main visualization area
+  - Top (600x400): Scatter plot with regression line
+  - Bottom (600x300): Residual plot
+- Right panel (350x700): Controls, coefficients, interpretation
 
-    Visual elements:
-    - Interactive scatter plot
-    - Regression line (updates with data)
-    - Residual lines connecting points to line
-    - Coefficient display
-    - Equation display
-    - R² score gauge
+Visual elements:
+- Interactive scatter plot
+- Regression line (updates with data)
+- Residual lines connecting points to line
+- Coefficient display
+- Equation display
+- R² score gauge
 
-    Data options:
-    - Preset datasets:
-      - "Study Hours vs Scores" (positive, strong)
-      - "House Size vs Price" (positive, moderate)
-      - "Car Age vs Value" (negative)
-      - "Random Data" (no relationship)
-    - Custom: Click to add points
+Data options:
+- Preset datasets:
+  - "Study Hours vs Scores" (positive, strong)
+  - "House Size vs Price" (positive, moderate)
+  - "Car Age vs Value" (negative)
+  - "Random Data" (no relationship)
+- Custom: Click to add points
 
-    Interactive controls:
-    - Dropdown: Select dataset
-    - Button: "Add Point" (click on plot to add)
-    - Button: "Remove Point" (click to remove)
-    - Button: "Fit Model" - calculates regression
-    - Button: "Clear All"
-    - Slider: Noise level (for preset datasets)
-    - Toggle: Show residuals
-    - Toggle: Show confidence band
+Interactive controls:
+- Dropdown: Select dataset
+- Button: "Add Point" (click on plot to add)
+- Button: "Remove Point" (click to remove)
+- Button: "Fit Model" - calculates regression
+- Button: "Clear All"
+- Slider: Noise level (for preset datasets)
+- Toggle: Show residuals
+- Toggle: Show confidence band
 
-    Right panel displays:
-    - Equation: ŷ = β₀ + β₁x (with actual values)
-    - Interpretation text:
-      - "For each unit increase in X, Y changes by [slope]"
-      - "When X = 0, predicted Y = [intercept]"
-    - Model quality:
-      - R² score with visual gauge
-      - RMSE value
-    - Assumption indicators (traffic lights)
+Right panel displays:
+- Equation: ŷ = β₀ + β₁x (with actual values)
+- Interpretation text:
+  - "For each unit increase in X, Y changes by [slope]"
+  - "When X = 0, predicted Y = [intercept]"
+- Model quality:
+  - R² score with visual gauge
+  - RMSE value
+- Assumption indicators (traffic lights)
 
-    Prediction tool:
-    - Input field: "Enter X value"
-    - Button: "Predict"
-    - Output: Predicted Y with confidence interval
-    - Visual: Point added to plot at prediction
+Prediction tool:
+- Input field: "Enter X value"
+- Button: "Predict"
+- Output: Predicted Y with confidence interval
+- Visual: Point added to plot at prediction
 
-    Behavior:
-    - Adding/removing points triggers model refit
-    - All statistics update in real-time
-    - Interpretation text updates with coefficient values
-    - Warning when extrapolating beyond data range
+Behavior:
+- Adding/removing points triggers model refit
+- All statistics update in real-time
+- Interpretation text updates with coefficient values
+- Warning when extrapolating beyond data range
 
-    Educational features:
-    - "What happens if you add an outlier?"
-    - "Can you create data with R² > 0.9?"
-    - "What does negative slope look like?"
+Educational features:
+- "What happens if you add an outlier?"
+- "Can you create data with R² > 0.9?"
+- "What does negative slope look like?"
 
-    Visual style: Professional dashboard with clean aesthetics
+Visual style: Professional dashboard with clean aesthetics
 
-    Implementation: p5.js with real-time OLS calculations
+Implementation: p5.js with real-time OLS calculations
 </details>
 
 ## Common Pitfalls and Best Practices
