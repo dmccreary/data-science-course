@@ -1,0 +1,3399 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Master the containers that hold your data - from Python basics to pandas power">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/03-python-data-structures/">
+      
+      
+        <link rel="prev" href="../02-python-environment/">
+      
+      
+        <link rel="next" href="../04-data-cleaning/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Python Data Structures - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-RTBCWGJKKR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-RTBCWGJKKR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-RTBCWGJKKR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Python Data Structures - AI Based Data Science with Python" >
+      
+        <meta  property="og:description"  content="Master the containers that hold your data - from Python basics to pandas power" >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/03-python-data-structures/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/data-science-course/chapters/03-python-data-structures/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Python Data Structures - AI Based Data Science with Python" >
+      
+        <meta  name="twitter:description"  content="Master the containers that hold your data - from Python basics to pandas power" >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/03-python-data-structures/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-data-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Data Structures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-data-science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Data Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-python-environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python Data Structures
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python Data Structures
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-data-needs-a-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your Data Needs a Home
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your Data Needs a Home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-structure-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Structure Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythons-built-in-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python's Built-in Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python's Built-in Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lists-your-ordered-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists: Your Ordered Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionaries-your-key-value-powerhouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionaries: Your Key-Value Powerhouse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuples-your-immutable-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tuples: Your Immutable Record
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-numeric-power-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays: Numeric Power (Preview)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays: Numeric Power (Preview)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-python-data-structures-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Python Data Structures Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enter-pandas-your-data-science-superweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter Pandas: Your Data Science Superweapon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enter Pandas: Your Data Science Superweapon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#series-the-one-dimensional-wonder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Series: The One-Dimensional Wonder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-the-main-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame: The Main Event
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DataFrame: The Main Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dataframe-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: DataFrame Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-index-columns-and-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Index, Columns, and Rows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-real-data-csv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading Real Data: CSV Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading Real Data: CSV Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-csv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are CSV Files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-read_csv-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The read_csv Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The read_csv Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-loading-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Loading Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-inspection-getting-to-know-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Inspection: Getting to Know Your Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Inspection: Getting to Know Your Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-head-method-peek-at-the-beginning" class="md-nav__link">
+    <span class="md-ellipsis">
+      The head Method: Peek at the Beginning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tail-method-check-the-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      The tail Method: Check the End
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-shape-attribute-know-your-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The shape Attribute: Know Your Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-info-method-get-the-full-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The info Method: Get the Full Picture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-describe-method-statistical-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      The describe Method: Statistical Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The describe Method: Statistical Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-inspection-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Inspection Command Center
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-selection-getting-what-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Selection: Getting What You Need
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Selection: Getting What You Need">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selecting-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting Columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-rows-by-position-iloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting Rows by Position: iloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-rows-by-label-loc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting Rows by Label: loc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-selection-the-real-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Selection: The Real Superpower
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean Selection: The Real Superpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-selection-playground-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Selection Playground MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-complete-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: A Complete Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Patterns and Pitfalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns and Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patterns-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patterns to Remember
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfalls-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfalls to Avoid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-data-cleaning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-statistical-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistical Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-simple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-multiple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-numpy-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-nonlinear-models-regularization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-linear Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-intro-to-machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro to Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-neural-networks-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks and PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sample GenAI Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-data-needs-a-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your Data Needs a Home
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your Data Needs a Home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-structure-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Structure Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythons-built-in-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python's Built-in Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python's Built-in Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lists-your-ordered-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists: Your Ordered Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionaries-your-key-value-powerhouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionaries: Your Key-Value Powerhouse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuples-your-immutable-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tuples: Your Immutable Record
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-numeric-power-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays: Numeric Power (Preview)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays: Numeric Power (Preview)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-python-data-structures-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Python Data Structures Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enter-pandas-your-data-science-superweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter Pandas: Your Data Science Superweapon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enter Pandas: Your Data Science Superweapon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#series-the-one-dimensional-wonder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Series: The One-Dimensional Wonder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-the-main-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame: The Main Event
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DataFrame: The Main Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dataframe-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: DataFrame Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-index-columns-and-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Index, Columns, and Rows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-real-data-csv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading Real Data: CSV Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading Real Data: CSV Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-csv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are CSV Files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-read_csv-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The read_csv Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The read_csv Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-loading-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Loading Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-inspection-getting-to-know-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Inspection: Getting to Know Your Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Inspection: Getting to Know Your Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-head-method-peek-at-the-beginning" class="md-nav__link">
+    <span class="md-ellipsis">
+      The head Method: Peek at the Beginning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tail-method-check-the-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      The tail Method: Check the End
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-shape-attribute-know-your-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The shape Attribute: Know Your Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-info-method-get-the-full-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The info Method: Get the Full Picture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-describe-method-statistical-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      The describe Method: Statistical Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The describe Method: Statistical Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-inspection-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Inspection Command Center
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-selection-getting-what-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Selection: Getting What You Need
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Selection: Getting What You Need">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selecting-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting Columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-rows-by-position-iloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting Rows by Position: iloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-rows-by-label-loc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting Rows by Label: loc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-selection-the-real-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Selection: The Real Superpower
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean Selection: The Real Superpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-selection-playground-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Selection Playground MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-complete-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: A Complete Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Patterns and Pitfalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns and Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patterns-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patterns to Remember
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfalls-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfalls to Avoid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/03-python-data-structures/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="python-data-structures">Python Data Structures</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces the essential data structures used in Python data science workflows. Students will learn Python's native data structures (lists, dictionaries, tuples, arrays) and then progress to pandas, the primary library for data manipulation. The chapter covers DataFrames and Series, data loading from CSV files, and methods for inspecting and selecting data. By the end of this chapter, students will be able to load, explore, and navigate datasets using pandas.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 20 concepts from the learning graph:</p>
+<ol>
+<li>Lists</li>
+<li>Dictionaries</li>
+<li>Tuples</li>
+<li>Arrays</li>
+<li>Pandas Library</li>
+<li>DataFrame</li>
+<li>Series</li>
+<li>Index</li>
+<li>Column</li>
+<li>Row</li>
+<li>Data Loading</li>
+<li>CSV Files</li>
+<li>Read CSV</li>
+<li>Data Inspection</li>
+<li>Head Method</li>
+<li>Tail Method</li>
+<li>Shape Attribute</li>
+<li>Info Method</li>
+<li>Describe Method</li>
+<li>Data Selection</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-data-science/">Chapter 1: Introduction to Data Science</a></li>
+<li><a href="../02-python-environment/">Chapter 2: Python Environment and Setup</a></li>
+</ul>
+<hr />
+<h2 id="your-data-needs-a-home">Your Data Needs a Home</h2>
+<p>In Chapter 1, you learned that data is the raw material of your superpower. In Chapter 2, you built your headquarters and assembled your tools. But here's the thing about data—it doesn't just float around in thin air. Data needs to live somewhere. It needs containers, organization, and structure.</p>
+<p>Think about it: even superheroes need ways to organize their stuff. Batman has labeled compartments in his utility belt. Iron Man has JARVIS cataloging his suit designs. The X-Men have Cerebro organizing mutant data. You? You're about to learn the containers that will hold YOUR data—and trust me, these containers are more powerful than they might first appear.</p>
+<p>This chapter is where you graduate from "knowing about data science" to actually DOING data science. By the end, you'll be loading real datasets, exploring them like a detective, and selecting exactly the information you need. Let's go!</p>
+<h4 id="diagram-data-structure-hierarchy">Diagram: Data Structure Hierarchy</h4>
+<details markdown="1">
+    <summary>Python Data Structure Hierarchy</summary>
+    Type: diagram
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students visualize the relationship between Python's native data structures and pandas structures
+
+    Purpose: Show how basic Python structures lead to more powerful pandas structures
+
+    Layout: Hierarchical tree diagram, top to bottom
+
+    Level 1 (Top): "DATA STRUCTURES"
+    - Color: Gold
+    - Central hub
+
+    Level 2 (Split into two branches):
+
+    Branch A: "Python Built-in"
+    - Color: Blue
+    - Children:
+      - Lists (ordered, mutable)
+      - Dictionaries (key-value pairs)
+      - Tuples (ordered, immutable)
+
+    Branch B: "Pandas Structures"
+    - Color: Green
+    - Children:
+      - Series (1D labeled array)
+      - DataFrame (2D labeled table)
+
+    Level 3 (Under pandas):
+    - DataFrame components: Index, Columns, Rows
+    - Series: labeled as "Single column of DataFrame"
+
+    Arrows showing:
+    - "List → can become → Series"
+    - "Dictionary → can become → DataFrame"
+    - "Series + Series → DataFrame"
+
+    Visual style: Modern flowchart with rounded boxes
+
+    Interactive elements:
+    - Hover over each structure to see quick definition
+    - Click to see code example
+    - Color coding: Blue for Python native, Green for pandas
+
+    Implementation: SVG with CSS hover effects
+</details>
+
+<h2 id="pythons-built-in-data-structures">Python's Built-in Data Structures</h2>
+<p>Before we dive into the fancy pandas library, you need to understand Python's native data structures. These are the building blocks—simple containers that Python provides out of the box. Think of them as the basic training before you get the advanced gear.</p>
+<h3 id="lists-your-ordered-collection">Lists: Your Ordered Collection</h3>
+<p>A <strong>list</strong> is Python's most versatile data structure. It's an ordered collection of items that can hold anything—numbers, strings, even other lists. Lists are mutable, meaning you can change them after creation.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Creating a list</span>
+<span class="n">superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Iron Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Spider-Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Wonder Woman&quot;</span><span class="p">]</span>
+
+<span class="c1"># Lists can hold different types</span>
+<span class="n">mixed_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+
+<span class="c1"># Lists are ordered - position matters!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">superheroes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: &quot;Batman&quot; (first item)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">superheroes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Output: &quot;Wonder Woman&quot; (last item)</span>
+</code></pre></div></td></tr></table></div>
+<p>Lists are incredibly flexible:</p>
+<ul>
+<li>Add items with <code>append()</code> or <code>insert()</code></li>
+<li>Remove items with <code>remove()</code> or <code>pop()</code></li>
+<li>Sort with <code>sort()</code></li>
+<li>Get the length with <code>len()</code></li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Modifying lists</span>
+<span class="n">superheroes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Black Panther&quot;</span><span class="p">)</span>      <span class="c1"># Add to end</span>
+<span class="n">superheroes</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Superman&quot;</span><span class="p">)</span>        <span class="c1"># Add at position 0</span>
+<span class="n">superheroes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Spider-Man&quot;</span><span class="p">)</span>         <span class="c1"># Remove specific item</span>
+<span class="n">last_hero</span> <span class="o">=</span> <span class="n">superheroes</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>            <span class="c1"># Remove and return last item</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">When to Use Lists</p>
+<p>Use lists when you have a collection of items and their ORDER matters. Lists are perfect for sequences, rankings, or any situation where position is important.</p>
+</div>
+<h3 id="dictionaries-your-key-value-powerhouse">Dictionaries: Your Key-Value Powerhouse</h3>
+<p>A <strong>dictionary</strong> is a collection of key-value pairs. Instead of accessing items by position (like lists), you access them by a unique key. Dictionaries are like having labeled drawers instead of numbered ones.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Creating a dictionary</span>
+<span class="n">hero_powers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Batman&quot;</span><span class="p">:</span> <span class="s2">&quot;Intelligence and gadgets&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Iron Man&quot;</span><span class="p">:</span> <span class="s2">&quot;Powered armor suit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Spider-Man&quot;</span><span class="p">:</span> <span class="s2">&quot;Spider abilities&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Wonder Woman&quot;</span><span class="p">:</span> <span class="s2">&quot;Divine powers&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Accessing values by key</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hero_powers</span><span class="p">[</span><span class="s2">&quot;Batman&quot;</span><span class="p">])</span>  <span class="c1"># Output: &quot;Intelligence and gadgets&quot;</span>
+
+<span class="c1"># Adding new key-value pairs</span>
+<span class="n">hero_powers</span><span class="p">[</span><span class="s2">&quot;Black Panther&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Vibranium suit&quot;</span>
+
+<span class="c1"># Checking if key exists</span>
+<span class="k">if</span> <span class="s2">&quot;Superman&quot;</span> <span class="ow">in</span> <span class="n">hero_powers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hero_powers</span><span class="p">[</span><span class="s2">&quot;Superman&quot;</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Superman not found!&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Dictionaries are blazingly fast for lookups. Whether you have 10 items or 10 million, finding a value by its key takes roughly the same amount of time. That's why they're used everywhere in Python.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>List</th>
+<th>Dictionary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access by position</td>
+<td>✓ Fast</td>
+<td>✗ Not supported</td>
+</tr>
+<tr>
+<td>Access by key/name</td>
+<td>✗ Slow (must search)</td>
+<td>✓ Instant</td>
+</tr>
+<tr>
+<td>Maintains order</td>
+<td>✓ Yes</td>
+<td>✓ Yes (Python 3.7+)</td>
+</tr>
+<tr>
+<td>Duplicate keys</td>
+<td>✓ Allowed</td>
+<td>✗ Keys must be unique</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tuples-your-immutable-record">Tuples: Your Immutable Record</h3>
+<p>A <strong>tuple</strong> is like a list, but immutable—once created, it cannot be changed. This might sound like a limitation, but it's actually a feature. Tuples are perfect for data that shouldn't change.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Creating a tuple</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">)</span>  <span class="c1"># NYC latitude, longitude</span>
+
+<span class="c1"># Accessing elements (just like lists)</span>
+<span class="n">latitude</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">longitude</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Tuples can be unpacked</span>
+<span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">coordinates</span>  <span class="c1"># Assigns both at once!</span>
+
+<span class="c1"># This would cause an error:</span>
+<span class="c1"># coordinates[0] = 41.0  # TypeError: tuples are immutable</span>
+</code></pre></div></td></tr></table></div>
+<p>Why use tuples?</p>
+<ul>
+<li>They're slightly faster than lists</li>
+<li>They signal "this data won't change"</li>
+<li>They can be used as dictionary keys (lists cannot)</li>
+<li>They're perfect for returning multiple values from functions</li>
+</ul>
+<h3 id="arrays-numeric-power-preview">Arrays: Numeric Power (Preview)</h3>
+<p><strong>Arrays</strong> are specialized containers for numeric data. While Python has a built-in <code>array</code> module, data scientists typically use NumPy arrays, which we'll explore in depth in Chapter 10.</p>
+<p>The key difference: lists can hold any type of data, but arrays are optimized for numbers. This makes mathematical operations on arrays incredibly fast—often 10-100x faster than the same operations on lists.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Preview: NumPy arrays (covered fully in Chapter 10)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Create an array of numbers</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">])</span>
+
+<span class="c1"># Mathematical operations are fast and easy</span>
+<span class="n">average</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">highest</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">scaled</span> <span class="o">=</span> <span class="n">scores</span> <span class="o">*</span> <span class="mf">1.1</span>  <span class="c1"># Multiply all by 1.1</span>
+</code></pre></div></td></tr></table></div>
+<p>For now, just know that arrays exist and are important. We'll come back to them with full superhero treatment later!</p>
+<h4 id="diagram-python-data-structures-comparison-microsim">Diagram: Python Data Structures Comparison MicroSim</h4>
+<details markdown="1">
+    <summary>Data Structure Selection Helper</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Help students choose the right data structure for different scenarios
+
+    Canvas layout (700x500px):
+    - Left side (400x500): Scenario display and answer area
+    - Right side (300x500): Score tracker and hints
+
+    Visual elements:
+    - Scenario card showing a data storage problem
+    - Four buttons: List, Dictionary, Tuple, Array
+    - Feedback indicator (correct/incorrect with explanation)
+    - Progress bar showing scenarios completed
+    - Score counter
+
+    Scenarios (10 total):
+    1. "Store student names in order of arrival" → List
+    2. "Map employee IDs to their salaries" → Dictionary
+    3. "Store GPS coordinates that won't change" → Tuple
+    4. "Hold 1 million numbers for fast math" → Array
+    5. "Keep a to-do list you'll modify" → List
+    6. "Store configuration settings by name" → Dictionary
+    7. "Return both min and max from a function" → Tuple
+    8. "Store pixel values for image processing" → Array
+    9. "Track items and their quantities" → Dictionary
+    10. "Keep records of (x, y) point pairs" → Tuple or List
+
+    Interactive controls:
+    - Click data structure button to answer
+    - "Next Scenario" button
+    - "Show Hint" button
+    - "Reset Quiz" button
+
+    Behavior:
+    - Correct answer: Green flash, +10 points, explanation shown
+    - Incorrect: Red flash, correct answer revealed with explanation
+    - End: Summary showing areas to review
+
+    Visual style: Quiz game aesthetic with achievement badges
+
+    Implementation: p5.js with scenario array and scoring logic
+</details>
+
+<h2 id="enter-pandas-your-data-science-superweapon">Enter Pandas: Your Data Science Superweapon</h2>
+<p>Now we're getting to the good stuff. <strong>Pandas</strong> is the Python library that transformed data science. Before pandas, working with tabular data in Python was painful. After pandas, it became almost enjoyable.</p>
+<p>The <strong>Pandas library</strong> provides two main data structures:</p>
+<ul>
+<li><strong>Series</strong>: A one-dimensional labeled array</li>
+<li><strong>DataFrame</strong>: A two-dimensional labeled table (like a spreadsheet)</li>
+</ul>
+<p>These aren't just containers—they're containers with superpowers. Filtering, grouping, merging, reshaping... pandas makes operations that would take dozens of lines of code happen in just one.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># The standard way to import pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Now you can use pd.DataFrame, pd.Series, pd.read_csv, etc.</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition quote">
+<p class="admonition-title">Why 'pandas'?</p>
+<p>The name comes from "panel data"—a term from statistics for multi-dimensional data. It has nothing to do with the cute bears, though the library is just as cuddly once you get to know it.</p>
+</div>
+<h3 id="series-the-one-dimensional-wonder">Series: The One-Dimensional Wonder</h3>
+<p>A <strong>Series</strong> is like a supercharged list. It's a one-dimensional array with labels (called an index). Think of it as a single column from a spreadsheet, but with its own identity.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Create a Series from a list</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>0    85
+1    92
+2    78
+3    95
+4    88
+dtype: int64
+</code></pre></div></td></tr></table></div></p>
+<p>Notice those numbers on the left? That's the <strong>index</strong>—labels for each value. By default, pandas uses 0, 1, 2, etc., but you can use custom labels:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Series with custom index</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Alice      85
+Bob        92
+Charlie    78
+Diana      95
+Eve        88
+dtype: int64
+</code></pre></div></td></tr></table></div></p>
+<p>Now you can access data by name: <code>scores["Bob"]</code> returns <code>92</code>. This is incredibly powerful when working with real data.</p>
+<h3 id="dataframe-the-main-event">DataFrame: The Main Event</h3>
+<p>The <strong>DataFrame</strong> is pandas' flagship data structure. It's a two-dimensional table with labeled rows and columns—essentially, a super-powered spreadsheet that you can manipulate with code.</p>
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Math</th>
+<th>Science</th>
+<th>English</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>85</td>
+<td>90</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>92</td>
+<td>88</td>
+<td>95</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>78</td>
+<td>82</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>In pandas, this becomes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Create a DataFrame from a dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Math&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">],</span>
+    <span class="s2">&quot;Science&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">82</span><span class="p">],</span>
+    <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>         Math  Science  English
+Alice      85       90       88
+Bob        92       88       95
+Charlie    78       82       80
+</code></pre></div></td></tr></table></div></p>
+<p>This is the structure you'll work with 90% of the time in data science. Let's break down its components.</p>
+<h4 id="diagram-dataframe-anatomy">Diagram: DataFrame Anatomy</h4>
+<details markdown="1">
+    <summary>DataFrame Anatomy Interactive Diagram</summary>
+    Type: infographic
+
+    Bloom Taxonomy: Remember (L1)
+
+    Learning Objective: Help students identify and remember the components of a DataFrame
+
+    Purpose: Visual breakdown of DataFrame structure with labeled components
+
+    Layout: Central DataFrame table with callouts pointing to each component
+
+    Main visual: A 4x3 DataFrame table displaying:
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>          Col_A   Col_B   Col_C
+row_0      10      20      30
+row_1      40      50      60
+row_2      70      80      90
+row_3     100     110     120
+</code></pre></div></td></tr></table></div>
+
+    Callouts (numbered, with leader lines):
+
+    1. INDEX (pointing to row labels on left)
+       - "Row labels - can be numbers, strings, or dates"
+       - "Access with: df.index"
+       - Color: Blue
+
+    2. COLUMNS (pointing to column headers)
+       - "Column names - usually strings"
+       - "Access with: df.columns"
+       - Color: Green
+
+    3. ROW (highlighting entire row_1)
+       - "One observation/record"
+       - "Access with: df.loc['row_1'] or df.iloc[1]"
+       - Color: Orange
+
+    4. COLUMN (highlighting entire Col_B)
+       - "One variable/feature"
+       - "Access with: df['Col_B']"
+       - Color: Purple
+
+    5. CELL (highlighting intersection of row_1 and Col_B = 50)
+       - "Single value"
+       - "Access with: df.loc['row_1', 'Col_B']"
+       - Color: Red
+
+    6. VALUES (pointing to all numbers)
+       - "The actual data (NumPy array underneath)"
+       - "Access with: df.values"
+       - Color: Gray
+
+    Interactive elements:
+    - Hover over each component to highlight it
+    - Click to see code example for accessing that component
+    - Toggle "Show Code" to see access patterns
+
+    Visual style: Clean spreadsheet look with color highlights
+
+    Implementation: HTML/CSS with JavaScript interactivity
+</details>
+
+<h3 id="understanding-index-columns-and-rows">Understanding Index, Columns, and Rows</h3>
+<p>Let's clarify these fundamental concepts:</p>
+<p><strong>Index</strong>: The row labels of a DataFrame. Think of it as the "name tag" for each row.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># Index([&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;], dtype=&#39;object&#39;)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Columns</strong>: The column headers—the names of your variables.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># Index([&#39;Math&#39;, &#39;Science&#39;, &#39;English&#39;], dtype=&#39;object&#39;)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Row</strong>: A single horizontal slice—one observation with values for all columns.</p>
+<p><strong>Column</strong>: A single vertical slice—one variable with values for all observations. When you extract a single column, you get a Series!</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Get a single column (returns a Series)</span>
+<span class="n">math_scores</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Math&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">math_scores</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;pandas.core.series.Series&#39;&gt;</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">DataFrame vs Series</p>
+<p>A DataFrame is essentially a collection of Series that share the same index. Each column is a Series. Understanding this relationship will help you navigate pandas intuitively.</p>
+</div>
+<h2 id="loading-real-data-csv-files">Loading Real Data: CSV Files</h2>
+<p>Theory is great, but data science is about DOING. Let's load some real data!</p>
+<p><strong>Data loading</strong> is the process of reading data from external sources into Python. The most common format you'll encounter is CSV.</p>
+<h3 id="what-are-csv-files">What Are CSV Files?</h3>
+<p><strong>CSV</strong> stands for Comma-Separated Values. It's a simple text format where:</p>
+<ul>
+<li>Each line is one row of data</li>
+<li>Values in a row are separated by commas</li>
+<li>The first line usually contains column names</li>
+</ul>
+<p>Here's what a CSV file looks like inside:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>name,age,city,score
+Alice,25,New York,85
+Bob,30,Los Angeles,92
+Charlie,22,Chicago,78
+Diana,28,Houston,95
+</code></pre></div></td></tr></table></div>
+<p>CSV files are everywhere because they're simple, human-readable, and work with almost any software. Excel, Google Sheets, databases—they all speak CSV.</p>
+<h3 id="the-read_csv-method">The read_csv Method</h3>
+<p>The <strong>read_csv</strong> function is your gateway to loading CSV data:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load a CSV file into a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># That&#39;s it! df now contains all your data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>      name  age         city  score
+0    Alice   25     New York     85
+1      Bob   30  Los Angeles     92
+2  Charlie   22      Chicago     78
+3    Diana   28      Houston     95
+</code></pre></div></td></tr></table></div></p>
+<p><code>read_csv</code> is incredibly smart. It automatically:</p>
+<ul>
+<li>Detects the delimiter (comma, tab, etc.)</li>
+<li>Identifies the header row</li>
+<li>Infers data types for each column</li>
+<li>Handles missing values</li>
+</ul>
+<p>For special situations, you have options:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Specify a different delimiter</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Tab-separated</span>
+
+<span class="c1"># Use a different row as header</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Second row as header</span>
+
+<span class="c1"># No header in file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+
+<span class="c1"># Set a column as index</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">File Paths Matter</p>
+<p><code>read_csv("data.csv")</code> looks for the file in your current working directory. If the file is elsewhere, use the full path: <code>read_csv("/path/to/data.csv")</code> or a relative path: <code>read_csv("../data/data.csv")</code>.</p>
+</div>
+<h4 id="diagram-data-loading-workflow">Diagram: Data Loading Workflow</h4>
+<details markdown="1">
+    <summary>CSV Loading Workflow</summary>
+    Type: workflow
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students understand the complete process from CSV file to usable DataFrame
+
+    Purpose: Visualize the journey of data from file to DataFrame
+
+    Visual style: Horizontal flowchart with icons
+
+    Steps:
+
+    1. CSV FILE ON DISK
+       Icon: Document with ".csv" label
+       Label: "Raw text file with comma-separated values"
+       Color: Gray
+
+    2. pd.read_csv()
+       Icon: Pandas logo with arrow
+       Label: "Pandas reads and parses the file"
+       Color: Orange
+
+    3. PARSING HAPPENS
+       Icon: Gears turning
+       Sub-steps shown below:
+       - "Detect delimiter"
+       - "Read header row"
+       - "Infer data types"
+       - "Handle missing values"
+       Color: Blue
+
+    4. DATAFRAME CREATED
+       Icon: Table grid
+       Label: "Data now in memory as DataFrame"
+       Color: Green
+
+    5. READY FOR ANALYSIS
+       Icon: Sparkles/magic wand
+       Label: "Filter, analyze, visualize!"
+       Color: Gold
+
+    Annotations:
+    - Below step 1: "Could be 100 rows or 100 million"
+    - Below step 4: "Lives in computer memory (RAM)"
+    - Below step 5: "This is where the fun begins"
+
+    Error path (branching from step 2):
+    - "FileNotFoundError" → "Check your file path!"
+    - "ParserError" → "Check file format and delimiter"
+
+    Interactive elements:
+    - Hover each step for detailed explanation
+    - Click to see common errors at each stage
+
+    Implementation: SVG with CSS animations
+</details>
+
+<h2 id="data-inspection-getting-to-know-your-data">Data Inspection: Getting to Know Your Data</h2>
+<p>You've loaded a dataset. Now what? Before doing any analysis, you need to understand what you're working with. This is <strong>data inspection</strong>—exploring your data to understand its structure, size, types, and content.</p>
+<p>Think of it like this: you've received a mysterious package. Before using what's inside, you'd want to know how big it is, what's in it, and whether anything's broken. Same with data.</p>
+<h3 id="the-head-method-peek-at-the-beginning">The head Method: Peek at the Beginning</h3>
+<p>The <strong>head method</strong> shows you the first few rows of your DataFrame. It's usually the first thing you'll do after loading data.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Show first 5 rows (default)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="c1"># Show first 10 rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>      name  age         city  score
+0    Alice   25     New York     85
+1      Bob   30  Los Angeles     92
+2  Charlie   22      Chicago     78
+3    Diana   28      Houston     95
+4      Eve   26       Boston     88
+</code></pre></div></td></tr></table></div></p>
+<p>Why is this useful? Real datasets often have thousands or millions of rows. You can't print the whole thing. <code>head()</code> gives you a quick preview without overwhelming your screen.</p>
+<h3 id="the-tail-method-check-the-end">The tail Method: Check the End</h3>
+<p>The <strong>tail method</strong> shows the last few rows. It's great for verifying that your data loaded completely and for seeing recent entries in time-series data.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Show last 5 rows (default)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+
+<span class="c1"># Show last 3 rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Head and Tail Together</p>
+<p>Use <code>head()</code> AND <code>tail()</code> together. Sometimes data has different formatting at the beginning vs. end, or there are footer rows you need to handle. Looking at both ends catches issues early.</p>
+</div>
+<h3 id="the-shape-attribute-know-your-dimensions">The shape Attribute: Know Your Dimensions</h3>
+<p>The <strong>shape attribute</strong> tells you the dimensions of your DataFrame—how many rows and columns it has.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># Output: (1000, 15)</span>
+<span class="c1"># This means: 1000 rows, 15 columns</span>
+</code></pre></div></td></tr></table></div>
+<p>Shape is crucial because:</p>
+<ul>
+<li>It tells you how much data you're working with</li>
+<li>It helps identify if data loaded correctly</li>
+<li>It's used for splitting data in machine learning</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Unpack shape into variables</span>
+<span class="n">num_rows</span><span class="p">,</span> <span class="n">num_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset has </span><span class="si">{</span><span class="n">num_rows</span><span class="si">}</span><span class="s2"> observations and </span><span class="si">{</span><span class="n">num_cols</span><span class="si">}</span><span class="s2"> variables&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="the-info-method-get-the-full-picture">The info Method: Get the Full Picture</h3>
+<p>The <strong>info method</strong> provides a complete summary of your DataFrame:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   name    1000 non-null   object
+ 1   age     998 non-null    int64
+ 2   city    1000 non-null   object
+ 3   score   995 non-null    float64
+Dtypes: float64(1), int64(1), object(2)
+memory usage: 31.4+ KB
+</code></pre></div></td></tr></table></div></p>
+<p>This tells you:</p>
+<ul>
+<li>Total number of entries (rows)</li>
+<li>Column names and their order</li>
+<li>Non-null counts (how many values aren't missing)</li>
+<li>Data types for each column</li>
+<li>Memory usage</li>
+</ul>
+<p>See those "non-null" counts? If they're less than the total rows, you have missing data. The <code>age</code> column has 998 non-null out of 1000—meaning 2 values are missing. That's important to know!</p>
+<h3 id="the-describe-method-statistical-summary">The describe Method: Statistical Summary</h3>
+<p>The <strong>describe method</strong> gives you summary statistics for all numeric columns:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>              age        score
+count  998.000000   995.000000
+mean    27.500000    85.200000
+std      5.230000    10.150000
+min     18.000000    55.000000
+25%     23.000000    78.000000
+50%     27.000000    85.000000
+75%     32.000000    93.000000
+max     45.000000   100.000000
+</code></pre></div></td></tr></table></div></p>
+<p>In one command, you get:</p>
+<ul>
+<li><strong>count</strong>: Number of non-null values</li>
+<li><strong>mean</strong>: Average value</li>
+<li><strong>std</strong>: Standard deviation (spread)</li>
+<li><strong>min/max</strong>: Smallest and largest values</li>
+<li><strong>25%, 50%, 75%</strong>: Quartiles (distribution shape)</li>
+</ul>
+<p>This is your first glimpse at what the data looks like statistically. Is the average score 85 or 50? Are ages ranging from 18-25 or 18-80? <code>describe()</code> answers these questions instantly.</p>
+<h4 id="diagram-data-inspection-command-center">Diagram: Data Inspection Command Center</h4>
+<details markdown="1">
+    <summary>Data Inspection Dashboard MicroSim</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Let students practice using inspection methods and see results immediately
+
+    Canvas layout (800x600px):
+    - Top area (800x100): Sample DataFrame display
+    - Left panel (300x500): Method buttons
+    - Right panel (500x500): Output display area
+
+    Sample DataFrame (displayed at top):
+    Small 8x5 DataFrame with realistic data including:
+    - name (strings)
+    - age (integers with 1 missing)
+    - city (strings)
+    - score (floats with 1 missing)
+    - active (booleans)
+
+    Method buttons (left panel):
+    - `.head()` with slider for n (1-8)
+    - `.tail()` with slider for n (1-8)
+    - `.shape`
+    - `.info()`
+    - `.describe()`
+    - `.columns`
+    - `.dtypes`
+
+    Output display (right panel):
+    - Shows result of selected method
+    - Formatted to look like Jupyter output
+    - Syntax highlighting for code
+
+    Interactive controls:
+    - Click method button to execute
+    - Adjust slider for head/tail n parameter
+    - "Show Code" toggle displays the Python code
+    - "Reset" button returns to initial state
+
+    Behavior:
+    - Clicking method shows its output
+    - Output updates immediately when parameters change
+    - Code panel shows exact command used
+    - Tooltips explain what each method returns
+
+    Educational annotations:
+    - For head/tail: "Notice: only shows [n] rows!"
+    - For shape: "(rows, columns) - easy to remember!"
+    - For info: "Look for non-null counts to find missing data"
+    - For describe: "Only numeric columns shown by default"
+
+    Visual style: IDE/notebook aesthetic with dark mode option
+
+    Implementation: p5.js with precomputed outputs
+</details>
+
+<h2 id="data-selection-getting-what-you-need">Data Selection: Getting What You Need</h2>
+<p>Now for the really powerful stuff. <strong>Data selection</strong> is how you extract specific pieces from your DataFrame—particular rows, columns, or combinations. This is like having X-ray vision for your data.</p>
+<h3 id="selecting-columns">Selecting Columns</h3>
+<p>The most common selection: grabbing specific columns.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Select a single column (returns a Series)</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+
+<span class="c1"># Select multiple columns (returns a DataFrame)</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]]</span>
+</code></pre></div></td></tr></table></div>
+<p>Notice the double brackets for multiple columns: <code>df[["col1", "col2"]]</code>. This is a common source of errors—remember it!</p>
+<h3 id="selecting-rows-by-position-iloc">Selecting Rows by Position: iloc</h3>
+<p>Use <strong>iloc</strong> (integer location) to select rows by their position number:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># First row</span>
+<span class="n">first_row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># First three rows</span>
+<span class="n">first_three</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Specific rows</span>
+<span class="n">some_rows</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+
+<span class="c1"># Rows and columns by position</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># First row, second column</span>
+</code></pre></div></td></tr></table></div>
+<p>Think of <code>iloc</code> as "<strong>i</strong>nteger <strong>loc</strong>ation"—it works with numbers.</p>
+<h3 id="selecting-rows-by-label-loc">Selecting Rows by Label: loc</h3>
+<p>Use <strong>loc</strong> to select rows by their index labels:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># If index is default (0, 1, 2...)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Same as iloc[0]</span>
+
+<span class="c1"># If index is custom (names)</span>
+<span class="n">alice_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>
+
+<span class="c1"># Multiple labels</span>
+<span class="n">some_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Rows AND columns by label</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]</span>  <span class="c1"># Alice&#39;s score</span>
+</code></pre></div></td></tr></table></div>
+<p>Think of <code>loc</code> as "<strong>l</strong>abel <strong>loc</strong>ation"—it works with names.</p>
+<h3 id="boolean-selection-the-real-superpower">Boolean Selection: The Real Superpower</h3>
+<p>Here's where it gets amazing. You can select rows based on conditions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># All rows where age &gt; 25</span>
+<span class="n">older_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">]</span>
+
+<span class="c1"># All rows where score &gt;= 90</span>
+<span class="n">high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">]</span>
+
+<span class="c1"># Combine conditions with &amp; (and) or | (or)</span>
+<span class="n">young_high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)]</span>
+
+<span class="c1"># Select specific cities</span>
+<span class="n">ny_and_la</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">])]</span>
+</code></pre></div></td></tr></table></div>
+<p>This is incredibly powerful. Need all customers who spent over $100 in the last month? One line. All students who failed the exam? One line. All products with low inventory? One line.</p>
+<table>
+<thead>
+<tr>
+<th>Selection Type</th>
+<th>Syntax</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single column</td>
+<td><code>df["col"]</code></td>
+<td>Series</td>
+</tr>
+<tr>
+<td>Multiple columns</td>
+<td><code>df[["col1", "col2"]]</code></td>
+<td>DataFrame</td>
+</tr>
+<tr>
+<td>Rows by position</td>
+<td><code>df.iloc[0]</code> or <code>df.iloc[0:5]</code></td>
+<td>Series or DataFrame</td>
+</tr>
+<tr>
+<td>Rows by label</td>
+<td><code>df.loc["label"]</code></td>
+<td>Series or DataFrame</td>
+</tr>
+<tr>
+<td>Boolean filter</td>
+<td><code>df[df["col"] &gt; value]</code></td>
+<td>DataFrame</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-data-selection-playground-microsim">Diagram: Data Selection Playground MicroSim</h4>
+<details markdown="1">
+    <summary>Interactive Data Selection Playground</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Let students practice different selection methods and see results in real-time
+
+    Canvas layout (850x600px):
+    - Top area (850x200): Full DataFrame display (10 rows x 5 cols)
+    - Bottom left (400x400): Selection builder
+    - Bottom right (450x400): Results display
+
+    Sample DataFrame:
+    10 rows with columns: name, age, city, score, active
+    Mix of data types and some interesting patterns to query
+
+    Selection builder (tabs):
+
+    Tab 1: "Column Selection"
+    - Checkboxes for each column
+    - Shows: df[["selected", "columns"]]
+
+    Tab 2: "Row Selection (iloc)"
+    - Start index input
+    - End index input
+    - Shows: df.iloc[start:end]
+
+    Tab 3: "Row Selection (loc)"
+    - Dropdown of index labels
+    - Multi-select for multiple labels
+    - Shows: df.loc[[labels]]
+
+    Tab 4: "Boolean Filter"
+    - Column dropdown
+    - Operator dropdown (>, <, ==, >=, <=, !=)
+    - Value input
+    - "Add condition" button (for combining)
+    - Shows: df[df["col"] > value]
+
+    Results display:
+    - Shows selected data as formatted table
+    - Shows shape of result
+    - Shows code used to generate selection
+    - Highlights selected cells in original DataFrame
+
+    Interactive controls:
+    - Real-time update as selections change
+    - "Copy Code" button
+    - "Reset" button
+    - Syntax examples shown as hints
+
+    Educational features:
+    - Color coding: selected rows/columns highlighted in original
+    - Error messages for invalid selections
+    - Hints: "Try selecting students with score > 80"
+
+    Challenges (optional):
+    - "Select all students from New York"
+    - "Find the youngest student"
+    - "Get names of students who passed (score >= 70)"
+
+    Implementation: p5.js or React with pandas-like simulation
+</details>
+
+<h2 id="putting-it-all-together-a-complete-workflow">Putting It All Together: A Complete Workflow</h2>
+<p>Let's walk through a real data exploration workflow, combining everything you've learned:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Step 1: Load the data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;student_data.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 2: Quick peek</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First few rows:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Step 3: Check dimensions</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dataset shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 4: Get detailed info</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dataset info:&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+
+<span class="c1"># Step 5: Statistical summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Statistical summary:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="c1"># Step 6: Ask questions with selection</span>
+<span class="c1"># Who are the high performers?</span>
+<span class="n">top_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top students: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">top_students</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># What&#39;s the average score by city?</span>
+<span class="n">city_scores</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Average score by city:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">city_scores</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>This workflow—load, inspect, explore, select—is the foundation of every data science project. Master it, and you're ready for anything.</p>
+<div class="admonition success">
+<p class="admonition-title">Achievement Unlocked: Data Wrangler</p>
+<p>You can now load data, inspect its structure, and select exactly what you need. These skills alone put you ahead of most people who just "open files in Excel." You're thinking like a data scientist!</p>
+</div>
+<h2 id="common-patterns-and-pitfalls">Common Patterns and Pitfalls</h2>
+<p>Before we wrap up, here are patterns you'll use constantly and pitfalls to avoid:</p>
+<h3 id="patterns-to-remember">Patterns to Remember</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Load and immediately inspect</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># or df.info() or df.shape</span>
+
+<span class="c1"># Chain methods for quick exploration</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+
+<span class="c1"># Check for missing values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Get unique values in a column</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>  <span class="c1"># count of unique values</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># frequency of each value</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="pitfalls-to-avoid">Pitfalls to Avoid</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># WRONG: Single brackets for multiple columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span> <span class="s2">&quot;col2&quot;</span><span class="p">]</span>  <span class="c1"># Error!</span>
+
+<span class="c1"># RIGHT: Double brackets</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span> <span class="s2">&quot;col2&quot;</span><span class="p">]]</span>
+
+<span class="c1"># WRONG: Using iloc with labels</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>  <span class="c1"># Error!</span>
+
+<span class="c1"># RIGHT: Use loc for labels</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>
+
+<span class="c1"># WRONG: Forgetting parentheses in boolean logic</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>  <span class="c1"># Error!</span>
+
+<span class="c1"># RIGHT: Wrap each condition in parentheses</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>
+</code></pre></div></td></tr></table></div>
+<details class="question">
+<summary>Chapter 3 Checkpoint: Test Your Understanding</summary>
+<p><strong>Question:</strong> You have a DataFrame <code>df</code> with columns: student_id, name, major, gpa, credits. Write code to:
+1. Find all students with GPA above 3.5
+2. Select only the name and major columns
+3. Count how many students are in each major</p>
+<p><strong>Click to reveal answer:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 1. High GPA students</span>
+<span class="n">high_gpa</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gpa&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">3.5</span><span class="p">]</span>
+
+<span class="c1"># 2. Name and major only</span>
+<span class="n">names_majors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;major&quot;</span><span class="p">]]</span>
+
+<span class="c1"># 3. Count by major</span>
+<span class="n">major_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;major&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Python's built-in structures</strong> (lists, dictionaries, tuples) are the building blocks, but pandas structures are purpose-built for data science.</p>
+</li>
+<li>
+<p><strong>Lists</strong> are ordered and mutable—use them when order matters and you need flexibility.</p>
+</li>
+<li>
+<p><strong>Dictionaries</strong> provide instant key-based lookup—perfect for mapping relationships.</p>
+</li>
+<li>
+<p><strong>Tuples</strong> are immutable—use them for data that shouldn't change.</p>
+</li>
+<li>
+<p><strong>Pandas Series</strong> is a 1D labeled array—like a list with an index attached.</p>
+</li>
+<li>
+<p><strong>Pandas DataFrame</strong> is a 2D labeled table—the workhorse of data science.</p>
+</li>
+<li>
+<p><strong>CSV files</strong> are the universal data exchange format—<code>pd.read_csv()</code> is your friend.</p>
+</li>
+<li>
+<p><strong>Inspection methods</strong> (<code>head()</code>, <code>tail()</code>, <code>shape</code>, <code>info()</code>, <code>describe()</code>) help you understand your data before analyzing it.</p>
+</li>
+<li>
+<p><strong>Data selection</strong> with <code>loc</code>, <code>iloc</code>, and boolean indexing lets you extract exactly what you need.</p>
+</li>
+<li>
+<p>The <strong>load → inspect → select → analyze</strong> workflow is the foundation of every data science project.</p>
+</li>
+</ol>
+<p>You now have the containers for your data superpower. In the next chapter, you'll learn to clean and prepare that data—because real-world data is messy, and heroes clean up messes. Onward!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-python-environment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python Environment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Python Environment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-data-cleaning/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Cleaning">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Data Cleaning
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

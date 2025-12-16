@@ -1,0 +1,3616 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Building your data science headquarters - every superhero needs a base of operations">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/02-python-environment/">
+      
+      
+        <link rel="prev" href="../01-intro-to-data-science/">
+      
+      
+        <link rel="next" href="../03-python-data-structures/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Python Environment and Setup - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-RTBCWGJKKR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-RTBCWGJKKR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-RTBCWGJKKR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Python Environment and Setup - AI Based Data Science with Python" >
+      
+        <meta  property="og:description"  content="Building your data science headquarters - every superhero needs a base of operations" >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/02-python-environment/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/data-science-course/chapters/02-python-environment/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Python Environment and Setup - AI Based Data Science with Python" >
+      
+        <meta  name="twitter:description"  content="Building your data science headquarters - every superhero needs a base of operations" >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/02-python-environment/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-environment-and-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Environment and Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-data-science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Data Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python Environment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python Environment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-data-science-headquarters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building Your Data Science Headquarters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Your Data Science Headquarters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-science-environment-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Science Environment Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-installation-powering-up-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Installation: Powering Up Your System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Installation: Powering Up Your System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-your-python-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing Your Python Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-management-your-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Management: Your Supply Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Management: Your Supply Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pip-the-original-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pip: The Original Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-the-data-scientists-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda: The Data Scientist's Choice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conda: The Data Scientist's Choice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-package-manager-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Package Manager Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-environments-your-clean-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Environments: Your Clean Room
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Environments: Your Clean Room">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-virtual-environments-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Virtual Environments Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-environments-your-mission-specific-loadout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda Environments: Your Mission-Specific Loadout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conda Environments: Your Mission-Specific Loadout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-virtual-environment-isolation-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Virtual Environment Isolation MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ide-setup-your-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDE Setup: Your Command Center
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE Setup: Your Command Center">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-the-modern-heros-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code: The Modern Hero's Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-vs-code-for-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up VS Code for Data Science
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up VS Code for Data Science">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vs-code-interface-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: VS Code Interface Tour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-notebooks-your-interactive-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter Notebooks: Your Interactive Lab
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jupyter Notebooks: Your Interactive Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-notebooks-are-perfect-for-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Notebooks Are Perfect for Data Science
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting Jupyter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook-cells-building-blocks-of-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notebook Cells: Building Blocks of Discovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notebook Cells: Building Blocks of Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Cells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markdown Cells
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown Cells">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-notebook-cell-types-interactive-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Notebook Cell Types Interactive Demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cell-execution-bringing-your-code-to-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell Execution: Bringing Your Code to Life
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cell Execution: Bringing Your Code to Life">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Cells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-order-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Order Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kernel-your-python-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Kernel: Your Python Brain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Kernel: Your Python Brain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kernel-state-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kernel State Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-statements-summoning-your-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Statements: Summoning Your Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import Statements: Summoning Your Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-import-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Import Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-data-science-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Data Science Imports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-during-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Happens During Import?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-libraries-your-superpower-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Libraries: Your Superpower Extensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Libraries: Your Superpower Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-essential-five" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Essential Five
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-broader-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Broader Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Broader Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-python-data-science-ecosystem-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Python Data Science Ecosystem Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-your-first-complete-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: Your First Complete Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: Your First Complete Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install Anaconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create Your Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Install VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-your-first-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create Your First Notebook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Python not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Module not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-died-in-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Kernel died" in Jupyter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-doesnt-see-my-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code doesn't see my environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everything is slow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-python-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-data-cleaning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-statistical-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistical Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-simple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-multiple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-numpy-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-nonlinear-models-regularization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-linear Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-intro-to-machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro to Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-neural-networks-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks and PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sample GenAI Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-data-science-headquarters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building Your Data Science Headquarters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Your Data Science Headquarters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-science-environment-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Science Environment Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-installation-powering-up-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Installation: Powering Up Your System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Installation: Powering Up Your System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-your-python-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing Your Python Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-management-your-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Management: Your Supply Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Management: Your Supply Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pip-the-original-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pip: The Original Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-the-data-scientists-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda: The Data Scientist's Choice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conda: The Data Scientist's Choice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-package-manager-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Package Manager Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-environments-your-clean-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Environments: Your Clean Room
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Environments: Your Clean Room">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-virtual-environments-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Virtual Environments Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-environments-your-mission-specific-loadout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda Environments: Your Mission-Specific Loadout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conda Environments: Your Mission-Specific Loadout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-virtual-environment-isolation-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Virtual Environment Isolation MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ide-setup-your-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDE Setup: Your Command Center
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE Setup: Your Command Center">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-the-modern-heros-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code: The Modern Hero's Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-vs-code-for-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up VS Code for Data Science
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up VS Code for Data Science">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vs-code-interface-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: VS Code Interface Tour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-notebooks-your-interactive-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter Notebooks: Your Interactive Lab
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jupyter Notebooks: Your Interactive Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-notebooks-are-perfect-for-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Notebooks Are Perfect for Data Science
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting Jupyter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook-cells-building-blocks-of-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notebook Cells: Building Blocks of Discovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notebook Cells: Building Blocks of Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Cells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markdown Cells
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown Cells">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-notebook-cell-types-interactive-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Notebook Cell Types Interactive Demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cell-execution-bringing-your-code-to-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell Execution: Bringing Your Code to Life
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cell Execution: Bringing Your Code to Life">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Cells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-order-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Order Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kernel-your-python-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Kernel: Your Python Brain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Kernel: Your Python Brain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kernel-state-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kernel State Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-statements-summoning-your-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Statements: Summoning Your Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import Statements: Summoning Your Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-import-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Import Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-data-science-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Data Science Imports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-during-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Happens During Import?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-libraries-your-superpower-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Libraries: Your Superpower Extensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Libraries: Your Superpower Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-essential-five" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Essential Five
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-broader-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Broader Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Broader Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-python-data-science-ecosystem-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Python Data Science Ecosystem Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-your-first-complete-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: Your First Complete Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: Your First Complete Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install Anaconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create Your Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Install VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-your-first-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create Your First Notebook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Python not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Module not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-died-in-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Kernel died" in Jupyter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-doesnt-see-my-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code doesn't see my environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everything is slow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/02-python-environment/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="python-environment-and-setup">Python Environment and Setup</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter guides students through setting up a complete Python development environment for data science. Students will install Python, learn about package management with pip and conda, set up virtual environments, and configure their IDE. The chapter also covers Jupyter notebooks in depth, including working with cells, kernels, and importing libraries. By the end of this chapter, students will have a fully functional data science development environment.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<ol>
+<li>Python Installation</li>
+<li>Package Management</li>
+<li>Pip</li>
+<li>Conda Environment</li>
+<li>Virtual Environment</li>
+<li>IDE Setup</li>
+<li>VS Code</li>
+<li>Jupyter Notebooks</li>
+<li>Notebook Cells</li>
+<li>Code Cell</li>
+<li>Markdown Cell</li>
+<li>Cell Execution</li>
+<li>Kernel</li>
+<li>Import Statement</li>
+<li>Python Libraries</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-data-science/">Chapter 1: Introduction to Data Science</a></li>
+</ul>
+<hr />
+<h2 id="building-your-data-science-headquarters">Building Your Data Science Headquarters</h2>
+<p>Every superhero needs a headquarters. Batman has the Batcave. Iron Man has Stark Tower. The Avengers have their compound. You? You're about to build something just as cool—your personal data science command center.</p>
+<p>In Chapter 1, you discovered your new superpower: the ability to extract insights from data. But a superpower without the right tools is like having super strength but nowhere to punch. This chapter is where you assemble your utility belt, stock your armory, and set up the base of operations where all your data science magic will happen.</p>
+<p>By the end of this chapter, you'll have:</p>
+<ul>
+<li>Python installed and ready to go</li>
+<li>A professional code editor configured for data science</li>
+<li>Jupyter notebooks for interactive exploration</li>
+<li>Package management skills to add new tools whenever you need them</li>
+<li>A clean, organized environment that won't cause headaches later</li>
+</ul>
+<p>Let's build your headquarters!</p>
+<h4 id="diagram-data-science-environment-architecture">Diagram: Data Science Environment Architecture</h4>
+<details markdown="1">
+    <summary>Data Science Environment Architecture</summary>
+    Type: diagram
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students visualize how all components of their data science environment fit together
+
+    Purpose: Show the layered architecture of a data science setup
+
+    Layout: Vertical stack diagram showing layers from bottom to top
+
+    Layers (bottom to top):
+    1. OPERATING SYSTEM (base layer)
+       - Windows, macOS, or Linux
+       - Color: Dark gray
+       - Icon: Computer
+
+    2. PYTHON INSTALLATION
+       - Python interpreter (the engine)
+       - Color: Blue (Python blue)
+       - Icon: Python logo
+
+    3. PACKAGE MANAGER
+       - pip or conda (the supply chain)
+       - Arrows showing packages flowing in
+       - Color: Orange
+       - Icon: Package box
+
+    4. VIRTUAL ENVIRONMENT
+       - Isolated workspace (the clean room)
+       - Shows boundary separating from other environments
+       - Color: Green
+       - Icon: Bubble/container
+
+    5. PYTHON LIBRARIES
+       - pandas, numpy, matplotlib (the tools)
+       - Multiple small icons representing different libraries
+       - Color: Various colors for each library
+
+    6. IDE / JUPYTER (top layer)
+       - VS Code or Jupyter Notebook (the cockpit)
+       - Color: Purple
+       - Icon: Code editor window
+
+    Side annotations:
+    - Arrow from user to IDE: "You work here"
+    - Arrow from libraries to IDE: "Tools you use"
+    - Bracket around virtual environment: "Keeps projects separate"
+
+    Interactive elements:
+    - Hover over each layer to see description and purpose
+    - Click to see common problems at each layer
+
+    Visual style: Modern, clean boxes with rounded corners, superhero HQ aesthetic
+
+    Implementation: SVG with CSS hover effects
+</details>
+
+<h2 id="python-installation-powering-up-your-system">Python Installation: Powering Up Your System</h2>
+<p><strong>Python installation</strong> is the first and most critical step. Python is the programming language that powers your data science work—it's the engine of your entire operation. Without it, nothing else works.</p>
+<p>Think of Python like electricity in your headquarters. You can have the fanciest equipment in the world, but without power, it's all just expensive furniture. Installing Python gives your computer the ability to understand and execute Python code.</p>
+<h3 id="choosing-your-python-distribution">Choosing Your Python Distribution</h3>
+<p>Here's where it gets interesting: there are actually several ways to install Python. The two main approaches are:</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Best For</th>
+<th>Includes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python.org (Official)</td>
+<td>Minimalists, learning basics</td>
+<td>Just Python, nothing extra</td>
+</tr>
+<tr>
+<td>Anaconda Distribution</td>
+<td>Data scientists (that's you!)</td>
+<td>Python + 250+ data science packages</td>
+</tr>
+</tbody>
+</table>
+<p>For this course, we <strong>strongly recommend Anaconda</strong>. Why? Because it comes pre-loaded with almost everything you'll need—pandas, NumPy, matplotlib, Jupyter, and hundreds of other tools. It's like buying a fully furnished headquarters instead of an empty warehouse.</p>
+<div class="admonition tip">
+<p class="admonition-title">Superhero Shortcut</p>
+<p>Installing Anaconda is like getting a starter kit with all the gadgets already assembled. You could build everything from scratch, but why? Batman didn't forge his own Batarangs (okay, maybe he did, but you get the point).</p>
+</div>
+<h3 id="installation-steps">Installation Steps</h3>
+<p>The installation process is straightforward:</p>
+<ol>
+<li>Visit <a href="https://www.anaconda.com/download">anaconda.com</a> and download the installer for your operating system</li>
+<li>Run the installer and accept the default options</li>
+<li>Wait for installation to complete (it might take a few minutes—grab a snack)</li>
+<li>Open a terminal or Anaconda Prompt to verify it worked</li>
+</ol>
+<p>To verify your installation, open a terminal and type:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>--version
+</code></pre></div></td></tr></table></div>
+<p>You should see something like <code>Python 3.11.5</code> (the exact version may differ). If you see an error, don't panic—check the troubleshooting section at the end of this chapter.</p>
+<h2 id="package-management-your-supply-chain">Package Management: Your Supply Chain</h2>
+<p><strong>Package management</strong> is how you add new tools and capabilities to your Python installation. In the superhero world, this is like having access to a warehouse full of gadgets you can requisition whenever you need them.</p>
+<p>Python's real power comes from its ecosystem of <strong>Python libraries</strong>—pre-written code packages that handle specific tasks. Need to work with data tables? There's a library for that (pandas). Need to create visualizations? There's a library for that (matplotlib). Need to do machine learning? Yep, library for that too (scikit-learn).</p>
+<p>But how do you get these libraries? That's where package managers come in.</p>
+<h3 id="pip-the-original-package-manager">Pip: The Original Package Manager</h3>
+<p><strong>Pip</strong> stands for "Pip Installs Packages" (yes, it's a recursive acronym—programmers think they're funny). It's the original Python package manager and comes built into Python.</p>
+<p>Using pip is simple. Open a terminal and type:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pandas
+</code></pre></div></td></tr></table></div>
+<p>That's it! Pip will download pandas and all its dependencies, install them, and you're ready to go. Need to install multiple packages? Just list them:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>seaborn
+</code></pre></div></td></tr></table></div>
+<p>Common pip commands you'll use:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pip install package_name</code></td>
+<td>Install a package</td>
+</tr>
+<tr>
+<td><code>pip uninstall package_name</code></td>
+<td>Remove a package</td>
+</tr>
+<tr>
+<td><code>pip list</code></td>
+<td>Show all installed packages</td>
+</tr>
+<tr>
+<td><code>pip show package_name</code></td>
+<td>Show details about a package</td>
+</tr>
+<tr>
+<td><code>pip install --upgrade package_name</code></td>
+<td>Update to latest version</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conda-the-data-scientists-choice">Conda: The Data Scientist's Choice</h3>
+<p>While pip is great, data scientists often prefer <strong>conda</strong>—the package manager that comes with Anaconda. Conda does everything pip does, plus it manages non-Python dependencies and creates isolated environments (more on that soon).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>pandas
+</code></pre></div></td></tr></table></div>
+<p>The syntax is almost identical to pip. So why use conda? Because some data science packages have complicated dependencies involving C libraries, Fortran code, or other system-level components. Conda handles all of that automatically, while pip sometimes struggles.</p>
+<div class="admonition warning">
+<p class="admonition-title">Pick One (Mostly)</p>
+<p>Using both pip and conda in the same environment can sometimes cause conflicts—like having two quarterbacks calling different plays. In general, prefer conda for data science packages. Use pip only when a package isn't available through conda.</p>
+</div>
+<h4 id="diagram-package-manager-workflow">Diagram: Package Manager Workflow</h4>
+<details markdown="1">
+    <summary>How Package Managers Work</summary>
+    Type: workflow
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students understand the flow of installing and using packages
+
+    Purpose: Visualize the package installation process from command to usage
+
+    Visual style: Horizontal flowchart with icons
+
+    Steps:
+
+    1. USER TYPES COMMAND
+       Icon: Keyboard
+       Example: "pip install pandas"
+       Color: Blue
+
+    2. PACKAGE MANAGER SEARCHES
+       Icon: Magnifying glass
+       Label: "Searches PyPI (pip) or Anaconda Cloud (conda)"
+       Color: Orange
+
+    3. DOWNLOADS PACKAGE
+       Icon: Download arrow
+       Label: "Downloads package + all dependencies"
+       Color: Green
+
+    4. INSTALLS TO ENVIRONMENT
+       Icon: Folder with checkmark
+       Label: "Saves files to your Python environment"
+       Color: Purple
+
+    5. READY TO IMPORT
+       Icon: Python logo with sparkles
+       Label: "import pandas as pd"
+       Color: Gold
+
+    Annotations:
+    - Between steps 2-3: "Internet connection required"
+    - Below step 3: "May download multiple packages (dependencies)"
+
+    Interactive elements:
+    - Hover each step to see common errors and solutions
+    - Animation: Package icon traveling through pipeline
+
+    Implementation: SVG with CSS animations
+</details>
+
+<h2 id="virtual-environments-your-clean-room">Virtual Environments: Your Clean Room</h2>
+<p>Here's a scenario that trips up many beginners: You're working on two different projects. Project A needs pandas version 1.5, but Project B needs pandas version 2.0. If you install version 2.0, Project A breaks. Install version 1.5, and Project B breaks. What do you do?</p>
+<p>The answer: <strong>virtual environments</strong>.</p>
+<p>A <strong>virtual environment</strong> is an isolated Python installation where you can install packages without affecting your main system or other projects. Think of it as having multiple separate headquarters, each set up exactly how one specific mission requires.</p>
+<h3 id="why-virtual-environments-matter">Why Virtual Environments Matter</h3>
+<p>Without virtual environments:</p>
+<ul>
+<li>Package conflicts are inevitable</li>
+<li>Upgrading one project can break another</li>
+<li>Your system Python gets cluttered with random packages</li>
+<li>Reproducing your work on another computer becomes a nightmare</li>
+</ul>
+<p>With virtual environments:</p>
+<ul>
+<li>Each project has exactly the packages it needs</li>
+<li>No conflicts between projects</li>
+<li>Easy to share your exact setup with others</li>
+<li>Clean, organized, professional workflow</li>
+</ul>
+<h3 id="conda-environments-your-mission-specific-loadout">Conda Environments: Your Mission-Specific Loadout</h3>
+<p>Since you're using Anaconda, you'll create environments using conda. Here's how:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create a new environment named &quot;datascience&quot; with Python 3.11</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>datascience<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+
+<span class="c1"># Activate the environment (start using it)</span>
+conda<span class="w"> </span>activate<span class="w"> </span>datascience
+
+<span class="c1"># Install packages into this environment</span>
+conda<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>jupyter
+
+<span class="c1"># When you&#39;re done, deactivate</span>
+conda<span class="w"> </span>deactivate
+</code></pre></div></td></tr></table></div>
+<p>Once activated, anything you install goes into that environment only. Your other environments stay clean and untouched.</p>
+<div class="admonition example">
+<p class="admonition-title">Real-World Analogy</p>
+<p>Imagine you're a chef who cooks Italian food, Japanese food, and Mexican food. You COULD keep all your ingredients in one giant pantry. But it's much easier to have three separate stations, each stocked with exactly what that cuisine needs. Virtual environments are your separate cooking stations.</p>
+</div>
+<h4 id="diagram-virtual-environment-isolation-microsim">Diagram: Virtual Environment Isolation MicroSim</h4>
+<details markdown="1">
+    <summary>Virtual Environment Isolation Simulator</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Let students experiment with creating environments and installing packages to see how isolation works
+
+    Canvas layout (750x500px):
+    - Left side (500x500): Visual representation of environments
+    - Right side (250x500): Controls and terminal simulation
+
+    Visual elements:
+    - Base system shown as gray platform at bottom
+    - Virtual environments as colored bubbles floating above
+    - Packages shown as small icons inside environments
+    - Conflict indicators (red X) when same package different versions
+
+    Interactive controls:
+    - Button: "Create Environment" - Adds new bubble with name input
+    - Dropdown: "Select Environment" - Choose which env to work in
+    - Button: "Install Package" - Shows package picker
+    - Package picker: pandas, numpy, matplotlib with version selector
+    - Button: "Delete Environment" - Removes selected environment
+    - Toggle: "Show Conflicts" - Highlights version conflicts
+
+    Terminal simulation (right panel):
+    - Shows conda commands being "typed"
+    - Displays output messages
+    - Command history
+
+    Default state:
+    - Base system with Python
+    - One environment "project-a" with pandas 1.5
+    - One environment "project-b" with pandas 2.0
+    - No conflicts (isolated!)
+
+    Behavior:
+    - Creating environment adds new bubble
+    - Installing package adds icon to current environment bubble
+    - Installing conflicting versions in same env shows warning
+    - Different versions in different envs shows green checkmarks
+    - Hover over package shows version and description
+
+    Educational messages:
+    - "Notice: Each environment is completely separate!"
+    - "Try installing different pandas versions in different environments"
+    - "See? No conflicts when properly isolated!"
+
+    Implementation: p5.js with interactive elements
+</details>
+
+<h2 id="ide-setup-your-command-center">IDE Setup: Your Command Center</h2>
+<p>An <strong>IDE</strong> (Integrated Development Environment) is your primary workspace—the command center where you'll write code, run experiments, and analyze results. While you could technically write Python in Notepad, that's like trying to fight crime with a flashlight instead of the Batcomputer.</p>
+<p>A good IDE provides:</p>
+<ul>
+<li>Syntax highlighting (code is color-coded for readability)</li>
+<li>Auto-completion (suggests code as you type)</li>
+<li>Error detection (catches mistakes before you run)</li>
+<li>Integrated terminal (run commands without switching windows)</li>
+<li>Debugging tools (find and fix problems)</li>
+<li>Extension ecosystem (add new features)</li>
+</ul>
+<h3 id="vs-code-the-modern-heros-choice">VS Code: The Modern Hero's Choice</h3>
+<p><strong>VS Code</strong> (Visual Studio Code) is our recommended IDE. It's free, fast, incredibly powerful, and loved by millions of developers worldwide. Microsoft makes it, but don't hold that against it—it's genuinely excellent.</p>
+<p>Why VS Code for data science?</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Extension</td>
+<td>First-class Python support with IntelliSense</td>
+</tr>
+<tr>
+<td>Jupyter Integration</td>
+<td>Run notebooks directly in VS Code</td>
+</tr>
+<tr>
+<td>Git Integration</td>
+<td>Version control built right in</td>
+</tr>
+<tr>
+<td>Extensions Marketplace</td>
+<td>Thousands of add-ons available</td>
+</tr>
+<tr>
+<td>Remote Development</td>
+<td>Code on servers, containers, WSL</td>
+</tr>
+<tr>
+<td>Free Forever</td>
+<td>No subscriptions, no premium tiers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-up-vs-code-for-data-science">Setting Up VS Code for Data Science</h3>
+<p>After installing VS Code, you'll want to add some extensions. Think of extensions as upgrades to your equipment—each one adds new capabilities.</p>
+<p>Essential extensions for data science:</p>
+<ol>
+<li><strong>Python</strong> (by Microsoft) - Core Python support</li>
+<li><strong>Jupyter</strong> (by Microsoft) - Notebook support in VS Code</li>
+<li><strong>Pylance</strong> - Advanced Python language features</li>
+<li><strong>Python Indent</strong> - Fixes indentation automatically</li>
+<li><strong>Rainbow CSV</strong> - Makes CSV files readable</li>
+</ol>
+<p>To install an extension:</p>
+<ol>
+<li>Click the Extensions icon in the left sidebar (looks like four squares)</li>
+<li>Search for the extension name</li>
+<li>Click "Install"</li>
+<li>That's it—no restart required!</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Keyboard Shortcut Superpower</p>
+<p>Press <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (Mac) to open the Command Palette—your gateway to every VS Code feature. Start typing what you want to do, and VS Code will find it.</p>
+</div>
+<h4 id="diagram-vs-code-interface-tour">Diagram: VS Code Interface Tour</h4>
+<details markdown="1">
+    <summary>VS Code Interface Guided Tour</summary>
+    Type: infographic
+
+    Bloom Taxonomy: Remember (L1)
+
+    Learning Objective: Help students identify and remember the key parts of the VS Code interface
+
+    Purpose: Interactive labeled diagram of VS Code interface
+
+    Layout: Screenshot-style representation of VS Code with numbered callouts
+
+    Main areas:
+
+    1. ACTIVITY BAR (far left vertical strip)
+       - Explorer, Search, Git, Debug, Extensions icons
+       - Label: "Quick access to major features"
+       - Color highlight: Blue
+
+    2. SIDE BAR (left panel)
+       - File explorer showing project structure
+       - Label: "Your project files and folders"
+       - Color highlight: Green
+
+    3. EDITOR AREA (center, main area)
+       - Code with syntax highlighting
+       - Label: "Where you write code"
+       - Color highlight: Purple
+
+    4. TABS (top of editor)
+       - Multiple file tabs
+       - Label: "Switch between open files"
+       - Color highlight: Orange
+
+    5. MINIMAP (right edge of editor)
+       - Zoomed-out code preview
+       - Label: "Navigate large files quickly"
+       - Color highlight: Teal
+
+    6. TERMINAL (bottom panel)
+       - Integrated command line
+       - Label: "Run commands without leaving VS Code"
+       - Color highlight: Red
+
+    7. STATUS BAR (bottom strip)
+       - Python version, line number, encoding
+       - Label: "Current file info and settings"
+       - Color highlight: Gray
+
+    Interactive elements:
+    - Hover over each numbered area to see detailed description
+    - Click to see common tasks performed in that area
+    - "Hide Labels" toggle to test recall
+
+    Visual style: Clean, modern, matching VS Code dark theme
+
+    Implementation: HTML/CSS with image map and tooltips
+</details>
+
+<h2 id="jupyter-notebooks-your-interactive-lab">Jupyter Notebooks: Your Interactive Lab</h2>
+<p>While VS Code is great for writing Python scripts, data scientists have a special tool that's become essential to the craft: <strong>Jupyter Notebooks</strong>.</p>
+<p>A Jupyter Notebook is an interactive document that combines:</p>
+<ul>
+<li>Live code you can run piece by piece</li>
+<li>Rich text explanations with formatting</li>
+<li>Visualizations and charts</li>
+<li>Output from your code, displayed inline</li>
+</ul>
+<p>It's like having a lab notebook that can actually DO the experiments, not just record them. You write some code, run it, see the results immediately, then write more code based on what you learned. It's perfect for exploration and experimentation.</p>
+<h3 id="why-notebooks-are-perfect-for-data-science">Why Notebooks Are Perfect for Data Science</h3>
+<p>Traditional programming is linear: write all the code, then run it all at once. But data science is iterative: load data, look at it, clean something, look again, try an analysis, adjust, repeat.</p>
+<p>Notebooks support this workflow beautifully:</p>
+<ul>
+<li><strong>Immediate feedback</strong>: See results instantly after each step</li>
+<li><strong>Documentation built-in</strong>: Explain your thinking as you go</li>
+<li><strong>Easy sharing</strong>: Send a notebook, and others see your code AND results</li>
+<li><strong>Visual output</strong>: Charts appear right where you create them</li>
+<li><strong>Reproducibility</strong>: Anyone can re-run your analysis step by step</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">A Data Scientist's Best Friend</p>
+<p>"I never understood data until I started using Jupyter. Being able to see my data, tweak my code, and immediately see what changed—that's when everything clicked." — Every data scientist, basically</p>
+</div>
+<h3 id="starting-jupyter">Starting Jupyter</h3>
+<p>If you installed Anaconda, you already have Jupyter. To launch it:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Make sure your environment is activated</span>
+conda<span class="w"> </span>activate<span class="w"> </span>datascience
+
+<span class="c1"># Launch Jupyter Notebook</span>
+jupyter<span class="w"> </span>notebook
+</code></pre></div></td></tr></table></div>
+<p>This opens a browser window with the Jupyter interface. From there, you can create new notebooks, open existing ones, and organize your files.</p>
+<p>Alternatively, in VS Code with the Jupyter extension, you can create and run notebooks directly without the browser interface.</p>
+<h2 id="notebook-cells-building-blocks-of-discovery">Notebook Cells: Building Blocks of Discovery</h2>
+<p><strong>Notebook cells</strong> are the fundamental units of a Jupyter notebook. Think of cells as individual building blocks—each one contains either code or text, and you can rearrange, add, or delete them as needed.</p>
+<p>There are two main types of cells:</p>
+<h3 id="code-cells">Code Cells</h3>
+<p>A <strong>code cell</strong> contains Python code that you can execute. When you run a code cell, Python processes the code and displays any output directly below the cell.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># This is a code cell</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sum is: </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>The sum is: 15
+</code></pre></div></td></tr></table></div></p>
+<p>Code cells have some special features:</p>
+<ul>
+<li>The last expression in a cell is automatically displayed (no <code>print()</code> needed)</li>
+<li>Variables created in one cell are available in all other cells</li>
+<li>You can run cells in any order (though running in order is usually best)</li>
+</ul>
+<h3 id="markdown-cells">Markdown Cells</h3>
+<p>A <strong>markdown cell</strong> contains formatted text using Markdown syntax. Use these to:</p>
+<ul>
+<li>Explain what your code does</li>
+<li>Document your analysis process</li>
+<li>Add headers and structure</li>
+<li>Include images or links</li>
+<li>Write conclusions and insights</li>
+</ul>
+<p>Here's what Markdown looks like:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gh"># This is a Header</span>
+
+This is regular text with <span class="gs">**bold**</span> and <span class="ge">*italic*</span> words.
+
+<span class="k">-</span><span class="w"> </span>Bullet point one
+<span class="k">-</span><span class="w"> </span>Bullet point two
+
+<span class="k">&gt; </span><span class="ge">This is a quote block</span>
+</code></pre></div></td></tr></table></div>
+<p>The beauty of Markdown is that it's readable even before rendering. But when you "run" a Markdown cell, Jupyter converts it to beautifully formatted text.</p>
+<table>
+<thead>
+<tr>
+<th>Cell Type</th>
+<th>Contains</th>
+<th>Run Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code Cell</td>
+<td>Python code</td>
+<td>Executes code, shows output</td>
+</tr>
+<tr>
+<td>Markdown Cell</td>
+<td>Formatted text</td>
+<td>Renders as HTML</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-notebook-cell-types-interactive-demo">Diagram: Notebook Cell Types Interactive Demo</h4>
+<details markdown="1">
+    <summary>Notebook Cell Types Interactive Demo</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Let students practice creating, editing, and running different cell types
+
+    Canvas layout (700x550px):
+    - Main area (700x450): Notebook simulation
+    - Bottom panel (700x100): Controls and instructions
+
+    Visual elements:
+    - Simulated notebook interface with cells
+    - Cell type indicator (Code/Markdown) on left side
+    - Run button for each cell
+    - Add cell buttons between cells
+    - Cell highlight when selected
+
+    Starting cells:
+    1. Markdown cell: "# My First Notebook\nWelcome to data science!"
+    2. Code cell: "x = 42\nprint(f'The answer is {x}')"
+    3. Empty code cell (ready for input)
+
+    Interactive controls:
+    - Click cell to select
+    - Button: "Run Cell" (or Shift+Enter simulation)
+    - Button: "Add Code Cell"
+    - Button: "Add Markdown Cell"
+    - Button: "Delete Cell"
+    - Button: "Change Cell Type"
+    - Text input area for editing selected cell
+
+    Behavior:
+    - Running code cell shows output below
+    - Running markdown cell renders formatted text
+    - Variables persist between cells (running cell 2 sets x=42 for later use)
+    - Error messages shown if code has bugs
+    - Cell execution order numbers appear [1], [2], etc.
+
+    Instructions panel:
+    - "Click a cell to select it"
+    - "Press Run Cell to execute"
+    - "Try changing the value of x and re-running!"
+
+    Implementation: p5.js with text rendering and simple Python interpreter simulation
+</details>
+
+<h2 id="cell-execution-bringing-your-code-to-life">Cell Execution: Bringing Your Code to Life</h2>
+<p><strong>Cell execution</strong> is the process of running a cell and getting results. This is where the magic happens—where your ideas become reality.</p>
+<h3 id="running-cells">Running Cells</h3>
+<p>There are several ways to run a cell:</p>
+<ul>
+<li><strong>Shift + Enter</strong>: Run current cell and move to next cell</li>
+<li><strong>Ctrl + Enter</strong>: Run current cell and stay on it</li>
+<li><strong>Run button</strong>: Click the play icon next to the cell</li>
+<li><strong>Run All</strong>: Execute all cells in order (from menu)</li>
+</ul>
+<h3 id="execution-order-matters">Execution Order Matters</h3>
+<p>Here's something crucial to understand: cells can be run in any order, but the ORDER you run them in determines the result. Watch this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Cell 1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Cell 2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+
+<span class="c1"># Cell 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>If you run cells 1, 2, 3 in order: output is <code>15</code>
+If you run cells 1, 3, 2, 3 in order: output is <code>15</code> then <code>25</code>
+If you run cell 3 first: ERROR! (x doesn't exist yet)</p>
+<div class="admonition warning">
+<p class="admonition-title">The Restart Trap</p>
+<p>A common mistake: you run cells out of order, get confused, then can't reproduce your results. Solution? Use <strong>Kernel &gt; Restart &amp; Run All</strong> regularly to verify your notebook runs correctly from top to bottom.</p>
+</div>
+<h3 id="execution-numbers">Execution Numbers</h3>
+<p>Notice those numbers in brackets next to code cells? Like <code>[1]</code>, <code>[2]</code>, <code>[3]</code>? Those tell you:</p>
+<ol>
+<li>Which cells have been run</li>
+<li>What order they were run in</li>
+</ol>
+<p>If you see <code>[5]</code> followed by <code>[3]</code> followed by <code>[7]</code>, that's a red flag that cells were run out of order. In a clean, reproducible notebook, numbers should be sequential: <code>[1]</code>, <code>[2]</code>, <code>[3]</code>, etc.</p>
+<h2 id="the-kernel-your-python-brain">The Kernel: Your Python Brain</h2>
+<p>The <strong>kernel</strong> is the computational engine behind your notebook. It's a running Python process that:</p>
+<ul>
+<li>Executes your code cells</li>
+<li>Keeps track of variables and their values</li>
+<li>Remembers function definitions</li>
+<li>Maintains the state of your session</li>
+</ul>
+<p>Think of the kernel as Python's brain. When you run a cell, you're asking the brain to process that code and remember the results. All cells share the same brain, which is why a variable defined in one cell is available in all others.</p>
+<h3 id="kernel-operations">Kernel Operations</h3>
+<p>Sometimes you need to control the kernel directly:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>What It Does</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restart</td>
+<td>Clear all variables, fresh start</td>
+<td>When things get confusing</td>
+</tr>
+<tr>
+<td>Restart &amp; Clear Output</td>
+<td>Restart + clear all outputs</td>
+<td>Clean slate for sharing</td>
+</tr>
+<tr>
+<td>Restart &amp; Run All</td>
+<td>Fresh start, then run everything</td>
+<td>Verify reproducibility</td>
+</tr>
+<tr>
+<td>Interrupt</td>
+<td>Stop a running cell</td>
+<td>When code takes too long</td>
+</tr>
+</tbody>
+</table>
+<p>The most common kernel operation: <strong>Restart &amp; Run All</strong>. This verifies that your notebook works from scratch—essential before sharing your work or submitting an assignment.</p>
+<div class="admonition tip">
+<p class="admonition-title">Kernel Health Check</p>
+<p>See a circular icon in the top right of Jupyter? That's the kernel status indicator. Empty circle = idle (ready). Filled circle = busy (running code). If it's stuck on busy forever, you might need to interrupt or restart.</p>
+</div>
+<h4 id="diagram-kernel-state-visualization">Diagram: Kernel State Visualization</h4>
+<details markdown="1">
+    <summary>How the Kernel Remembers Variables</summary>
+    Type: infographic
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students understand that the kernel maintains state across cell executions
+
+    Purpose: Visualize the kernel as a memory bank that persists between cell runs
+
+    Layout: Split view - notebook cells on left, kernel memory on right
+
+    Left side (Notebook cells):
+    Cell 1: `name = "Alice"`
+    Cell 2: `age = 25`
+    Cell 3: `greeting = f"Hello {name}, you are {age}"`
+    Cell 4: `print(greeting)`
+
+    Right side (Kernel Memory Bank):
+    Visual representation of memory slots:
+    - After Cell 1: name → "Alice"
+    - After Cell 2: name → "Alice", age → 25
+    - After Cell 3: name → "Alice", age → 25, greeting → "Hello Alice, you are 25"
+
+    Animation flow:
+    - Running each cell shows variable flowing into memory bank
+    - Memory bank glows briefly when accessed
+    - Clear visual that all cells share the same memory
+
+    Bottom section:
+    "Restart Kernel" button → Memory bank empties → Variables gone
+    Message: "After restart, you must re-run cells to recreate variables"
+
+    Interactive elements:
+    - Step through button to simulate running each cell
+    - Restart button to clear memory visualization
+    - Hover over variable in memory to see when it was created
+
+    Visual style: Clean, bright, "mind palace" aesthetic
+
+    Implementation: HTML/CSS/JavaScript with animation
+</details>
+
+<h2 id="import-statements-summoning-your-tools">Import Statements: Summoning Your Tools</h2>
+<p>An <strong>import statement</strong> tells Python to load a library so you can use its features. Without imports, you're limited to basic Python. With imports, you have access to the entire data science arsenal.</p>
+<h3 id="basic-import-syntax">Basic Import Syntax</h3>
+<p>There are several ways to import libraries:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Import the entire library</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="c1"># Now use it with the full name</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;file.csv&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Import with a nickname (alias) - MOST COMMON</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Now use the shorter names</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;file.csv&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Import specific functions only</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="c1"># Now use them directly</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>  <span class="c1"># No &quot;math.&quot; prefix needed</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="standard-data-science-imports">Standard Data Science Imports</h3>
+<p>The data science community has agreed on standard aliases. Using these makes your code readable to others:</p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Standard Import</th>
+<th>What It's For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pandas</td>
+<td><code>import pandas as pd</code></td>
+<td>Data manipulation</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td><code>import numpy as np</code></td>
+<td>Numerical computing</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td><code>import matplotlib.pyplot as plt</code></td>
+<td>Basic plotting</td>
+</tr>
+<tr>
+<td>seaborn</td>
+<td><code>import seaborn as sns</code></td>
+<td>Statistical visualization</td>
+</tr>
+<tr>
+<td>scikit-learn</td>
+<td><code>from sklearn import ...</code></td>
+<td>Machine learning</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Import Etiquette</p>
+<p>Always put imports at the TOP of your notebook or script, not scattered throughout. This makes it easy to see what libraries your code requires. It's like listing ingredients at the start of a recipe—polite and helpful.</p>
+</div>
+<h3 id="what-happens-during-import">What Happens During Import?</h3>
+<p>When you write <code>import pandas as pd</code>, Python:</p>
+<ol>
+<li>Searches for the pandas library (in your environment)</li>
+<li>Loads the library's code into memory</li>
+<li>Creates a reference called <code>pd</code> that points to it</li>
+<li>Makes all pandas functions available as <code>pd.something()</code></li>
+</ol>
+<p>If you get an error like <code>ModuleNotFoundError: No module named 'pandas'</code>, it means the library isn't installed in your current environment. Solution: <code>conda install pandas</code> or <code>pip install pandas</code>.</p>
+<h2 id="python-libraries-your-superpower-extensions">Python Libraries: Your Superpower Extensions</h2>
+<p><strong>Python libraries</strong> (also called packages or modules) are collections of pre-written code that extend Python's capabilities. They're the reason Python dominates data science—thousands of brilliant people have written code you can use for free.</p>
+<p>The data science ecosystem includes hundreds of libraries, but you'll start with a core set:</p>
+<h3 id="the-essential-five">The Essential Five</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Superpower</th>
+<th>Example Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pandas</strong></td>
+<td>Data manipulation</td>
+<td>Load CSVs, filter rows, calculate statistics</td>
+</tr>
+<tr>
+<td><strong>numpy</strong></td>
+<td>Fast math</td>
+<td>Array operations, linear algebra</td>
+</tr>
+<tr>
+<td><strong>matplotlib</strong></td>
+<td>Visualization</td>
+<td>Line plots, bar charts, histograms</td>
+</tr>
+<tr>
+<td><strong>seaborn</strong></td>
+<td>Beautiful stats plots</td>
+<td>Distribution plots, heatmaps</td>
+</tr>
+<tr>
+<td><strong>scikit-learn</strong></td>
+<td>Machine learning</td>
+<td>Classification, regression, clustering</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-broader-ecosystem">The Broader Ecosystem</h3>
+<p>Beyond the essential five, you'll encounter:</p>
+<ul>
+<li><strong>jupyter</strong> - The notebook system itself</li>
+<li><strong>scipy</strong> - Scientific computing</li>
+<li><strong>statsmodels</strong> - Statistical modeling</li>
+<li><strong>plotly</strong> - Interactive visualizations</li>
+<li><strong>pytorch / tensorflow</strong> - Deep learning</li>
+<li><strong>requests</strong> - Web data fetching</li>
+<li><strong>beautifulsoup</strong> - Web scraping</li>
+</ul>
+<p>The beauty of package management: when you need a new capability, you can probably find a library for it. Someone else has already solved your problem—you just need to <code>pip install</code> their solution.</p>
+<h4 id="diagram-python-data-science-ecosystem-map">Diagram: Python Data Science Ecosystem Map</h4>
+<details markdown="1">
+    <summary>Python Data Science Library Ecosystem</summary>
+    Type: graph-model
+
+    Bloom Taxonomy: Remember (L1)
+
+    Learning Objective: Help students understand the landscape of Python data science libraries and how they relate
+
+    Purpose: Show relationships between major libraries and their purposes
+
+    Node types:
+    1. Core (large gold hexagons)
+       - Python, NumPy
+
+    2. Data (blue rectangles)
+       - pandas, SQL connectors
+
+    3. Visualization (green circles)
+       - matplotlib, seaborn, plotly
+
+    4. Machine Learning (purple diamonds)
+       - scikit-learn, XGBoost
+
+    5. Deep Learning (red stars)
+       - PyTorch, TensorFlow
+
+    6. Utilities (gray rounded rectangles)
+       - Jupyter, requests, BeautifulSoup
+
+    Relationships (edges):
+    - NumPy → pandas (built on)
+    - NumPy → matplotlib (uses arrays)
+    - pandas → seaborn (data source)
+    - matplotlib → seaborn (built on)
+    - NumPy → scikit-learn (data format)
+    - scikit-learn → XGBoost (similar API)
+    - NumPy → PyTorch (similar arrays)
+    - NumPy → TensorFlow (similar arrays)
+
+    Layout: Hierarchical with Python/NumPy at center
+
+    Interactive features:
+    - Hover node: See library description and common use cases
+    - Click node: See example import statement
+    - Filter by category (checkboxes)
+
+    Visual styling:
+    - Node size indicates popularity/importance
+    - Edge thickness shows strength of dependency
+    - Cluster by function area
+
+    Implementation: vis-network JavaScript
+    Canvas size: 800x600px
+</details>
+
+<h2 id="putting-it-all-together-your-first-complete-setup">Putting It All Together: Your First Complete Setup</h2>
+<p>Let's walk through setting up a complete data science environment from scratch. Follow along on your own computer!</p>
+<h3 id="step-1-install-anaconda">Step 1: Install Anaconda</h3>
+<ol>
+<li>Download Anaconda from <a href="https://www.anaconda.com/download">anaconda.com/download</a></li>
+<li>Run the installer (accept defaults)</li>
+<li>Open Anaconda Prompt (Windows) or Terminal (Mac/Linux)</li>
+</ol>
+<h3 id="step-2-create-your-environment">Step 2: Create Your Environment</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create a new environment for this course</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>datascience<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+
+<span class="c1"># Activate it</span>
+conda<span class="w"> </span>activate<span class="w"> </span>datascience
+
+<span class="c1"># Install essential packages</span>
+conda<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>jupyter<span class="w"> </span>scikit-learn
+</code></pre></div></td></tr></table></div>
+<h3 id="step-3-install-vs-code">Step 3: Install VS Code</h3>
+<ol>
+<li>Download VS Code from <a href="https://code.visualstudio.com">code.visualstudio.com</a></li>
+<li>Run the installer</li>
+<li>Open VS Code</li>
+<li>Install the Python and Jupyter extensions</li>
+</ol>
+<h3 id="step-4-create-your-first-notebook">Step 4: Create Your First Notebook</h3>
+<ol>
+<li>In VS Code, press <code>Ctrl+Shift+P</code> and type "Create New Jupyter Notebook"</li>
+<li>Select your <code>datascience</code> environment as the kernel</li>
+<li>Add a markdown cell with a title</li>
+<li>Add a code cell with your first imports:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setup complete! Your data science headquarters is ready.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Run the cell. If you see the message, congratulations—you're ready!</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Achievement Unlocked: Data Science HQ Online!</p>
+<p>You now have a professional-grade data science environment. The same tools used at Google, Netflix, and NASA are now at your fingertips. The only difference between you and a professional data scientist? Practice. Let's get started!</p>
+</div>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<p>Even superheroes face setbacks. Here are solutions to common setup problems:</p>
+<h3 id="python-not-found">"Python not found"</h3>
+<p><strong>Cause:</strong> Python isn't in your system PATH.
+<strong>Solution:</strong> Reinstall Anaconda and check "Add to PATH" option, OR always use Anaconda Prompt.</p>
+<h3 id="module-not-found">"Module not found"</h3>
+<p><strong>Cause:</strong> Package not installed in current environment.
+<strong>Solution:</strong> Activate your environment (<code>conda activate datascience</code>) then install the package.</p>
+<h3 id="kernel-died-in-jupyter">"Kernel died" in Jupyter</h3>
+<p><strong>Cause:</strong> Usually a memory issue or package conflict.
+<strong>Solution:</strong> Restart the kernel. If persistent, restart your computer or recreate the environment.</p>
+<h3 id="vs-code-doesnt-see-my-environment">VS Code doesn't see my environment</h3>
+<p><strong>Cause:</strong> VS Code hasn't refreshed its environment list.
+<strong>Solution:</strong> Press <code>Ctrl+Shift+P</code>, type "Python: Select Interpreter", and choose your environment manually.</p>
+<h3 id="everything-is-slow">Everything is slow</h3>
+<p><strong>Cause:</strong> Possibly too many packages or old hardware.
+<strong>Solution:</strong> Make sure you're using a clean environment with only the packages you need.</p>
+<details class="question">
+<summary>Chapter 2 Checkpoint: Test Your Understanding</summary>
+<p><strong>Question:</strong> You're starting a new project and need pandas version 2.0, but your existing project uses pandas 1.5. How do you handle this without breaking either project?</p>
+<p><strong>Click to reveal answer:</strong></p>
+<p>Create a separate virtual environment for each project!</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># For the new project</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>new_project<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>new_project
+conda<span class="w"> </span>install<span class="w"> </span><span class="nv">pandas</span><span class="o">=</span><span class="m">2</span>.0
+
+<span class="c1"># For the old project (already exists)</span>
+conda<span class="w"> </span>activate<span class="w"> </span>old_project
+<span class="c1"># pandas 1.5 is already there, unchanged</span>
+</code></pre></div></td></tr></table></div>
+<p>Virtual environments keep projects isolated so different versions don't conflict.</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Python installation</strong> (via Anaconda) is your foundation—everything else builds on it.</p>
+</li>
+<li>
+<p><strong>Package managers</strong> (pip and conda) let you install new tools whenever you need them.</p>
+</li>
+<li>
+<p><strong>Virtual environments</strong> keep your projects isolated and conflict-free—use them for every project.</p>
+</li>
+<li>
+<p><strong>VS Code</strong> is your command center—customize it with extensions for data science.</p>
+</li>
+<li>
+<p><strong>Jupyter Notebooks</strong> combine code, text, and visualizations for interactive exploration.</p>
+</li>
+<li>
+<p><strong>Cells</strong> (code and markdown) are the building blocks of notebooks; run them with Shift+Enter.</p>
+</li>
+<li>
+<p>The <strong>kernel</strong> is Python's brain—restart it when things get confusing.</p>
+</li>
+<li>
+<p><strong>Import statements</strong> load libraries; use standard aliases like <code>pd</code>, <code>np</code>, <code>plt</code>.</p>
+</li>
+<li>
+<p><strong>Python libraries</strong> are your superpower extensions—pandas, numpy, matplotlib are essential.</p>
+</li>
+</ol>
+<p>Your headquarters is built. Your tools are ready. In the next chapter, you'll learn to wield them by working with Python's most important data structures. The real adventure begins now!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-intro-to-data-science/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction to Data Science">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction to Data Science
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-python-data-structures/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Data Structures">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Python Data Structures
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

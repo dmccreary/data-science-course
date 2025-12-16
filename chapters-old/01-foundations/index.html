@@ -1,0 +1,1288 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters-old/01-foundations/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Foundations of Data Science - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-RTBCWGJKKR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-RTBCWGJKKR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-RTBCWGJKKR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Foundations of Data Science - AI Based Data Science with Python" >
+      
+        <meta  property="og:description"  content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters-old/01-foundations/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/data-science-course/chapters-old/01-foundations/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Foundations of Data Science - AI Based Data Science with Python" >
+      
+        <meta  name="twitter:description"  content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters-old/01-foundations/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foundations-of-data-science" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Foundations of Data Science
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sample GenAI Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-data-science-and-its-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Data Science and Its Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Data Science and Its Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-lab-exploring-sample-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Lab: Exploring Sample Datasets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-python-for-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Python for Data Science?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Python for Data Science?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-insights-from-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Insights from Chart:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-data-science-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Data Science Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-types-of-data-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four Types of Data Representations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-atomic-data-types-and-structures-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Atomic Data Types and Structures in Python
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters-old/01-foundations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="foundations-of-data-science">Foundations of Data Science</h1>
+<h2 id="introduction-to-data-science-and-its-applications">Introduction to Data Science and Its Applications</h2>
+<p>Data science is the discipline of extracting meaningful insights from data by combining <strong>statistics</strong>, <strong>programming</strong>, and <strong>domain expertise</strong>. It powers many of the services and tools we use every day—from recommendation engines on streaming platforms to real-time fraud detection in banking. Governments, businesses, and non-profits alike depend on data science to make <strong>evidence-based decisions</strong> and improve efficiency.</p>
+<p>Applications of data science span nearly every field:</p>
+<ul>
+<li><strong>Healthcare:</strong> Predicting disease risks, optimizing treatment effectiveness, and analyzing healthcare costs.</li>
+<li><strong>Finance:</strong> Credit scoring, algorithmic trading, and fraud detection.</li>
+<li><strong>Retail:</strong> Personalized recommendations and demand forecasting.</li>
+<li><strong>Transportation:</strong> Route optimization and autonomous vehicle navigation.</li>
+<li><strong>Environmental Science:</strong> Climate modeling and resource management.</li>
+</ul>
+<h3 id="first-lab-exploring-sample-datasets">First Lab: Exploring Sample Datasets</h3>
+<p>To begin, we will explore real datasets. A simple but practical task is to generate a <strong>CSV file</strong> of <strong>per-capita annual healthcare costs for 2023</strong> across the 100 largest countries. You will then use Python to:</p>
+<ol>
+<li>Load the data into a Pandas <strong>DataFrame</strong>.</li>
+<li>Compute summary statistics such as mean, median, and standard deviation.</li>
+<li>Create visualizations such as bar charts and scatter plots.</li>
+<li>Ask ChatGPT (or another LLM) to interpret the results and suggest insights.</li>
+</ol>
+<p><a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PP.CD">World Bank Per Capita Healthcare Costs</a></p>
+<p>Here is a sample of what this data looks like:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Country Name,Country Code,health_exp_pc_ppp_2022
+Africa Eastern and Southern,AFE,228
+Afghanistan,AFG,383
+Africa Western and Central,AFW,201
+Angola,AGO,217
+Albania,ALB,1186
+Andorra,AND,5136
+Arab World,ARB,776
+United Arab Emirates,ARE,3814
+Argentina,ARG,2664
+Armenia,ARM,1824
+Antigua and Barbuda,ATG,1436
+</code></pre></div></td></tr></table></div>
+<p>Note that this list from the World Bank contains not only countries but also regions.</p>
+<p>This exercise introduces <strong>data cleaning</strong>, <strong>exploration</strong>, and <strong>visualization</strong>, which form the foundation of every data science project.</p>
+<p><em>Suggested MicroSim:</em> <strong>Exploring Data Points</strong> (students add/remove points on a scatter plot to see how the distribution changes).</p>
+<h2 id="why-python-for-data-science">Why Python for Data Science?</h2>
+<p>Python is the most widely used programming language for data science. It is popular because of:</p>
+<ul>
+<li>A rich <strong>ecosystem of libraries</strong> (NumPy, Pandas, scikit-learn, Matplotlib, PyTorch).</li>
+<li>Readable, beginner-friendly syntax.</li>
+<li>Strong community support and open-source resources.</li>
+</ul>
+<p>Over the past 15 years, Python has steadily risen to become the dominant language in data science. Other languages such as R, Java, and Julia are used in specific contexts, but Python’s versatility has made it the industry standard.</p>
+<p>Here is an interactive time-series chart showing the change in popularity of different languages used in data science.  You can hover over each year to see what percent each language had in data science that year.</p>
+<iframe src="../../sims/ds-prog-lang/main.html" height="590px" scrolling="no"></iframe>
+
+<h3 id="key-insights-from-chart">Key Insights from Chart:</h3>
+<ol>
+<li><strong>Python's Rise:</strong> Python showed steady growth from 2010-2018, then accelerated dramatically after 2018 due to AI/ML boom, reaching 25%+ market share by 2025.</li>
+<li><strong>R's Stability:</strong> R maintained consistent popularity (3-5%) throughout the period, remaining strong in academic and statistical research domains.</li>
+<li><strong>SQL's Persistence:</strong> SQL showed steady growth and remained essential for data manipulation, reaching ~8% by 2025.</li>
+<li><strong>Java's Decline:</strong> Java's popularity in data science decreased from ~20% to ~7% as Python gained dominance in ML/AI applications.</li>
+<li><strong>JavaScript's Growth:</strong> JavaScript emerged as a data visualization tool, growing from ~2% to ~6% by 2025.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This chart was generated by Generative AI using Claude Sonnet 4.0 using the Chart.js JavaScript library.  You can view the <a href="../../sims/ds-prog-lang/">Data Science Programming Language Trends MicroSim</a> to learn more.</p>
+</div>
+<h2 id="understanding-the-data-science-workflow">Understanding the Data Science Workflow</h2>
+<p>Every data science project follows a structured workflow:</p>
+<p>This workflow is iterative. A failed model often sends us back to collect new data or engineer better features.</p>
+<iframe src="../../sims/data-science-workflow/main.html" height="300px" scrolling="no"></iframe>
+
+<p>Above is an interactive infographic that allows you to explore the six steps in a typical data
+science workflow.  For each step, hover over the step and view the text description below the
+step.</p>
+<ol>
+<li><strong>Define the problem</strong> – Clarify what question is being answered.</li>
+<li><strong>Collect data</strong> – Gather raw data from reliable sources.</li>
+<li><strong>Clean and preprocess data</strong> – Handle missing values, errors, and inconsistencies.</li>
+<li><strong>Explore and visualize</strong> – Use plots and descriptive statistics to understand patterns.</li>
+<li><strong>Modeling and Analysis</strong> – Build predictive or explanatory models.</li>
+<li><strong>Deploy and communicate results</strong> – Share findings with stakeholders.</li>
+</ol>
+<h2 id="four-types-of-data-representations">Four Types of Data Representations</h2>
+<p>In this course we will be looking at many ways to represent both raw data as well as
+connected knowledge.  Here is an interactive illustration of these four ways we represent
+different types of information.</p>
+<iframe src="../../sims/four-types-of-data/main.html" height="600" scrolling="no"></iframe>
+
+<p>These types are:</p>
+<ol>
+<li><strong>Images</strong> - Visual data represented as pixel arrays with RGB color values. Each pixel contains red, green, and blue color components. Common in computer vision, medical imaging, satellite imagery, and photo recognition. Neural networks like CNNs are specifically designed to process this type of spatial data structure.</li>
+<li><strong>Sequences</strong> - Sequences: Ordered data where position and timing matter critically. Examples include time series data, natural language text, DNA sequences, audio signals, and stock prices. RNNs, LSTMs, and Transformers are designed to capture temporal dependencies and patterns in sequential data.</li>
+<li><strong>Tabular</strong> -  Structured data organized in rows and columns, similar to spreadsheets or databases. Each row represents an observation and each column represents a feature or variable. This is the most common data type in traditional machine learning, handled well by algorithms like random forests, SVM, and gradient boosting.  We can use Python data frames to manipulate tabular data.</li>
+<li><strong>Graph</strong> - Graph: Network data representing relationships and connections between entities. Nodes represent objects (people, websites, molecules) while edges represent relationships (friendships, links, bonds). Used in social network analysis, recommendation systems, knowledge graphs, and molecular modeling. Graph Neural Networks (GNNs) are specialized for this data type.</li>
+</ol>
+<p>Future chapters will focus on different ways we represent this information and how our models vary based on the type of data we are working with.</p>
+<h2 id="basic-atomic-data-types-and-structures-in-python">Basic Atomic Data Types and Structures in Python</h2>
+<p>Before analyzing data, students must understand how Python stores fundamental atomic entities like numbers and string. 
+In this course we will look at some of the core Python atomic <strong>atomic data types</strong> include:</p>
+<ul>
+<li><strong>Integers</strong> (whole numbers, e.g., <code>42</code>)</li>
+<li><strong>Floats</strong> (decimal numbers, e.g., <code>3.14</code>)</li>
+<li><strong>Strings</strong> (text, e.g., <code>"data science"</code>)</li>
+<li><strong>Booleans</strong> (<code>True</code> or <code>False</code>)</li>
+</ul>
+<p>Core <strong>data structures</strong> include:</p>
+<ul>
+<li><strong>Lists</strong> – ordered, mutable collections (e.g., <code>[1,2,3]</code>)</li>
+<li><strong>Tuples</strong> – ordered, immutable collections (e.g., <code>(1,2,3)</code>)</li>
+<li><strong>Dictionaries</strong> – key-value pairs (e.g., <code>{"name": "Alice", "age": 20}</code>)</li>
+<li><strong>Sets</strong> – unordered, unique elements (e.g., <code>{1,2,3}</code>)</li>
+</ul>
+<p>Later in the course, we will rely heavily on <strong>NumPy arrays</strong> and <strong>Pandas DataFrames</strong>, which are optimized for data manipulation.</p>
+<h1 id="head">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
+<h2 id="understanding-the-data-science-workflow_1">Understanding the Data Science Workflow</h2>
+<p>Every data science project follows a structured workflow:</p>
+<ol>
+<li><strong>Define the problem</strong> – Clarify what question is being answered.</li>
+<li><strong>Collect data</strong> – Gather raw data from reliable sources.</li>
+<li><strong>Clean and preprocess data</strong> – Handle missing values, errors, and inconsistencies.</li>
+<li><strong>Explore and visualize</strong> – Use plots and descriptive statistics to understand patterns.</li>
+<li><strong>Modeling</strong> – Build predictive or explanatory models.</li>
+<li><strong>Evaluate</strong> – Use metrics to test accuracy and generalizability.</li>
+<li><strong>Deploy and communicate results</strong> – Share findings with stakeholders.</li>
+</ol>
+<p>This workflow is iterative. A failed model often sends us back to collect new data or engineer better features.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>7836e01 (updates)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="microsim-data-science-workflow-infographic">MicroSim – Data Science Workflow Infographic</h3>
+<p>Students can explore an <strong>interactive infographic</strong> where clicking each stage of the workflow reveals its purpose, key tools, and example questions.</p>
+<h1 id="head_1">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>7836e01 (updates)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="data-science-roles-and-career-paths">Data Science Roles and Career Paths</h2>
+<p>Data science is a team effort, involving many specialized roles:</p>
+<ul>
+<li><strong>Data Scientist:</strong> Builds models, interprets results, and communicates insights.</li>
+<li><strong>Data Engineer:</strong> Designs pipelines and storage systems for reliable data access.</li>
+<li><strong>Machine Learning Engineer:</strong> Deploys and optimizes models in production systems.</li>
+<li><strong>Business Analyst:</strong> Translates data insights into actionable strategies.</li>
+<li><strong>Ethics &amp; Compliance Specialist:</strong> Ensures fairness, transparency, and privacy in projects.</li>
+</ul>
+<p>These roles often overlap, and many entry-level positions expect a blend of programming, statistics, and communication skills.</p>
+<h1 id="head_2">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>7836e01 (updates)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="ethics-and-best-practices-in-data-science">Ethics and Best Practices in Data Science</h2>
+<p>Data science has great potential, but also significant risks. Poorly designed or biased models can reinforce inequalities or cause harm. To practice <strong>ethical data science</strong>, we must:</p>
+<ul>
+<li><strong>Protect privacy</strong>: Respect data ownership and confidentiality.</li>
+<li><strong>Avoid bias</strong>: Check datasets and models for fairness across subgroups.</li>
+<li><strong>Be transparent</strong>: Document methods and assumptions clearly.</li>
+<li><strong>Ensure reproducibility</strong>: Use version control and pipelines so results can be verified.</li>
+<li><strong>Balance efficiency and responsibility</strong>: Consider environmental and social impacts.</li>
+</ul>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="sample-hands-on-lab-exploring-sample-datasets-with-python-dataframes">Sample Hands-On Lab: Exploring Sample Datasets with Python Dataframes</h3>
+<p>To begin, we will explore a real-world datasets.  Let's say a friend of yours complained that the
+healthcare costs in the country that you live it were unreasonably high compared to other
+countries.  Can you provide evidence to prove or disprove this claim?</p>
+<p>A simple but practical task is to generate a <strong>CSV file</strong> of <strong>per-capita annual healthcare costs for 2023</strong> across the 100 largest countries. </p>
+<p>You will then use Python to:</p>
+<ol>
+<li>Load the data into a Pandas <strong>DataFrame</strong>.</li>
+<li>Compute summary statistics such as mean, median, and standard deviation.</li>
+<li>Create visualizations such as bar charts and scatter plots.</li>
+<li>Ask ChatGPT (or another LLM) to interpret the results and suggest insights.</li>
+</ol>
+<p>Here is a sample of what this data looks like:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Country Name,Country Code,Health_Exp_Per_Capita_2022
+Africa Eastern and Southern,AFE,228
+Afghanistan,AFG,383
+Africa Western and Central,AFW,201
+Angola,AGO,217
+Albania,ALB,1186
+Andorra,AND,5136
+Arab World,ARB,776
+United Arab Emirates,ARE,3814
+Argentina,ARG,2664
+Armenia,ARM,1824
+Antigua and Barbuda,ATG,1436
+</code></pre></div></td></tr></table></div>
+<p>You can download this sample data here: <a href="https://github.com/dmccreary/data-science-course/blob/main/data/lab-01/healthcare-per-capita-2022.csv">Worldwide Healthcare Costs Per Capita for 2022</a></p>
+<p>Note that this list from the World Bank includes not just countries, but also regions like "Africa Wester and Central".
+The third column is in US dollars</p>
+<p>This exercise introduces <strong>data cleaning</strong>, <strong>exploration</strong>, and <strong>visualization</strong>, which form the foundation of every data science project.</p>
+<p>✅ This completes the <strong>Foundations of Data Science</strong> chapter, preparing students for Week 1 of the course.</p>
+<p>=======</p>
+<p>✅ This completes the <strong>Foundations of Data Science</strong> chapter, preparing students for Week 1 of the course.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>7836e01 (updates)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

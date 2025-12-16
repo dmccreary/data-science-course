@@ -1,0 +1,3767 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Transform messy real-world data into pristine, analysis-ready datasets">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/04-data-cleaning/">
+      
+      
+        <link rel="prev" href="../03-python-data-structures/">
+      
+      
+        <link rel="next" href="../05-data-visualization/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Data Cleaning and Preprocessing - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-RTBCWGJKKR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-RTBCWGJKKR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-RTBCWGJKKR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Data Cleaning and Preprocessing - AI Based Data Science with Python" >
+      
+        <meta  property="og:description"  content="Transform messy real-world data into pristine, analysis-ready datasets" >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/04-data-cleaning/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/data-science-course/chapters/04-data-cleaning/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Data Cleaning and Preprocessing - AI Based Data Science with Python" >
+      
+        <meta  name="twitter:description"  content="Transform messy real-world data into pristine, analysis-ready datasets" >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/04-data-cleaning/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-cleaning-and-preprocessing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Cleaning and Preprocessing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-data-science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Data Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-python-environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-python-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-art-of-cleaning-up-messes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Art of Cleaning Up Messes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Art of Cleaning Up Messes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-cleaning-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Cleaning Pipeline Overview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-values-the-silent-killers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Values: The Silent Killers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Missing Values: The Silent Killers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-nan-and-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding NaN and Null
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-detection-finding-the-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Detection: Finding the Gaps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Null Detection: Finding the Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-missing-value-detection-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Missing Value Detection MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-missing-values-your-three-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Missing Values: Your Three Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dropna-method-clean-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      The dropna Method: Clean Sweep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fillna-method-filling-the-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      The fillna Method: Filling the Gaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imputation-the-smart-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imputation: The Smart Approach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duplicate-detection-and-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Detection and Removal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Duplicate Detection and Removal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-detection-finding-the-clones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Detection: Finding the Clones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-removal-eliminating-the-clones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Removal: Eliminating the Clones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Duplicate Removal: Eliminating the Clones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-duplicate-handling-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Duplicate Handling Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outliers-the-extreme-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outliers: The Extreme Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outliers: The Extreme Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outlier-detection-finding-the-extremes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier Detection: Finding the Extremes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outlier Detection: Finding the Extremes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-outlier-detection-methods-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Outlier Detection Methods MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-outliers-what-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Outliers: What To Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-validation-enforcing-the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Validation: Enforcing the Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-transformation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Transformation Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Transformation Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-filtering-selecting-subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Filtering: Selecting Subsets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-indexing-the-power-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Indexing: The Power Tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-query-method-sql-like-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Query Method: SQL-Like Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-cleaning-taming-text-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Cleaning: Taming Text Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-renaming-clear-names-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Renaming: Clear Names Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-type-conversion-getting-types-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Type Conversion: Getting Types Right
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type Conversion: Getting Types Right">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-type-conversion-guide-infographic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Type Conversion Guide Infographic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-scaling-and-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling and Normalization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Scaling and Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-scaling-bringing-features-to-same-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling: Bringing Features to Same Scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-statistical-standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization: Statistical Standardization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization: Statistical Standardization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feature-scaling-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feature Scaling Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-data-cleaning-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Data Cleaning Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Patterns and Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns and Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-cleaning-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Cleaning Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-patterns-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-Patterns to Avoid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-statistical-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistical Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-simple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-multiple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-numpy-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-nonlinear-models-regularization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-linear Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-intro-to-machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro to Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-neural-networks-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks and PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sample GenAI Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-art-of-cleaning-up-messes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Art of Cleaning Up Messes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Art of Cleaning Up Messes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-cleaning-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Cleaning Pipeline Overview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-values-the-silent-killers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Values: The Silent Killers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Missing Values: The Silent Killers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-nan-and-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding NaN and Null
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-detection-finding-the-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Detection: Finding the Gaps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Null Detection: Finding the Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-missing-value-detection-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Missing Value Detection MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-missing-values-your-three-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Missing Values: Your Three Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dropna-method-clean-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      The dropna Method: Clean Sweep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fillna-method-filling-the-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      The fillna Method: Filling the Gaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imputation-the-smart-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imputation: The Smart Approach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duplicate-detection-and-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Detection and Removal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Duplicate Detection and Removal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-detection-finding-the-clones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Detection: Finding the Clones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-removal-eliminating-the-clones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Removal: Eliminating the Clones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Duplicate Removal: Eliminating the Clones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-duplicate-handling-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Duplicate Handling Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outliers-the-extreme-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outliers: The Extreme Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outliers: The Extreme Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outlier-detection-finding-the-extremes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier Detection: Finding the Extremes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outlier Detection: Finding the Extremes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-outlier-detection-methods-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Outlier Detection Methods MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-outliers-what-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Outliers: What To Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-validation-enforcing-the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Validation: Enforcing the Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-transformation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Transformation Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Transformation Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-filtering-selecting-subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Filtering: Selecting Subsets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-indexing-the-power-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Indexing: The Power Tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-query-method-sql-like-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Query Method: SQL-Like Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-cleaning-taming-text-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Cleaning: Taming Text Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-renaming-clear-names-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Renaming: Clear Names Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-type-conversion-getting-types-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Type Conversion: Getting Types Right
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type Conversion: Getting Types Right">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-type-conversion-guide-infographic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Type Conversion Guide Infographic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-scaling-and-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling and Normalization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Scaling and Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-scaling-bringing-features-to-same-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling: Bringing Features to Same Scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-statistical-standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization: Statistical Standardization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization: Statistical Standardization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feature-scaling-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feature Scaling Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-data-cleaning-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Data Cleaning Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Patterns and Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns and Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-cleaning-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Cleaning Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-patterns-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-Patterns to Avoid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/04-data-cleaning/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="data-cleaning-and-preprocessing">Data Cleaning and Preprocessing</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers the critical skills of preparing raw data for analysis. Students will learn to identify and handle missing values, detect and remove duplicates, identify outliers, and validate data quality. The chapter also covers data transformation techniques including filtering, type conversion, and feature scaling. By the end of this chapter, students will be able to clean messy real-world datasets and prepare them for visualization and modeling.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 20 concepts from the learning graph:</p>
+<ol>
+<li>Missing Values</li>
+<li>NaN</li>
+<li>Null Detection</li>
+<li>Dropna Method</li>
+<li>Fillna Method</li>
+<li>Imputation</li>
+<li>Data Type Conversion</li>
+<li>Duplicate Detection</li>
+<li>Duplicate Removal</li>
+<li>Outliers</li>
+<li>Outlier Detection</li>
+<li>Data Validation</li>
+<li>String Cleaning</li>
+<li>Column Renaming</li>
+<li>Data Filtering</li>
+<li>Boolean Indexing</li>
+<li>Query Method</li>
+<li>Data Transformation</li>
+<li>Feature Scaling</li>
+<li>Normalization</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../03-python-data-structures/">Chapter 3: Python Data Structures</a></li>
+</ul>
+<hr />
+<h2 id="the-art-of-cleaning-up-messes">The Art of Cleaning Up Messes</h2>
+<p>In the last chapter, you learned to load data and explore it like a detective. You probably felt pretty good about yourself—data was flowing, <code>head()</code> was working, and everything seemed under control. Then reality hit: the data was messy.</p>
+<p>Welcome to the real world of data science.</p>
+<p>Real-world data is never clean. It's full of gaps where values should be, duplicates that snuck in somehow, numbers that shouldn't exist (like someone being -5 years old), and formatting disasters that would make an English teacher weep. This isn't a bug in the data pipeline—it's just how data works in the wild.</p>
+<p>Here's the thing: <strong>messy data will destroy your analysis</strong>. Train a machine learning model on dirty data? It learns the wrong patterns. Calculate averages with missing values? Your numbers lie. Build a report with duplicates? Everything is inflated. Garbage in, garbage out—that's the first law of data science.</p>
+<p>But here's the good news: cleaning data is a superpower in itself. Most people don't know how to do it well. Master this chapter, and you'll be the hero who transforms chaotic datasets into pristine, analysis-ready gold. Let's get scrubbing!</p>
+<h4 id="diagram-data-cleaning-pipeline-overview">Diagram: Data Cleaning Pipeline Overview</h4>
+<details markdown="1">
+    <summary>Data Cleaning Pipeline Overview</summary>
+    Type: workflow
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students visualize the complete data cleaning workflow from raw data to analysis-ready data
+
+    Purpose: Show the sequential steps in a typical data cleaning process
+
+    Visual style: Horizontal flowchart with icons for each stage
+
+    Steps (left to right):
+
+    1. RAW DATA
+       Icon: Messy document with question marks
+       Color: Red
+       Hover text: "Data as received - full of problems"
+
+    2. MISSING VALUES
+       Icon: Grid with empty cells highlighted
+       Color: Orange
+       Hover text: "Identify and handle NaN, None, empty strings"
+
+    3. DUPLICATES
+       Icon: Two identical rows with X on one
+       Color: Yellow
+       Hover text: "Find and remove duplicate records"
+
+    4. OUTLIERS
+       Icon: Box plot with point far outside
+       Color: Yellow-green
+       Hover text: "Detect and decide how to handle extreme values"
+
+    5. DATA TYPES
+       Icon: Type conversion symbol (A→1)
+       Color: Green
+       Hover text: "Convert columns to appropriate types"
+
+    6. VALIDATION
+       Icon: Checkmark in shield
+       Color: Blue
+       Hover text: "Verify data meets business rules"
+
+    7. TRANSFORMATION
+       Icon: Gear with arrows
+       Color: Purple
+       Hover text: "Scale, normalize, and prepare for analysis"
+
+    8. CLEAN DATA
+       Icon: Sparkly document with checkmark
+       Color: Gold
+       Hover text: "Analysis-ready dataset!"
+
+    Annotations below pipeline:
+    - "Each step catches different problems"
+    - "Order matters: missing values before duplicates"
+    - "Always document your cleaning decisions"
+
+    Error feedback loops:
+    - Dashed arrows from steps 2-6 back to "Log Issues" box
+    - "Log Issues" connects to "Data Quality Report"
+
+    Implementation: SVG with CSS hover effects
+</details>
+
+<h2 id="missing-values-the-silent-killers">Missing Values: The Silent Killers</h2>
+<p><strong>Missing values</strong> are the most common data quality problem you'll encounter. They're sneaky—sometimes they look like empty cells, sometimes they're the word "NULL," and sometimes they're special numeric codes like -999.</p>
+<h3 id="understanding-nan-and-null">Understanding NaN and Null</h3>
+<p>In pandas, missing values are represented as <strong>NaN</strong> (Not a Number). This is a special value from the NumPy library that indicates "something should be here, but isn't."</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Creating data with missing values</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span>
+    <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>    name   age  score
+0  Alice  25.0   85.0
+1    Bob   NaN   92.0
+2   None  22.0   78.0
+3  Diana  28.0    NaN
+</code></pre></div></td></tr></table></div></p>
+<p>Notice how <code>None</code> and <code>np.nan</code> both represent missing data, but they're handled slightly differently. Pandas is smart enough to recognize both as missing values.</p>
+<table>
+<thead>
+<tr>
+<th>Missing Value Type</th>
+<th>Where You'll See It</th>
+<th>Pandas Representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empty cell</td>
+<td>CSV files, Excel</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Python code, JSON</td>
+<td>NaN (converted)</td>
+</tr>
+<tr>
+<td>NULL</td>
+<td>Databases</td>
+<td>NaN (converted)</td>
+</tr>
+<tr>
+<td>Empty string ("")</td>
+<td>Text files</td>
+<td>Not automatically NaN!</td>
+</tr>
+<tr>
+<td>Special codes (-999, 9999)</td>
+<td>Legacy systems</td>
+<td>Not automatically NaN!</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Hidden Missing Values</p>
+<p>Be careful! Empty strings and special codes like -999 are NOT automatically treated as missing. You need to identify and convert them manually. Always inspect your data after loading.</p>
+</div>
+<h3 id="null-detection-finding-the-gaps">Null Detection: Finding the Gaps</h3>
+<p><strong>Null detection</strong> is the process of finding where your missing values hide. Pandas provides several methods for this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check for missing values - returns True/False for each cell</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+
+<span class="c1"># Count missing values in each column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Percentage of missing values</span>
+<span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Find rows with ANY missing values</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># Find rows with missing values in a specific column</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</code></pre></div></td></tr></table></div>
+<p>The <code>isnull()</code> method is your first line of defense. Run it immediately after loading any dataset—it tells you exactly where the problems are.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Real-world pattern: Quick missing value assessment</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing values per column:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total missing: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentage missing: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">df</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-missing-value-detection-microsim">Diagram: Missing Value Detection MicroSim</h4>
+<details markdown="1">
+    <summary>Missing Value Detective MicroSim</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Help students practice identifying and counting missing values in different scenarios
+
+    Canvas layout (750x500px):
+    - Top (750x200): DataFrame display with highlighted missing values
+    - Bottom left (350x300): Detection code panel
+    - Bottom right (400x300): Results and quiz area
+
+    Visual elements:
+    - DataFrame grid showing 8 rows × 5 columns
+    - Missing values highlighted in red when detected
+    - Color legend showing: Present (green), NaN (red), None (orange), Empty string (yellow)
+    - Running count of missing values by column
+
+    Sample data scenarios (rotate through):
+    1. Simple NaN values only
+    2. Mix of NaN and None
+    3. Hidden missing values (empty strings, -999)
+    4. Missing values with pattern (all in one column)
+    5. Sparse data (>50% missing)
+
+    Interactive controls:
+    - Button: "Show isnull()" - highlights all missing
+    - Button: "Count by Column" - shows bar chart of missing counts
+    - Button: "Find Hidden Missing" - identifies non-standard missing values
+    - Dropdown: "Select Scenario" - changes dataset
+    - Quiz mode: "How many missing in column X?" with input field
+
+    Behavior:
+    - Clicking detection buttons animates the detection process
+    - Correct quiz answers earn points and unlock harder scenarios
+    - Hints available after wrong answers
+    - Progress tracker shows scenarios completed
+
+    Visual style: Data detective theme with magnifying glass cursor
+
+    Implementation: p5.js with animated highlighting
+</details>
+
+<h3 id="handling-missing-values-your-three-options">Handling Missing Values: Your Three Options</h3>
+<p>Once you've found missing values, you have three main strategies:</p>
+<ol>
+<li><strong>Drop them</strong> - Remove rows or columns with missing data</li>
+<li><strong>Fill them</strong> - Replace missing values with something reasonable</li>
+<li><strong>Leave them</strong> - Some algorithms can handle missing values directly</li>
+</ol>
+<h3 id="the-dropna-method-clean-sweep">The dropna Method: Clean Sweep</h3>
+<p>The <strong>dropna method</strong> removes rows or columns containing missing values:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Drop any row with missing values</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Drop rows only if ALL values are missing</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+
+<span class="c1"># Drop rows with missing values in specific columns</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">])</span>
+
+<span class="c1"># Drop columns (instead of rows) with missing values</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>When to use <code>dropna()</code>:</p>
+<ul>
+<li>Missing values are rare (less than 5% of data)</li>
+<li>Rows with missing data are truly unusable</li>
+<li>You have plenty of data to spare</li>
+<li>Missing values are random (not systematic)</li>
+</ul>
+<p>When NOT to use <code>dropna()</code>:</p>
+<ul>
+<li>It would remove too much data</li>
+<li>Missing values follow a pattern (systematic missingness)</li>
+<li>The columns with missing data are important</li>
+<li>You suspect the missing data contains signal</li>
+</ul>
+<h3 id="the-fillna-method-filling-the-gaps">The fillna Method: Filling the Gaps</h3>
+<p>The <strong>fillna method</strong> replaces missing values with specified values:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Fill with a constant value</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Fill with the mean of the column</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># Fill with the median (more robust to outliers)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+
+<span class="c1"># Fill with the most common value (mode) for categorical data</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Fill with the previous value (forward fill) - great for time series</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ffill&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fill with the next value (backward fill)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;bfill&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Fill Strategy</th>
+<th>Best For</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean</td>
+<td>Normally distributed numeric data</td>
+<td>Age, height</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>Skewed numeric data, outliers present</td>
+<td>Income, prices</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>Categorical data</td>
+<td>City, category</td>
+</tr>
+<tr>
+<td>Forward fill</td>
+<td>Time series data</td>
+<td>Stock prices, temperatures</td>
+</tr>
+<tr>
+<td>Constant (0)</td>
+<td>When zero has meaning</td>
+<td>Transaction amounts</td>
+</tr>
+<tr>
+<td>Constant ("Unknown")</td>
+<td>Categorical placeholders</td>
+<td>Status fields</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imputation-the-smart-approach">Imputation: The Smart Approach</h3>
+<p><strong>Imputation</strong> is the fancy term for filling missing values based on patterns in the data. It's more sophisticated than simple mean/median filling.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Simple imputation: use column statistics</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="c1"># Create imputer that uses mean for numeric columns</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+<span class="n">df_imputed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]]),</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Advanced imputation strategies include:</p>
+<ul>
+<li><strong>K-Nearest Neighbors (KNN)</strong>: Fill based on similar rows</li>
+<li><strong>Regression imputation</strong>: Predict missing values from other columns</li>
+<li><strong>Multiple imputation</strong>: Create multiple filled versions and combine</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">The Golden Rule of Missing Data</p>
+<p>Always ask: WHY is the data missing? Random missing values can often be filled. But if data is missing for a reason (like patients who missed follow-up because they got worse), filling it can introduce bias. When in doubt, document your decision and consider sensitivity analysis.</p>
+</div>
+<h2 id="duplicate-detection-and-removal">Duplicate Detection and Removal</h2>
+<p>Duplicates are copies of data that shouldn't exist. They inflate your counts, skew your statistics, and make your analyses unreliable. They sneak in through:</p>
+<ul>
+<li>Data entry mistakes</li>
+<li>Multiple data imports</li>
+<li>System glitches</li>
+<li>Merging datasets incorrectly</li>
+</ul>
+<h3 id="duplicate-detection-finding-the-clones">Duplicate Detection: Finding the Clones</h3>
+<p><strong>Duplicate detection</strong> identifies rows that appear more than once:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check for exact duplicate rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>  <span class="c1"># Returns True/False for each row</span>
+
+<span class="c1"># Count total duplicates</span>
+<span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># View the duplicate rows</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+
+<span class="c1"># View all copies (including the first occurrence)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+
+<span class="c1"># Check duplicates based on specific columns only</span>
+<span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<p>The <code>duplicated()</code> method marks duplicates starting from the second occurrence. Use <code>keep=False</code> to see ALL copies, including the first one.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Example: Finding partial duplicates</span>
+<span class="c1"># Maybe the same person appears with slightly different data</span>
+<span class="n">df_people</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a@mail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;b@mail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;a@mail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;c@mail.com&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">]</span>  <span class="c1"># Alice&#39;s age changed!</span>
+<span class="p">})</span>
+
+<span class="c1"># Find duplicates by name and email</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_people</span><span class="p">[</span><span class="n">df_people</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)])</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="duplicate-removal-eliminating-the-clones">Duplicate Removal: Eliminating the Clones</h3>
+<p><strong>Duplicate removal</strong> keeps only unique rows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Remove exact duplicates (keep first occurrence)</span>
+<span class="n">df_unique</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+
+<span class="c1"># Keep the last occurrence instead</span>
+<span class="n">df_unique</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">)</span>
+
+<span class="c1"># Remove duplicates based on specific columns</span>
+<span class="n">df_unique</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">])</span>
+
+<span class="c1"># Remove ALL copies of duplicated rows (nuclear option)</span>
+<span class="n">df_unique</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>When removing duplicates, ask yourself:</p>
+<ul>
+<li>Should you keep the first or last occurrence?</li>
+<li>Are you sure the duplicates are truly identical?</li>
+<li>Should you merge duplicate information instead of just dropping?</li>
+</ul>
+<h4 id="diagram-duplicate-handling-decision-tree">Diagram: Duplicate Handling Decision Tree</h4>
+<details markdown="1">
+    <summary>Duplicate Handling Decision Tree</summary>
+    Type: diagram
+
+    Bloom Taxonomy: Analyze (L4)
+
+    Learning Objective: Help students decide the appropriate strategy for handling different types of duplicates
+
+    Purpose: Guide decision-making process for duplicate handling
+
+    Visual style: Decision tree flowchart
+
+    Start: "Duplicates Detected"
+
+    Decision 1: "Are rows EXACTLY identical?"
+    - Yes → "Safe to drop_duplicates()"
+    - No → Decision 2
+
+    Decision 2: "Which columns make rows 'the same'?"
+    - Identify key columns (ID, email, etc.)
+    - → Decision 3
+
+    Decision 3: "Do non-key columns differ?"
+    - No → "drop_duplicates(subset=[key_cols])"
+    - Yes → Decision 4
+
+    Decision 4: "Which version is correct?"
+    - First occurrence → "keep='first'"
+    - Last occurrence → "keep='last'"
+    - Need to merge → "Use groupby().agg()"
+    - Can't determine → "Flag for manual review"
+
+    Special case branch:
+    "Is duplication intentional?"
+    - Yes (e.g., same product bought twice) → "Don't remove!"
+    - No → Continue with removal
+
+    Color coding:
+    - Green: Safe actions
+    - Yellow: Need investigation
+    - Red: Be careful
+    - Blue: Decision points
+
+    Annotations:
+    - "Always examine duplicates before removing"
+    - "Document which strategy you used and why"
+
+    Implementation: SVG decision tree with interactive highlights
+</details>
+
+<h2 id="outliers-the-extreme-values">Outliers: The Extreme Values</h2>
+<p><strong>Outliers</strong> are data points that are unusually far from other observations. They might be:</p>
+<ul>
+<li><strong>Legitimate extremes</strong>: A billionaire in income data—rare but real</li>
+<li><strong>Data errors</strong>: Someone's age recorded as 999</li>
+<li><strong>Measurement errors</strong>: A sensor glitch recording impossible values</li>
+</ul>
+<p>Outliers matter because they can dramatically affect your statistics. One outlier can shift your mean, expand your standard deviation, and confuse your machine learning models.</p>
+<h3 id="outlier-detection-finding-the-extremes">Outlier Detection: Finding the Extremes</h3>
+<p><strong>Outlier detection</strong> identifies values that don't fit the normal pattern. Common methods include:</p>
+<p><strong>1. Visual inspection (always start here!):</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Box plot - shows outliers as dots beyond the whiskers</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Histogram - outliers appear as isolated bars</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>2. Statistical methods:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Z-score method: outliers are &gt;3 standard deviations from mean</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="n">z_scores</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="nb">abs</span><span class="p">(</span><span class="n">z_scores</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)]</span>
+
+<span class="c1"># IQR method: outliers are beyond 1.5 × IQR from quartiles</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)]</span>
+</code></pre></div></td></tr></table></div></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z-score</td>
+<td>Distance from mean in standard deviations</td>
+<td>Normal distributions</td>
+</tr>
+<tr>
+<td>IQR</td>
+<td>Distance from quartiles</td>
+<td>Any distribution, robust to extremes</td>
+</tr>
+<tr>
+<td>Domain rules</td>
+<td>Based on what's possible</td>
+<td>When you know valid ranges</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. Domain knowledge rules:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Age can&#39;t be negative or over 120</span>
+<span class="n">invalid_ages</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">)]</span>
+
+<span class="c1"># Test scores must be 0-100</span>
+<span class="n">invalid_scores</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)]</span>
+</code></pre></div></td></tr></table></div></p>
+<h4 id="diagram-outlier-detection-methods-microsim">Diagram: Outlier Detection Methods MicroSim</h4>
+<details markdown="1">
+    <summary>Outlier Detection Playground</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Let students experiment with different outlier detection methods and see how they identify different points
+
+    Canvas layout (800x550px):
+    - Left (550x550): Scatter plot / histogram visualization
+    - Right (250x550): Controls and detected outliers list
+
+    Visual elements:
+    - Data points displayed as circles
+    - Normal points in blue
+    - Detected outliers highlighted in red with labels
+    - Detection threshold lines/zones shown
+    - Summary statistics displayed
+
+    Sample datasets (toggle between):
+    1. Normal distribution with obvious outliers
+    2. Skewed distribution (income-like)
+    3. Multi-modal distribution
+    4. Real-world messy data with errors
+
+    Interactive controls:
+    - Radio buttons: Detection method (Z-score, IQR, Custom range)
+    - Slider: Z-score threshold (1.5 to 4.0)
+    - Slider: IQR multiplier (1.0 to 3.0)
+    - Number inputs: Custom min/max values
+    - Dropdown: Dataset selector
+    - Toggle: Show/hide threshold lines
+
+    Display panels:
+    - Count of outliers detected
+    - Outlier values and indices
+    - Percentage of data flagged
+    - Before/after mean comparison
+
+    Behavior:
+    - Adjusting thresholds immediately updates highlighting
+    - Hovering over points shows their values
+    - Clicking outliers adds them to "investigate" list
+    - Show how different methods catch different outliers
+
+    Educational annotations:
+    - "Z-score catches 3 outliers, IQR catches 5 - which is right?"
+    - "Lower threshold = more outliers flagged"
+    - "Some 'outliers' might be valid data!"
+
+    Visual style: Clean statistical visualization with gridlines
+
+    Implementation: p5.js with dynamic data visualization
+</details>
+
+<h3 id="handling-outliers-what-to-do">Handling Outliers: What To Do</h3>
+<p>Once you've identified outliers, you have options:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Option 1: Remove them</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_bound</span><span class="p">)]</span>
+
+<span class="c1"># Option 2: Cap them (winsorization)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score_capped&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">upper_bound</span><span class="p">)</span>
+
+<span class="c1"># Option 3: Replace with NaN (treat as missing)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">),</span> <span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="c1"># Option 4: Log transform (reduces impact of extremes)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score_log&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">])</span>
+
+<span class="c1"># Option 5: Keep them! (if they&#39;re legitimate)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Don't Just Delete Outliers!</p>
+<p>Before removing outliers, ask: Are they errors or legitimate extremes? Removing real data points because they're "inconvenient" is bad science. Document every outlier decision.</p>
+</div>
+<h2 id="data-validation-enforcing-the-rules">Data Validation: Enforcing the Rules</h2>
+<p><strong>Data validation</strong> checks that data meets expected criteria. It's the quality control checkpoint that catches problems before they contaminate your analysis.</p>
+<p>Common validation checks:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check data types are correct</span>
+<span class="k">assert</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;int64&quot;</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">],</span> <span class="s2">&quot;Age should be numeric&quot;</span>
+
+<span class="c1"># Check value ranges</span>
+<span class="k">assert</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="s2">&quot;Invalid ages found&quot;</span>
+
+<span class="c1"># Check for required values</span>
+<span class="k">assert</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;customer_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="s2">&quot;Missing customer IDs&quot;</span>
+
+<span class="c1"># Check uniqueness</span>
+<span class="k">assert</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">is_unique</span><span class="p">,</span> <span class="s2">&quot;Duplicate emails found&quot;</span>
+
+<span class="c1"># Check referential integrity</span>
+<span class="n">valid_categories</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">valid_categories</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="s2">&quot;Invalid categories&quot;</span>
+
+<span class="c1"># Check date logic</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;end_date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;start_date&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="s2">&quot;End before start&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Building a validation function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">validate_student_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate student dataset and return issues found.&quot;&quot;&quot;</span>
+    <span class="n">issues</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Check required columns exist</span>
+    <span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;student_id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;gpa&quot;</span><span class="p">]</span>
+    <span class="n">missing_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">required</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">missing_cols</span><span class="p">:</span>
+        <span class="n">issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing columns: </span><span class="si">{</span><span class="n">missing_cols</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check data types</span>
+    <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;int64&quot;</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">]:</span>
+        <span class="n">issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Age is not numeric&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check value ranges</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid ages: </span><span class="si">{</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gpa&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gpa&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">4.0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GPA out of range [0, 4.0]&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check for duplicates</span>
+    <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;student_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Duplicate student_ids: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;student_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()][</span><span class="s1">&#39;student_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">issues</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Validation failed:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ All validations passed!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<span class="c1"># Use it</span>
+<span class="n">validate_student_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="data-transformation-techniques">Data Transformation Techniques</h2>
+<p>Now that your data is clean, it's time to transform it into the shape your analysis needs. <strong>Data transformation</strong> includes filtering, selecting, renaming, type conversion, and more.</p>
+<h3 id="data-filtering-selecting-subsets">Data Filtering: Selecting Subsets</h3>
+<p><strong>Data filtering</strong> extracts rows that meet specific criteria. You learned the basics in Chapter 3—now let's master advanced techniques.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Basic filtering review</span>
+<span class="n">high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">]</span>
+
+<span class="c1"># Multiple conditions (AND)</span>
+<span class="n">young_high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">)]</span>
+
+<span class="c1"># Multiple conditions (OR)</span>
+<span class="n">special_cases</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">95</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)]</span>
+
+<span class="c1"># NOT condition</span>
+<span class="n">not_from_ny</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;New York&quot;</span><span class="p">)]</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="boolean-indexing-the-power-tool">Boolean Indexing: The Power Tool</h3>
+<p><strong>Boolean indexing</strong> is the technique behind filtering—using True/False arrays to select data:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create a boolean mask</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>  <span class="c1"># Shows True/False for each row</span>
+
+<span class="c1"># Use the mask to filter</span>
+<span class="n">high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="c1"># Combine masks</span>
+<span class="n">mask1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span>
+<span class="n">mask2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask1</span> <span class="o">&amp;</span> <span class="n">mask2</span><span class="p">]</span>  <span class="c1"># Both conditions</span>
+<span class="n">either</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask1</span> <span class="o">|</span> <span class="n">mask2</span><span class="p">]</span>    <span class="c1"># Either condition</span>
+
+<span class="c1"># Invert a mask</span>
+<span class="n">low_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">mask1</span><span class="p">]</span>  <span class="c1"># NOT high scorers</span>
+</code></pre></div></td></tr></table></div>
+<p>Understanding boolean indexing makes complex filtering intuitive. You can build masks step-by-step, test them separately, and combine them logically.</p>
+<h3 id="the-query-method-sql-like-filtering">The Query Method: SQL-Like Filtering</h3>
+<p>The <strong>query method</strong> offers a cleaner syntax for complex filters:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Instead of this:</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;New York&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)]</span>
+
+<span class="c1"># You can write this:</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;age &gt; 25 and city == &#39;New York&#39; and score &gt;= 80&quot;</span><span class="p">)</span>
+
+<span class="c1"># Using variables in queries</span>
+<span class="n">min_age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">target_city</span> <span class="o">=</span> <span class="s2">&quot;New York&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;age &gt; @min_age and city == @target_city&quot;</span><span class="p">)</span>
+
+<span class="c1"># Complex conditions read more naturally</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;(score &gt; 90) or (age &lt; 20 and score &gt; 80)&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Syntax</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean indexing</td>
+<td><code>df[df["col"] &gt; val]</code></td>
+<td>Simple conditions, programmatic use</td>
+</tr>
+<tr>
+<td>Query method</td>
+<td><code>df.query("col &gt; val")</code></td>
+<td>Complex conditions, readability</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-cleaning-taming-text-data">String Cleaning: Taming Text Data</h3>
+<p><strong>String cleaning</strong> standardizes text data that comes in many messy forms:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Convert to lowercase</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># Remove leading/trailing whitespace</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># Replace characters</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Extract patterns with regex</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;zipcode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d</span><span class="si">{5}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check for patterns</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;has_email&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;contact&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Common string cleaning operations:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># All-in-one cleaning function</span>
+<span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">text</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">text</span>
+            <span class="o">.</span><span class="n">strip</span><span class="p">()</span>                      <span class="c1"># Remove whitespace</span>
+            <span class="o">.</span><span class="n">lower</span><span class="p">()</span>                       <span class="c1"># Lowercase</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>           <span class="c1"># Fix double spaces</span>
+           <span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="column-renaming-clear-names-matter">Column Renaming: Clear Names Matter</h3>
+<p><strong>Column renaming</strong> makes your data self-documenting:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Rename specific columns</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;cust_id&quot;</span><span class="p">:</span> <span class="s2">&quot;customer_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amt&quot;</span><span class="p">:</span> <span class="s2">&quot;amount&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dt&quot;</span><span class="p">:</span> <span class="s2">&quot;transaction_date&quot;</span>
+<span class="p">})</span>
+
+<span class="c1"># Rename all columns at once</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]</span>
+
+<span class="c1"># Apply a function to all column names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+
+<span class="c1"># Chain operations</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>Good column names are:</p>
+<ul>
+<li>Lowercase with underscores (snake_case)</li>
+<li>Descriptive but not too long</li>
+<li>Free of spaces and special characters</li>
+<li>Consistent across your project</li>
+</ul>
+<h3 id="data-type-conversion-getting-types-right">Data Type Conversion: Getting Types Right</h3>
+<p><strong>Data type conversion</strong> ensures columns have appropriate types for analysis:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check current types</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="c1"># Convert to numeric</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>  <span class="c1"># Invalid → NaN</span>
+
+<span class="c1"># Convert to string</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;zipcode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;zipcode&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Convert to datetime</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+<span class="c1"># Convert to categorical (saves memory, enables ordering)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;grade&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;grade&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Convert to integer (handling NaN)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;Int64&quot;</span><span class="p">)</span>  <span class="c1"># Nullable integer type</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Original Type</th>
+<th>Convert To</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String numbers</td>
+<td><code>float64</code> or <code>int64</code></td>
+<td>Enable math operations</td>
+</tr>
+<tr>
+<td>Dates as strings</td>
+<td><code>datetime64</code></td>
+<td>Enable date arithmetic</td>
+</tr>
+<tr>
+<td>Numeric codes</td>
+<td><code>category</code></td>
+<td>Save memory, show meaning</td>
+</tr>
+<tr>
+<td>Float IDs</td>
+<td><code>Int64</code></td>
+<td>Preserve as integers with NaN support</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-data-type-conversion-guide-infographic">Diagram: Data Type Conversion Guide Infographic</h4>
+<details markdown="1">
+    <summary>Data Type Conversion Reference</summary>
+    Type: infographic
+
+    Bloom Taxonomy: Remember (L1)
+
+    Learning Objective: Quick reference for common data type conversions and when to use them
+
+    Purpose: Visual guide for choosing the right data type conversion method
+
+    Layout: Two-column reference card style
+
+    Section 1: "Converting TO Numeric"
+    - `pd.to_numeric(col)` - Basic conversion
+    - `pd.to_numeric(col, errors='coerce')` - Invalid → NaN
+    - `col.astype(float)` - When you're sure it's clean
+    - Visual: String "42" → Integer 42
+
+    Section 2: "Converting TO Datetime"
+    - `pd.to_datetime(col)` - Smart parsing
+    - `pd.to_datetime(col, format='%Y-%m-%d')` - Specific format
+    - Visual: String "2024-03-15" → Datetime object
+
+    Section 3: "Converting TO Categorical"
+    - `col.astype('category')` - Basic categorical
+    - `pd.Categorical(col, categories=[...], ordered=True)` - Ordered
+    - Visual: Repeating strings → Category codes
+
+    Section 4: "Converting TO String"
+    - `col.astype(str)` - Simple conversion
+    - `col.map('{:.2f}'.format)` - With formatting
+    - Visual: Number 3.14159 → String "3.14"
+
+    Common pitfalls callout box:
+    - "Integer columns with NaN need Int64 (capital I)"
+    - "datetime parsing can be slow on large datasets"
+    - "Category type saves memory but changes behavior"
+
+    Color coding:
+    - Blue: Numeric conversions
+    - Green: Date conversions
+    - Purple: Categorical conversions
+    - Orange: String conversions
+
+    Interactive elements:
+    - Hover over conversion methods to see code examples
+    - Click to copy code snippet
+
+    Implementation: HTML/CSS with JavaScript tooltips
+</details>
+
+<h2 id="feature-scaling-and-normalization">Feature Scaling and Normalization</h2>
+<p>When you're preparing data for machine learning, <strong>feature scaling</strong> becomes critical. Different features might have vastly different ranges—age might be 18-80 while income might be 20,000-500,000. Without scaling, the larger numbers dominate the analysis.</p>
+<h3 id="feature-scaling-bringing-features-to-same-scale">Feature Scaling: Bringing Features to Same Scale</h3>
+<p><strong>Feature scaling</strong> transforms features to comparable ranges:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span><span class="p">,</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Min-Max scaling: transforms to [0, 1] range</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;age_scaled&quot;</span><span class="p">,</span> <span class="s2">&quot;income_scaled&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;income&quot;</span><span class="p">]])</span>
+
+<span class="c1"># Standard scaling: transforms to mean=0, std=1</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;age_standard&quot;</span><span class="p">,</span> <span class="s2">&quot;income_standard&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;income&quot;</span><span class="p">]])</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="normalization-statistical-standardization">Normalization: Statistical Standardization</h3>
+<p><strong>Normalization</strong> typically refers to scaling to unit norm or standard distribution:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Z-score normalization (same as StandardScaler)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score_normalized&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># Min-max normalization (manual)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score_minmax&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+
+<span class="c1"># Robust scaling (uses median/IQR, resistant to outliers)</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">RobustScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;income_robust&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;income&quot;</span><span class="p">]])</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Scaling Method</th>
+<th>Formula</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min-Max</td>
+<td>$(x - min) / (max - min)$</td>
+<td>Neural networks, bounded algorithms</td>
+</tr>
+<tr>
+<td>Z-score/Standard</td>
+<td>$(x - \mu) / \sigma$</td>
+<td>Most ML algorithms, normally distributed data</td>
+</tr>
+<tr>
+<td>Robust</td>
+<td>$(x - median) / IQR$</td>
+<td>Data with outliers</td>
+</tr>
+<tr>
+<td>Log transform</td>
+<td>$\log(x + 1)$</td>
+<td>Right-skewed data (income, counts)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">When to Scale</p>
+<p>Scale features when using distance-based algorithms (KNN, SVM, K-means) or gradient descent (neural networks). Tree-based algorithms (Random Forest, XGBoost) usually don't need scaling.</p>
+</div>
+<h4 id="diagram-feature-scaling-comparison-microsim">Diagram: Feature Scaling Comparison MicroSim</h4>
+<details markdown="1">
+    <summary>Feature Scaling Visualizer</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students visualize how different scaling methods transform data distributions
+
+    Canvas layout (800x500px):
+    - Top (800x200): Original data distribution histogram
+    - Bottom left (400x300): Scaled distribution histogram
+    - Bottom right (400x300): Controls and comparison stats
+
+    Visual elements:
+    - Original data histogram with descriptive statistics
+    - Scaled data histogram (updates with scaling method)
+    - Before/after comparison statistics table
+    - Visual axis showing value ranges
+
+    Sample datasets:
+    - Normal distribution (symmetric)
+    - Right-skewed (income-like)
+    - With outliers
+    - Bimodal distribution
+
+    Interactive controls:
+    - Radio buttons: Scaling method
+      - None (original)
+      - Min-Max [0,1]
+      - Standard (Z-score)
+      - Robust (median/IQR)
+      - Log transform
+    - Dropdown: Dataset selector
+    - Checkbox: Show outliers highlighted
+    - Checkbox: Show before/after overlay
+
+    Comparison statistics displayed:
+    - Min, Max, Range
+    - Mean, Median
+    - Std Dev, IQR
+    - Visual indicator of how outliers are affected
+
+    Behavior:
+    - Switching scaling method animates the transformation
+    - Hover over bars to see exact values
+    - Toggle overlay to see original vs scaled superimposed
+    - Outliers maintain highlighting through transformation
+
+    Educational annotations:
+    - "Notice: Min-Max squishes outliers to 0 or 1"
+    - "Standard scaling keeps outliers as extreme z-scores"
+    - "Robust scaling ignores outliers!"
+    - "Log transform pulls in right tail"
+
+    Visual style: Statistical visualization with clean grid
+
+    Implementation: p5.js with real-time distribution updates
+</details>
+
+<h2 id="complete-data-cleaning-workflow">Complete Data Cleaning Workflow</h2>
+<p>Let's put it all together with a complete data cleaning workflow:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">clean_dataset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Complete data cleaning pipeline.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    df : DataFrame</span>
+<span class="sd">        Raw data to clean</span>
+<span class="sd">    config : dict, optional</span>
+<span class="sd">        Cleaning configuration options</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    DataFrame : Cleaned data</span>
+<span class="sd">    dict : Cleaning report</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;original_shape&quot;</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;issues_found&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;actions_taken&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="c1"># Step 1: Make a copy</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Step 2: Handle missing values</span>
+    <span class="n">missing_counts</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">cols_with_missing</span> <span class="o">=</span> <span class="n">missing_counts</span><span class="p">[</span><span class="n">missing_counts</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols_with_missing</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">report</span><span class="p">[</span><span class="s2">&quot;issues_found&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing values in </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">cols_with_missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> columns&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Fill numeric columns with median</span>
+        <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">report</span><span class="p">[</span><span class="s2">&quot;actions_taken&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Filled </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2"> with median&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Fill categorical columns with mode</span>
+        <span class="n">cat_cols</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cat_cols</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">report</span><span class="p">[</span><span class="s2">&quot;actions_taken&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Filled </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2"> with mode&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 3: Remove duplicates</span>
+    <span class="n">n_duplicates</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">n_duplicates</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">report</span><span class="p">[</span><span class="s2">&quot;issues_found&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_duplicates</span><span class="si">}</span><span class="s2"> duplicate rows&quot;</span><span class="p">)</span>
+        <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+        <span class="n">report</span><span class="p">[</span><span class="s2">&quot;actions_taken&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removed </span><span class="si">{</span><span class="n">n_duplicates</span><span class="si">}</span><span class="s2"> duplicates&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 4: Clean string columns</span>
+    <span class="n">string_cols</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">string_cols</span><span class="p">:</span>
+        <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;actions_taken&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Cleaned string columns (strip, lowercase)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 5: Standardize column names</span>
+    <span class="n">df_clean</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">columns</span>
+                        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">))</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;actions_taken&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Standardized column names&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Final report</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;final_shape&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;rows_removed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">report</span><span class="p">[</span><span class="s2">&quot;original_shape&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">report</span><span class="p">[</span><span class="s2">&quot;final_shape&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">df_clean</span><span class="p">,</span> <span class="n">report</span>
+
+<span class="c1"># Use the function</span>
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;messy_data.csv&quot;</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="p">,</span> <span class="n">cleaning_report</span> <span class="o">=</span> <span class="n">clean_dataset</span><span class="p">(</span><span class="n">df_raw</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cleaned </span><span class="si">{</span><span class="n">cleaning_report</span><span class="p">[</span><span class="s1">&#39;original_shape&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> rows → </span><span class="si">{</span><span class="n">cleaning_report</span><span class="p">[</span><span class="s1">&#39;final_shape&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> rows&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actions taken:&quot;</span><span class="p">,</span> <span class="n">cleaning_report</span><span class="p">[</span><span class="s2">&quot;actions_taken&quot;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition success">
+<p class="admonition-title">Achievement Unlocked: Data Janitor</p>
+<p>You now have the skills to transform any messy dataset into clean, analysis-ready data. This isn't glamorous work, but it's where real data scientists spend 60-80% of their time. You're now equipped for the real world!</p>
+</div>
+<h2 id="common-patterns-and-best-practices">Common Patterns and Best Practices</h2>
+<h3 id="the-cleaning-checklist">The Cleaning Checklist</h3>
+<p>Before any analysis, run through this checklist:</p>
+<ul>
+<li>[ ] Load data and check <code>shape</code></li>
+<li>[ ] View <code>head()</code> and <code>tail()</code> for anomalies</li>
+<li>[ ] Check <code>dtypes</code> for correct types</li>
+<li>[ ] Run <code>isnull().sum()</code> for missing values</li>
+<li>[ ] Run <code>duplicated().sum()</code> for duplicates</li>
+<li>[ ] Check <code>describe()</code> for impossible values</li>
+<li>[ ] Validate against business rules</li>
+<li>[ ] Document all cleaning decisions</li>
+</ul>
+<h3 id="anti-patterns-to-avoid">Anti-Patterns to Avoid</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># DON&#39;T: Modify data without inspection</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># How much did you just lose?</span>
+
+<span class="c1"># DO: Inspect first, then decide</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing values: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Would drop </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> rows&quot;</span><span class="p">)</span>
+
+<span class="c1"># DON&#39;T: Hardcode cleaning values</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>  <span class="c1"># What if this changes?</span>
+
+<span class="c1"># DO: Use data-driven or configurable values</span>
+<span class="n">default_status</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Most common value</span>
+
+<span class="c1"># DON&#39;T: Silently modify the original</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># DO: Create cleaned versions</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<details class="question">
+<summary>Chapter 4 Checkpoint: Test Your Understanding</summary>
+<p><strong>Question:</strong> You receive a dataset with the following issues:
+- 5% of rows have missing ages
+- 2% of rows have duplicate emails
+- Some scores are recorded as -1 (meaning "not applicable")
+- Income column is stored as strings like "$50,000"</p>
+<p>Write a cleaning plan for this data.</p>
+<p><strong>Click to reveal answer:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 1. Handle missing ages (5% is acceptable to fill)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 2. Handle duplicates based on email</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Handle -1 scores (replace with NaN, not a real value)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="c1"># 4. Clean income column</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;income&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;income&quot;</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Missing values</strong> (NaN) must be found with <code>isnull()</code> and handled with <code>dropna()</code>, <code>fillna()</code>, or imputation strategies.</p>
+</li>
+<li>
+<p><strong>Duplicates</strong> inflate your data—detect with <code>duplicated()</code> and remove with <code>drop_duplicates()</code>.</p>
+</li>
+<li>
+<p><strong>Outliers</strong> can be errors or legitimate extremes—detect with IQR or z-scores, then decide whether to remove, cap, or keep.</p>
+</li>
+<li>
+<p><strong>Data validation</strong> enforces business rules—build validation functions to catch problems early.</p>
+</li>
+<li>
+<p><strong>Boolean indexing</strong> and the <strong>query method</strong> let you filter data with complex conditions.</p>
+</li>
+<li>
+<p><strong>String cleaning</strong> standardizes text—use <code>.str</code> methods for cleaning operations.</p>
+</li>
+<li>
+<p><strong>Data type conversion</strong> ensures columns have appropriate types for analysis.</p>
+</li>
+<li>
+<p><strong>Feature scaling</strong> (Min-Max, Standard, Robust) brings features to comparable ranges for machine learning.</p>
+</li>
+<li>
+<p><strong>Document everything</strong>—cleaning decisions affect your entire analysis, so keep a record.</p>
+</li>
+<li>
+<p>The <strong>cleaning workflow</strong> (missing → duplicates → outliers → types → validation → transformation) should become second nature.</p>
+</li>
+</ol>
+<p>You've mastered the art of data cleaning—arguably the most valuable practical skill in data science. In the next chapter, you'll learn to visualize your clean data, turning numbers into insights that everyone can understand. The glamorous part is coming!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-python-data-structures/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python Data Structures">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Python Data Structures
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-data-visualization/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Visualization">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Data Visualization
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

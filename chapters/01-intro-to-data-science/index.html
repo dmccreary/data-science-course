@@ -1,0 +1,2685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Your journey to becoming a data science superhero starts here">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/chapters/01-intro-to-data-science/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-python-environment/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Introduction to Data Science - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-RTBCWGJKKR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-RTBCWGJKKR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-RTBCWGJKKR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Introduction to Data Science - AI Based Data Science with Python" >
+      
+        <meta  property="og:description"  content="Your journey to becoming a data science superhero starts here" >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/01-intro-to-data-science/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/data-science-course/chapters/01-intro-to-data-science/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Introduction to Data Science - AI Based Data Science with Python" >
+      
+        <meta  name="twitter:description"  content="Your journey to becoming a data science superhero starts here" >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/01-intro-to-data-science/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-data-science" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Data Science
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction to Data Science
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Data Science
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#welcome-to-your-data-science-origin-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome to Your Data Science Origin Story
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Welcome to Your Data Science Origin Story">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-science-superpower-concept-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Science Superpower Concept Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-exactly-is-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Exactly Is Data Science?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-data-the-raw-material-of-your-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Data: The Raw Material of Your Power
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-the-building-blocks-of-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables: The Building Blocks of Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables: The Building Blocks of Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-variable-types-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Variable Types Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-types-of-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Four Types of Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Four Types of Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Categorical Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-scales-precision-levels-for-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Scales: Precision Levels for Your Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurement Scales: Precision Levels for Your Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-measurement-scales-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Measurement Scales Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independent-and-dependent-variables-cause-and-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Independent and Dependent Variables: Cause and Effect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Independent and Dependent Variables: Cause and Effect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-independent-vs-dependent-variable-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Independent vs Dependent Variable MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets-your-data-organized-and-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets: Your Data Organized and Ready
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-target-variables-setting-up-for-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and Target Variables: Setting Up for Prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-science-workflow-your-heros-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Data Science Workflow: Your Hero's Journey
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Data Science Workflow: Your Hero's Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-science-workflow-heros-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Science Workflow Hero's Journey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-definition-starting-your-quest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Definition: Starting Your Quest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection-gathering-your-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Collection: Gathering Your Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-programming-your-superpower-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Programming: Your Superpower Tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-recording-your-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation: Recording Your Journey
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-your-data-science-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: Your Data Science Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: Your Data Science Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-chapter-1-concept-mind-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Chapter 1 Concept Mind Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-python-environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-python-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-data-cleaning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-statistical-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistical Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-simple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-multiple-linear-regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-numpy-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-nonlinear-models-regularization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-linear Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-intro-to-machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro to Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-neural-networks-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks and PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sample GenAI Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#welcome-to-your-data-science-origin-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome to Your Data Science Origin Story
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Welcome to Your Data Science Origin Story">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-science-superpower-concept-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Science Superpower Concept Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-exactly-is-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Exactly Is Data Science?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-data-the-raw-material-of-your-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Data: The Raw Material of Your Power
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-the-building-blocks-of-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables: The Building Blocks of Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables: The Building Blocks of Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-variable-types-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Variable Types Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-types-of-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Four Types of Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Four Types of Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Categorical Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-scales-precision-levels-for-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Scales: Precision Levels for Your Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurement Scales: Precision Levels for Your Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-measurement-scales-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Measurement Scales Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independent-and-dependent-variables-cause-and-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Independent and Dependent Variables: Cause and Effect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Independent and Dependent Variables: Cause and Effect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-independent-vs-dependent-variable-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Independent vs Dependent Variable MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets-your-data-organized-and-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets: Your Data Organized and Ready
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-target-variables-setting-up-for-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and Target Variables: Setting Up for Prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-science-workflow-your-heros-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Data Science Workflow: Your Hero's Journey
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Data Science Workflow: Your Hero's Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-science-workflow-heros-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Data Science Workflow Hero's Journey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-definition-starting-your-quest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Definition: Starting Your Quest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection-gathering-your-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Collection: Gathering Your Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-programming-your-superpower-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Programming: Your Superpower Tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-recording-your-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation: Recording Your Journey
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-your-data-science-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: Your Data Science Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: Your Data Science Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-chapter-1-concept-mind-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Chapter 1 Concept Mind Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/01-intro-to-data-science/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="introduction-to-data-science">Introduction to Data Science</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces the foundational concepts of data science, establishing the vocabulary and mental models needed for the rest of the course. Students will learn what data science is, understand the data science workflow from problem definition to data collection, and master the different types of data and measurement scales. By the end of this chapter, students will be able to identify variables, distinguish between independent and dependent variables, and understand the structure of datasets.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 20 concepts from the learning graph:</p>
+<ol>
+<li>Data Science</li>
+<li>Data</li>
+<li>Variables</li>
+<li>Data Types</li>
+<li>Numerical Data</li>
+<li>Categorical Data</li>
+<li>Ordinal Data</li>
+<li>Nominal Data</li>
+<li>Measurement Scales</li>
+<li>Independent Variable</li>
+<li>Dependent Variable</li>
+<li>Dataset</li>
+<li>Observation</li>
+<li>Feature</li>
+<li>Target Variable</li>
+<li>Data Science Workflow</li>
+<li>Problem Definition</li>
+<li>Data Collection</li>
+<li>Python Programming</li>
+<li>Documentation</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>. No prior data science knowledge is required.</p>
+<hr />
+<h2 id="welcome-to-your-data-science-origin-story">Welcome to Your Data Science Origin Story</h2>
+<p>Every superhero has an origin story. Spider-Man got bitten by a radioactive spider. Iron Man built a suit in a cave. You? You're about to unlock something even more powerful—the ability to see patterns in chaos, predict the future from the past, and make decisions that actually make sense. Welcome to <strong>data science</strong>, your new superpower.</p>
+<p>Here's the thing: we live in a world absolutely drowning in <strong>data</strong>. Every swipe, click, purchase, and late-night snack run generates information. Most people just swim through this ocean without a second thought. But data scientists? They're the ones who can read the currents, spot the hidden treasure, and navigate to exactly where they want to go.</p>
+<p>By the end of this book, you'll be able to:</p>
+<ul>
+<li>Predict trends before they happen</li>
+<li>Find patterns nobody else can see</li>
+<li>Build models that learn from experience</li>
+<li>Make decisions backed by evidence, not just gut feelings</li>
+</ul>
+<p>Sound like a superpower? That's because it is.</p>
+<h4 id="diagram-data-science-superpower-concept-map">Diagram: Data Science Superpower Concept Map</h4>
+<details markdown="1">
+    <summary>Data Science Superpower Concept Map</summary>
+    Type: infographic
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students visualize how data science skills connect to real-world impact and career opportunities
+
+    Purpose: Show data science as a central hub with superpowers radiating outward to real-world applications
+
+    Layout: Central hub-and-spoke design with "Data Science" in the center
+
+    Central node: "DATA SCIENCE" (styled as a glowing power core)
+
+    Radiating spokes (6 superpowers):
+    1. "Pattern Detection" → connects to "Fraud Detection, Disease Diagnosis"
+    2. "Prediction" → connects to "Weather Forecasting, Stock Markets"
+    3. "Optimization" → connects to "Route Planning, Resource Allocation"
+    4. "Automation" → connects to "Self-Driving Cars, Smart Assistants"
+    5. "Insight Discovery" → connects to "Customer Behavior, Scientific Research"
+    6. "Decision Support" → connects to "Business Strategy, Policy Making"
+
+    Interactive elements:
+    - Hover over each superpower to see a brief description
+    - Hover over applications to see real company examples (Netflix, Google, Amazon)
+    - Pulsing animation on central node to draw attention
+
+    Visual style: Comic book / superhero aesthetic with bold colors and action lines
+    Color scheme: Blue core, radiating yellow/gold spokes, green application nodes
+
+    Implementation: HTML/CSS/JavaScript with SVG graphics
+</details>
+
+<h2 id="what-exactly-is-data-science">What Exactly Is Data Science?</h2>
+<p><strong>Data science</strong> is the art and science of extracting meaningful insights from data. It combines statistics, computer programming, and domain expertise to answer questions, solve problems, and predict outcomes. Think of it as being a detective, mathematician, and storyteller all rolled into one.</p>
+<p>But wait—isn't that just statistics? Or computer science? Or business analytics? Here's what makes data science special: it's all of those things working together. A statistician might crunch numbers. A programmer might write code. A business analyst might make recommendations. A data scientist does all three, often before lunch.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Primary Focus</th>
+<th>Data Scientist's Take</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Statistician</td>
+<td>Mathematical analysis</td>
+<td>"I use stats AND make it work in code"</td>
+</tr>
+<tr>
+<td>Programmer</td>
+<td>Building software</td>
+<td>"I code AND understand what the numbers mean"</td>
+</tr>
+<tr>
+<td>Business Analyst</td>
+<td>Strategic recommendations</td>
+<td>"I advise AND prove it with evidence"</td>
+</tr>
+<tr>
+<td>Data Scientist</td>
+<td>All of the above</td>
+<td>"I do it all—and make it look easy"</td>
+</tr>
+</tbody>
+</table>
+<p>The best part? Data science isn't just for tech companies. Hospitals use it to save lives. Sports teams use it to win championships. Musicians use it to create hit songs. Even farmers use it to grow better crops. Whatever you're passionate about, data science can make you better at it.</p>
+<h2 id="understanding-data-the-raw-material-of-your-power">Understanding Data: The Raw Material of Your Power</h2>
+<p>Before you can wield your new superpower, you need to understand its source: <strong>data</strong>. Data is simply recorded information. It's the raw material that, when processed correctly, becomes insight, knowledge, and wisdom.</p>
+<p>Data is everywhere. Right now, your phone is collecting data about your location, battery level, and which apps you use most. Your school tracks data about attendance, grades, and lunch purchases. Even your heartbeat generates data that a smartwatch can record.</p>
+<p>Here's a mind-bending thought: by the time you finish reading this sentence, the world will have generated approximately 2.5 quintillion bytes of new data. That's 2,500,000,000,000,000,000 bytes. Every. Single. Day.</p>
+<div class="admonition tip">
+<p class="admonition-title">Data Science Superpower Tip</p>
+<p>The difference between ordinary people and data scientists isn't access to data—everyone has that now. It's knowing what to DO with data that makes you powerful.</p>
+</div>
+<p>But not all data is created equal. Some data is clean and ready to use. Some is messy and needs work. Some is numerical, some is categorical. Understanding these differences is your first step toward data science mastery.</p>
+<h2 id="variables-the-building-blocks-of-data">Variables: The Building Blocks of Data</h2>
+<p>In data science, we organize data using <strong>variables</strong>. A variable is any characteristic, number, or quantity that can be measured or counted. Variables are called "variables" because they vary—they can take on different values.</p>
+<p>Think about describing your classmates. You might note:</p>
+<ul>
+<li>Their height (a number that varies from person to person)</li>
+<li>Their eye color (a category that varies)</li>
+<li>Their grade level (a rank that varies)</li>
+<li>Their student ID (a unique identifier that varies)</li>
+</ul>
+<p>Each of these is a variable. And here's where it gets interesting: the TYPE of variable determines what you can do with it.</p>
+<h4 id="diagram-variable-types-decision-tree">Diagram: Variable Types Decision Tree</h4>
+<details markdown="1">
+    <summary>Variable Types Decision Tree</summary>
+    Type: workflow
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Enable students to correctly classify any variable they encounter into its proper type
+
+    Purpose: Guide students through identifying variable types with a simple decision tree
+
+    Visual style: Flowchart with decision diamonds and endpoint rectangles
+
+    Starting point: "What kind of variable is this?"
+
+    Decision 1: "Can you do math with it?"
+    - YES → "NUMERICAL DATA" path
+    - NO → "CATEGORICAL DATA" path
+
+    NUMERICAL path continues:
+    Decision 2: "Can it be any value (including decimals)?"
+    - YES → Endpoint: "Continuous" (example: height = 5.7 feet)
+    - NO → Endpoint: "Discrete" (example: number of siblings = 2)
+
+    CATEGORICAL path continues:
+    Decision 3: "Is there a meaningful order?"
+    - YES → Endpoint: "Ordinal" (example: grade levels Freshman < Senior)
+    - NO → Endpoint: "Nominal" (example: eye color - no order)
+
+    Color coding:
+    - Decision diamonds: Yellow
+    - Numerical endpoints: Blue
+    - Categorical endpoints: Green
+    - Examples: Gray italic text
+
+    Interactive elements:
+    - Hover over each endpoint to see 3 more examples
+    - Click "Test Yourself" button to get a random variable to classify
+
+    Implementation: HTML/CSS/JavaScript flowchart
+</details>
+
+<h2 id="the-four-types-of-data">The Four Types of Data</h2>
+<p>Let's break down the <strong>data types</strong> you'll encounter. Mastering these is like learning to identify different materials—you wouldn't use the same technique on wood as you would on metal.</p>
+<h3 id="numerical-data">Numerical Data</h3>
+<p><strong>Numerical data</strong> consists of numbers that represent quantities. You can perform mathematical operations on numerical data—add it, subtract it, find averages, and more.</p>
+<p>Numerical data comes in two flavors:</p>
+<ul>
+<li><strong>Continuous</strong>: Can take ANY value within a range (height, temperature, time)</li>
+<li><strong>Discrete</strong>: Can only take specific values, usually whole numbers (number of pets, test score out of 100)</li>
+</ul>
+<h3 id="categorical-data">Categorical Data</h3>
+<p><strong>Categorical data</strong> represents groups or categories. You can't do math with it in the traditional sense—what's the average of "blue" plus "green"? Exactly.</p>
+<p>Categorical data also comes in two flavors:</p>
+<ul>
+<li><strong>Nominal data</strong>: Categories with NO inherent order (colors, countries, types of music)</li>
+<li><strong>Ordinal data</strong>: Categories WITH a meaningful order (rankings, satisfaction levels, education levels)</li>
+</ul>
+<p>Here's a handy comparison:</p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Can Do Math?</th>
+<th>Has Order?</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numerical (Continuous)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Height, Weight, Temperature</td>
+</tr>
+<tr>
+<td>Numerical (Discrete)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Age in years, Number of friends</td>
+</tr>
+<tr>
+<td>Categorical (Ordinal)</td>
+<td>No*</td>
+<td>Yes</td>
+<td>Star ratings, T-shirt sizes (S, M, L)</td>
+</tr>
+<tr>
+<td>Categorical (Nominal)</td>
+<td>No</td>
+<td>No</td>
+<td>Favorite color, Country of birth</td>
+</tr>
+</tbody>
+</table>
+<p>*You can count ordinal categories and find modes, but traditional arithmetic doesn't apply.</p>
+<h2 id="measurement-scales-precision-levels-for-your-data">Measurement Scales: Precision Levels for Your Data</h2>
+<p><strong>Measurement scales</strong> describe the precision and type of information a variable provides. Think of them as different levels of detail, like the difference between knowing someone is "tall" versus knowing they're "exactly 6 feet 2 inches."</p>
+<p>There are four measurement scales, from least to most informative:</p>
+<ol>
+<li><strong>Nominal</strong>: Names or labels only (no order, no math)</li>
+<li><strong>Ordinal</strong>: Ordered categories (rankings exist, but intervals aren't equal)</li>
+<li><strong>Interval</strong>: Equal intervals, but no true zero (temperature in Celsius)</li>
+<li><strong>Ratio</strong>: Equal intervals WITH a true zero (height, weight, age)</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Why Does This Matter?</p>
+<p>Knowing your measurement scale determines which analyses you can perform. You can calculate a mean height (ratio scale), but you can't calculate a "mean favorite color" (nominal scale). Using the wrong analysis on the wrong scale is like trying to measure your height with a thermometer—technically using a measurement tool, but completely useless.</p>
+</div>
+<h4 id="diagram-measurement-scales-pyramid">Diagram: Measurement Scales Pyramid</h4>
+<details markdown="1">
+    <summary>Measurement Scales Pyramid</summary>
+    Type: infographic
+
+    Bloom Taxonomy: Remember (L1)
+
+    Learning Objective: Help students remember the four measurement scales and what operations each allows
+
+    Purpose: Visualize measurement scales as a hierarchy where each level adds capabilities
+
+    Layout: Pyramid with four layers, widest at bottom
+
+    Layers (bottom to top):
+    1. NOMINAL (base, widest)
+       - Operations: = ≠ (equality only)
+       - Example: "Jersey numbers"
+       - Color: Light gray
+
+    2. ORDINAL
+       - Operations: = ≠ < > (equality + ordering)
+       - Example: "Race finishing positions"
+       - Color: Light blue
+
+    3. INTERVAL
+       - Operations: = ≠ < > + - (add equal intervals)
+       - Example: "Temperature in Fahrenheit"
+       - Color: Light green
+
+    4. RATIO (top, narrowest)
+       - Operations: = ≠ < > + - × ÷ (full arithmetic)
+       - Example: "Height in centimeters"
+       - Color: Gold (representing "gold standard")
+
+    Side annotations:
+    - Arrow pointing up: "More mathematical operations possible"
+    - Arrow pointing down: "More variables fit this category"
+
+    Interactive elements:
+    - Hover over each level to see 5 example variables
+    - Click to see which statistical tests are appropriate for each level
+
+    Visual style: 3D pyramid with glowing edges, game achievement aesthetic
+
+    Implementation: CSS 3D transforms or SVG
+</details>
+
+<h2 id="independent-and-dependent-variables-cause-and-effect">Independent and Dependent Variables: Cause and Effect</h2>
+<p>Now we get to one of the most important concepts in all of science: the relationship between <strong>independent variables</strong> and <strong>dependent variables</strong>.</p>
+<p>The <strong>independent variable</strong> is what you change or control in an experiment. It's the "cause" in cause-and-effect. The <strong>dependent variable</strong> is what you measure—it "depends" on the independent variable. It's the "effect."</p>
+<p>Here's an easy way to remember:</p>
+<ul>
+<li><strong>Independent</strong> = "I change this" (I for Independent)</li>
+<li><strong>Dependent</strong> = "This depends on what I changed"</li>
+</ul>
+<p>Real-world examples:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Independent Variable</th>
+<th>Dependent Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Studying for a test</td>
+<td>Hours studied</td>
+<td>Test score</td>
+</tr>
+<tr>
+<td>Growing plants</td>
+<td>Amount of sunlight</td>
+<td>Plant height</td>
+</tr>
+<tr>
+<td>Running a business</td>
+<td>Advertising budget</td>
+<td>Sales revenue</td>
+</tr>
+<tr>
+<td>Video game practice</td>
+<td>Hours played</td>
+<td>Skill level</td>
+</tr>
+</tbody>
+</table>
+<p>Understanding this relationship is HUGE. It's the foundation of prediction. If you know how an independent variable affects a dependent variable, you can predict outcomes. That's literally seeing the future.</p>
+<h4 id="diagram-independent-vs-dependent-variable-microsim">Diagram: Independent vs Dependent Variable MicroSim</h4>
+<details markdown="1">
+    <summary>Study Time vs Test Score Simulator</summary>
+    Type: microsim
+
+    Bloom Taxonomy: Apply (L3)
+
+    Learning Objective: Let students experiment with changing an independent variable and observe how the dependent variable responds, building intuition for cause-and-effect relationships
+
+    Canvas layout (700x450px):
+    - Main area (500x400): Scatter plot visualization
+    - Right panel (200x400): Controls and stats
+
+    Visual elements:
+    - Scatter plot with "Hours Studied" on X-axis (0-10 hours)
+    - "Test Score" on Y-axis (0-100 points)
+    - Data points appear as student emoji icons
+    - Trend line showing relationship
+    - Confidence band around trend line
+
+    Interactive controls:
+    - Slider: "Add Student" - Click to add a new random data point
+    - Slider: "Relationship Strength" (0-100%) - Controls how predictable scores are from study time
+    - Button: "Generate Class of 30" - Creates realistic dataset
+    - Button: "Clear All" - Reset visualization
+    - Toggle: "Show Trend Line" - Display/hide regression line
+    - Toggle: "Show Prediction" - Highlight predicted vs actual
+
+    Display stats:
+    - Number of students
+    - Average study time
+    - Average test score
+    - Correlation strength (with emoji: 💪 strong, 🤷 weak)
+
+    Default parameters:
+    - Relationship strength: 70%
+    - Start with 10 sample students
+    - Trend line visible
+
+    Behavior:
+    - When relationship strength is high, points cluster tightly around trend line
+    - When strength is low, points scatter widely (more randomness)
+    - Clicking on the plot shows "If you study X hours, you'd expect a score around Y"
+    - Fun messages appear: "Whoa, that student beat the odds!" for outliers
+
+    Educational message displayed:
+    "The INDEPENDENT variable (study time) is what you control.
+    The DEPENDENT variable (test score) is what you measure.
+    Notice: More study time TENDS to mean better scores, but there's always variation!"
+
+    Implementation: p5.js with simple linear regression
+</details>
+
+<h2 id="datasets-your-data-organized-and-ready">Datasets: Your Data Organized and Ready</h2>
+<p>A <strong>dataset</strong> is a structured collection of data, organized in a way that makes analysis possible. Think of it as a spreadsheet with rows and columns, where each row is one <strong>observation</strong> and each column is one variable.</p>
+<p>An <strong>observation</strong> (also called a record or instance) is a single unit of data. If you're collecting data about students, each student is one observation. If you're tracking daily weather, each day is one observation.</p>
+<p>Here's what a simple dataset looks like:</p>
+<table>
+<thead>
+<tr>
+<th>Student ID</th>
+<th>Name</th>
+<th>Hours Studied</th>
+<th>Test Score</th>
+<th>Grade Level</th>
+<th>Favorite Subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td>Alex</td>
+<td>3.5</td>
+<td>82</td>
+<td>Junior</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>002</td>
+<td>Jordan</td>
+<td>5.0</td>
+<td>91</td>
+<td>Senior</td>
+<td>Science</td>
+</tr>
+<tr>
+<td>003</td>
+<td>Sam</td>
+<td>2.0</td>
+<td>74</td>
+<td>Junior</td>
+<td>Art</td>
+</tr>
+<tr>
+<td>004</td>
+<td>Taylor</td>
+<td>4.5</td>
+<td>88</td>
+<td>Senior</td>
+<td>History</td>
+</tr>
+</tbody>
+</table>
+<p>In this dataset:</p>
+<ul>
+<li>Each <strong>row</strong> is one observation (one student)</li>
+<li>Each <strong>column</strong> is one variable</li>
+<li>We have 4 observations and 6 variables</li>
+</ul>
+<h2 id="features-and-target-variables-setting-up-for-prediction">Features and Target Variables: Setting Up for Prediction</h2>
+<p>When we're building predictive models, we use special terms for our variables:</p>
+<p><strong>Features</strong> (also called predictors or input variables) are the variables we use to make predictions. They're the information we feed INTO our model.</p>
+<p>The <strong>target variable</strong> (also called the outcome, response, or label) is what we're trying to predict. It's the OUTPUT of our model.</p>
+<p>Using our student example:</p>
+<ul>
+<li><strong>Features</strong>: Hours Studied, Grade Level, Favorite Subject</li>
+<li><strong>Target Variable</strong>: Test Score (what we want to predict)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Feature vs. Target: A Sports Analogy</p>
+<p>Imagine predicting which team will win a game. Your <strong>features</strong> might be: each team's win record, star player stats, home vs. away, and weather conditions. Your <strong>target variable</strong> is the game outcome (win/lose). Features are your clues; the target is what you're solving for.</p>
+</div>
+<p>Here's how features and targets relate to independent/dependent variables:</p>
+<table>
+<thead>
+<tr>
+<th>Predictive Modeling Term</th>
+<th>Experimental Term</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Features</td>
+<td>Independent Variables</td>
+<td>Input to model</td>
+</tr>
+<tr>
+<td>Target Variable</td>
+<td>Dependent Variable</td>
+<td>Output to predict</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-data-science-workflow-your-heros-journey">The Data Science Workflow: Your Hero's Journey</h2>
+<p><img alt="Data Science Quest" src="../../img/data-science-quest.jpg" /></p>
+<p>Every great hero follows a journey, and data scientists are no different. The <strong>data science workflow</strong> is your roadmap from "I have a question" to "I have an answer (with evidence)."</p>
+<p>The workflow has several key stages:</p>
+<ol>
+<li><strong>Problem Definition</strong>: What question are you trying to answer?</li>
+<li><strong>Data Collection</strong>: Gathering the information you need</li>
+<li><strong>Data Cleaning</strong>: Fixing errors and handling missing information</li>
+<li><strong>Exploratory Analysis</strong>: Getting to know your data through visualization</li>
+<li><strong>Modeling</strong>: Building mathematical representations to make predictions</li>
+<li><strong>Evaluation</strong>: Testing how well your model works</li>
+<li><strong>Communication</strong>: Sharing your findings with others</li>
+</ol>
+<h4 id="diagram-data-science-workflow-heros-journey">Diagram: Data Science Workflow Hero's Journey</h4>
+<details markdown="1">
+    <summary>Data Science Workflow as Hero's Journey</summary>
+    Type: workflow
+
+    Bloom Taxonomy: Understand (L2)
+
+    Learning Objective: Help students understand the iterative nature of the data science workflow and see it as an adventure rather than a checklist
+
+    Purpose: Present data science workflow as an engaging hero's journey with circular/iterative flow
+
+    Visual style: Circular journey map with adventure game aesthetic
+
+    Journey stages (arranged in circle):
+
+    1. "The Call to Adventure" - PROBLEM DEFINITION
+       Icon: Question mark in a thought bubble
+       Hover text: "A mystery emerges! What question burns in your mind?"
+       Color: Purple
+
+    2. "Gathering Allies" - DATA COLLECTION
+       Icon: Treasure chest opening
+       Hover text: "Seek out the data you need from databases, surveys, and APIs"
+       Color: Gold
+
+    3. "Trials and Tribulations" - DATA CLEANING
+       Icon: Broom sweeping bugs
+       Hover text: "Face the chaos! Fix errors, handle missing values, tame the mess"
+       Color: Orange
+
+    4. "The Revelation" - EXPLORATORY ANALYSIS
+       Icon: Magnifying glass with sparkles
+       Hover text: "Visualize and explore. Patterns begin to emerge from the fog"
+       Color: Blue
+
+    5. "Forging the Weapon" - MODELING
+       Icon: Anvil with hammer
+       Hover text: "Build your predictive model—your weapon against uncertainty"
+       Color: Red
+
+    6. "The Ultimate Test" - EVALUATION
+       Icon: Target with arrow
+       Hover text: "Does your model actually work? Time to find out!"
+       Color: Green
+
+    7. "Return with the Elixir" - COMMUNICATION
+       Icon: Scroll with graph
+       Hover text: "Share your discoveries! Tell the story your data revealed"
+       Color: Teal
+
+    Center of circle: "DATA SCIENCE QUEST"
+
+    Arrows showing flow:
+    - Forward arrows between each stage
+    - Dotted "return" arrows from later stages back to earlier ones (showing iteration)
+    - Labels on return arrows: "Need more data?", "Model not working?", "New questions?"
+
+    Interactive elements:
+    - Click each stage to see 2-3 real-world examples
+    - Hover for detailed description
+    - Animation: Glowing "current stage" effect that cycles through
+
+    Implementation: SVG with JavaScript interactivity
+</details>
+
+<h3 id="problem-definition-starting-your-quest">Problem Definition: Starting Your Quest</h3>
+<p><strong>Problem definition</strong> is where every data science project begins. Before you touch any data, you need a clear question. Vague questions lead to vague answers (or worse, wrong answers).</p>
+<p>Bad problem definitions:</p>
+<ul>
+<li>"I want to analyze data" (About what? Why?)</li>
+<li>"Make me a machine learning model" (To do what?)</li>
+<li>"Find something interesting" (That's not a question!)</li>
+</ul>
+<p>Good problem definitions:</p>
+<ul>
+<li>"Which factors most influence student test performance?"</li>
+<li>"Can we predict which customers will cancel their subscription?"</li>
+<li>"How does weather affect daily bike rental demand?"</li>
+</ul>
+<p>The difference? Good questions are specific, measurable, and actionable.</p>
+<h3 id="data-collection-gathering-your-resources">Data Collection: Gathering Your Resources</h3>
+<p><strong>Data collection</strong> is the process of gathering the information you need to answer your question. Data can come from many sources:</p>
+<ul>
+<li><strong>Surveys and forms</strong>: Directly asking people questions</li>
+<li><strong>Sensors and devices</strong>: Automatic measurements (temperature, motion, etc.)</li>
+<li><strong>Databases</strong>: Stored records from transactions, events, or activities</li>
+<li><strong>Web scraping</strong>: Automatically extracting data from websites</li>
+<li><strong>APIs</strong>: Requesting data from other software systems</li>
+<li><strong>Experiments</strong>: Controlled tests you design and run</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Data Collection Reality Check</p>
+<p>Here's a secret professionals don't always tell you: data collection is often the HARDEST part. The data you want might not exist. The data you can get might be messy. You might need permission you don't have. Real data science is 80% wrestling with data and 20% building cool models.</p>
+</div>
+<h2 id="python-programming-your-superpower-tool">Python Programming: Your Superpower Tool</h2>
+<p>If data science is your superpower, then <strong>Python programming</strong> is your utility belt. Python is a programming language that's become the go-to tool for data scientists worldwide.</p>
+<p>Why Python? Several reasons:</p>
+<ul>
+<li><strong>Readable</strong>: Python code looks almost like English</li>
+<li><strong>Powerful libraries</strong>: Tools like pandas, NumPy, and matplotlib do the heavy lifting</li>
+<li><strong>Huge community</strong>: Millions of users means tons of help and resources</li>
+<li><strong>Free and open source</strong>: No expensive licenses required</li>
+<li><strong>Versatile</strong>: Works for data analysis, web apps, automation, and more</li>
+</ul>
+<p>Here's a sneak peek at what Python code looks like:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Load a dataset</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate average test score</span>
+<span class="n">average_score</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="s2">&quot;test_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Class average: </span><span class="si">{</span><span class="n">average_score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Find students who studied more than 4 hours</span>
+<span class="n">hard_workers</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;hours_studied&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Don't worry if this looks foreign right now. By the end of this course, you'll be writing code like this in your sleep.</p>
+<h2 id="documentation-recording-your-journey">Documentation: Recording Your Journey</h2>
+<p><strong>Documentation</strong> is the practice of recording what you did, why you did it, and what you learned. It might sound boring, but trust me—future you will thank present you for good documentation.</p>
+<p>Documentation serves several purposes:</p>
+<ul>
+<li><strong>Memory aid</strong>: You WILL forget what you did three weeks ago</li>
+<li><strong>Collaboration</strong>: Others need to understand your work</li>
+<li><strong>Reproducibility</strong>: Science requires that results can be replicated</li>
+<li><strong>Debugging</strong>: Finding errors is easier when you know what you did</li>
+<li><strong>Portfolio</strong>: Documentation becomes proof of your skills</li>
+</ul>
+<p>Good documentation includes:</p>
+<ul>
+<li>Clear comments in your code</li>
+<li>Explanation of your reasoning and decisions</li>
+<li>Notes about data sources and limitations</li>
+<li>Visualizations of key findings</li>
+<li>Summary of results and conclusions</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">The Superhero's Journal</p>
+<p>Even Batman keeps records in the Batcomputer. Your documentation is your version of this—a record of your adventures, discoveries, and hard-won knowledge. Start good habits now, and you'll stand out as a professional later.</p>
+</div>
+<h2 id="putting-it-all-together-your-data-science-toolkit">Putting It All Together: Your Data Science Toolkit</h2>
+<p>Congratulations! You've just acquired the foundational vocabulary of data science. Let's recap your new powers:</p>
+<p><strong>Core Concepts:</strong></p>
+<ul>
+<li><strong>Data Science</strong>: Extracting insights from data using statistics, programming, and domain expertise</li>
+<li><strong>Data</strong>: Recorded information that serves as raw material for analysis</li>
+<li><strong>Variables</strong>: Characteristics that can take different values</li>
+<li><strong>Data Types</strong>: Numerical (continuous, discrete) and Categorical (nominal, ordinal)</li>
+<li><strong>Measurement Scales</strong>: Nominal → Ordinal → Interval → Ratio</li>
+</ul>
+<p><strong>Relationships:</strong></p>
+<ul>
+<li><strong>Independent Variable</strong>: What you change (the cause)</li>
+<li><strong>Dependent Variable</strong>: What you measure (the effect)</li>
+<li><strong>Features</strong>: Input variables for prediction</li>
+<li><strong>Target Variable</strong>: What you're trying to predict</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<ul>
+<li><strong>Dataset</strong>: Organized collection of data</li>
+<li><strong>Observation</strong>: Single data point (one row)</li>
+<li><strong>Data Science Workflow</strong>: Problem → Collect → Clean → Explore → Model → Evaluate → Communicate</li>
+</ul>
+<p><strong>Tools:</strong></p>
+<ul>
+<li><strong>Python Programming</strong>: Your primary weapon for data analysis</li>
+<li><strong>Documentation</strong>: Your record of the journey</li>
+</ul>
+<h4 id="diagram-chapter-1-concept-mind-map">Diagram: Chapter 1 Concept Mind Map</h4>
+<details markdown="1">
+    <summary>Introduction to Data Science Concept Map</summary>
+    Type: graph-model
+
+    Bloom Taxonomy: Analyze (L4)
+
+    Learning Objective: Help students see how all concepts from Chapter 1 connect and relate to each other
+
+    Purpose: Visual summary showing relationships between all 20 concepts covered
+
+    Node types:
+    1. Core Concept (large gold circles)
+       - Data Science, Data, Variables, Dataset
+
+    2. Data Types (medium blue squares)
+       - Numerical Data, Categorical Data, Ordinal Data, Nominal Data
+
+    3. Variable Roles (medium green diamonds)
+       - Independent Variable, Dependent Variable, Feature, Target Variable
+
+    4. Workflow (medium purple hexagons)
+       - Data Science Workflow, Problem Definition, Data Collection
+
+    5. Tools & Practices (medium orange rectangles)
+       - Python Programming, Documentation
+
+    6. Structure (medium teal triangles)
+       - Measurement Scales, Observation
+
+    Edge types:
+    1. "is a type of" (solid gray) - e.g., Numerical → Data Types
+    2. "contains" (dashed blue) - e.g., Dataset → Observation
+    3. "uses" (dotted green) - e.g., Data Science → Python Programming
+    4. "same as" (double line) - e.g., Feature ↔ Independent Variable
+
+    Layout: Hierarchical with Data Science at top
+
+    Key relationships:
+    - Data Science → Data (works with)
+    - Data → Variables (organized into)
+    - Variables → Data Types (classified by)
+    - Data Types → splits to Numerical and Categorical
+    - Numerical/Categorical → further subtypes
+    - Variables → splits to Independent/Dependent
+    - Feature = Independent Variable (in prediction context)
+    - Target Variable = Dependent Variable (in prediction context)
+    - Data Science Workflow → Problem Definition → Data Collection
+    - Data Science → Python Programming (implemented using)
+    - All activities → Documentation (recorded through)
+
+    Interactive features:
+    - Hover: Show concept definition
+    - Click: Highlight all connected concepts
+    - Double-click: Expand to show examples
+    - Filter buttons: Show only certain node types
+
+    Visual styling:
+    - Node size reflects importance (centrality)
+    - Edge thickness reflects strength of relationship
+    - Animated pulses along edges when hovering
+
+    Implementation: vis-network JavaScript library
+    Canvas size: 800x600px
+</details>
+
+<h2 id="whats-next">What's Next?</h2>
+<p>You've completed your origin story. You understand what data science is, how data is organized, and the workflow you'll follow on every project. You've met Python, your trusty sidekick.</p>
+<p>But here's the exciting part: this is just the beginning. In the chapters ahead, you'll:</p>
+<ul>
+<li>Set up your Python environment and write your first code</li>
+<li>Load real datasets and explore them hands-on</li>
+<li>Create beautiful visualizations that tell stories</li>
+<li>Learn statistical techniques that reveal hidden patterns</li>
+<li>Build models that actually predict the future</li>
+<li>And ultimately, complete a capstone project that showcases your new superpowers</li>
+</ul>
+<p>The world needs more people who can make sense of data. It needs people who can separate signal from noise, truth from fiction, and insight from confusion. By the time you finish this book, you'll be one of those people.</p>
+<p>Ready to continue your training?</p>
+<details class="question">
+<summary>Chapter 1 Checkpoint: Test Your Understanding</summary>
+<p><strong>Question</strong>: A researcher collects data on students including their GPA (0.0-4.0), major (Biology, Chemistry, Physics), year in school (Freshman through Senior), and number of classes taken. Classify each variable by its data type and measurement scale.</p>
+<p><strong>Click to reveal answer:</strong></p>
+<ul>
+<li><strong>GPA</strong>: Numerical (continuous), Ratio scale</li>
+<li><strong>Major</strong>: Categorical (nominal), Nominal scale</li>
+<li><strong>Year in school</strong>: Categorical (ordinal), Ordinal scale</li>
+<li><strong>Number of classes</strong>: Numerical (discrete), Ratio scale</li>
+</ul>
+</details>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Data science</strong> is your superpower—it combines statistics, programming, and domain knowledge to extract insights from data.</p>
+</li>
+<li>
+<p><strong>Data</strong> is everywhere, and understanding its types (numerical vs. categorical, ordinal vs. nominal) determines what you can do with it.</p>
+</li>
+<li>
+<p><strong>Variables</strong> are the building blocks of data, and knowing the difference between independent and dependent variables is crucial for understanding cause and effect.</p>
+</li>
+<li>
+<p><strong>Datasets</strong> organize data into rows (observations) and columns (variables), making analysis possible.</p>
+</li>
+<li>
+<p>The <strong>data science workflow</strong> is your hero's journey: define the problem, collect data, clean it, explore it, model it, evaluate it, and communicate your findings.</p>
+</li>
+<li>
+<p><strong>Python</strong> is your primary tool, and <strong>documentation</strong> is how you record your journey for yourself and others.</p>
+</li>
+</ol>
+<p>Now turn the page and let's set up your Python environment. Your training continues!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-python-environment/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Environment">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Python Environment
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
