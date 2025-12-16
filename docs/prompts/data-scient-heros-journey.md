@@ -1,4 +1,6 @@
-# Data Science Quest
+# Data Science Quest Image
+
+Given to Google Nano Banana
 
 Please create highly detailed wide-landscape image of an old map.  The width:height ratio is 2:1.
 

@@ -151,3 +151,4 @@ Deployment process:
 When generating chapter content, the chapter-content-generator skill will
 add diagram/microsim placeholders using the <details> XML element.
 Do not put leading spaces inside the <details> elements.  Do not indent the text within the <details> element.
+- remember to use the p5.js's built-in textWrap(WORD) when wrapping text in a p5.js microsim

@@ -13,7 +13,7 @@ social:
 <iframe src="main.html" height="602px" width="100%" scrolling="no"></iframe>
 
 [Run the Data Science Hero's Journey Fullscreen](./main.html){ .md-button .md-button--primary }
-
+[Edit the Data Science Hero's Journey Using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/6GDLdPj3l0)
 ## About This MicroSim
 
 This interactive visualization presents the **data science workflow** as a hero's journey, inspired by Joseph Campbell's monomyth structure. Just as every great hero follows a journey from the ordinary world through trials and transformation, data scientists follow a similar path from initial questions to actionable insights.

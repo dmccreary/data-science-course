@@ -156,7 +156,7 @@ function draw() {
   centerX = canvasWidth / 2;
 
   // Adjust circle radius based on canvas width
-  circleRadius = min(190, canvasWidth*.38);
+  circleRadius = min(180, canvasWidth / 4);
   nodeRadius = min(45, canvasWidth / 16);
 
   // Draw title
@@ -312,10 +312,8 @@ function drawStageNodes() {
 }
 
 function drawForwardArrows() {
-  // Draw arrows between consecutive stages, but skip the last one (7 to 1)
-  // which would cross through the center
-  for (let i = 0; i < stages.length - 1; i++) {
-    let nextI = i + 1;
+  for (let i = 0; i < stages.length; i++) {
+    let nextI = (i + 1) % stages.length;
 
     let angle1 = -PI / 2 + (TWO_PI / stages.length) * i;
     let angle2 = -PI / 2 + (TWO_PI / stages.length) * nextI;
@@ -365,8 +363,7 @@ function drawForwardArrows() {
 }
 
 function drawReturnArrows() {
-  for (let idx = 0; idx < returnArrows.length; idx++) {
-    let arr = returnArrows[idx];
+  for (let arr of returnArrows) {
     let angle1 = -PI / 2 + (TWO_PI / stages.length) * arr.from;
     let angle2 = -PI / 2 + (TWO_PI / stages.length) * arr.to;
 
@@ -427,10 +424,9 @@ function drawReturnArrows() {
     textAlign(CENTER, CENTER);
     noStroke();
 
-    // Position label near control point with offset to prevent overlap
-    let labelOffset = (idx - 1) * 25; // Spread labels vertically
+    // Position label near control point
     let labelX = ctrlX;
-    let labelY = ctrlY + labelOffset;
+    let labelY = ctrlY;
 
     // Background for label
     let labelWidth = textWidth(arr.label) + 8;
