@@ -1,0 +1,57 @@
+{
+  "title": "Data Science Superpower Concept Map",
+  "description": "An interactive hub-and-spoke visualization showing data science at the center with six superpowers radiating outward to real-world applications, using a comic book aesthetic.",
+  "creator": "Dan McCreary",
+  "subject": ["Data Science", "Career", "Applications", "Concept Map"],
+  "date": "2025-12-16",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "educational": {
+    "gradeLevel": "High School to Undergraduate",
+    "subjectArea": "Data Science",
+    "topic": "Data Science Applications and Career Opportunities",
+    "learningObjectives": [
+      "Visualize how data science skills connect to real-world impact",
+      "Understand the breadth of data science applications across industries",
+      "Identify major companies using each type of data science capability",
+      "Recognize data science as a set of transformative superpowers"
+    ],
+    "bloomsTaxonomy": ["Remember", "Understand"],
+    "duration": "10-15 minutes",
+    "prerequisites": "None"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "drawHeight": 550,
+      "controlHeight": 50
+    },
+    "responsive": true,
+    "dependencies": ["p5.js CDN"],
+    "accessibility": ["Screen reader description", "High contrast colors"]
+  },
+  "controls": [
+    {
+      "type": "hover",
+      "name": "Superpower hover",
+      "description": "Hover over yellow superpower nodes to see descriptions"
+    },
+    {
+      "type": "hover",
+      "name": "Application hover",
+      "description": "Hover over green application nodes to see company examples"
+    }
+  ],
+  "model": {
+    "type": "Conceptual visualization",
+    "layout": "Hub-and-spoke",
+    "centerNode": "Data Science",
+    "superpowers": 6,
+    "applications": 12,
+    "visualStyle": "Comic book / superhero aesthetic"
+  }
+}
