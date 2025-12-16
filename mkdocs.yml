@@ -11,7 +11,7 @@ nav:
   - About: about.md
   - Course Description: course-description.md
   
-  - Chapters:
+  - V2 Chapters:
     - Overview: chapters/index.md
     - Introduction to Data Science: chapters/01-intro-to-data-science/index.md
     - Python Environment: chapters/02-python-environment/index.md
@@ -27,6 +27,28 @@ nav:
     - Intro to Machine Learning: chapters/12-intro-to-machine-learning/index.md
     - Neural Networks and PyTorch: chapters/13-neural-networks-pytorch/index.md
   
+  - V1 Chapters:
+    - Table of Contents: chapters-v1/index.md
+    - Setup: chapters-v1/00-setup/index.md
+    - Foundations: chapters-v1/01-foundations/index.md
+    - Data Exploration: chapters-v1/02-data-exploration/index.md
+    - Data Profiling: chapters-v1/02-data-exploration/ydata-profiling.md
+    - Data Profiling: chapters-v1/data-profiling.md
+    - Data Visualization: chapters/03-data-visualization/index.md
+    - Statistics: chapters-v1/04-statistics/index.md
+    - Linear Regression: chapters-v1/05-linear-regression/index.md
+    - Model Evaluation: chapters-v1/06-models/index.md
+    - Multiple Regression: chapters-v1/07-multiple-linear-regression/index.md
+    - NumPy: chapters-v1/08-numpy/index.md
+    - Non-linear Models: chapters-v1/09-nonlinear-models/index.md
+    - Regularization: chapters-v1/10-regularization/index.md
+    - Machine Learning: chapters-v1/11-machine-learning/index.md
+    - Neural Networks: chapters-v1/12-neural-networks/index.md
+    - PyTorch: chapters-v1/13-pytorch/index.md
+    - Advanced Evaluation: chapters-v1/14-model-evaluation/index.md
+    - Capstone Projects: chapters-v1/15-projects/index.md
+    - Matplotlib vs Plotly: chapters-v1/matplotlib-vs-plotly.md
+
   ## old content
   # - Chapters:
   #   - Overview: chapters-old/index.md
