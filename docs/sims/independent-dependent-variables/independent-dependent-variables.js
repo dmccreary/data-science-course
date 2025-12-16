@@ -135,7 +135,7 @@ function draw() {
     drawDataPoints();
 
     // Draw prediction line on hover
-    if (showPrediction && predictX !== null) {
+    if (showPrediction) {
         drawPrediction();
     }
 
@@ -214,6 +214,14 @@ function drawPlotArea() {
         let y = map(s, 0, 100, plotBottom, plotTop);
         text(s, plotLeft - 5, y);
     }
+
+    // Instruction text in upper right of plot
+    fill('black');
+    textSize(12);
+    textAlign(RIGHT, TOP);
+    textStyle(ITALIC);
+    text('Click to add new student', canvasWidth - 120, 15);
+    textStyle(NORMAL);
 }
 
 function drawTrendLine() {
@@ -469,6 +477,12 @@ function drawControlLabels() {
 
     // Relationship strength label
     text('Relationship Strength: ' + relationshipStrength + '%', 10, drawHeight + 53);
+
+    // Legend at bottom of control area
+    textSize(12);
+    textAlign(LEFT, CENTER);
+    text('🎓 Normal', 10, drawHeight + 85);
+    text('🌟 Outlier', 100, drawHeight + 85);
 }
 
 function calculateRegression() {
