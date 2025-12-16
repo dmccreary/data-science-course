@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 Concept Map</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="network"></div>
+
+        <div class="title">Chapter 1: Introduction to Data Science - Concept Map</div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-title">Node Types</div>
+
+            <div class="legend-item">
+                <div class="legend-shape shape-circle"></div>
+                <span>Core Concepts</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-shape shape-square"></div>
+                <span>Data Types</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-shape shape-diamond"></div>
+                <span>Variable Roles</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-shape shape-hexagon"></div>
+                <span>Workflow</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-shape shape-rectangle"></div>
+                <span>Tools</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-shape shape-triangle"></div>
+                <span>Structure</span>
+            </div>
+
+            <div class="edge-legend">
+                <div class="legend-section-title">Edge Types</div>
+                <div class="edge-item">
+                    <div class="edge-line edge-solid"></div>
+                    <span>is a type of</span>
+                </div>
+                <div class="edge-item">
+                    <div class="edge-line edge-dashed"></div>
+                    <span>contains</span>
+                </div>
+                <div class="edge-item">
+                    <div class="edge-line edge-dotted"></div>
+                    <span>uses</span>
+                </div>
+                <div class="edge-item">
+                    <div class="edge-line edge-double"></div>
+                    <span>same as</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right panel -->
+        <div class="right-panel">
+            <!-- Info panel -->
+            <div class="info-panel">
+                <div id="info-content">
+                    <div class="info-hint">Click a concept to see details.<br>Double-click for examples.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="chapter-1-concept-map.js"></script>
+</body>
+</html>

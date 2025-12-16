@@ -237,6 +237,18 @@
          <lastmod>2025-12-16</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/chapter-1-concept-map/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/data-science-heros-journey/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/data-science-superpower/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/data-science-workflow/</loc>
          <lastmod>2025-12-16</lastmod>
     </url>
@@ -286,6 +298,14 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/data-science-course/sims/ten-stats/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/variable-type-sorter/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/data-science-course/sims/variable-types-decision-tree/</loc>
          <lastmod>2025-12-16</lastmod>
     </url>
 </urlset>
