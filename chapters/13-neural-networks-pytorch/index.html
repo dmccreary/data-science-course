@@ -811,6 +811,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction-welcome-to-the-deep-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction: Welcome to the Deep End
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1443,6 +1452,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction-welcome-to-the-deep-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction: Welcome to the Deep End
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1468,6 +1486,13 @@
 
 
 <h1 id="neural-networks-and-pytorch">Neural Networks and PyTorch</h1>
+<hr />
+<p>title: Neural Networks and PyTorch
+description: The ultimate data science superpower - teaching machines to think
+generated_by: chapter-content-generator skill
+date: 2025-12-15
+version: 0.03</p>
+<hr />
 <h2 id="summary">Summary</h2>
 <p>This comprehensive chapter introduces neural networks and deep learning using PyTorch. Students will learn neural network architecture including neurons, layers, activation functions, and propagation algorithms. The chapter covers PyTorch fundamentals including tensors, autograd, and building neural network modules. Students will implement complete training loops with optimizers and loss functions. The chapter concludes with best practices for model interpretability, documentation, reproducibility, ethics, and capstone project development. By the end of this chapter, students will be able to build, train, and deploy neural network models while following professional best practices.</p>
 <h2 id="concepts-covered">Concepts Covered</h2>
@@ -1547,7 +1572,1876 @@
 <li><a href="../12-intro-to-machine-learning/">Chapter 12: Introduction to Machine Learning</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction-welcome-to-the-deep-end">Introduction: Welcome to the Deep End</h2>
+<p>You've arrived at the most exciting chapter in this entire book. Everything you've learned—data structures, visualization, statistics, regression, model evaluation, NumPy, optimization—has been preparing you for this moment. <strong>Neural networks</strong> are the technology behind self-driving cars, language translation, image recognition, and AI assistants. And now you're going to build them yourself.</p>
+<p>Neural networks aren't magic, even though they sometimes feel like it. They're just the concepts you already know—gradient descent, loss functions, matrix multiplication—stacked together in clever ways. If you understood the last chapter, you have everything you need to understand neural networks.</p>
+<p>By the end of this chapter, you'll have:</p>
+<ul>
+<li>Built neural networks from scratch and with PyTorch</li>
+<li>Trained models using professional techniques</li>
+<li>Learned best practices for real-world deployment</li>
+<li>Prepared for your capstone project</li>
+</ul>
+<p>Let's unlock your ultimate data science superpower.</p>
+<hr />
+<h1 id="part-1-neural-network-fundamentals">Part 1: Neural Network Fundamentals</h1>
+<h2 id="what-are-neural-networks">What Are Neural Networks?</h2>
+<p><strong>Neural networks</strong> are computing systems loosely inspired by biological brains. They consist of interconnected nodes (neurons) organized in layers that learn to transform inputs into outputs through training.</p>
+<p>The key insight: neural networks are <em>universal function approximators</em>. Given enough neurons and data, they can learn virtually any pattern—recognizing faces, translating languages, playing chess, or predicting stock prices.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># A neural network is just layers of transformations</span>
+<span class="c1"># Input → Transform → Transform → ... → Output</span>
+
+<span class="c1"># Conceptually:</span>
+<span class="k">def</span> <span class="nf">neural_network</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">h1</span> <span class="o">=</span> <span class="n">activation</span><span class="p">(</span><span class="n">x</span> <span class="o">@</span> <span class="n">W1</span> <span class="o">+</span> <span class="n">b1</span><span class="p">)</span>      <span class="c1"># First hidden layer</span>
+    <span class="n">h2</span> <span class="o">=</span> <span class="n">activation</span><span class="p">(</span><span class="n">h1</span> <span class="o">@</span> <span class="n">W2</span> <span class="o">+</span> <span class="n">b2</span><span class="p">)</span>     <span class="c1"># Second hidden layer</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">h2</span> <span class="o">@</span> <span class="n">W3</span> <span class="o">+</span> <span class="n">b3</span>              <span class="c1"># Output layer</span>
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></td></tr></table></div>
+<p>What makes neural networks special:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Traditional ML</th>
+<th>Neural Networks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feature engineering</td>
+<td>Manual, requires expertise</td>
+<td>Automatic, learned from data</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Limited by model type</td>
+<td>Unlimited (add more layers)</td>
+</tr>
+<tr>
+<td>Data requirements</td>
+<td>Works with less data</td>
+<td>Needs lots of data</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>Often clear</td>
+<td>Often opaque (black box)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-artificial-neuron-the-basic-unit">The Artificial Neuron: The Basic Unit</h2>
+<p>An <strong>artificial neuron</strong> (or node) is the fundamental building block of neural networks. It takes multiple inputs, multiplies each by a weight, adds them up with a bias, and passes the result through an activation function.</p>
+<div class="arithmatex">\[y = f\left(\sum_{i=1}^{n} w_i x_i + b\right) = f(\mathbf{w} \cdot \mathbf{x} + b)\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(x_i\)</span> are the inputs</li>
+<li><span class="arithmatex">\(w_i\)</span> are the weights (learned parameters)</li>
+<li><span class="arithmatex">\(b\)</span> is the bias (learned parameter)</li>
+<li><span class="arithmatex">\(f\)</span> is the activation function</li>
+<li><span class="arithmatex">\(y\)</span> is the output</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">artificial_neuron</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">activation_fn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A single artificial neuron</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Weighted sum</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="n">bias</span>
+
+    <span class="c1"># Apply activation function</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">activation_fn</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="c1"># Example</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+<span class="n">bias</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">artificial_neuron</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Neuron output: </span><span class="si">{</span><span class="n">output</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="the-perceptron-the-simplest-neural-network">The Perceptron: The Simplest Neural Network</h2>
+<p>The <strong>perceptron</strong> is the simplest neural network—just a single neuron with a step function as its activation. It was invented in 1958 and could learn to classify linearly separable data.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">perceptron</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Original perceptron: weighted sum + step function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="n">bias</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="c1"># A perceptron can learn simple patterns</span>
+<span class="c1"># But it can&#39;t learn XOR - this limitation led to the &quot;AI winter&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>The perceptron's limitations sparked the development of multi-layer networks with non-linear activation functions—the neural networks we use today.</p>
+<h2 id="activation-functions-adding-non-linearity">Activation Functions: Adding Non-Linearity</h2>
+<p><strong>Activation functions</strong> introduce non-linearity into neural networks. Without them, stacking layers would be pointless—a sequence of linear transformations is just one linear transformation. Activation functions allow networks to learn complex, non-linear patterns.</p>
+<h3 id="sigmoid-function">Sigmoid Function</h3>
+<p>The <strong>sigmoid function</strong> squashes any input to a value between 0 and 1:</p>
+<div class="arithmatex">\[\sigma(x) = \frac{1}{1 + e^{-x}}\]</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Output range: (0, 1)</span>
+<span class="c1"># Good for: output layer in binary classification (probability)</span>
+<span class="c1"># Problem: vanishing gradients for very large/small inputs</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="relu-function">ReLU Function</h3>
+<p>The <strong>ReLU (Rectified Linear Unit)</strong> function is the most popular activation in modern networks:</p>
+<div class="arithmatex">\[\text{ReLU}(x) = \max(0, x)\]</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Output range: [0, ∞)</span>
+<span class="c1"># Good for: hidden layers, fast to compute</span>
+<span class="c1"># Problem: &quot;dying ReLU&quot; - neurons can get stuck at 0</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>Formula</th>
+<th>Range</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sigmoid</td>
+<td><span class="arithmatex">\(1/(1+e^{-x})\)</span></td>
+<td>(0, 1)</td>
+<td>Binary classification output</td>
+</tr>
+<tr>
+<td>Tanh</td>
+<td><span class="arithmatex">\((e^x-e^{-x})/(e^x+e^{-x})\)</span></td>
+<td>(-1, 1)</td>
+<td>Hidden layers (centered)</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td><span class="arithmatex">\(\max(0, x)\)</span></td>
+<td>[0, ∞)</td>
+<td>Hidden layers (default choice)</td>
+</tr>
+<tr>
+<td>Softmax</td>
+<td><span class="arithmatex">\(e^{x_i}/\sum e^{x_j}\)</span></td>
+<td>(0, 1), sums to 1</td>
+<td>Multi-class output</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-activation-function-explorer">Diagram: Activation Function Explorer</h4>
+<details>
+<summary>Activation Function Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Understand, Apply</p>
+<p>Learning Objective: Visualize different activation functions and understand why non-linearity is essential for neural networks</p>
+<p>Canvas Layout (850x550):
+- Main area (850x400): Graph showing activation function curves
+- Bottom area (850x150): Controls and information panel</p>
+<p>Main Visualization:
+- X-axis range: -5 to 5
+- Y-axis range: -2 to 2 (adjustable)
+- Multiple activation functions plotted (selectable)
+- Derivative shown as dashed line (optional)
+- Current function highlighted prominently</p>
+<p>Activation Functions to Include:
+1. Linear (y = x) - shows why this is useless
+2. Step function - original perceptron
+3. Sigmoid - smooth S-curve
+4. Tanh - centered sigmoid
+5. ReLU - simple but powerful
+6. Leaky ReLU - fixes dying ReLU
+7. Softmax - for probabilities (1D simplified)</p>
+<p>Interactive Controls:
+- Checkboxes: Select which functions to display
+- Toggle: "Show derivatives"
+- Input field: Enter x value, see f(x) for each function
+- Slider: Adjust x to see moving point on each curve</p>
+<p>Educational Annotations:
+- Point out vanishing gradient regions (sigmoid extremes)
+- Show where ReLU has zero gradient
+- Demonstrate why non-linearity enables complex patterns</p>
+<p>Demo: "Why Non-linearity Matters"
+- Button to show: linear combinations of linear = still linear
+- Animation showing stacked linear layers collapsing to one</p>
+<p>Implementation: p5.js with multiple function plots</p>
+</details>
+<h2 id="network-architecture-layers-and-depth">Network Architecture: Layers and Depth</h2>
+<p><strong>Network architecture</strong> describes how neurons are organized into layers and connected. The architecture determines what patterns the network can learn.</p>
+<h3 id="input-layer">Input Layer</h3>
+<p>The <strong>input layer</strong> receives the raw data. It has one neuron per feature—no computation happens here, just data entry.</p>
+<h3 id="hidden-layers">Hidden Layers</h3>
+<p><strong>Hidden layers</strong> perform the actual computation. They're "hidden" because we don't directly observe their outputs. More hidden layers = deeper network = more complex patterns.</p>
+<h3 id="output-layer">Output Layer</h3>
+<p>The <strong>output layer</strong> produces the final prediction. Its structure depends on the task:</p>
+<ul>
+<li>Regression: 1 neuron, no activation (or linear)</li>
+<li>Binary classification: 1 neuron, sigmoid activation</li>
+<li>Multi-class: N neurons, softmax activation</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># A simple architecture</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Input (4 features) → Hidden (8 neurons, ReLU) → Hidden (4 neurons, ReLU) → Output (1 neuron)</span>
+
+<span class="sd">Layer sizes: [4, 8, 4, 1]</span>
+<span class="sd">Total parameters: (4×8 + 8) + (8×4 + 4) + (4×1 + 1) = 40 + 36 + 5 = 81</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Deep learning</strong> refers to neural networks with many hidden layers. Depth allows networks to learn hierarchical features—simple patterns in early layers, complex patterns in later layers.</p>
+<h4 id="diagram-neural-network-architecture-builder">Diagram: Neural Network Architecture Builder</h4>
+<details>
+<summary>Neural Network Architecture Builder</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Apply, Create</p>
+<p>Learning Objective: Build and visualize neural network architectures, understanding how layer sizes and depth affect the network</p>
+<p>Canvas Layout (900x600):
+- Main area (650x600): Network visualization
+- Right panel (250x600): Architecture controls</p>
+<p>Network Visualization:
+- Circles represent neurons arranged in vertical layers
+- Lines connect neurons between adjacent layers
+- Line thickness proportional to weight magnitude (after training)
+- Neurons colored by activation value during forward pass
+- Labels showing layer names and sizes</p>
+<p>Layer Representation:
+- Input layer on left (green circles)
+- Hidden layers in middle (blue circles)
+- Output layer on right (orange circles)
+- If too many neurons, show sample with "..." indicator</p>
+<p>Interactive Controls:
+- Slider: Number of hidden layers (1-5)
+- Slider for each hidden layer: Number of neurons (1-128)
+- Dropdown: Input size (preset options or custom)
+- Dropdown: Output size (1 for regression, N for classification)
+- Dropdown: Activation function per layer</p>
+<p>Parameter Counter:
+- Total weights: calculated live
+- Total biases: calculated live
+- Total parameters: sum</p>
+<p>Forward Pass Animation:
+- Button: "Run Forward Pass"
+- Watch activations flow through network
+- Color intensity shows activation magnitude
+- Step-by-step or continuous animation</p>
+<p>Preset Architectures:
+- "Simple" [4, 8, 1]
+- "Deep" [4, 32, 16, 8, 1]
+- "Wide" [4, 128, 1]
+- "Classification" [4, 16, 8, 3]</p>
+<p>Implementation: p5.js with animated data flow</p>
+</details>
+<h2 id="weights-and-biases-the-learnable-parameters">Weights and Biases: The Learnable Parameters</h2>
+<p><strong>Weights</strong> and <strong>biases</strong> are the parameters that the network learns during training.</p>
+<ul>
+<li><strong>Weights</strong> determine how strongly each input affects the output. Large positive weights amplify the input; negative weights invert it.</li>
+<li><strong>Biases</strong> allow neurons to activate even when inputs are zero. They shift the activation function left or right.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># For a layer with 10 inputs and 5 outputs:</span>
+<span class="c1"># Weights: 10 × 5 = 50 parameters</span>
+<span class="c1"># Biases: 5 parameters</span>
+<span class="c1"># Total: 55 parameters</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Initialize weights (many strategies exist)</span>
+<span class="n">n_in</span><span class="p">,</span> <span class="n">n_out</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span>
+
+<span class="c1"># Xavier/Glorot initialization (good for sigmoid/tanh)</span>
+<span class="n">weights_xavier</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_in</span><span class="p">,</span> <span class="n">n_out</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_in</span><span class="p">)</span>
+
+<span class="c1"># He initialization (good for ReLU)</span>
+<span class="n">weights_he</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_in</span><span class="p">,</span> <span class="n">n_out</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">n_in</span><span class="p">)</span>
+
+<span class="c1"># Biases usually start at zero</span>
+<span class="n">biases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_out</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>The number of parameters in a network:</p>
+<div class="arithmatex">\[\text{Parameters} = \sum_{\ell=1}^{L} (n_{\ell-1} \times n_\ell + n_\ell)\]</div>
+<p>Where <span class="arithmatex">\(n_\ell\)</span> is the number of neurons in layer <span class="arithmatex">\(\ell\)</span>.</p>
+<h2 id="forward-propagation-making-predictions">Forward Propagation: Making Predictions</h2>
+<p><strong>Forward propagation</strong> is the process of passing inputs through the network to get outputs. Data flows forward from input to output, layer by layer.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward_propagation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activations</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Forward pass through a neural network</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">X</span>  <span class="c1"># Input is the first &quot;activation&quot;</span>
+
+    <span class="k">for</span> <span class="n">W</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">activation</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activations</span><span class="p">):</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">a</span> <span class="o">@</span> <span class="n">W</span> <span class="o">+</span> <span class="n">b</span>           <span class="c1"># Linear transformation</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">activation</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>        <span class="c1"># Non-linear activation</span>
+
+    <span class="k">return</span> <span class="n">a</span>  <span class="c1"># Final output</span>
+
+<span class="c1"># Example: 3-layer network</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">W1</span><span class="p">,</span> <span class="n">W2</span><span class="p">,</span> <span class="n">W3</span><span class="p">]</span>
+<span class="n">biases</span> <span class="o">=</span> <span class="p">[</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">]</span>
+<span class="n">activations</span> <span class="o">=</span> <span class="p">[</span><span class="n">relu</span><span class="p">,</span> <span class="n">relu</span><span class="p">,</span> <span class="n">sigmoid</span><span class="p">]</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">forward_propagation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activations</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Forward propagation is just matrix multiplications and function applications—exactly what NumPy and PyTorch are optimized for.</p>
+<h2 id="backpropagation-learning-from-errors">Backpropagation: Learning from Errors</h2>
+<p><strong>Backpropagation</strong> is the algorithm that computes gradients for training neural networks. It works backward from the output, propagating error signals to update all weights and biases.</p>
+<p>The key insight: use the chain rule from calculus. If error depends on output, and output depends on weights, we can compute how error depends on weights.</p>
+<div class="arithmatex">\[\frac{\partial \text{Loss}}{\partial w} = \frac{\partial \text{Loss}}{\partial \text{output}} \times \frac{\partial \text{output}}{\partial w}\]</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Backprop computes gradients layer by layer, from output to input</span>
+<span class="c1"># We won&#39;t implement it manually - PyTorch does it automatically!</span>
+
+<span class="c1"># But conceptually:</span>
+<span class="c1"># 1. Compute loss at output</span>
+<span class="c1"># 2. Compute gradient of loss w.r.t. output layer weights</span>
+<span class="c1"># 3. Propagate gradient backward to previous layer</span>
+<span class="c1"># 4. Repeat until input layer</span>
+<span class="c1"># 5. Update all weights using gradients</span>
+</code></pre></div></td></tr></table></div>
+<p>The good news: you rarely implement backpropagation manually. Modern frameworks like PyTorch compute gradients automatically.</p>
+<h2 id="training-concepts-epochs-batches-and-stochastic-gradient-descent">Training Concepts: Epochs, Batches, and Stochastic Gradient Descent</h2>
+<p>When training neural networks, we don't process the entire dataset at once. Instead, we use batches and multiple passes.</p>
+<p><strong>Epoch</strong>: One complete pass through the entire training dataset.</p>
+<p><strong>Batch size</strong>: Number of samples processed before updating weights.</p>
+<p><strong>Mini-batch</strong>: A subset of the training data used for one gradient update.</p>
+<p><strong>Stochastic Gradient Descent (SGD)</strong>: Using random mini-batches instead of the full dataset for each update.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Batch Size</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Batch GD</td>
+<td>Entire dataset</td>
+<td>Stable, accurate gradients</td>
+<td>Slow, memory intensive</td>
+</tr>
+<tr>
+<td>Stochastic GD</td>
+<td>1 sample</td>
+<td>Fast updates, escapes local minima</td>
+<td>Noisy, unstable</td>
+</tr>
+<tr>
+<td>Mini-batch GD</td>
+<td>32-256 samples</td>
+<td>Best of both worlds</td>
+<td>Sweet spot</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Typical training configuration</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>          <span class="c1"># 100 passes through the data</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>       <span class="c1"># Process 32 samples at a time</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">10000</span>     <span class="c1"># Total training samples</span>
+
+<span class="n">batches_per_epoch</span> <span class="o">=</span> <span class="n">n_samples</span> <span class="o">//</span> <span class="n">batch_size</span>  <span class="c1"># 312 batches</span>
+<span class="n">total_updates</span> <span class="o">=</span> <span class="n">epochs</span> <span class="o">*</span> <span class="n">batches_per_epoch</span>    <span class="c1"># 31,200 weight updates</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="the-vanishing-gradient-problem">The Vanishing Gradient Problem</h2>
+<p>The <strong>vanishing gradient problem</strong> occurs when gradients become extremely small in deep networks, causing early layers to learn very slowly (or not at all).</p>
+<p>Why it happens: Sigmoid and tanh saturate for large inputs, producing gradients near zero. When you multiply many small gradients together through backpropagation, the result vanishes.</p>
+<p>Solutions:</p>
+<ul>
+<li>Use ReLU activation (gradients are 1 for positive inputs)</li>
+<li>Use batch normalization</li>
+<li>Use skip connections (ResNets)</li>
+<li>Careful weight initialization</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Sigmoid gradient is at most 0.25</span>
+<span class="c1"># After 10 layers: 0.25^10 = 0.000001</span>
+<span class="c1"># Gradients essentially disappear!</span>
+
+<span class="c1"># ReLU gradient is 1 for positive inputs</span>
+<span class="c1"># Gradients flow through unchanged</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h1 id="part-2-pytorch-fundamentals">Part 2: PyTorch Fundamentals</h1>
+<h2 id="the-pytorch-library">The PyTorch Library</h2>
+<p><strong>PyTorch</strong> is a deep learning framework created by Facebook's AI Research lab. It's the most popular framework for research and increasingly popular in industry.</p>
+<p>Why PyTorch:</p>
+<ul>
+<li><strong>Pythonic</strong>: Feels like natural Python code</li>
+<li><strong>Dynamic graphs</strong>: Build networks on-the-fly</li>
+<li><strong>Easy debugging</strong>: Use standard Python debugger</li>
+<li><strong>GPU acceleration</strong>: Automatic CUDA support</li>
+<li><strong>Rich ecosystem</strong>: torchvision, torchaudio, transformers</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PyTorch version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CUDA available: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="tensors-pytorchs-data-structure">Tensors: PyTorch's Data Structure</h2>
+<p><strong>Tensors</strong> are PyTorch's core data structure—like NumPy arrays but with GPU support and automatic differentiation.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="c1"># Create tensors</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>                    <span class="c1"># From list</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>                              <span class="c1"># 3x4 zeros</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                               <span class="c1"># 2x3 ones</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                              <span class="c1"># Random normal</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>                         <span class="c1"># Range</span>
+
+<span class="c1"># From NumPy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">numpy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">tensor_from_numpy</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
+
+<span class="c1"># Tensor properties</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data type: </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device: </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="tensor-operations">Tensor Operations</h2>
+<p><strong>Tensor operations</strong> work similarly to NumPy but run on GPU when available.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Basic operations</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">])</span>
+
+<span class="c1"># Element-wise</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>           <span class="c1"># Addition</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>           <span class="c1"># Multiplication</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>          <span class="c1"># Power</span>
+
+<span class="c1"># Matrix operations</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">B</span>              <span class="c1"># Matrix multiplication</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Result shape: </span><span class="si">{</span><span class="n">C</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># (3, 5)</span>
+
+<span class="c1"># Aggregations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>         <span class="c1"># Sum all elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>   <span class="c1"># Mean along dimension 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>         <span class="c1"># Maximum value</span>
+
+<span class="c1"># Reshaping</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>    <span class="c1"># view is like reshape but shares memory</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="autograd-automatic-differentiation">Autograd: Automatic Differentiation</h2>
+<p><strong>Autograd</strong> is PyTorch's automatic differentiation engine. It computes gradients automatically—no manual backpropagation needed!</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Enable gradient tracking</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Perform operations</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># z = x[0]² + x[1]² = 4 + 9 = 13</span>
+
+<span class="c1"># Compute gradients</span>
+<span class="n">z</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+
+<span class="c1"># dz/dx = 2x</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gradient: </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># [4.0, 6.0] = 2*[2, 3]</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Automatic differentiation</strong> builds a <strong>computational graph</strong> as you perform operations. When you call <code>.backward()</code>, it traverses this graph in reverse to compute all gradients.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Every operation builds the graph</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>        <span class="c1"># Graph: a → multiply → b</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">5</span>        <span class="c1"># Graph: b → add → c</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">c</span> <span class="o">**</span> <span class="mi">2</span>       <span class="c1"># Graph: c → power → d</span>
+
+<span class="n">d</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>     <span class="c1"># Traverse graph backward</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gradient of d w.r.t. a: </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">grad</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Chain rule: 2*c * 3 = 2*(a*3+5) * 3</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="neural-network-modules">Neural Network Modules</h2>
+<p>PyTorch provides <code>nn.Module</code> as the base class for all neural networks. You define layers in <code>__init__</code> and the forward pass in <code>forward</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="k">class</span> <span class="nc">SimpleNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Create model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNetwork</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">output_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Count parameters</span>
+<span class="n">total_params</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total parameters: </span><span class="si">{</span><span class="n">total_params</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="sequential-models">Sequential Models</h2>
+<p>For simple architectures, <code>nn.Sequential</code> provides a convenient shortcut:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Same network using Sequential</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Make prediction</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 5 samples, 10 features</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output shape: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># (5, 1)</span>
+</code></pre></div></td></tr></table></div>
+<p>The <strong>Linear layer</strong> (<code>nn.Linear</code>) performs <span class="arithmatex">\(y = xW^T + b\)</span>—exactly the weighted sum we discussed earlier.</p>
+<h2 id="loss-functions-in-pytorch">Loss Functions in PyTorch</h2>
+<p>PyTorch provides common <strong>loss functions</strong> ready to use:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Regression</span>
+<span class="n">mse_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>           <span class="c1"># Mean Squared Error</span>
+<span class="n">mae_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">L1Loss</span><span class="p">()</span>            <span class="c1"># Mean Absolute Error</span>
+<span class="n">huber_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">HuberLoss</span><span class="p">()</span>       <span class="c1"># Huber Loss</span>
+
+<span class="c1"># Classification</span>
+<span class="n">bce_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>                    <span class="c1"># Binary Cross-Entropy (after sigmoid)</span>
+<span class="n">bce_logits</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCEWithLogitsLoss</span><span class="p">()</span>        <span class="c1"># BCE with built-in sigmoid</span>
+<span class="n">ce_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>            <span class="c1"># Multi-class (includes softmax)</span>
+
+<span class="c1"># Example</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span>
+<span class="n">targets</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+
+<span class="n">loss</span> <span class="o">=</span> <span class="n">mse_loss</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="optimizers-sgd-and-adam">Optimizers: SGD and Adam</h2>
+<p><strong>Optimizers</strong> update model weights based on gradients. PyTorch provides many optimizers:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># SGD Optimizer - simple, reliable</span>
+<span class="n">optimizer_sgd</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+
+<span class="c1"># Adam Optimizer - adaptive learning rates, usually works well</span>
+<span class="n">optimizer_adam</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+<span class="c1"># Learning rate scheduler</span>
+<span class="n">scheduler</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">StepLR</span><span class="p">(</span><span class="n">optimizer_adam</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>SGD (Stochastic Gradient Descent)</strong> is the classic optimizer. Add momentum for smoother updates.</p>
+<p><strong>Adam</strong> adapts the learning rate for each parameter. It's often the default choice for neural networks.</p>
+<h2 id="the-training-loop">The Training Loop</h2>
+<p>The <strong>training loop</strong> is where learning happens. It's the heart of neural network training:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>  <span class="c1"># Set to training mode</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">batch_x</span><span class="p">,</span> <span class="n">batch_y</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+            <span class="c1"># 1. Zero gradients from previous step</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+            <span class="c1"># 2. Forward pass</span>
+            <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">batch_x</span><span class="p">)</span>
+
+            <span class="c1"># 3. Compute loss</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">batch_y</span><span class="p">)</span>
+
+            <span class="c1"># 4. Backward pass (compute gradients)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+
+            <span class="c1"># 5. Update weights</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+            <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+        <span class="n">avg_loss</span> <span class="o">=</span> <span class="n">total_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">avg_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+<p>The five essential steps:</p>
+<ol>
+<li><strong>Zero gradients</strong>: Clear gradients from the previous iteration</li>
+<li><strong>Forward pass</strong>: Compute predictions</li>
+<li><strong>Compute loss</strong>: Measure how wrong we are</li>
+<li><strong>Backward pass</strong>: Compute gradients via backpropagation</li>
+<li><strong>Update weights</strong>: Apply gradients using optimizer</li>
+</ol>
+<h4 id="diagram-training-loop-visualizer">Diagram: Training Loop Visualizer</h4>
+<details>
+<summary>Training Loop Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Apply, Analyze</p>
+<p>Learning Objective: Understand the five steps of the training loop and see how weights update over iterations</p>
+<p>Canvas Layout (900x600):
+- Left panel (450x600): Training loop steps with code
+- Right panel (450x600): Loss curve and weight visualization</p>
+<p>Left Panel - Step-by-Step:
+- Five cards showing each training step
+- Current step highlighted
+- Code snippet for each step
+- Arrow showing data/gradient flow</p>
+<p>Steps Display:
+1. "Zero Gradients" - optimizer.zero_grad()
+2. "Forward Pass" - predictions = model(x)
+3. "Compute Loss" - loss = criterion(pred, y)
+4. "Backward Pass" - loss.backward()
+5. "Update Weights" - optimizer.step()</p>
+<p>Right Panel - Visualizations:
+- Top: Live loss curve (updates each iteration)
+- Bottom: Weight histogram or specific weight values</p>
+<p>Animation:
+- Watch data flow forward through network
+- See loss computed at output
+- Watch gradient flow backward
+- See weights shift after update
+- Loss decreases over iterations</p>
+<p>Interactive Controls:
+- Button: "Step" - advance one step
+- Button: "Complete Iteration" - run all 5 steps
+- Button: "Run Epoch" - run full epoch
+- Slider: Learning rate
+- Slider: Animation speed</p>
+<p>Metrics Display:
+- Current iteration number
+- Current batch loss
+- Running average loss
+- Number of weight updates</p>
+<p>Implementation: p5.js with synchronized animation</p>
+</details>
+<h2 id="model-evaluation-in-pytorch">Model Evaluation in PyTorch</h2>
+<p>Evaluating models requires disabling gradient computation and switching to eval mode:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>  <span class="c1"># Set to evaluation mode</span>
+    <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>  <span class="c1"># Disable gradient computation</span>
+        <span class="k">for</span> <span class="n">batch_x</span><span class="p">,</span> <span class="n">batch_y</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+            <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">batch_x</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">batch_y</span><span class="p">)</span>
+            <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+            <span class="c1"># For classification</span>
+            <span class="n">predicted_class</span> <span class="o">=</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">predicted_class</span> <span class="o">==</span> <span class="n">batch_y</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">batch_y</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">avg_loss</span> <span class="o">=</span> <span class="n">total_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="p">)</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span>
+
+    <span class="k">return</span> <span class="n">avg_loss</span><span class="p">,</span> <span class="n">accuracy</span>
+
+<span class="c1"># Usage</span>
+<span class="n">test_loss</span><span class="p">,</span> <span class="n">test_acc</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Accuracy: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="gpu-computing-with-cuda">GPU Computing with CUDA</h2>
+<p><strong>GPU computing</strong> accelerates training dramatically. PyTorch makes it easy with <strong>CUDA</strong> support:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check GPU availability</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using device: </span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move model to GPU</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Move data to GPU</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Training works the same way</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Computation happens on GPU</span>
+</code></pre></div></td></tr></table></div>
+<p>GPU speedups depend on:</p>
+<ul>
+<li>Network size (larger = more benefit)</li>
+<li>Batch size (larger = more benefit)</li>
+<li>Operation type (matrix operations benefit most)</li>
+</ul>
+<h2 id="saving-and-loading-models">Saving and Loading Models</h2>
+<p><strong>Model saving</strong> preserves your trained models for later use:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Save model weights only (recommended)</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;model_weights.pth&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save entire model (includes architecture)</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;full_model.pth&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save checkpoint (weights, optimizer, epoch, loss)</span>
+<span class="n">checkpoint</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="n">epoch</span><span class="p">,</span>
+    <span class="s1">&#39;model_state_dict&#39;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
+    <span class="s1">&#39;optimizer_state_dict&#39;</span><span class="p">:</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
+    <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="n">loss</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="s1">&#39;checkpoint.pth&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Model loading</strong> restores saved models:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Load weights into existing model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNetwork</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model_weights.pth&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="c1"># Load from checkpoint</span>
+<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;checkpoint.pth&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;model_state_dict&#39;</span><span class="p">])</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;optimizer_state_dict&#39;</span><span class="p">])</span>
+<span class="n">epoch</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="transfer-learning">Transfer Learning</h2>
+<p><strong>Transfer learning</strong> uses a model trained on one task as the starting point for another task. This leverages knowledge learned from large datasets.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="k">as</span> <span class="nn">models</span>
+
+<span class="c1"># Load pre-trained model</span>
+<span class="n">resnet</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Freeze early layers (don&#39;t update their weights)</span>
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">resnet</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Replace final layer for your task</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">resnet</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">resnet</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">in_features</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+
+<span class="c1"># Only train the new layer</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">resnet</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Transfer learning is powerful because:</p>
+<ul>
+<li>Pre-trained models learned general features from millions of images</li>
+<li>You only need a small dataset for your specific task</li>
+<li>Training is much faster</li>
+</ul>
+<hr />
+<h1 id="part-3-best-practices">Part 3: Best Practices</h1>
+<h2 id="explainable-ai-and-model-interpretability">Explainable AI and Model Interpretability</h2>
+<p><strong>Explainable AI (XAI)</strong> and <strong>model interpretability</strong> help us understand <em>why</em> models make their predictions. This is crucial for trust, debugging, and ethics.</p>
+<p>Methods for interpretability:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Feature importance (for tree-based models)</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">importances</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span>
+
+<span class="c1"># For neural networks, use specialized libraries</span>
+<span class="c1"># SHAP (SHapley Additive exPlanations)</span>
+<span class="kn">import</span> <span class="nn">shap</span>
+<span class="n">explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">Explainer</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>SHAP values</strong> attribute each feature's contribution to a prediction, based on game theory. They show:</p>
+<ul>
+<li>Which features pushed the prediction higher/lower</li>
+<li>Feature importance across the dataset</li>
+<li>Interaction effects between features</li>
+</ul>
+<h2 id="model-documentation">Model Documentation</h2>
+<p><strong>Model documentation</strong> records everything needed to understand, reproduce, and maintain your model:</p>
+<p>Essential documentation:</p>
+<ul>
+<li><strong>Model card</strong>: Purpose, training data, performance, limitations</li>
+<li><strong>Data documentation</strong>: Sources, preprocessing, quality issues</li>
+<li><strong>Code documentation</strong>: Comments, docstrings, README</li>
+<li><strong>Experiment logs</strong>: Hyperparameters, metrics, decisions</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gh"># Model Card: House Price Predictor</span>
+
+<span class="gu">## Model Details</span>
+<span class="k">-</span><span class="w"> </span>Architecture: 3-layer neural network [10, 64, 32, 1]
+<span class="k">-</span><span class="w"> </span>Training data: 10,000 house sales from 2020-2023
+<span class="k">-</span><span class="w"> </span>Validation R²: 0.87
+
+<span class="gu">## Intended Use</span>
+<span class="k">-</span><span class="w"> </span>Estimate house prices for real estate listings
+<span class="k">-</span><span class="w"> </span>NOT for mortgage underwriting decisions
+
+<span class="gu">## Limitations</span>
+<span class="k">-</span><span class="w"> </span>Trained only on suburban properties
+<span class="k">-</span><span class="w"> </span>May not generalize to urban/rural markets
+<span class="k">-</span><span class="w"> </span>Does not account for market volatility
+
+<span class="gu">## Ethical Considerations</span>
+<span class="k">-</span><span class="w"> </span>Remove protected attributes (race, religion)
+<span class="k">-</span><span class="w"> </span>Monitor for disparate impact
+</code></pre></div></td></tr></table></div>
+<h2 id="reproducibility">Reproducibility</h2>
+<p><strong>Reproducibility</strong> ensures others (including future you) can recreate your results exactly.</p>
+<p>Key practices:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 1. Set random seeds everywhere</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed_all</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+
+<span class="n">set_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># 2. Record all hyperparameters</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+    <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="s1">&#39;epochs&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s1">&#39;hidden_sizes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
+    <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">42</span>
+<span class="p">}</span>
+
+<span class="c1"># 3. Use version control for code (Git)</span>
+<span class="c1"># 4. Version your data</span>
+<span class="c1"># 5. Log all experiments</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="version-control-with-git">Version Control with Git</h2>
+<p><strong>Version control</strong> tracks changes to your code over time. <strong>Git</strong> is the industry standard:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Initialize a repository</span>
+git<span class="w"> </span>init
+
+<span class="c1"># Add files to staging</span>
+git<span class="w"> </span>add<span class="w"> </span>model.py<span class="w"> </span>data_processing.py
+
+<span class="c1"># Commit changes</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add initial neural network model&quot;</span>
+
+<span class="c1"># Create a branch for experiments</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>experiment/larger-network
+
+<span class="c1"># Push to remote (GitHub, GitLab)</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></td></tr></table></div>
+<p>Git benefits:</p>
+<ul>
+<li>Track all changes with history</li>
+<li>Collaborate with teammates</li>
+<li>Revert to previous versions</li>
+<li>Branch for experiments without breaking main code</li>
+</ul>
+<h2 id="data-ethics">Data Ethics</h2>
+<p><strong>Data ethics</strong> ensures your work respects privacy, fairness, and societal impact:</p>
+<p>Key principles:</p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Privacy</td>
+<td>Protect personal information</td>
+<td>Anonymize before training</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>Avoid bias against groups</td>
+<td>Test for disparate impact</td>
+</tr>
+<tr>
+<td>Transparency</td>
+<td>Explain how decisions are made</td>
+<td>Provide model cards</td>
+</tr>
+<tr>
+<td>Consent</td>
+<td>Use data as authorized</td>
+<td>Respect terms of service</td>
+</tr>
+<tr>
+<td>Accountability</td>
+<td>Take responsibility for outcomes</td>
+<td>Monitor deployed models</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check for protected attribute correlation</span>
+<span class="n">protected_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">protected_attrs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: </span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2"> in dataset - ensure it&#39;s not used improperly&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test for fairness</span>
+<span class="kn">from</span> <span class="nn">fairlearn.metrics</span> <span class="kn">import</span> <span class="n">MetricFrame</span>
+<span class="n">metric_frame</span> <span class="o">=</span> <span class="n">MetricFrame</span><span class="p">(</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="n">accuracy_score</span><span class="p">},</span>
+    <span class="n">y_true</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span>
+    <span class="n">y_pred</span><span class="o">=</span><span class="n">predictions</span><span class="p">,</span>
+    <span class="n">sensitive_features</span><span class="o">=</span><span class="n">sensitive_test</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metric_frame</span><span class="o">.</span><span class="n">by_group</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h1 id="part-4-capstone-projects">Part 4: Capstone Projects</h1>
+<h2 id="the-end-to-end-pipeline">The End-to-End Pipeline</h2>
+<p>A <strong>capstone project</strong> demonstrates everything you've learned by building a complete <strong>end-to-end pipeline</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Complete data science pipeline</span>
+<span class="k">class</span> <span class="nc">DataSciencePipeline</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;1. Data Collection&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">clean_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;2. Data Cleaning&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">engineer_features</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;3. Feature Engineering&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;feature_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;4. Train/Test Split&quot;&quot;&quot;</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span> <span class="o">=</span> \
+            <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;5. Model Training&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;6. Model Evaluation&quot;&quot;&quot;</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² Score: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">predictions</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;7. Model Deployment&quot;&quot;&quot;</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<span class="c1"># Run the complete pipeline</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">DataSciencePipeline</span><span class="p">()</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">clean_data</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">engineer_features</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">train_model</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">evaluate</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;model.pth&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="model-deployment">Model Deployment</h2>
+<p><strong>Model deployment</strong> makes your trained model available for real-world use:</p>
+<p>Deployment options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Use Case</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flask/FastAPI</td>
+<td>Simple web API</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>Containerized deployment</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Cloud (AWS, GCP, Azure)</td>
+<td>Production scale</td>
+<td>Medium-High</td>
+</tr>
+<tr>
+<td>Edge devices</td>
+<td>Mobile, IoT</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Simple Flask API for model serving</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Load model once at startup</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.pth&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/predict&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;prediction&#39;</span><span class="p">:</span> <span class="n">prediction</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="results-communication">Results Communication</h2>
+<p><strong>Results communication</strong> translates technical findings into insights that stakeholders can act on:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create executive summary visualization</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="n">subplot_titles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Model Performance&#39;</span><span class="p">,</span> <span class="s1">&#39;Feature Importance&#39;</span><span class="p">,</span>
+                                   <span class="s1">&#39;Predictions vs Actual&#39;</span><span class="p">,</span> <span class="s1">&#39;Error Distribution&#39;</span><span class="p">])</span>
+
+<span class="c1"># Add visualizations that tell the story</span>
+<span class="c1"># ... (detailed plotting code)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;House Price Prediction Model - Executive Summary&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s1">&#39;results_dashboard.html&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Key communication principles:</p>
+<ul>
+<li>Lead with the <strong>business impact</strong>, not technical details</li>
+<li>Use <strong>visualizations</strong> over tables of numbers</li>
+<li>Quantify <strong>uncertainty</strong> (confidence intervals, error ranges)</li>
+<li>Provide <strong>actionable recommendations</strong></li>
+<li>Be honest about <strong>limitations</strong></li>
+</ul>
+<h2 id="data-driven-decisions">Data-Driven Decisions</h2>
+<p>The ultimate goal of data science is <strong>data-driven decisions</strong>—using evidence to guide action:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># From prediction to decision</span>
+<span class="k">def</span> <span class="nf">recommend_action</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.7</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert model output to business recommendation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;churn_probability&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="s1">&#39;HIGH PRIORITY: Retention intervention needed&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;churn_probability&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;suggested_offers&#39;</span><span class="p">:</span> <span class="n">get_retention_offers</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="s1">&#39;Standard engagement&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;churn_probability&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;suggested_offers&#39;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+
+<span class="c1"># Example output</span>
+<span class="n">recommendation</span> <span class="o">=</span> <span class="n">recommend_action</span><span class="p">({</span><span class="s1">&#39;churn_probability&#39;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
+<span class="c1"># {&#39;action&#39;: &#39;HIGH PRIORITY: Retention intervention needed&#39;,</span>
+<span class="c1">#  &#39;confidence&#39;: 0.85,</span>
+<span class="c1">#  &#39;suggested_offers&#39;: [&#39;20% discount&#39;, &#39;Free month&#39;, &#39;Upgrade offer&#39;]}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="complete-example-building-a-neural-network-in-pytorch">Complete Example: Building a Neural Network in PyTorch</h2>
+<p>Here's a complete, working example that ties everything together:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Set seed for reproducibility</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># 1. Generate synthetic data</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 2. Split and scale</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">scaler_X</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler_y</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler_X</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler_X</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">scaler_y</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">scaler_y</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+
+<span class="c1"># 3. Convert to PyTorch tensors</span>
+<span class="n">X_train_t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_train_t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">X_test_t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_test_t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+
+<span class="c1"># 4. Create DataLoader</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X_train_t</span><span class="p">,</span> <span class="n">y_train_t</span><span class="p">)</span>
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 5. Define the neural network</span>
+<span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_sizes</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Input layer</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_sizes</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">())</span>
+
+        <span class="c1"># Hidden layers</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hidden_sizes</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_sizes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hidden_sizes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">())</span>
+
+        <span class="c1"># Output layer</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_sizes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">output_size</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">network</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 6. Create model, loss, optimizer</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">hidden_sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span> <span class="n">output_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+<span class="c1"># 7. Training loop</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">train_losses</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">batch_X</span><span class="p">,</span> <span class="n">batch_y</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+        <span class="c1"># Forward pass</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">batch_X</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">batch_y</span><span class="p">)</span>
+
+        <span class="c1"># Backward pass</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="n">avg_loss</span> <span class="o">=</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+    <span class="n">train_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_loss</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">20</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">avg_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 8. Evaluate</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_test_t</span><span class="p">)</span>
+    <span class="n">test_loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">test_pred</span><span class="p">,</span> <span class="n">y_test_t</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Test Loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 9. Visualize training</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Training Loss Over Time&#39;</span><span class="p">,</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;Epoch&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;Loss&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 10. Save model</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;trained_model.pth&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model saved!&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="summary-your-complete-data-science-toolkit">Summary: Your Complete Data Science Toolkit</h2>
+<p>Congratulations! You've now learned the complete data science toolkit:</p>
+<p><strong>Neural Network Fundamentals:</strong>
+- Artificial neurons, activation functions (ReLU, Sigmoid)
+- Network architecture (input, hidden, output layers)
+- Weights, biases, forward propagation, backpropagation
+- Training with epochs, batches, and gradient descent</p>
+<p><strong>PyTorch Skills:</strong>
+- Tensors and tensor operations
+- Autograd for automatic differentiation
+- Building models with nn.Module and Sequential
+- Training loops with optimizers (SGD, Adam)
+- GPU acceleration with CUDA
+- Saving and loading models</p>
+<p><strong>Professional Best Practices:</strong>
+- Model interpretability and SHAP values
+- Documentation and reproducibility
+- Version control with Git
+- Data ethics and fairness</p>
+<p><strong>Project Skills:</strong>
+- End-to-end pipelines
+- Model deployment
+- Results communication
+- Data-driven decision making</p>
+<p>You now have every tool you need to tackle real-world data science problems.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Neural networks are universal function approximators built from simple neurons</li>
+<li>Activation functions add non-linearity; ReLU is the default choice for hidden layers</li>
+<li>Backpropagation computes gradients; PyTorch handles this automatically</li>
+<li>The training loop: zero gradients → forward → loss → backward → update</li>
+<li>PyTorch tensors are like NumPy arrays with GPU support and autograd</li>
+<li>Always use train/eval modes and disable gradients during evaluation</li>
+<li>Document everything: code, data, decisions, limitations</li>
+<li>Set random seeds for reproducibility</li>
+<li>Consider ethics: privacy, fairness, transparency</li>
+<li>Deploy models to create real-world impact</li>
+</ul>
+<hr />
+<h2 id="your-capstone-project-awaits">Your Capstone Project Awaits</h2>
+<p>You've completed an incredible journey from Python basics to building neural networks. You've learned to:</p>
+<ul>
+<li>Clean and explore data</li>
+<li>Create stunning visualizations</li>
+<li>Apply statistical analysis</li>
+<li>Build regression and classification models</li>
+<li>Evaluate and validate models</li>
+<li>Construct and train neural networks</li>
+<li>Follow professional best practices</li>
+</ul>
+<p>Now it's time to apply everything you've learned.</p>
+<div class="admonition question">
+<p class="admonition-title">What Will Your Capstone Project Be?</p>
+<p>Think about a problem you care about solving. Consider:</p>
+<ul>
+<li><strong>Personal interests</strong>: Sports analytics? Music recommendations? Climate data?</li>
+<li><strong>Social impact</strong>: Healthcare predictions? Educational outcomes? Environmental monitoring?</li>
+<li><strong>Career goals</strong>: Financial analysis? Customer behavior? Manufacturing optimization?</li>
+<li><strong>Local community</strong>: Traffic patterns? Local business trends? Public health?</li>
+</ul>
+<p>Your capstone project is your chance to demonstrate your new superpowers. You'll build an end-to-end pipeline, from raw data to deployed model, solving a problem that matters to you.</p>
+<p><strong>So, what will YOU build?</strong></p>
+</div>
 
 
 
@@ -1650,6 +3544,10 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

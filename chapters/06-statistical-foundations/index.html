@@ -2417,7 +2417,7 @@ max     95.000000
 <h2 id="measures-of-central-tendency">Measures of Central Tendency</h2>
 <h3 id="mean-the-arithmetic-average">Mean: The Arithmetic Average</h3>
 <p>The <strong>mean</strong> is what most people call "the average." Add up all the values and divide by how many there are:</p>
-<p>$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i = \frac{x_1 + x_2 + ... + x_n}{n}$$</p>
+<div class="arithmatex">\[\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i = \frac{x_1 + x_2 + ... + x_n}{n}\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2521,61 +2521,49 @@ max     95.000000
 </tbody>
 </table>
 <h4 id="diagram-central-tendency-comparison-microsim">Diagram: Central Tendency Comparison MicroSim</h4>
-<details markdown="1">
-    <summary>Mean, Median, Mode Interactive Explorer</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Understand (L2)
-
-    Learning Objective: Help students visualize how mean, median, and mode respond differently to data changes and outliers
-
-    Canvas layout (800x500px):
-    - Top (800x300): Interactive histogram with draggable data points
-    - Bottom (800x200): Statistics display and controls
-
-    Visual elements:
-    - Histogram showing data distribution
-    - Vertical lines for mean (red), median (green), mode (blue)
-    - Individual data points displayed as draggable circles below histogram
-    - Statistics panel showing current values
-
-    Interactive controls:
-    - Draggable data points: Click and drag any point to change its value
-    - "Add Point" button: Add new data point
-    - "Add Outlier" button: Add extreme value
-    - "Remove Point" button: Click to remove
-    - "Reset" button: Return to original dataset
-    - Dropdown: Preset distributions (symmetric, left-skewed, right-skewed, bimodal)
-
-    Initial dataset:
-    - 20 points normally distributed around 50
-
-    Behavior:
-    - All three measures update in real-time as points are dragged
-    - Visual indication when mean and median diverge significantly
-    - Highlight which measure is "best" for current distribution
-    - Animation when adding outliers to show mean shifting
-
-    Educational annotations:
-    - "Notice how the mean moves toward the outlier"
-    - "The median stays stable!"
-    - "Mode shows the peak of the distribution"
-
-    Challenge tasks:
-    - "Make the mean equal to the median"
-    - "Create a distribution where mode ≠ median ≠ mean"
-    - "Add an outlier that changes the mean by at least 10"
-
-    Visual style: Clean statistical visualization with color-coded measures
-
-    Implementation: p5.js with real-time statistical calculations
+<details>
+<summary>Mean, Median, Mode Interactive Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Understand (L2)</p>
+<p>Learning Objective: Help students visualize how mean, median, and mode respond differently to data changes and outliers</p>
+<p>Canvas layout (800x500px):
+- Top (800x300): Interactive histogram with draggable data points
+- Bottom (800x200): Statistics display and controls</p>
+<p>Visual elements:
+- Histogram showing data distribution
+- Vertical lines for mean (red), median (green), mode (blue)
+- Individual data points displayed as draggable circles below histogram
+- Statistics panel showing current values</p>
+<p>Interactive controls:
+- Draggable data points: Click and drag any point to change its value
+- "Add Point" button: Add new data point
+- "Add Outlier" button: Add extreme value
+- "Remove Point" button: Click to remove
+- "Reset" button: Return to original dataset
+- Dropdown: Preset distributions (symmetric, left-skewed, right-skewed, bimodal)</p>
+<p>Initial dataset:
+- 20 points normally distributed around 50</p>
+<p>Behavior:
+- All three measures update in real-time as points are dragged
+- Visual indication when mean and median diverge significantly
+- Highlight which measure is "best" for current distribution
+- Animation when adding outliers to show mean shifting</p>
+<p>Educational annotations:
+- "Notice how the mean moves toward the outlier"
+- "The median stays stable!"
+- "Mode shows the peak of the distribution"</p>
+<p>Challenge tasks:
+- "Make the mean equal to the median"
+- "Create a distribution where mode ≠ median ≠ mean"
+- "Add an outlier that changes the mean by at least 10"</p>
+<p>Visual style: Clean statistical visualization with color-coded measures</p>
+<p>Implementation: p5.js with real-time statistical calculations</p>
 </details>
-
 <h2 id="measures-of-spread">Measures of Spread</h2>
 <p>Knowing the center isn't enough—you also need to know how spread out the data is. Two datasets can have the same mean but very different spreads.</p>
 <h3 id="range-simplest-spread-measure">Range: Simplest Spread Measure</h3>
 <p>The <strong>range</strong> is simply the difference between the maximum and minimum values:</p>
-<p>$$\text{Range} = \text{Max} - \text{Min}$$</p>
+<div class="arithmatex">\[\text{Range} = \text{Max} - \text{Min}\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2587,7 +2575,7 @@ max     95.000000
 <p>Range is easy to understand but has limitations: it only uses two values and is very sensitive to outliers.</p>
 <h3 id="variance-average-squared-deviation">Variance: Average Squared Deviation</h3>
 <p><strong>Variance</strong> measures how far each value is from the mean, on average. It squares the deviations (so negatives don't cancel positives):</p>
-<p>$$\sigma^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2$$</p>
+<div class="arithmatex">\[\sigma^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2619,7 +2607,7 @@ max     95.000000
 <p>The problem with variance? The units are squared. If your data is in meters, variance is in meters². That's hard to interpret.</p>
 <h3 id="standard-deviation-the-useful-spread-measure">Standard Deviation: The Useful Spread Measure</h3>
 <p><strong>Standard deviation</strong> is the square root of variance, bringing us back to the original units:</p>
-<p>$$\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2}$$</p>
+<div class="arithmatex">\[\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2}\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2641,7 +2629,7 @@ max     95.000000
 <p>This is called the <strong>68-95-99.7 rule</strong> (or empirical rule).</p>
 <div class="admonition tip">
 <p class="admonition-title">Population vs Sample</p>
-<p>When calculating variance/standard deviation for a <strong>sample</strong> (subset of data), divide by $n-1$ instead of $n$. This corrects for bias. Use <code>np.var(data, ddof=1)</code> or <code>np.std(data, ddof=1)</code> for sample statistics.</p>
+<p>When calculating variance/standard deviation for a <strong>sample</strong> (subset of data), divide by <span class="arithmatex">\(n-1\)</span> instead of <span class="arithmatex">\(n\)</span>. This corrects for bias. Use <code>np.var(data, ddof=1)</code> or <code>np.std(data, ddof=1)</code> for sample statistics.</p>
 </div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -2701,7 +2689,7 @@ max     95.000000
 </code></pre></div></td></tr></table></div>
 <h3 id="interquartile-range-iqr">Interquartile Range (IQR)</h3>
 <p>The <strong>interquartile range</strong> is the range of the middle 50% of data:</p>
-<p>$$\text{IQR} = Q3 - Q1$$</p>
+<div class="arithmatex">\[\text{IQR} = Q3 - Q1\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2714,7 +2702,7 @@ max     95.000000
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">iqr</span> <span class="k">as</span> <span class="n">calc_iqr</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IQR: </span><span class="si">{</span><span class="n">calc_iqr</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>IQR is robust to outliers and is used to detect them: any value below $Q1 - 1.5 \times IQR$ or above $Q3 + 1.5 \times IQR$ is considered an outlier.</p>
+<p>IQR is robust to outliers and is used to detect them: any value below <span class="arithmatex">\(Q1 - 1.5 \times IQR\)</span> or above <span class="arithmatex">\(Q3 + 1.5 \times IQR\)</span> is considered an outlier.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2728,76 +2716,85 @@ max     95.000000
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Outliers: </span><span class="si">{</span><span class="n">outliers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-box-plot-anatomy">Diagram: Box Plot Anatomy</h4>
-<details markdown="1">
-    <summary>Interactive Box Plot Anatomy</summary>
-    Type: infographic
-
-    Bloom Taxonomy: Remember (L1)
-
-    Learning Objective: Help students identify and remember the components of a box plot
-
-    Purpose: Visual breakdown of box plot structure with labeled components
-
-    Layout: Central box plot with callouts pointing to each component
-
-    Main visual: A horizontal box plot with sample data showing:
-    - Whisker extending left to minimum (non-outlier)
-    - Box from Q1 to Q3
-    - Median line inside box
-    - Whisker extending right to maximum (non-outlier)
-    - Two outlier points beyond whiskers
-
-    Callouts (numbered with leader lines):
-
-    1. MINIMUM (pointing to left whisker end)
-       - "Smallest non-outlier value"
-       - "= Q1 - 1.5×IQR or actual min, whichever is larger"
-       - Color: Blue
-
-    2. Q1 / FIRST QUARTILE (pointing to left edge of box)
-       - "25% of data below this"
-       - "Left edge of box"
-       - Color: Green
-
-    3. MEDIAN / Q2 (pointing to line inside box)
-       - "50% of data below this"
-       - "Center line in box"
-       - Color: Red
-
-    4. Q3 / THIRD QUARTILE (pointing to right edge of box)
-       - "75% of data below this"
-       - "Right edge of box"
-       - Color: Green
-
-    5. MAXIMUM (pointing to right whisker end)
-       - "Largest non-outlier value"
-       - "= Q3 + 1.5×IQR or actual max, whichever is smaller"
-       - Color: Blue
-
-    6. IQR (bracket spanning the box)
-       - "Interquartile Range = Q3 - Q1"
-       - "Contains middle 50% of data"
-       - Color: Orange
-
-    7. OUTLIERS (pointing to dots beyond whiskers)
-       - "Values beyond 1.5×IQR from box"
-       - "Shown as individual points"
-       - Color: Purple
-
-    Bottom section: "What box plots tell you at a glance"
-    - Center (median position)
-    - Spread (box width)
-    - Symmetry (median position within box)
-    - Outliers (individual points)
-
-    Interactive elements:
-    - Hover over each component to highlight it
-    - Click to see formula or code to calculate
-    - Toggle between horizontal and vertical orientation
-
-    Implementation: SVG with CSS hover effects and JavaScript interactivity
+<details>
+<summary>Interactive Box Plot Anatomy</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy: Remember (L1)</p>
+<p>Learning Objective: Help students identify and remember the components of a box plot</p>
+<p>Purpose: Visual breakdown of box plot structure with labeled components</p>
+<p>Layout: Central box plot with callouts pointing to each component</p>
+<p>Main visual: A horizontal box plot with sample data showing:
+- Whisker extending left to minimum (non-outlier)
+- Box from Q1 to Q3
+- Median line inside box
+- Whisker extending right to maximum (non-outlier)
+- Two outlier points beyond whiskers</p>
+<p>Callouts (numbered with leader lines):</p>
+<ol>
+<li>MINIMUM (pointing to left whisker end)</li>
+<li>"Smallest non-outlier value"</li>
+<li>"= Q1 - 1.5×IQR or actual min, whichever is larger"</li>
+<li>
+<p>Color: Blue</p>
+</li>
+<li>
+<p>Q1 / FIRST QUARTILE (pointing to left edge of box)</p>
+</li>
+<li>"25% of data below this"</li>
+<li>"Left edge of box"</li>
+<li>
+<p>Color: Green</p>
+</li>
+<li>
+<p>MEDIAN / Q2 (pointing to line inside box)</p>
+</li>
+<li>"50% of data below this"</li>
+<li>"Center line in box"</li>
+<li>
+<p>Color: Red</p>
+</li>
+<li>
+<p>Q3 / THIRD QUARTILE (pointing to right edge of box)</p>
+</li>
+<li>"75% of data below this"</li>
+<li>"Right edge of box"</li>
+<li>
+<p>Color: Green</p>
+</li>
+<li>
+<p>MAXIMUM (pointing to right whisker end)</p>
+</li>
+<li>"Largest non-outlier value"</li>
+<li>"= Q3 + 1.5×IQR or actual max, whichever is smaller"</li>
+<li>
+<p>Color: Blue</p>
+</li>
+<li>
+<p>IQR (bracket spanning the box)</p>
+</li>
+<li>"Interquartile Range = Q3 - Q1"</li>
+<li>"Contains middle 50% of data"</li>
+<li>
+<p>Color: Orange</p>
+</li>
+<li>
+<p>OUTLIERS (pointing to dots beyond whiskers)</p>
+</li>
+<li>"Values beyond 1.5×IQR from box"</li>
+<li>"Shown as individual points"</li>
+<li>Color: Purple</li>
+</ol>
+<p>Bottom section: "What box plots tell you at a glance"
+- Center (median position)
+- Spread (box width)
+- Symmetry (median position within box)
+- Outliers (individual points)</p>
+<p>Interactive elements:
+- Hover over each component to highlight it
+- Click to see formula or code to calculate
+- Toggle between horizontal and vertical orientation</p>
+<p>Implementation: SVG with CSS hover effects and JavaScript interactivity</p>
 </details>
-
 <h2 id="distribution-shape-skewness-and-kurtosis">Distribution Shape: Skewness and Kurtosis</h2>
 <h3 id="skewness-leaning-left-or-right">Skewness: Leaning Left or Right</h3>
 <p><strong>Skewness</strong> measures asymmetry in a distribution:</p>
@@ -2960,60 +2957,48 @@ max     95.000000
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Within 3 std: </span><span class="si">{</span><span class="n">within_3_std</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># ~99.7%</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-normal-distribution-explorer-microsim">Diagram: Normal Distribution Explorer MicroSim</h4>
-<details markdown="1">
-    <summary>Interactive Normal Distribution Explorer</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Apply (L3)
-
-    Learning Objective: Let students manipulate mean and standard deviation to understand how they affect the normal distribution shape
-
-    Canvas layout (850x550px):
-    - Main area (850x400): Interactive normal distribution plot
-    - Control panel (850x150): Sliders and statistics
-
-    Visual elements:
-    - Smooth normal distribution curve
-    - Shaded regions showing 1σ, 2σ, 3σ areas
-    - Vertical line at mean
-    - Axis labels and tick marks
-    - Current μ and σ displayed prominently
-
-    Interactive controls:
-    - Slider: Mean (μ) range: 0 to 200, default: 100
-    - Slider: Standard Deviation (σ) range: 1 to 50, default: 15
-    - Toggle: Show 68-95-99.7 regions
-    - Toggle: Show probability density values
-    - Button: "Add second distribution" (for comparison)
-    - Dropdown: Preset examples (IQ scores, heights, test scores)
-
-    Display panels:
-    - Probability within 1σ: 68.27%
-    - Probability within 2σ: 95.45%
-    - Probability within 3σ: 99.73%
-    - Current curve equation
-
-    Behavior:
-    - Curve updates smoothly as sliders move
-    - Shaded regions resize with σ changes
-    - Curve shifts horizontally with μ changes
-    - Comparison mode overlays two distributions
-
-    Educational annotations:
-    - "Larger σ = wider, flatter curve"
-    - "Smaller σ = narrower, taller curve"
-    - "μ shifts the center, σ changes the spread"
-
-    Challenge tasks:
-    - "Set parameters to match IQ distribution (μ=100, σ=15)"
-    - "What σ makes 95% fall between 60 and 140?"
-    - "Compare two distributions: same mean, different spread"
-
-    Visual style: Clean mathematical visualization with Plotly-like aesthetics
-
-    Implementation: p5.js or Plotly.js with real-time updates
+<details>
+<summary>Interactive Normal Distribution Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Let students manipulate mean and standard deviation to understand how they affect the normal distribution shape</p>
+<p>Canvas layout (850x550px):
+- Main area (850x400): Interactive normal distribution plot
+- Control panel (850x150): Sliders and statistics</p>
+<p>Visual elements:
+- Smooth normal distribution curve
+- Shaded regions showing 1σ, 2σ, 3σ areas
+- Vertical line at mean
+- Axis labels and tick marks
+- Current μ and σ displayed prominently</p>
+<p>Interactive controls:
+- Slider: Mean (μ) range: 0 to 200, default: 100
+- Slider: Standard Deviation (σ) range: 1 to 50, default: 15
+- Toggle: Show 68-95-99.7 regions
+- Toggle: Show probability density values
+- Button: "Add second distribution" (for comparison)
+- Dropdown: Preset examples (IQ scores, heights, test scores)</p>
+<p>Display panels:
+- Probability within 1σ: 68.27%
+- Probability within 2σ: 95.45%
+- Probability within 3σ: 99.73%
+- Current curve equation</p>
+<p>Behavior:
+- Curve updates smoothly as sliders move
+- Shaded regions resize with σ changes
+- Curve shifts horizontally with μ changes
+- Comparison mode overlays two distributions</p>
+<p>Educational annotations:
+- "Larger σ = wider, flatter curve"
+- "Smaller σ = narrower, taller curve"
+- "μ shifts the center, σ changes the spread"</p>
+<p>Challenge tasks:
+- "Set parameters to match IQ distribution (μ=100, σ=15)"
+- "What σ makes 95% fall between 60 and 140?"
+- "Compare two distributions: same mean, different spread"</p>
+<p>Visual style: Clean mathematical visualization with Plotly-like aesthetics</p>
+<p>Implementation: p5.js or Plotly.js with real-time updates</p>
 </details>
-
 <h2 id="probability-fundamentals">Probability Fundamentals</h2>
 <p><strong>Probability</strong> is the mathematical framework for quantifying uncertainty. It assigns a number between 0 and 1 to events:</p>
 <ul>
@@ -3042,7 +3027,7 @@ max     95.000000
 <li><strong>Continuous</strong>: Takes any value in a range (height: 5.5, 5.51, 5.512...)</li>
 </ul>
 <p>The <strong>expected value</strong> (E[X]) is the long-run average—what you'd expect on average over many repetitions:</p>
-<p>$$E[X] = \sum_{i} x_i \cdot P(x_i)$$</p>
+<div class="arithmatex">\[E[X] = \sum_{i} x_i \cdot P(x_i)\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3167,66 +3152,54 @@ max     95.000000
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-central-limit-theorem-simulator-microsim">Diagram: Central Limit Theorem Simulator MicroSim</h4>
-<details markdown="1">
-    <summary>Central Limit Theorem Interactive Demonstration</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Analyze (L4)
-
-    Learning Objective: Help students understand the CLT by visualizing how sample means become normally distributed regardless of population shape
-
-    Canvas layout (900x600px):
-    - Left panel (450x600): Population distribution
-    - Right panel (450x600): Distribution of sample means
-    - Bottom strip (900x100): Controls
-
-    Visual elements:
-    - Left: Histogram of original population
-    - Right: Histogram of sample means (builds up over time)
-    - Normal curve overlay on right panel
-    - Running statistics display
-
-    Interactive controls:
-    - Dropdown: Population distribution type
-      - Normal
-      - Uniform
-      - Exponential (right-skewed)
-      - Bimodal
-      - Custom (draw your own!)
-    - Slider: Sample size (5, 10, 30, 50, 100)
-    - Button: "Take One Sample" (animated)
-    - Button: "Take 100 Samples" (fast)
-    - Button: "Take 1000 Samples" (bulk)
-    - Button: "Reset"
-    - Slider: Animation speed
-
-    Display panels:
-    - Population mean and std
-    - Mean of sample means
-    - Std of sample means (should ≈ σ/√n)
-    - Number of samples taken
-
-    Behavior:
-    - "Take One Sample" animates: highlight sample from population, calculate mean, add to right histogram
-    - Sample means histogram builds up gradually
-    - Normal curve overlay adjusts to fit data
-    - Show how larger sample sizes make sample means distribution narrower
-
-    Educational annotations:
-    - "Notice: Even though population is [skewed/uniform], sample means are normal!"
-    - "Larger samples → narrower distribution of means"
-    - "Standard error = σ/√n"
-
-    Challenge tasks:
-    - "Which sample size makes sample means most normal?"
-    - "Predict the std of sample means for n=100"
-    - "Try the most extreme distribution—CLT still works!"
-
-    Visual style: Side-by-side comparison with animation
-
-    Implementation: p5.js with smooth animations and Plotly for histograms
+<details>
+<summary>Central Limit Theorem Interactive Demonstration</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Analyze (L4)</p>
+<p>Learning Objective: Help students understand the CLT by visualizing how sample means become normally distributed regardless of population shape</p>
+<p>Canvas layout (900x600px):
+- Left panel (450x600): Population distribution
+- Right panel (450x600): Distribution of sample means
+- Bottom strip (900x100): Controls</p>
+<p>Visual elements:
+- Left: Histogram of original population
+- Right: Histogram of sample means (builds up over time)
+- Normal curve overlay on right panel
+- Running statistics display</p>
+<p>Interactive controls:
+- Dropdown: Population distribution type
+  - Normal
+  - Uniform
+  - Exponential (right-skewed)
+  - Bimodal
+  - Custom (draw your own!)
+- Slider: Sample size (5, 10, 30, 50, 100)
+- Button: "Take One Sample" (animated)
+- Button: "Take 100 Samples" (fast)
+- Button: "Take 1000 Samples" (bulk)
+- Button: "Reset"
+- Slider: Animation speed</p>
+<p>Display panels:
+- Population mean and std
+- Mean of sample means
+- Std of sample means (should ≈ σ/√n)
+- Number of samples taken</p>
+<p>Behavior:
+- "Take One Sample" animates: highlight sample from population, calculate mean, add to right histogram
+- Sample means histogram builds up gradually
+- Normal curve overlay adjusts to fit data
+- Show how larger sample sizes make sample means distribution narrower</p>
+<p>Educational annotations:
+- "Notice: Even though population is [skewed/uniform], sample means are normal!"
+- "Larger samples → narrower distribution of means"
+- "Standard error = σ/√n"</p>
+<p>Challenge tasks:
+- "Which sample size makes sample means most normal?"
+- "Predict the std of sample means for n=100"
+- "Try the most extreme distribution—CLT still works!"</p>
+<p>Visual style: Side-by-side comparison with animation</p>
+<p>Implementation: p5.js with smooth animations and Plotly for histograms</p>
 </details>
-
 <h2 id="confidence-intervals-quantifying-uncertainty">Confidence Intervals: Quantifying Uncertainty</h2>
 <p>A <strong>confidence interval</strong> gives a range that likely contains the true population parameter. Instead of saying "the average is 75," you say "I'm 95% confident the average is between 72 and 78."</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3347,74 +3320,76 @@ max     95.000000
 <p>A result can be statistically significant but practically meaningless. If a drug reduces blood pressure by 0.1 mmHg and it's significant with p &lt; 0.001, so what? That's too small to matter clinically. Always consider effect size, not just p-values.</p>
 </div>
 <h4 id="diagram-hypothesis-testing-workflow">Diagram: Hypothesis Testing Workflow</h4>
-<details markdown="1">
-    <summary>Hypothesis Testing Decision Flowchart</summary>
-    Type: workflow
-
-    Bloom Taxonomy: Apply (L3)
-
-    Learning Objective: Guide students through the hypothesis testing process step by step
-
-    Purpose: Visual decision tree for conducting hypothesis tests
-
-    Visual style: Vertical flowchart with decision diamonds and process rectangles
-
-    Steps (top to bottom):
-
-    1. START: "Research Question"
-       Hover text: "What are you trying to determine?"
-       Color: Blue
-
-    2. PROCESS: "State Hypotheses"
-       - H₀: Null hypothesis (no effect/difference)
-       - H₁: Alternative hypothesis (effect exists)
-       Hover text: "H₀ is what you're trying to disprove"
-       Color: Green
-
-    3. PROCESS: "Choose Significance Level (α)"
-       - Usually α = 0.05
-       Hover text: "This is your threshold for 'unlikely'"
-       Color: Green
-
-    4. PROCESS: "Collect Data & Calculate Test Statistic"
-       Hover text: "t-test, chi-square, etc. depending on your data"
-       Color: Green
-
-    5. PROCESS: "Calculate P-value"
-       Hover text: "Probability of seeing this result if H₀ is true"
-       Color: Orange
-
-    6. DECISION: "Is p-value < α?"
-       Color: Yellow
-
-    7a. YES PATH: "Reject H₀"
-       - "Results are statistically significant"
-       - "Evidence supports H₁"
-       Hover text: "But also check effect size!"
-       Color: Red
-
-    7b. NO PATH: "Fail to Reject H₀"
-       - "Results are not statistically significant"
-       - "Insufficient evidence for H₁"
-       Hover text: "This doesn't prove H₀ is true!"
-       Color: Gray
-
-    8. END: "Report Results"
-       - Include: test statistic, p-value, effect size, confidence interval
-       Color: Blue
-
-    Side annotations:
-    - "Type I Error (α): Rejecting H₀ when it's actually true"
-    - "Type II Error (β): Failing to reject H₀ when it's actually false"
-
-    Interactive elements:
-    - Hover over each step for detailed explanation
-    - Click to see Python code for that step
-    - Example problems that walk through the flowchart
-
-    Implementation: SVG with JavaScript interactivity
+<details>
+<summary>Hypothesis Testing Decision Flowchart</summary>
+<p>Type: workflow</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Guide students through the hypothesis testing process step by step</p>
+<p>Purpose: Visual decision tree for conducting hypothesis tests</p>
+<p>Visual style: Vertical flowchart with decision diamonds and process rectangles</p>
+<p>Steps (top to bottom):</p>
+<ol>
+<li>
+<p>START: "Research Question"
+   Hover text: "What are you trying to determine?"
+   Color: Blue</p>
+</li>
+<li>
+<p>PROCESS: "State Hypotheses"</p>
+</li>
+<li>H₀: Null hypothesis (no effect/difference)</li>
+<li>
+<p>H₁: Alternative hypothesis (effect exists)
+   Hover text: "H₀ is what you're trying to disprove"
+   Color: Green</p>
+</li>
+<li>
+<p>PROCESS: "Choose Significance Level (α)"</p>
+</li>
+<li>
+<p>Usually α = 0.05
+   Hover text: "This is your threshold for 'unlikely'"
+   Color: Green</p>
+</li>
+<li>
+<p>PROCESS: "Collect Data &amp; Calculate Test Statistic"
+   Hover text: "t-test, chi-square, etc. depending on your data"
+   Color: Green</p>
+</li>
+<li>
+<p>PROCESS: "Calculate P-value"
+   Hover text: "Probability of seeing this result if H₀ is true"
+   Color: Orange</p>
+</li>
+<li>
+<p>DECISION: "Is p-value &lt; α?"
+   Color: Yellow</p>
+</li>
+</ol>
+<p>7a. YES PATH: "Reject H₀"
+   - "Results are statistically significant"
+   - "Evidence supports H₁"
+   Hover text: "But also check effect size!"
+   Color: Red</p>
+<p>7b. NO PATH: "Fail to Reject H₀"
+   - "Results are not statistically significant"
+   - "Insufficient evidence for H₁"
+   Hover text: "This doesn't prove H₀ is true!"
+   Color: Gray</p>
+<ol>
+<li>END: "Report Results"</li>
+<li>Include: test statistic, p-value, effect size, confidence interval
+   Color: Blue</li>
+</ol>
+<p>Side annotations:
+- "Type I Error (α): Rejecting H₀ when it's actually true"
+- "Type II Error (β): Failing to reject H₀ when it's actually false"</p>
+<p>Interactive elements:
+- Hover over each step for detailed explanation
+- Click to see Python code for that step
+- Example problems that walk through the flowchart</p>
+<p>Implementation: SVG with JavaScript interactivity</p>
 </details>
-
 <h2 id="correlation-measuring-relationships">Correlation: Measuring Relationships</h2>
 <p><strong>Correlation</strong> measures the strength and direction of a linear relationship between two variables. It ranges from -1 to +1:</p>
 <ul>
@@ -3424,7 +3399,7 @@ max     95.000000
 </ul>
 <h3 id="covariance-the-building-block">Covariance: The Building Block</h3>
 <p><strong>Covariance</strong> measures how two variables change together:</p>
-<p>$$\text{Cov}(X, Y) = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})$$</p>
+<div class="arithmatex">\[\text{Cov}(X, Y) = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3442,7 +3417,7 @@ max     95.000000
 <p>The problem with covariance: it's affected by the scale of the variables. Covariance between height in inches and weight in pounds will be different from height in centimeters and weight in kilograms.</p>
 <h3 id="pearson-correlation-the-standard-measure">Pearson Correlation: The Standard Measure</h3>
 <p><strong>Pearson correlation</strong> standardizes covariance to a -1 to +1 scale:</p>
-<p>$$r = \frac{\text{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}$$</p>
+<div class="arithmatex">\[r = \frac{\text{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3575,63 +3550,51 @@ max     95.000000
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-correlation-visualizer-microsim">Diagram: Correlation Visualizer MicroSim</h4>
-<details markdown="1">
-    <summary>Interactive Correlation Explorer</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Analyze (L4)
-
-    Learning Objective: Help students understand correlation through interactive visualization of scatter plots with different correlation strengths
-
-    Canvas layout (850x550px):
-    - Main area (550x500): Interactive scatter plot
-    - Right panel (300x500): Controls and statistics
-    - Bottom strip (850x50): Correlation strength indicator
-
-    Visual elements:
-    - Scatter plot with data points
-    - Best-fit line (toggleable)
-    - Correlation coefficient displayed prominently
-    - Correlation strength meter (-1 to +1 scale)
-
-    Interactive controls:
-    - Slider: Target correlation (-1.0 to +1.0)
-    - Button: "Generate Data" with current correlation
-    - Slider: Number of points (20-200)
-    - Slider: Noise level
-    - Toggle: Show regression line
-    - Toggle: Show confidence band
-    - Dropdown: Preset examples (perfect positive, perfect negative, no correlation, moderate)
-    - Draggable points: Move individual points to see effect
-
-    Display panels:
-    - Pearson r
-    - Spearman r
-    - P-value
-    - R² (coefficient of determination)
-    - Sample size
-
-    Behavior:
-    - Adjusting correlation slider regenerates data with target correlation
-    - Dragging individual points updates all statistics in real-time
-    - Adding outliers shows how they affect Pearson vs Spearman
-    - Noise slider shows how correlation degrades with noise
-
-    Educational annotations:
-    - "r = 0.8 means strong positive relationship"
-    - "Notice Spearman handles the outlier better!"
-    - "R² = 0.64 means 64% of variance in Y is explained by X"
-
-    Challenge tasks:
-    - "Create data with r ≈ 0 but clear pattern (try a curve!)"
-    - "Add an outlier that changes r by at least 0.2"
-    - "Find the minimum sample size for statistical significance"
-
-    Visual style: Clean Plotly-like scatter plot with interactive elements
-
-    Implementation: p5.js with statistical calculations
+<details>
+<summary>Interactive Correlation Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Analyze (L4)</p>
+<p>Learning Objective: Help students understand correlation through interactive visualization of scatter plots with different correlation strengths</p>
+<p>Canvas layout (850x550px):
+- Main area (550x500): Interactive scatter plot
+- Right panel (300x500): Controls and statistics
+- Bottom strip (850x50): Correlation strength indicator</p>
+<p>Visual elements:
+- Scatter plot with data points
+- Best-fit line (toggleable)
+- Correlation coefficient displayed prominently
+- Correlation strength meter (-1 to +1 scale)</p>
+<p>Interactive controls:
+- Slider: Target correlation (-1.0 to +1.0)
+- Button: "Generate Data" with current correlation
+- Slider: Number of points (20-200)
+- Slider: Noise level
+- Toggle: Show regression line
+- Toggle: Show confidence band
+- Dropdown: Preset examples (perfect positive, perfect negative, no correlation, moderate)
+- Draggable points: Move individual points to see effect</p>
+<p>Display panels:
+- Pearson r
+- Spearman r
+- P-value
+- R² (coefficient of determination)
+- Sample size</p>
+<p>Behavior:
+- Adjusting correlation slider regenerates data with target correlation
+- Dragging individual points updates all statistics in real-time
+- Adding outliers shows how they affect Pearson vs Spearman
+- Noise slider shows how correlation degrades with noise</p>
+<p>Educational annotations:
+- "r = 0.8 means strong positive relationship"
+- "Notice Spearman handles the outlier better!"
+- "R² = 0.64 means 64% of variance in Y is explained by X"</p>
+<p>Challenge tasks:
+- "Create data with r ≈ 0 but clear pattern (try a curve!)"
+- "Add an outlier that changes r by at least 0.2"
+- "Find the minimum sample size for statistical significance"</p>
+<p>Visual style: Clean Plotly-like scatter plot with interactive elements</p>
+<p>Implementation: p5.js with statistical calculations</p>
 </details>
-
 <div class="admonition warning">
 <p class="admonition-title">Correlation ≠ Causation</p>
 <p>The most important rule in statistics: <strong>correlation does not imply causation</strong>. Ice cream sales and drowning deaths are correlated (both increase in summer), but ice cream doesn't cause drowning. Always consider confounding variables and look for experimental evidence before claiming causation.</p>
@@ -3906,6 +3869,10 @@ max     95.000000
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -2215,72 +2215,73 @@
 <p>Here's the thing: <strong>messy data will destroy your analysis</strong>. Train a machine learning model on dirty data? It learns the wrong patterns. Calculate averages with missing values? Your numbers lie. Build a report with duplicates? Everything is inflated. Garbage in, garbage out—that's the first law of data science.</p>
 <p>But here's the good news: cleaning data is a superpower in itself. Most people don't know how to do it well. Master this chapter, and you'll be the hero who transforms chaotic datasets into pristine, analysis-ready gold. Let's get scrubbing!</p>
 <h4 id="diagram-data-cleaning-pipeline-overview">Diagram: Data Cleaning Pipeline Overview</h4>
-<details markdown="1">
-    <summary>Data Cleaning Pipeline Overview</summary>
-    Type: workflow
-
-    Bloom Taxonomy: Understand (L2)
-
-    Learning Objective: Help students visualize the complete data cleaning workflow from raw data to analysis-ready data
-
-    Purpose: Show the sequential steps in a typical data cleaning process
-
-    Visual style: Horizontal flowchart with icons for each stage
-
-    Steps (left to right):
-
-    1. RAW DATA
-       Icon: Messy document with question marks
-       Color: Red
-       Hover text: "Data as received - full of problems"
-
-    2. MISSING VALUES
-       Icon: Grid with empty cells highlighted
-       Color: Orange
-       Hover text: "Identify and handle NaN, None, empty strings"
-
-    3. DUPLICATES
-       Icon: Two identical rows with X on one
-       Color: Yellow
-       Hover text: "Find and remove duplicate records"
-
-    4. OUTLIERS
-       Icon: Box plot with point far outside
-       Color: Yellow-green
-       Hover text: "Detect and decide how to handle extreme values"
-
-    5. DATA TYPES
-       Icon: Type conversion symbol (A→1)
-       Color: Green
-       Hover text: "Convert columns to appropriate types"
-
-    6. VALIDATION
-       Icon: Checkmark in shield
-       Color: Blue
-       Hover text: "Verify data meets business rules"
-
-    7. TRANSFORMATION
-       Icon: Gear with arrows
-       Color: Purple
-       Hover text: "Scale, normalize, and prepare for analysis"
-
-    8. CLEAN DATA
-       Icon: Sparkly document with checkmark
-       Color: Gold
-       Hover text: "Analysis-ready dataset!"
-
-    Annotations below pipeline:
-    - "Each step catches different problems"
-    - "Order matters: missing values before duplicates"
-    - "Always document your cleaning decisions"
-
-    Error feedback loops:
-    - Dashed arrows from steps 2-6 back to "Log Issues" box
-    - "Log Issues" connects to "Data Quality Report"
-
-    Implementation: SVG with CSS hover effects
+<details>
+<summary>Data Cleaning Pipeline Overview</summary>
+<p>Type: workflow</p>
+<p>Bloom Taxonomy: Understand (L2)</p>
+<p>Learning Objective: Help students visualize the complete data cleaning workflow from raw data to analysis-ready data</p>
+<p>Purpose: Show the sequential steps in a typical data cleaning process</p>
+<p>Visual style: Horizontal flowchart with icons for each stage</p>
+<p>Steps (left to right):</p>
+<ol>
+<li>
+<p>RAW DATA
+   Icon: Messy document with question marks
+   Color: Red
+   Hover text: "Data as received - full of problems"</p>
+</li>
+<li>
+<p>MISSING VALUES
+   Icon: Grid with empty cells highlighted
+   Color: Orange
+   Hover text: "Identify and handle NaN, None, empty strings"</p>
+</li>
+<li>
+<p>DUPLICATES
+   Icon: Two identical rows with X on one
+   Color: Yellow
+   Hover text: "Find and remove duplicate records"</p>
+</li>
+<li>
+<p>OUTLIERS
+   Icon: Box plot with point far outside
+   Color: Yellow-green
+   Hover text: "Detect and decide how to handle extreme values"</p>
+</li>
+<li>
+<p>DATA TYPES
+   Icon: Type conversion symbol (A→1)
+   Color: Green
+   Hover text: "Convert columns to appropriate types"</p>
+</li>
+<li>
+<p>VALIDATION
+   Icon: Checkmark in shield
+   Color: Blue
+   Hover text: "Verify data meets business rules"</p>
+</li>
+<li>
+<p>TRANSFORMATION
+   Icon: Gear with arrows
+   Color: Purple
+   Hover text: "Scale, normalize, and prepare for analysis"</p>
+</li>
+<li>
+<p>CLEAN DATA
+   Icon: Sparkly document with checkmark
+   Color: Gold
+   Hover text: "Analysis-ready dataset!"</p>
+</li>
+</ol>
+<p>Annotations below pipeline:
+- "Each step catches different problems"
+- "Order matters: missing values before duplicates"
+- "Always document your cleaning decisions"</p>
+<p>Error feedback loops:
+- Dashed arrows from steps 2-6 back to "Log Issues" box
+- "Log Issues" connects to "Data Quality Report"</p>
+<p>Implementation: SVG with CSS hover effects</p>
 </details>
-
 <h2 id="missing-values-the-silent-killers">Missing Values: The Silent Killers</h2>
 <p><strong>Missing values</strong> are the most common data quality problem you'll encounter. They're sneaky—sometimes they look like empty cells, sometimes they're the word "NULL," and sometimes they're special numeric codes like -999.</p>
 <h3 id="understanding-nan-and-null">Understanding NaN and Null</h3>
@@ -2399,50 +2400,40 @@
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentage missing: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">df</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-missing-value-detection-microsim">Diagram: Missing Value Detection MicroSim</h4>
-<details markdown="1">
-    <summary>Missing Value Detective MicroSim</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Apply (L3)
-
-    Learning Objective: Help students practice identifying and counting missing values in different scenarios
-
-    Canvas layout (750x500px):
-    - Top (750x200): DataFrame display with highlighted missing values
-    - Bottom left (350x300): Detection code panel
-    - Bottom right (400x300): Results and quiz area
-
-    Visual elements:
-    - DataFrame grid showing 8 rows × 5 columns
-    - Missing values highlighted in red when detected
-    - Color legend showing: Present (green), NaN (red), None (orange), Empty string (yellow)
-    - Running count of missing values by column
-
-    Sample data scenarios (rotate through):
-    1. Simple NaN values only
-    2. Mix of NaN and None
-    3. Hidden missing values (empty strings, -999)
-    4. Missing values with pattern (all in one column)
-    5. Sparse data (>50% missing)
-
-    Interactive controls:
-    - Button: "Show isnull()" - highlights all missing
-    - Button: "Count by Column" - shows bar chart of missing counts
-    - Button: "Find Hidden Missing" - identifies non-standard missing values
-    - Dropdown: "Select Scenario" - changes dataset
-    - Quiz mode: "How many missing in column X?" with input field
-
-    Behavior:
-    - Clicking detection buttons animates the detection process
-    - Correct quiz answers earn points and unlock harder scenarios
-    - Hints available after wrong answers
-    - Progress tracker shows scenarios completed
-
-    Visual style: Data detective theme with magnifying glass cursor
-
-    Implementation: p5.js with animated highlighting
+<details>
+<summary>Missing Value Detective MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Help students practice identifying and counting missing values in different scenarios</p>
+<p>Canvas layout (750x500px):
+- Top (750x200): DataFrame display with highlighted missing values
+- Bottom left (350x300): Detection code panel
+- Bottom right (400x300): Results and quiz area</p>
+<p>Visual elements:
+- DataFrame grid showing 8 rows × 5 columns
+- Missing values highlighted in red when detected
+- Color legend showing: Present (green), NaN (red), None (orange), Empty string (yellow)
+- Running count of missing values by column</p>
+<p>Sample data scenarios (rotate through):
+1. Simple NaN values only
+2. Mix of NaN and None
+3. Hidden missing values (empty strings, -999)
+4. Missing values with pattern (all in one column)
+5. Sparse data (&gt;50% missing)</p>
+<p>Interactive controls:
+- Button: "Show isnull()" - highlights all missing
+- Button: "Count by Column" - shows bar chart of missing counts
+- Button: "Find Hidden Missing" - identifies non-standard missing values
+- Dropdown: "Select Scenario" - changes dataset
+- Quiz mode: "How many missing in column X?" with input field</p>
+<p>Behavior:
+- Clicking detection buttons animates the detection process
+- Correct quiz answers earn points and unlock harder scenarios
+- Hints available after wrong answers
+- Progress tracker shows scenarios completed</p>
+<p>Visual style: Data detective theme with magnifying glass cursor</p>
+<p>Implementation: p5.js with animated highlighting</p>
 </details>
-
 <h3 id="handling-missing-values-your-three-options">Handling Missing Values: Your Three Options</h3>
 <p>Once you've found missing values, you have three main strategies:</p>
 <ol>
@@ -2685,56 +2676,42 @@
 <li>Should you merge duplicate information instead of just dropping?</li>
 </ul>
 <h4 id="diagram-duplicate-handling-decision-tree">Diagram: Duplicate Handling Decision Tree</h4>
-<details markdown="1">
-    <summary>Duplicate Handling Decision Tree</summary>
-    Type: diagram
-
-    Bloom Taxonomy: Analyze (L4)
-
-    Learning Objective: Help students decide the appropriate strategy for handling different types of duplicates
-
-    Purpose: Guide decision-making process for duplicate handling
-
-    Visual style: Decision tree flowchart
-
-    Start: "Duplicates Detected"
-
-    Decision 1: "Are rows EXACTLY identical?"
-    - Yes → "Safe to drop_duplicates()"
-    - No → Decision 2
-
-    Decision 2: "Which columns make rows 'the same'?"
-    - Identify key columns (ID, email, etc.)
-    - → Decision 3
-
-    Decision 3: "Do non-key columns differ?"
-    - No → "drop_duplicates(subset=[key_cols])"
-    - Yes → Decision 4
-
-    Decision 4: "Which version is correct?"
-    - First occurrence → "keep='first'"
-    - Last occurrence → "keep='last'"
-    - Need to merge → "Use groupby().agg()"
-    - Can't determine → "Flag for manual review"
-
-    Special case branch:
-    "Is duplication intentional?"
-    - Yes (e.g., same product bought twice) → "Don't remove!"
-    - No → Continue with removal
-
-    Color coding:
-    - Green: Safe actions
-    - Yellow: Need investigation
-    - Red: Be careful
-    - Blue: Decision points
-
-    Annotations:
-    - "Always examine duplicates before removing"
-    - "Document which strategy you used and why"
-
-    Implementation: SVG decision tree with interactive highlights
+<details>
+<summary>Duplicate Handling Decision Tree</summary>
+<p>Type: diagram</p>
+<p>Bloom Taxonomy: Analyze (L4)</p>
+<p>Learning Objective: Help students decide the appropriate strategy for handling different types of duplicates</p>
+<p>Purpose: Guide decision-making process for duplicate handling</p>
+<p>Visual style: Decision tree flowchart</p>
+<p>Start: "Duplicates Detected"</p>
+<p>Decision 1: "Are rows EXACTLY identical?"
+- Yes → "Safe to drop_duplicates()"
+- No → Decision 2</p>
+<p>Decision 2: "Which columns make rows 'the same'?"
+- Identify key columns (ID, email, etc.)
+- → Decision 3</p>
+<p>Decision 3: "Do non-key columns differ?"
+- No → "drop_duplicates(subset=[key_cols])"
+- Yes → Decision 4</p>
+<p>Decision 4: "Which version is correct?"
+- First occurrence → "keep='first'"
+- Last occurrence → "keep='last'"
+- Need to merge → "Use groupby().agg()"
+- Can't determine → "Flag for manual review"</p>
+<p>Special case branch:
+"Is duplication intentional?"
+- Yes (e.g., same product bought twice) → "Don't remove!"
+- No → Continue with removal</p>
+<p>Color coding:
+- Green: Safe actions
+- Yellow: Need investigation
+- Red: Be careful
+- Blue: Decision points</p>
+<p>Annotations:
+- "Always examine duplicates before removing"
+- "Document which strategy you used and why"</p>
+<p>Implementation: SVG decision tree with interactive highlights</p>
 </details>
-
 <h2 id="outliers-the-extreme-values">Outliers: The Extreme Values</h2>
 <p><strong>Outliers</strong> are data points that are unusually far from other observations. They might be:</p>
 <ul>
@@ -2827,61 +2804,49 @@
 <span class="n">invalid_scores</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div></p>
 <h4 id="diagram-outlier-detection-methods-microsim">Diagram: Outlier Detection Methods MicroSim</h4>
-<details markdown="1">
-    <summary>Outlier Detection Playground</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Apply (L3)
-
-    Learning Objective: Let students experiment with different outlier detection methods and see how they identify different points
-
-    Canvas layout (800x550px):
-    - Left (550x550): Scatter plot / histogram visualization
-    - Right (250x550): Controls and detected outliers list
-
-    Visual elements:
-    - Data points displayed as circles
-    - Normal points in blue
-    - Detected outliers highlighted in red with labels
-    - Detection threshold lines/zones shown
-    - Summary statistics displayed
-
-    Sample datasets (toggle between):
-    1. Normal distribution with obvious outliers
-    2. Skewed distribution (income-like)
-    3. Multi-modal distribution
-    4. Real-world messy data with errors
-
-    Interactive controls:
-    - Radio buttons: Detection method (Z-score, IQR, Custom range)
-    - Slider: Z-score threshold (1.5 to 4.0)
-    - Slider: IQR multiplier (1.0 to 3.0)
-    - Number inputs: Custom min/max values
-    - Dropdown: Dataset selector
-    - Toggle: Show/hide threshold lines
-
-    Display panels:
-    - Count of outliers detected
-    - Outlier values and indices
-    - Percentage of data flagged
-    - Before/after mean comparison
-
-    Behavior:
-    - Adjusting thresholds immediately updates highlighting
-    - Hovering over points shows their values
-    - Clicking outliers adds them to "investigate" list
-    - Show how different methods catch different outliers
-
-    Educational annotations:
-    - "Z-score catches 3 outliers, IQR catches 5 - which is right?"
-    - "Lower threshold = more outliers flagged"
-    - "Some 'outliers' might be valid data!"
-
-    Visual style: Clean statistical visualization with gridlines
-
-    Implementation: p5.js with dynamic data visualization
+<details>
+<summary>Outlier Detection Playground</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Let students experiment with different outlier detection methods and see how they identify different points</p>
+<p>Canvas layout (800x550px):
+- Left (550x550): Scatter plot / histogram visualization
+- Right (250x550): Controls and detected outliers list</p>
+<p>Visual elements:
+- Data points displayed as circles
+- Normal points in blue
+- Detected outliers highlighted in red with labels
+- Detection threshold lines/zones shown
+- Summary statistics displayed</p>
+<p>Sample datasets (toggle between):
+1. Normal distribution with obvious outliers
+2. Skewed distribution (income-like)
+3. Multi-modal distribution
+4. Real-world messy data with errors</p>
+<p>Interactive controls:
+- Radio buttons: Detection method (Z-score, IQR, Custom range)
+- Slider: Z-score threshold (1.5 to 4.0)
+- Slider: IQR multiplier (1.0 to 3.0)
+- Number inputs: Custom min/max values
+- Dropdown: Dataset selector
+- Toggle: Show/hide threshold lines</p>
+<p>Display panels:
+- Count of outliers detected
+- Outlier values and indices
+- Percentage of data flagged
+- Before/after mean comparison</p>
+<p>Behavior:
+- Adjusting thresholds immediately updates highlighting
+- Hovering over points shows their values
+- Clicking outliers adds them to "investigate" list
+- Show how different methods catch different outliers</p>
+<p>Educational annotations:
+- "Z-score catches 3 outliers, IQR catches 5 - which is right?"
+- "Lower threshold = more outliers flagged"
+- "Some 'outliers' might be valid data!"</p>
+<p>Visual style: Clean statistical visualization with gridlines</p>
+<p>Implementation: p5.js with dynamic data visualization</p>
 </details>
-
 <h3 id="handling-outliers-what-to-do">Handling Outliers: What To Do</h3>
 <p>Once you've identified outliers, you have options:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3296,57 +3261,44 @@
 </tbody>
 </table>
 <h4 id="diagram-data-type-conversion-guide-infographic">Diagram: Data Type Conversion Guide Infographic</h4>
-<details markdown="1">
-    <summary>Data Type Conversion Reference</summary>
-    Type: infographic
-
-    Bloom Taxonomy: Remember (L1)
-
-    Learning Objective: Quick reference for common data type conversions and when to use them
-
-    Purpose: Visual guide for choosing the right data type conversion method
-
-    Layout: Two-column reference card style
-
-    Section 1: "Converting TO Numeric"
-    - `pd.to_numeric(col)` - Basic conversion
-    - `pd.to_numeric(col, errors='coerce')` - Invalid → NaN
-    - `col.astype(float)` - When you're sure it's clean
-    - Visual: String "42" → Integer 42
-
-    Section 2: "Converting TO Datetime"
-    - `pd.to_datetime(col)` - Smart parsing
-    - `pd.to_datetime(col, format='%Y-%m-%d')` - Specific format
-    - Visual: String "2024-03-15" → Datetime object
-
-    Section 3: "Converting TO Categorical"
-    - `col.astype('category')` - Basic categorical
-    - `pd.Categorical(col, categories=[...], ordered=True)` - Ordered
-    - Visual: Repeating strings → Category codes
-
-    Section 4: "Converting TO String"
-    - `col.astype(str)` - Simple conversion
-    - `col.map('{:.2f}'.format)` - With formatting
-    - Visual: Number 3.14159 → String "3.14"
-
-    Common pitfalls callout box:
-    - "Integer columns with NaN need Int64 (capital I)"
-    - "datetime parsing can be slow on large datasets"
-    - "Category type saves memory but changes behavior"
-
-    Color coding:
-    - Blue: Numeric conversions
-    - Green: Date conversions
-    - Purple: Categorical conversions
-    - Orange: String conversions
-
-    Interactive elements:
-    - Hover over conversion methods to see code examples
-    - Click to copy code snippet
-
-    Implementation: HTML/CSS with JavaScript tooltips
+<details>
+<summary>Data Type Conversion Reference</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy: Remember (L1)</p>
+<p>Learning Objective: Quick reference for common data type conversions and when to use them</p>
+<p>Purpose: Visual guide for choosing the right data type conversion method</p>
+<p>Layout: Two-column reference card style</p>
+<p>Section 1: "Converting TO Numeric"
+- <code>pd.to_numeric(col)</code> - Basic conversion
+- <code>pd.to_numeric(col, errors='coerce')</code> - Invalid → NaN
+- <code>col.astype(float)</code> - When you're sure it's clean
+- Visual: String "42" → Integer 42</p>
+<p>Section 2: "Converting TO Datetime"
+- <code>pd.to_datetime(col)</code> - Smart parsing
+- <code>pd.to_datetime(col, format='%Y-%m-%d')</code> - Specific format
+- Visual: String "2024-03-15" → Datetime object</p>
+<p>Section 3: "Converting TO Categorical"
+- <code>col.astype('category')</code> - Basic categorical
+- <code>pd.Categorical(col, categories=[...], ordered=True)</code> - Ordered
+- Visual: Repeating strings → Category codes</p>
+<p>Section 4: "Converting TO String"
+- <code>col.astype(str)</code> - Simple conversion
+- <code>col.map('{:.2f}'.format)</code> - With formatting
+- Visual: Number 3.14159 → String "3.14"</p>
+<p>Common pitfalls callout box:
+- "Integer columns with NaN need Int64 (capital I)"
+- "datetime parsing can be slow on large datasets"
+- "Category type saves memory but changes behavior"</p>
+<p>Color coding:
+- Blue: Numeric conversions
+- Green: Date conversions
+- Purple: Categorical conversions
+- Orange: String conversions</p>
+<p>Interactive elements:
+- Hover over conversion methods to see code examples
+- Click to copy code snippet</p>
+<p>Implementation: HTML/CSS with JavaScript tooltips</p>
 </details>
-
 <h2 id="feature-scaling-and-normalization">Feature Scaling and Normalization</h2>
 <p>When you're preparing data for machine learning, <strong>feature scaling</strong> becomes critical. Different features might have vastly different ranges—age might be 18-80 while income might be 20,000-500,000. Without scaling, the larger numbers dominate the analysis.</p>
 <h3 id="feature-scaling-bringing-features-to-same-scale">Feature Scaling: Bringing Features to Same Scale</h3>
@@ -3402,22 +3354,22 @@
 <tbody>
 <tr>
 <td>Min-Max</td>
-<td>$(x - min) / (max - min)$</td>
+<td><span class="arithmatex">\((x - min) / (max - min)\)</span></td>
 <td>Neural networks, bounded algorithms</td>
 </tr>
 <tr>
 <td>Z-score/Standard</td>
-<td>$(x - \mu) / \sigma$</td>
+<td><span class="arithmatex">\((x - \mu) / \sigma\)</span></td>
 <td>Most ML algorithms, normally distributed data</td>
 </tr>
 <tr>
 <td>Robust</td>
-<td>$(x - median) / IQR$</td>
+<td><span class="arithmatex">\((x - median) / IQR\)</span></td>
 <td>Data with outliers</td>
 </tr>
 <tr>
 <td>Log transform</td>
-<td>$\log(x + 1)$</td>
+<td><span class="arithmatex">\(\log(x + 1)\)</span></td>
 <td>Right-skewed data (income, counts)</td>
 </tr>
 </tbody>
@@ -3427,65 +3379,53 @@
 <p>Scale features when using distance-based algorithms (KNN, SVM, K-means) or gradient descent (neural networks). Tree-based algorithms (Random Forest, XGBoost) usually don't need scaling.</p>
 </div>
 <h4 id="diagram-feature-scaling-comparison-microsim">Diagram: Feature Scaling Comparison MicroSim</h4>
-<details markdown="1">
-    <summary>Feature Scaling Visualizer</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Understand (L2)
-
-    Learning Objective: Help students visualize how different scaling methods transform data distributions
-
-    Canvas layout (800x500px):
-    - Top (800x200): Original data distribution histogram
-    - Bottom left (400x300): Scaled distribution histogram
-    - Bottom right (400x300): Controls and comparison stats
-
-    Visual elements:
-    - Original data histogram with descriptive statistics
-    - Scaled data histogram (updates with scaling method)
-    - Before/after comparison statistics table
-    - Visual axis showing value ranges
-
-    Sample datasets:
-    - Normal distribution (symmetric)
-    - Right-skewed (income-like)
-    - With outliers
-    - Bimodal distribution
-
-    Interactive controls:
-    - Radio buttons: Scaling method
-      - None (original)
-      - Min-Max [0,1]
-      - Standard (Z-score)
-      - Robust (median/IQR)
-      - Log transform
-    - Dropdown: Dataset selector
-    - Checkbox: Show outliers highlighted
-    - Checkbox: Show before/after overlay
-
-    Comparison statistics displayed:
-    - Min, Max, Range
-    - Mean, Median
-    - Std Dev, IQR
-    - Visual indicator of how outliers are affected
-
-    Behavior:
-    - Switching scaling method animates the transformation
-    - Hover over bars to see exact values
-    - Toggle overlay to see original vs scaled superimposed
-    - Outliers maintain highlighting through transformation
-
-    Educational annotations:
-    - "Notice: Min-Max squishes outliers to 0 or 1"
-    - "Standard scaling keeps outliers as extreme z-scores"
-    - "Robust scaling ignores outliers!"
-    - "Log transform pulls in right tail"
-
-    Visual style: Statistical visualization with clean grid
-
-    Implementation: p5.js with real-time distribution updates
+<details>
+<summary>Feature Scaling Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Understand (L2)</p>
+<p>Learning Objective: Help students visualize how different scaling methods transform data distributions</p>
+<p>Canvas layout (800x500px):
+- Top (800x200): Original data distribution histogram
+- Bottom left (400x300): Scaled distribution histogram
+- Bottom right (400x300): Controls and comparison stats</p>
+<p>Visual elements:
+- Original data histogram with descriptive statistics
+- Scaled data histogram (updates with scaling method)
+- Before/after comparison statistics table
+- Visual axis showing value ranges</p>
+<p>Sample datasets:
+- Normal distribution (symmetric)
+- Right-skewed (income-like)
+- With outliers
+- Bimodal distribution</p>
+<p>Interactive controls:
+- Radio buttons: Scaling method
+  - None (original)
+  - Min-Max [0,1]
+  - Standard (Z-score)
+  - Robust (median/IQR)
+  - Log transform
+- Dropdown: Dataset selector
+- Checkbox: Show outliers highlighted
+- Checkbox: Show before/after overlay</p>
+<p>Comparison statistics displayed:
+- Min, Max, Range
+- Mean, Median
+- Std Dev, IQR
+- Visual indicator of how outliers are affected</p>
+<p>Behavior:
+- Switching scaling method animates the transformation
+- Hover over bars to see exact values
+- Toggle overlay to see original vs scaled superimposed
+- Outliers maintain highlighting through transformation</p>
+<p>Educational annotations:
+- "Notice: Min-Max squishes outliers to 0 or 1"
+- "Standard scaling keeps outliers as extreme z-scores"
+- "Robust scaling ignores outliers!"
+- "Log transform pulls in right tail"</p>
+<p>Visual style: Statistical visualization with clean grid</p>
+<p>Implementation: p5.js with real-time distribution updates</p>
 </details>
-
 <h2 id="complete-data-cleaning-workflow">Complete Data Cleaning Workflow</h2>
 <p>Let's put it all together with a complete data cleaning workflow:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3872,6 +3812,10 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

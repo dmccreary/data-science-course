@@ -2250,81 +2250,70 @@
 <p>Think about it: every powerful presentation you've ever seen probably had a chart. Every news story about trends shows a graph. Every scientific breakthrough gets communicated through visualization. This is the skill that takes your analysis from "interesting to me" to "interesting to everyone."</p>
 <p>In this chapter, you'll learn multiple visualization tools—from the classic <strong>Matplotlib</strong> to the beautiful <strong>Seaborn</strong> to the modern, interactive <strong>Plotly</strong>. By the end, you'll be creating charts that don't just display data—they ENGAGE with it.</p>
 <h4 id="diagram-visualization-library-comparison">Diagram: Visualization Library Comparison</h4>
-<details markdown="1">
-    <summary>Python Visualization Library Landscape</summary>
-    Type: infographic
-
-    Bloom Taxonomy: Understand (L2)
-
-    Learning Objective: Help students understand when to use different visualization libraries
-
-    Purpose: Compare the major Python visualization libraries and their strengths
-
-    Layout: Three-column comparison card layout
-
-    Column 1: MATPLOTLIB
-    - Icon: Classic line graph
-    - Tagline: "The Foundation"
-    - Color: Blue
-    - Strengths:
-      - Complete control over every element
-      - Publication-quality static images
-      - Huge community and documentation
-      - Works everywhere
-    - Best for:
-      - Academic papers
-      - Print publications
-      - Maximum customization
-    - Learning curve: Medium-High
-    - Interactivity: Limited (static by default)
-
-    Column 2: SEABORN
-    - Icon: Statistical plot with confidence intervals
-    - Tagline: "Beautiful Statistics"
-    - Color: Teal
-    - Strengths:
-      - Beautiful defaults
-      - Built-in statistical visualizations
-      - Works with pandas DataFrames
-      - Less code for common plots
-    - Best for:
-      - Statistical analysis
-      - Exploratory data analysis
-      - Quick beautiful plots
-    - Learning curve: Low-Medium
-    - Interactivity: Limited (built on matplotlib)
-
-    Column 3: PLOTLY
-    - Icon: Interactive 3D scatter plot with cursor
-    - Tagline: "Interactive & Modern"
-    - Color: Purple
-    - Strengths:
-      - Interactive by default (zoom, pan, hover)
-      - Web-ready (HTML output)
-      - Beautiful modern aesthetics
-      - 3D visualizations
-      - Dashboards with Dash
-    - Best for:
-      - Web applications
-      - Presentations
-      - Data exploration
-      - User engagement
-    - Learning curve: Low-Medium
-    - Interactivity: Full (native)
-
-    Bottom section: Decision flowchart
-    - "Need print/PDF?" → Matplotlib
-    - "Statistical focus?" → Seaborn
-    - "Need interactivity?" → Plotly
-    - "Quick exploration?" → Seaborn or Plotly
-
-    Interactive elements:
-    - Hover over each library to see code examples
-    - Click to see sample output images
-
-    Implementation: HTML/CSS grid with JavaScript hover effects
+<details>
+<summary>Python Visualization Library Landscape</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy: Understand (L2)</p>
+<p>Learning Objective: Help students understand when to use different visualization libraries</p>
+<p>Purpose: Compare the major Python visualization libraries and their strengths</p>
+<p>Layout: Three-column comparison card layout</p>
+<p>Column 1: MATPLOTLIB
+- Icon: Classic line graph
+- Tagline: "The Foundation"
+- Color: Blue
+- Strengths:
+  - Complete control over every element
+  - Publication-quality static images
+  - Huge community and documentation
+  - Works everywhere
+- Best for:
+  - Academic papers
+  - Print publications
+  - Maximum customization
+- Learning curve: Medium-High
+- Interactivity: Limited (static by default)</p>
+<p>Column 2: SEABORN
+- Icon: Statistical plot with confidence intervals
+- Tagline: "Beautiful Statistics"
+- Color: Teal
+- Strengths:
+  - Beautiful defaults
+  - Built-in statistical visualizations
+  - Works with pandas DataFrames
+  - Less code for common plots
+- Best for:
+  - Statistical analysis
+  - Exploratory data analysis
+  - Quick beautiful plots
+- Learning curve: Low-Medium
+- Interactivity: Limited (built on matplotlib)</p>
+<p>Column 3: PLOTLY
+- Icon: Interactive 3D scatter plot with cursor
+- Tagline: "Interactive &amp; Modern"
+- Color: Purple
+- Strengths:
+  - Interactive by default (zoom, pan, hover)
+  - Web-ready (HTML output)
+  - Beautiful modern aesthetics
+  - 3D visualizations
+  - Dashboards with Dash
+- Best for:
+  - Web applications
+  - Presentations
+  - Data exploration
+  - User engagement
+- Learning curve: Low-Medium
+- Interactivity: Full (native)</p>
+<p>Bottom section: Decision flowchart
+- "Need print/PDF?" → Matplotlib
+- "Statistical focus?" → Seaborn
+- "Need interactivity?" → Plotly
+- "Quick exploration?" → Seaborn or Plotly</p>
+<p>Interactive elements:
+- Hover over each library to see code examples
+- Click to see sample output images</p>
+<p>Implementation: HTML/CSS grid with JavaScript hover effects</p>
 </details>
-
 <h2 id="the-classic-matplotlib-library">The Classic: Matplotlib Library</h2>
 <p>Let's start with the grandfather of Python visualization: the <strong>Matplotlib library</strong>. Created in 2003, matplotlib is the foundation that most other Python visualization libraries build upon. It's powerful, flexible, and gives you complete control over every pixel.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2606,64 +2595,49 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>When to use:</strong> Showing proportions of a whole (when you have 2-5 categories). Avoid for comparisons.</p>
 <h4 id="diagram-chart-type-selection-guide">Diagram: Chart Type Selection Guide</h4>
-<details markdown="1">
-    <summary>Which Chart Should I Use?</summary>
-    Type: infographic
-
-    Bloom Taxonomy: Apply (L3)
-
-    Learning Objective: Help students choose the appropriate chart type for their data and question
-
-    Purpose: Decision guide for selecting visualization types
-
-    Layout: Flowchart/decision tree with visual examples
-
-    Starting question: "What do you want to show?"
-
-    Branch 1: "Comparison"
-    - Few categories → Bar Chart (vertical)
-    - Many categories → Bar Chart (horizontal)
-    - Over time → Line Chart (multiple lines)
-    - Visual: Small example of each
-
-    Branch 2: "Distribution"
-    - Single variable → Histogram
-    - Compare distributions → Box Plot
-    - Density estimate → KDE Plot
-    - Visual: Small example of each
-
-    Branch 3: "Relationship"
-    - Two variables → Scatter Plot
-    - Three variables → Bubble Chart (size = 3rd var)
-    - Many variables → Pair Plot
-    - Visual: Small example of each
-
-    Branch 4: "Composition"
-    - Static → Pie Chart (2-5 parts only!)
-    - Over time → Stacked Area Chart
-    - Many parts → Treemap
-    - Visual: Small example of each
-
-    Branch 5: "Trend"
-    - Over time → Line Chart
-    - With uncertainty → Line + Confidence Band
-    - Multiple series → Multiple Lines + Legend
-    - Visual: Small example of each
-
-    Warning callouts:
-    - "Pie charts: Only use with 2-5 categories"
-    - "3D charts: Avoid! They distort perception"
-    - "Dual y-axes: Use carefully, can mislead"
-
-    Interactive elements:
-    - Hover over each chart type to see larger example
-    - Click to see code snippet
-
-    Visual style: Clean flowchart with colorful chart thumbnails
-
-    Implementation: SVG with interactive JavaScript
+<details>
+<summary>Which Chart Should I Use?</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Help students choose the appropriate chart type for their data and question</p>
+<p>Purpose: Decision guide for selecting visualization types</p>
+<p>Layout: Flowchart/decision tree with visual examples</p>
+<p>Starting question: "What do you want to show?"</p>
+<p>Branch 1: "Comparison"
+- Few categories → Bar Chart (vertical)
+- Many categories → Bar Chart (horizontal)
+- Over time → Line Chart (multiple lines)
+- Visual: Small example of each</p>
+<p>Branch 2: "Distribution"
+- Single variable → Histogram
+- Compare distributions → Box Plot
+- Density estimate → KDE Plot
+- Visual: Small example of each</p>
+<p>Branch 3: "Relationship"
+- Two variables → Scatter Plot
+- Three variables → Bubble Chart (size = 3rd var)
+- Many variables → Pair Plot
+- Visual: Small example of each</p>
+<p>Branch 4: "Composition"
+- Static → Pie Chart (2-5 parts only!)
+- Over time → Stacked Area Chart
+- Many parts → Treemap
+- Visual: Small example of each</p>
+<p>Branch 5: "Trend"
+- Over time → Line Chart
+- With uncertainty → Line + Confidence Band
+- Multiple series → Multiple Lines + Legend
+- Visual: Small example of each</p>
+<p>Warning callouts:
+- "Pie charts: Only use with 2-5 categories"
+- "3D charts: Avoid! They distort perception"
+- "Dual y-axes: Use carefully, can mislead"</p>
+<p>Interactive elements:
+- Hover over each chart type to see larger example
+- Click to see code snippet</p>
+<p>Visual style: Clean flowchart with colorful chart thumbnails</p>
+<p>Implementation: SVG with interactive JavaScript</p>
 </details>
-
 <h2 id="customizing-your-visualizations">Customizing Your Visualizations</h2>
 <p>Raw plots are just the beginning. Professional visualizations need polish. Let's master <strong>plot customization</strong>.</p>
 <h3 id="title-and-axis-labels">Title and Axis Labels</h3>
@@ -3020,54 +2994,43 @@
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-plotly-interactive-features-microsim">Diagram: Plotly Interactive Features MicroSim</h4>
-<details markdown="1">
-    <summary>Interactive Chart Exploration Playground</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Apply (L3)
-
-    Learning Objective: Let students experience and practice using Plotly's interactive features
-
-    Canvas layout (850x600px):
-    - Main area (850x450): Interactive Plotly chart
-    - Bottom panel (850x150): Feature buttons and instructions
-
-    Visual elements:
-    - Sample scatter plot with 50+ data points
-    - Multiple colored categories
-    - Visible toolbar (zoom, pan, select, download)
-    - Hover tooltip showing data values
-
-    Interactive features to demonstrate:
-    1. HOVER: Move mouse over points to see tooltips
-    2. ZOOM: Click-drag to zoom into a region
-    3. PAN: Shift+drag to pan around
-    4. BOX SELECT: Draw box to select points
-    5. LASSO SELECT: Freeform selection
-    6. RESET: Double-click to reset view
-    7. DOWNLOAD: Click camera icon to save PNG
-    8. LEGEND: Click legend items to toggle series
-
-    Challenge tasks (bottom panel):
-    - "Zoom into the cluster in the upper right"
-    - "Select all points in category A"
-    - "Find the outlier with the highest y-value"
-    - "Download the chart as PNG"
-
-    Progress tracker:
-    - Checkboxes for each feature used
-    - "You've explored X of 8 interactive features!"
-
-    Behavior:
-    - Track which features student has used
-    - Provide hints for unexplored features
-    - Celebrate when all features discovered
-
-    Visual style: Modern dashboard aesthetic
-
-    Implementation: Embedded Plotly.js chart with custom tracking overlay
+<details>
+<summary>Interactive Chart Exploration Playground</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Let students experience and practice using Plotly's interactive features</p>
+<p>Canvas layout (850x600px):
+- Main area (850x450): Interactive Plotly chart
+- Bottom panel (850x150): Feature buttons and instructions</p>
+<p>Visual elements:
+- Sample scatter plot with 50+ data points
+- Multiple colored categories
+- Visible toolbar (zoom, pan, select, download)
+- Hover tooltip showing data values</p>
+<p>Interactive features to demonstrate:
+1. HOVER: Move mouse over points to see tooltips
+2. ZOOM: Click-drag to zoom into a region
+3. PAN: Shift+drag to pan around
+4. BOX SELECT: Draw box to select points
+5. LASSO SELECT: Freeform selection
+6. RESET: Double-click to reset view
+7. DOWNLOAD: Click camera icon to save PNG
+8. LEGEND: Click legend items to toggle series</p>
+<p>Challenge tasks (bottom panel):
+- "Zoom into the cluster in the upper right"
+- "Select all points in category A"
+- "Find the outlier with the highest y-value"
+- "Download the chart as PNG"</p>
+<p>Progress tracker:
+- Checkboxes for each feature used
+- "You've explored X of 8 interactive features!"</p>
+<p>Behavior:
+- Track which features student has used
+- Provide hints for unexplored features
+- Celebrate when all features discovered</p>
+<p>Visual style: Modern dashboard aesthetic</p>
+<p>Implementation: Embedded Plotly.js chart with custom tracking overlay</p>
 </details>
-
 <h3 id="interactive-line-charts">Interactive Line Charts</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3304,20 +3267,15 @@
 <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">&#39;my_chart.svg&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-plotly-code-pattern-reference">Diagram: Plotly Code Pattern Reference</h4>
-<details markdown="1">
-    <summary>Plotly Express Quick Reference Card</summary>
-    Type: infographic
-
-    Bloom Taxonomy: Remember (L1)
-
-    Learning Objective: Provide quick reference for common Plotly Express patterns
-
-    Purpose: Cheat sheet for Plotly Express functions and parameters
-
-    Layout: Four-quadrant reference card
-
-    Quadrant 1: "Common Chart Functions"
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<details>
+<summary>Plotly Express Quick Reference Card</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy: Remember (L1)</p>
+<p>Learning Objective: Provide quick reference for common Plotly Express patterns</p>
+<p>Purpose: Cheat sheet for Plotly Express functions and parameters</p>
+<p>Layout: Four-quadrant reference card</p>
+<p>Quadrant 1: "Common Chart Functions"
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -3332,10 +3290,9 @@ px.box()       - Box plots
 px.pie()       - Pie charts
 px.area()      - Area charts
 px.violin()    - Violin plots
-</code></pre></div></td></tr></table></div>
-
-    Quadrant 2: "Essential Parameters"
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Quadrant 2: "Essential Parameters"
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -3352,10 +3309,9 @@ labels         - Rename axis labels
 facet_col      - Small multiples (columns)
 facet_row      - Small multiples (rows)
 animation_frame - Animate over values
-</code></pre></div></td></tr></table></div>
-
-    Quadrant 3: "Layout Customization"
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Quadrant 3: "Layout Customization"
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -3372,10 +3328,9 @@ animation_frame - Animate over values
     <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">800</span>
 <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-
-    Quadrant 4: "Saving Options"
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Quadrant 4: "Saving Options"
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -3394,22 +3349,17 @@ animation_frame - Animate over values
 
 <span class="c1"># In Jupyter</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-
-    Bottom strip: "Templates"
-    - plotly, plotly_white, plotly_dark
-    - ggplot2, seaborn, simple_white
-    - Visual swatches of each
-
-    Color scheme: Purple gradient (Plotly brand color)
-
-    Interactive elements:
-    - Hover for expanded code examples
-    - Click to copy code snippet
-
-    Implementation: HTML/CSS grid with copy-to-clipboard JavaScript
+</code></pre></div></td></tr></table></div></p>
+<p>Bottom strip: "Templates"
+- plotly, plotly_white, plotly_dark
+- ggplot2, seaborn, simple_white
+- Visual swatches of each</p>
+<p>Color scheme: Purple gradient (Plotly brand color)</p>
+<p>Interactive elements:
+- Hover for expanded code examples
+- Click to copy code snippet</p>
+<p>Implementation: HTML/CSS grid with copy-to-clipboard JavaScript</p>
 </details>
-
 <h2 id="real-world-visualization-workflow">Real-World Visualization Workflow</h2>
 <p>Let's put it all together with a complete workflow:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3485,76 +3435,60 @@ animation_frame - Animate over values
 <span class="n">fig2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="diagram-visualization-design-microsim">Diagram: Visualization Design MicroSim</h4>
-<details markdown="1">
-    <summary>Chart Design Playground</summary>
-    Type: microsim
-
-    Bloom Taxonomy: Create (L6)
-
-    Learning Objective: Let students design and customize their own visualizations interactively
-
-    Canvas layout (900x650px):
-    - Left panel (300x650): Controls and options
-    - Right panel (600x650): Live chart preview
-
-    Control panel sections:
-
-    Section 1: "Chart Type"
-    - Radio buttons: Line, Scatter, Bar, Histogram, Box
-    - Visual icon for each type
-
-    Section 2: "Data Selection"
-    - Dropdown: X-axis variable
-    - Dropdown: Y-axis variable
-    - Dropdown: Color by (optional)
-    - Dropdown: Size by (optional)
-
-    Section 3: "Customization"
-    - Text input: Title
-    - Text input: X-axis label
-    - Text input: Y-axis label
-    - Color picker: Primary color
-    - Dropdown: Color palette (categorical)
-    - Slider: Marker size (5-50)
-    - Slider: Line width (1-5)
-    - Toggle: Show grid
-    - Toggle: Show legend
-
-    Section 4: "Export"
-    - Button: "Copy Code"
-    - Button: "Download PNG"
-    - Button: "Download HTML"
-
-    Sample dataset:
-    - Pre-loaded "tips" style dataset
-    - Columns: total_bill, tip, day, time, size, smoker
-
-    Chart preview:
-    - Updates in real-time as controls change
-    - Fully interactive (zoom, pan, hover)
-    - Shows Plotly toolbar
-
-    Code panel (collapsible):
-    - Shows Python code that would generate current chart
-    - Updates dynamically with changes
-    - Syntax highlighted
-
-    Behavior:
-    - Every control change immediately updates preview
-    - Code panel reflects exact current configuration
-    - Copy code button copies to clipboard
-    - Download buttons generate files
-
-    Educational features:
-    - Tooltips explaining each option
-    - "Design tips" suggestions based on data types selected
-    - Warnings for bad practices (pie chart with too many categories, etc.)
-
-    Visual style: Modern design tool interface (think Canva/Figma)
-
-    Implementation: p5.js for controls + embedded Plotly.js for preview
+<details>
+<summary>Chart Design Playground</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Create (L6)</p>
+<p>Learning Objective: Let students design and customize their own visualizations interactively</p>
+<p>Canvas layout (900x650px):
+- Left panel (300x650): Controls and options
+- Right panel (600x650): Live chart preview</p>
+<p>Control panel sections:</p>
+<p>Section 1: "Chart Type"
+- Radio buttons: Line, Scatter, Bar, Histogram, Box
+- Visual icon for each type</p>
+<p>Section 2: "Data Selection"
+- Dropdown: X-axis variable
+- Dropdown: Y-axis variable
+- Dropdown: Color by (optional)
+- Dropdown: Size by (optional)</p>
+<p>Section 3: "Customization"
+- Text input: Title
+- Text input: X-axis label
+- Text input: Y-axis label
+- Color picker: Primary color
+- Dropdown: Color palette (categorical)
+- Slider: Marker size (5-50)
+- Slider: Line width (1-5)
+- Toggle: Show grid
+- Toggle: Show legend</p>
+<p>Section 4: "Export"
+- Button: "Copy Code"
+- Button: "Download PNG"
+- Button: "Download HTML"</p>
+<p>Sample dataset:
+- Pre-loaded "tips" style dataset
+- Columns: total_bill, tip, day, time, size, smoker</p>
+<p>Chart preview:
+- Updates in real-time as controls change
+- Fully interactive (zoom, pan, hover)
+- Shows Plotly toolbar</p>
+<p>Code panel (collapsible):
+- Shows Python code that would generate current chart
+- Updates dynamically with changes
+- Syntax highlighted</p>
+<p>Behavior:
+- Every control change immediately updates preview
+- Code panel reflects exact current configuration
+- Copy code button copies to clipboard
+- Download buttons generate files</p>
+<p>Educational features:
+- Tooltips explaining each option
+- "Design tips" suggestions based on data types selected
+- Warnings for bad practices (pie chart with too many categories, etc.)</p>
+<p>Visual style: Modern design tool interface (think Canva/Figma)</p>
+<p>Implementation: p5.js for controls + embedded Plotly.js for preview</p>
 </details>
-
 <h2 id="choosing-the-right-visualization">Choosing the Right Visualization</h2>
 <p>The most important skill isn't knowing how to make a chart—it's knowing WHICH chart to make. Here's your decision framework:</p>
 <table>
@@ -3839,6 +3773,10 @@ animation_frame - Animate over values
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

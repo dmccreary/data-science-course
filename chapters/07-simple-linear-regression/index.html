@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn.">
+        <meta name="description" content="Your first predictive model - drawing lines that tell the future">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Simple Linear Regression - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn." >
+        <meta  property="og:description"  content="Your first predictive model - drawing lines that tell the future" >
       
         <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/07-simple-linear-regression/index.png" >
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Simple Linear Regression - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn." >
+        <meta  name="twitter:description"  content="Your first predictive model - drawing lines that tell the future" >
       
         <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/chapters/07-simple-linear-regression/index.png" >
       
@@ -626,6 +626,411 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-description-to-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Description to Prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Regression Analysis?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Regression Analysis?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression-the-straight-line-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Regression: The Straight-Line Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-regression-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Regression Equation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Regression Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Slope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-intercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Intercept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Intercept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-regression-line-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Regression Line Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-the-best-line-least-squares-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the Best Line: Least Squares Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding the Best Line: Least Squares Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#residuals-measuring-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residuals: Measuring Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-squared-errors-sse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sum of Squared Errors (SSE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinary-least-squares-ols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordinary Least Squares (OLS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordinary Least Squares (OLS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-least-squares-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Least Squares MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-line-of-best-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Line of Best Fit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitted-values-and-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitted Values and Predictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpreting-regression-coefficients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting Regression Coefficients
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpreting Regression Coefficients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the Slope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-intercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the Intercept
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assumptions-of-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assumptions of Regression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assumptions of Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linearity-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Linearity Assumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-independence-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Independence Assumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-homoscedasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Homoscedasticity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-normality-of-residuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Normality of Residuals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Normality of Residuals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-regression-assumptions-checker-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Regression Assumptions Checker MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-linear-regression-with-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing Linear Regression with Scikit-learn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing Linear Regression with Scikit-learn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-linearregression-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The LinearRegression Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fit-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fit Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-predict-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Predict Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-scikit-learn-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Scikit-learn Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Scikit-learn Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scikit-learn-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scikit-learn Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: A Complete Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: A Complete Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-regression-builder-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Regression Builder MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Pitfalls and Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Pitfalls and Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-1-confusing-correlation-with-causation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 1: Confusing Correlation with Causation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-2-extrapolating-too-far" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 2: Extrapolating Too Far
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-3-ignoring-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 3: Ignoring Assumptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-4-forgetting-to-reshape-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 4: Forgetting to Reshape X
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
     </span>
   </a>
   
@@ -1359,6 +1764,411 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#from-description-to-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Description to Prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Regression Analysis?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Regression Analysis?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression-the-straight-line-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Regression: The Straight-Line Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-regression-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Regression Equation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Regression Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Slope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-intercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Intercept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Intercept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-regression-line-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Regression Line Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-the-best-line-least-squares-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the Best Line: Least Squares Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding the Best Line: Least Squares Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#residuals-measuring-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residuals: Measuring Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-squared-errors-sse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sum of Squared Errors (SSE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinary-least-squares-ols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordinary Least Squares (OLS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordinary Least Squares (OLS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-least-squares-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Least Squares MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-line-of-best-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Line of Best Fit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitted-values-and-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitted Values and Predictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpreting-regression-coefficients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting Regression Coefficients
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpreting Regression Coefficients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the Slope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-intercept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the Intercept
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assumptions-of-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assumptions of Regression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assumptions of Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linearity-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Linearity Assumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-independence-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Independence Assumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-homoscedasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Homoscedasticity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-normality-of-residuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Normality of Residuals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Normality of Residuals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-regression-assumptions-checker-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Regression Assumptions Checker MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-linear-regression-with-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing Linear Regression with Scikit-learn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing Linear Regression with Scikit-learn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-linearregression-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The LinearRegression Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fit-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fit Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-predict-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Predict Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-scikit-learn-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Scikit-learn Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Scikit-learn Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scikit-learn-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scikit-learn Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: A Complete Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: A Complete Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-regression-builder-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Regression Builder MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Pitfalls and Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Pitfalls and Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-1-confusing-correlation-with-causation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 1: Confusing Correlation with Causation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-2-extrapolating-too-far" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 2: Extrapolating Too Far
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-3-ignoring-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 3: Ignoring Assumptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitfall-4-forgetting-to-reshape-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfall 4: Forgetting to Reshape X
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1422,7 +2232,1136 @@
 <li><a href="../06-statistical-foundations/">Chapter 6: Statistical Foundations</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="from-description-to-prediction">From Description to Prediction</h2>
+<p>Everything you've learned so far has been about understanding data that already exists. Descriptive statistics summarize the past. Visualizations reveal patterns in historical data. Correlation shows relationships between variables.</p>
+<p>But here's where data science gets really exciting: <strong>prediction</strong>.</p>
+<p>What if, instead of just describing what happened, you could predict what will happen? What if you could look at a student's study hours and predict their exam score? Or see a house's square footage and estimate its price? Or know a car's age and forecast its fuel efficiency?</p>
+<p>This is the superpower of <strong>regression analysis</strong>—the ability to draw a line through data that extends into the unknown future. It's the foundation of machine learning, the backbone of forecasting, and your first step into predictive modeling.</p>
+<p>In this chapter, you'll learn to build your first predictive model. It's surprisingly simple—just a line—but don't let that fool you. This humble line is one of the most powerful tools in all of data science.</p>
+<h2 id="what-is-regression-analysis">What is Regression Analysis?</h2>
+<p><strong>Regression analysis</strong> is a statistical method for modeling the relationship between variables. It lets you:</p>
+<ol>
+<li><strong>Understand</strong> how one variable affects another</li>
+<li><strong>Quantify</strong> the strength of that relationship</li>
+<li><strong>Predict</strong> values you haven't observed</li>
+</ol>
+<p>The term "regression" has a historical origin. In the 1880s, Francis Galton studied the heights of parents and children. He noticed that very tall parents tended to have children shorter than themselves, and very short parents had taller children. Heights "regressed" toward the average. The name stuck, even though modern regression is used for much more than studying heights.</p>
+<h3 id="linear-regression-the-straight-line-model">Linear Regression: The Straight-Line Model</h3>
+<p><strong>Linear regression</strong> is the simplest form of regression—it assumes the relationship between variables is a straight line. Despite its simplicity, linear regression is:</p>
+<ul>
+<li>Easy to understand and interpret</li>
+<li>Fast to compute</li>
+<li>Surprisingly effective for many real problems</li>
+<li>The foundation for more complex models</li>
+</ul>
+<p>When you have one input variable predicting one output variable, it's called <strong>simple linear regression</strong>. That's what we'll master in this chapter.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Example: Study hours vs exam score</span>
+<span class="n">study_hours</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">exam_scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">52</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+
+<span class="c1"># Create a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;study_hours&#39;</span><span class="p">:</span> <span class="n">study_hours</span><span class="p">,</span> <span class="s1">&#39;exam_scores&#39;</span><span class="p">:</span> <span class="n">exam_scores</span><span class="p">})</span>
+
+<span class="c1"># Scatter plot with trendline</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;study_hours&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;exam_scores&#39;</span><span class="p">,</span>
+                 <span class="n">trendline</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Study Hours vs Exam Scores&#39;</span><span class="p">,</span>
+                 <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;study_hours&#39;</span><span class="p">:</span> <span class="s1">&#39;Hours Studied&#39;</span><span class="p">,</span> <span class="s1">&#39;exam_scores&#39;</span><span class="p">:</span> <span class="s1">&#39;Exam Score&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>See that line Plotly drew through the data? That's a <strong>regression line</strong>—your first predictive model! With it, you can predict the exam score for someone who studied 4.5 hours, even though you don't have that exact data point.</p>
+<h2 id="the-regression-equation">The Regression Equation</h2>
+<p>Every straight line can be described by an equation. You probably remember from algebra:</p>
+<div class="arithmatex">\[y = mx + b\]</div>
+<p>In statistics, we write the <strong>regression equation</strong> as:</p>
+<div class="arithmatex">\[\hat{y} = \beta_0 + \beta_1 x\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\hat{y}\)</span> (y-hat) = the predicted value</li>
+<li><span class="arithmatex">\(x\)</span> = the input variable (predictor, independent variable)</li>
+<li><span class="arithmatex">\(\beta_0\)</span> = the <strong>intercept</strong> (where the line crosses the y-axis)</li>
+<li><span class="arithmatex">\(\beta_1\)</span> = the <strong>slope</strong> (how much y changes for each unit increase in x)</li>
+</ul>
+<p>The <span class="arithmatex">\(\beta\)</span> values are called <strong>regression coefficients</strong>—they define your model.</p>
+<h3 id="understanding-slope">Understanding Slope</h3>
+<p>The <strong>slope</strong> (<span class="arithmatex">\(\beta_1\)</span>) tells you the rate of change: for every one-unit increase in x, how much does y change?</p>
+<ul>
+<li><strong>Positive slope</strong>: As x increases, y increases (uphill line)</li>
+<li><strong>Negative slope</strong>: As x increases, y decreases (downhill line)</li>
+<li><strong>Zero slope</strong>: x has no effect on y (horizontal line)</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Example interpretation</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">5.5</span>  <span class="c1"># Our model&#39;s slope</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slope: </span><span class="si">{</span><span class="n">slope</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Interpretation: For each additional hour of studying,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the exam score increases by </span><span class="si">{</span><span class="n">slope</span><span class="si">}</span><span class="s2"> points on average.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="understanding-intercept">Understanding Intercept</h3>
+<p>The <strong>intercept</strong> (<span class="arithmatex">\(\beta_0\)</span>) is the predicted value when x = 0. It's where the line crosses the y-axis.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">intercept</span> <span class="o">=</span> <span class="mf">47.5</span>  <span class="c1"># Our model&#39;s intercept</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept: </span><span class="si">{</span><span class="n">intercept</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Interpretation: A student who studies 0 hours&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;would be predicted to score </span><span class="si">{</span><span class="n">intercept</span><span class="si">}</span><span class="s2"> points.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Intercept Interpretation Caution</p>
+<p>The intercept doesn't always have a meaningful interpretation. If x = 0 is outside your data range (like predicting house price for 0 square feet), don't interpret the intercept literally—it's just a mathematical necessity for the line equation.</p>
+</div>
+<h4 id="diagram-regression-line-anatomy">Diagram: Regression Line Anatomy</h4>
+<details>
+<summary>Interactive Regression Line Components</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy: Remember (L1)</p>
+<p>Learning Objective: Help students identify and remember the components of a regression line and equation</p>
+<p>Purpose: Visual breakdown of regression line with labeled components</p>
+<p>Layout: Scatter plot with regression line and labeled callouts</p>
+<p>Main visual: Scatter plot (600x400px) showing:
+- 10-15 data points with clear linear trend
+- Regression line through points
+- Y-axis intercept clearly marked
+- Rise and run triangle showing slope</p>
+<p>Callouts (numbered with leader lines):</p>
+<ol>
+<li>INTERCEPT (β₀) (pointing to y-axis crossing)</li>
+<li>"Where line crosses y-axis"</li>
+<li>"Predicted y when x = 0"</li>
+<li>"In equation: the constant term"</li>
+<li>
+<p>Color: Blue</p>
+</li>
+<li>
+<p>SLOPE (β₁) (pointing to rise/run triangle)</p>
+</li>
+<li>"Rise over run"</li>
+<li>"Change in y per unit change in x"</li>
+<li>"Positive = uphill, Negative = downhill"</li>
+<li>Shows: Δy / Δx calculation</li>
+<li>
+<p>Color: Red</p>
+</li>
+<li>
+<p>PREDICTED VALUE (ŷ) (pointing to a point on the line)</p>
+</li>
+<li>"Value predicted by the model"</li>
+<li>"Falls exactly on the line"</li>
+<li>"ŷ = β₀ + β₁x"</li>
+<li>
+<p>Color: Green</p>
+</li>
+<li>
+<p>ACTUAL VALUE (y) (pointing to a data point off the line)</p>
+</li>
+<li>"Real observed value"</li>
+<li>"Usually not exactly on line"</li>
+<li>
+<p>Color: Orange</p>
+</li>
+<li>
+<p>RESIDUAL (pointing to vertical line between actual and predicted)</p>
+</li>
+<li>"Distance from actual to predicted"</li>
+<li>"Residual = y - ŷ"</li>
+<li>"What the model got wrong"</li>
+<li>Color: Purple</li>
+</ol>
+<p>Bottom equation display:
+ŷ = β₀ + β₁x
+With arrows pointing to each component in the equation</p>
+<p>Interactive elements:
+- Hover over each component for detailed explanation
+- Click to highlight related elements
+- Toggle to show/hide residuals for all points</p>
+<p>Implementation: SVG with JavaScript interactivity</p>
+</details>
+<h2 id="finding-the-best-line-least-squares-method">Finding the Best Line: Least Squares Method</h2>
+<p>There are infinite lines you could draw through a scatter plot. So how do we find the best one? We use the <strong>least squares method</strong>.</p>
+<h3 id="residuals-measuring-errors">Residuals: Measuring Errors</h3>
+<p>A <strong>residual</strong> is the difference between an actual observed value and the value predicted by the model:</p>
+<div class="arithmatex">\[\text{Residual} = y - \hat{y} = \text{Actual} - \text{Predicted}\]</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Calculate residuals for our example</span>
+<span class="n">actual_scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">52</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+<span class="n">predicted_scores</span> <span class="o">=</span> <span class="p">[</span><span class="mf">47.5</span> <span class="o">+</span> <span class="mf">5.5</span><span class="o">*</span><span class="n">h</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+
+<span class="n">residuals</span> <span class="o">=</span> <span class="p">[</span><span class="n">actual</span> <span class="o">-</span> <span class="n">predicted</span> <span class="k">for</span> <span class="n">actual</span><span class="p">,</span> <span class="n">predicted</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">actual_scores</span><span class="p">,</span> <span class="n">predicted_scores</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="n">resid</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">actual_scores</span><span class="p">,</span> <span class="n">predicted_scores</span><span class="p">,</span> <span class="n">residuals</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Point </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Actual=</span><span class="si">{</span><span class="n">actual</span><span class="si">}</span><span class="s2">, Predicted=</span><span class="si">{</span><span class="n">pred</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, Residual=</span><span class="si">{</span><span class="n">resid</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Residuals tell us how wrong our predictions are:</p>
+<ul>
+<li><strong>Positive residual</strong>: Model under-predicted (actual &gt; predicted)</li>
+<li><strong>Negative residual</strong>: Model over-predicted (actual &lt; predicted)</li>
+<li><strong>Zero residual</strong>: Perfect prediction (actual = predicted)</li>
+</ul>
+<h3 id="sum-of-squared-errors-sse">Sum of Squared Errors (SSE)</h3>
+<p>To find the best line, we want to minimize total error. But we can't just add up residuals—positive and negative would cancel out! Instead, we square them first:</p>
+<div class="arithmatex">\[\text{SSE} = \sum_{i=1}^{n}(y_i - \hat{y}_i)^2 = \sum_{i=1}^{n}\text{residual}_i^2\]</div>
+<p>This is the <strong>sum of squared errors</strong> (also called sum of squared residuals).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Calculate SSE</span>
+<span class="n">sse</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">residuals</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sum of Squared Errors: </span><span class="si">{</span><span class="n">sse</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="ordinary-least-squares-ols">Ordinary Least Squares (OLS)</h3>
+<p><strong>Ordinary Least Squares</strong> (OLS) is the method that finds the line minimizing SSE. It's the standard algorithm for linear regression.</p>
+<p>The math gives us formulas for the optimal coefficients:</p>
+<div class="arithmatex">\[\beta_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{\text{Cov}(x,y)}{\text{Var}(x)}\]</div>
+<div class="arithmatex">\[\beta_0 = \bar{y} - \beta_1\bar{x}\]</div>
+<p>Don't worry about memorizing these—Python will calculate them for you. The important thing is understanding the concept: OLS finds the line that makes the squared prediction errors as small as possible.</p>
+<h4 id="diagram-least-squares-microsim">Diagram: Least Squares MicroSim</h4>
+<details>
+<summary>Interactive Least Squares Line Fitting</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Understand (L2)</p>
+<p>Learning Objective: Help students understand how the least squares method finds the best-fit line by minimizing squared errors</p>
+<p>Canvas layout (900x600px):
+- Main area (650x550): Interactive scatter plot with adjustable line
+- Right panel (250x550): Controls and error display
+- Bottom strip (900x50): SSE meter</p>
+<p>Visual elements:
+- Scatter plot with 8-12 data points
+- Adjustable regression line (can drag slope and intercept)
+- Vertical lines from points to line showing residuals
+- Squares drawn at each residual (area = squared error)
+- Running SSE total displayed prominently</p>
+<p>Interactive controls:
+- Draggable line: Adjust slope by rotating, intercept by vertical drag
+- Slider: Slope (-5 to +5)
+- Slider: Intercept (0 to 100)
+- Button: "Show Optimal Line" - animates to best fit
+- Button: "Reset" - return to initial position
+- Toggle: Show/hide residual squares
+- Toggle: Show/hide residual values</p>
+<p>Display panels:
+- Current slope and intercept
+- Current SSE
+- Optimal SSE (shown after clicking "Show Optimal")
+- Percentage improvement from current to optimal</p>
+<p>SSE Meter (bottom):
+- Visual bar showing current SSE
+- Marker showing optimal SSE
+- Color gradient: red (high error) → green (low error)</p>
+<p>Behavior:
+- As line is adjusted, SSE updates in real-time
+- Residual squares resize dynamically
+- "Show Optimal Line" smoothly animates to least squares solution
+- Highlight when current SSE is close to optimal</p>
+<p>Educational annotations:
+- "Each square's area = squared error for that point"
+- "Total area of all squares = SSE"
+- "OLS minimizes this total area"</p>
+<p>Challenge tasks:
+- "Can you get SSE below 50?"
+- "Find a line where all residuals are positive"
+- "Match the optimal line within 5% SSE"</p>
+<p>Visual style: Clean mathematical visualization</p>
+<p>Implementation: p5.js with real-time calculations</p>
+</details>
+<h2 id="the-line-of-best-fit">The Line of Best Fit</h2>
+<p>The <strong>line of best fit</strong> (also called the regression line or trend line) is the line that minimizes SSE. It's the "best" line in the sense that no other straight line would have smaller total squared errors.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Calculate line of best fit</span>
+<span class="n">study_hours</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">exam_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">52</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">92</span><span class="p">])</span>
+
+<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">study_hours</span><span class="p">,</span> <span class="n">exam_scores</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Line of Best Fit:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Slope (β₁): </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Intercept (β₀): </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Equation: ŷ = </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">x&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Properties of the line of best fit:</p>
+<ul>
+<li>It always passes through the point <span class="arithmatex">\((\bar{x}, \bar{y})\)</span> (the means)</li>
+<li>The sum of residuals equals zero (positive and negative cancel)</li>
+<li>It minimizes SSE among all possible straight lines</li>
+</ul>
+<h2 id="fitted-values-and-predictions">Fitted Values and Predictions</h2>
+<p><strong>Fitted values</strong> are the predictions your model makes for the data points you used to build it. They're the y-values on the regression line at each x in your training data.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Calculate fitted values</span>
+<span class="n">fitted_values</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">+</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">study_hours</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fitted Values (Predictions for Training Data):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">hours</span><span class="p">,</span> <span class="n">actual</span><span class="p">,</span> <span class="n">fitted</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">study_hours</span><span class="p">,</span> <span class="n">exam_scores</span><span class="p">,</span> <span class="n">fitted_values</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">hours</span><span class="si">}</span><span class="s2"> hours: Actual=</span><span class="si">{</span><span class="n">actual</span><span class="si">}</span><span class="s2">, Fitted=</span><span class="si">{</span><span class="n">fitted</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Prediction</strong> uses the regression equation to estimate y for new x values—values you haven't observed yet.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Make predictions for new data</span>
+<span class="n">new_hours</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">hours</span> <span class="ow">in</span> <span class="n">new_hours</span><span class="p">:</span>
+    <span class="n">predicted_score</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">+</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">hours</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted score for </span><span class="si">{</span><span class="n">hours</span><span class="si">}</span><span class="s2"> hours: </span><span class="si">{</span><span class="n">predicted_score</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Extrapolation Warning</p>
+<p>Be careful predicting far outside your data range! If your data goes from 1-8 hours, predicting for 20 hours is risky. The linear relationship might not hold for extreme values. This is called <strong>extrapolation</strong> and can lead to unreliable predictions.</p>
+</div>
+<h2 id="interpreting-regression-coefficients">Interpreting Regression Coefficients</h2>
+<p><strong>Coefficient interpretation</strong> is crucial—it's how you extract meaning from your model.</p>
+<h3 id="interpreting-the-slope">Interpreting the Slope</h3>
+<p>The slope tells you the <strong>effect size</strong>: how much y changes per unit change in x.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Our model: score = 47.5 + 5.5 * hours</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slope Interpretation:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  For each additional hour of studying,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  exam score increases by </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> points on average.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Study 2 more hours → expect </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">slope</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> more points&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Study 3 more hours → expect </span><span class="si">{</span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">slope</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> more points&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>The slope also tells you direction:</p>
+<ul>
+<li><strong>Positive slope (5.5)</strong>: More studying → higher scores (positive relationship)</li>
+<li>If slope were <strong>negative</strong>: More of x → less of y (inverse relationship)</li>
+</ul>
+<h3 id="interpreting-the-intercept">Interpreting the Intercept</h3>
+<p>The intercept is the predicted value when x = 0.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept Interpretation:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  A student who studies 0 hours is predicted&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  to score </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> points.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>But context matters! Does x = 0 make sense?</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>x = 0 Meaningful?</th>
+<th>Intercept Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Study hours → Score</td>
+<td>Maybe</td>
+<td>Baseline score without studying</td>
+</tr>
+<tr>
+<td>House sq ft → Price</td>
+<td>No</td>
+<td>Price of 0 sq ft house? Nonsense!</td>
+</tr>
+<tr>
+<td>Age → Height (children)</td>
+<td>No</td>
+<td>Height at age 0? (birth height, maybe)</td>
+</tr>
+<tr>
+<td>Temperature → Ice cream sales</td>
+<td>Maybe</td>
+<td>Sales at 0°F (very cold!)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Coefficient</th>
+<th>Symbol</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slope</td>
+<td>β₁</td>
+<td>Change in y per unit change in x</td>
+</tr>
+<tr>
+<td>Intercept</td>
+<td>β₀</td>
+<td>Predicted y when x = 0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assumptions-of-regression">Assumptions of Regression</h2>
+<p>For linear regression to give reliable results, certain <strong>assumptions</strong> should hold. Think of these as the "fine print" of your model.</p>
+<h3 id="1-linearity-assumption">1. Linearity Assumption</h3>
+<p>The <strong>linearity assumption</strong> requires that the relationship between x and y is actually linear (a straight line fits well).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Check linearity with scatter plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;study_hours&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;exam_scores&#39;</span><span class="p">,</span>
+                 <span class="n">trendline</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Checking Linearity: Do Points Follow a Line?&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>If the relationship is curved, linear regression will give poor predictions. You'd need polynomial regression or other techniques.</p>
+<h3 id="2-independence-assumption">2. Independence Assumption</h3>
+<p>The <strong>independence assumption</strong> requires that observations are independent of each other. One data point shouldn't affect another.</p>
+<p>Violations occur when:</p>
+<ul>
+<li>Time series data (today's value depends on yesterday's)</li>
+<li>Clustered data (students in same class aren't independent)</li>
+<li>Repeated measurements on same subjects</li>
+</ul>
+<h3 id="3-homoscedasticity">3. Homoscedasticity</h3>
+<p><strong>Homoscedasticity</strong> (homo = same, scedasticity = scatter) means the spread of residuals is constant across all x values.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Check homoscedasticity with residual plot</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">exam_scores</span> <span class="o">-</span> <span class="n">fitted_values</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fitted_values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">residuals</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Residual Plot: Checking Homoscedasticity&#39;</span><span class="p">,</span>
+                 <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;Fitted Values&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;Residuals&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_hline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Good</strong>: Residuals form a random horizontal band around zero</li>
+<li><strong>Bad</strong>: Residuals fan out (spread increases with x) = heteroscedasticity</li>
+</ul>
+<h3 id="4-normality-of-residuals">4. Normality of Residuals</h3>
+<p>The <strong>normality of residuals</strong> assumption requires that residuals follow a normal distribution. This matters for confidence intervals and hypothesis tests.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="c1"># Check normality with histogram</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">residuals</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of Residuals&#39;</span><span class="p">,</span>
+                   <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;Residual&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;Count&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>For small samples, use a Q-Q plot:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Q-Q plot</span>
+<span class="n">theoretical_quantiles</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">residuals</span><span class="p">)))</span>
+<span class="n">sorted_residuals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">theoretical_quantiles</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">sorted_residuals</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">residuals</span><span class="p">),</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">residuals</span><span class="p">)],</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dash</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Q-Q Plot: Checking Normality of Residuals&#39;</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Theoretical Quantiles&#39;</span><span class="p">,</span>
+                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Sample Quantiles&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-regression-assumptions-checker-microsim">Diagram: Regression Assumptions Checker MicroSim</h4>
+<details>
+<summary>Interactive Assumption Diagnostic Tool</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Analyze (L4)</p>
+<p>Learning Objective: Help students diagnose regression assumption violations through interactive visualizations</p>
+<p>Canvas layout (900x650px):
+- Top left (450x300): Original scatter plot with regression line
+- Top right (450x300): Residual vs fitted plot
+- Bottom left (450x300): Residual histogram
+- Bottom right (450x300): Q-Q plot of residuals</p>
+<p>Visual elements:
+- All four diagnostic plots update together
+- Traffic light indicators (green/yellow/red) for each assumption
+- Assumption status panel</p>
+<p>Interactive controls:
+- Dropdown: Dataset selector
+  - "Good Data" (all assumptions met)
+  - "Non-linear" (curved relationship)
+  - "Heteroscedastic" (fan-shaped residuals)
+  - "Non-normal residuals" (skewed errors)
+  - "Outliers present"
+  - "Custom" (add/drag points)
+- Button: "Diagnose" - highlights violations
+- Toggle: Show/hide assumption guidelines
+- Draggable points in custom mode</p>
+<p>Assumption indicators:
+1. LINEARITY
+   - Green: Points follow line well
+   - Yellow: Slight curvature
+   - Red: Clear non-linear pattern</p>
+<ol>
+<li>INDEPENDENCE</li>
+<li>Note: "Cannot diagnose from plot alone"</li>
+<li>
+<p>Checkbox: "Data is from independent observations"</p>
+</li>
+<li>
+<p>HOMOSCEDASTICITY</p>
+</li>
+<li>Green: Constant spread in residual plot</li>
+<li>Yellow: Slight fanning</li>
+<li>
+<p>Red: Clear funnel shape</p>
+</li>
+<li>
+<p>NORMALITY</p>
+</li>
+<li>Green: Histogram bell-shaped, Q-Q on line</li>
+<li>Yellow: Slight deviation</li>
+<li>Red: Clear non-normality</li>
+</ol>
+<p>Behavior:
+- Selecting dataset updates all four plots
+- Traffic lights update based on diagnostic rules
+- Tooltips explain what each violation means
+- "Diagnose" button highlights specific problem areas</p>
+<p>Educational annotations:
+- "Look for patterns in the residual plot"
+- "Points should follow the diagonal in Q-Q plot"
+- "Residuals should be roughly bell-shaped"</p>
+<p>Visual style: Dashboard layout with coordinated plots</p>
+<p>Implementation: p5.js with Plotly.js for statistical plots</p>
+</details>
+<table>
+<thead>
+<tr>
+<th>Assumption</th>
+<th>What to Check</th>
+<th>Good Sign</th>
+<th>Bad Sign</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linearity</td>
+<td>Scatter plot</td>
+<td>Points follow line</td>
+<td>Curved pattern</td>
+</tr>
+<tr>
+<td>Independence</td>
+<td>Study design</td>
+<td>Random sampling</td>
+<td>Clustered/time data</td>
+</tr>
+<tr>
+<td>Homoscedasticity</td>
+<td>Residual plot</td>
+<td>Even spread</td>
+<td>Fan/funnel shape</td>
+</tr>
+<tr>
+<td>Normality</td>
+<td>Histogram/Q-Q</td>
+<td>Bell curve, diagonal line</td>
+<td>Skewed, curved Q-Q</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">When Assumptions Are Violated</p>
+<p>Minor violations often don't matter much. Linear regression is fairly robust. But serious violations require action: transform variables, use robust regression, or try different models. Always check assumptions!</p>
+</div>
+<h2 id="implementing-linear-regression-with-scikit-learn">Implementing Linear Regression with Scikit-learn</h2>
+<p>Now let's build regression models the professional way using the <strong>scikit-learn library</strong> (also called sklearn). It's the most popular machine learning library in Python.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Install if needed: pip install scikit-learn</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="the-linearregression-class">The LinearRegression Class</h3>
+<p>The <strong>LinearRegression class</strong> is scikit-learn's implementation of ordinary least squares regression.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Create a LinearRegression object</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">model</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;sklearn.linear_model._base.LinearRegression&#39;&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="the-fit-method">The Fit Method</h3>
+<p>The <strong>fit method</strong> trains the model—it calculates the optimal coefficients from your data.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Prepare data (sklearn needs 2D array for X)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">study_hours</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Reshape to column vector</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">exam_scores</span><span class="p">)</span>
+
+<span class="c1"># Fit the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Access the learned coefficients</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept (β₀): </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slope (β₁): </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>The <code>.fit()</code> method:</p>
+<ol>
+<li>Takes X (features) and y (target)</li>
+<li>Calculates optimal coefficients using OLS</li>
+<li>Stores them in <code>model.intercept_</code> and <code>model.coef_</code></li>
+<li>Returns the model object (for method chaining)</li>
+</ol>
+<h3 id="the-predict-method">The Predict Method</h3>
+<p>The <strong>predict method</strong> uses the trained model to make predictions.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Make predictions for training data</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fitted values:&quot;</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="c1"># Make predictions for new data</span>
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">]])</span>  <span class="c1"># Note: 2D array</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">hours</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">predictions</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted score for </span><span class="si">{</span><span class="n">hours</span><span class="si">}</span><span class="s2"> hours: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="complete-scikit-learn-workflow">Complete Scikit-learn Workflow</h3>
+<p>Here's the standard pattern you'll use for all sklearn models:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># 1. Prepare data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;study_hours&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="s1">&#39;exam_scores&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">52</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;study_hours&#39;</span><span class="p">]]</span>  <span class="c1"># Features (2D DataFrame or array)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam_scores&#39;</span><span class="p">]</span>     <span class="c1"># Target (1D)</span>
+
+<span class="c1"># 2. Create model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="c1"># 3. Fit model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 4. Make predictions</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># 5. Inspect results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Equation: ŷ = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">x&quot;</span><span class="p">)</span>
+
+<span class="c1"># 6. Visualize</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;study_hours&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam_scores&#39;</span><span class="p">],</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;study_hours&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Linear Regression with Scikit-learn&#39;</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Study Hours&#39;</span><span class="p">,</span>
+                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Exam Score&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-scikit-learn-workflow">Diagram: Scikit-learn Workflow</h4>
+<details>
+<summary>Machine Learning Pipeline Flowchart</summary>
+<p>Type: workflow</p>
+<p>Bloom Taxonomy: Apply (L3)</p>
+<p>Learning Objective: Help students memorize and apply the standard scikit-learn workflow</p>
+<p>Purpose: Visual guide for the fit-predict pattern</p>
+<p>Visual style: Horizontal flowchart with code snippets</p>
+<p>Steps (left to right):</p>
+<ol>
+<li>
+<p>IMPORT
+   Icon: Package/box
+   Code: <code>from sklearn.linear_model import LinearRegression</code>
+   Hover text: "Import the model class you need"
+   Color: Blue</p>
+</li>
+<li>
+<p>PREPARE DATA
+   Icon: Table/spreadsheet
+   Code: <code>X = df[['feature']]</code> and <code>y = df['target']</code>
+   Hover text: "X must be 2D, y is 1D"
+   Color: Green
+   Warning note: "X needs double brackets!"</p>
+</li>
+<li>
+<p>CREATE MODEL
+   Icon: Gear/factory
+   Code: <code>model = LinearRegression()</code>
+   Hover text: "Instantiate the model object"
+   Color: Orange</p>
+</li>
+<li>
+<p>FIT MODEL
+   Icon: Brain/learning
+   Code: <code>model.fit(X, y)</code>
+   Hover text: "Train on your data - learns coefficients"
+   Color: Purple
+   Output: "model.coef_, model.intercept_"</p>
+</li>
+<li>
+<p>PREDICT
+   Icon: Crystal ball
+   Code: <code>y_pred = model.predict(X_new)</code>
+   Hover text: "Generate predictions for any X"
+   Color: Red</p>
+</li>
+<li>
+<p>EVALUATE
+   Icon: Checkmark/chart
+   Code: <code>model.score(X, y)</code> or metrics
+   Hover text: "Assess model quality"
+   Color: Teal</p>
+</li>
+</ol>
+<p>Annotations:
+- Arrow from "FIT" to coefficients stored
+- Note: "This pattern works for ALL sklearn models!"
+- Common errors callout: "Forgot to reshape X?", "Wrong array shape?"</p>
+<p>Interactive elements:
+- Click each step to see full code example
+- Hover for detailed explanation
+- Toggle between LinearRegression and other model examples</p>
+<p>Implementation: SVG with JavaScript interactivity</p>
+</details>
+<h2 id="putting-it-all-together-a-complete-example">Putting It All Together: A Complete Example</h2>
+<p>Let's work through a complete regression analysis from start to finish:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+
+<span class="c1"># Generate realistic data: House size vs Price</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1"># True relationship: Price = 50000 + 200 * sqft + noise</span>
+<span class="n">sqft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">price</span> <span class="o">=</span> <span class="mi">50000</span> <span class="o">+</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">sqft</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30000</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;sqft&#39;</span><span class="p">:</span> <span class="n">sqft</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">price</span><span class="p">})</span>
+
+<span class="c1"># 1. VISUALIZE THE DATA</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sqft&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;price&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;House Size vs Price&#39;</span><span class="p">,</span>
+                 <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sqft&#39;</span><span class="p">:</span> <span class="s1">&#39;Square Feet&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="s1">&#39;Price ($)&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 2. FIT THE MODEL</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;sqft&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== MODEL RESULTS ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept: $</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slope: $</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> per sqft&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Equation: Price = $</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> + $</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> × sqft&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. INTERPRET COEFFICIENTS</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== INTERPRETATION ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;• Each additional square foot adds $</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> to the price&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;• A 100 sqft increase adds $</span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;• Base price (theoretical 0 sqft): $</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4. MAKE PREDICTIONS</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Predict for new houses</span>
+<span class="n">new_houses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;sqft&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">]})</span>
+<span class="n">new_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_houses</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== PREDICTIONS ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">sqft_val</span><span class="p">,</span> <span class="n">pred</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">new_houses</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">],</span> <span class="n">new_predictions</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">sqft_val</span><span class="si">}</span><span class="s2"> sqft → $</span><span class="si">{</span><span class="n">pred</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 5. CHECK MODEL FIT</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== MODEL QUALITY ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² Score: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">r2</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% of variance explained)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMSE: $</span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> (typical prediction error)&quot;</span><span class="p">)</span>
+
+<span class="c1"># 6. VISUALIZE RESULTS</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="n">subplot_titles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Regression Fit&#39;</span><span class="p">,</span> <span class="s1">&#39;Residual Plot&#39;</span><span class="p">])</span>
+
+<span class="c1"># Scatter with regression line</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">],</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">),</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)),</span>
+              <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Residual plot</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_pred</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">residuals</span><span class="p">,</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Residuals&#39;</span><span class="p">),</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_hline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Complete Regression Analysis&#39;</span><span class="p">,</span>
+                  <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 7. CHECK ASSUMPTIONS</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== ASSUMPTION CHECKS ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Linearity: Scatter plot shows linear pattern&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Homoscedasticity: Residuals have roughly constant spread&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Normality: Check residual histogram (code above)&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-interactive-regression-builder-microsim">Diagram: Interactive Regression Builder MicroSim</h4>
+<details>
+<summary>Build Your Own Regression Model</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy: Create (L6)</p>
+<p>Learning Objective: Let students build, visualize, and interpret their own regression models interactively</p>
+<p>Canvas layout (950x700px):
+- Left panel (600x700): Main visualization area
+  - Top (600x400): Scatter plot with regression line
+  - Bottom (600x300): Residual plot
+- Right panel (350x700): Controls, coefficients, interpretation</p>
+<p>Visual elements:
+- Interactive scatter plot
+- Regression line (updates with data)
+- Residual lines connecting points to line
+- Coefficient display
+- Equation display
+- R² score gauge</p>
+<p>Data options:
+- Preset datasets:
+  - "Study Hours vs Scores" (positive, strong)
+  - "House Size vs Price" (positive, moderate)
+  - "Car Age vs Value" (negative)
+  - "Random Data" (no relationship)
+- Custom: Click to add points</p>
+<p>Interactive controls:
+- Dropdown: Select dataset
+- Button: "Add Point" (click on plot to add)
+- Button: "Remove Point" (click to remove)
+- Button: "Fit Model" - calculates regression
+- Button: "Clear All"
+- Slider: Noise level (for preset datasets)
+- Toggle: Show residuals
+- Toggle: Show confidence band</p>
+<p>Right panel displays:
+- Equation: ŷ = β₀ + β₁x (with actual values)
+- Interpretation text:
+  - "For each unit increase in X, Y changes by [slope]"
+  - "When X = 0, predicted Y = [intercept]"
+- Model quality:
+  - R² score with visual gauge
+  - RMSE value
+- Assumption indicators (traffic lights)</p>
+<p>Prediction tool:
+- Input field: "Enter X value"
+- Button: "Predict"
+- Output: Predicted Y with confidence interval
+- Visual: Point added to plot at prediction</p>
+<p>Behavior:
+- Adding/removing points triggers model refit
+- All statistics update in real-time
+- Interpretation text updates with coefficient values
+- Warning when extrapolating beyond data range</p>
+<p>Educational features:
+- "What happens if you add an outlier?"
+- "Can you create data with R² &gt; 0.9?"
+- "What does negative slope look like?"</p>
+<p>Visual style: Professional dashboard with clean aesthetics</p>
+<p>Implementation: p5.js with real-time OLS calculations</p>
+</details>
+<h2 id="common-pitfalls-and-best-practices">Common Pitfalls and Best Practices</h2>
+<h3 id="pitfall-1-confusing-correlation-with-causation">Pitfall 1: Confusing Correlation with Causation</h3>
+<p>A strong relationship doesn't mean x CAUSES y. Ice cream sales predict drowning deaths (both increase in summer), but ice cream doesn't cause drowning!</p>
+<h3 id="pitfall-2-extrapolating-too-far">Pitfall 2: Extrapolating Too Far</h3>
+<p>Your model is only reliable within the range of your training data. Predicting house prices for 50,000 square feet when your data only goes to 3,000 is dangerous.</p>
+<h3 id="pitfall-3-ignoring-assumptions">Pitfall 3: Ignoring Assumptions</h3>
+<p>Always check your assumptions! A model fit on data with severe violations gives misleading results.</p>
+<h3 id="pitfall-4-forgetting-to-reshape-x">Pitfall 4: Forgetting to Reshape X</h3>
+<p>Scikit-learn needs X as a 2D array. The most common error:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># WRONG - will cause error</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;feature&#39;</span><span class="p">]</span>
+
+<span class="c1"># RIGHT - reshape to 2D</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;feature&#39;</span><span class="p">]]</span>  <span class="c1"># Double brackets = DataFrame (2D)</span>
+<span class="c1"># or</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;feature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Explicit reshape</span>
+</code></pre></div></td></tr></table></div>
+<details class="question">
+<summary>Chapter 7 Checkpoint: Test Your Understanding</summary>
+<p><strong>Question 1:</strong> A model has equation: Price = 25000 + 150 × sqft. Interpret the slope.</p>
+<p><strong>Question 2:</strong> What's the predicted price for a 1,200 sqft house using this model?</p>
+<p><strong>Question 3:</strong> In a residual plot, you see residuals fanning out (spreading wider) as fitted values increase. Which assumption is violated?</p>
+<p><strong>Click to reveal answers:</strong></p>
+<p><strong>Answer 1:</strong> For each additional square foot, the predicted price increases by $150. A house that's 100 sqft larger is predicted to cost $15,000 more.</p>
+<p><strong>Answer 2:</strong> Price = 25000 + 150 × 1200 = 25000 + 180000 = $205,000</p>
+<p><strong>Answer 3:</strong> Homoscedasticity is violated. The residuals should have constant spread (homoscedastic), but fanning indicates the spread changes with fitted values (heteroscedastic).</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Achievement Unlocked: Prediction Pioneer</p>
+<p>You've built your first predictive model! You can now fit lines to data, interpret what those lines mean, make predictions, and check if your model is trustworthy. This is the foundation of all machine learning—everything else builds on these concepts.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Regression analysis</strong> models relationships between variables to make predictions.</p>
+</li>
+<li>
+<p><strong>Simple linear regression</strong> uses one input (x) to predict one output (y) with a straight line.</p>
+</li>
+<li>
+<p>The <strong>regression equation</strong> is <span class="arithmatex">\(\hat{y} = \beta_0 + \beta_1 x\)</span>, where β₀ is the <strong>intercept</strong> and β₁ is the <strong>slope</strong>.</p>
+</li>
+<li>
+<p><strong>Slope</strong> tells you how much y changes per unit increase in x. <strong>Intercept</strong> is the predicted y when x = 0.</p>
+</li>
+<li>
+<p><strong>Residuals</strong> are prediction errors: actual minus predicted. The <strong>least squares method</strong> finds the line minimizing the <strong>sum of squared errors</strong>.</p>
+</li>
+<li>
+<p><strong>OLS (Ordinary Least Squares)</strong> is the standard algorithm that finds the optimal coefficients.</p>
+</li>
+<li>
+<p><strong>Fitted values</strong> are predictions for training data; <strong>predictions</strong> can be made for any new x values.</p>
+</li>
+<li>
+<p><strong>Assumptions</strong>: linearity, independence, homoscedasticity, and normality of residuals. Check them!</p>
+</li>
+<li>
+<p><strong>Scikit-learn</strong> provides the professional way to do regression: create model → fit(X, y) → predict(X_new).</p>
+</li>
+<li>
+<p>The <strong>LinearRegression class</strong> implements OLS. Use <code>.fit()</code> to train and <code>.predict()</code> to generate predictions.</p>
+</li>
+</ol>
+<p>You've now mastered the fundamentals of predictive modeling. In the next chapter, you'll learn how to evaluate whether your model is actually good—because fitting a line is easy, but knowing if it's useful is the real skill!</p>
 
 
 
@@ -1525,6 +3464,10 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
