@@ -36,12 +36,13 @@ body {
     padding: 5px 15px;
     border-radius: 5px;
     z-index: 10;
+    white-space: nowrap;
 }
 
-/* Legend */
+/* Legend  box in the upper left corner */
 .legend {
     position: absolute;
-    top: 50px;
+    top: 5px;
     left: 10px;
     padding: 10px 12px;
     background-color: rgba(255, 255, 255, 0.95);
@@ -158,9 +159,9 @@ body {
 /* Right panel */
 .right-panel {
     position: absolute;
-    top: 50px;
+    top: 5px;
     right: 10px;
-    width: 220px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -224,6 +225,34 @@ body {
 
 .example-list li {
     margin: 4px 0;
+}
+
+/* Save button (edit mode) */
+.save-button {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #27AE60;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.save-button:hover {
+    background-color: #219A52;
+}
+
+.save-button:active {
+    transform: translateX(-50%) scale(0.98);
 }
 
 /* Responsive */

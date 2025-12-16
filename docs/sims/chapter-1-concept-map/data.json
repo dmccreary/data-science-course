@@ -1,0 +1,362 @@
+{
+    "nodes": [
+        {
+            "id": "ds",
+            "label": "Data\nScience",
+            "category": "core",
+            "x": -3,
+            "y": -200,
+            "definition": "The interdisciplinary field that uses scientific methods, algorithms, and systems to extract knowledge from data."
+        },
+        {
+            "id": "data",
+            "label": "Data",
+            "category": "core",
+            "x": -123,
+            "y": -92,
+            "definition": "Raw facts, figures, and observations collected for analysis."
+        },
+        {
+            "id": "variables",
+            "label": "Variables",
+            "category": "core",
+            "x": -7,
+            "y": -59,
+            "definition": "Characteristics or attributes that can take different values across observations."
+        },
+        {
+            "id": "dataset",
+            "label": "Dataset",
+            "category": "core",
+            "x": 137,
+            "y": -129,
+            "definition": "A structured collection of data organized into rows (observations) and columns (variables)."
+        },
+        {
+            "id": "numerical",
+            "label": "Numerical\nData",
+            "category": "dataType",
+            "x": -210,
+            "y": 83,
+            "definition": "Data that represents quantities and can be measured. Math operations are meaningful."
+        },
+        {
+            "id": "categorical",
+            "label": "Categorical\nData",
+            "category": "dataType",
+            "x": -47,
+            "y": 66,
+            "definition": "Data that represents groups or categories. Math operations are not meaningful."
+        },
+        {
+            "id": "ordinal",
+            "label": "Ordinal\nData",
+            "category": "dataType",
+            "x": -129,
+            "y": 151,
+            "definition": "Categorical data with a meaningful order or ranking (e.g., Low < Medium < High)."
+        },
+        {
+            "id": "nominal",
+            "label": "Nominal\nData",
+            "category": "dataType",
+            "x": 7,
+            "y": 183,
+            "definition": "Categorical data with no inherent order (e.g., colors, countries)."
+        },
+        {
+            "id": "independent",
+            "label": "Independent\nVariable",
+            "category": "variableRole",
+            "x": 50,
+            "y": 88,
+            "definition": "The variable manipulated or used to predict another variable (the input)."
+        },
+        {
+            "id": "dependent",
+            "label": "Dependent\nVariable",
+            "category": "variableRole",
+            "x": 128,
+            "y": 34,
+            "definition": "The variable being predicted or explained (the output)."
+        },
+        {
+            "id": "feature",
+            "label": "Feature",
+            "category": "variableRole",
+            "x": 166,
+            "y": 197,
+            "definition": "In machine learning, an input variable used to make predictions. Same as independent variable."
+        },
+        {
+            "id": "target",
+            "label": "Target\nVariable",
+            "category": "variableRole",
+            "x": 244,
+            "y": 140,
+            "definition": "In machine learning, the variable we want to predict. Same as dependent variable."
+        },
+        {
+            "id": "workflow",
+            "label": "Data Science\nWorkflow",
+            "category": "workflow",
+            "x": -229,
+            "y": -136,
+            "definition": "The systematic process of solving problems with data: Define → Collect → Clean → Analyze → Communicate."
+        },
+        {
+            "id": "problem",
+            "label": "Problem\nDefinition",
+            "category": "workflow",
+            "x": -242,
+            "y": -19,
+            "definition": "The first step: clearly articulating the question you want to answer with data."
+        },
+        {
+            "id": "collection",
+            "label": "Data\nCollection",
+            "category": "workflow",
+            "x": -316,
+            "y": 120,
+            "definition": "Gathering relevant data from various sources to address the defined problem."
+        },
+        {
+            "id": "python",
+            "label": "Python\nProgramming",
+            "category": "tools",
+            "x": 148,
+            "y": -194,
+            "definition": "A popular programming language for data science with rich libraries like pandas and numpy."
+        },
+        {
+            "id": "documentation",
+            "label": "Documentation",
+            "category": "tools",
+            "x": -147,
+            "y": -209,
+            "definition": "Recording methods, decisions, and findings to ensure reproducibility and clarity."
+        },
+        {
+            "id": "scales",
+            "label": "Measurement\nScales",
+            "category": "structure",
+            "x": -132,
+            "y": 281,
+            "definition": "The levels at which variables are measured: nominal, ordinal, interval, and ratio."
+        },
+        {
+            "id": "observation",
+            "label": "Observation",
+            "category": "structure",
+            "x": 232,
+            "y": -11,
+            "definition": "A single row in a dataset representing one instance or record of data."
+        }
+    ],
+    "edges": [
+        {
+            "from": "ds",
+            "to": "data",
+            "label": "works with",
+            "type": "uses"
+        },
+        {
+            "from": "ds",
+            "to": "python",
+            "label": "uses",
+            "type": "uses"
+        },
+        {
+            "from": "ds",
+            "to": "workflow",
+            "label": "follows",
+            "type": "uses"
+        },
+        {
+            "from": "data",
+            "to": "variables",
+            "label": "organized into",
+            "type": "contains"
+        },
+        {
+            "from": "dataset",
+            "to": "observation",
+            "label": "contains",
+            "type": "contains"
+        },
+        {
+            "from": "dataset",
+            "to": "variables",
+            "label": "contains",
+            "type": "contains"
+        },
+        {
+            "from": "variables",
+            "to": "numerical",
+            "label": "classified as",
+            "type": "isTypeOf"
+        },
+        {
+            "from": "variables",
+            "to": "categorical",
+            "label": "classified as",
+            "type": "isTypeOf"
+        },
+        {
+            "from": "categorical",
+            "to": "ordinal",
+            "label": "type",
+            "type": "isTypeOf"
+        },
+        {
+            "from": "categorical",
+            "to": "nominal",
+            "label": "type",
+            "type": "isTypeOf"
+        },
+        {
+            "from": "variables",
+            "to": "independent",
+            "label": "can be",
+            "type": "isTypeOf"
+        },
+        {
+            "from": "variables",
+            "to": "dependent",
+            "label": "can be",
+            "type": "isTypeOf"
+        },
+        {
+            "from": "feature",
+            "to": "independent",
+            "label": "same as",
+            "type": "sameAs"
+        },
+        {
+            "from": "target",
+            "to": "dependent",
+            "label": "same as",
+            "type": "sameAs"
+        },
+        {
+            "from": "workflow",
+            "to": "problem",
+            "label": "starts with",
+            "type": "contains"
+        },
+        {
+            "from": "problem",
+            "to": "collection",
+            "label": "then",
+            "type": "contains"
+        },
+        {
+            "from": "ds",
+            "to": "documentation",
+            "label": "requires",
+            "type": "uses"
+        },
+        {
+            "from": "numerical",
+            "to": "scales",
+            "label": "measured by",
+            "type": "uses"
+        },
+        {
+            "from": "categorical",
+            "to": "scales",
+            "label": "measured by",
+            "type": "uses"
+        }
+    ],
+    "examples": {
+        "ds": [
+            "Predicting house prices",
+            "Analyzing customer behavior",
+            "Medical diagnosis from symptoms"
+        ],
+        "data": [
+            "Survey responses",
+            "Sensor readings",
+            "Transaction records"
+        ],
+        "variables": [
+            "Age, Income, Education Level",
+            "Temperature, Pressure",
+            "Satisfaction Rating"
+        ],
+        "dataset": [
+            "Titanic passenger data",
+            "Iris flower measurements",
+            "MNIST handwritten digits"
+        ],
+        "numerical": [
+            "Height: 5.9 feet",
+            "Temperature: 72.5F",
+            "Age: 25 years"
+        ],
+        "categorical": [
+            "Color: Red, Blue, Green",
+            "Size: S, M, L, XL",
+            "Country: USA, Canada, Mexico"
+        ],
+        "ordinal": [
+            "Education: HS < BS < MS < PhD",
+            "Rating: Poor < Fair < Good < Excellent"
+        ],
+        "nominal": [
+            "Eye color: Blue, Brown, Green",
+            "Blood type: A, B, AB, O"
+        ],
+        "independent": [
+            "Study hours (predicting test score)",
+            "Ad spend (predicting sales)"
+        ],
+        "dependent": [
+            "Test score",
+            "Sales revenue",
+            "Customer churn"
+        ],
+        "feature": [
+            "Pixel values in image classification",
+            "Word frequencies in text analysis"
+        ],
+        "target": [
+            "Image label (cat/dog)",
+            "Sentiment (positive/negative)"
+        ],
+        "workflow": [
+            "CRISP-DM methodology",
+            "Iterative refinement process"
+        ],
+        "problem": [
+            "What factors predict customer churn?",
+            "How can we reduce delivery times?"
+        ],
+        "collection": [
+            "Web scraping",
+            "API calls",
+            "Database queries",
+            "Surveys"
+        ],
+        "python": [
+            "pandas for data manipulation",
+            "matplotlib for visualization",
+            "scikit-learn for ML"
+        ],
+        "documentation": [
+            "Jupyter notebooks",
+            "README files",
+            "Code comments"
+        ],
+        "scales": [
+            "Nominal, Ordinal, Interval, Ratio",
+            "Stevens' levels of measurement"
+        ],
+        "observation": [
+            "One patient record",
+            "One transaction",
+            "One survey response"
+        ]
+    }
+}

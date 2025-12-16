@@ -213,22 +213,23 @@ Purpose: Visualize measurement scales as a hierarchy where each level adds capab
 Layout: Pyramid with four layers, widest at bottom
 
 Layers (bottom to top):
-1. NOMINAL (base, widest)
+
+## 1. NOMINAL (base, widest)
    - Operations: = ≠ (equality only)
    - Example: "Jersey numbers"
    - Color: Light gray
 
-2. ORDINAL
+## 2. ORDINAL
    - Operations: = ≠ < > (equality + ordering)
    - Example: "Race finishing positions"
    - Color: Light blue
 
-3. INTERVAL
+## 3. INTERVAL
    - Operations: = ≠ < > + - (add equal intervals)
    - Example: "Temperature in Fahrenheit"
    - Color: Light green
 
-4. RATIO (top, narrowest)
+## 4. RATIO (top, narrowest)
    - Operations: = ≠ < > + - × ÷ (full arithmetic)
    - Example: "Height in centimeters"
    - Color: Gold (representing "gold standard")
@@ -506,6 +507,8 @@ Congratulations! You've just acquired the foundational vocabulary of data scienc
 
 #### Diagram: Chapter 1 Concept Mind Map
 
+<iframe src="../../sims/chapter-1-concept-map/main.html" height="600px" width="100%" scrolling="no" style="overflow: hidden;"></iframe>
+[View the Chapter 1 Concept Map Fullscreen](../../sims/chapter-1-concept-map/main.html)
 <details markdown="1">
 <summary>Introduction to Data Science Concept Map</summary>
 Type: graph-model
