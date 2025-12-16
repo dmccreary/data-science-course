@@ -200,6 +200,9 @@ There are four measurement scales, from least to most informative:
 
 #### Diagram: Measurement Scales Pyramid
 
+<iframe src="../../sims/measurement-scales-pyramid/main.html" height="502px" width="100%" scrolling="no"></iframe>
+[View the Measurement Scales Pyramid Fullscreen](../../sims/measurement-scales-pyramid/main.html)
+
 <details markdown="1">
 <summary>Measurement Scales Pyramid</summary>
 Type: infographic
