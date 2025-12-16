@@ -1,8 +1,10 @@
 ---
 title: Introduction to Data Science
-description: Your journey to becoming a data science superhero starts here
+description: Your quest to becoming a data science superhero starts here
 generated_by: chapter-content-generator skill
 date: 2025-12-15
+image: /img/data-science-quest.jpg
+og:image: /img/data-science-quest.jpg
 version: 0.03
 ---
 
