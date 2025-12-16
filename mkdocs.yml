@@ -27,6 +27,10 @@ nav:
     - Intro to Machine Learning: chapters/12-intro-to-machine-learning/index.md
     - Neural Networks and PyTorch: chapters/13-neural-networks-pytorch/index.md
   
+  ## old content
+  # - Chapters:
+  #   - Overview: chapters-old/index.md
+
   - Labs:
     - Labs: labs/index.md
     - Lab 1 - Dataframes: labs/01-dataframe/index.md
