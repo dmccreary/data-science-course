@@ -146,3 +146,8 @@ Deployment process:
 ### Build and Deployment
 - **GitHub Pages**: Automatic deployment via `mkdocs gh-deploy` command
 - **No CI/CD**: Manual build and deploy process, no automated testing
+
+## Details
+When generating chapter content, the chapter-content-generator skill will
+add diagram/microsim placeholders using the <details> XML element.
+Do not put leading spaces inside the <details> elements.  Do not indent the text within the <details> element.

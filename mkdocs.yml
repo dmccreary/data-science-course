@@ -140,14 +140,22 @@ plugins:
   - social
   - social_override # used to use the image in the metadata header
 markdown_extensions:
+  - md_in_html
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
   - pymdownx.highlight:
       linenums: true
+  # enable LaTeX equation rendering
+  - pymdownx.arithmatex:
+      generic: true
 extra_css:
    - css/extra.css
+extra_javascript:
+   - js/extra.js
+   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 copyright: Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
 extra:
   generator: false
