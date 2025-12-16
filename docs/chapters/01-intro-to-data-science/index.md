@@ -394,6 +394,8 @@ Here's how features and targets relate to independent/dependent variables:
 
 ## The Data Science Workflow: Your Hero's Journey
 
+![Data Science Quest](../../img/data-science-quest.jpg)
+
 Every great hero follows a journey, and data scientists are no different. The **data science workflow** is your roadmap from "I have a question" to "I have an answer (with evidence)."
 
 The workflow has several key stages:
