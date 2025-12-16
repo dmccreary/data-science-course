@@ -2,6 +2,8 @@
     "cSpell.words": [
         "Collab",
         "concat",
+        "dataframe",
+        "Dataframes",
         "Explainability",
         "genai",
         "generalizability",
@@ -15,6 +17,7 @@
         "microsims",
         "Microsite",
         "Multicollinearity",
+        "numpy",
         "overcorrelated",
         "overfitting",
         "Plotly",
