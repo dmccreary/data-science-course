@@ -63,36 +63,36 @@ Sound like a superpower? That's because it is.
 #### Diagram: Data Science Superpower Concept Map
 
 <details markdown="1">
-    <summary>Data Science Superpower Concept Map</summary>
-    Type: infographic
+<summary>Data Science Superpower Concept Map</summary>
+Type: infographic
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students visualize how data science skills connect to real-world impact and career opportunities
+Learning Objective: Help students visualize how data science skills connect to real-world impact and career opportunities
 
-    Purpose: Show data science as a central hub with superpowers radiating outward to real-world applications
+Purpose: Show data science as a central hub with superpowers radiating outward to real-world applications
 
-    Layout: Central hub-and-spoke design with "Data Science" in the center
+Layout: Central hub-and-spoke design with "Data Science" in the center
 
-    Central node: "DATA SCIENCE" (styled as a glowing power core)
+Central node: "DATA SCIENCE" (styled as a glowing power core)
 
-    Radiating spokes (6 superpowers):
-    1. "Pattern Detection" → connects to "Fraud Detection, Disease Diagnosis"
-    2. "Prediction" → connects to "Weather Forecasting, Stock Markets"
-    3. "Optimization" → connects to "Route Planning, Resource Allocation"
-    4. "Automation" → connects to "Self-Driving Cars, Smart Assistants"
-    5. "Insight Discovery" → connects to "Customer Behavior, Scientific Research"
-    6. "Decision Support" → connects to "Business Strategy, Policy Making"
+Radiating spokes (6 superpowers):
+1. "Pattern Detection" → connects to "Fraud Detection, Disease Diagnosis"
+2. "Prediction" → connects to "Weather Forecasting, Stock Markets"
+3. "Optimization" → connects to "Route Planning, Resource Allocation"
+4. "Automation" → connects to "Self-Driving Cars, Smart Assistants"
+5. "Insight Discovery" → connects to "Customer Behavior, Scientific Research"
+6. "Decision Support" → connects to "Business Strategy, Policy Making"
 
-    Interactive elements:
-    - Hover over each superpower to see a brief description
-    - Hover over applications to see real company examples (Netflix, Google, Amazon)
-    - Pulsing animation on central node to draw attention
+Interactive elements:
+- Hover over each superpower to see a brief description
+- Hover over applications to see real company examples (Netflix, Google, Amazon)
+- Pulsing animation on central node to draw attention
 
-    Visual style: Comic book / superhero aesthetic with bold colors and action lines
-    Color scheme: Blue core, radiating yellow/gold spokes, green application nodes
+Visual style: Comic book / superhero aesthetic with bold colors and action lines
+Color scheme: Blue core, radiating yellow/gold spokes, green application nodes
 
-    Implementation: HTML/CSS/JavaScript with SVG graphics
+Implementation: HTML/CSS/JavaScript with SVG graphics
 </details>
 
 ## What Exactly Is Data Science?
@@ -139,44 +139,44 @@ Each of these is a variable. And here's where it gets interesting: the TYPE of v
 #### Diagram: Variable Types Decision Tree
 
 <details markdown="1">
-    <summary>Variable Types Decision Tree</summary>
-    Type: workflow
+<summary>Variable Types Decision Tree</summary>
+Type: workflow
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Enable students to correctly classify any variable they encounter into its proper type
+Learning Objective: Enable students to correctly classify any variable they encounter into its proper type
 
-    Purpose: Guide students through identifying variable types with a simple decision tree
+Purpose: Guide students through identifying variable types with a simple decision tree
 
-    Visual style: Flowchart with decision diamonds and endpoint rectangles
+Visual style: Flowchart with decision diamonds and endpoint rectangles
 
-    Starting point: "What kind of variable is this?"
+Starting point: "What kind of variable is this?"
 
-    Decision 1: "Can you do math with it?"
-    - YES → "NUMERICAL DATA" path
-    - NO → "CATEGORICAL DATA" path
+Decision 1: "Can you do math with it?"
+- YES → "NUMERICAL DATA" path
+- NO → "CATEGORICAL DATA" path
 
-    NUMERICAL path continues:
-    Decision 2: "Can it be any value (including decimals)?"
-    - YES → Endpoint: "Continuous" (example: height = 5.7 feet)
-    - NO → Endpoint: "Discrete" (example: number of siblings = 2)
+NUMERICAL path continues:
+Decision 2: "Can it be any value (including decimals)?"
+- YES → Endpoint: "Continuous" (example: height = 5.7 feet)
+- NO → Endpoint: "Discrete" (example: number of siblings = 2)
 
-    CATEGORICAL path continues:
-    Decision 3: "Is there a meaningful order?"
-    - YES → Endpoint: "Ordinal" (example: grade levels Freshman < Senior)
-    - NO → Endpoint: "Nominal" (example: eye color - no order)
+CATEGORICAL path continues:
+Decision 3: "Is there a meaningful order?"
+- YES → Endpoint: "Ordinal" (example: grade levels Freshman < Senior)
+- NO → Endpoint: "Nominal" (example: eye color - no order)
 
-    Color coding:
-    - Decision diamonds: Yellow
-    - Numerical endpoints: Blue
-    - Categorical endpoints: Green
-    - Examples: Gray italic text
+Color coding:
+- Decision diamonds: Yellow
+- Numerical endpoints: Blue
+- Categorical endpoints: Green
+- Examples: Gray italic text
 
-    Interactive elements:
-    - Hover over each endpoint to see 3 more examples
-    - Click "Test Yourself" button to get a random variable to classify
+Interactive elements:
+- Hover over each endpoint to see 3 more examples
+- Click "Test Yourself" button to get a random variable to classify
 
-    Implementation: HTML/CSS/JavaScript flowchart
+Implementation: HTML/CSS/JavaScript flowchart
 </details>
 
 ## The Four Types of Data
@@ -229,49 +229,49 @@ There are four measurement scales, from least to most informative:
 #### Diagram: Measurement Scales Pyramid
 
 <details markdown="1">
-    <summary>Measurement Scales Pyramid</summary>
-    Type: infographic
+<summary>Measurement Scales Pyramid</summary>
+Type: infographic
 
-    Bloom Taxonomy: Remember (L1)
+Bloom Taxonomy: Remember (L1)
 
-    Learning Objective: Help students remember the four measurement scales and what operations each allows
+Learning Objective: Help students remember the four measurement scales and what operations each allows
 
-    Purpose: Visualize measurement scales as a hierarchy where each level adds capabilities
+Purpose: Visualize measurement scales as a hierarchy where each level adds capabilities
 
-    Layout: Pyramid with four layers, widest at bottom
+Layout: Pyramid with four layers, widest at bottom
 
-    Layers (bottom to top):
-    1. NOMINAL (base, widest)
-       - Operations: = ≠ (equality only)
-       - Example: "Jersey numbers"
-       - Color: Light gray
+Layers (bottom to top):
+1. NOMINAL (base, widest)
+   - Operations: = ≠ (equality only)
+   - Example: "Jersey numbers"
+   - Color: Light gray
 
-    2. ORDINAL
-       - Operations: = ≠ < > (equality + ordering)
-       - Example: "Race finishing positions"
-       - Color: Light blue
+2. ORDINAL
+   - Operations: = ≠ < > (equality + ordering)
+   - Example: "Race finishing positions"
+   - Color: Light blue
 
-    3. INTERVAL
-       - Operations: = ≠ < > + - (add equal intervals)
-       - Example: "Temperature in Fahrenheit"
-       - Color: Light green
+3. INTERVAL
+   - Operations: = ≠ < > + - (add equal intervals)
+   - Example: "Temperature in Fahrenheit"
+   - Color: Light green
 
-    4. RATIO (top, narrowest)
-       - Operations: = ≠ < > + - × ÷ (full arithmetic)
-       - Example: "Height in centimeters"
-       - Color: Gold (representing "gold standard")
+4. RATIO (top, narrowest)
+   - Operations: = ≠ < > + - × ÷ (full arithmetic)
+   - Example: "Height in centimeters"
+   - Color: Gold (representing "gold standard")
 
-    Side annotations:
-    - Arrow pointing up: "More mathematical operations possible"
-    - Arrow pointing down: "More variables fit this category"
+Side annotations:
+- Arrow pointing up: "More mathematical operations possible"
+- Arrow pointing down: "More variables fit this category"
 
-    Interactive elements:
-    - Hover over each level to see 5 example variables
-    - Click to see which statistical tests are appropriate for each level
+Interactive elements:
+- Hover over each level to see 5 example variables
+- Click to see which statistical tests are appropriate for each level
 
-    Visual style: 3D pyramid with glowing edges, game achievement aesthetic
+Visual style: 3D pyramid with glowing edges, game achievement aesthetic
 
-    Implementation: CSS 3D transforms or SVG
+Implementation: CSS 3D transforms or SVG
 </details>
 
 ## Independent and Dependent Variables: Cause and Effect
@@ -299,55 +299,55 @@ Understanding this relationship is HUGE. It's the foundation of prediction. If y
 #### Diagram: Independent vs Dependent Variable MicroSim
 
 <details markdown="1">
-    <summary>Study Time vs Test Score Simulator</summary>
-    Type: microsim
+<summary>Study Time vs Test Score Simulator</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Let students experiment with changing an independent variable and observe how the dependent variable responds, building intuition for cause-and-effect relationships
+Learning Objective: Let students experiment with changing an independent variable and observe how the dependent variable responds, building intuition for cause-and-effect relationships
 
-    Canvas layout (700x450px):
-    - Main area (500x400): Scatter plot visualization
-    - Right panel (200x400): Controls and stats
+Canvas layout (700x450px):
+- Main area (500x400): Scatter plot visualization
+- Right panel (200x400): Controls and stats
 
-    Visual elements:
-    - Scatter plot with "Hours Studied" on X-axis (0-10 hours)
-    - "Test Score" on Y-axis (0-100 points)
-    - Data points appear as student emoji icons
-    - Trend line showing relationship
-    - Confidence band around trend line
+Visual elements:
+- Scatter plot with "Hours Studied" on X-axis (0-10 hours)
+- "Test Score" on Y-axis (0-100 points)
+- Data points appear as student emoji icons
+- Trend line showing relationship
+- Confidence band around trend line
 
-    Interactive controls:
-    - Slider: "Add Student" - Click to add a new random data point
-    - Slider: "Relationship Strength" (0-100%) - Controls how predictable scores are from study time
-    - Button: "Generate Class of 30" - Creates realistic dataset
-    - Button: "Clear All" - Reset visualization
-    - Toggle: "Show Trend Line" - Display/hide regression line
-    - Toggle: "Show Prediction" - Highlight predicted vs actual
+Interactive controls:
+- Slider: "Add Student" - Click to add a new random data point
+- Slider: "Relationship Strength" (0-100%) - Controls how predictable scores are from study time
+- Button: "Generate Class of 30" - Creates realistic dataset
+- Button: "Clear All" - Reset visualization
+- Toggle: "Show Trend Line" - Display/hide regression line
+- Toggle: "Show Prediction" - Highlight predicted vs actual
 
-    Display stats:
-    - Number of students
-    - Average study time
-    - Average test score
-    - Correlation strength (with emoji: 💪 strong, 🤷 weak)
+Display stats:
+- Number of students
+- Average study time
+- Average test score
+- Correlation strength (with emoji: 💪 strong, 🤷 weak)
 
-    Default parameters:
-    - Relationship strength: 70%
-    - Start with 10 sample students
-    - Trend line visible
+Default parameters:
+- Relationship strength: 70%
+- Start with 10 sample students
+- Trend line visible
 
-    Behavior:
-    - When relationship strength is high, points cluster tightly around trend line
-    - When strength is low, points scatter widely (more randomness)
-    - Clicking on the plot shows "If you study X hours, you'd expect a score around Y"
-    - Fun messages appear: "Whoa, that student beat the odds!" for outliers
+Behavior:
+- When relationship strength is high, points cluster tightly around trend line
+- When strength is low, points scatter widely (more randomness)
+- Clicking on the plot shows "If you study X hours, you'd expect a score around Y"
+- Fun messages appear: "Whoa, that student beat the odds!" for outliers
 
-    Educational message displayed:
-    "The INDEPENDENT variable (study time) is what you control.
-    The DEPENDENT variable (test score) is what you measure.
-    Notice: More study time TENDS to mean better scores, but there's always variation!"
+Educational message displayed:
+"The INDEPENDENT variable (study time) is what you control.
+The DEPENDENT variable (test score) is what you measure.
+Notice: More study time TENDS to mean better scores, but there's always variation!"
 
-    Implementation: p5.js with simple linear regression
+Implementation: p5.js with simple linear regression
 </details>
 
 ## Datasets: Your Data Organized and Ready
@@ -413,67 +413,67 @@ The workflow has several key stages:
 #### Diagram: Data Science Workflow Hero's Journey
 
 <details markdown="1">
-    <summary>Data Science Workflow as Hero's Journey</summary>
-    Type: workflow
+<summary>Data Science Workflow as Hero's Journey</summary>
+Type: workflow
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students understand the iterative nature of the data science workflow and see it as an adventure rather than a checklist
+Learning Objective: Help students understand the iterative nature of the data science workflow and see it as an adventure rather than a checklist
 
-    Purpose: Present data science workflow as an engaging hero's journey with circular/iterative flow
+Purpose: Present data science workflow as an engaging hero's journey with circular/iterative flow
 
-    Visual style: Circular journey map with adventure game aesthetic
+Visual style: Circular journey map with adventure game aesthetic
 
-    Journey stages (arranged in circle):
+Journey stages (arranged in circle):
 
-    1. "The Call to Adventure" - PROBLEM DEFINITION
-       Icon: Question mark in a thought bubble
-       Hover text: "A mystery emerges! What question burns in your mind?"
-       Color: Purple
+1. "The Call to Adventure" - PROBLEM DEFINITION
+   Icon: Question mark in a thought bubble
+   Hover text: "A mystery emerges! What question burns in your mind?"
+   Color: Purple
 
-    2. "Gathering Allies" - DATA COLLECTION
-       Icon: Treasure chest opening
-       Hover text: "Seek out the data you need from databases, surveys, and APIs"
-       Color: Gold
+2. "Gathering Allies" - DATA COLLECTION
+   Icon: Treasure chest opening
+   Hover text: "Seek out the data you need from databases, surveys, and APIs"
+   Color: Gold
 
-    3. "Trials and Tribulations" - DATA CLEANING
-       Icon: Broom sweeping bugs
-       Hover text: "Face the chaos! Fix errors, handle missing values, tame the mess"
-       Color: Orange
+3. "Trials and Tribulations" - DATA CLEANING
+   Icon: Broom sweeping bugs
+   Hover text: "Face the chaos! Fix errors, handle missing values, tame the mess"
+   Color: Orange
 
-    4. "The Revelation" - EXPLORATORY ANALYSIS
-       Icon: Magnifying glass with sparkles
-       Hover text: "Visualize and explore. Patterns begin to emerge from the fog"
-       Color: Blue
+4. "The Revelation" - EXPLORATORY ANALYSIS
+   Icon: Magnifying glass with sparkles
+   Hover text: "Visualize and explore. Patterns begin to emerge from the fog"
+   Color: Blue
 
-    5. "Forging the Weapon" - MODELING
-       Icon: Anvil with hammer
-       Hover text: "Build your predictive model—your weapon against uncertainty"
-       Color: Red
+5. "Forging the Weapon" - MODELING
+   Icon: Anvil with hammer
+   Hover text: "Build your predictive model—your weapon against uncertainty"
+   Color: Red
 
-    6. "The Ultimate Test" - EVALUATION
-       Icon: Target with arrow
-       Hover text: "Does your model actually work? Time to find out!"
-       Color: Green
+6. "The Ultimate Test" - EVALUATION
+   Icon: Target with arrow
+   Hover text: "Does your model actually work? Time to find out!"
+   Color: Green
 
-    7. "Return with the Elixir" - COMMUNICATION
-       Icon: Scroll with graph
-       Hover text: "Share your discoveries! Tell the story your data revealed"
-       Color: Teal
+7. "Return with the Elixir" - COMMUNICATION
+   Icon: Scroll with graph
+   Hover text: "Share your discoveries! Tell the story your data revealed"
+   Color: Teal
 
-    Center of circle: "DATA SCIENCE QUEST"
+Center of circle: "DATA SCIENCE QUEST"
 
-    Arrows showing flow:
-    - Forward arrows between each stage
-    - Dotted "return" arrows from later stages back to earlier ones (showing iteration)
-    - Labels on return arrows: "Need more data?", "Model not working?", "New questions?"
+Arrows showing flow:
+- Forward arrows between each stage
+- Dotted "return" arrows from later stages back to earlier ones (showing iteration)
+- Labels on return arrows: "Need more data?", "Model not working?", "New questions?"
 
-    Interactive elements:
-    - Click each stage to see 2-3 real-world examples
-    - Hover for detailed description
-    - Animation: Glowing "current stage" effect that cycles through
+Interactive elements:
+- Click each stage to see 2-3 real-world examples
+- Hover for detailed description
+- Animation: Glowing "current stage" effect that cycles through
 
-    Implementation: SVG with JavaScript interactivity
+Implementation: SVG with JavaScript interactivity
 </details>
 
 ### Problem Definition: Starting Your Quest
@@ -593,68 +593,68 @@ Congratulations! You've just acquired the foundational vocabulary of data scienc
 #### Diagram: Chapter 1 Concept Mind Map
 
 <details markdown="1">
-    <summary>Introduction to Data Science Concept Map</summary>
-    Type: graph-model
+<summary>Introduction to Data Science Concept Map</summary>
+Type: graph-model
 
-    Bloom Taxonomy: Analyze (L4)
+Bloom Taxonomy: Analyze (L4)
 
-    Learning Objective: Help students see how all concepts from Chapter 1 connect and relate to each other
+Learning Objective: Help students see how all concepts from Chapter 1 connect and relate to each other
 
-    Purpose: Visual summary showing relationships between all 20 concepts covered
+Purpose: Visual summary showing relationships between all 20 concepts covered
 
-    Node types:
-    1. Core Concept (large gold circles)
-       - Data Science, Data, Variables, Dataset
+Node types:
+1. Core Concept (large gold circles)
+   - Data Science, Data, Variables, Dataset
 
-    2. Data Types (medium blue squares)
-       - Numerical Data, Categorical Data, Ordinal Data, Nominal Data
+2. Data Types (medium blue squares)
+   - Numerical Data, Categorical Data, Ordinal Data, Nominal Data
 
-    3. Variable Roles (medium green diamonds)
-       - Independent Variable, Dependent Variable, Feature, Target Variable
+3. Variable Roles (medium green diamonds)
+   - Independent Variable, Dependent Variable, Feature, Target Variable
 
-    4. Workflow (medium purple hexagons)
-       - Data Science Workflow, Problem Definition, Data Collection
+4. Workflow (medium purple hexagons)
+   - Data Science Workflow, Problem Definition, Data Collection
 
-    5. Tools & Practices (medium orange rectangles)
-       - Python Programming, Documentation
+5. Tools & Practices (medium orange rectangles)
+   - Python Programming, Documentation
 
-    6. Structure (medium teal triangles)
-       - Measurement Scales, Observation
+6. Structure (medium teal triangles)
+   - Measurement Scales, Observation
 
-    Edge types:
-    1. "is a type of" (solid gray) - e.g., Numerical → Data Types
-    2. "contains" (dashed blue) - e.g., Dataset → Observation
-    3. "uses" (dotted green) - e.g., Data Science → Python Programming
-    4. "same as" (double line) - e.g., Feature ↔ Independent Variable
+Edge types:
+1. "is a type of" (solid gray) - e.g., Numerical → Data Types
+2. "contains" (dashed blue) - e.g., Dataset → Observation
+3. "uses" (dotted green) - e.g., Data Science → Python Programming
+4. "same as" (double line) - e.g., Feature ↔ Independent Variable
 
-    Layout: Hierarchical with Data Science at top
+Layout: Hierarchical with Data Science at top
 
-    Key relationships:
-    - Data Science → Data (works with)
-    - Data → Variables (organized into)
-    - Variables → Data Types (classified by)
-    - Data Types → splits to Numerical and Categorical
-    - Numerical/Categorical → further subtypes
-    - Variables → splits to Independent/Dependent
-    - Feature = Independent Variable (in prediction context)
-    - Target Variable = Dependent Variable (in prediction context)
-    - Data Science Workflow → Problem Definition → Data Collection
-    - Data Science → Python Programming (implemented using)
-    - All activities → Documentation (recorded through)
+Key relationships:
+- Data Science → Data (works with)
+- Data → Variables (organized into)
+- Variables → Data Types (classified by)
+- Data Types → splits to Numerical and Categorical
+- Numerical/Categorical → further subtypes
+- Variables → splits to Independent/Dependent
+- Feature = Independent Variable (in prediction context)
+- Target Variable = Dependent Variable (in prediction context)
+- Data Science Workflow → Problem Definition → Data Collection
+- Data Science → Python Programming (implemented using)
+- All activities → Documentation (recorded through)
 
-    Interactive features:
-    - Hover: Show concept definition
-    - Click: Highlight all connected concepts
-    - Double-click: Expand to show examples
-    - Filter buttons: Show only certain node types
+Interactive features:
+- Hover: Show concept definition
+- Click: Highlight all connected concepts
+- Double-click: Expand to show examples
+- Filter buttons: Show only certain node types
 
-    Visual styling:
-    - Node size reflects importance (centrality)
-    - Edge thickness reflects strength of relationship
-    - Animated pulses along edges when hovering
+Visual styling:
+- Node size reflects importance (centrality)
+- Edge thickness reflects strength of relationship
+- Animated pulses along edges when hovering
 
-    Implementation: vis-network JavaScript library
-    Canvas size: 800x600px
+Implementation: vis-network JavaScript library
+Canvas size: 800x600px
 </details>
 
 ## What's Next?
