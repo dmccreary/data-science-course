@@ -33,11 +33,6 @@ high-school senior.  Make the tone fun and humorous with the theme that this cou
 Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
 Focus on the more modern plotly over matplotlib.  Put a strong emphasis on interactivity.
 
-
-
-
-
-
 run the chapter-content-generator skill on @docs/chapters/07-simple-linear-regression/index.md Make the reading level a 
 high-school senior.  Make the tone fun and humorous with the theme that this course will give them a data science superpower. 
 Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
@@ -49,27 +44,29 @@ high-school senior.  Make the tone fun and humorous with the theme that this cou
 Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
 Focus on the more modern plotly over matplotlib.  Put a strong emphasis on interactivity.
 
+
 run the chapter-content-generator skill on @docs/chapters/09-multiple-linear-regression/index.md Make the reading level a 
 high-school senior.  Make the tone fun and humorous with the theme that this course will give them a data science superpower. 
 Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book.
 When creating the text within a <details> element, do not indent the text. 
 
+
 run the chapter-content-generator skill on @docs/chapters/10-numpy-computing/index.md Make the reading level a 
 high-school senior.  Make the tone fun and humorous with the theme that this course will give them a data science superpower. 
-Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
+Make it positive and optimistic.  Make it compelling so the readers are motivated to read the entire book. 
 When creating the text within a <details> element, do not indent the text. 
 
 run the chapter-content-generator skill on @docs/chapters/11-non-linear-models-regularization/index.md Make the reading level a 
 high-school senior.  Make the tone fun and humorous with the theme that this course will give them a data science superpower. 
-Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
+Make it positive and optimistic.  Make it compelling so the readers are motivated to read the entire book. 
 When creating the text within a <details> element, do not indent the text.
 
 run the chapter-content-generator skill on @docs/chapters/12-intro-to-machine-learning/index.md Make the reading level a 
 high-school senior.  Make the tone fun and humorous with the theme that this course will give them a data science superpower. 
-Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
+Make it positive and optimistic.  Make it compelling so the readers are motivated to read the entire book. 
 When creating the text within a <details> element, do not indent the text.
 
 run the chapter-content-generator skill on @docs/chapters/13-neural-networks/index.md Make the reading level a 
 high-school senior.  Make the tone fun and humorous with the theme that this course will give them a data science superpower. 
-Make it positive and optimistic.  Make it compelling so the are motivated to read the entire book. 
+Make it positive and optimistic.  Make it compelling so the readers are motivated to read the entire book. 
 When creating the text within a <details> element, do not indent the text.
