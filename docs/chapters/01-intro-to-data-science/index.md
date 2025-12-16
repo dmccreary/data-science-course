@@ -1,8 +1,10 @@
 ---
 title: Introduction to Data Science
-description: Your journey to becoming a data science superhero starts here
+description: A data science superhero journey starts here with this fun intro chapter.
 generated_by: chapter-content-generator skill
 date: 2025-12-15
+image: /img/data-science-quest.jpg
+og:image: /img/data-science-quest.jpg
 version: 0.03
 ---
 
@@ -393,6 +395,8 @@ Here's how features and targets relate to independent/dependent variables:
 | Target Variable | Dependent Variable | Output to predict |
 
 ## The Data Science Workflow: Your Hero's Journey
+
+![Data Science Quest](../../img/data-science-quest.jpg)
 
 Every great hero follows a journey, and data scientists are no different. The **data science workflow** is your roadmap from "I have a question" to "I have an answer (with evidence)."
 
