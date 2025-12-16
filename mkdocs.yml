@@ -72,6 +72,7 @@ nav:
     - Least Squares: sims/least-squares/index.md
     - Learning Graph: sims/learning-graph/index.md
     - Graph Viewer: sims/graph-viewer/index.md
+    - Data Science Hero's Journey: sims/data-science-heros-journey/index.md
     - 10 Stats MicroSims Map: sims/ten-stats/index.md
     - Distribution MicroSims:
       - Normal Distribution: sims/normal-dice-distribution/index.md

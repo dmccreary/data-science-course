@@ -1,0 +1,62 @@
+{
+  "title": "Data Science Hero's Journey",
+  "description": "An interactive circular visualization of the data science workflow presented as Joseph Campbell's hero's journey with seven stages from problem definition to communication.",
+  "creator": "Dan McCreary",
+  "subject": ["Data Science", "Workflow", "Education", "Hero's Journey"],
+  "date": "2025-12-16",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "educational": {
+    "gradeLevel": "High School to Undergraduate",
+    "subjectArea": "Data Science",
+    "topic": "Data Science Workflow",
+    "learningObjectives": [
+      "Understand the seven stages of the data science workflow",
+      "Recognize that data science is an iterative process",
+      "Connect each stage to real-world examples",
+      "Appreciate the narrative structure of data science projects"
+    ],
+    "bloomsTaxonomy": ["Remember", "Understand", "Apply"],
+    "duration": "10-15 minutes",
+    "prerequisites": "None"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "drawHeight": 550,
+      "controlHeight": 50
+    },
+    "responsive": true,
+    "dependencies": ["p5.js CDN"],
+    "accessibility": ["Screen reader description", "High contrast colors"]
+  },
+  "controls": [
+    {
+      "type": "checkbox",
+      "name": "Auto-animate stages",
+      "description": "Toggle automatic cycling through stages with glowing effect"
+    },
+    {
+      "type": "hover",
+      "name": "Stage hover",
+      "description": "Hover over any stage node to see detailed description"
+    },
+    {
+      "type": "click",
+      "name": "Stage click",
+      "description": "Click any stage to view real-world examples panel"
+    }
+  ],
+  "model": {
+    "type": "Conceptual visualization",
+    "stages": 7,
+    "relationships": [
+      "Forward flow between consecutive stages",
+      "Return arrows showing iteration (Evaluation to Data Collection, Modeling to Data Cleaning, Communication to Problem Definition)"
+    ]
+  }
+}
