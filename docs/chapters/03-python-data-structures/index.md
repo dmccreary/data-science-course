@@ -57,53 +57,53 @@ This chapter is where you graduate from "knowing about data science" to actually
 #### Diagram: Data Structure Hierarchy
 
 <details markdown="1">
-    <summary>Python Data Structure Hierarchy</summary>
-    Type: diagram
+<summary>Python Data Structure Hierarchy</summary>
+Type: diagram
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students visualize the relationship between Python's native data structures and pandas structures
+Learning Objective: Help students visualize the relationship between Python's native data structures and pandas structures
 
-    Purpose: Show how basic Python structures lead to more powerful pandas structures
+Purpose: Show how basic Python structures lead to more powerful pandas structures
 
-    Layout: Hierarchical tree diagram, top to bottom
+Layout: Hierarchical tree diagram, top to bottom
 
-    Level 1 (Top): "DATA STRUCTURES"
-    - Color: Gold
-    - Central hub
+Level 1 (Top): "DATA STRUCTURES"
+- Color: Gold
+- Central hub
 
-    Level 2 (Split into two branches):
+Level 2 (Split into two branches):
 
-    Branch A: "Python Built-in"
-    - Color: Blue
-    - Children:
-      - Lists (ordered, mutable)
-      - Dictionaries (key-value pairs)
-      - Tuples (ordered, immutable)
+Branch A: "Python Built-in"
+- Color: Blue
+- Children:
+  - Lists (ordered, mutable)
+  - Dictionaries (key-value pairs)
+  - Tuples (ordered, immutable)
 
-    Branch B: "Pandas Structures"
-    - Color: Green
-    - Children:
-      - Series (1D labeled array)
-      - DataFrame (2D labeled table)
+Branch B: "Pandas Structures"
+- Color: Green
+- Children:
+  - Series (1D labeled array)
+  - DataFrame (2D labeled table)
 
-    Level 3 (Under pandas):
-    - DataFrame components: Index, Columns, Rows
-    - Series: labeled as "Single column of DataFrame"
+Level 3 (Under pandas):
+- DataFrame components: Index, Columns, Rows
+- Series: labeled as "Single column of DataFrame"
 
-    Arrows showing:
-    - "List → can become → Series"
-    - "Dictionary → can become → DataFrame"
-    - "Series + Series → DataFrame"
+Arrows showing:
+- "List → can become → Series"
+- "Dictionary → can become → DataFrame"
+- "Series + Series → DataFrame"
 
-    Visual style: Modern flowchart with rounded boxes
+Visual style: Modern flowchart with rounded boxes
 
-    Interactive elements:
-    - Hover over each structure to see quick definition
-    - Click to see code example
-    - Color coding: Blue for Python native, Green for pandas
+Interactive elements:
+- Hover over each structure to see quick definition
+- Click to see code example
+- Color coding: Blue for Python native, Green for pandas
 
-    Implementation: SVG with CSS hover effects
+Implementation: SVG with CSS hover effects
 </details>
 
 ## Python's Built-in Data Structures
@@ -229,50 +229,50 @@ For now, just know that arrays exist and are important. We'll come back to them 
 #### Diagram: Python Data Structures Comparison MicroSim
 
 <details markdown="1">
-    <summary>Data Structure Selection Helper</summary>
-    Type: microsim
+<summary>Data Structure Selection Helper</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Help students choose the right data structure for different scenarios
+Learning Objective: Help students choose the right data structure for different scenarios
 
-    Canvas layout (700x500px):
-    - Left side (400x500): Scenario display and answer area
-    - Right side (300x500): Score tracker and hints
+Canvas layout (700x500px):
+- Left side (400x500): Scenario display and answer area
+- Right side (300x500): Score tracker and hints
 
-    Visual elements:
-    - Scenario card showing a data storage problem
-    - Four buttons: List, Dictionary, Tuple, Array
-    - Feedback indicator (correct/incorrect with explanation)
-    - Progress bar showing scenarios completed
-    - Score counter
+Visual elements:
+- Scenario card showing a data storage problem
+- Four buttons: List, Dictionary, Tuple, Array
+- Feedback indicator (correct/incorrect with explanation)
+- Progress bar showing scenarios completed
+- Score counter
 
-    Scenarios (10 total):
-    1. "Store student names in order of arrival" → List
-    2. "Map employee IDs to their salaries" → Dictionary
-    3. "Store GPS coordinates that won't change" → Tuple
-    4. "Hold 1 million numbers for fast math" → Array
-    5. "Keep a to-do list you'll modify" → List
-    6. "Store configuration settings by name" → Dictionary
-    7. "Return both min and max from a function" → Tuple
-    8. "Store pixel values for image processing" → Array
-    9. "Track items and their quantities" → Dictionary
-    10. "Keep records of (x, y) point pairs" → Tuple or List
+Scenarios (10 total):
+1. "Store student names in order of arrival" → List
+2. "Map employee IDs to their salaries" → Dictionary
+3. "Store GPS coordinates that won't change" → Tuple
+4. "Hold 1 million numbers for fast math" → Array
+5. "Keep a to-do list you'll modify" → List
+6. "Store configuration settings by name" → Dictionary
+7. "Return both min and max from a function" → Tuple
+8. "Store pixel values for image processing" → Array
+9. "Track items and their quantities" → Dictionary
+10. "Keep records of (x, y) point pairs" → Tuple or List
 
-    Interactive controls:
-    - Click data structure button to answer
-    - "Next Scenario" button
-    - "Show Hint" button
-    - "Reset Quiz" button
+Interactive controls:
+- Click data structure button to answer
+- "Next Scenario" button
+- "Show Hint" button
+- "Reset Quiz" button
 
-    Behavior:
-    - Correct answer: Green flash, +10 points, explanation shown
-    - Incorrect: Red flash, correct answer revealed with explanation
-    - End: Summary showing areas to review
+Behavior:
+- Correct answer: Green flash, +10 points, explanation shown
+- Incorrect: Red flash, correct answer revealed with explanation
+- End: Summary showing areas to review
 
-    Visual style: Quiz game aesthetic with achievement badges
+Visual style: Quiz game aesthetic with achievement badges
 
-    Implementation: p5.js with scenario array and scoring logic
+Implementation: p5.js with scenario array and scoring logic
 </details>
 
 ## Enter Pandas: Your Data Science Superweapon
@@ -379,66 +379,66 @@ This is the structure you'll work with 90% of the time in data science. Let's br
 #### Diagram: DataFrame Anatomy
 
 <details markdown="1">
-    <summary>DataFrame Anatomy Interactive Diagram</summary>
-    Type: infographic
+<summary>DataFrame Anatomy Interactive Diagram</summary>
+Type: infographic
 
-    Bloom Taxonomy: Remember (L1)
+Bloom Taxonomy: Remember (L1)
 
-    Learning Objective: Help students identify and remember the components of a DataFrame
+Learning Objective: Help students identify and remember the components of a DataFrame
 
-    Purpose: Visual breakdown of DataFrame structure with labeled components
+Purpose: Visual breakdown of DataFrame structure with labeled components
 
-    Layout: Central DataFrame table with callouts pointing to each component
+Layout: Central DataFrame table with callouts pointing to each component
 
-    Main visual: A 4x3 DataFrame table displaying:
-    ```
-              Col_A   Col_B   Col_C
-    row_0      10      20      30
-    row_1      40      50      60
-    row_2      70      80      90
-    row_3     100     110     120
-    ```
+Main visual: A 4x3 DataFrame table displaying:
+```
+          Col_A   Col_B   Col_C
+row_0      10      20      30
+row_1      40      50      60
+row_2      70      80      90
+row_3     100     110     120
+```
 
-    Callouts (numbered, with leader lines):
+Callouts (numbered, with leader lines):
 
-    1. INDEX (pointing to row labels on left)
-       - "Row labels - can be numbers, strings, or dates"
-       - "Access with: df.index"
-       - Color: Blue
+1. INDEX (pointing to row labels on left)
+   - "Row labels - can be numbers, strings, or dates"
+   - "Access with: df.index"
+   - Color: Blue
 
-    2. COLUMNS (pointing to column headers)
-       - "Column names - usually strings"
-       - "Access with: df.columns"
-       - Color: Green
+2. COLUMNS (pointing to column headers)
+   - "Column names - usually strings"
+   - "Access with: df.columns"
+   - Color: Green
 
-    3. ROW (highlighting entire row_1)
-       - "One observation/record"
-       - "Access with: df.loc['row_1'] or df.iloc[1]"
-       - Color: Orange
+3. ROW (highlighting entire row_1)
+   - "One observation/record"
+   - "Access with: df.loc['row_1'] or df.iloc[1]"
+   - Color: Orange
 
-    4. COLUMN (highlighting entire Col_B)
-       - "One variable/feature"
-       - "Access with: df['Col_B']"
-       - Color: Purple
+4. COLUMN (highlighting entire Col_B)
+   - "One variable/feature"
+   - "Access with: df['Col_B']"
+   - Color: Purple
 
-    5. CELL (highlighting intersection of row_1 and Col_B = 50)
-       - "Single value"
-       - "Access with: df.loc['row_1', 'Col_B']"
-       - Color: Red
+5. CELL (highlighting intersection of row_1 and Col_B = 50)
+   - "Single value"
+   - "Access with: df.loc['row_1', 'Col_B']"
+   - Color: Red
 
-    6. VALUES (pointing to all numbers)
-       - "The actual data (NumPy array underneath)"
-       - "Access with: df.values"
-       - Color: Gray
+6. VALUES (pointing to all numbers)
+   - "The actual data (NumPy array underneath)"
+   - "Access with: df.values"
+   - Color: Gray
 
-    Interactive elements:
-    - Hover over each component to highlight it
-    - Click to see code example for accessing that component
-    - Toggle "Show Code" to see access patterns
+Interactive elements:
+- Hover over each component to highlight it
+- Click to see code example for accessing that component
+- Toggle "Show Code" to see access patterns
 
-    Visual style: Clean spreadsheet look with color highlights
+Visual style: Clean spreadsheet look with color highlights
 
-    Implementation: HTML/CSS with JavaScript interactivity
+Implementation: HTML/CSS with JavaScript interactivity
 </details>
 
 ### Understanding Index, Columns, and Rows
@@ -548,62 +548,62 @@ df = pd.read_csv("data.csv", index_col="name")
 #### Diagram: Data Loading Workflow
 
 <details markdown="1">
-    <summary>CSV Loading Workflow</summary>
-    Type: workflow
+<summary>CSV Loading Workflow</summary>
+Type: workflow
 
-    Bloom Taxonomy: Understand (L2)
+Bloom Taxonomy: Understand (L2)
 
-    Learning Objective: Help students understand the complete process from CSV file to usable DataFrame
+Learning Objective: Help students understand the complete process from CSV file to usable DataFrame
 
-    Purpose: Visualize the journey of data from file to DataFrame
+Purpose: Visualize the journey of data from file to DataFrame
 
-    Visual style: Horizontal flowchart with icons
+Visual style: Horizontal flowchart with icons
 
-    Steps:
+Steps:
 
-    1. CSV FILE ON DISK
-       Icon: Document with ".csv" label
-       Label: "Raw text file with comma-separated values"
-       Color: Gray
+1. CSV FILE ON DISK
+   Icon: Document with ".csv" label
+   Label: "Raw text file with comma-separated values"
+   Color: Gray
 
-    2. pd.read_csv()
-       Icon: Pandas logo with arrow
-       Label: "Pandas reads and parses the file"
-       Color: Orange
+2. pd.read_csv()
+   Icon: Pandas logo with arrow
+   Label: "Pandas reads and parses the file"
+   Color: Orange
 
-    3. PARSING HAPPENS
-       Icon: Gears turning
-       Sub-steps shown below:
-       - "Detect delimiter"
-       - "Read header row"
-       - "Infer data types"
-       - "Handle missing values"
-       Color: Blue
+3. PARSING HAPPENS
+   Icon: Gears turning
+   Sub-steps shown below:
+   - "Detect delimiter"
+   - "Read header row"
+   - "Infer data types"
+   - "Handle missing values"
+   Color: Blue
 
-    4. DATAFRAME CREATED
-       Icon: Table grid
-       Label: "Data now in memory as DataFrame"
-       Color: Green
+4. DATAFRAME CREATED
+   Icon: Table grid
+   Label: "Data now in memory as DataFrame"
+   Color: Green
 
-    5. READY FOR ANALYSIS
-       Icon: Sparkles/magic wand
-       Label: "Filter, analyze, visualize!"
-       Color: Gold
+5. READY FOR ANALYSIS
+   Icon: Sparkles/magic wand
+   Label: "Filter, analyze, visualize!"
+   Color: Gold
 
-    Annotations:
-    - Below step 1: "Could be 100 rows or 100 million"
-    - Below step 4: "Lives in computer memory (RAM)"
-    - Below step 5: "This is where the fun begins"
+Annotations:
+- Below step 1: "Could be 100 rows or 100 million"
+- Below step 4: "Lives in computer memory (RAM)"
+- Below step 5: "This is where the fun begins"
 
-    Error path (branching from step 2):
-    - "FileNotFoundError" → "Check your file path!"
-    - "ParserError" → "Check file format and delimiter"
+Error path (branching from step 2):
+- "FileNotFoundError" → "Check your file path!"
+- "ParserError" → "Check file format and delimiter"
 
-    Interactive elements:
-    - Hover each step for detailed explanation
-    - Click to see common errors at each stage
+Interactive elements:
+- Hover each step for detailed explanation
+- Click to see common errors at each stage
 
-    Implementation: SVG with CSS animations
+Implementation: SVG with CSS animations
 </details>
 
 ## Data Inspection: Getting to Know Your Data
@@ -739,61 +739,61 @@ This is your first glimpse at what the data looks like statistically. Is the ave
 #### Diagram: Data Inspection Command Center
 
 <details markdown="1">
-    <summary>Data Inspection Dashboard MicroSim</summary>
-    Type: microsim
+<summary>Data Inspection Dashboard MicroSim</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Let students practice using inspection methods and see results immediately
+Learning Objective: Let students practice using inspection methods and see results immediately
 
-    Canvas layout (800x600px):
-    - Top area (800x100): Sample DataFrame display
-    - Left panel (300x500): Method buttons
-    - Right panel (500x500): Output display area
+Canvas layout (800x600px):
+- Top area (800x100): Sample DataFrame display
+- Left panel (300x500): Method buttons
+- Right panel (500x500): Output display area
 
-    Sample DataFrame (displayed at top):
-    Small 8x5 DataFrame with realistic data including:
-    - name (strings)
-    - age (integers with 1 missing)
-    - city (strings)
-    - score (floats with 1 missing)
-    - active (booleans)
+Sample DataFrame (displayed at top):
+Small 8x5 DataFrame with realistic data including:
+- name (strings)
+- age (integers with 1 missing)
+- city (strings)
+- score (floats with 1 missing)
+- active (booleans)
 
-    Method buttons (left panel):
-    - `.head()` with slider for n (1-8)
-    - `.tail()` with slider for n (1-8)
-    - `.shape`
-    - `.info()`
-    - `.describe()`
-    - `.columns`
-    - `.dtypes`
+Method buttons (left panel):
+- `.head()` with slider for n (1-8)
+- `.tail()` with slider for n (1-8)
+- `.shape`
+- `.info()`
+- `.describe()`
+- `.columns`
+- `.dtypes`
 
-    Output display (right panel):
-    - Shows result of selected method
-    - Formatted to look like Jupyter output
-    - Syntax highlighting for code
+Output display (right panel):
+- Shows result of selected method
+- Formatted to look like Jupyter output
+- Syntax highlighting for code
 
-    Interactive controls:
-    - Click method button to execute
-    - Adjust slider for head/tail n parameter
-    - "Show Code" toggle displays the Python code
-    - "Reset" button returns to initial state
+Interactive controls:
+- Click method button to execute
+- Adjust slider for head/tail n parameter
+- "Show Code" toggle displays the Python code
+- "Reset" button returns to initial state
 
-    Behavior:
-    - Clicking method shows its output
-    - Output updates immediately when parameters change
-    - Code panel shows exact command used
-    - Tooltips explain what each method returns
+Behavior:
+- Clicking method shows its output
+- Output updates immediately when parameters change
+- Code panel shows exact command used
+- Tooltips explain what each method returns
 
-    Educational annotations:
-    - For head/tail: "Notice: only shows [n] rows!"
-    - For shape: "(rows, columns) - easy to remember!"
-    - For info: "Look for non-null counts to find missing data"
-    - For describe: "Only numeric columns shown by default"
+Educational annotations:
+- For head/tail: "Notice: only shows [n] rows!"
+- For shape: "(rows, columns) - easy to remember!"
+- For info: "Look for non-null counts to find missing data"
+- For describe: "Only numeric columns shown by default"
 
-    Visual style: IDE/notebook aesthetic with dark mode option
+Visual style: IDE/notebook aesthetic with dark mode option
 
-    Implementation: p5.js with precomputed outputs
+Implementation: p5.js with precomputed outputs
 </details>
 
 ## Data Selection: Getting What You Need
@@ -885,68 +885,68 @@ This is incredibly powerful. Need all customers who spent over $100 in the last 
 #### Diagram: Data Selection Playground MicroSim
 
 <details markdown="1">
-    <summary>Interactive Data Selection Playground</summary>
-    Type: microsim
+<summary>Interactive Data Selection Playground</summary>
+Type: microsim
 
-    Bloom Taxonomy: Apply (L3)
+Bloom Taxonomy: Apply (L3)
 
-    Learning Objective: Let students practice different selection methods and see results in real-time
+Learning Objective: Let students practice different selection methods and see results in real-time
 
-    Canvas layout (850x600px):
-    - Top area (850x200): Full DataFrame display (10 rows x 5 cols)
-    - Bottom left (400x400): Selection builder
-    - Bottom right (450x400): Results display
+Canvas layout (850x600px):
+- Top area (850x200): Full DataFrame display (10 rows x 5 cols)
+- Bottom left (400x400): Selection builder
+- Bottom right (450x400): Results display
 
-    Sample DataFrame:
-    10 rows with columns: name, age, city, score, active
-    Mix of data types and some interesting patterns to query
+Sample DataFrame:
+10 rows with columns: name, age, city, score, active
+Mix of data types and some interesting patterns to query
 
-    Selection builder (tabs):
+Selection builder (tabs):
 
-    Tab 1: "Column Selection"
-    - Checkboxes for each column
-    - Shows: df[["selected", "columns"]]
+Tab 1: "Column Selection"
+- Checkboxes for each column
+- Shows: df[["selected", "columns"]]
 
-    Tab 2: "Row Selection (iloc)"
-    - Start index input
-    - End index input
-    - Shows: df.iloc[start:end]
+Tab 2: "Row Selection (iloc)"
+- Start index input
+- End index input
+- Shows: df.iloc[start:end]
 
-    Tab 3: "Row Selection (loc)"
-    - Dropdown of index labels
-    - Multi-select for multiple labels
-    - Shows: df.loc[[labels]]
+Tab 3: "Row Selection (loc)"
+- Dropdown of index labels
+- Multi-select for multiple labels
+- Shows: df.loc[[labels]]
 
-    Tab 4: "Boolean Filter"
-    - Column dropdown
-    - Operator dropdown (>, <, ==, >=, <=, !=)
-    - Value input
-    - "Add condition" button (for combining)
-    - Shows: df[df["col"] > value]
+Tab 4: "Boolean Filter"
+- Column dropdown
+- Operator dropdown (>, <, ==, >=, <=, !=)
+- Value input
+- "Add condition" button (for combining)
+- Shows: df[df["col"] > value]
 
-    Results display:
-    - Shows selected data as formatted table
-    - Shows shape of result
-    - Shows code used to generate selection
-    - Highlights selected cells in original DataFrame
+Results display:
+- Shows selected data as formatted table
+- Shows shape of result
+- Shows code used to generate selection
+- Highlights selected cells in original DataFrame
 
-    Interactive controls:
-    - Real-time update as selections change
-    - "Copy Code" button
-    - "Reset" button
-    - Syntax examples shown as hints
+Interactive controls:
+- Real-time update as selections change
+- "Copy Code" button
+- "Reset" button
+- Syntax examples shown as hints
 
-    Educational features:
-    - Color coding: selected rows/columns highlighted in original
-    - Error messages for invalid selections
-    - Hints: "Try selecting students with score > 80"
+Educational features:
+- Color coding: selected rows/columns highlighted in original
+- Error messages for invalid selections
+- Hints: "Try selecting students with score > 80"
 
-    Challenges (optional):
-    - "Select all students from New York"
-    - "Find the youngest student"
-    - "Get names of students who passed (score >= 70)"
+Challenges (optional):
+- "Select all students from New York"
+- "Find the youngest student"
+- "Get names of students who passed (score >= 70)"
 
-    Implementation: p5.js or React with pandas-like simulation
+Implementation: p5.js or React with pandas-like simulation
 </details>
 
 ## Putting It All Together: A Complete Workflow
