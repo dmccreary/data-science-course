@@ -60,6 +60,8 @@ By the end of this book, you'll be able to:
 
 Sound like a superpower? That's because it is.
 
+The concept map below previews the key skills and ideas you'll master throughout this course. Hover over each node to see how these superpowers connect and build upon each other.
+
 #### Data Science Superpower Concept Map
 
 <iframe src="../../sims/data-science-superpower/main.html" height="602px" width="100%" scrolling="no"></iframe>
@@ -104,6 +106,8 @@ Think about describing your classmates. You might note:
 - Their student ID (a unique identifier that varies)
 
 Each of these is a variable. And here's where it gets interesting: the TYPE of variable determines what you can do with it.
+
+How do you figure out what type a variable is? Use the decision tree below. Start at the top and answer each question—the flowchart will guide you to the correct classification. This simple process works for ANY variable you'll ever encounter.
 
 #### Diagram: Variable Types Decision Tree
 
@@ -198,7 +202,12 @@ There are four measurement scales, from least to most informative:
 !!! example "Why Does This Matter?"
     Knowing your measurement scale determines which analyses you can perform. You can calculate a mean height (ratio scale), but you can't calculate a "mean favorite color" (nominal scale). Using the wrong analysis on the wrong scale is like trying to measure your height with a thermometer—technically using a measurement tool, but completely useless.
 
+The pyramid below shows how measurement scales build on each other—each level adds new mathematical operations you can perform. Hover over each level to see examples and learn which statistical operations are valid at that scale.
+
 #### Diagram: Measurement Scales Pyramid
+
+<iframe src="../../sims/measurement-scales-pyramid/main.html" height="502px" width="100%" scrolling="no"></iframe>
+[View the Measurement Scales Pyramid Fullscreen](../../sims/measurement-scales-pyramid/main.html)
 
 <details markdown="1">
 <summary>Measurement Scales Pyramid</summary>
@@ -213,22 +222,23 @@ Purpose: Visualize measurement scales as a hierarchy where each level adds capab
 Layout: Pyramid with four layers, widest at bottom
 
 Layers (bottom to top):
-1. NOMINAL (base, widest)
+
+## 1. NOMINAL (base, widest)
    - Operations: = ≠ (equality only)
    - Example: "Jersey numbers"
    - Color: Light gray
 
-2. ORDINAL
+## 2. ORDINAL
    - Operations: = ≠ < > (equality + ordering)
    - Example: "Race finishing positions"
    - Color: Light blue
 
-3. INTERVAL
+## 3. INTERVAL
    - Operations: = ≠ < > + - (add equal intervals)
    - Example: "Temperature in Fahrenheit"
    - Color: Light green
 
-4. RATIO (top, narrowest)
+## 4. RATIO (top, narrowest)
    - Operations: = ≠ < > + - × ÷ (full arithmetic)
    - Example: "Height in centimeters"
    - Color: Gold (representing "gold standard")
@@ -245,6 +255,13 @@ Visual style: 3D pyramid with glowing edges, game achievement aesthetic
 
 Implementation: CSS 3D transforms or SVG
 </details>
+
+### Practice Makes Perfect: Sorting Variables
+
+Now that you understand the different data types and measurement scales, it's time to test your skills. The best way to master variable classification is through practice—the more variables you categorize, the more automatic it becomes.
+
+Use the interactive sorter below to classify variables into their correct categories. Don't worry if you make mistakes at first—that's how learning works! Pay attention to the feedback and think about WHY each variable belongs in its category.
+
 #### Diagram: Variable Type Sorter
 
 <iframe src="../../sims/variable-type-sorter/main.html" height="322px" width="100%" scrolling="no"></iframe>
@@ -273,6 +290,12 @@ Real-world examples:
 Understanding this relationship is HUGE. It's the foundation of prediction. If you know how an independent variable affects a dependent variable, you can predict outcomes. That's literally seeing the future.
 
 #### Diagram: Independent vs Dependent Variable MicroSim
+
+In the side quest below you can explore the relationship between a student's score on a test and how many hours
+they studied for that test.  You can use generated data or clear the plot and generate your own sample data by clicking on a point.  We encourage you to try adding a wide variety of data.  Can you make the test scores go down with more hours studying?
+
+<iframe src="../../sims/independent-dependent-variables/main.html" height="502px" width="100%" scrolling="no"></iframe>
+[Run the Independent vs Dependent Variable MicroSim Fullscreen](../../sims/independent-dependent-variables/main.html)
 
 <details markdown="1">
 <summary>Study Time vs Test Score Simulator</summary>
@@ -386,9 +409,13 @@ The workflow has several key stages:
 6. **Evaluation**: Testing how well your model works
 7. **Communication**: Sharing your findings with others
 
+The visualization below maps this workflow to the classic hero's journey from storytelling. Just like any great adventure, your data science quest will have challenges to overcome, mentors to guide you, and ultimately a transformation that changes how you see the world. Explore each stage to see how the hero's journey parallels your path to becoming a data scientist.
+
 #### Data Science Workflow Hero's Journey
 
 <iframe src="../../sims/data-science-heros-journey/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+Now let's dive deeper into the first two stages of the workflow, which you'll encounter in every data science project.
 
 ### Problem Definition: Starting Your Quest
 
@@ -424,7 +451,12 @@ The difference? Good questions are specific, measurable, and actionable.
 
 ## Python Programming: Your Superpower Tool
 
-If data science is your superpower, then **Python programming** is your utility belt. Python is a programming language that's become the go-to tool for data scientists worldwide.
+If data science is your superpower, then **Python programming** is your utility belt. Python is a programming language that's become the go-to tool for data scientists worldwide.  Here is a time-series chart comparing Python to other data science languages:
+
+#### Diagram: Data Science Language Trends
+
+<iframe src="../../sims/ds-prog-lang/main.html" width="100%" height="505px" scrolling="no"></iframe>
+[Run the Data Science Language Trends MicroSim Fullscreen](../../sims/ds-prog-lang/main.html)
 
 Why Python? Several reasons:
 
@@ -471,6 +503,16 @@ Good documentation includes:
 - Visualizations of key findings
 - Summary of results and conclusions
 
+In this course we will introduce many ways of creating great documentation as well
+as ways to make sure the documentation is kept up to date as your code changes.
+We will introduce various documentation strategies such as interleaving code 
+and comments in Jupyter Notebooks, using Markdown
+to document your code in GitHub and even using powerful tools like `mkdocs`
+to build high-quality website documentation for your projects.  We
+will even show how AI can be used to add comments to your code and
+automate the creation of check-in comments and create user guides
+for your data science projects.  This entire book is created with markdown and mkdocs.
+
 !!! tip "The Superhero's Journal"
     Even Batman keeps records in the Batcomputer. Your documentation is your version of this—a record of your adventures, discoveries, and hard-won knowledge. Start good habits now, and you'll stand out as a professional later.
 
@@ -504,8 +546,12 @@ Congratulations! You've just acquired the foundational vocabulary of data scienc
 - **Python Programming**: Your primary weapon for data analysis
 - **Documentation**: Your record of the journey
 
+The concept map below shows how all 20 concepts from this chapter connect to each other. Notice how **Data Science** sits at the center, with branches extending to data types, variable roles, the workflow, and tools. Click on any concept to highlight its connections and see how the pieces fit together.
+
 #### Diagram: Chapter 1 Concept Mind Map
 
+<iframe src="../../sims/chapter-1-concept-map/main.html" height="600px" width="100%" scrolling="no" style="overflow: hidden;"></iframe>
+[View the Chapter 1 Concept Map Fullscreen](../../sims/chapter-1-concept-map/main.html)
 <details markdown="1">
 <summary>Introduction to Data Science Concept Map</summary>
 Type: graph-model

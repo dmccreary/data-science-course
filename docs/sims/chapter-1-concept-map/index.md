@@ -1,8 +1,8 @@
 # Chapter 1 Concept Map
 
-An interactive visualization showing how all 20 concepts from Chapter 1 (Introduction to Data Science) connect and relate to each other.
+An interactive visualization showing how the concepts from Chapter 1 (Introduction to Data Science) connect and relate to each other.
 
-<iframe src="./main.html" height="500px" width="100%" scrolling="no" style="overflow: hidden;"></iframe>
+<iframe src="./main.html" height="600px" width="100%" scrolling="no" style="overflow: hidden;"></iframe>
 
 [View Chapter 1 Concept Map in Full Screen](./main.html){ .md-button .md-button--primary }
 

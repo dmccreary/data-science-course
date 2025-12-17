@@ -50,23 +50,25 @@ nav:
         - Intro: sims/microsim-lists/index.md
         - Top 10 Stats Review MicroSims: sims/microsim-lists/10-stats-review-microsims.md
         - Top 100 Data Science MicroSims: sims/microsim-lists/100-data-science-microsims.md
-    - Data Science Workflow: sims/data-science-workflow/index.md
-    - Data Science Language Popularity: sims/ds-prog-lang/index.md
-    - Four Types of Data: sims/four-types-of-data/index.md
-    - Variable Types Decision Tree: sims/variable-types-decision-tree/index.md
-    - Variable Type Sorter: sims/variable-type-sorter/index.md
-    - Chapter 1 Concept Map: sims/chapter-1-concept-map/index.md
-    - Book Generation Workflow: sims/book-gen-workflow/index.md
-    - Least Squares: sims/least-squares/index.md
-    - Learning Graph: sims/learning-graph/index.md
-    - Graph Viewer: sims/graph-viewer/index.md
-    - Data Science Hero's Journey: sims/data-science-heros-journey/index.md
-    - Data Science Superpower: sims/data-science-superpower/index.md
     - 10 Stats MicroSims Map: sims/ten-stats/index.md
+    - Book Generation Workflow: sims/book-gen-workflow/index.md
+    - Chapter 1 Concept Map: sims/chapter-1-concept-map/index.md
+    - Data Science Hero's Journey: sims/data-science-heros-journey/index.md
+    - Data Science Language Popularity: sims/ds-prog-lang/index.md
+    - Data Science Superpower: sims/data-science-superpower/index.md
+    - Data Science Workflow: sims/data-science-workflow/index.md
+    - Four Types of Data: sims/four-types-of-data/index.md
+    - Graph Viewer: sims/graph-viewer/index.md
+    - Independent vs Dependent Variables: sims/independent-dependent-variables/index.md
+    - Learning Graph: sims/learning-graph/index.md
+    - Least Squares: sims/least-squares/index.md
+    - Measurement Scales Pyramid: sims/measurement-scales-pyramid/index.md
+    - Variable Type Sorter: sims/variable-type-sorter/index.md
+    - Variable Types Decision Tree: sims/variable-types-decision-tree/index.md
     - Distribution MicroSims:
+      - Bell Curve Emergence: sims/bell-curve/index.md
       - Normal Distribution: sims/normal-dice-distribution/index.md
       - Triangular Distribution: sims/pair-dice-sum-distribution/index.md
-      - Bell Curve Emergence: sims/bell-curve/index.md
     - Template: sims/template/index.md
   
   - Learning Graph:

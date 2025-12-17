@@ -4,7 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a data science education website built with MkDocs Material. The site serves as an interactive course on "AI Based Data Science with Python" featuring MicroSims (interactive simulations) and comprehensive learning materials for teaching data science concepts to high school and college students.
+This is a data science education website built with MkDocs Material. The site serves as an interactive 15-week course on "AI Based Data Science with Python" featuring MicroSims (interactive simulations) and comprehensive learning materials for teaching data science concepts to high school and college students.
+
+**Site URL**: https://dmccreary.github.io/data-science-course/
+**License**: Creative Commons BY-NC-SA 4.0 (non-commercial, attribution required)
 
 ## Site Architecture
 
@@ -15,12 +18,19 @@ This is a data science education website built with MkDocs Material. The site se
 
 ### Key Content Structure
 
-- `docs/concepts/` - Data science concept definitions, dependencies, and taxonomies with CSV data files
-- `docs/chapters/` - Course chapters (setup, matplotlib-vs-plotly, etc.)
-- `docs/sims/learning-graph/` - Interactive learning graph visualization using vis.js
-- `docs/prompts/` - AI-generated content prompts for FAQs, glossary, and course descriptions
-- `src/csv-to-json/` - Python utility to convert concept CSV data to JSON for visualizations
+- `docs/chapters/` - 15 course chapters (00-setup through 15-projects) covering foundations through capstone
+- `docs/labs/` - Hands-on lab exercises (dataframes, data exploration, statistics)
+- `docs/sims/` - Interactive MicroSims with `index.md` (documentation) and `.html` files (interactive components)
+  - `learning-graph/` - vis.js network visualization of concept dependencies
+  - `template/` - Base template for creating new MicroSims
+  - Various statistical simulations (normal-dice-distribution, bell-curve, least-squares, etc.)
+- `docs/prompts/` - AI-generated content prompts AND CSV data files for concept management
+  - `ds-concepts.csv` - Core concept definitions (ConceptID, ConceptLabel, Dependencies, TaxonomyID)
+  - `dependencies.csv` - Concept prerequisite relationships
+  - `enumerated-concepts.csv` - Categorized concept listings
+- `src/csv-to-json/` - Python utility to convert CSV data to vis.js JSON format (graph-data.csv → graph-data.json)
 - `src/line-plot/` - Simple matplotlib example scripts
+- `site/` - Auto-generated HTML output (never edit directly)
 
 ## Development Commands
 
@@ -76,9 +86,13 @@ python line-plot.py
 
 ### Educational Content Structure
 
-The course follows a 10-week curriculum progression:
-1. Foundations → Statistical concepts → Linear regression → Model evaluation
-2. Multiple regression → NumPy → Non-linear models → PyTorch → Capstone projects
+The course follows a 15-week curriculum progression:
+1. Setup → Foundations → Data Exploration → Data Visualization → Statistics
+2. Linear Regression → Model Evaluation → Multiple Regression → NumPy
+3. Non-linear Models → Regularization → Machine Learning → Neural Networks
+4. PyTorch → Advanced Evaluation → Capstone Projects
+
+**Navigation Structure**: All pages must be added to `mkdocs.yml` nav section to appear in site navigation. The configuration uses Material for MkDocs theme with features: code copy, navigation expand/path/prune/indexes, toc follow, navigation top/footer, and content action edit.
 
 ### MicroSims Architecture
 
@@ -103,16 +117,19 @@ Interactive JavaScript simulations embedded throughout the course:
 
 ### Data Science Concepts Management
 
-Concept definitions and dependencies are managed through CSV files in `docs/prompts/` (note: not `docs/concepts/`):
+Concept definitions and dependencies are managed through CSV files in `docs/prompts/`:
 - `ds-concepts.csv` - Core concept definitions with ConceptID, ConceptLabel, Dependencies, TaxonomyID
-- `dependencies.csv` - Concept prerequisite relationships  
+- `dependencies.csv` - Concept prerequisite relationships
 - `enumerated-concepts.csv` - Categorized concept listings
 
-**Data Processing Workflow**:
+**Data Processing Workflow** (CSV → JSON → Visualization):
 1. Edit CSV files in `docs/prompts/` to update concept data
 2. Run `cd src/csv-to-json && python csv-to-json.py` to convert CSV to JSON
-3. Generated JSON feeds into vis.js learning graph visualization
-4. CSV format: pipe-separated dependencies (e.g., "1|2|3" for multiple prerequisites)
+   - Script reads `graph-data.csv` and outputs `graph-data.json`
+   - Creates vis.js compatible format with nodes (id, label, group) and edges (from, to)
+   - Dependencies in CSV are pipe-separated (e.g., "1|2|3" for multiple prerequisites)
+3. Generated JSON is consumed by `docs/sims/learning-graph/view-graph.html` for interactive visualization
+4. Changes to CSV require re-running the converter and rebuilding the site to see updates
 
 ## Development Environment
 
@@ -125,10 +142,13 @@ Concept definitions and dependencies are managed through CSV files in `docs/prom
 
 The site is deployed to GitHub Pages at https://dmccreary.github.io/data-science-course/
 
-Deployment process:
-1. Ensure all content changes are committed to the repository
+**Deployment process**:
+1. Ensure all content changes are committed to main branch
 2. Run `mkdocs gh-deploy` to build and push to gh-pages branch
 3. Site updates automatically reflect at the public URL
+4. The command builds the site, commits to gh-pages branch, and pushes automatically
+
+**Important**: Never edit files in the `site/` directory directly - they are auto-generated. Always edit source files in `docs/` and use `mkdocs build` or `mkdocs gh-deploy`.
 
 ## Key Libraries and Dependencies
 
@@ -146,9 +166,34 @@ Deployment process:
 ### Build and Deployment
 - **GitHub Pages**: Automatic deployment via `mkdocs gh-deploy` command
 - **No CI/CD**: Manual build and deploy process, no automated testing
+<<<<<<< HEAD
 
 ## Details
 When generating chapter content, the chapter-content-generator skill will
 add diagram/microsim placeholders using the <details> XML element.
 Do not put leading spaces inside the <details> elements.  Do not indent the text within the <details> element.
 - remember to use the p5.js's built-in textWrap(WORD) when wrapping text in a p5.js microsim
+=======
+- **No requirements.txt or package.json**: Dependencies installed manually via conda/pip
+
+## Important Architectural Notes
+
+### File Editing Guidelines
+- **Never edit `site/` directory**: Auto-generated by MkDocs, changes will be overwritten
+- **Always edit source files in `docs/`**: These are the source of truth
+- **Update `mkdocs.yml` navigation**: When adding new pages, add them to the `nav` section or they won't appear
+- **MicroSim structure**: Each sim has `index.md` (docs) and typically `.html` files (interactive UI)
+
+### Data Flow for Learning Graph
+1. **Source**: `docs/prompts/ds-concepts.csv` (and related CSV files)
+2. **Processing**: `src/csv-to-json/csv-to-json.py` converts to `graph-data.json`
+3. **Visualization**: `docs/sims/learning-graph/view-graph.html` renders interactive graph using vis.js
+4. **Update workflow**: Edit CSV → Run Python script → Rebuild site → Deploy
+
+### MkDocs Material Theme Configuration
+- Theme configured in `mkdocs.yml` with custom CSS at `docs/css/extra.css`
+- Logo: `docs/img/logo-192.png`, Favicon: `docs/img/favicon.ico`
+- Color scheme: Primary blue, Accent orange
+- Search plugin enabled by default
+- Social plugin commented out (requires imaging dependencies)
+>>>>>>> 47e3019 (udates)
