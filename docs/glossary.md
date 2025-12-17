@@ -11,8 +11,25 @@ https://chatgpt.com/share/689de02c-693c-8001-ae02-787321501954
 
 A metric used to evaluate classification models, representing the proportion of correct predictions over the total number of predictions.
 
-
 **Example:** In a spam email classifier, if the model correctly identifies 90 out of 100 emails, the accuracy is 90%.
+
+#### Activation Function
+
+A mathematical function applied to a neuron's output in a neural network to introduce non-linearity, determining whether and how strongly a neuron should fire.
+
+**Example:** The ReLU activation function outputs zero for negative inputs and the input value itself for positive inputs, helping neural networks learn complex patterns.
+
+#### Adam Optimizer
+
+An adaptive optimization algorithm that combines benefits of AdaGrad and RMSProp to efficiently train neural networks by adjusting learning rates for each parameter.
+
+**Example:** When training a neural network in PyTorch, you might use `optimizer = torch.optim.Adam(model.parameters(), lr=0.001)` to set up the Adam optimizer.
+
+#### Adjusted R-Squared
+
+A modified version of R-squared that accounts for the number of predictors in a model, penalizing the addition of variables that don't improve the model.
+
+**Example:** A model with R² of 0.85 might have an adjusted R² of 0.82 after accounting for extra predictors that don't add value.
 
 #### Algorithm
 
@@ -86,6 +103,24 @@ A measure of how related a variable is with a lagged version of itself over time
 
 **Example:** Detecting repeating seasonal patterns in monthly sales data.
 
+#### Autograd
+
+PyTorch's automatic differentiation engine that tracks operations on tensors and computes gradients automatically during backpropagation.
+
+**Example:** When you call `loss.backward()` in PyTorch, autograd automatically computes the gradient of the loss with respect to all model parameters.
+
+#### Backward Elimination
+
+A feature selection method that starts with all variables and iteratively removes the least significant one until only important predictors remain.
+
+**Example:** Starting with 10 predictors, backward elimination might remove 4 that don't significantly improve the model, leaving 6 key features.
+
+#### Backpropagation
+
+The algorithm used to train neural networks by computing gradients of the loss function with respect to weights, propagating error signals backward through the network.
+
+**Example:** During training, backpropagation calculates how much each weight contributed to the prediction error, allowing the optimizer to adjust weights accordingly.
+
 #### Bagging (Bootstrap Aggregating)
 
 A machine learning ensemble technique that combines predictions from multiple models trained on different subsets of the data.
@@ -152,17 +187,35 @@ A variable with only two possible values, often represented as 0 and 1.
 
 **Example:** "Passed Exam" variable coded as 1 for pass and 0 for fail.
 
+#### Boolean Indexing
+
+A method of selecting data from arrays or DataFrames using True/False conditions to filter rows or elements.
+
+**Example:** Using `df[df['age'] > 18]` to select only rows where age is greater than 18.
+
 #### Box Plot
 
 A graphical summary of data distribution showing median, quartiles, and potential outliers.
 
 **Example:** Using a box plot to compare exam scores across different classes.
 
+#### Broadcasting
+
+A NumPy feature that allows arithmetic operations between arrays of different shapes by automatically expanding the smaller array to match the larger one.
+
+**Example:** Adding a scalar 5 to every element in a 1000-element array happens instantly without writing a loop: `array + 5`.
+
 #### Categorical Data
 
 Data that represents discrete groups or categories.
 
 **Example:** "Car color" with values red, blue, or green.
+
+#### Cell (Jupyter)
+
+An individual unit in a Jupyter Notebook that contains either executable code or formatted text (Markdown).
+
+**Example:** In a Jupyter Notebook, you might have a Markdown cell explaining your analysis followed by a code cell that runs Python to create a visualization.
 
 #### Causal Relationship
 
@@ -224,6 +277,18 @@ A table used to evaluate classification performance by showing counts of true po
 
 **Example:** A confusion matrix showing that a model misclassified 5 out of 100 test emails.
 
+#### Conda
+
+A package and environment management system that installs, runs, and updates packages and their dependencies for Python and other languages.
+
+**Example:** Using `conda create -n ds python=3.10` creates an isolated environment named "ds" with Python 3.10 for your data science project.
+
+#### Convergence
+
+The state where an optimization algorithm has found a solution and further iterations produce minimal improvement in the objective function.
+
+**Example:** During gradient descent, convergence occurs when the loss stops decreasing significantly between training iterations.
+
 #### Correlation
 
 A statistical measure that describes the strength and direction of a linear relationship between two variables.
@@ -240,13 +305,37 @@ A numerical value between -1 and 1 that indicates the degree of linear associati
 
 A technique for assessing how well a model generalizes by dividing data into multiple training and testing subsets.
 
-**Example:** Using 5-fold cross-validation to evaluate a regression model’s accuracy.
+**Example:** Using 5-fold cross-validation to evaluate a regression model's accuracy.
+
+#### Cost Function
+
+A function that measures the error between predicted values and actual values; the goal of training is to minimize this function. Also called a loss function.
+
+**Example:** Mean Squared Error is a common cost function that calculates the average of squared differences between predictions and actual values.
+
+#### Covariance
+
+A measure of how two variables change together; positive covariance means they tend to increase together, negative means one increases as the other decreases.
+
+**Example:** Height and weight typically have positive covariance because taller people tend to weigh more.
 
 #### CSV (Comma-Separated Values)
 
 A simple file format for storing tabular data where each line represents a row and values are separated by commas.
 
 **Example:** Importing a CSV file of sales data into Pandas for analysis.
+
+#### CUDA
+
+NVIDIA's parallel computing platform that allows software to use Graphics Processing Units (GPUs) for general-purpose computing, dramatically speeding up neural network training.
+
+**Example:** Training a deep learning model on a CUDA-enabled GPU can be 10-50 times faster than on a CPU.
+
+#### Curve Fitting
+
+The process of finding a mathematical function that best approximates a set of data points, often used in non-linear regression.
+
+**Example:** Fitting an exponential curve to population growth data to predict future population sizes.
 
 ## D–H
 
@@ -328,6 +417,12 @@ Statistical methods for summarizing and describing data features.
 
 **Example:** Calculating mean, median, and standard deviation for exam scores.
 
+#### Dictionary (Python)
+
+A built-in Python data structure that stores data as key-value pairs, allowing fast lookup of values by their associated keys.
+
+**Example:** `student = {'name': 'Alice', 'age': 17, 'grade': 'A'}` stores student information accessible via `student['name']`.
+
 #### Dimension Reduction
 
 Techniques for reducing the number of variables while preserving relevant information.
@@ -344,13 +439,25 @@ Data that can only take on specific, distinct values.
 
 The way values of a variable are spread or arranged.
 
-**Example:** A bell-shaped distribution for students’ test scores.
+**Example:** A bell-shaped distribution for students' test scores.
+
+#### Dot Product
+
+A mathematical operation that multiplies corresponding elements of two vectors and sums the results, fundamental to matrix operations in machine learning.
+
+**Example:** The dot product of vectors [1, 2, 3] and [4, 5, 6] is (1×4) + (2×5) + (3×6) = 32.
 
 #### Dummy Variable
 
 A binary variable created to represent categorical data for modeling purposes.
 
 **Example:** Encoding "Gender" as 0 for male and 1 for female.
+
+#### dtype (Data Type)
+
+A NumPy attribute specifying the type of data stored in an array, such as int64, float32, or bool, which affects memory usage and computation speed.
+
+**Example:** Creating a NumPy array with `np.array([1.0, 2.0], dtype=np.float32)` uses 32-bit floats instead of the default 64-bit.
 
 #### EDA (Exploratory Data Analysis)
 
@@ -363,6 +470,12 @@ The process of visually and statistically summarizing a dataset to uncover patte
 One complete pass through the entire training dataset in machine learning.
 
 **Example:** Training a neural network for 50 epochs to achieve better accuracy.
+
+#### Elastic Net
+
+A regularization technique that combines L1 (Lasso) and L2 (Ridge) penalties to balance feature selection and coefficient shrinkage.
+
+**Example:** Elastic Net is useful when you have many correlated features and want both to select important ones and shrink coefficients.
 
 #### Evaluation Metric
 
@@ -412,6 +525,18 @@ Choosing the most relevant features to improve model efficiency and accuracy.
 
 **Example:** Removing features with low correlation to the target variable.
 
+#### Fitted Values
+
+The values predicted by a regression model for the training data observations, representing the model's estimate of the dependent variable.
+
+**Example:** After fitting a linear regression, the fitted values are the points on the regression line corresponding to each x-value in the training data.
+
+#### Five-Number Summary
+
+A set of five descriptive statistics (minimum, Q1, median, Q3, maximum) that summarize a dataset's distribution.
+
+**Example:** For test scores of 55, 70, 75, 80, 95, the five-number summary includes min=55, Q1=62.5, median=75, Q3=87.5, max=95.
+
 #### F1-Score
 
 A metric that combines precision and recall into a single value.
@@ -440,7 +565,19 @@ A two-dimensional array containing feature values for all observations in a data
 
 Predicting future values based on historical data.
 
-**Example:** Using time series models to forecast next month’s sales.
+**Example:** Using time series models to forecast next month's sales.
+
+#### Forward Propagation
+
+The process of passing input data through a neural network layer by layer to produce an output prediction.
+
+**Example:** During forward propagation, input features are multiplied by weights, summed, passed through activation functions, and flow forward until reaching the output layer.
+
+#### Forward Selection
+
+A feature selection method that starts with no variables and iteratively adds the most significant predictor until no more improve the model.
+
+**Example:** Starting with zero features, forward selection first adds "income" (most predictive), then "age," stopping when additional features don't improve R².
 
 #### Function (Python)
 
@@ -466,6 +603,18 @@ An optimization algorithm used to minimize a function by iteratively moving towa
 
 **Example:** Training linear regression by adjusting weights with gradient descent.
 
+#### Global Minimum
+
+The absolute lowest point of a function across its entire domain, representing the best possible solution in optimization.
+
+**Example:** In training a neural network, finding the global minimum of the loss function means achieving the best possible model fit.
+
+#### GPU Computing
+
+Using Graphics Processing Units (originally designed for rendering graphics) to perform parallel computations, greatly accelerating machine learning training.
+
+**Example:** Training a neural network on a GPU can reduce training time from hours to minutes compared to using only a CPU.
+
 #### Ground Truth
 
 The actual, verified values used to evaluate predictions.
@@ -484,17 +633,41 @@ A graphical representation of data values using color shading.
 
 **Example:** A correlation heatmap showing relationships between features.
 
+#### Heteroscedasticity
+
+A condition where the variance of residuals in a regression model is not constant across all levels of the independent variable, violating a key assumption.
+
+**Example:** In a plot of residuals vs. fitted values, a fan or cone shape indicates heteroscedasticity—the spread of errors changes as predictions increase.
+
 #### Heuristic
 
 A rule-of-thumb strategy for solving problems quickly, though not always optimally.
 
 **Example:** Using a decision tree depth limit of 5 as a heuristic for speed.
 
+#### Hidden Layer
+
+The layer(s) in a neural network between the input and output layers where computations transform the input into features the network can use to make predictions.
+
+**Example:** A neural network with two hidden layers of 64 neurons each can learn more complex patterns than one with a single hidden layer.
+
 #### Histogram
 
 A plot that groups numerical data into intervals (bins) and shows their frequency.
 
 **Example:** Plotting the distribution of exam scores in bins of 10 points.
+
+#### Holdout Method
+
+A simple validation technique where data is split into two sets: one for training and one for testing model performance.
+
+**Example:** Using 80% of data for training and holding out 20% for testing is a common holdout split.
+
+#### Homoscedasticity
+
+A condition where the variance of residuals in a regression model is constant across all levels of the independent variable—a key assumption of linear regression.
+
+**Example:** In a properly specified model, a residual plot should show evenly scattered points with no fan or cone shapes.
 
 #### Hyperparameter
 
@@ -509,6 +682,18 @@ A parameter set before training that controls model behavior.
 A dataset where some classes have significantly more samples than others.
 
 **Example:** A fraud detection dataset with 99% non-fraud and 1% fraud cases.
+
+#### IDE (Integrated Development Environment)
+
+A software application that provides comprehensive tools for software development, including a code editor, debugger, and build automation.
+
+**Example:** Visual Studio Code is a popular IDE for Python development, offering syntax highlighting, code completion, and integrated terminal.
+
+#### iloc
+
+A Pandas indexer for selecting data by integer position (row and column numbers), where "i" stands for integer.
+
+**Example:** `df.iloc[0:5, 1:3]` selects the first 5 rows and columns 2 and 3 (using zero-based indexing).
 
 #### Imputation
 
@@ -540,11 +725,23 @@ A measure of how much a feature improves classification by reducing uncertainty.
 
 **Example:** A decision tree choosing a feature with the highest information gain for the first split.
 
+#### Input Layer
+
+The first layer of a neural network that receives the raw input features and passes them to subsequent layers.
+
+**Example:** In a neural network predicting house prices from 10 features, the input layer has 10 neurons, one for each feature.
+
 #### Interpolation
 
 Estimating unknown values within the range of known data points.
 
 **Example:** Estimating missing temperature readings between two known days.
+
+#### Interaction Terms
+
+Features created by multiplying two or more predictor variables together to capture how their combined effect influences the target variable.
+
+**Example:** In predicting ice cream sales, an interaction term between "temperature" and "weekend" captures that the effect of hot weather differs on weekends vs. weekdays.
 
 #### Iteration
 
@@ -576,6 +773,12 @@ An unsupervised learning algorithm that groups data into k clusters based on sim
 
 **Example:** Segmenting customers into 4 clusters using purchase history.
 
+#### KDE (Kernel Density Estimation)
+
+A non-parametric way to estimate the probability density function of a continuous variable, creating a smooth curve from data.
+
+**Example:** Using KDE instead of a histogram to visualize the distribution of student heights produces a smooth bell curve rather than stepped bars.
+
 #### Kernel (in Computing)
 
 The central component of an operating system or computational environment.
@@ -594,6 +797,12 @@ A statistical test to compare a sample distribution with a reference probability
 
 **Example:** Checking if a dataset follows a normal distribution.
 
+#### Kurtosis
+
+A measure of how much data is concentrated in the tails of a distribution compared to a normal distribution; high kurtosis means heavier tails and more outliers.
+
+**Example:** A kurtosis of 5 (compared to normal's 3) indicates a distribution with more extreme values and a sharper peak.
+
 #### Label (in Machine Learning)
 
 The output or target variable in supervised learning.
@@ -605,6 +814,18 @@ The output or target variable in supervised learning.
 Converting categorical values into numeric codes.
 
 **Example:** Encoding "low", "medium", "high" as 0, 1, 2.
+
+#### L1 Penalty (Lasso)
+
+A regularization term that adds the sum of absolute values of coefficients to the loss function, encouraging sparsity by driving some coefficients to exactly zero.
+
+**Example:** L1 regularization with a strong penalty might reduce a model from 50 features to only 10 non-zero coefficients.
+
+#### L2 Penalty (Ridge)
+
+A regularization term that adds the sum of squared coefficients to the loss function, shrinking all coefficients toward zero but rarely to exactly zero.
+
+**Example:** L2 regularization prevents any single coefficient from becoming too large, improving model stability.
 
 #### Lasso Regression
 
@@ -642,6 +863,30 @@ A method for modeling the relationship between a dependent variable and one or m
 
 **Example:** Predicting house prices from square footage.
 
+#### Line Plot
+
+A visualization that displays data points connected by straight line segments, typically used to show trends over time or ordered categories.
+
+**Example:** A line plot showing stock prices over a year reveals upward and downward trends clearly.
+
+#### List (Python)
+
+A built-in Python data structure that stores an ordered, mutable collection of items, which can be of different types.
+
+**Example:** `scores = [85, 92, 78, 90]` creates a list of test scores that can be modified, sorted, or extended.
+
+#### loc
+
+A Pandas indexer for selecting data by label (row and column names) rather than by position.
+
+**Example:** `df.loc['Alice', 'Math']` retrieves the Math score for the student named Alice.
+
+#### Local Minimum
+
+A point where a function's value is lower than all nearby points, but may not be the absolute lowest point globally.
+
+**Example:** Gradient descent can get stuck in a local minimum, finding a "good enough" solution rather than the best possible one.
+
 #### Logistic Regression
 
 A statistical model used for binary classification that predicts probabilities using a logistic function.
@@ -653,6 +898,12 @@ A statistical model used for binary classification that predicts probabilities u
 A function that measures the error between predicted and actual values.
 
 **Example:** Mean Squared Error is a loss function for regression.
+
+#### LOOCV (Leave-One-Out Cross-Validation)
+
+A cross-validation technique where each data point is used as the test set exactly once while the remaining points form the training set.
+
+**Example:** With 100 samples, LOOCV trains 100 models, each tested on a single held-out observation.
 
 #### Machine Learning
 
@@ -683,6 +934,12 @@ A Python library for creating static, animated, and interactive visualizations.
 A two-dimensional array of numbers arranged in rows and columns.
 
 **Example:** A 3×3 NumPy array representing a matrix.
+
+#### Markdown
+
+A lightweight text formatting language that uses simple symbols (like # for headings and * for bullets) to create formatted documents.
+
+**Example:** In Jupyter Notebooks, Markdown cells let you write `# My Analysis` to create a heading and `**bold text**` for emphasis.
 
 #### Mean
 
@@ -716,6 +973,12 @@ the slope and intercept of a line through a series of points.
 A feature scaling technique that rescales values to a given range, usually \[0, 1].
 
 **Example:** Converting exam scores from a 0–100 scale to 0–1.
+
+#### Mini-batch
+
+A subset of training data used in one iteration of gradient descent, balancing the stability of full-batch and speed of single-sample updates.
+
+**Example:** Training a neural network with mini-batches of 32 samples processes 32 examples before each weight update.
 
 #### Missing Data
 
@@ -778,13 +1041,31 @@ A linear regression model with two or more independent variables.
 
 **Example:** Predicting house price using square footage, number of bedrooms, and location.
 
+#### Multi-class Classification
+
+A classification problem with more than two possible output categories.
+
+**Example:** Classifying images of handwritten digits into 10 classes (0-9) rather than just two.
+
+#### Mutable
+
+A property of objects that can be changed after creation; lists and dictionaries in Python are mutable.
+
+**Example:** After creating `my_list = [1, 2, 3]`, you can modify it with `my_list[0] = 10`, changing it to `[10, 2, 3]`.
+
 ## N–S
 
 #### Naive Bayes
 
-A probabilistic classification algorithm based on Bayes’ theorem with the assumption of feature independence.
+A probabilistic classification algorithm based on Bayes' theorem with the assumption of feature independence.
 
 **Example:** Classifying text documents into categories using Naive Bayes.
+
+#### NaN (Not a Number)
+
+A special value in NumPy and Pandas representing missing or undefined numerical data.
+
+**Example:** When importing a CSV with empty cells, Pandas automatically converts them to NaN, which you can detect with `df.isna()`.
 
 #### Natural Language Processing (NLP)
 
@@ -864,6 +1145,12 @@ A data point significantly different from other observations.
 
 **Example:** A monthly sales value 10 times higher than all others.
 
+#### Output Layer
+
+The final layer of a neural network that produces the predictions or classifications.
+
+**Example:** In a neural network classifying images into 10 categories, the output layer has 10 neurons, one for each class.
+
 #### Overfitting
 
 When a model fits training data too closely, capturing noise rather than general patterns.
@@ -881,6 +1168,12 @@ Techniques used to reduce overfitting, such as regularization, pruning, and cros
 A statistical measure of the probability of obtaining results at least as extreme as the observed results, assuming the null hypothesis is true.
 
 **Example:** A p-value of 0.03 suggests statistical significance at the 5% level.
+
+#### Pair Plot
+
+A visualization that creates a matrix of scatter plots showing relationships between all pairs of numerical variables in a dataset.
+
+**Example:** A pair plot of iris flower measurements reveals how petal length and width cluster differently for each species.
 
 #### Pandas
 
@@ -912,6 +1205,18 @@ A statistic measuring the linear relationship between two variables.
 
 **Example:** A Pearson coefficient of 0.8 indicates a strong positive relationship.
 
+#### Percentile
+
+A measure indicating the percentage of observations that fall below a given value in a dataset.
+
+**Example:** Scoring in the 90th percentile on a test means you scored higher than 90% of test-takers.
+
+#### Perceptron
+
+The simplest type of artificial neuron, which computes a weighted sum of inputs and applies a threshold function to produce a binary output.
+
+**Example:** A perceptron can learn to classify linearly separable data, like distinguishing two types of flowers based on petal measurements.
+
 #### Performance Metric
 
 A quantitative measure used to evaluate the effectiveness of a model.
@@ -924,11 +1229,23 @@ A sequence of data processing and modeling steps applied consistently to trainin
 
 **Example:** A pipeline for scaling features and then applying logistic regression.
 
+#### pip
+
+The standard package installer for Python that downloads and installs packages from the Python Package Index (PyPI).
+
+**Example:** Running `pip install pandas` downloads and installs the Pandas library and its dependencies.
+
 #### Pivot Table
 
 A table that summarizes data by grouping and aggregating values.
 
 **Example:** Summarizing sales by region and month using a Pandas pivot table.
+
+#### Plotly
+
+A Python library for creating interactive, web-based visualizations with hover tooltips, zooming, and other dynamic features.
+
+**Example:** Creating an interactive scatter plot with Plotly Express allows users to hover over points to see detailed data.
 
 #### Polynomial Regression
 
@@ -1002,6 +1319,12 @@ One of three points that divide data into four equal groups.
 
 **Example:** The first quartile is the 25th percentile.
 
+#### Q-Q Plot (Quantile-Quantile Plot)
+
+A diagnostic plot that compares the distribution of data against a theoretical distribution (often normal) to assess normality.
+
+**Example:** In a Q-Q plot, if residuals follow a normal distribution, the points will fall roughly along the diagonal reference line.
+
 #### Query (Database)
 
 A request for specific information from a database.
@@ -1032,6 +1355,12 @@ A method for selecting features by recursively removing the least important ones
 
 **Example:** Using RFE to reduce feature count before training.
 
+#### Reference Category
+
+The baseline category omitted when creating dummy variables for categorical data, against which other categories are compared.
+
+**Example:** When encoding "Size" with values Small/Medium/Large, if Small is the reference category, coefficients for Medium and Large show their effect relative to Small.
+
 #### Regression
 
 A statistical method for modeling relationships between variables to predict numerical outcomes.
@@ -1044,17 +1373,47 @@ A technique for reducing model complexity to prevent overfitting by adding a pen
 
 **Example:** L2 regularization in Ridge regression.
 
+#### ReLU (Rectified Linear Unit)
+
+An activation function that outputs zero for negative inputs and the input value for positive inputs, widely used in neural networks.
+
+**Example:** ReLU(x) = max(0, x), so ReLU(-3) = 0 and ReLU(5) = 5.
+
 #### Residual
 
 The difference between the observed value and the value predicted by a model.
 
 **Example:** If actual sales are 200 and predicted sales are 180, the residual is 20.
 
+#### Residual Plot
+
+A diagnostic visualization showing residuals plotted against fitted values or predictors to check regression assumptions.
+
+**Example:** A residual plot with randomly scattered points indicates the model is appropriate; patterns suggest problems like non-linearity.
+
+#### Reshape
+
+A NumPy operation that changes the dimensions of an array without altering its data.
+
+**Example:** Reshaping a 1D array of 12 elements into a 3×4 matrix: `array.reshape(3, 4)`.
+
 #### Root Mean Squared Error (RMSE)
 
 A regression metric measuring the square root of the average squared prediction error.
 
 **Example:** An RMSE of 3 means predictions are off by 3 units on average.
+
+#### Ridge Regression
+
+A linear regression method with L2 regularization that shrinks coefficients toward zero to reduce overfitting, especially with correlated predictors.
+
+**Example:** Ridge regression can handle multicollinearity better than ordinary least squares by penalizing large coefficients.
+
+#### Robust Scaling
+
+A feature scaling method that uses median and interquartile range instead of mean and standard deviation, making it resistant to outliers.
+
+**Example:** For data with extreme outliers, robust scaling prevents those outliers from dominating the scaling transformation.
 
 #### Sample
 
@@ -1080,6 +1439,12 @@ A graph showing data points on an x-y axis to visualize relationships between va
 
 **Example:** Plotting height against weight to explore correlation.
 
+#### Seaborn
+
+A Python visualization library built on Matplotlib that provides a high-level interface for creating attractive statistical graphics.
+
+**Example:** Using `sns.heatmap()` to create a correlation matrix visualization with just one line of code.
+
 #### Scikit-learn
 
 A Python library for machine learning, providing tools for modeling, preprocessing, and evaluation.
@@ -1098,17 +1463,59 @@ A one-dimensional labeled array in Pandas.
 
 **Example:** A Series of student grades with names as labels.
 
+#### Sigmoid Function
+
+An S-shaped activation function that maps any input to a value between 0 and 1, commonly used for binary classification outputs.
+
+**Example:** The sigmoid of 0 is 0.5, sigmoid of large positive numbers approaches 1, and large negative numbers approaches 0.
+
+#### Skewness
+
+A measure of the asymmetry of a probability distribution; positive skew means a longer right tail, negative skew means a longer left tail.
+
+**Example:** Income distributions are typically positively skewed because a few high earners pull the mean above the median.
+
+#### Slicing
+
+Extracting a portion of a sequence (like a list, array, or DataFrame) using start:stop:step notation.
+
+**Example:** `my_list[1:4]` returns elements at indices 1, 2, and 3 (not including 4).
+
+#### Softmax Function
+
+An activation function that converts a vector of values into probabilities that sum to 1, used in multi-class classification outputs.
+
+**Example:** Softmax converts raw scores [2.0, 1.0, 0.1] into probabilities [0.7, 0.2, 0.1] for a 3-class classifier.
+
 #### Standard Deviation
 
 A measure of the dispersion of values around the mean.
 
 **Example:** A standard deviation of 2 means most values fall within ±2 units of the mean.
 
+#### Spearman Correlation
+
+A non-parametric measure of rank correlation that assesses how well the relationship between two variables can be described by a monotonic function.
+
+**Example:** Spearman correlation of 1.0 means as one variable increases, the other always increases (though not necessarily linearly).
+
 #### Standardization
 
 Scaling features so they have zero mean and unit variance.
 
 **Example:** Standardizing exam scores before analysis.
+
+#### Stochastic Gradient Descent (SGD)
+
+A variant of gradient descent that updates model weights using one randomly selected sample (or mini-batch) at a time, making training faster on large datasets.
+
+**Example:** SGD updates weights after each training example, while batch gradient descent waits until all examples are processed.
+
+#### Subplot
+
+A way to create multiple plots within a single figure, arranged in a grid pattern.
+
+**Example:** Using `plt.subplots(2, 2)` creates a 2×2 grid of four separate plots in one figure.
 
 ## T–Z
 
@@ -1117,6 +1524,12 @@ Scaling features so they have zero mean and unit variance.
 The variable a model aims to predict.
 
 **Example:** Predicting "exam score" as the target variable using study hours and sleep.
+
+#### Tanh Function
+
+A hyperbolic tangent activation function that maps inputs to values between -1 and 1, often used in hidden layers of neural networks.
+
+**Example:** Tanh(0) = 0, and the function smoothly transitions from -1 for large negative inputs to +1 for large positive inputs.
 
 #### t-Statistic
 
@@ -1172,11 +1585,29 @@ One complete pass of the training dataset through the model during learning.
 
 **Example:** Training a neural network for 10 epochs.
 
+#### Training Loop
+
+The iterative process in neural network training: forward pass, loss calculation, backpropagation, and weight update, repeated for all batches and epochs.
+
+**Example:** A typical PyTorch training loop processes each batch, computes loss, calls `loss.backward()`, and updates weights with `optimizer.step()`.
+
+#### Transfer Learning
+
+A technique where a model trained on one task is reused as the starting point for a model on a different but related task.
+
+**Example:** Using a neural network pre-trained on millions of images as a starting point for classifying medical X-rays with limited data.
+
 #### Transformation
 
 Applying a mathematical function to change data format or scale.
 
 **Example:** Applying a logarithmic transformation to skewed data.
+
+#### Transpose
+
+A matrix operation that flips rows and columns, turning an m×n matrix into an n×m matrix.
+
+**Example:** The transpose of a 3×2 matrix becomes a 2×3 matrix, with rows becoming columns.
 
 #### Tree-Based Models
 
@@ -1202,11 +1633,29 @@ A case where a model correctly predicts a positive outcome.
 
 **Example:** A cancer detection test correctly identifying a patient with cancer.
 
+#### Tuple (Python)
+
+A built-in Python data structure that stores an ordered, immutable collection of items.
+
+**Example:** `coordinates = (10, 20)` creates a tuple that cannot be modified after creation.
+
 #### t-Test
 
 A statistical test comparing the means of two groups.
 
 **Example:** Testing whether two different diets result in different average weight loss.
+
+#### Type I Error (False Positive)
+
+Incorrectly rejecting a true null hypothesis; concluding there is an effect when none exists.
+
+**Example:** A medical test indicates disease in a healthy patient, leading to unnecessary treatment.
+
+#### Type II Error (False Negative)
+
+Failing to reject a false null hypothesis; missing a real effect.
+
+**Example:** A medical test fails to detect a disease in a patient who actually has it, delaying treatment.
 
 #### Underfitting
 
@@ -1250,17 +1699,47 @@ A measure of the spread of data points around the mean.
 
 **Example:** A variance of 4 means average squared deviations are 4 units².
 
+#### Vanishing Gradient
+
+A problem in training deep neural networks where gradients become extremely small as they propagate backward, preventing early layers from learning effectively.
+
+**Example:** In very deep networks with sigmoid activations, gradients can shrink to near zero, making training extremely slow or impossible.
+
 #### Vectorization
 
 Performing operations on entire arrays rather than using loops.
 
 **Example:** Adding two NumPy arrays without explicit loops.
 
+#### Vector
+
+A one-dimensional array of numbers, representing a point or direction in space; the building block for matrix operations in linear algebra.
+
+**Example:** A feature vector [age=25, income=50000, score=85] represents one observation as a list of numbers.
+
+#### VIF (Variance Inflation Factor)
+
+A measure that quantifies how much a predictor's variance is inflated due to correlation with other predictors; values above 5-10 indicate problematic multicollinearity.
+
+**Example:** If age and years_of_experience both have VIF > 10, they're highly correlated and you may need to drop one.
+
+#### Violin Plot
+
+A visualization combining a box plot with a kernel density plot, showing the distribution shape on both sides.
+
+**Example:** A violin plot of test scores by class shows not just the median and quartiles, but the full distribution shape.
+
 #### Visualization
 
 The graphical representation of data to reveal patterns and insights.
 
 **Example:** Using Matplotlib to plot a scatter diagram of height vs. weight.
+
+#### Virtual Environment
+
+An isolated Python environment that maintains its own set of installed packages, preventing conflicts between projects with different dependencies.
+
+**Example:** Creating a virtual environment for each project ensures that updating a package for one project doesn't break another.
 
 #### Visual Studio Code
 
