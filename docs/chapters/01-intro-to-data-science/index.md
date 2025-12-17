@@ -260,7 +260,7 @@ Implementation: CSS 3D transforms or SVG
 
 Now that you understand the different data types and measurement scales, it's time to test your skills. The best way to master variable classification is through practice—the more variables you categorize, the more automatic it becomes.
 
-Use the interactive sorter below to drag variables into their correct categories. Don't worry if you make mistakes at first—that's how learning works! Pay attention to the feedback and think about WHY each variable belongs in its category.
+Use the interactive sorter below to classify variables into their correct categories. Don't worry if you make mistakes at first—that's how learning works! Pay attention to the feedback and think about WHY each variable belongs in its category.
 
 #### Diagram: Variable Type Sorter
 
@@ -290,6 +290,9 @@ Real-world examples:
 Understanding this relationship is HUGE. It's the foundation of prediction. If you know how an independent variable affects a dependent variable, you can predict outcomes. That's literally seeing the future.
 
 #### Diagram: Independent vs Dependent Variable MicroSim
+
+In the side quest below you can explore the relationship between a student's score on a test and how many hours
+they studied for that test.  You can use generated data or clear the plot and generate your own sample data by clicking on a point.  We encourage you to try adding a wide variety of data.  Can you make the test scores go down with more hours studying?
 
 <iframe src="../../sims/independent-dependent-variables/main.html" height="502px" width="100%" scrolling="no"></iframe>
 [Run the Independent vs Dependent Variable MicroSim Fullscreen](../../sims/independent-dependent-variables/main.html)
@@ -448,7 +451,12 @@ The difference? Good questions are specific, measurable, and actionable.
 
 ## Python Programming: Your Superpower Tool
 
-If data science is your superpower, then **Python programming** is your utility belt. Python is a programming language that's become the go-to tool for data scientists worldwide.
+If data science is your superpower, then **Python programming** is your utility belt. Python is a programming language that's become the go-to tool for data scientists worldwide.  Here is a time-series chart comparing Python to other data science languages:
+
+#### Diagram: Data Science Language Trends
+
+<iframe src="../../sims/ds-prog-lang/main.html" width="100%" height="505px" scrolling="no"></iframe>
+[Run the Data Science Language Trends MicroSim Fullscreen](../../sims/ds-prog-lang/main.html)
 
 Why Python? Several reasons:
 
