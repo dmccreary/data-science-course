@@ -60,6 +60,8 @@ By the end of this book, you'll be able to:
 
 Sound like a superpower? That's because it is.
 
+The concept map below previews the key skills and ideas you'll master throughout this course. Hover over each node to see how these superpowers connect and build upon each other.
+
 #### Data Science Superpower Concept Map
 
 <iframe src="../../sims/data-science-superpower/main.html" height="602px" width="100%" scrolling="no"></iframe>
@@ -104,6 +106,8 @@ Think about describing your classmates. You might note:
 - Their student ID (a unique identifier that varies)
 
 Each of these is a variable. And here's where it gets interesting: the TYPE of variable determines what you can do with it.
+
+How do you figure out what type a variable is? Use the decision tree below. Start at the top and answer each question—the flowchart will guide you to the correct classification. This simple process works for ANY variable you'll ever encounter.
 
 #### Diagram: Variable Types Decision Tree
 
@@ -198,6 +202,8 @@ There are four measurement scales, from least to most informative:
 !!! example "Why Does This Matter?"
     Knowing your measurement scale determines which analyses you can perform. You can calculate a mean height (ratio scale), but you can't calculate a "mean favorite color" (nominal scale). Using the wrong analysis on the wrong scale is like trying to measure your height with a thermometer—technically using a measurement tool, but completely useless.
 
+The pyramid below shows how measurement scales build on each other—each level adds new mathematical operations you can perform. Hover over each level to see examples and learn which statistical operations are valid at that scale.
+
 #### Diagram: Measurement Scales Pyramid
 
 <iframe src="../../sims/measurement-scales-pyramid/main.html" height="502px" width="100%" scrolling="no"></iframe>
@@ -249,6 +255,13 @@ Visual style: 3D pyramid with glowing edges, game achievement aesthetic
 
 Implementation: CSS 3D transforms or SVG
 </details>
+
+### Practice Makes Perfect: Sorting Variables
+
+Now that you understand the different data types and measurement scales, it's time to test your skills. The best way to master variable classification is through practice—the more variables you categorize, the more automatic it becomes.
+
+Use the interactive sorter below to drag variables into their correct categories. Don't worry if you make mistakes at first—that's how learning works! Pay attention to the feedback and think about WHY each variable belongs in its category.
+
 #### Diagram: Variable Type Sorter
 
 <iframe src="../../sims/variable-type-sorter/main.html" height="322px" width="100%" scrolling="no"></iframe>
@@ -393,9 +406,13 @@ The workflow has several key stages:
 6. **Evaluation**: Testing how well your model works
 7. **Communication**: Sharing your findings with others
 
+The visualization below maps this workflow to the classic hero's journey from storytelling. Just like any great adventure, your data science quest will have challenges to overcome, mentors to guide you, and ultimately a transformation that changes how you see the world. Explore each stage to see how the hero's journey parallels your path to becoming a data scientist.
+
 #### Data Science Workflow Hero's Journey
 
 <iframe src="../../sims/data-science-heros-journey/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+Now let's dive deeper into the first two stages of the workflow, which you'll encounter in every data science project.
 
 ### Problem Definition: Starting Your Quest
 
@@ -510,6 +527,8 @@ Congratulations! You've just acquired the foundational vocabulary of data scienc
 
 - **Python Programming**: Your primary weapon for data analysis
 - **Documentation**: Your record of the journey
+
+The concept map below shows how all 20 concepts from this chapter connect to each other. Notice how **Data Science** sits at the center, with branches extending to data types, variable roles, the workflow, and tools. Click on any concept to highlight its connections and see how the pieces fit together.
 
 #### Diagram: Chapter 1 Concept Mind Map
 
