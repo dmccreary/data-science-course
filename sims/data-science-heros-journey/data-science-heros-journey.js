@@ -19,6 +19,8 @@ let glowingStage = 0;
 let glowTimer = 0;
 let glowInterval = 120; // frames between stage changes
 let glowPulse = 0;
+let mouseOverCanvas = false;
+let animationFrame = 0; // Track animation progress independently of frameCount
 
 // Interaction state
 let hoveredStage = -1;
@@ -127,6 +129,10 @@ function setup() {
   const canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(document.querySelector('main'));
 
+  // Track mouse enter/leave for animation control
+  canvas.mouseOver(() => mouseOverCanvas = true);
+  canvas.mouseOut(() => mouseOverCanvas = false);
+
   centerX = canvasWidth / 2;
   centerY = drawHeight / 2 + 20;
 
@@ -190,13 +196,17 @@ function draw() {
     drawExamplesPanel(selectedStage);
   }
 
-  // Update animation
-  if (animateCheckbox.checked()) {
-    glowTimer++;
-    glowPulse = sin(frameCount * 0.1) * 0.3 + 0.7;
-    if (glowTimer >= glowInterval) {
-      glowTimer = 0;
-      glowingStage = (glowingStage + 1) % stages.length;
+  // Update animation only when mouse is over canvas
+  if (mouseOverCanvas) {
+    animationFrame++; // Always advance animation frame for center pulse
+
+    if (animateCheckbox.checked()) {
+      glowTimer++;
+      glowPulse = sin(animationFrame * 0.1) * 0.3 + 0.7;
+      if (glowTimer >= glowInterval) {
+        glowTimer = 0;
+        glowingStage = (glowingStage + 1) % stages.length;
+      }
     }
   }
 
@@ -209,8 +219,8 @@ function draw() {
 }
 
 function drawCenterQuest() {
-  // Draw glowing center circle
-  let pulseSize = 60 + sin(frameCount * 0.05) * 5;
+  // Draw glowing center circle (uses animationFrame for mouse-controlled animation)
+  let pulseSize = 60 + sin(animationFrame * 0.05) * 5;
 
   // Outer glow
   noStroke();
