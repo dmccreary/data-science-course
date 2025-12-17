@@ -503,6 +503,16 @@ Good documentation includes:
 - Visualizations of key findings
 - Summary of results and conclusions
 
+In this course we will introduce many ways of creating great documentation as well
+as ways to make sure the documentation is kept up to date as your code changes.
+We will introduce various documentation strategies such as interleaving code 
+and comments in Jupyter Notebooks, using Markdown
+to document your code in GitHub and even using powerful tools like `mkdocs`
+to build high-quality website documentation for your projects.  We
+will even show how AI can be used to add comments to your code and
+automate the creation of check-in comments and create user guides
+for your data science projects.  This entire book is created with markdown and mkdocs.
+
 !!! tip "The Superhero's Journal"
     Even Batman keeps records in the Batcomputer. Your documentation is your version of this—a record of your adventures, discoveries, and hard-won knowledge. Start good habits now, and you'll stand out as a professional later.
 
