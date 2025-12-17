@@ -8,7 +8,7 @@ hide:
 ---
 # Data Science Programming Language Popularity
 
-<iframe src="main.html" height="590px" scrolling="no"></iframe>
+<iframe src="main.html" height="502px" scrolling="no"></iframe>
 
 ## Embed This MicroSim
 

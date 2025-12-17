@@ -18,6 +18,7 @@ let nodeSize = 58;      // Base size for superpower nodes (30% larger than origi
 // Animation
 let pulsePhase = 0;
 let actionLinePhase = 0;
+let mouseOverDrawing = false;
 
 // Interaction state
 let hoveredSuperpower = -1;
@@ -92,6 +93,10 @@ function setup() {
   const canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(document.querySelector('main'));
 
+  // Track mouse enter/leave for animation control
+  canvas.mouseOver(() => mouseOverDrawing = true);
+  canvas.mouseOut(() => mouseOverDrawing = false);
+
   describe('Interactive hub-and-spoke diagram showing Data Science at the center with six superpowers radiating outward to real-world applications. Hover for details.', LABEL);
 }
 
@@ -106,9 +111,11 @@ function draw() {
   noStroke();
   rect(0, drawHeight, canvasWidth, controlHeight);
 
-  // Update animation phases
-  pulsePhase += 0.03;
-  actionLinePhase += 0.05;
+  // Update animation phases only when mouse is over canvas
+  if (mouseOverDrawing) {
+    pulsePhase += 0.03;
+    actionLinePhase += 0.05;
+  }
 
   // Draw action lines (comic book style)
   drawActionLines();
