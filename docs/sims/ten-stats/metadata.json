@@ -3,7 +3,13 @@
   "description": "Interactive progression map showing the learning pathway through ten fundamental statistics MicroSims",
   "creator": "Dan McCreary",
   "date": "2024-12-01",
-  "subject": ["statistics", "learning path", "progression map", "data science", "visualization"],
+  "subject": [
+    "statistics",
+    "learning path",
+    "progression map",
+    "data science",
+    "visualization"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
@@ -12,8 +18,40 @@
   "educationalLevel": "high school",
   "learningResourceType": "learning map",
   "audience": "students, educators",
-  "bloomLevel": ["Remember", "Understand", "Analyze"],
-  "concepts": ["learning progression", "statistics concepts", "concept dependencies", "prerequisite mapping"],
+  "bloomLevel": [
+    "Remember",
+    "Understand",
+    "Analyze"
+  ],
+  "concepts": [
+    "learning progression",
+    "statistics concepts",
+    "concept dependencies",
+    "prerequisite mapping"
+  ],
   "prerequisites": [],
-  "library": "vis-network"
+  "library": "vis-network",
+  "visualizationType": [
+    "animation",
+    "chart",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of ten basic statistics s",
+    "Explore ten basic statistics s through interactive visualization",
+    "Apply knowledge of ten basic statistics s to solve problems",
+    "Experiment with parameters to observe their effects on ten basic statistics s"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

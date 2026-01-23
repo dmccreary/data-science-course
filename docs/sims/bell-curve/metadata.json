@@ -3,7 +3,13 @@
   "description": "Interactive simulation demonstrating how a bell curve emerges from the Central Limit Theorem when sampling from various distributions",
   "creator": "Dan McCreary",
   "date": "2024-12-01",
-  "subject": ["normal distribution", "Central Limit Theorem", "statistics", "probability", "sampling distribution"],
+  "subject": [
+    "normal distribution",
+    "Central Limit Theorem",
+    "statistics",
+    "probability",
+    "sampling distribution"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
@@ -12,8 +18,43 @@
   "educationalLevel": "high school",
   "learningResourceType": "simulation",
   "audience": "students, educators",
-  "bloomLevel": ["Understand", "Apply", "Analyze"],
-  "concepts": ["normal distribution", "Central Limit Theorem", "sampling distribution", "z-scores", "standard deviation"],
-  "prerequisites": ["basic statistics", "mean", "standard deviation"],
-  "library": "p5.js"
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "normal distribution",
+    "Central Limit Theorem",
+    "sampling distribution",
+    "z-scores",
+    "standard deviation"
+  ],
+  "prerequisites": [
+    "basic statistics",
+    "mean",
+    "standard deviation"
+  ],
+  "library": "p5.js",
+  "visualizationType": [
+    "animation",
+    "chart",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of bell curve emergence",
+    "Explore bell curve emergence through interactive visualization",
+    "Apply knowledge of bell curve emergence to solve problems",
+    "Experiment with parameters to observe their effects on bell curve emergence"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

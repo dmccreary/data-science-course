@@ -39,5 +39,11 @@
     "interactive-demo",
     "network",
     "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of independent vs dependent variables",
+    "Apply independent vs dependent variables to solve problems",
+    "Visualize and interpret independent vs dependent variables relationships",
+    "Experiment with parameters to observe their effects on independent vs dependent variables"
   ]
 }

@@ -3,7 +3,13 @@
   "description": "An interactive infographic showing the six-step linear data science workflow process",
   "creator": "Dan McCreary",
   "date": "2024-12-01",
-  "subject": ["data science", "workflow", "process", "methodology", "infographic"],
+  "subject": [
+    "data science",
+    "workflow",
+    "process",
+    "methodology",
+    "infographic"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
@@ -12,8 +18,39 @@
   "educationalLevel": "high school",
   "learningResourceType": "infographic",
   "audience": "students, educators",
-  "bloomLevel": ["Remember", "Understand"],
-  "concepts": ["data science workflow", "data collection", "data cleaning", "data analysis", "visualization", "communication"],
+  "bloomLevel": [
+    "Remember",
+    "Understand"
+  ],
+  "concepts": [
+    "data science workflow",
+    "data collection",
+    "data cleaning",
+    "data analysis",
+    "visualization",
+    "communication"
+  ],
   "prerequisites": [],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "animation",
+    "data-visualization",
+    "diagram",
+    "interactive-demo",
+    "map",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of six-step data science workflow",
+    "Explore six-step data science workflow through interactive visualization",
+    "Apply knowledge of six-step data science workflow to solve problems",
+    "Experiment with parameters to observe their effects on six-step data science workflow"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

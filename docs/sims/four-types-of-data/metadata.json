@@ -3,7 +3,14 @@
   "description": "An interactive infographic describing the four main types of data in data science: image, sequence, table, and graph data",
   "creator": "Dan McCreary",
   "date": "2024-12-01",
-  "subject": ["data types", "image data", "sequence data", "tabular data", "graph data", "data science"],
+  "subject": [
+    "data types",
+    "image data",
+    "sequence data",
+    "tabular data",
+    "graph data",
+    "data science"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
@@ -12,8 +19,37 @@
   "educationalLevel": "high school",
   "learningResourceType": "infographic",
   "audience": "students, educators",
-  "bloomLevel": ["Remember", "Understand"],
-  "concepts": ["data types", "structured data", "unstructured data", "image processing", "time series", "graph theory"],
+  "bloomLevel": [
+    "Remember",
+    "Understand"
+  ],
+  "concepts": [
+    "data types",
+    "structured data",
+    "unstructured data",
+    "image processing",
+    "time series",
+    "graph theory"
+  ],
   "prerequisites": [],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "data-visualization",
+    "graph",
+    "interactive-demo",
+    "network",
+    "simulation",
+    "timeline"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of four types of data science data",
+    "Explore four types of data science data through interactive visualization",
+    "Apply knowledge of four types of data science data to solve problems"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }
