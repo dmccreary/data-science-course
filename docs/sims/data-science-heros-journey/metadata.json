@@ -2,7 +2,12 @@
   "title": "Data Science Hero's Journey",
   "description": "An interactive circular visualization of the data science workflow presented as Joseph Campbell's hero's journey with seven stages from problem definition to communication.",
   "creator": "Dan McCreary",
-  "subject": ["Data Science", "Workflow", "Education", "Hero's Journey"],
+  "subject": [
+    "Data Science",
+    "Workflow",
+    "Education",
+    "Hero's Journey"
+  ],
   "date": "2025-12-16",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -18,7 +23,11 @@
       "Connect each stage to real-world examples",
       "Appreciate the narrative structure of data science projects"
     ],
-    "bloomsTaxonomy": ["Remember", "Understand", "Apply"],
+    "bloomsTaxonomy": [
+      "Remember",
+      "Understand",
+      "Apply"
+    ],
     "duration": "10-15 minutes",
     "prerequisites": "None"
   },
@@ -31,8 +40,13 @@
       "controlHeight": 50
     },
     "responsive": true,
-    "dependencies": ["p5.js CDN"],
-    "accessibility": ["Screen reader description", "High contrast colors"]
+    "dependencies": [
+      "p5.js CDN"
+    ],
+    "accessibility": [
+      "Screen reader description",
+      "High contrast colors"
+    ]
   },
   "controls": [
     {
@@ -58,5 +72,27 @@
       "Forward flow between consecutive stages",
       "Return arrows showing iteration (Evaluation to Data Collection, Modeling to Data Cleaning, Communication to Problem Definition)"
     ]
-  }
+  },
+  "visualizationType": [
+    "animation",
+    "data-visualization",
+    "diagram",
+    "graph",
+    "interactive-demo",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of data science hero's journey",
+    "Explore data science hero's journey through interactive visualization",
+    "Apply knowledge of data science hero's journey to solve problems",
+    "Experiment with parameters to observe their effects on data science hero's journey"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

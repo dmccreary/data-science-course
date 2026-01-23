@@ -2,7 +2,12 @@
   "title": "Data Science Superpower Concept Map",
   "description": "An interactive hub-and-spoke visualization showing data science at the center with six superpowers radiating outward to real-world applications, using a comic book aesthetic.",
   "creator": "Dan McCreary",
-  "subject": ["Data Science", "Career", "Applications", "Concept Map"],
+  "subject": [
+    "Data Science",
+    "Career",
+    "Applications",
+    "Concept Map"
+  ],
   "date": "2025-12-16",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -18,7 +23,10 @@
       "Identify major companies using each type of data science capability",
       "Recognize data science as a set of transformative superpowers"
     ],
-    "bloomsTaxonomy": ["Remember", "Understand"],
+    "bloomsTaxonomy": [
+      "Remember",
+      "Understand"
+    ],
     "duration": "10-15 minutes",
     "prerequisites": "None"
   },
@@ -31,8 +39,13 @@
       "controlHeight": 50
     },
     "responsive": true,
-    "dependencies": ["p5.js CDN"],
-    "accessibility": ["Screen reader description", "High contrast colors"]
+    "dependencies": [
+      "p5.js CDN"
+    ],
+    "accessibility": [
+      "Screen reader description",
+      "High contrast colors"
+    ]
   },
   "controls": [
     {
@@ -53,5 +66,24 @@
     "superpowers": 6,
     "applications": 12,
     "visualStyle": "Comic book / superhero aesthetic"
-  }
+  },
+  "visualizationType": [
+    "animation",
+    "diagram",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of data science superpower concept map",
+    "Explore data science superpower concept map through interactive visualization",
+    "Apply knowledge of data science superpower concept map to solve problems"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }
