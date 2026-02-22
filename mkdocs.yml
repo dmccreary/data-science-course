@@ -13,19 +13,19 @@ nav:
   
   - Chapters:
     - Overview: chapters/index.md
-    - Introduction to Data Science: chapters/01-intro-to-data-science/index.md
-    - Python Environment: chapters/02-python-environment/index.md
-    - Python Data Structures: chapters/03-python-data-structures/index.md
-    - Data Cleaning: chapters/04-data-cleaning/index.md
-    - Data Visualization: chapters/05-data-visualization/index.md
-    - Statistical Foundations: chapters/06-statistical-foundations/index.md
-    - Simple Linear Regression: chapters/07-simple-linear-regression/index.md
-    - Model Evaluation: chapters/08-model-evaluation/index.md
-    - Multiple Linear Regression: chapters/09-multiple-linear-regression/index.md
-    - NumPy Computing: chapters/10-numpy-computing/index.md
-    - Non-linear Models: chapters/11-nonlinear-models-regularization/index.md
-    - Intro to Machine Learning: chapters/12-intro-to-machine-learning/index.md
-    - Neural Networks and PyTorch: chapters/13-neural-networks-pytorch/index.md
+    - 1. Introduction to Data Science: chapters/01-intro-to-data-science/index.md
+    - 2. Python Environment: chapters/02-python-environment/index.md
+    - 3. Python Data Structures: chapters/03-python-data-structures/index.md
+    - 4. Data Cleaning: chapters/04-data-cleaning/index.md
+    - 5. Data Visualization: chapters/05-data-visualization/index.md
+    - 6. Statistical Foundations: chapters/06-statistical-foundations/index.md
+    - 7. Simple Linear Regression: chapters/07-simple-linear-regression/index.md
+    - 8.Model Evaluation: chapters/08-model-evaluation/index.md
+    - 9. Multiple Linear Regression: chapters/09-multiple-linear-regression/index.md
+    - 10. NumPy Computing: chapters/10-numpy-computing/index.md
+    - 11. Non-linear Models: chapters/11-nonlinear-models-regularization/index.md
+    - 12.Intro to Machine Learning: chapters/12-intro-to-machine-learning/index.md
+    - 13. Neural Networks and PyTorch: chapters/13-neural-networks-pytorch/index.md
   
   - Old v1 Content:
     - Table of Contents: chapters-v1/index.md
@@ -45,31 +45,100 @@ nav:
     - Lab 3 - Statistics: labs/03-statistics/index.md
   
   - MicroSims:
-    - Introduction: sims/index.md
-    - MicroSim Lists:
-        - Intro: sims/microsim-lists/index.md
-        - Top 10 Stats Review MicroSims: sims/microsim-lists/10-stats-review-microsims.md
-        - Top 100 Data Science MicroSims: sims/microsim-lists/100-data-science-microsims.md
-    - 10 Stats MicroSims Map: sims/ten-stats/index.md
+    - List of MicroSims: sims/index.md
+    - Activation Function Explorer: sims/activation-function-explorer/index.md
+    - Array Shape Visualizer: sims/array-shape-visualizer/index.md
+    - Bell Curve Emergence: sims/bell-curve/index.md
+    - Bias-Variance Dartboard: sims/bias-variance-dartboard/index.md
     - Book Generation Workflow: sims/book-gen-workflow/index.md
+    - Box Plot Anatomy: sims/box-plot-anatomy/index.md
+    - Broadcasting Visualizer: sims/broadcasting-visualizer/index.md
+    - Central Limit Theorem Simulator MicroSim: sims/central-limit-theorem-simulator-microsim/index.md
+    - Central Tendency Comparison MicroSim: sims/central-tendency-comparison-microsim/index.md
     - Chapter 1 Concept Map: sims/chapter-1-concept-map/index.md
+    - Chart Type Selection Guide: sims/chart-type-selection-guide/index.md
+    - Complexity Curve Explorer: sims/complexity-curve-explorer/index.md
+    - Correlation Visualizer MicroSim: sims/correlation-visualizer-microsim/index.md
+    - Data Cleaning Pipeline Overview: sims/data-cleaning-pipeline-overview/index.md
+    - Data Inspection Command Center: sims/data-inspection-command-center/index.md
+    - Data Loading Workflow: sims/data-loading-workflow/index.md
+    - Data Science Environment Architecture: sims/data-science-environment-architecture/index.md
     - Data Science Hero's Journey: sims/data-science-heros-journey/index.md
-    - Data Science Language Popularity: sims/ds-prog-lang/index.md
+    - Data Science Programming Language Popularity: sims/ds-prog-lang/index.md
     - Data Science Superpower: sims/data-science-superpower/index.md
-    - Data Science Workflow: sims/data-science-workflow/index.md
-    - Four Types of Data: sims/four-types-of-data/index.md
-    - Graph Viewer: sims/graph-viewer/index.md
+    - Data Selection Playground MicroSim: sims/data-selection-playground-microsim/index.md
+    - Data Structure Hierarchy: sims/data-structure-hierarchy/index.md
+    - Data Type Conversion Guide Infographic: sims/data-type-conversion-guide-infographic/index.md
+    - DataFrame Anatomy: sims/dataframe-anatomy/index.md
+    - Duplicate Handling Decision Tree: sims/duplicate-handling-decision-tree/index.md
+    - Error Types Visualizer: sims/error-types-visualizer/index.md
+    - Feature Engineering Laboratory: sims/feature-engineering-laboratory/index.md
+    - Feature Importance Explorer: sims/feature-importance-explorer/index.md
+    - Feature Scaling Comparison MicroSim: sims/feature-scaling-comparison-microsim/index.md
+    - Feature Selection Race: sims/feature-selection-race/index.md
+    - Four Types of Data Science Data: sims/four-types-of-data/index.md
+    - Gradient Descent Visualizer: sims/gradient-descent-visualizer/index.md
+    - Hypothesis Testing Workflow: sims/hypothesis-testing-workflow/index.md
     - Independent vs Dependent Variables: sims/independent-dependent-variables/index.md
-    - Learning Graph: sims/learning-graph/index.md
-    - Least Squares: sims/least-squares/index.md
+    - Interactive Regression Builder MicroSim: sims/interactive-regression-builder-microsim/index.md
+    - K-Fold Cross-Validation Animator: sims/k-fold-cross-validation-animator/index.md
+    - Kernel State Visualization: sims/kernel-state-visualization/index.md
+    - Lambda Tuning Playground: sims/lambda-tuning-playground/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Least Squares MicroSim: sims/least-squares/index.md
+    - Least Squares MicroSim: sims/least-squares-microsim/index.md
+    - List of Data Science MicroSims Lists: sims/microsim-lists/index.md
+    - Matrix Multiplication Visualizer: sims/matrix-multiplication-visualizer/index.md
     - Measurement Scales Pyramid: sims/measurement-scales-pyramid/index.md
+    - Metrics Comparison MicroSim: sims/metrics-comparison-microsim/index.md
+    - MicroSim Template: sims/template/index.md
+    - Missing Value Detection MicroSim: sims/missing-value-detection-microsim/index.md
+    - Model Evaluation Workflow: sims/model-evaluation-workflow/index.md
+    - Model Selection Dashboard: sims/model-selection-dashboard/index.md
+    - Multicollinearity Detector MicroSim: sims/multicollinearity-detector-microsim/index.md
+    - Multiple Regression Anatomy: sims/multiple-regression-anatomy/index.md
+    - Multiple Regression Pipeline: sims/multiple-regression-pipeline/index.md
+    - Neural Network Architecture Builder: sims/neural-network-architecture-builder/index.md
+    - Normal Dice Distribution: sims/normal-dice-distribution/index.md
+    - Normal Distribution Explorer MicroSim: sims/normal-distribution-explorer-microsim/index.md
+    - Notebook Cell Types Interactive Demo: sims/notebook-cell-types-interactive-demo/index.md
+    - NumPy Array vs Python List: sims/numpy-array-vs-python-list/index.md
+    - NumPy Ecosystem Map: sims/numpy-ecosystem-map/index.md
+    - One-Hot Encoding Visualizer: sims/one-hot-encoding-visualizer/index.md
+    - Optimization Landscape Explorer: sims/optimization-landscape-explorer/index.md
+    - Outlier Detection Methods MicroSim: sims/outlier-detection-methods-microsim/index.md
+    - Package Manager Workflow: sims/package-manager-workflow/index.md
+    - Plotly Code Pattern Reference: sims/plotly-code-pattern-reference/index.md
+    - Plotly Interactive Features MicroSim: sims/plotly-interactive-features-microsim/index.md
+    - Polynomial Degree Explorer: sims/polynomial-degree-explorer/index.md
+    - Python Data Science Ecosystem Map: sims/python-data-science-ecosystem-map/index.md
+    - Python Data Structures Comparison MicroSim: sims/python-data-structures-comparison-microsim/index.md
+    - Regression Assumptions Checker MicroSim: sims/regression-assumptions-checker-microsim/index.md
+    - Regression Line Anatomy: sims/regression-line-anatomy/index.md
+    - Regularization Decision Tree: sims/regularization-decision-tree/index.md
+    - Residual Pattern Detective: sims/residual-pattern-detective/index.md
+    - Ridge vs Lasso Comparison: sims/ridge-vs-lasso-comparison/index.md
+    - Scikit-learn Workflow: sims/scikit-learn-workflow/index.md
+    - Six-Step Data Science Workflow: sims/data-science-workflow/index.md
+    - Slicing Playground: sims/slicing-playground/index.md
+    - Supervised vs Unsupervised Learning: sims/supervised-vs-unsupervised-learning/index.md
+    - Ten Basic Statistics MicroSims: sims/ten-stats/index.md
+    - Train-Test Split Visualization: sims/train-test-split-visualization/index.md
+    - Training Loop Visualizer: sims/training-loop-visualizer/index.md
+    - Training Process Animator: sims/training-process-animator/index.md
+    - Transformation Gallery: sims/transformation-gallery/index.md
+    - Two-Dice Sum Distribution: sims/pair-dice-sum-distribution/index.md
     - Variable Type Sorter: sims/variable-type-sorter/index.md
     - Variable Types Decision Tree: sims/variable-types-decision-tree/index.md
-    - Distribution MicroSims:
-      - Bell Curve Emergence: sims/bell-curve/index.md
-      - Normal Distribution: sims/normal-dice-distribution/index.md
-      - Triangular Distribution: sims/pair-dice-sum-distribution/index.md
-    - Template: sims/template/index.md
+    - View Learning Graph: sims/learning-graph/index.md
+    - Virtual Environment Isolation MicroSim: sims/virtual-environment-isolation-microsim/index.md
+    - Visualization Design MicroSim: sims/visualization-design-microsim/index.md
+    - Visualization Library Comparison: sims/visualization-library-comparison/index.md
+    - VS Code Interface Tour: sims/vs-code-interface-tour/index.md
+
+
+
+
   
   - Learning Graph:
     - Introduction: learning-graph/index.md

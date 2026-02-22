@@ -56,6 +56,10 @@ This chapter is where you graduate from "knowing about data science" to actually
 
 #### Diagram: Data Structure Hierarchy
 
+
+<iframe src="../../sims/data-structure-hierarchy/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Data Structure Hierarchy Fullscreen](../../sims/data-structure-hierarchy/main.html)
+
 <details markdown="1">
 <summary>Python Data Structure Hierarchy</summary>
 Type: diagram
@@ -228,6 +232,10 @@ For now, just know that arrays exist and are important. We'll come back to them 
 
 #### Diagram: Python Data Structures Comparison MicroSim
 
+
+<iframe src="../../sims/python-data-structures-comparison-microsim/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Python Data Structures Comparison MicroSim Fullscreen](../../sims/python-data-structures-comparison-microsim/main.html)
+
 <details markdown="1">
 <summary>Data Structure Selection Helper</summary>
 Type: microsim
@@ -377,6 +385,10 @@ Charlie    78       82       80
 This is the structure you'll work with 90% of the time in data science. Let's break down its components.
 
 #### Diagram: DataFrame Anatomy
+
+
+<iframe src="../../sims/dataframe-anatomy/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run DataFrame Anatomy Fullscreen](../../sims/dataframe-anatomy/main.html)
 
 <details markdown="1">
 <summary>DataFrame Anatomy Interactive Diagram</summary>
@@ -546,6 +558,10 @@ df = pd.read_csv("data.csv", index_col="name")
     `read_csv("data.csv")` looks for the file in your current working directory. If the file is elsewhere, use the full path: `read_csv("/path/to/data.csv")` or a relative path: `read_csv("../data/data.csv")`.
 
 #### Diagram: Data Loading Workflow
+
+
+<iframe src="../../sims/data-loading-workflow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Data Loading Workflow Fullscreen](../../sims/data-loading-workflow/main.html)
 
 <details markdown="1">
 <summary>CSV Loading Workflow</summary>
@@ -738,6 +754,10 @@ This is your first glimpse at what the data looks like statistically. Is the ave
 
 #### Diagram: Data Inspection Command Center
 
+
+<iframe src="../../sims/data-inspection-command-center/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Data Inspection Command Center Fullscreen](../../sims/data-inspection-command-center/main.html)
+
 <details markdown="1">
 <summary>Data Inspection Dashboard MicroSim</summary>
 Type: microsim
@@ -883,6 +903,10 @@ This is incredibly powerful. Need all customers who spent over $100 in the last 
 | Boolean filter | `df[df["col"] > value]` | DataFrame |
 
 #### Diagram: Data Selection Playground MicroSim
+
+
+<iframe src="../../sims/data-selection-playground-microsim/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Data Selection Playground MicroSim Fullscreen](../../sims/data-selection-playground-microsim/main.html)
 
 <details markdown="1">
 <summary>Interactive Data Selection Playground</summary>
