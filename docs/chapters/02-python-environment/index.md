@@ -58,6 +58,10 @@ Let's build your headquarters!
 
 #### Diagram: Data Science Environment Architecture
 
+
+<iframe src="../../sims/data-science-environment-architecture/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Data Science Environment Architecture Fullscreen](../../sims/data-science-environment-architecture/main.html)
+
 <details markdown="1">
 <summary>Data Science Environment Architecture</summary>
 Type: diagram
@@ -203,6 +207,10 @@ The syntax is almost identical to pip. So why use conda? Because some data scien
 
 #### Diagram: Package Manager Workflow
 
+
+<iframe src="../../sims/package-manager-workflow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Package Manager Workflow Fullscreen](../../sims/package-manager-workflow/main.html)
+
 <details markdown="1">
 <summary>How Package Managers Work</summary>
 Type: workflow
@@ -301,6 +309,10 @@ Once activated, anything you install goes into that environment only. Your other
     Imagine you're a chef who cooks Italian food, Japanese food, and Mexican food. You COULD keep all your ingredients in one giant pantry. But it's much easier to have three separate stations, each stocked with exactly what that cuisine needs. Virtual environments are your separate cooking stations.
 
 #### Diagram: Virtual Environment Isolation MicroSim
+
+
+<iframe src="../../sims/virtual-environment-isolation-microsim/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Virtual Environment Isolation MicroSim Fullscreen](../../sims/virtual-environment-isolation-microsim/main.html)
 
 <details markdown="1">
 <summary>Virtual Environment Isolation Simulator</summary>
@@ -405,6 +417,10 @@ To install an extension:
     Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open the Command Palette—your gateway to every VS Code feature. Start typing what you want to do, and VS Code will find it.
 
 #### Diagram: VS Code Interface Tour
+
+
+<iframe src="../../sims/vs-code-interface-tour/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run VS Code Interface Tour Fullscreen](../../sims/vs-code-interface-tour/main.html)
 
 <details markdown="1">
 <summary>VS Code Interface Guided Tour</summary>
@@ -569,6 +585,10 @@ The beauty of Markdown is that it's readable even before rendering. But when you
 
 #### Diagram: Notebook Cell Types Interactive Demo
 
+
+<iframe src="../../sims/notebook-cell-types-interactive-demo/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Notebook Cell Types Interactive Demo Fullscreen](../../sims/notebook-cell-types-interactive-demo/main.html)
+
 <details markdown="1">
 <summary>Notebook Cell Types Interactive Demo</summary>
 Type: microsim
@@ -689,6 +709,10 @@ The most common kernel operation: **Restart & Run All**. This verifies that your
     See a circular icon in the top right of Jupyter? That's the kernel status indicator. Empty circle = idle (ready). Filled circle = busy (running code). If it's stuck on busy forever, you might need to interrupt or restart.
 
 #### Diagram: Kernel State Visualization
+
+
+<iframe src="../../sims/kernel-state-visualization/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Kernel State Visualization Fullscreen](../../sims/kernel-state-visualization/main.html)
 
 <details markdown="1">
 <summary>How the Kernel Remembers Variables</summary>
@@ -824,6 +848,10 @@ Beyond the essential five, you'll encounter:
 The beauty of package management: when you need a new capability, you can probably find a library for it. Someone else has already solved your problem—you just need to `pip install` their solution.
 
 #### Diagram: Python Data Science Ecosystem Map
+
+
+<iframe src="../../sims/python-data-science-ecosystem-map/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Python Data Science Ecosystem Map Fullscreen](../../sims/python-data-science-ecosystem-map/main.html)
 
 <details markdown="1">
 <summary>Python Data Science Library Ecosystem</summary>
