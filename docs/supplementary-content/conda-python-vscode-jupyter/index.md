@@ -1,4 +1,4 @@
-# Setting up Python, Visual Studio Code and Jupyter Notebooks
+# Setting up Conda, Python, Visual Studio Code and Jupyter Notebooks
 
 In this course will will use, Python, Visual Studio Code and Jupyter Notebooks to do our classroom work.
 We selected these tools because they are the most popular development environments
