@@ -1,0 +1,2758 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/data-science-course/learning-graph/diagram-details/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Diagram and MicroSim Details - AI Based Data Science with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-RTBCWGJKKR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-RTBCWGJKKR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-RTBCWGJKKR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Diagram and MicroSim Details - AI Based Data Science with Python" >
+      
+        <meta  property="og:description"  content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/learning-graph/diagram-details.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/data-science-course/learning-graph/diagram-details/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Diagram and MicroSim Details - AI Based Data Science with Python" >
+      
+        <meta  name="twitter:description"  content="An online course on introduction to data science with Python.  Extensive use of AI tools and MicroSims to help you learn." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/data-science-course/assets/images/social/learning-graph/diagram-details.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diagram-and-microsim-details" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Based Data Science with Python" class="md-header__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Based Data Science with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Diagram and MicroSim Details
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Based Data Science with Python" class="md-nav__button md-logo" aria-label="AI Based Data Science with Python" data-md-component="logo">
+      
+  <img src="../../img/logo-192.png" alt="logo">
+
+    </a>
+    AI Based Data Science with Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/data-science-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../supplementary-content/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Supplementary Content
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Sample GenAI Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-intro-to-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Intro To Data Science
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1: Intro To Data Science">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-1-concept-mind-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 Concept Mind Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-science-superpower-concept-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science Superpower Concept Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-science-workflow-heros-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science Workflow Hero's Journey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent-vs-dependent-variable-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Independent vs Dependent Variable MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-scales-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Scales Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-types-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Types Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-python-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Python Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2: Python Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-science-environment-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science Environment Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-state-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel State Visualization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebook-cell-types-interactive-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notebook Cell Types Interactive Demo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-manager-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Manager Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-data-science-ecosystem-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Data Science Ecosystem Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-interface-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code Interface Tour
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-environment-isolation-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Environment Isolation MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-python-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Python Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3: Python Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-inspection-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Inspection Command Center
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loading-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Loading Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-selection-playground-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Selection Playground MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-structure-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Structure Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-data-structures-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Data Structures Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-data-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Data Cleaning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4: Data Cleaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-cleaning-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Cleaning Pipeline Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-type-conversion-guide-infographic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Type Conversion Guide Infographic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-handling-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Handling Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-scaling-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Scaling Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-value-detection-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Value Detection MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlier-detection-methods-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outlier Detection Methods MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: Data Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5: Data Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chart-type-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart Type Selection Guide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotly-code-pattern-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotly Code Pattern Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotly-interactive-features-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotly Interactive Features MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-design-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Design MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-library-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Library Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-statistical-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Statistical Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 6: Statistical Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#box-plot-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Box Plot Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#central-limit-theorem-simulator-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Central Limit Theorem Simulator MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#central-tendency-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Central Tendency Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation-visualizer-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correlation Visualizer MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hypothesis-testing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypothesis Testing Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-distribution-explorer-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normal Distribution Explorer MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-simple-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Simple Linear Regression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 7: Simple Linear Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-regression-builder-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Regression Builder MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#least-squares-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Least Squares MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-assumptions-checker-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression Assumptions Checker MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-line-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression Line Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scikit-learn-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scikit-learn Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-model-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Model Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 8: Model Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bias-variance-dartboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias-Variance Dartboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-curve-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity Curve Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-fold-cross-validation-animator" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Fold Cross-Validation Animator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-comparison-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics Comparison MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-evaluation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Evaluation Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-selection-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Selection Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residual-pattern-detective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residual Pattern Detective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train-test-split-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Train-Test Split Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-multiple-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Multiple Linear Regression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 9: Multiple Linear Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-engineering-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Engineering Laboratory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-importance-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Importance Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-selection-race" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Selection Race
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multicollinearity-detector-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multicollinearity Detector MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-regression-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Regression Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-regression-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Regression Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-hot-encoding-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-Hot Encoding Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-numpy-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10: Numpy Computing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 10: Numpy Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-shape-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Shape Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcasting-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcasting Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-multiplication-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Multiplication Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpy-array-vs-python-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy Array vs Python List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpy-ecosystem-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy Ecosystem Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slicing-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slicing Playground
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-nonlinear-models-regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 11: Nonlinear Models Regularization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 11: Nonlinear Models Regularization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lambda-tuning-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Tuning Playground
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-degree-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Degree Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regularization-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regularization Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ridge-vs-lasso-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ridge vs Lasso Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformation-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformation Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-12-intro-to-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 12: Intro To Machine Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 12: Intro To Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-types-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Types Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-descent-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Descent Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-landscape-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Landscape Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervised-vs-unsupervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised vs Unsupervised Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-process-animator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Process Animator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-neural-networks-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 13: Neural Networks Pytorch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 13: Neural Networks Pytorch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activation-function-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activation Function Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-architecture-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Architecture Builder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-loop-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Loop Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/learning-graph/diagram-details.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="diagram-and-microsim-details">Diagram and MicroSim Details</h1>
+<p><strong>Total Visual Elements:</strong> 75
+<strong>Diagrams:</strong> 6
+<strong>MicroSims:</strong> 43</p>
+<h2 id="chapter-1-intro-to-data-science">Chapter 1: Intro To Data Science</h2>
+<p><strong>Total elements:</strong> 6</p>
+<h3 id="chapter-1-concept-mind-map"><a href="../../chapters/01-intro-to-data-science/#diagram-chapter-1-concept-mind-map">Chapter 1 Concept Mind Map</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="data-science-superpower-concept-map"><a href="../../chapters/01-intro-to-data-science/#diagram-data-science-superpower-concept-map">Data Science Superpower Concept Map</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="data-science-workflow-heros-journey"><a href="../../chapters/01-intro-to-data-science/#diagram-data-science-workflow-heros-journey">Data Science Workflow Hero's Journey</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="independent-vs-dependent-variable-microsim"><a href="../../chapters/01-intro-to-data-science/#diagram-independent-vs-dependent-variable-microsim">Independent vs Dependent Variable MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 13</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="measurement-scales-pyramid"><a href="../../chapters/01-intro-to-data-science/#diagram-measurement-scales-pyramid">Measurement Scales Pyramid</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="variable-types-decision-tree"><a href="../../chapters/01-intro-to-data-science/#diagram-variable-types-decision-tree">Variable Types Decision Tree</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h2 id="chapter-2-python-environment">Chapter 2: Python Environment</h2>
+<p><strong>Total elements:</strong> 7</p>
+<h3 id="data-science-environment-architecture"><a href="../../chapters/02-python-environment/#diagram-data-science-environment-architecture">Data Science Environment Architecture</a></h3>
+<ul>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="kernel-state-visualization"><a href="../../chapters/02-python-environment/#diagram-kernel-state-visualization">Kernel State Visualization</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="notebook-cell-types-interactive-demo"><a href="../../chapters/02-python-environment/#diagram-notebook-cell-types-interactive-demo">Notebook Cell Types Interactive Demo</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 13</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="package-manager-workflow"><a href="../../chapters/02-python-environment/#diagram-package-manager-workflow">Package Manager Workflow</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="python-data-science-ecosystem-map"><a href="../../chapters/02-python-environment/#diagram-python-data-science-ecosystem-map">Python Data Science Ecosystem Map</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="vs-code-interface-tour"><a href="../../chapters/02-python-environment/#diagram-vs-code-interface-tour">VS Code Interface Tour</a></h3>
+<ul>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="virtual-environment-isolation-microsim"><a href="../../chapters/02-python-environment/#diagram-virtual-environment-isolation-microsim">Virtual Environment Isolation MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 11</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-3-python-data-structures">Chapter 3: Python Data Structures</h2>
+<p><strong>Total elements:</strong> 6</p>
+<h3 id="data-inspection-command-center"><a href="../../chapters/03-python-data-structures/#diagram-data-inspection-command-center">Data Inspection Command Center</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 18</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="data-loading-workflow"><a href="../../chapters/03-python-data-structures/#diagram-data-loading-workflow">Data Loading Workflow</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="data-selection-playground-microsim"><a href="../../chapters/03-python-data-structures/#diagram-data-selection-playground-microsim">Data Selection Playground MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 13</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="data-structure-hierarchy"><a href="../../chapters/03-python-data-structures/#diagram-data-structure-hierarchy">Data Structure Hierarchy</a></h3>
+<ul>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="dataframe-anatomy"><a href="../../chapters/03-python-data-structures/#diagram-dataframe-anatomy">DataFrame Anatomy</a></h3>
+<ul>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="python-data-structures-comparison-microsim"><a href="../../chapters/03-python-data-structures/#diagram-python-data-structures-comparison-microsim">Python Data Structures Comparison MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-4-data-cleaning">Chapter 4: Data Cleaning</h2>
+<p><strong>Total elements:</strong> 6</p>
+<h3 id="data-cleaning-pipeline-overview"><a href="../../chapters/04-data-cleaning/#diagram-data-cleaning-pipeline-overview">Data Cleaning Pipeline Overview</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="data-type-conversion-guide-infographic"><a href="../../chapters/04-data-cleaning/#diagram-data-type-conversion-guide-infographic">Data Type Conversion Guide Infographic</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="duplicate-handling-decision-tree"><a href="../../chapters/04-data-cleaning/#diagram-duplicate-handling-decision-tree">Duplicate Handling Decision Tree</a></h3>
+<ul>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="feature-scaling-comparison-microsim"><a href="../../chapters/04-data-cleaning/#diagram-feature-scaling-comparison-microsim">Feature Scaling Comparison MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 8</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="missing-value-detection-microsim"><a href="../../chapters/04-data-cleaning/#diagram-missing-value-detection-microsim">Missing Value Detection MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="outlier-detection-methods-microsim"><a href="../../chapters/04-data-cleaning/#diagram-outlier-detection-methods-microsim">Outlier Detection Methods MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 12</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-5-data-visualization">Chapter 5: Data Visualization</h2>
+<p><strong>Total elements:</strong> 5</p>
+<h3 id="chart-type-selection-guide"><a href="../../chapters/05-data-visualization/#diagram-chart-type-selection-guide">Chart Type Selection Guide</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="plotly-code-pattern-reference"><a href="../../chapters/05-data-visualization/#diagram-plotly-code-pattern-reference">Plotly Code Pattern Reference</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="plotly-interactive-features-microsim"><a href="../../chapters/05-data-visualization/#diagram-plotly-interactive-features-microsim">Plotly Interactive Features MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="visualization-design-microsim"><a href="../../chapters/05-data-visualization/#diagram-visualization-design-microsim">Visualization Design MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 28</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="visualization-library-comparison"><a href="../../chapters/05-data-visualization/#diagram-visualization-library-comparison">Visualization Library Comparison</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-6-statistical-foundations">Chapter 6: Statistical Foundations</h2>
+<p><strong>Total elements:</strong> 6</p>
+<h3 id="box-plot-anatomy"><a href="../../chapters/06-statistical-foundations/#diagram-box-plot-anatomy">Box Plot Anatomy</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="central-limit-theorem-simulator-microsim"><a href="../../chapters/06-statistical-foundations/#diagram-central-limit-theorem-simulator-microsim">Central Limit Theorem Simulator MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 15</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="central-tendency-comparison-microsim"><a href="../../chapters/06-statistical-foundations/#diagram-central-tendency-comparison-microsim">Central Tendency Comparison MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="correlation-visualizer-microsim"><a href="../../chapters/06-statistical-foundations/#diagram-correlation-visualizer-microsim">Correlation Visualizer MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 14</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="hypothesis-testing-workflow"><a href="../../chapters/06-statistical-foundations/#diagram-hypothesis-testing-workflow">Hypothesis Testing Workflow</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="normal-distribution-explorer-microsim"><a href="../../chapters/06-statistical-foundations/#diagram-normal-distribution-explorer-microsim">Normal Distribution Explorer MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 13</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h2 id="chapter-7-simple-linear-regression">Chapter 7: Simple Linear Regression</h2>
+<p><strong>Total elements:</strong> 5</p>
+<h3 id="interactive-regression-builder-microsim"><a href="../../chapters/07-simple-linear-regression/#diagram-interactive-regression-builder-microsim">Interactive Regression Builder MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 18</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="least-squares-microsim"><a href="../../chapters/07-simple-linear-regression/#diagram-least-squares-microsim">Least Squares MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 12</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="regression-assumptions-checker-microsim"><a href="../../chapters/07-simple-linear-regression/#diagram-regression-assumptions-checker-microsim">Regression Assumptions Checker MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 8</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="regression-line-anatomy"><a href="../../chapters/07-simple-linear-regression/#diagram-regression-line-anatomy">Regression Line Anatomy</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="scikit-learn-workflow"><a href="../../chapters/07-simple-linear-regression/#diagram-scikit-learn-workflow">Scikit-learn Workflow</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h2 id="chapter-8-model-evaluation">Chapter 8: Model Evaluation</h2>
+<p><strong>Total elements:</strong> 8</p>
+<h3 id="bias-variance-dartboard"><a href="../../chapters/08-model-evaluation/#diagram-bias-variance-dartboard">Bias-Variance Dartboard</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 13</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="complexity-curve-explorer"><a href="../../chapters/08-model-evaluation/#diagram-complexity-curve-explorer">Complexity Curve Explorer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="k-fold-cross-validation-animator"><a href="../../chapters/08-model-evaluation/#diagram-k-fold-cross-validation-animator">K-Fold Cross-Validation Animator</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="metrics-comparison-microsim"><a href="../../chapters/08-model-evaluation/#diagram-metrics-comparison-microsim">Metrics Comparison MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="model-evaluation-workflow"><a href="../../chapters/08-model-evaluation/#diagram-model-evaluation-workflow">Model Evaluation Workflow</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="model-selection-dashboard"><a href="../../chapters/08-model-evaluation/#diagram-model-selection-dashboard">Model Selection Dashboard</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 14</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="residual-pattern-detective"><a href="../../chapters/08-model-evaluation/#diagram-residual-pattern-detective">Residual Pattern Detective</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="train-test-split-visualization"><a href="../../chapters/08-model-evaluation/#diagram-train-test-split-visualization">Train-Test Split Visualization</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-9-multiple-linear-regression">Chapter 9: Multiple Linear Regression</h2>
+<p><strong>Total elements:</strong> 7</p>
+<h3 id="feature-engineering-laboratory"><a href="../../chapters/09-multiple-linear-regression/#diagram-feature-engineering-laboratory">Feature Engineering Laboratory</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 14</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="feature-importance-explorer"><a href="../../chapters/09-multiple-linear-regression/#diagram-feature-importance-explorer">Feature Importance Explorer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="feature-selection-race"><a href="../../chapters/09-multiple-linear-regression/#diagram-feature-selection-race">Feature Selection Race</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="multicollinearity-detector-microsim"><a href="../../chapters/09-multiple-linear-regression/#diagram-multicollinearity-detector-microsim">Multicollinearity Detector MicroSim</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="multiple-regression-anatomy"><a href="../../chapters/09-multiple-linear-regression/#diagram-multiple-regression-anatomy">Multiple Regression Anatomy</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="multiple-regression-pipeline"><a href="../../chapters/09-multiple-linear-regression/#diagram-multiple-regression-pipeline">Multiple Regression Pipeline</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="one-hot-encoding-visualizer"><a href="../../chapters/09-multiple-linear-regression/#diagram-one-hot-encoding-visualizer">One-Hot Encoding Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-10-numpy-computing">Chapter 10: Numpy Computing</h2>
+<p><strong>Total elements:</strong> 6</p>
+<h3 id="array-shape-visualizer"><a href="../../chapters/10-numpy-computing/#diagram-array-shape-visualizer">Array Shape Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 14</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="broadcasting-visualizer"><a href="../../chapters/10-numpy-computing/#diagram-broadcasting-visualizer">Broadcasting Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="matrix-multiplication-visualizer"><a href="../../chapters/10-numpy-computing/#diagram-matrix-multiplication-visualizer">Matrix Multiplication Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="numpy-array-vs-python-list"><a href="../../chapters/10-numpy-computing/#diagram-numpy-array-vs-python-list">NumPy Array vs Python List</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="numpy-ecosystem-map"><a href="../../chapters/10-numpy-computing/#diagram-numpy-ecosystem-map">NumPy Ecosystem Map</a></h3>
+<ul>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 1</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="slicing-playground"><a href="../../chapters/10-numpy-computing/#diagram-slicing-playground">Slicing Playground</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 13</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-11-nonlinear-models-regularization">Chapter 11: Nonlinear Models Regularization</h2>
+<p><strong>Total elements:</strong> 5</p>
+<h3 id="lambda-tuning-playground"><a href="../../chapters/11-nonlinear-models-regularization/#diagram-lambda-tuning-playground">Lambda Tuning Playground</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="polynomial-degree-explorer"><a href="../../chapters/11-nonlinear-models-regularization/#diagram-polynomial-degree-explorer">Polynomial Degree Explorer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="regularization-decision-tree"><a href="../../chapters/11-nonlinear-models-regularization/#diagram-regularization-decision-tree">Regularization Decision Tree</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="ridge-vs-lasso-comparison"><a href="../../chapters/11-nonlinear-models-regularization/#diagram-ridge-vs-lasso-comparison">Ridge vs Lasso Comparison</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="transformation-gallery"><a href="../../chapters/11-nonlinear-models-regularization/#diagram-transformation-gallery">Transformation Gallery</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-12-intro-to-machine-learning">Chapter 12: Intro To Machine Learning</h2>
+<p><strong>Total elements:</strong> 5</p>
+<h3 id="error-types-visualizer"><a href="../../chapters/12-intro-to-machine-learning/#diagram-error-types-visualizer">Error Types Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 12</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="gradient-descent-visualizer"><a href="../../chapters/12-intro-to-machine-learning/#diagram-gradient-descent-visualizer">Gradient Descent Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 11</li>
+<li><strong>Difficulty:</strong> Very Hard</li>
+</ul>
+<h3 id="optimization-landscape-explorer"><a href="../../chapters/12-intro-to-machine-learning/#diagram-optimization-landscape-explorer">Optimization Landscape Explorer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="supervised-vs-unsupervised-learning"><a href="../../chapters/12-intro-to-machine-learning/#diagram-supervised-vs-unsupervised-learning">Supervised vs Unsupervised Learning</a></h3>
+<ul>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="training-process-animator"><a href="../../chapters/12-intro-to-machine-learning/#diagram-training-process-animator">Training Process Animator</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-13-neural-networks-pytorch">Chapter 13: Neural Networks Pytorch</h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="activation-function-explorer"><a href="../../chapters/13-neural-networks-pytorch/#diagram-activation-function-explorer">Activation Function Explorer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 8</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="neural-network-architecture-builder"><a href="../../chapters/13-neural-networks-pytorch/#diagram-neural-network-architecture-builder">Neural Network Architecture Builder</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 11</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="training-loop-visualizer"><a href="../../chapters/13-neural-networks-pytorch/#diagram-training-loop-visualizer">Training Loop Visualizer</a></h3>
+<ul>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 12</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
