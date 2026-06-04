@@ -1,16 +1,6 @@
-# Foundations of Data Science
+# Lab on Global Healthcare Costs Analysis
 
-## Introduction to Data Science and Its Applications
-
-Data science is the discipline of extracting meaningful insights from data by combining **statistics**, **programming**, and **domain expertise**. It powers many of the services and tools we use every day—from recommendation engines on streaming platforms to real-time fraud detection in banking. Governments, businesses, and non-profits alike depend on data science to make **evidence-based decisions** and improve efficiency.
-
-Applications of data science span nearly every field:
-
-* **Healthcare:** Predicting disease risks, optimizing treatment effectiveness, and analyzing healthcare costs.
-* **Finance:** Credit scoring, algorithmic trading, and fraud detection.
-* **Retail:** Personalized recommendations and demand forecasting.
-* **Transportation:** Route optimization and autonomous vehicle navigation.
-* **Environmental Science:** Climate modeling and resource management.
+## Global Healthcare Cost
 
 ### First Lab: Exploring Sample Datasets
 
