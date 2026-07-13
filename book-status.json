@@ -1,0 +1,695 @@
+{
+  "project": {
+    "title": "AI Based Data Science with Python",
+    "subtitle": "Auto-scanned intelligent textbook",
+    "author": "Dan McCreary",
+    "costPerMTokens": 15,
+    "sessionBudget": {
+      "pro": 900000,
+      "max": 3500000
+    }
+  },
+  "sections": {
+    "scaffold": {
+      "status": "published",
+      "tokensTarget": 2000,
+      "tokensDone": 2000
+    },
+    "course-description": {
+      "status": "published",
+      "tokensTarget": 4000,
+      "tokensDone": 1220
+    },
+    "learning-graph": {
+      "status": "published",
+      "tokensTarget": 20000,
+      "tokensDone": 20000
+    },
+    "chapter-structure": {
+      "status": "published",
+      "tokensTarget": 15000,
+      "tokensDone": 15000
+    },
+    "chapter-content": {
+      "countLabel": "14 chapters",
+      "children": [
+        {
+          "n": 1,
+          "title": "Introduction to Data Science",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 2,
+          "title": "Python Environment and Setup",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 3,
+          "title": "Python Data Structures",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 4,
+          "title": "Data Cleaning and Preprocessing",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 5,
+          "title": "Data Visualization with Matplotlib and Plotly",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 6,
+          "title": "Statistical Foundations",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 7,
+          "title": "Simple Linear Regression",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 8,
+          "title": "Model Evaluation and Validation",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 9,
+          "title": "Multiple Linear Regression",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 10,
+          "title": "NumPy and Numerical Computing",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 11,
+          "title": "Non-linear Models and Regularization",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 12,
+          "title": "Introduction to Machine Learning",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 13,
+          "title": "Neural Networks and PyTorch",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 14,
+          "title": "Capstone Project",
+          "status": "not-started",
+          "tokens": 10000
+        }
+      ]
+    },
+    "chapter-images": {
+      "status": "drafted",
+      "tokensTarget": 8000,
+      "tokensDone": 3600
+    },
+    "microsims": {
+      "countLabel": "87 simulations",
+      "children": [
+        {
+          "n": 1,
+          "title": "Activation Function Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 2,
+          "title": "Array Shape Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 3,
+          "title": "Bell Curve Emergence",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 4,
+          "title": "Bias-Variance Dartboard",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 5,
+          "title": "Book Generation Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 6,
+          "title": "Box Plot Anatomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 7,
+          "title": "Broadcasting Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 8,
+          "title": "Central Limit Theorem Simulator MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 9,
+          "title": "Central Tendency Comparison MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 10,
+          "title": "Chapter 1 Concept Map",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 11,
+          "title": "Chart Type Selection Guide",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 12,
+          "title": "Complexity Curve Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 13,
+          "title": "Correlation Visualizer MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 14,
+          "title": "Data Cleaning Pipeline Overview",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 15,
+          "title": "Data Inspection Command Center",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 16,
+          "title": "Data Loading Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 17,
+          "title": "Data Science Environment Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 18,
+          "title": "Data Science Hero's Journey",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 19,
+          "title": "Data Science Superpower Concept Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 20,
+          "title": "Six-Step Data Science Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 21,
+          "title": "Data Selection Playground MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 22,
+          "title": "Data Structure Hierarchy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 23,
+          "title": "Data Type Conversion Guide Infographic",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 24,
+          "title": "DataFrame Anatomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 25,
+          "title": "Data Science Programming Language Popularity",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 26,
+          "title": "Duplicate Handling Decision Tree",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 27,
+          "title": "Error Types Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 28,
+          "title": "Feature Engineering Laboratory",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 29,
+          "title": "Feature Importance Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 30,
+          "title": "Feature Scaling Comparison MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 31,
+          "title": "Feature Selection Race",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 32,
+          "title": "Four Types of Data Science Data",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 33,
+          "title": "Gradient Descent Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 34,
+          "title": "Learning Graph Viewer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 35,
+          "title": "Hypothesis Testing Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 36,
+          "title": "Independent vs Dependent Variables",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 37,
+          "title": "Interactive Regression Builder MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 38,
+          "title": "K-Fold Cross-Validation Animator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 39,
+          "title": "Kernel State Visualization",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 40,
+          "title": "Lambda Tuning Playground",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 41,
+          "title": "Least Squares MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 42,
+          "title": "Least Squares MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 43,
+          "title": "Matrix Multiplication Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 44,
+          "title": "Measurement Scales Pyramid",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 45,
+          "title": "Metrics Comparison MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 46,
+          "title": "Missing Value Detection MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 47,
+          "title": "Model Evaluation Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 48,
+          "title": "Model Selection Dashboard",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 49,
+          "title": "Multicollinearity Detector MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 50,
+          "title": "Multiple Regression Anatomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 51,
+          "title": "Multiple Regression Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 52,
+          "title": "Neural Network Architecture Builder",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 53,
+          "title": "Normal Dice Distribution",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 54,
+          "title": "Normal Distribution Explorer MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 55,
+          "title": "Notebook Cell Types Interactive Demo",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 56,
+          "title": "NumPy Array vs Python List",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 57,
+          "title": "NumPy Ecosystem Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 58,
+          "title": "One-Hot Encoding Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 59,
+          "title": "Optimization Landscape Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 60,
+          "title": "Outlier Detection Methods MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 61,
+          "title": "Package Manager Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 62,
+          "title": "Two-Dice Sum Distribution",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 63,
+          "title": "Plotly Code Pattern Reference",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 64,
+          "title": "Plotly Interactive Features MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 65,
+          "title": "Polynomial Degree Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 66,
+          "title": "Python Data Science Ecosystem Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 67,
+          "title": "Python Data Structures Comparison MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 68,
+          "title": "Regression Assumptions Checker MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 69,
+          "title": "Regression Line Anatomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 70,
+          "title": "Regularization Decision Tree",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 71,
+          "title": "Residual Pattern Detective",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 72,
+          "title": "Ridge vs Lasso Comparison",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 73,
+          "title": "Scikit-learn Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 74,
+          "title": "Slicing Playground",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 75,
+          "title": "Supervised vs Unsupervised Learning",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 76,
+          "title": "MicroSim Template",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 77,
+          "title": "Ten Basic Statistics MicroSims",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 78,
+          "title": "Train-Test Split Visualization",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 79,
+          "title": "Training Loop Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 80,
+          "title": "Training Process Animator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 81,
+          "title": "Transformation Gallery",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 82,
+          "title": "Variable Type Sorter",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 83,
+          "title": "Variable Types Decision Tree",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 84,
+          "title": "Virtual Environment Isolation MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 85,
+          "title": "Visualization Design MicroSim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 86,
+          "title": "Visualization Library Comparison",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 87,
+          "title": "VS Code Interface Tour",
+          "status": "published",
+          "tokens": 5000
+        }
+      ]
+    },
+    "glossary": {
+      "status": "published",
+      "tokensTarget": 15000,
+      "tokensDone": 11919
+    },
+    "faq": {
+      "status": "published",
+      "tokensTarget": 12000,
+      "tokensDone": 6943
+    },
+    "quiz": {
+      "status": "not-started",
+      "tokensTarget": 30000,
+      "tokensDone": 0
+    },
+    "reference": {
+      "status": "not-started",
+      "tokensTarget": 20000,
+      "tokensDone": 0
+    },
+    "teachers-guide": {
+      "status": "not-started",
+      "tokensTarget": 15000,
+      "tokensDone": 0
+    },
+    "book-metrics": {
+      "status": "drafted",
+      "tokensTarget": 2000,
+      "tokensDone": 900
+    },
+    "publish": {
+      "status": "published",
+      "tokensTarget": 10000,
+      "tokensDone": 10000
+    },
+    "stories": {
+      "status": "not-started",
+      "tokensTarget": 30000,
+      "tokensDone": 0
+    }
+  }
+}
