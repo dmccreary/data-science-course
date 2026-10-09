@@ -182,6 +182,10 @@ Data can have multiple modes (bimodal, multimodal) or no mode at all if every va
 
 #### Diagram: Central Tendency Comparison MicroSim
 
+
+<iframe src="../../sims/central-tendency-comparison-microsim/main.html" width="100%" height="542px" scrolling="no"></iframe>
+[Run Central Tendency Comparison MicroSim Fullscreen](../../sims/central-tendency-comparison-microsim/main.html)
+
 <details markdown="1">
 <summary>Mean, Median, Mode Interactive Explorer</summary>
 Type: microsim
@@ -376,6 +380,10 @@ print(f"Outliers: {outliers}")
 
 #### Diagram: Box Plot Anatomy
 
+
+<iframe src="../../sims/box-plot-anatomy/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run Box Plot Anatomy Fullscreen](../../sims/box-plot-anatomy/main.html)
+
 <details markdown="1">
 <summary>Interactive Box Plot Anatomy</summary>
 Type: infographic
@@ -558,6 +566,10 @@ print(f"Within 3 std: {within_3_std:.1%}")  # ~99.7%
 
 #### Diagram: Normal Distribution Explorer MicroSim
 
+
+<iframe src="../../sims/normal-distribution-explorer-microsim/main.html" width="100%" height="597px" scrolling="no"></iframe>
+[Run Normal Distribution Explorer MicroSim Fullscreen](../../sims/normal-distribution-explorer-microsim/main.html)
+
 <details markdown="1">
 <summary>Interactive Normal Distribution Explorer</summary>
 Type: microsim
@@ -730,6 +742,10 @@ fig.show()
 
 #### Diagram: Central Limit Theorem Simulator MicroSim
 
+
+<iframe src="../../sims/central-limit-theorem-simulator-microsim/main.html" width="100%" height="587px" scrolling="no"></iframe>
+[Run Central Limit Theorem Simulator MicroSim Fullscreen](../../sims/central-limit-theorem-simulator-microsim/main.html)
+
 <details markdown="1">
 <summary>Central Limit Theorem Interactive Demonstration</summary>
 Type: microsim
@@ -871,6 +887,10 @@ else:
     A result can be statistically significant but practically meaningless. If a drug reduces blood pressure by 0.1 mmHg and it's significant with p < 0.001, so what? That's too small to matter clinically. Always consider effect size, not just p-values.
 
 #### Diagram: Hypothesis Testing Workflow
+
+
+<iframe src="../../sims/hypothesis-testing-workflow/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Hypothesis Testing Workflow Fullscreen](../../sims/hypothesis-testing-workflow/main.html)
 
 <details markdown="1">
 <summary>Hypothesis Testing Decision Flowchart</summary>
@@ -1051,6 +1071,10 @@ fig.show()
 ```
 
 #### Diagram: Correlation Visualizer MicroSim
+
+
+<iframe src="../../sims/correlation-visualizer-microsim/main.html" width="100%" height="587px" scrolling="no"></iframe>
+[Run Correlation Visualizer MicroSim Fullscreen](../../sims/correlation-visualizer-microsim/main.html)
 
 <details markdown="1">
 <summary>Interactive Correlation Explorer</summary>

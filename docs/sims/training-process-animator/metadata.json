@@ -1,45 +1,69 @@
 {
   "title": "Training Process Animator",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for training process animator",
+  "subject": "Data Science",
+  "description": "Step through gradient descent as it fits a line to study-hours data, and watch the weight, the bias, the gradients, and the training and validation error change at every iteration.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Training Process Animator",
+    "subjectArea": "Data Science",
+    "topic": "The training loop of a linear model",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how each iteration of training uses the error and its gradients to adjust a model's parameters, and predict how the learning rate changes the way training proceeds."
     ],
-    "bloomsTaxonomy": "Apply",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Simple linear regression",
+      "Mean squared error",
+      "Gradient descent update rule"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 535
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of an iterative algorithm on concrete data with every intermediate value shown",
+    "keyQuestions": [
+      "Why are the first updates large and the later ones small?",
+      "What do the signs of the two gradients tell you about how w and b will change?",
+      "Why does training end at the same line from every starting point?",
+      "The validation rows never enter the gradient. Why does the validation MSE still go down?"
+    ],
+    "commonMisconceptions": [
+      "The model sees the right answer and jumps to it (it only learns which direction lowers the error, and takes many steps).",
+      "Training changes the data (the points never move; only w and b change).",
+      "More iterations always keep improving the model (once the gradient is nearly zero, further updates change almost nothing).",
+      "The training MSE should reach zero (noise in the data sets a floor; here the lowest possible training MSE is about 0.55)."
+    ],
+    "assessmentOpportunities": [
+      "Students are given w, b, both gradients, and a learning rate for one iteration, compute the updated w and b, and explain in two sentences why the validation MSE is tracked even though it is never used in the update."
+    ]
   },
-  "chapter": "12-intro-to-machine-learning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "training-process-animator",
+  "chapter": "12-intro-to-machine-learning",
+  "completion_status": "implemented"
 }

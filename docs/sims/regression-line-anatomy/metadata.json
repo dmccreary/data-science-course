@@ -1,45 +1,68 @@
 {
   "title": "Regression Line Anatomy",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for regression line anatomy",
+  "subject": "Data Science",
+  "description": "Hover over or click the five numbered parts of a fitted regression line (intercept, slope, predicted value, actual value, and residual) to read what each one means and see its value for ten students.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Regression Line Anatomy",
+    "subjectArea": "Data Science",
+    "topic": "Parts of a regression line and its equation",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to identify the intercept, slope, predicted value, actual value, and residual on a regression plot and in the regression equation."
     ],
     "bloomsTaxonomy": "Remember",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "5-10 minutes",
+    "prerequisites": [
+      "Scatter plots",
+      "Slope and y-intercept of a line",
+      "Mean of a set of numbers"
+    ],
+    "standards": [],
+    "bloomVerb": "Identify"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 585
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Labeled diagram with hover and click to reveal, plus a hide-the-names self-test",
+    "keyQuestions": [
+      "Which number in the equation tells you how steep the line is?",
+      "Why is the predicted value always on the line while the actual value usually is not?",
+      "What does a positive residual say about the model's prediction for that student?"
+    ],
+    "commonMisconceptions": [
+      "The residual is the shortest (perpendicular) distance from a point to the line (it is the vertical distance).",
+      "The intercept is where the line crosses the x-axis (it is where the line crosses the y-axis, at x = 0).",
+      "The regression line must pass through the data points (it usually passes through none of them).",
+      "A positive residual means the model predicted too high (the actual value is above the prediction, so the model predicted too low)."
+    ],
+    "assessmentOpportunities": [
+      "Given an unlabeled scatter plot with a regression line and its equation, students label the intercept, the slope triangle, one predicted value, one actual value, and the residual between them, and state the sign of that residual."
+    ]
   },
-  "chapter": "07-simple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "regression-line-anatomy",
+  "chapter": "07-simple-linear-regression",
+  "completion_status": "implemented"
 }

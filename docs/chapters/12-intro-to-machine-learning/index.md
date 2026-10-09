@@ -163,6 +163,10 @@ Unsupervised learning powers:
 
 #### Diagram: Supervised vs Unsupervised Learning
 
+
+<iframe src="../../sims/supervised-vs-unsupervised-learning/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run Supervised vs Unsupervised Learning Fullscreen](../../sims/supervised-vs-unsupervised-learning/main.html)
+
 <details markdown="1">
 <summary>Supervised vs Unsupervised Learning</summary>
 Type: infographic
@@ -336,6 +340,10 @@ This simple loop is the heart of nearly all machine learning!
 
 #### Diagram: Training Process Animator
 
+
+<iframe src="../../sims/training-process-animator/main.html" width="100%" height="537px" scrolling="no"></iframe>
+[Run Training Process Animator Fullscreen](../../sims/training-process-animator/main.html)
+
 <details markdown="1">
 <summary>Training Process Animator</summary>
 Type: microsim
@@ -478,6 +486,10 @@ print(f"Test MSE: {test_mse:.2f}")
 The pattern to watch: if training error is much lower than test error, you're overfitting.
 
 #### Diagram: Error Types Visualizer
+
+
+<iframe src="../../sims/error-types-visualizer/main.html" width="100%" height="652px" scrolling="no"></iframe>
+[Run Error Types Visualizer Fullscreen](../../sims/error-types-visualizer/main.html)
 
 <details markdown="1">
 <summary>Error Types Visualizer</summary>
@@ -702,6 +714,10 @@ fig.show()
 
 #### Diagram: Gradient Descent Visualizer
 
+
+<iframe src="../../sims/gradient-descent-visualizer/main.html" width="100%" height="547px" scrolling="no"></iframe>
+[Run Gradient Descent Visualizer Fullscreen](../../sims/gradient-descent-visualizer/main.html)
+
 <details markdown="1">
 <summary>Gradient Descent Visualizer</summary>
 Type: microsim
@@ -883,6 +899,10 @@ Strategies to avoid local minima:
 - **Learning rate schedules**: Adjusting the rate during training
 
 #### Diagram: Optimization Landscape Explorer
+
+
+<iframe src="../../sims/optimization-landscape-explorer/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Optimization Landscape Explorer Fullscreen](../../sims/optimization-landscape-explorer/main.html)
 
 <details markdown="1">
 <summary>Optimization Landscape Explorer</summary>

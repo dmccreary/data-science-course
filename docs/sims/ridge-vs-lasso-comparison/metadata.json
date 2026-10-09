@@ -1,45 +1,68 @@
 {
   "title": "Ridge vs Lasso Comparison",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for ridge vs lasso comparison",
+  "subject": "Data Science",
+  "description": "Move one lambda for ridge and lasso models fitted to the same standardized data, compare their coefficient paths and bar charts, and judge which penalty suits each of three data sets with the help of cross-validation.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Ridge vs Lasso Comparison",
+    "subjectArea": "Data Science",
+    "topic": "Ridge and lasso regression",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare how the ridge and lasso penalties change regression coefficients as lambda grows and judge which penalty suits a data set with few important features or with correlated features."
     ],
-    "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "bloomsTaxonomy": "Analyze",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Multiple linear regression",
+      "Standardizing features",
+      "Regularization",
+      "Cross-validation"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 600
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side comparison of two models driven by one shared parameter",
+    "keyQuestions": [
+      "Why can a lasso coefficient be exactly 0 while a ridge coefficient only gets close?",
+      "What does ridge do with three features that measure nearly the same thing, and what does lasso do?",
+      "Why must the features be standardized before either penalty is applied?"
+    ],
+    "commonMisconceptions": [
+      "Ridge removes features when λ is large enough (its coefficients approach 0 but never equal it).",
+      "A feature that lasso drops has no relationship with the target (lasso may drop one of several correlated features that all matter).",
+      "The same λ means the same thing in every library (scikit-learn's Lasso alpha equals this λ divided by 2n)."
+    ],
+    "assessmentOpportunities": [
+      "Students are given a coefficient path plot without a title in which several lines sit exactly on 0 for large λ, identify the method, and explain what a manager should conclude about the features whose lines reached 0 first."
+    ]
   },
-  "chapter": "11-nonlinear-models-regularization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ridge-vs-lasso-comparison",
+  "chapter": "11-nonlinear-models-regularization",
+  "completion_status": "implemented"
 }

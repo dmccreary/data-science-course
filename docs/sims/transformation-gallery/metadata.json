@@ -1,45 +1,68 @@
 {
   "title": "Transformation Gallery",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for transformation gallery",
+  "subject": "Data Science",
+  "description": "Compare six common transformations on synthetic data, study the before and after plots of each one, tune the Box-Cox lambda, and add zeros and negative values to see where each transformation is undefined.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Transformation Gallery",
+    "subjectArea": "Data Science",
+    "topic": "Data transformations",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare the effects of the log, square root, reciprocal, square, Box-Cox, and standardizing transformations on the shape of data and state where each transformation is defined."
     ],
-    "bloomsTaxonomy": "Apply",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Histograms and scatter plots",
+      "Skewness",
+      "Mean and standard deviation",
+      "Logarithms"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 640
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Gallery of worked examples with before and after plots, one tunable parameter, and a stress test of each transformation's domain",
+    "keyQuestions": [
+      "Why does the log pull in a long right tail while standardizing leaves the tail exactly as it was?",
+      "Which transformations fail on a zero, and which fail on a negative number?",
+      "How are the square root, the log, and the reciprocal related to the Box-Cox family?"
+    ],
+    "commonMisconceptions": [
+      "Standardizing makes data normal (it changes the center and the scale but never the shape).",
+      "The log works on any numeric column (it is undefined at 0 and for negative values).",
+      "A transformation changes the information in the data (it changes the scale on which the same values are measured)."
+    ],
+    "assessmentOpportunities": [
+      "Given three short descriptions (monthly sales that grow by a fixed percentage, counts of website errors per hour, and two features measured in dollars and in years that will go into a ridge model), students choose a transformation for each, justify it, and say what would happen if the column contained a zero."
+    ]
   },
-  "chapter": "11-nonlinear-models-regularization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "transformation-gallery",
+  "chapter": "11-nonlinear-models-regularization",
+  "completion_status": "implemented"
 }

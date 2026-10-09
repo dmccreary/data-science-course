@@ -59,6 +59,10 @@ But here's the good news: cleaning data is a superpower in itself. Most people d
 
 #### Diagram: Data Cleaning Pipeline Overview
 
+
+<iframe src="../../sims/data-cleaning-pipeline-overview/main.html" width="100%" height="595px" scrolling="no"></iframe>
+[Run Data Cleaning Pipeline Overview Fullscreen](../../sims/data-cleaning-pipeline-overview/main.html)
+
 <details markdown="1">
 <summary>Data Cleaning Pipeline Overview</summary>
 Type: workflow
@@ -200,6 +204,10 @@ print(f"Percentage missing: {df.isnull().sum().sum() / df.size * 100:.1f}%")
 ```
 
 #### Diagram: Missing Value Detection MicroSim
+
+
+<iframe src="../../sims/missing-value-detection-microsim/main.html" width="100%" height="552px" scrolling="no"></iframe>
+[Run Missing Value Detection MicroSim Fullscreen](../../sims/missing-value-detection-microsim/main.html)
 
 <details markdown="1">
 <summary>Missing Value Detective MicroSim</summary>
@@ -414,6 +422,10 @@ When removing duplicates, ask yourself:
 
 #### Diagram: Duplicate Handling Decision Tree
 
+
+<iframe src="../../sims/duplicate-handling-decision-tree/main.html" width="100%" height="627px" scrolling="no"></iframe>
+[Run Duplicate Handling Decision Tree Fullscreen](../../sims/duplicate-handling-decision-tree/main.html)
+
 <details markdown="1">
 <summary>Duplicate Handling Decision Tree</summary>
 Type: diagram
@@ -523,6 +535,10 @@ invalid_scores = df[(df["score"] < 0) | (df["score"] > 100)]
 ```
 
 #### Diagram: Outlier Detection Methods MicroSim
+
+
+<iframe src="../../sims/outlier-detection-methods-microsim/main.html" width="100%" height="587px" scrolling="no"></iframe>
+[Run Outlier Detection Methods MicroSim Fullscreen](../../sims/outlier-detection-methods-microsim/main.html)
 
 <details markdown="1">
 <summary>Outlier Detection Playground</summary>
@@ -841,6 +857,10 @@ df["age"] = df["age"].astype("Int64")  # Nullable integer type
 
 #### Diagram: Data Type Conversion Guide Infographic
 
+
+<iframe src="../../sims/data-type-conversion-guide-infographic/main.html" width="100%" height="632px" scrolling="no"></iframe>
+[Run Data Type Conversion Guide Infographic Fullscreen](../../sims/data-type-conversion-guide-infographic/main.html)
+
 <details markdown="1">
 <summary>Data Type Conversion Reference</summary>
 Type: infographic
@@ -940,6 +960,10 @@ df["income_robust"] = scaler.fit_transform(df[["income"]])
     Scale features when using distance-based algorithms (KNN, SVM, K-means) or gradient descent (neural networks). Tree-based algorithms (Random Forest, XGBoost) usually don't need scaling.
 
 #### Diagram: Feature Scaling Comparison MicroSim
+
+
+<iframe src="../../sims/feature-scaling-comparison-microsim/main.html" width="100%" height="552px" scrolling="no"></iframe>
+[Run Feature Scaling Comparison MicroSim Fullscreen](../../sims/feature-scaling-comparison-microsim/main.html)
 
 <details markdown="1">
 <summary>Feature Scaling Visualizer</summary>

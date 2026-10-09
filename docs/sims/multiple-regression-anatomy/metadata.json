@@ -1,45 +1,68 @@
 {
   "title": "Multiple Regression Anatomy",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for multiple regression anatomy",
+  "subject": "Data Science",
+  "description": "Move sliders for square feet, bedrooms, and age and watch the intercept and each coefficient-times-feature term add up to a predicted house price.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Multiple Regression Anatomy",
+    "subjectArea": "Data Science",
+    "topic": "Multiple linear regression equation",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how the intercept and each coefficient-times-feature term combine into one prediction, and interpret a coefficient as the change in the prediction for a one-unit increase in its feature with the other features held constant."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Simple linear regression",
+      "Slope and intercept",
+      "R-squared"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 605
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Labeled equation with feature sliders and a waterfall chart of each term's contribution",
+    "keyQuestions": [
+      "When you move one slider, why do the other two terms stay the same?",
+      "What does the intercept represent, and why is it not a realistic house price?",
+      "Why is the age term red while the other two terms are green?"
+    ],
+    "commonMisconceptions": [
+      "The coefficient with the largest number belongs to the most important feature (coefficients have different units, so 150 per square foot and 10,000 per bedroom cannot be compared directly).",
+      "The intercept is the price of a typical house (it is the prediction when every feature is 0, which no real house has).",
+      "Changing one feature changes how much the other features contribute (in this model each term depends only on its own feature).",
+      "A negative coefficient means the model is wrong (it means the prediction falls as that feature rises)."
+    ],
+    "assessmentOpportunities": [
+      "Given the model Price = 50,000 + 150 × SqFt + 10,000 × Bedrooms − 1,000 × Age, students compute the prediction for a 2,000 square foot, 4-bedroom, 10-year-old house and explain what the coefficient −1,000 means, using the phrase \"holding the other features constant\"."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "multiple-regression-anatomy",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

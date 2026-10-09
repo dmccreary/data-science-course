@@ -238,6 +238,10 @@ def relu(x):
 
 #### Diagram: Activation Function Explorer
 
+
+<iframe src="../../sims/activation-function-explorer/main.html" width="100%" height="592px" scrolling="no"></iframe>
+[Run Activation Function Explorer Fullscreen](../../sims/activation-function-explorer/main.html)
+
 <details markdown="1">
 <summary>Activation Function Explorer</summary>
 Type: microsim
@@ -317,6 +321,10 @@ Total parameters: (4×8 + 8) + (8×4 + 4) + (4×1 + 1) = 40 + 36 + 5 = 81
 **Deep learning** refers to neural networks with many hidden layers. Depth allows networks to learn hierarchical features—simple patterns in early layers, complex patterns in later layers.
 
 #### Diagram: Neural Network Architecture Builder
+
+
+<iframe src="../../sims/neural-network-architecture-builder/main.html" width="100%" height="632px" scrolling="no"></iframe>
+[Run Neural Network Architecture Builder Fullscreen](../../sims/neural-network-architecture-builder/main.html)
 
 <details markdown="1">
 <summary>Neural Network Architecture Builder</summary>
@@ -753,6 +761,10 @@ The five essential steps:
 5. **Update weights**: Apply gradients using optimizer
 
 #### Diagram: Training Loop Visualizer
+
+
+<iframe src="../../sims/training-loop-visualizer/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run Training Loop Visualizer Fullscreen](../../sims/training-loop-visualizer/main.html)
 
 <details markdown="1">
 <summary>Training Loop Visualizer</summary>

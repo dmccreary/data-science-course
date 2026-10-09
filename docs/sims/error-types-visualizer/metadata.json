@@ -1,45 +1,69 @@
 {
   "title": "Error Types Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for error types visualizer",
+  "subject": "Data Science",
+  "description": "Fit a polynomial of adjustable degree to training points, compare its training error with its error on unseen test points, judge whether it is underfitting or overfitting, and then reveal the diagnosis.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Error Types Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "Training error, test error, underfitting, and overfitting",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to judge whether a model is underfitting, well fit, or overfitting by comparing its training error with its test error."
     ],
     "bloomsTaxonomy": "Evaluate",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Mean squared error",
+      "Polynomial regression",
+      "Train-test split"
+    ],
+    "standards": [],
+    "bloomVerb": "Judge"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 650
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Judgment before reveal, using two linked plots and error curves computed from the data",
+    "keyQuestions": [
+      "Why can the training error never go up when the degree increases?",
+      "Why is the test error, not the training error, the one to use when choosing a degree?",
+      "What happens to the gap between the two errors when you add training data?",
+      "Why does the test MSE stay near the noise variance even at the best degree, instead of reaching zero?"
+    ],
+    "commonMisconceptions": [
+      "A lower training error always means a better model (past the best degree it means the model is fitting noise).",
+      "A curve that passes close to every training point is the most accurate one (its test error is usually far worse).",
+      "Overfitting can only be fixed by a simpler model (more training data also reduces it).",
+      "A good model has zero error on new data (noise sets a floor that no model can beat on average)."
+    ],
+    "assessmentOpportunities": [
+      "Given a table of training and test MSE for five models of increasing complexity, students label each model as underfitting, good fit, or overfitting, choose the model to use, and justify the choice with the gap between the two errors."
+    ]
   },
-  "chapter": "12-intro-to-machine-learning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "error-types-visualizer",
+  "chapter": "12-intro-to-machine-learning",
+  "completion_status": "implemented"
 }

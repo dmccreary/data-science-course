@@ -1,45 +1,67 @@
 {
   "title": "DataFrame Anatomy",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for dataframe anatomy",
+  "subject": "Data Science",
+  "description": "Point at or click the parts of a small pandas DataFrame to learn the names index, columns, row, column, cell, and values, and the code that returns each one.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "DataFrame Anatomy",
+    "subjectArea": "Data Science",
+    "topic": "Parts of a pandas DataFrame",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to identify the index, the columns, a row, a column, a cell, and the values of a pandas DataFrame and recall the expression that accesses each one."
     ],
     "bloomsTaxonomy": "Remember",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Python lists and dictionaries",
+      "Tables with rows and columns",
+      "Importing pandas as pd"
+    ],
+    "standards": [],
+    "bloomVerb": "Identify"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 505
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Labeled diagram with highlight on hover, and recall practice by hiding the code",
+    "keyQuestions": [
+      "What is the difference between the index and the columns?",
+      "Why does df['Col_B'] return a Series rather than a DataFrame?",
+      "Which parts of the table are left out of df.values?"
+    ],
+    "commonMisconceptions": [
+      "The index is the first column of data (it is a set of labels, not a data column, and it is not part of df.values).",
+      "loc and iloc are interchangeable (loc uses labels, iloc uses integer positions).",
+      "Rows and columns are accessed the same way (df['Col_B'] looks up a column, never a row)."
+    ],
+    "assessmentOpportunities": [
+      "Given a printed DataFrame they have not seen, students label its index, columns, one row, one column, and one cell, and write the pandas expression that returns each part. All parts are named correctly and at least five of the six expressions are correct."
+    ]
   },
-  "chapter": "03-python-data-structures"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dataframe-anatomy",
+  "chapter": "03-python-data-structures",
+  "completion_status": "implemented"
 }

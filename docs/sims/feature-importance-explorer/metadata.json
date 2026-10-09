@@ -1,45 +1,69 @@
 {
   "title": "Feature Importance Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for feature importance explorer",
+  "subject": "Data Science",
+  "description": "Rank five housing features by standardized coefficient, permutation importance, and drop-column importance, and find out why the three rankings disagree when features are correlated.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Feature Importance Explorer",
+    "subjectArea": "Data Science",
+    "topic": "Feature importance in linear models",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare standardized coefficients, permutation importance, and drop-column importance for one model, identify the features on which the methods disagree, and explain the disagreement in terms of correlation between features."
     ],
-    "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "bloomsTaxonomy": "Analyze",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Multiple linear regression",
+      "Standardization",
+      "Train-test split and test R-squared",
+      "Multicollinearity"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 610
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side comparison of three rankings with a correlation switch and a per-feature inspection panel",
+    "keyQuestions": [
+      "Which feature is the most important? Does your answer depend on the method?",
+      "Why does removing square_feet cost the model less than shuffling it?",
+      "Why do the dashed and red lines for bedrooms have such different slopes when the features are correlated?"
+    ],
+    "commonMisconceptions": [
+      "The feature with the largest raw coefficient is the most important (raw coefficients depend on the units, so features must be standardized before their coefficients are compared).",
+      "Feature importance is a single fixed property of a feature (it depends on the method, on the other features in the model, and on the sample).",
+      "A feature with a small drop-column importance is useless (it may carry information that a correlated feature can also supply).",
+      "Permutation importance gives the same numbers every time (each run uses different random shuffles, so it varies by about its error bar)."
+    ],
+    "assessmentOpportunities": [
+      "Students explain why a feature can have a large permutation importance and a small drop-column importance in the same model, and state what kind of data makes all three methods agree."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "feature-importance-explorer",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

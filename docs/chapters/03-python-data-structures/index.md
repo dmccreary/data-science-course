@@ -387,7 +387,7 @@ This is the structure you'll work with 90% of the time in data science. Let's br
 #### Diagram: DataFrame Anatomy
 
 
-<iframe src="../../sims/dataframe-anatomy/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/dataframe-anatomy/main.html" width="100%" height="507px" scrolling="no"></iframe>
 [Run DataFrame Anatomy Fullscreen](../../sims/dataframe-anatomy/main.html)
 
 <details markdown="1">
@@ -560,7 +560,7 @@ df = pd.read_csv("data.csv", index_col="name")
 #### Diagram: Data Loading Workflow
 
 
-<iframe src="../../sims/data-loading-workflow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/data-loading-workflow/main.html" width="100%" height="527px" scrolling="no"></iframe>
 [Run Data Loading Workflow Fullscreen](../../sims/data-loading-workflow/main.html)
 
 <details markdown="1">
@@ -755,7 +755,7 @@ This is your first glimpse at what the data looks like statistically. Is the ave
 #### Diagram: Data Inspection Command Center
 
 
-<iframe src="../../sims/data-inspection-command-center/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/data-inspection-command-center/main.html" width="100%" height="582px" scrolling="no"></iframe>
 [Run Data Inspection Command Center Fullscreen](../../sims/data-inspection-command-center/main.html)
 
 <details markdown="1">
@@ -905,7 +905,7 @@ This is incredibly powerful. Need all customers who spent over $100 in the last 
 #### Diagram: Data Selection Playground MicroSim
 
 
-<iframe src="../../sims/data-selection-playground-microsim/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/data-selection-playground-microsim/main.html" width="100%" height="597px" scrolling="no"></iframe>
 [Run Data Selection Playground MicroSim Fullscreen](../../sims/data-selection-playground-microsim/main.html)
 
 <details markdown="1">

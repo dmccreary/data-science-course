@@ -1,45 +1,68 @@
 {
   "title": "Box Plot Anatomy",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for box plot anatomy",
+  "subject": "Data Science",
+  "description": "Hover over or click the seven numbered parts of a box plot of 21 quiz scores to read what each part means, its value in the data, and the pandas code that computes it.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Box Plot Anatomy",
+    "subjectArea": "Data Science",
+    "topic": "Parts of a box plot",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to identify the seven parts of a box plot and recall what each one represents."
     ],
-    "bloomsTaxonomy": "Apply",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "bloomsTaxonomy": "Remember",
+    "duration": "5-10 minutes",
+    "prerequisites": [
+      "Median",
+      "Quartiles and percentiles",
+      "Interquartile range"
+    ],
+    "standards": [],
+    "bloomVerb": "Identify"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 515
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Labeled diagram with hover and click to reveal, plus a hide-the-names self-test",
+    "keyQuestions": [
+      "Which part of the box plot shows the middle 50% of the data?",
+      "Why does the lower whisker stop at 41 when the lower fence is at 28?",
+      "What would change in the plot if the score of 97 were 80 instead?"
+    ],
+    "commonMisconceptions": [
+      "The whiskers always reach the smallest and largest values (they stop at the most extreme values inside the fences, and anything beyond is drawn as an outlier).",
+      "The whisker ends sit exactly at Q1 − 1.5 × IQR and Q3 + 1.5 × IQR (the fences only decide which values count as outliers).",
+      "The line in the box is the mean (it is the median).",
+      "A longer half of the box holds more data (each half holds about a quarter of the values, and a longer half means those values are more spread out)."
+    ],
+    "assessmentOpportunities": [
+      "Given an unlabeled box plot, students label the median, Q1, Q3, both whisker ends, the IQR, and any outliers, and write the two fence formulas."
+    ]
   },
-  "chapter": "06-statistical-foundations"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "box-plot-anatomy",
+  "chapter": "06-statistical-foundations",
+  "completion_status": "implemented"
 }

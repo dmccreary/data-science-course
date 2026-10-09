@@ -157,6 +157,10 @@ print(f"would be predicted to score {intercept} points.")
 
 #### Diagram: Regression Line Anatomy
 
+
+<iframe src="../../sims/regression-line-anatomy/main.html" width="100%" height="587px" scrolling="no"></iframe>
+[Run Regression Line Anatomy Fullscreen](../../sims/regression-line-anatomy/main.html)
+
 <details markdown="1">
 <summary>Interactive Regression Line Components</summary>
 Type: infographic
@@ -273,6 +277,10 @@ $$\beta_0 = \bar{y} - \beta_1\bar{x}$$
 Don't worry about memorizing these—Python will calculate them for you. The important thing is understanding the concept: OLS finds the line that makes the squared prediction errors as small as possible.
 
 #### Diagram: Least Squares MicroSim
+
+
+<iframe src="../../sims/least-squares-microsim/main.html" width="100%" height="657px" scrolling="no"></iframe>
+[Run Least Squares MicroSim Fullscreen](../../sims/least-squares-microsim/main.html)
 
 <details markdown="1">
 <summary>Interactive Least Squares Line Fitting</summary>
@@ -519,6 +527,10 @@ fig.show()
 
 #### Diagram: Regression Assumptions Checker MicroSim
 
+
+<iframe src="../../sims/regression-assumptions-checker-microsim/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Regression Assumptions Checker MicroSim Fullscreen](../../sims/regression-assumptions-checker-microsim/main.html)
+
 <details markdown="1">
 <summary>Interactive Assumption Diagnostic Tool</summary>
 Type: microsim
@@ -706,6 +718,10 @@ fig.show()
 
 #### Diagram: Scikit-learn Workflow
 
+
+<iframe src="../../sims/scikit-learn-workflow/main.html" width="100%" height="562px" scrolling="no"></iframe>
+[Run Scikit-learn Workflow Fullscreen](../../sims/scikit-learn-workflow/main.html)
+
 <details markdown="1">
 <summary>Machine Learning Pipeline Flowchart</summary>
 Type: workflow
@@ -866,6 +882,10 @@ print("✓ Normality: Check residual histogram (code above)")
 ```
 
 #### Diagram: Interactive Regression Builder MicroSim
+
+
+<iframe src="../../sims/interactive-regression-builder-microsim/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run Interactive Regression Builder MicroSim Fullscreen](../../sims/interactive-regression-builder-microsim/main.html)
 
 <details markdown="1">
 <summary>Build Your Own Regression Model</summary>

@@ -1,45 +1,69 @@
 {
   "title": "Activation Function Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for activation function explorer",
+  "subject": "Data Science",
+  "description": "Choose an activation function, move the input along its curve, and read the output and gradient to see where gradients vanish or die and why a network needs a non-linear activation.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Activation Function Explorer",
+    "subjectArea": "Data Science",
+    "topic": "Activation functions and their gradients",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to determine the output and gradient of an activation function at a given input, identify the inputs where its gradient vanishes or is zero, and explain why a network needs a non-linear activation."
     ],
     "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Artificial neuron",
+      "Function graphs",
+      "Slope as a rate of change"
+    ],
+    "standards": [],
+    "bloomVerb": "Determine"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 590
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Parameter exploration on a fixed-scale graph with a numeric readout",
+    "keyQuestions": [
+      "Where is the sigmoid's gradient largest, and how large is it there?",
+      "Why does a gradient of 0.1 per layer become a problem after 10 layers?",
+      "What does Leaky ReLU change about ReLU, and for which inputs?",
+      "What does a network compute when every activation in it is linear?"
+    ],
+    "commonMisconceptions": [
+      "ReLU is a linear function (it is two straight pieces joined by a bend at 0, and the bend is what lets a network make non-linear shapes).",
+      "The sigmoid's gradient is large wherever its output is large (for large inputs the output is near 1 but the curve is flat, so the gradient is near 0).",
+      "Adding more linear layers makes a network more powerful (a chain of linear layers equals one linear layer).",
+      "A zero gradient means the output is zero (the step function outputs 1 for every positive input and still has zero gradient)."
+    ],
+    "assessmentOpportunities": [
+      "For the input x = −3, students state without the sim which of Sigmoid, ReLU, and Leaky ReLU passes back the largest gradient and which passes back none, then explain why ReLU is still the usual choice for deep hidden layers."
+    ]
   },
-  "chapter": "13-neural-networks-pytorch"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "activation-function-explorer",
+  "chapter": "13-neural-networks-pytorch",
+  "completion_status": "implemented"
 }

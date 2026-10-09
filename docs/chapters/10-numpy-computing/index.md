@@ -112,6 +112,10 @@ This is the magic of NumPy: mathematical operations work *element by element* au
 
 #### Diagram: NumPy Array vs Python List
 
+
+<iframe src="../../sims/numpy-array-vs-python-list/main.html" width="100%" height="616px" scrolling="no"></iframe>
+[Run NumPy Array vs Python List Fullscreen](../../sims/numpy-array-vs-python-list/main.html)
+
 <details markdown="1">
 <summary>NumPy Array vs Python List</summary>
 Type: infographic
@@ -279,6 +283,10 @@ print(auto_reshaped.shape)  # (4, 3)
 
 #### Diagram: Array Shape Visualizer
 
+
+<iframe src="../../sims/array-shape-visualizer/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Array Shape Visualizer Fullscreen](../../sims/array-shape-visualizer/main.html)
+
 <details markdown="1">
 <summary>Array Shape Visualizer</summary>
 Type: microsim
@@ -433,6 +441,10 @@ print(matrix[::2, ::2])
     Slicing in NumPy creates a *view* of the original array, not a copy. Changes to the slice affect the original! Use `.copy()` if you need an independent copy: `my_copy = arr[2:5].copy()`.
 
 #### Diagram: Slicing Playground
+
+
+<iframe src="../../sims/slicing-playground/main.html" width="100%" height="592px" scrolling="no"></iframe>
+[Run Slicing Playground Fullscreen](../../sims/slicing-playground/main.html)
 
 <details markdown="1">
 <summary>Slicing Playground</summary>
@@ -630,6 +642,10 @@ Broadcasting works when comparing shapes from right to left:
 
 #### Diagram: Broadcasting Visualizer
 
+
+<iframe src="../../sims/broadcasting-visualizer/main.html" width="100%" height="552px" scrolling="no"></iframe>
+[Run Broadcasting Visualizer Fullscreen](../../sims/broadcasting-visualizer/main.html)
+
 <details markdown="1">
 <summary>Broadcasting Visualizer</summary>
 Type: microsim
@@ -764,6 +780,10 @@ print(C.shape)  # (3, 3)
     For A @ B to work, the number of columns in A must equal the number of rows in B. Shape (m, **n**) @ (**n**, p) = (m, p). If shapes don't match, you'll get an error.
 
 #### Diagram: Matrix Multiplication Visualizer
+
+
+<iframe src="../../sims/matrix-multiplication-visualizer/main.html" width="100%" height="472px" scrolling="no"></iframe>
+[Run Matrix Multiplication Visualizer Fullscreen](../../sims/matrix-multiplication-visualizer/main.html)
 
 <details markdown="1">
 <summary>Matrix Multiplication Visualizer</summary>
@@ -947,6 +967,10 @@ Every major data science library is built on NumPy:
 When you call `df.values` on a pandas DataFrame, you get a NumPy array. When you call `model.fit(X, y)` in scikit-learn, X and y are NumPy arrays. Understanding NumPy means understanding the foundation of modern data science.
 
 #### Diagram: NumPy Ecosystem Map
+
+
+<iframe src="../../sims/numpy-ecosystem-map/main.html" width="100%" height="567px" scrolling="no"></iframe>
+[Run NumPy Ecosystem Map Fullscreen](../../sims/numpy-ecosystem-map/main.html)
 
 <details markdown="1">
 <summary>NumPy Ecosystem Map</summary>

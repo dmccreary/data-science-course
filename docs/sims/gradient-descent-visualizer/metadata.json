@@ -1,45 +1,69 @@
 {
   "title": "Gradient Descent Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for gradient descent visualizer",
+  "subject": "Data Science",
+  "description": "Take gradient descent steps on a contour map of a cost function, read the gradient and the next position at each step, and change the learning rate to see slow progress, zigzag, and divergence.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Gradient Descent Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "Gradient descent and the learning rate",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply the gradient descent update rule to calculate the next parameter values and predict how the learning rate changes the path to the minimum."
     ],
     "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Cost function",
+      "Slope and rate of change",
+      "Reading a contour map"
+    ],
+    "standards": [],
+    "bloomVerb": "Calculate"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 545
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of an algorithm with every intermediate value shown, followed by parameter exploration",
+    "keyQuestions": [
+      "Why do the steps get shorter near the minimum even though the learning rate has not changed?",
+      "Why does the elongated valley diverge at a learning rate that works on the simple bowl?",
+      "What does the gradient point toward, and why does the update subtract it?",
+      "On the two valleys surface, what decides which minimum the path reaches?"
+    ],
+    "commonMisconceptions": [
+      "The gradient points at the minimum (it points in the direction of steepest increase at the current position; the opposite direction is downhill, which is not always straight toward the minimum).",
+      "A larger learning rate always reaches the minimum sooner (past a threshold the steps overshoot and the cost grows).",
+      "The step size is the learning rate (the step is the learning rate times the gradient, so it shrinks as the surface flattens).",
+      "Gradient descent always finds the lowest point (on a surface with more than one valley it stops in whichever valley its path enters)."
+    ],
+    "assessmentOpportunities": [
+      "Given $J = w_1^2 + w_2^2$, a starting point, and a learning rate, students compute two gradient descent steps by hand and explain what would happen if the learning rate were 1.2."
+    ]
   },
-  "chapter": "12-intro-to-machine-learning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "gradient-descent-visualizer",
+  "chapter": "12-intro-to-machine-learning",
+  "completion_status": "implemented"
 }

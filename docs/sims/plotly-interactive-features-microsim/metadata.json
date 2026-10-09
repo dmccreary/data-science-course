@@ -1,45 +1,69 @@
 {
   "title": "Plotly Interactive Features MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for plotly interactive features microsim",
+  "subject": "Data Science",
+  "description": "Practice the eight interactive features of a real Plotly chart (hover, zoom, pan, box select, lasso select, reset, download, and legend toggling) while a tracker ticks off each one as you use it.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Plotly Interactive Features MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Interactive features of Plotly charts",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to use the hover, zoom, pan, box select, lasso select, reset, download, and legend features of a Plotly chart to inspect a dataset."
     ],
     "bloomsTaxonomy": "Apply",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Scatter plots and legends",
+      "Axis ranges",
+      "Creating a chart with px.scatter"
+    ],
+    "standards": [],
+    "bloomVerb": "Use"
   },
   "technical": {
-    "framework": "Plotly",
-    "version": "1.0",
+    "framework": "Plotly.js",
+    "version": "2.35.0",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 575
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "Plotly.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided practice with a task checklist that verifies each action",
+    "keyQuestions": [
+      "What can you learn from a tooltip that you cannot read from the axes?",
+      "How does hiding a group from the legend help when clusters overlap?",
+      "What is the difference between zooming and panning?",
+      "When would selecting points be more useful than zooming in on them?"
+    ],
+    "commonMisconceptions": [
+      "Interactivity has to be programmed for each chart (Plotly adds these features to every chart).",
+      "Zooming changes the data (it only changes the axis ranges, and a double-click restores them).",
+      "A hidden group has been deleted (clicking the legend entry again brings it back).",
+      "Pan and zoom are the same thing (panning keeps the scale and moves the view, zooming changes the scale)."
+    ],
+    "assessmentOpportunities": [
+      "On a new Plotly chart, students demonstrate each of the eight features on request and explain how they would find the exact value of one point and isolate one group."
+    ]
   },
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "plotly-interactive-features-microsim",
+  "completion_status": "implemented",
   "chapter": "05-data-visualization"
 }

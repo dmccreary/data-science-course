@@ -1,45 +1,69 @@
 {
   "title": "Multicollinearity Detector MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for multicollinearity detector microsim",
+  "subject": "Data Science",
+  "description": "Raise the correlation between square feet and rooms, read the correlation matrix and each feature's variance inflation factor, and watch the coefficient confidence intervals widen while R-squared barely moves.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Multicollinearity Detector MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Multicollinearity and the variance inflation factor",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to diagnose multicollinearity from a correlation matrix and variance inflation factors, judge whether individual coefficients can be trusted, and evaluate the trade-off in removing a correlated feature."
     ],
     "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Multiple linear regression",
+      "Correlation coefficient",
+      "R-squared",
+      "Confidence intervals"
+    ],
+    "standards": [],
+    "bloomVerb": "Judge"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 630
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Simulation with a correlation slider, repeated sampling, and a remedy the student can switch on and off",
+    "keyQuestions": [
+      "Why does R² stay about the same while the intervals for two of the coefficients become very wide?",
+      "Why is the VIF of age near 1 even when the other two VIFs are above 10?",
+      "After rooms is removed, why does the square feet coefficient move away from 40?"
+    ],
+    "commonMisconceptions": [
+      "Multicollinearity makes the model predict badly (predictions and R² are largely unaffected; it is the individual coefficients that become unreliable).",
+      "A high VIF means the feature is unimportant (it means the feature's information overlaps with other features, so its separate effect is hard to estimate).",
+      "Removing a correlated feature has no cost (the remaining coefficient absorbs part of the removed feature's effect and no longer means the same thing).",
+      "Two features are a problem only when their correlation is exactly 1 (coefficients become unstable well before that; a correlation of 0.95 already gives a VIF near 10)."
+    ],
+    "assessmentOpportunities": [
+      "Shown a correlation matrix and a table of VIFs for a new set of features, students identify the features with a multicollinearity problem, state what a VIF of 9 implies about the standard error of that coefficient (it is 3 times as large), and recommend one remedy together with its cost."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "multicollinearity-detector-microsim",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

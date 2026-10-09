@@ -1,45 +1,69 @@
 {
   "title": "Slicing Playground",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for slicing playground",
+  "subject": "Data Science",
+  "description": "Type a row slice and a column slice for a 6 by 8 array to see which elements are selected, what shape the result has, and how a slice shares memory with the original array.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Slicing Playground",
+    "subjectArea": "Data Science",
+    "topic": "Array slicing in two dimensions",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply `start:stop:step` slicing along both axes of a 2-D array to select a required set of elements, predict the shape of the result, and explain why changing a slice changes the original array."
     ],
-    "bloomsTaxonomy": "Analyze",
+    "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Zero-based indexing",
+      "2-D array indexing",
+      "Python list slicing"
+    ],
+    "standards": [],
+    "bloomVerb": "Apply"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 590
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided practice with immediate visual feedback, followed by goal-directed challenges",
+    "keyQuestions": [
+      "Why is the stop value never part of the result?",
+      "What does a negative start or stop mean, and what does a negative step do?",
+      "How is `a[:, -1]` different from `a[:, -1:]`?",
+      "What does it mean that a slice is a view?"
+    ],
+    "commonMisconceptions": [
+      "The stop index is included (the slice ends just before it).",
+      "A slice makes a copy of the data (basic slicing returns a view that shares memory with the original).",
+      "A slice that runs past the end raises an error (slices are clipped, only a single out-of-range index raises IndexError).",
+      "`a[2, :]` and `a[2:3, :]` give the same result (the first is 1-D, the second is a 2-D array with one row)."
+    ],
+    "assessmentOpportunities": [
+      "Given `m = np.arange(20).reshape(4, 5)` from the chapter, students write the slices that return `[[7 8 9] [12 13 14]]`, the last row reversed, and every other column, and state the shape of each result. They also explain what `m[1:3, 2:5][:] = 0` does to `m`."
+    ]
   },
-  "chapter": "10-numpy-computing"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "slicing-playground",
+  "chapter": "10-numpy-computing",
+  "completion_status": "implemented"
 }

@@ -1,45 +1,67 @@
 {
   "title": "Data Loading Workflow",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for data loading workflow",
+  "subject": "Data Science",
+  "description": "Step through what pd.read_csv() does to a small CSV file, from raw text on disk to a typed DataFrame in memory, with the common error at each stage.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Data Loading Workflow",
+    "subjectArea": "Data Science",
+    "topic": "Loading CSV files with pandas read_csv",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain, in order, the stages that turn a CSV file into a pandas DataFrame, including how the delimiter, the header row, data types, and missing values are handled."
     ],
-    "bloomsTaxonomy": "Create",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "DataFrame, index, and columns",
+      "Importing pandas as pd",
+      "File names and folders"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 525
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through worked example with concrete data and an error note at each stage",
+    "keyQuestions": [
+      "Why does one blank field change a whole column from int64 to float64?",
+      "What would the DataFrame look like if this file were loaded with sep=\";\"?",
+      "Which errors stop the load, and which let it finish with the wrong data?"
+    ],
+    "commonMisconceptions": [
+      "read_csv keeps every value as text (it gives each column one data type).",
+      "A blank field is stored as 0 or as an empty string (it is stored as NaN).",
+      "The DataFrame stays linked to the file (it is a copy in memory, and changing it does not change the file)."
+    ],
+    "assessmentOpportunities": [
+      "Students are given a five-line CSV file on paper in which one numeric column has a blank field and another numeric column contains the word unknown. They write the column names, the dtype pandas will infer for each column with a reason, and where NaN will appear."
+    ]
   },
-  "chapter": "03-python-data-structures"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "data-loading-workflow",
+  "chapter": "03-python-data-structures",
+  "completion_status": "implemented"
 }

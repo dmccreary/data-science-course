@@ -118,6 +118,10 @@ The `random_state` parameter is important—it ensures that every time you run t
 
 #### Diagram: Train-Test Split Visualization
 
+
+<iframe src="../../sims/train-test-split-visualization/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Train-Test Split Visualization Fullscreen](../../sims/train-test-split-visualization/main.html)
+
 <details markdown="1">
 <summary>Train-Test Split Visualization</summary>
 Type: infographic
@@ -243,6 +247,10 @@ MAE is also in the original units and is simpler to understand than RMSE. The ke
 | MAE | Original units | Equal weight | Average absolute error |
 
 #### Diagram: Metrics Comparison MicroSim
+
+
+<iframe src="../../sims/metrics-comparison-microsim/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Metrics Comparison MicroSim Fullscreen](../../sims/metrics-comparison-microsim/main.html)
 
 <details markdown="1">
 <summary>Metrics Comparison MicroSim</summary>
@@ -388,6 +396,10 @@ fig.show()
 
 #### Diagram: Residual Pattern Detective
 
+
+<iframe src="../../sims/residual-pattern-detective/main.html" width="100%" height="637px" scrolling="no"></iframe>
+[Run Residual Pattern Detective Fullscreen](../../sims/residual-pattern-detective/main.html)
+
 <details markdown="1">
 <summary>Residual Pattern Detective</summary>
 Type: infographic
@@ -489,6 +501,10 @@ Your goal is to find the sweet spot—a model complex enough to capture the real
 
 #### Diagram: Bias-Variance Dartboard
 
+
+<iframe src="../../sims/bias-variance-dartboard/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Bias-Variance Dartboard Fullscreen](../../sims/bias-variance-dartboard/main.html)
+
 <details markdown="1">
 <summary>Bias-Variance Dartboard</summary>
 Type: microsim
@@ -562,6 +578,10 @@ for degree in degrees:
 Typically, you'll see training R² keep increasing with complexity, but test R² will peak and then decrease as overfitting kicks in.
 
 #### Diagram: Complexity Curve Explorer
+
+
+<iframe src="../../sims/complexity-curve-explorer/main.html" width="100%" height="617px" scrolling="no"></iframe>
+[Run Complexity Curve Explorer Fullscreen](../../sims/complexity-curve-explorer/main.html)
 
 <details markdown="1">
 <summary>Complexity Curve Explorer</summary>
@@ -643,6 +663,10 @@ print(f"Standard Deviation: {cv_scores.std():.4f}")
 The standard deviation tells you how stable your model's performance is. A low standard deviation means your model performs consistently across different subsets of data.
 
 #### Diagram: K-Fold Cross-Validation Animator
+
+
+<iframe src="../../sims/k-fold-cross-validation-animator/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run K-Fold Cross-Validation Animator Fullscreen](../../sims/k-fold-cross-validation-animator/main.html)
 
 <details markdown="1">
 <summary>K-Fold Cross-Validation Animator</summary>
@@ -810,6 +834,10 @@ print(f"Score: {results_df.loc[best_idx, 'mean_score']:.4f}")
 
 #### Diagram: Model Selection Dashboard
 
+
+<iframe src="../../sims/model-selection-dashboard/main.html" width="100%" height="717px" scrolling="no"></iframe>
+[Run Model Selection Dashboard Fullscreen](../../sims/model-selection-dashboard/main.html)
+
 <details markdown="1">
 <summary>Model Selection Dashboard</summary>
 Type: microsim
@@ -913,6 +941,10 @@ print(f"Residual std: {residuals.std():.4f}")
 ```
 
 #### Diagram: Model Evaluation Workflow
+
+
+<iframe src="../../sims/model-evaluation-workflow/main.html" width="100%" height="652px" scrolling="no"></iframe>
+[Run Model Evaluation Workflow Fullscreen](../../sims/model-evaluation-workflow/main.html)
 
 <details markdown="1">
 <summary>Model Evaluation Workflow</summary>

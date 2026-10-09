@@ -1,45 +1,67 @@
 {
   "title": "Outlier Detection Methods MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for outlier detection methods microsim",
+  "subject": "Data Science",
+  "description": "Apply the Z-score rule and the IQR rule to the same data, move the two thresholds, and see which points each rule flags and where the rules disagree.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Outlier Detection Methods MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Outlier detection with Z-scores and the IQR rule",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply the Z-score rule and the IQR rule to a dataset, adjust their thresholds, and explain why the two rules can flag different points."
     ],
     "bloomsTaxonomy": "Apply",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Mean and standard deviation",
+      "Quartiles and the interquartile range",
+      "Reading a box plot"
+    ],
+    "standards": [],
+    "bloomVerb": "Apply"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 585
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Parameter exploration with immediate feedback, comparing two methods on the same data",
+    "keyQuestions": [
+      "In the ages data, why does the Z-score rule miss an age of -5?",
+      "The skewed incomes are all valid. Should the values the IQR rule flags be removed?",
+      "What happens to the number of flagged points when a threshold is lowered?"
+    ],
+    "commonMisconceptions": [
+      "A flagged value is an error (a flag only says the value is unusual, and it may be valid data).",
+      "The Z-score rule and the IQR rule always agree (they are built on different statistics and often disagree).",
+      "The mean and standard deviation are safe yardsticks (the outliers themselves pull the mean and inflate the standard deviation)."
+    ],
+    "assessmentOpportunities": [
+      "Given a list of about ten numbers with one extreme value, students compute the IQR fences, state which values the IQR rule flags, and explain in words why a Z-score threshold of 3 might fail to flag a second, smaller outlier."
+    ]
   },
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "outlier-detection-methods-microsim",
+  "completion_status": "implemented",
   "chapter": "04-data-cleaning"
 }

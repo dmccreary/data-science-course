@@ -1,45 +1,70 @@
 {
   "title": "Feature Selection Race",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for feature selection race",
+  "subject": "Data Science",
+  "description": "Step forward selection, backward elimination, and stepwise selection through the same data, predict each next move from the cross-validated scores, and compare the features, score, and work of the three results.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Feature Selection Race",
+    "subjectArea": "Data Science",
+    "topic": "Feature selection with forward, backward, and stepwise methods",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to carry out forward selection, backward elimination, and stepwise selection one move at a time and compare the feature sets, scores, and amount of work they produce on the same data."
     ],
     "bloomsTaxonomy": "Analyze",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Multiple linear regression",
+      "R-squared",
+      "K-fold cross-validation",
+      "Multicollinearity",
+      "Feature selection"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 710
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Predict, step, and compare three algorithms run side by side on the same data",
+    "keyQuestions": [
+      "Why can forward selection never fix an early choice, and how does stepwise selection fix it?",
+      "Why does a method that starts with every feature see a pair of features that only help together?",
+      "When the three methods end with the same features, what still makes one of them the better choice?"
+    ],
+    "commonMisconceptions": [
+      "The three methods always end with the same model (they are greedy searches from different starting points, and they can stop at different feature sets).",
+      "Stepwise selection always finds the best subset (starting empty, it misses a pair of features that only help together, exactly as forward selection does).",
+      "A feature with a strong score on its own belongs in the final model (a stand-in for other features stops helping once those features are in).",
+      "More features always give a better score (cross-validated R² goes down when a feature that carries no information is added)."
+    ],
+    "assessmentOpportunities": [
+      "Given the chip values of one track at one step, students state the method's next move or explain why it stops. They also describe one kind of data on which forward selection keeps a feature it does not need and one on which it misses features that backward elimination keeps."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "feature-selection-race",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

@@ -1,45 +1,72 @@
 {
   "title": "Multiple Regression Pipeline",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for multiple regression pipeline",
+  "subject": "Data Science",
+  "description": "Step through the ten stages of a multiple regression workflow on 500 simulated houses, follow the shape of the data from stage to stage, and read the real result and the most common mistake at each stage.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Multiple Regression Pipeline",
+    "subjectArea": "Data Science",
+    "topic": "The complete multiple regression workflow",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to carry out the stages of a multiple regression workflow in order, explain how each stage changes the shape of the data, and identify the mistake each stage must avoid."
     ],
-    "bloomsTaxonomy": "Create",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "bloomsTaxonomy": "Apply",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Multiple linear regression",
+      "Train-test split",
+      "Standardization",
+      "One-hot encoding",
+      "Variance inflation factor",
+      "Feature selection",
+      "Cross-validation"
+    ],
+    "standards": [],
+    "bloomVerb": "Implement"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 625
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Stepped workflow with real intermediate results and a named pitfall at each stage",
+    "keyQuestions": [
+      "Why is the split done before imputing, scaling, and encoding, but after the two engineered features are created?",
+      "Why does the cross-validation estimate at stage 8 lean slightly optimistic here, and why is stage 9 still an honest check?",
+      "Why can the coefficients at stage 10 be compared with each other, and what can they not tell you?"
+    ],
+    "commonMisconceptions": [
+      "Preprocessing can be fit on all the data because it does not use the target (statistics learned from the test rows leak information about them into training).",
+      "The test set can be used to choose features as long as the final model is retrained (any choice made with the test rows makes the test score optimistic).",
+      "A high VIF means the model predicts badly (predictions can stay good, but the coefficients of the tangled features become unstable and cannot be interpreted).",
+      "The largest standardized coefficient marks the cause of high prices (it marks the strongest predictor in this data, which is not the same as a cause)."
+    ],
+    "assessmentOpportunities": [
+      "Given a short script that scales all rows before splitting and chooses features by test score, students identify both leaks, rewrite the order of the steps, and state which reported number can no longer be trusted."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "multiple-regression-pipeline",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

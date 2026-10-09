@@ -170,6 +170,10 @@ Notice how degree 10 goes wild, trying to pass through every data point? That's 
 
 #### Diagram: Polynomial Degree Explorer
 
+
+<iframe src="../../sims/polynomial-degree-explorer/main.html" width="100%" height="587px" scrolling="no"></iframe>
+[Run Polynomial Degree Explorer Fullscreen](../../sims/polynomial-degree-explorer/main.html)
+
 <details markdown="1">
 <summary>Polynomial Degree Explorer</summary>
 Type: microsim
@@ -365,6 +369,10 @@ print("Transformation parameters:", pt.lambdas_)
 ```
 
 #### Diagram: Transformation Gallery
+
+
+<iframe src="../../sims/transformation-gallery/main.html" width="100%" height="642px" scrolling="no"></iframe>
+[Run Transformation Gallery Fullscreen](../../sims/transformation-gallery/main.html)
 
 <details markdown="1">
 <summary>Transformation Gallery</summary>
@@ -589,6 +597,10 @@ print(f"Test R²: {lasso_pipeline.score(X_test, y_test):.4f}")
 
 #### Diagram: Ridge vs Lasso Comparison
 
+
+<iframe src="../../sims/ridge-vs-lasso-comparison/main.html" width="100%" height="602px" scrolling="no"></iframe>
+[Run Ridge vs Lasso Comparison Fullscreen](../../sims/ridge-vs-lasso-comparison/main.html)
+
 <details markdown="1">
 <summary>Ridge vs Lasso Comparison</summary>
 Type: microsim
@@ -730,6 +742,10 @@ fig.show()
 ```
 
 #### Diagram: Lambda Tuning Playground
+
+
+<iframe src="../../sims/lambda-tuning-playground/main.html" width="100%" height="582px" scrolling="no"></iframe>
+[Run Lambda Tuning Playground Fullscreen](../../sims/lambda-tuning-playground/main.html)
 
 <details markdown="1">
 <summary>Lambda Tuning Playground</summary>
@@ -899,6 +915,10 @@ fig.show()
 ```
 
 #### Diagram: Regularization Decision Tree
+
+
+<iframe src="../../sims/regularization-decision-tree/main.html" width="100%" height="627px" scrolling="no"></iframe>
+[Run Regularization Decision Tree Fullscreen](../../sims/regularization-decision-tree/main.html)
 
 <details markdown="1">
 <summary>Regularization Decision Tree</summary>

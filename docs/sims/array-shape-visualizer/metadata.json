@@ -1,45 +1,69 @@
 {
   "title": "Array Shape Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for array shape visualizer",
+  "subject": "Data Science",
+  "description": "Type a new shape for an array of up to 12 numbers and see the same numbers laid out as a row, a table, or a stack of tables, with the NumPy error when the shape is impossible.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Array Shape Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "Array shape and reshaping",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to use `reshape` to rearrange an array into a given number of dimensions, predict the resulting `shape`, `ndim` and `size`, and determine whether a requested shape is possible."
     ],
     "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Creating NumPy arrays",
+      "Rows and columns of a table",
+      "Factors of a whole number"
+    ],
+    "standards": [],
+    "bloomVerb": "Use"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Type-and-see exploration with immediate feedback and real error messages",
+    "keyQuestions": [
+      "What must be true of the sizes in a shape for a reshape to work?",
+      "How does NumPy decide which number goes where in the new shape?",
+      "What does -1 mean in a shape, and when does it fail?",
+      "How are the shapes (12,), (1, 12) and (12, 1) different?"
+    ],
+    "commonMisconceptions": [
+      "Reshaping changes or reorders the data (the elements and their order stay the same, only the shape changes).",
+      "Shapes (12,) and (1, 12) are the same thing (the first has one axis, the second has two).",
+      "-1 means the last size or a size of minus one (it asks NumPy to calculate the one missing size).",
+      "Any shape can be requested (the sizes must multiply to the number of elements)."
+    ],
+    "assessmentOpportunities": [
+      "Without the MicroSim, students state the result of `np.arange(24).reshape(4, -1).shape`, give the index of the value 17 in that array, and say whether `np.arange(24).reshape(5, -1)` works and why."
+    ]
   },
-  "chapter": "10-numpy-computing"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "array-shape-visualizer",
+  "chapter": "10-numpy-computing",
+  "completion_status": "implemented"
 }

@@ -1,45 +1,69 @@
 {
   "title": "Matrix Multiplication Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for matrix multiplication visualizer",
+  "subject": "Data Science",
+  "description": "Step through the cells of a matrix product to see each one built from a row of A and a column of B, and compare it with element-wise multiplication.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Matrix Multiplication Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "Matrix multiplication and the dot product",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how each cell of a matrix product is computed from a row and a column, determine from two shapes whether `A @ B` is defined and what shape it has, and distinguish it from element-wise multiplication."
     ],
-    "bloomsTaxonomy": "Apply",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Dot product",
+      "Array shape",
+      "Element-wise operations"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 470
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of a worked example with prediction of the next cell",
+    "keyQuestions": [
+      "Which two sizes must match for A @ B to work, and why?",
+      "Where does the shape of the result come from?",
+      "How is A * B different from A @ B?",
+      "Why can A @ B work when B @ A does not, or gives a different shape?"
+    ],
+    "commonMisconceptions": [
+      "`*` multiplies matrices in the linear algebra sense (it multiplies matching positions, and `@` is the matrix product).",
+      "Two matrices must have the same shape to be multiplied with `@` (only the inner sizes must match).",
+      "A cell of the product is one multiplication (it is a sum of products along a row and a column).",
+      "A @ B equals B @ A (the order matters, and one of the two may not even be defined)."
+    ],
+    "assessmentOpportunities": [
+      "Given `A = [[1, 2], [3, 4]]` and `B = [[5, 6], [7, 8]]`, students compute `A @ B` and `A * B` by hand. They then state whether a (4, 3) matrix can be multiplied by a (4, 3) matrix with `@`, and what transposing the second matrix changes."
+    ]
   },
-  "chapter": "10-numpy-computing"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "matrix-multiplication-visualizer",
+  "chapter": "10-numpy-computing",
+  "completion_status": "implemented"
 }

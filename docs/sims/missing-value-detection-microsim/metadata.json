@@ -1,45 +1,67 @@
 {
   "title": "Missing Value Detection MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for missing value detection microsim",
+  "subject": "Data Science",
+  "description": "Count the missing values that isnull() will find in a column of a small DataFrame, check your answer, and reveal the hidden missing values that pandas does not detect.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Missing Value Detection MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Detecting missing values with isnull()",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply isnull() and isnull().sum() to count the missing values in a DataFrame and identify hidden missing values that isnull() does not detect."
     ],
     "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Rows, columns, and cells of a DataFrame",
+      "NaN as the pandas marker for a missing value",
+      "Calling a DataFrame method"
+    ],
+    "standards": [],
+    "bloomVerb": "Apply"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 550
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Practice with immediate feedback: predict a count, check it, then reveal the mask",
+    "keyQuestions": [
+      "Why does isnull() return False for an empty string?",
+      "How would you turn -999 into a value that isnull() can find?",
+      "In scenario 5, would you drop the rows with missing values? What would be left?"
+    ],
+    "commonMisconceptions": [
+      "isnull() finds everything that is missing (it finds only NaN and None, not empty strings or placeholder codes).",
+      "A blank-looking cell is always NaN (it may hold an empty string, which pandas treats as a value).",
+      "A number such as -999 must be real data (legacy systems often use it to mean no value)."
+    ],
+    "assessmentOpportunities": [
+      "Shown a printed DataFrame that contains NaN, None, an empty string, and -999, students state the output of df.isnull().sum() for each column, give the total and the percentage missing, and name the cells that are missing but not counted."
+    ]
   },
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "missing-value-detection-microsim",
+  "completion_status": "implemented",
   "chapter": "04-data-cleaning"
 }

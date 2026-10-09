@@ -1,45 +1,68 @@
 {
   "title": "Scikit-learn Workflow",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for scikit-learn workflow",
+  "subject": "Data Science",
+  "description": "Step through the six-step scikit-learn pattern of import, prepare data, create, fit, predict, and evaluate on the chapter's study-hours data, choose the value to predict for, and switch on the single-brackets mistake to see where the script fails.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Scikit-learn Workflow",
+    "subjectArea": "Data Science",
+    "topic": "The scikit-learn fit and predict workflow",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply the scikit-learn pattern of import, prepare data, create, fit, predict, and evaluate to train a linear regression model and make a prediction."
     ],
-    "bloomsTaxonomy": "Create",
+    "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "pandas DataFrame column selection",
+      "Slope and intercept",
+      "R squared"
+    ],
+    "standards": [],
+    "bloomVerb": "Apply"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 560
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of a worked script with a learner-set input and a switchable common error",
+    "keyQuestions": [
+      "Which step is the only one in which the model learns from the data?",
+      "Why does X need two dimensions when there is only one feature?",
+      "What does model.score(X, y) return for a regression model?"
+    ],
+    "commonMisconceptions": [
+      "Creating the model with LinearRegression() trains it (it only creates an untrained object, and training happens in fit).",
+      "score returns accuracy or percent correct (for regression models it returns R²).",
+      "df['feature'] and df[['feature']] give the same X (the first is a 1-D Series, the second a 2-D DataFrame).",
+      "predict can only be used on the training data (it works for any X with the same columns)."
+    ],
+    "assessmentOpportunities": [
+      "Given a DataFrame with a column sqft and a column price, students write the lines that train a LinearRegression model and predict the price of a 1,500 square foot house, and explain what model.score(X, y) returns."
+    ]
   },
-  "chapter": "07-simple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "scikit-learn-workflow",
+  "chapter": "07-simple-linear-regression",
+  "completion_status": "implemented"
 }

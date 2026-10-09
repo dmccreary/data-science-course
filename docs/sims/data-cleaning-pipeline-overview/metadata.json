@@ -1,45 +1,67 @@
 {
   "title": "Data Cleaning Pipeline Overview",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for data cleaning pipeline overview",
+  "subject": "Data Science",
+  "description": "Step through the eight stages of a data cleaning pipeline and watch a small messy table become analysis-ready, with the pandas code and the data quality report entry for each stage.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Data Cleaning Pipeline Overview",
+    "subjectArea": "Data Science",
+    "topic": "The data cleaning pipeline",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain what each stage of a data cleaning pipeline does to a dataset and why the order of the stages matters."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Loading data with pd.read_csv",
+      "DataFrame rows, columns, and dtypes",
+      "Mean and median"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 593
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of a worked example on a small table, with prediction before the first step",
+    "keyQuestions": [
+      "Why did the duplicate row only become detectable after the missing values were handled?",
+      "Why was a score of 104 not flagged as an outlier, and which stage caught it?",
+      "What would be lost if the cleaning decisions were not written to a report?"
+    ],
+    "commonMisconceptions": [
+      "Cleaning means deleting bad rows (most stages here repair or convert values, and only two remove a row).",
+      "The order of the stages does not matter (an earlier stage can create or hide the problem a later stage looks for).",
+      "An outlier check also catches invalid values (a value can look ordinary and still break a business rule)."
+    ],
+    "assessmentOpportunities": [
+      "Given the eight stage names in random order, students put them in a sensible order and write one sentence for each stage that says what kind of problem it catches. They also give one example of two stages whose order changes the result."
+    ]
   },
-  "chapter": "04-data-cleaning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "data-cleaning-pipeline-overview",
+  "chapter": "04-data-cleaning",
+  "completion_status": "implemented"
 }

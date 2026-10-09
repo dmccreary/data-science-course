@@ -1,45 +1,69 @@
 {
   "title": "Training Loop Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for training loop visualizer",
+  "subject": "Data Science",
+  "description": "Step through the five lines of a PyTorch training loop on a one-neuron model and watch the weight, bias, gradients, and loss change after each line.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Training Loop Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "The PyTorch training loop",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to trace the five steps of a PyTorch training loop, state what each step changes, and analyze how the learning rate and a missing zero_grad() call affect the loss curve."
     ],
     "bloomsTaxonomy": "Analyze",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Linear model y = wx + b",
+      "Mean squared error",
+      "Gradient descent and learning rate"
+    ],
+    "standards": [],
+    "bloomVerb": "Analyze"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through code tracing with real values, followed by what-if comparison",
+    "keyQuestions": [
+      "Which of the five lines changes the weight and bias, and which only compute something?",
+      "Why does the loss never fall below the dashed line?",
+      "What happens to the loss curve when the learning rate goes above about 0.7, and why?",
+      "A gradient depends only on the current weights, so why does PyTorch need zero_grad()?"
+    ],
+    "commonMisconceptions": [
+      "loss.backward() updates the weights (it only fills in .grad; optimizer.step() changes the weights).",
+      "Each backward() call replaces the old gradient (PyTorch adds the new gradient to the stored one, which is why zero_grad() is needed).",
+      "A larger learning rate always trains faster (above a limit, about 0.7 for this data, every update overshoots and the loss grows).",
+      "Training for long enough drives the loss to zero (noisy data cannot be fit exactly, so the loss levels off at the least-squares value, 0.0706 here)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown a training loop whose loss swings up and down and never settles although the learning rate is small. They name the missing line, explain what PyTorch does with gradients when it is missing, and write the five steps in a correct order."
+    ]
   },
-  "chapter": "13-neural-networks-pytorch"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "training-loop-visualizer",
+  "chapter": "13-neural-networks-pytorch",
+  "completion_status": "implemented"
 }

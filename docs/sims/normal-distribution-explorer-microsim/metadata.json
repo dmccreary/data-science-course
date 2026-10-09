@@ -1,45 +1,68 @@
 {
   "title": "Normal Distribution Explorer MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for normal distribution explorer microsim",
+  "subject": "Data Science",
+  "description": "Set the mean and standard deviation of a normal distribution and read the intervals that hold 68, 95, and 99.7 percent of the values.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Normal Distribution Explorer MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "The normal distribution and the 68-95-99.7 rule",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to use the mean and standard deviation of a normal distribution to find the intervals that contain about 68%, 95%, and 99.7% of the values."
     ],
-    "bloomsTaxonomy": "Analyze",
+    "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Mean",
+      "Standard deviation",
+      "Histograms and distributions"
+    ],
+    "standards": [],
+    "bloomVerb": "Use"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 595
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Parameter exploration on fixed axes with a pinned curve for comparison",
+    "keyQuestions": [
+      "What happens to the curve when μ changes and σ stays the same?",
+      "Why does the peak get lower when σ gets larger?",
+      "Why are the three percentages in the table the same for every choice of μ and σ?"
+    ],
+    "commonMisconceptions": [
+      "A larger standard deviation makes the curve taller (it makes the curve wider and lower, because the total area stays 1).",
+      "The height of the curve at x is the probability of x (the height is a density, and probabilities are areas under the curve).",
+      "The 68-95-99.7 rule works for any data (it describes normal distributions, and skewed data can be very different).",
+      "Exactly 95% of values lie within 2 standard deviations (the area is 95.45%, and exactly 95% corresponds to 1.96 standard deviations)."
+    ],
+    "assessmentOpportunities": [
+      "Without the MicroSim, students state the interval that holds about 95% of the values of a normal distribution with a given mean and standard deviation (for example μ = 500 and σ = 100) and sketch how the curve changes if σ is halved."
+    ]
   },
-  "chapter": "06-statistical-foundations"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "normal-distribution-explorer-microsim",
+  "chapter": "06-statistical-foundations",
+  "completion_status": "implemented"
 }

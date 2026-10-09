@@ -1,45 +1,68 @@
 {
   "title": "Bias-Variance Dartboard",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for bias-variance dartboard",
+  "subject": "Data Science",
+  "description": "Compare four reference dartboards for low and high bias and variance, then set a model complexity, throw darts, and read the bias, variance, and total error measured from where the darts land.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Bias-Variance Dartboard",
+    "subjectArea": "Data Science",
+    "topic": "Bias-variance tradeoff",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to interpret a pattern of predictions as high or low bias and high or low variance, and explain how increasing model complexity trades bias for variance."
     ],
-    "bloomsTaxonomy": "Apply",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Mean",
+      "Variance as an average squared distance",
+      "Underfitting and overfitting"
+    ],
+    "standards": [],
+    "bloomVerb": "Interpret"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Analogy with reference examples and measurements computed from simulated throws",
+    "keyQuestions": [
+      "Which would you rather have, darts centered but scattered, or darts tightly grouped but off target? What would you do to fix each one?",
+      "Why does throwing more darts change the measured bias very little at setting 2 but noticeably at setting 10?",
+      "Why does no slider setting produce the low-bias, low-variance board?"
+    ],
+    "commonMisconceptions": [
+      "Bias means the predictions are scattered (bias is a consistent miss in one direction; scatter is variance).",
+      "A model with low bias is a good model (it can still be unreliable if its variance is high).",
+      "The right complexity removes both bias and variance (changing complexity lowers one and raises the other; lowering both takes more data or a better kind of model).",
+      "Variance here means the spread of the data (it is the spread of the model's predictions when the model is trained on different samples)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown three unlabeled dart patterns. For each one they state whether the bias and the variance are high or low, name the modeling problem it stands for (underfitting, overfitting, or neither), and say whether a more complex or a simpler model would help."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "bias-variance-dartboard",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

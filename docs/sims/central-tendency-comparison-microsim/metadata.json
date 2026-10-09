@@ -1,45 +1,68 @@
 {
   "title": "Central Tendency Comparison MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for central tendency comparison microsim",
+  "subject": "Data Science",
+  "description": "Drag the dots of a dot plot and add outliers to see how the mean, the median, and the mode each respond to the same change in the data.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Central Tendency Comparison MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Mean, median, and mode",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain why an outlier changes the mean but leaves the median and the mode almost unchanged."
     ],
-    "bloomsTaxonomy": "Create",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Arithmetic mean",
+      "Sorting data",
+      "Reading a dot plot or histogram"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 540
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Direct manipulation of data points with a before-and-after comparison table",
+    "keyQuestions": [
+      "Why does one extreme value move the mean but not the median?",
+      "In right-skewed data, which is larger, the mean or the median, and why?",
+      "When is the mode the only measure of center that makes sense?"
+    ],
+    "commonMisconceptions": [
+      "The mean is always the best description of a typical value (with skewed data or outliers the median is usually better).",
+      "The median is halfway between the smallest and largest values (it is the middle value by position in the sorted data).",
+      "Every dataset has exactly one mode (data can have several modes or none).",
+      "If the mean and the median agree, typical values lie near them (bimodal data can have very few values near the center)."
+    ],
+    "assessmentOpportunities": [
+      "Given the scores 72, 85, 90, 78, 88 and then the same scores with an added value of 250, students compute the mean and the median of both sets and explain which measure better describes a typical score."
+    ]
   },
-  "chapter": "06-statistical-foundations"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "central-tendency-comparison-microsim",
+  "chapter": "06-statistical-foundations",
+  "completion_status": "implemented"
 }

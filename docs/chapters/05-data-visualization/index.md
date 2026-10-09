@@ -63,6 +63,10 @@ In this chapter, you'll learn multiple visualization tools—from the classic **
 
 #### Diagram: Visualization Library Comparison
 
+
+<iframe src="../../sims/visualization-library-comparison/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run Visualization Library Comparison Fullscreen](../../sims/visualization-library-comparison/main.html)
+
 <details markdown="1">
 <summary>Python Visualization Library Landscape</summary>
 Type: infographic
@@ -346,6 +350,10 @@ plt.show()
 
 #### Diagram: Chart Type Selection Guide
 
+
+<iframe src="../../sims/chart-type-selection-guide/main.html" width="100%" height="595px" scrolling="no"></iframe>
+[Run Chart Type Selection Guide Fullscreen](../../sims/chart-type-selection-guide/main.html)
+
 <details markdown="1">
 <summary>Which Chart Should I Use?</summary>
 Type: infographic
@@ -628,6 +636,10 @@ fig.show()
 
 #### Diagram: Plotly Interactive Features MicroSim
 
+
+<iframe src="../../sims/plotly-interactive-features-microsim/main.html" width="100%" height="577px" scrolling="no"></iframe>
+[Run Plotly Interactive Features MicroSim Fullscreen](../../sims/plotly-interactive-features-microsim/main.html)
+
 <details markdown="1">
 <summary>Interactive Chart Exploration Playground</summary>
 Type: microsim
@@ -833,6 +845,10 @@ fig.write_image('my_chart.svg')
 
 #### Diagram: Plotly Code Pattern Reference
 
+
+<iframe src="../../sims/plotly-code-pattern-reference/main.html" width="100%" height="647px" scrolling="no"></iframe>
+[Run Plotly Code Pattern Reference Fullscreen](../../sims/plotly-code-pattern-reference/main.html)
+
 <details markdown="1">
 <summary>Plotly Express Quick Reference Card</summary>
 Type: infographic
@@ -955,6 +971,10 @@ fig2.show()
 ```
 
 #### Diagram: Visualization Design MicroSim
+
+
+<iframe src="../../sims/visualization-design-microsim/main.html" width="100%" height="572px" scrolling="no"></iframe>
+[Run Visualization Design MicroSim Fullscreen](../../sims/visualization-design-microsim/main.html)
 
 <details markdown="1">
 <summary>Chart Design Playground</summary>

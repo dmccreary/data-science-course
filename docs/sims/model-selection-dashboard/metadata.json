@@ -1,45 +1,70 @@
 {
   "title": "Model Selection Dashboard",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for model selection dashboard",
+  "subject": "Data Science",
+  "description": "Train polynomial models of different degrees, compare their cross-validation scores, declare a winner, and only then unlock the test set to check your choice.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Model Selection Dashboard",
+    "subjectArea": "Data Science",
+    "topic": "Model selection and comparison with cross-validation",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to select a model from several candidates using cross-validation scores and their variability, and justify the choice before confirming it on held-out test data."
     ],
     "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "R-squared",
+      "Train-test split",
+      "K-fold cross-validation",
+      "Overfitting and underfitting",
+      "Polynomial regression"
+    ],
+    "standards": [],
+    "bloomVerb": "Justify"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 715
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided decision-making with the test set withheld until the choice is made",
+    "keyQuestions": [
+      "Why does Train R² never go down when the degree goes up?",
+      "Two models have nearly the same CV mean. What else should decide between them?",
+      "Why does the dashboard close the comparison once the test scores are shown?"
+    ],
+    "commonMisconceptions": [
+      "The model with the highest Train R² is the best model (Train R² rises with every added degree, even when the model is fitting noise).",
+      "The model with the highest CV mean is always the right choice (differences smaller than the standard deviation are not reliable, so a simpler model that scores about the same is often preferred).",
+      "It is fine to pick the model with the best test score (the test set then becomes part of training, and its score is no longer an honest estimate).",
+      "R-squared is always between 0 and 1 (on data the model was not fit to, it is negative whenever the model predicts worse than the mean of those points)."
+    ],
+    "assessmentOpportunities": [
+      "Given a table of five models with Train R², CV mean, and CV standard deviation, students choose a model, justify the choice in terms of CV mean, variability, and simplicity, and explain why the test set was not used to make the choice."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "model-selection-dashboard",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

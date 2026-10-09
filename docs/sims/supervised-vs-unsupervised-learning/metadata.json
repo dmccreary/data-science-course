@@ -1,45 +1,68 @@
 {
   "title": "Supervised vs Unsupervised Learning",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for supervised vs unsupervised learning",
+  "subject": "Data Science",
+  "description": "Step through training data, training, and new data for a spam classifier and a customer clustering model side by side, and compare what each kind of learning is given, what it learns, and what it outputs.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Supervised vs Unsupervised Learning",
+    "subjectArea": "Data Science",
+    "topic": "Supervised versus unsupervised learning",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare supervised and unsupervised learning by explaining what data each one is given, what it learns, and what kind of output it produces."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Features and target variable",
+      "Scatter plots",
+      "Fitting a model with scikit-learn"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side step-through of two worked examples with a comparison table",
+    "keyQuestions": [
+      "What does the supervised learner have that the unsupervised learner does not?",
+      "Why can K-Means report \"Group B\" but not \"frequent shopper\"?",
+      "If the labels were erased from the emails, what could a model still learn from them?"
+    ],
+    "commonMisconceptions": [
+      "Unsupervised learning predicts labels (it only finds structure such as groups; people decide what the groups mean).",
+      "Supervised learning means a person watches the model while it trains (the supervision is the labeled answers in the training data).",
+      "The colors in the clustering plot are labels that came with the data (the algorithm assigns them after training).",
+      "A clustering result can be scored for accuracy the way a classifier is (there are no correct answers to compare against)."
+    ],
+    "assessmentOpportunities": [
+      "Given a short description of a data set and a goal, students state whether the task is supervised or unsupervised, name what plays the role of X and (if present) y, and describe the form of the model's output."
+    ]
   },
-  "chapter": "12-intro-to-machine-learning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "supervised-vs-unsupervised-learning",
+  "chapter": "12-intro-to-machine-learning",
+  "completion_status": "implemented"
 }

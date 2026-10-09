@@ -1,45 +1,68 @@
 {
   "title": "Data Selection Playground MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for data selection playground microsim",
+  "subject": "Data Science",
+  "description": "Practice four ways to select data from a pandas DataFrame (columns, rows by position, rows by label, and a Boolean filter) and see the code, the selected cells, and the result update together.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Data Selection Playground MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Selecting columns and rows with brackets, iloc, loc, and Boolean filters",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply column selection, iloc, loc, and Boolean filtering to extract a required subset of a DataFrame and predict the shape of the result."
     ],
     "bloomsTaxonomy": "Apply",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "DataFrame structure (index, columns)",
+      "Python lists and slices",
+      "Comparison operators"
+    ],
+    "standards": [],
+    "bloomVerb": "Apply"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 595
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided practice by direct manipulation, with immediate feedback that links the code, the highlighted cells, and the result",
+    "keyQuestions": [
+      "Why does df.iloc[0:3] return three rows and not four?",
+      "When would loc and iloc return the same rows?",
+      "What does the condition df[\"score\"] >= 90 produce before it is used to filter?"
+    ],
+    "commonMisconceptions": [
+      "The stop position of an iloc slice is included (it is excluded, as in a Python list slice).",
+      "iloc and loc are the same thing (iloc counts positions, loc matches labels).",
+      "df[\"age\", \"score\"] selects two columns (the names must be in a list, which gives the double brackets).",
+      "A Boolean filter changes df (it returns a new DataFrame and leaves df as it was)."
+    ],
+    "assessmentOpportunities": [
+      "Without the MicroSim, students write one line of pandas for each task on the same table and give the shape of each result. The tasks are the city and score columns only, the first four rows, the rows for Grace and Ivy, and the students aged 28 or older."
+    ]
   },
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "data-selection-playground-microsim",
+  "completion_status": "implemented",
   "chapter": "03-python-data-structures"
 }

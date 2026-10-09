@@ -118,6 +118,10 @@ The output shows you how each feature contributes to the prediction. Positive co
 
 #### Diagram: Multiple Regression Anatomy
 
+
+<iframe src="../../sims/multiple-regression-anatomy/main.html" width="100%" height="607px" scrolling="no"></iframe>
+[Run Multiple Regression Anatomy Fullscreen](../../sims/multiple-regression-anatomy/main.html)
+
 <details markdown="1">
 <summary>Multiple Regression Anatomy</summary>
 Type: infographic
@@ -260,6 +264,10 @@ If you find high VIF values, you have options:
 
 #### Diagram: Multicollinearity Detector MicroSim
 
+
+<iframe src="../../sims/multicollinearity-detector-microsim/main.html" width="100%" height="632px" scrolling="no"></iframe>
+[Run Multicollinearity Detector MicroSim Fullscreen](../../sims/multicollinearity-detector-microsim/main.html)
+
 <details markdown="1">
 <summary>Multicollinearity Detector MicroSim</summary>
 Type: microsim
@@ -377,6 +385,10 @@ selected_features, scores = forward_selection(X_train, y_train)
 
 #### Diagram: Feature Selection Race
 
+
+<iframe src="../../sims/feature-selection-race/main.html" width="100%" height="712px" scrolling="no"></iframe>
+[Run Feature Selection Race Fullscreen](../../sims/feature-selection-race/main.html)
+
 <details markdown="1">
 <summary>Feature Selection Race</summary>
 Type: microsim
@@ -470,6 +482,10 @@ X_processed = preprocessor.fit_transform(X)
 ```
 
 #### Diagram: One-Hot Encoding Visualizer
+
+
+<iframe src="../../sims/one-hot-encoding-visualizer/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run One-Hot Encoding Visualizer Fullscreen](../../sims/one-hot-encoding-visualizer/main.html)
 
 <details markdown="1">
 <summary>One-Hot Encoding Visualizer</summary>
@@ -609,6 +625,10 @@ Good feature engineering requires:
 
 #### Diagram: Feature Engineering Laboratory
 
+
+<iframe src="../../sims/feature-engineering-laboratory/main.html" width="100%" height="622px" scrolling="no"></iframe>
+[Run Feature Engineering Laboratory Fullscreen](../../sims/feature-engineering-laboratory/main.html)
+
 <details markdown="1">
 <summary>Feature Engineering Laboratory</summary>
 Type: microsim
@@ -725,6 +745,10 @@ Permutation importance has advantages:
 - Accounts for interactions
 
 #### Diagram: Feature Importance Explorer
+
+
+<iframe src="../../sims/feature-importance-explorer/main.html" width="100%" height="612px" scrolling="no"></iframe>
+[Run Feature Importance Explorer Fullscreen](../../sims/feature-importance-explorer/main.html)
 
 <details markdown="1">
 <summary>Feature Importance Explorer</summary>
@@ -852,6 +876,10 @@ fig.show()
 ```
 
 #### Diagram: Multiple Regression Pipeline
+
+
+<iframe src="../../sims/multiple-regression-pipeline/main.html" width="100%" height="627px" scrolling="no"></iframe>
+[Run Multiple Regression Pipeline Fullscreen](../../sims/multiple-regression-pipeline/main.html)
 
 <details markdown="1">
 <summary>Multiple Regression Pipeline</summary>
