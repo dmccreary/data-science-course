@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for central limit theorem simulator microsim.">
+        <meta name="description" content="Draw repeated samples from a normal, uniform, right-skewed, or bimodal population and compare the histogram of sample means with the normal curve that the central limit theorem predicts.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Central Limit Theorem Simulator MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for central limit theorem simulator microsim." >
+        <meta  property="og:description"  content="Draw repeated samples from a normal, uniform, right-skewed, or bimodal population and compare the histogram of sample means with the normal curve that the central limit theorem predicts." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/central-limit-theorem-simulator-microsim/central-limit-theorem-simulator-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Central Limit Theorem Simulator MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for central limit theorem simulator microsim." >
+        <meta  name="twitter:description"  content="Draw repeated samples from a normal, uniform, right-skewed, or bimodal population and compare the histogram of sample means with the normal curve that the central limit theorem predicts." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/central-limit-theorem-simulator-microsim/central-limit-theorem-simulator-microsim.png">
       
@@ -1200,6 +1200,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/central-limit-theorem-simulator-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/central-limit-theorem-simulator-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="central-limit-theorem-simulator-microsim">Central Limit Theorem Simulator MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="587" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Central Limit Theorem Simulator MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Central Limit Theorem Simulator MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The top chart shows a population distribution with its mean <span class="arithmatex">\(\mu\)</span> and standard deviation <span class="arithmatex">\(\sigma\)</span>. A sample is <span class="arithmatex">\(n\)</span> values drawn at random from that population. The orange dots are the values of the latest sample, and the dashed line carries their mean down to the bottom chart, where it is counted in a histogram. Both charts share the same axis from 0 to 100.</p>
+<p>The central limit theorem says that, for large enough <span class="arithmatex">\(n\)</span>, the sample means are approximately normally distributed with</p>
+<div class="arithmatex">\[\text{mean} = \mu \qquad \text{standard deviation} = \frac{\sigma}{\sqrt{n}}\]</div>
+<p>whatever the shape of the population. The second quantity is called the standard error. The red curve is that normal distribution, scaled to the number of samples taken. The table compares the mean and standard deviation of the sample means actually drawn with the two predicted values.</p>
+<p>The MicroSim opens with 1000 samples of size 30 from a uniform population, the same setup as the code in the chapter. Changing the population or the sample size draws a fresh 1000 samples. The random numbers come from a seeded generator, so the same settings always give the same samples. The standard deviation of the sample means is computed with <span class="arithmatex">\(n - 1\)</span> in the denominator (<code>ddof=1</code>).</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Compare the two charts as they open. The population is flat, but the sample means pile up in a bell shape around 50.</li>
+<li>Move the <strong>Sample size</strong> slider through 2, 5, 10, 30, and 100. Watch the histogram narrow, and compare the observed SD of the sample means with σ/√n in the table.</li>
+<li>Choose each <strong>Population</strong> in turn. For the right-skewed and bimodal populations, find the smallest sample size at which the histogram follows the red curve well.</li>
+<li>Press <strong>Clear</strong>, then <strong>Take 1 Sample</strong> several times to see how one sample becomes one block of the histogram.</li>
+<li>Press <strong>Start</strong> to keep sampling (up to 5000 samples) and <strong>Pause</strong> to stop.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/central-limit-theorem-simulator-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/central-limit-theorem-simulator-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"587"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Mean and standard deviation, the difference between a population and a sample, and the shape of the normal distribution.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare the distribution of sample means with the population distribution and analyze how the sample size changes its shape and spread.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Observe one sample</strong> (4 min): Students clear the samples, take five single samples, and record each sample mean. They explain why the means vary less than the individual orange dots do.</li>
+<li><strong>Compare shapes</strong> (7 min): For each of the four populations, students set n to 2 and then to 30 and describe how well the histogram of sample means follows the red curve.</li>
+<li><strong>Test the formula</strong> (5 min): Students fill in a table of n, σ/√n, and the observed SD of the sample means for n = 2, 5, 10, 30, and 100, then work out how much larger n must be to halve the standard error.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students predict the mean and the standard deviation of the sample means for samples of size 25 from a population with μ = 80 and σ = 20, and explain whether the histogram of those sample means would look normal if the population were strongly skewed.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central limit theorem</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Standard_error">Standard error</a>.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html">numpy.random.choice</a>.</li>
 </ol>
 
 

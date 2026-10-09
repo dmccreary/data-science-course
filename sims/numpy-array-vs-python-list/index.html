@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for numpy array vs python list.">
+        <meta name="description" content="Step through doubling five numbers to see why a Python list of scattered objects is processed one element at a time while a NumPy array is one block of values handled in a single call.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="NumPy Array vs Python List - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for numpy array vs python list." >
+        <meta  property="og:description"  content="Step through doubling five numbers to see why a Python list of scattered objects is processed one element at a time while a NumPy array is one block of values handled in a single call." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/numpy-array-vs-python-list/numpy-array-vs-python-list.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="NumPy Array vs Python List - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for numpy array vs python list." >
+        <meta  name="twitter:description"  content="Step through doubling five numbers to see why a Python list of scattered objects is processed one element at a time while a NumPy array is one block of values handled in a single call." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/numpy-array-vs-python-list/numpy-array-vs-python-list.png">
       
@@ -2235,6 +2235,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/numpy-array-vs-python-list/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/numpy-array-vs-python-list/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,61 @@
 
 
 <h1 id="numpy-array-vs-python-list">NumPy Array vs Python List</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="616" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the NumPy Array vs Python List MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>A Python list and a NumPy array can hold the same five numbers, but they store them in very different ways. This MicroSim draws both.</p>
+<ul>
+<li><strong>Python list</strong> (left): the list object is a row of five pointers. Each pointer leads to a separate <code>int</code> object somewhere else in memory.</li>
+<li><strong>NumPy array</strong> (right): a small header records the <code>dtype</code> and the <code>shape</code>, and the five values sit side by side in one block, 8 bytes each.</li>
+</ul>
+<p>Pressing <strong>Next</strong> doubles the numbers. The list needs one pass through the Python interpreter for every element: follow the pointer, check the type, multiply, store a pointer to the result. The array is finished after one step, because <code>arr * 2</code> is a single call whose loop runs in compiled C code along the block.</p>
+<p>The bottom panel scales the comparison up. Memory is computed from the sizes that CPython reports on a 64-bit machine: a list costs 56 bytes plus 8 bytes per pointer and 28 bytes per <code>int</code> object, and an <code>int64</code> array costs 8 bytes per value. For one million numbers that is 36.0 MB against 8.0 MB, the same figures the chapter's <code>sys.getsizeof</code> code prints. The speed statement is a typical range, not a measurement, because real timings depend on the operation and the computer. The addresses on screen are made up for illustration.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the two panels at step 0. Find the five pointers in the list and the five values in the array.</li>
+<li>Press <strong>Next</strong> and watch which cells turn gold. Read the sentence under each panel.</li>
+<li>Keep pressing <strong>Next</strong> until the list is done. Count how many steps each side needed.</li>
+<li>Untick <strong>Show addresses</strong>, then tick it again. Compare the scattered addresses of the <code>int</code> objects with the evenly spaced addresses of the array values.</li>
+<li>Drag the <strong>Array size n</strong> slider and watch the memory bars and the number of interpreter passes. Press <strong>Reset</strong> to start again.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/numpy-array-vs-python-list/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/numpy-array-vs-python-list/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"616"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Python lists and <code>for</code> loops, and the idea that a program's data lives in the computer's memory.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how a Python list and a NumPy array store the same numbers and why that difference makes whole-array NumPy operations use less memory and run faster.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): Before pressing Next, students predict how many steps the list and the array will each need to double five numbers, and say why.</li>
+<li><strong>Step through</strong> (6 min): Students step from 0 to 5, describing in their own words what the interpreter does on each pass and what NumPy did at step 1.</li>
+<li><strong>Scale up</strong> (5 min): Students set the slider to 1,000 and to 1,000,000 and record the memory for each structure, then work out where the 36 bytes per list element come from.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students draw their own picture of the list <code>[10, 20, 30]</code> and the array <code>np.array([10, 20, 30])</code> in memory and write two sentences explaining why <code>arr * 2</code> is faster than <code>[x * 2 for x in nums]</code> on a large array, and why the gain disappears on a tiny one.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/user/whatisnumpy.html">What is NumPy?</a>.</li>
+<li>VanderPlas, Jake. <em>Python Data Science Handbook</em>, 2nd ed. O'Reilly Media, 2022. Part II, Introduction to NumPy. See the chapter Understanding Data Types in Python.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/NumPy">NumPy</a>.</li>
 </ol>
 
 

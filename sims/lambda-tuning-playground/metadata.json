@@ -1,45 +1,68 @@
 {
   "title": "Lambda Tuning Playground",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for lambda tuning playground",
+  "subject": "Data Science",
+  "description": "Tune the regularization strength of a degree-10 polynomial model fitted with ridge, lasso, or elastic net, read the training and cross-validation scores and the coefficient sizes, and check the choice against the cross-validation best.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Lambda Tuning Playground",
+    "subjectArea": "Data Science",
+    "topic": "Tuning the regularization parameter",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to use cross-validation scores, the fitted curve, and the coefficient sizes to tune the regularization strength of ridge, lasso, and elastic net models and to recognize a lambda that is too small or too large."
     ],
-    "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "bloomsTaxonomy": "Apply",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Polynomial regression",
+      "Overfitting and underfitting",
+      "Ridge and lasso regression",
+      "k-fold cross-validation"
+    ],
+    "standards": [],
+    "bloomVerb": "Use"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided experimentation with linked views and feedback on each setting",
+    "keyQuestions": [
+      "Why can the training R² not be used to choose λ?",
+      "What happens to the fitted curve and to the coefficients as λ goes from very small to very large?",
+      "Why is the test score looked at only after λ has been chosen?"
+    ],
+    "commonMisconceptions": [
+      "A larger λ always gives a better model (past the sweet spot the model underfits).",
+      "The λ with the highest training score is the best one (training R² is always highest with the weakest penalty).",
+      "The best alpha for ridge can be reused for lasso (scikit-learn scales the two objectives differently, so each method needs its own search)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown a score-against-λ chart with the current λ marked far to the left of the star, state whether the model is overfitting or underfitting, say what they expect the fitted curve and the coefficient sizes to look like, and name the direction to move λ."
+    ]
   },
-  "chapter": "11-nonlinear-models-regularization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "lambda-tuning-playground",
+  "chapter": "11-nonlinear-models-regularization",
+  "completion_status": "implemented"
 }

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for feature scaling comparison microsim.">
+        <meta name="description" content="Compare a histogram and its summary statistics before and after min-max, standard, robust, and log scaling to see which methods change only the numbers and which change the shape.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Feature Scaling Comparison MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for feature scaling comparison microsim." >
+        <meta  property="og:description"  content="Compare a histogram and its summary statistics before and after min-max, standard, robust, and log scaling to see which methods change only the numbers and which change the shape." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/feature-scaling-comparison-microsim/feature-scaling-comparison-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Feature Scaling Comparison MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for feature scaling comparison microsim." >
+        <meta  name="twitter:description"  content="Compare a histogram and its summary statistics before and after min-max, standard, robust, and log scaling to see which methods change only the numbers and which change the shape." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/feature-scaling-comparison-microsim/feature-scaling-comparison-microsim.png">
       
@@ -1641,6 +1641,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/feature-scaling-comparison-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/feature-scaling-comparison-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="feature-scaling-comparison-microsim">Feature Scaling Comparison MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="552" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Feature Scaling Comparison MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Feature Scaling Comparison MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Feature scaling puts columns with very different ranges onto comparable scales. This MicroSim shows one column of 200 values before and after scaling, as two histograms and a table of statistics.</p>
+<ul>
+<li><strong>Min-Max</strong>: <span class="arithmatex">\(x' = (x - \min) / (\max - \min)\)</span>. Every value lands between 0 and 1.</li>
+<li><strong>Standard (Z-score)</strong>: <span class="arithmatex">\(x' = (x - \text{mean}) / \text{std}\)</span>. The mean becomes 0 and the standard deviation 1.</li>
+<li><strong>Robust</strong>: <span class="arithmatex">\(x' = (x - \text{median}) / IQR\)</span>. The median becomes 0 and the IQR 1.</li>
+<li><strong>Log transform</strong>: <span class="arithmatex">\(x' = \ln(1 + x)\)</span>.</li>
+</ul>
+<p>The first three methods only shift and stretch the axis, so the bars of the lower histogram keep exactly the shape of the upper one. The log transform is the only one that changes the shape. The table highlights the statistics that each method fixes at 0 or 1. A gold band above each histogram marks the middle 50% of the data, which shows how tightly min-max scaling packs the bulk of the data when outliers take the far end of the range.</p>
+<p>Outliers are the values more than 1.5 × IQR beyond the quartiles of the original data. With <strong>Mark outliers</strong> on they are red in both histograms. The Outliers row counts the values beyond those fences before and after scaling. The standard deviation is the population value, as scikit-learn's <code>StandardScaler</code> uses. The pandas <code>.std()</code> in the chapter's hand-written formula divides by <span class="arithmatex">\(n - 1\)</span>, so its result differs very slightly.</p>
+<p>Not included: an animated transition between methods and an overlay of the two histograms.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start with the prices data and <strong>Min-Max</strong>. Compare the two histograms, then read the highlighted rows of the table.</li>
+<li>Switch <strong>Scaling</strong> to Standard and then Robust. Notice that the bars do not move while the axis numbers and the table change.</li>
+<li>Choose <strong>Log transform</strong> and describe how the shape changed.</li>
+<li>Change <strong>Dataset</strong> and try each method again. Use the right-skewed incomes to see what the log transform is for.</li>
+<li>Turn <strong>Mark outliers</strong> off and on to follow the outliers through each transformation.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/feature-scaling-comparison-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/feature-scaling-comparison-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"552"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Reading a histogram, and the meaning of mean, median, standard deviation, and interquartile range.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how min-max, standard, robust, and log scaling each change the values and the shape of a distribution, and how outliers affect each method.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Same shape, new numbers</strong> (4 min): Students cycle through Min-Max, Standard, and Robust on one dataset and record which statistics each method sets to 0 or 1.</li>
+<li><strong>Outliers</strong> (5 min): On the prices data students record the middle 50% range under Min-Max and under Robust, and explain the difference.</li>
+<li><strong>Changing the shape</strong> (5 min): On the incomes data students compare the Outliers row before and after the log transform, then try the same transform on the heights data and explain why little changes.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown an unlabeled before and after pair of histograms with their statistics and must name the scaling method used and give the evidence. They then recommend a method for a column with a few very large values and justify it.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/preprocessing.html">Preprocessing data</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html">Compare the effect of different scalers on data with outliers</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Feature_scaling">Feature scaling</a>.</li>
 </ol>
 
 

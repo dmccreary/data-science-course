@@ -2415,7 +2415,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/03-python-data-structures/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/chapters/03-python-data-structures/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2513,14 +2513,14 @@
 <span class="normal">7</span>
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Creating a list</span>
-<span class="n">superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Iron Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Spider-Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Wonder Woman&quot;</span><span class="p">]</span>
+<span class="n">superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Iron Man"</span><span class="p">,</span> <span class="s2">"Spider-Man"</span><span class="p">,</span> <span class="s2">"Wonder Woman"</span><span class="p">]</span>
 
 <span class="c1"># Lists can hold different types</span>
-<span class="n">mixed_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">mixed_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s2">"hello"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
 
 <span class="c1"># Lists are ordered - position matters!</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">superheroes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: &quot;Batman&quot; (first item)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">superheroes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Output: &quot;Wonder Woman&quot; (last item)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">superheroes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: "Batman" (first item)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">superheroes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Output: "Wonder Woman" (last item)</span>
 </code></pre></div></td></tr></table></div>
 <p>Lists are incredibly flexible:</p>
 <ul>
@@ -2534,9 +2534,9 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Modifying lists</span>
-<span class="n">superheroes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Black Panther&quot;</span><span class="p">)</span>      <span class="c1"># Add to end</span>
-<span class="n">superheroes</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Superman&quot;</span><span class="p">)</span>        <span class="c1"># Add at position 0</span>
-<span class="n">superheroes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Spider-Man&quot;</span><span class="p">)</span>         <span class="c1"># Remove specific item</span>
+<span class="n">superheroes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Black Panther"</span><span class="p">)</span>      <span class="c1"># Add to end</span>
+<span class="n">superheroes</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Superman"</span><span class="p">)</span>        <span class="c1"># Add at position 0</span>
+<span class="n">superheroes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"Spider-Man"</span><span class="p">)</span>         <span class="c1"># Remove specific item</span>
 <span class="n">last_hero</span> <span class="o">=</span> <span class="n">superheroes</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>            <span class="c1"># Remove and return last item</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
@@ -2565,23 +2565,23 @@
 <span class="normal">18</span>
 <span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Creating a dictionary</span>
 <span class="n">hero_powers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Batman&quot;</span><span class="p">:</span> <span class="s2">&quot;Intelligence and gadgets&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Iron Man&quot;</span><span class="p">:</span> <span class="s2">&quot;Powered armor suit&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Spider-Man&quot;</span><span class="p">:</span> <span class="s2">&quot;Spider abilities&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Wonder Woman&quot;</span><span class="p">:</span> <span class="s2">&quot;Divine powers&quot;</span>
+    <span class="s2">"Batman"</span><span class="p">:</span> <span class="s2">"Intelligence and gadgets"</span><span class="p">,</span>
+    <span class="s2">"Iron Man"</span><span class="p">:</span> <span class="s2">"Powered armor suit"</span><span class="p">,</span>
+    <span class="s2">"Spider-Man"</span><span class="p">:</span> <span class="s2">"Spider abilities"</span><span class="p">,</span>
+    <span class="s2">"Wonder Woman"</span><span class="p">:</span> <span class="s2">"Divine powers"</span>
 <span class="p">}</span>
 
 <span class="c1"># Accessing values by key</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hero_powers</span><span class="p">[</span><span class="s2">&quot;Batman&quot;</span><span class="p">])</span>  <span class="c1"># Output: &quot;Intelligence and gadgets&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hero_powers</span><span class="p">[</span><span class="s2">"Batman"</span><span class="p">])</span>  <span class="c1"># Output: "Intelligence and gadgets"</span>
 
 <span class="c1"># Adding new key-value pairs</span>
-<span class="n">hero_powers</span><span class="p">[</span><span class="s2">&quot;Black Panther&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Vibranium suit&quot;</span>
+<span class="n">hero_powers</span><span class="p">[</span><span class="s2">"Black Panther"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Vibranium suit"</span>
 
 <span class="c1"># Checking if key exists</span>
-<span class="k">if</span> <span class="s2">&quot;Superman&quot;</span> <span class="ow">in</span> <span class="n">hero_powers</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hero_powers</span><span class="p">[</span><span class="s2">&quot;Superman&quot;</span><span class="p">])</span>
+<span class="k">if</span> <span class="s2">"Superman"</span> <span class="ow">in</span> <span class="n">hero_powers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hero_powers</span><span class="p">[</span><span class="s2">"Superman"</span><span class="p">])</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Superman not found!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Superman not found!"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Dictionaries are blazingly fast for lookups. Whether you have 10 items or 10 million, finding a value by its key takes roughly the same amount of time. That's why they're used everywhere in Python.</p>
 <table>
@@ -2661,7 +2661,7 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Preview: NumPy arrays (covered fully in Chapter 10)</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Create an array of numbers</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">])</span>
@@ -2724,7 +2724,7 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># The standard way to import pandas</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Now you can use pd.DataFrame, pd.Series, pd.read_csv, etc.</span>
 </code></pre></div></td></tr></table></div>
@@ -2738,7 +2738,7 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Create a Series from a list</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">])</span>
@@ -2766,7 +2766,7 @@ dtype: int64
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Series with custom index</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">]</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="s2">"Charlie"</span><span class="p">,</span> <span class="s2">"Diana"</span><span class="p">,</span> <span class="s2">"Eve"</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -2826,15 +2826,15 @@ dtype: int64
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Create a DataFrame from a dictionary</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Math&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">],</span>
-    <span class="s2">&quot;Science&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">82</span><span class="p">],</span>
-    <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+    <span class="s2">"Math"</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">],</span>
+    <span class="s2">"Science"</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">82</span><span class="p">],</span>
+    <span class="s2">"English"</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
 <span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="s2">"Charlie"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Output:
@@ -2848,7 +2848,7 @@ Charlie    78       82       80
 </code></pre></div></td></tr></table></div></p>
 <p>This is the structure you'll work with 90% of the time in data science. Let's break down its components.</p>
 <h4 id="diagram-dataframe-anatomy">Diagram: DataFrame Anatomy</h4>
-<iframe src="../../sims/dataframe-anatomy/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/dataframe-anatomy/main.html" width="100%" height="507px" scrolling="no"></iframe>
 <p><a href="../../sims/dataframe-anatomy/main.html">Run DataFrame Anatomy Fullscreen</a></p>
 <details>
 <summary>DataFrame Anatomy Interactive Diagram</summary>
@@ -2925,18 +2925,18 @@ row_3     100     110     120
 <h3 id="understanding-index-columns-and-rows">Understanding Index, Columns, and Rows</h3>
 <p>Let's clarify these fundamental concepts:</p>
 <p><strong>Index</strong>: The row labels of a DataFrame. Think of it as the "name tag" for each row.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># Index([&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;], dtype=&#39;object&#39;)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># Index(['Alice', 'Bob', 'Charlie'], dtype='object')</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Columns</strong>: The column headers—the names of your variables.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># Index([&#39;Math&#39;, &#39;Science&#39;, &#39;English&#39;], dtype=&#39;object&#39;)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># Index(['Math', 'Science', 'English'], dtype='object')</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Row</strong>: A single horizontal slice—one observation with values for all columns.</p>
 <p><strong>Column</strong>: A single vertical slice—one variable with values for all observations. When you extract a single column, you get a Series!</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Get a single column (returns a Series)</span>
-<span class="n">math_scores</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Math&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">math_scores</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;pandas.core.series.Series&#39;&gt;</span>
+<span class="n">math_scores</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Math"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">math_scores</span><span class="p">))</span>  <span class="c1"># &lt;class 'pandas.core.series.Series'&gt;</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">DataFrame vs Series</p>
@@ -2972,12 +2972,12 @@ Diana,28,Houston,95
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Load a CSV file into a DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"students.csv"</span><span class="p">)</span>
 
-<span class="c1"># That&#39;s it! df now contains all your data</span>
+<span class="c1"># That's it! df now contains all your data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Output:
@@ -3010,23 +3010,23 @@ Diana,28,Houston,95
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Specify a different delimiter</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Tab-separated</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Tab-separated</span>
 
 <span class="c1"># Use a different row as header</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Second row as header</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Second row as header</span>
 
 <span class="c1"># No header in file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">])</span>
 
 <span class="c1"># Set a column as index</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">"name"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">File Paths Matter</p>
 <p><code>read_csv("data.csv")</code> looks for the file in your current working directory. If the file is elsewhere, use the full path: <code>read_csv("/path/to/data.csv")</code> or a relative path: <code>read_csv("../data/data.csv")</code>.</p>
 </div>
 <h4 id="diagram-data-loading-workflow">Diagram: Data Loading Workflow</h4>
-<iframe src="../../sims/data-loading-workflow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/data-loading-workflow/main.html" width="100%" height="527px" scrolling="no"></iframe>
 <p><a href="../../sims/data-loading-workflow/main.html">Run Data Loading Workflow Fullscreen</a></p>
 <details>
 <summary>CSV Loading Workflow</summary>
@@ -3147,7 +3147,7 @@ Diana,28,Houston,95
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Unpack shape into variables</span>
 <span class="n">num_rows</span><span class="p">,</span> <span class="n">num_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset has </span><span class="si">{</span><span class="n">num_rows</span><span class="si">}</span><span class="s2"> observations and </span><span class="si">{</span><span class="n">num_cols</span><span class="si">}</span><span class="s2"> variables&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dataset has </span><span class="si">{</span><span class="n">num_rows</span><span class="si">}</span><span class="s2"> observations and </span><span class="si">{</span><span class="n">num_cols</span><span class="si">}</span><span class="s2"> variables"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="the-info-method-get-the-full-picture">The info Method: Get the Full Picture</h3>
 <p>The <strong>info method</strong> provides a complete summary of your DataFrame:</p>
@@ -3164,7 +3164,7 @@ Diana,28,Houston,95
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 1000 entries, 0 to 999
 Data columns (total 4 columns):
  #   Column  Non-Null Count  Dtype
@@ -3218,7 +3218,7 @@ max     45.000000   100.000000
 </ul>
 <p>This is your first glimpse at what the data looks like statistically. Is the average score 85 or 50? Are ages ranging from 18-25 or 18-80? <code>describe()</code> answers these questions instantly.</p>
 <h4 id="diagram-data-inspection-command-center">Diagram: Data Inspection Command Center</h4>
-<iframe src="../../sims/data-inspection-command-center/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/data-inspection-command-center/main.html" width="100%" height="582px" scrolling="no"></iframe>
 <p><a href="../../sims/data-inspection-command-center/main.html">Run Data Inspection Command Center Fullscreen</a></p>
 <details>
 <summary>Data Inspection Dashboard MicroSim</summary>
@@ -3275,10 +3275,10 @@ Small 8x5 DataFrame with realistic data including:
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Select a single column (returns a Series)</span>
-<span class="n">ages</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span>
 
 <span class="c1"># Select multiple columns (returns a DataFrame)</span>
-<span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]]</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"score"</span><span class="p">]]</span>
 </code></pre></div></td></tr></table></div>
 <p>Notice the double brackets for multiple columns: <code>df[["col1", "col2"]]</code>. This is a common source of errors—remember it!</p>
 <h3 id="selecting-rows-by-position-iloc">Selecting Rows by Position: iloc</h3>
@@ -3322,13 +3322,13 @@ Small 8x5 DataFrame with realistic data including:
 <span class="n">row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Same as iloc[0]</span>
 
 <span class="c1"># If index is custom (names)</span>
-<span class="n">alice_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>
+<span class="n">alice_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]</span>
 
 <span class="c1"># Multiple labels</span>
-<span class="n">some_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]]</span>
+<span class="n">some_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"Charlie"</span><span class="p">]]</span>
 
 <span class="c1"># Rows AND columns by label</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]</span>  <span class="c1"># Alice&#39;s score</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"score"</span><span class="p">]</span>  <span class="c1"># Alice's score</span>
 </code></pre></div></td></tr></table></div>
 <p>Think of <code>loc</code> as "<strong>l</strong>abel <strong>loc</strong>ation"—it works with names.</p>
 <h3 id="boolean-selection-the-real-superpower">Boolean Selection: The Real Superpower</h3>
@@ -3344,16 +3344,16 @@ Small 8x5 DataFrame with realistic data including:
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># All rows where age &gt; 25</span>
-<span class="n">older_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">older_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">]</span>
 
 <span class="c1"># All rows where score &gt;= 90</span>
-<span class="n">high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">]</span>
+<span class="n">high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"score"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">]</span>
 
 <span class="c1"># Combine conditions with &amp; (and) or | (or)</span>
-<span class="n">young_high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)]</span>
+<span class="n">young_high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"score"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)]</span>
 
 <span class="c1"># Select specific cities</span>
-<span class="n">ny_and_la</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">])]</span>
+<span class="n">ny_and_la</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"city"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">"New York"</span><span class="p">,</span> <span class="s2">"Los Angeles"</span><span class="p">])]</span>
 </code></pre></div></td></tr></table></div>
 <p>This is incredibly powerful. Need all customers who spent over $100 in the last month? One line. All students who failed the exam? One line. All products with low inventory? One line.</p>
 <table>
@@ -3393,7 +3393,7 @@ Small 8x5 DataFrame with realistic data including:
 </tbody>
 </table>
 <h4 id="diagram-data-selection-playground-microsim">Diagram: Data Selection Playground MicroSim</h4>
-<iframe src="../../sims/data-selection-playground-microsim/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/data-selection-playground-microsim/main.html" width="100%" height="597px" scrolling="no"></iframe>
 <p><a href="../../sims/data-selection-playground-microsim/main.html">Run Data Selection Playground MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive Data Selection Playground</summary>
@@ -3475,34 +3475,34 @@ Mix of data types and some interesting patterns to query</p>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Step 1: Load the data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;student_data.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"student_data.csv"</span><span class="p">)</span>
 
 <span class="c1"># Step 2: Quick peek</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First few rows:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"First few rows:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
 <span class="c1"># Step 3: Check dimensions</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dataset shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Dataset shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Step 4: Get detailed info</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dataset info:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Dataset info:"</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
 <span class="c1"># Step 5: Statistical summary</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Statistical summary:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Statistical summary:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 
 <span class="c1"># Step 6: Ask questions with selection</span>
 <span class="c1"># Who are the high performers?</span>
-<span class="n">top_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top students: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">top_students</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">top_students</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"score"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Top students: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">top_students</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="c1"># What&#39;s the average score by city?</span>
-<span class="n">city_scores</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Average score by city:&quot;</span><span class="p">)</span>
+<span class="c1"># What's the average score by city?</span>
+<span class="n">city_scores</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"city"</span><span class="p">)[</span><span class="s2">"score"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Average score by city:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">city_scores</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>This workflow—load, inspect, explore, select—is the foundation of every data science project. Master it, and you're ready for anything.</p>
@@ -3527,7 +3527,7 @@ Mix of data types and some interesting patterns to query</p>
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Load and immediately inspect</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># or df.info() or df.shape</span>
 
 <span class="c1"># Chain methods for quick exploration</span>
@@ -3537,9 +3537,9 @@ Mix of data types and some interesting patterns to query</p>
 <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
 <span class="c1"># Get unique values in a column</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>  <span class="c1"># count of unique values</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># frequency of each value</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"column"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"column"</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>  <span class="c1"># count of unique values</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"column"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># frequency of each value</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="pitfalls-to-avoid">Pitfalls to Avoid</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3559,22 +3559,22 @@ Mix of data types and some interesting patterns to query</p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># WRONG: Single brackets for multiple columns</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span> <span class="s2">&quot;col2&quot;</span><span class="p">]</span>  <span class="c1"># Error!</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"col1"</span><span class="p">,</span> <span class="s2">"col2"</span><span class="p">]</span>  <span class="c1"># Error!</span>
 
 <span class="c1"># RIGHT: Double brackets</span>
-<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span> <span class="s2">&quot;col2&quot;</span><span class="p">]]</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">"col1"</span><span class="p">,</span> <span class="s2">"col2"</span><span class="p">]]</span>
 
 <span class="c1"># WRONG: Using iloc with labels</span>
-<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>  <span class="c1"># Error!</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]</span>  <span class="c1"># Error!</span>
 
 <span class="c1"># RIGHT: Use loc for labels</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]</span>
 
 <span class="c1"># WRONG: Forgetting parentheses in boolean logic</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>  <span class="c1"># Error!</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">"score"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>  <span class="c1"># Error!</span>
 
 <span class="c1"># RIGHT: Wrap each condition in parentheses</span>
-<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"score"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div>
 <details class="question">
 <summary>Chapter 3 Checkpoint: Test Your Understanding</summary>
@@ -3591,13 +3591,13 @@ Mix of data types and some interesting patterns to query</p>
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 1. High GPA students</span>
-<span class="n">high_gpa</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gpa&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">3.5</span><span class="p">]</span>
+<span class="n">high_gpa</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"gpa"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">3.5</span><span class="p">]</span>
 
 <span class="c1"># 2. Name and major only</span>
-<span class="n">names_majors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;major&quot;</span><span class="p">]]</span>
+<span class="n">names_majors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"major"</span><span class="p">]]</span>
 
 <span class="c1"># 3. Count by major</span>
-<span class="n">major_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;major&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">major_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"major"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <h2 id="key-takeaways">Key Takeaways</h2>

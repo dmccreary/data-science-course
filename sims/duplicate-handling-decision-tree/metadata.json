@@ -1,45 +1,67 @@
 {
   "title": "Duplicate Handling Decision Tree",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for duplicate handling decision tree",
+  "subject": "Data Science",
+  "description": "Examine seven small tables that contain duplicates, follow a decision tree to the right strategy, and see what each pandas strategy does to the same rows.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Duplicate Handling Decision Tree",
+    "subjectArea": "Data Science",
+    "topic": "Choosing a strategy for duplicate records",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to analyze a table that contains duplicate records and select the handling strategy that fits it, justifying the choice with the decision tree."
     ],
     "bloomsTaxonomy": "Analyze",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "df.duplicated() and df.drop_duplicates()",
+      "The subset and keep arguments",
+      "Missing values shown as NaN"
+    ],
+    "standards": [],
+    "bloomVerb": "Differentiate"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 625
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Case analysis with a decision tree, with every strategy runnable on the same data for comparison",
+    "keyQuestions": [
+      "In the sales log, the two rows are exactly identical. Why is it still wrong to drop one?",
+      "Why do subset=keys and keep='first' produce the same table?",
+      "What information does keep='last' throw away in the case of the two partial records?"
+    ],
+    "commonMisconceptions": [
+      "Duplicate rows are always errors (repeated rows can be real, such as two purchases of the same item).",
+      "drop_duplicates() removes rows that share an id (with no subset it removes only rows that match in every column).",
+      "Keeping the first or last copy is harmless (it silently discards whatever the other copy said)."
+    ],
+    "assessmentOpportunities": [
+      "Given a new table with duplicates and a one-line description of where it came from, students name the strategy they would use, write the pandas call, and justify each answer they gave on the way down the tree."
+    ]
   },
-  "chapter": "04-data-cleaning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "duplicate-handling-decision-tree",
+  "chapter": "04-data-cleaning",
+  "completion_status": "implemented"
 }

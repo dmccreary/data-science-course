@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive Plotly MicroSim for plotly interactive features microsim.">
+        <meta name="description" content="Practice the eight interactive features of a real Plotly chart (hover, zoom, pan, box select, lasso select, reset, download, and legend toggling) while a tracker ticks off each one as you use it.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Plotly Interactive Features MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive Plotly MicroSim for plotly interactive features microsim." >
+        <meta  property="og:description"  content="Practice the eight interactive features of a real Plotly chart (hover, zoom, pan, box select, lasso select, reset, download, and legend toggling) while a tracker ticks off each one as you use it." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/plotly-interactive-features-microsim/plotly-interactive-features-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Plotly Interactive Features MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive Plotly MicroSim for plotly interactive features microsim." >
+        <meta  name="twitter:description"  content="Practice the eight interactive features of a real Plotly chart (hover, zoom, pan, box select, lasso select, reset, download, and legend toggling) while a tracker ticks off each one as you use it." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/plotly-interactive-features-microsim/plotly-interactive-features-microsim.png">
       
@@ -2382,6 +2382,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/plotly-interactive-features-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/plotly-interactive-features-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,66 @@
 
 
 <h1 id="plotly-interactive-features-microsim">Plotly Interactive Features MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="577" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Plotly Interactive Features MicroSim MicroSim Fullscreen</a>
-<br/>
-<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<p><a class="md-button md-button--primary" href="main.html">Run the Plotly Interactive Features MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Every Plotly chart is interactive without any extra code. This MicroSim is a real Plotly.js scatter plot of 61 points in three groups, the chart that <code>px.scatter(df, x='x', y='y', color='group')</code> would make. Nothing is simulated: the toolbar, tooltips, and legend are Plotly's own.</p>
+<p>The panel under the chart lists eight features. Each one is ticked the first time you use it, because the MicroSim listens to the events the chart emits:</p>
+<ul>
+<li><strong>Hover</strong>: move the mouse over a point to see a tooltip with its group, x, and y.</li>
+<li><strong>Zoom</strong>: drag a box on the chart and the axes rescale to it.</li>
+<li><strong>Pan</strong>: hold Shift and drag, or choose Pan in the toolbar, to slide the view without changing its scale.</li>
+<li><strong>Box select</strong> and <strong>Lasso select</strong>: choose the tool in the toolbar, then drag a box or draw a loop. Points outside the selection fade.</li>
+<li><strong>Reset</strong>: double-click the chart to bring back the full view.</li>
+<li><strong>Download</strong>: click the camera in the toolbar to save the chart as a PNG file.</li>
+<li><strong>Legend</strong>: click a group in the legend to hide it, and click again to show it.</li>
+</ul>
+<p>Four challenges ask you to use the features to answer a question about the data. They are checked automatically too. The toolbar appears at the top right of the chart when the mouse is over it.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Move the mouse over the dots and read the tooltips. Click any feature name in the panel to see how to use it.</li>
+<li>Follow the <strong>Try next</strong> hint until all eight boxes are ticked.</li>
+<li>Drag a box around the cluster in the upper right to zoom in, then double-click to reset.</li>
+<li>Choose <strong>Lasso Select</strong> in the toolbar and draw a loop around every group A point and no others.</li>
+<li>Find the point with the highest y value and hover over it.</li>
+<li>Click the camera in the toolbar to download the chart as a PNG.</li>
+<li>Press <strong>Restart</strong> to clear the ticks and redraw the chart.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/plotly-interactive-features-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/plotly-interactive-features-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"577"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>10 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Reading a scatter plot with a legend, and a first Plotly Express chart made with <code>px.scatter()</code>.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to use the hover, zoom, pan, box select, lasso select, reset, download, and legend features of a Plotly chart to inspect a dataset.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (4 min): Students follow the Try next hints until the tracker reads 8 of 8.</li>
+<li><strong>Challenges</strong> (4 min): Students complete the four challenges and write down the coordinates of the outlier.</li>
+<li><strong>Transfer</strong> (3 min): Students open any Plotly chart from the chapter in a notebook and repeat the eight actions on it.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>On a new Plotly chart, students demonstrate each of the eight features on request and explain how they would find the exact value of one point and isolate one group.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/hover-text-and-formatting/">Hover text and formatting in Python</a>.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/legend/">Legends in Python</a>.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/configuration-options/">Configuration in Python</a>.</li>
 </ol>
 
 

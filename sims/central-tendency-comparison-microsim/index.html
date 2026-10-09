@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for central tendency comparison microsim.">
+        <meta name="description" content="Drag the dots of a dot plot and add outliers to see how the mean, the median, and the mode each respond to the same change in the data.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Central Tendency Comparison MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for central tendency comparison microsim." >
+        <meta  property="og:description"  content="Drag the dots of a dot plot and add outliers to see how the mean, the median, and the mode each respond to the same change in the data." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/central-tendency-comparison-microsim/central-tendency-comparison-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Central Tendency Comparison MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for central tendency comparison microsim." >
+        <meta  name="twitter:description"  content="Drag the dots of a dot plot and add outliers to see how the mean, the median, and the mode each respond to the same change in the data." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/central-tendency-comparison-microsim/central-tendency-comparison-microsim.png">
       
@@ -1221,6 +1221,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/central-tendency-comparison-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/central-tendency-comparison-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="central-tendency-comparison-microsim">Central Tendency Comparison MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="542" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Central Tendency Comparison MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Central Tendency Comparison MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Twenty values between 0 and 100 are drawn as a dot plot. Equal values stack, so the plot is also a histogram. Three markers show the center of the data in three ways:</p>
+<ul>
+<li><strong>Mean</strong> (dashed red line): the sum of the values divided by how many there are, <span class="arithmatex">\(\bar{x} = \frac{1}{n}\sum x_i\)</span></li>
+<li><strong>Median</strong> (green line): the middle value of the sorted data, or the average of the two middle values when <span class="arithmatex">\(n\)</span> is even</li>
+<li><strong>Mode</strong> (blue band): the value that occurs most often, which is the tallest stack. Data can have more than one mode, or none when no value repeats.</li>
+</ul>
+<p>Values snap to multiples of 5 so that stacks form and the mode is easy to see. The table compares each measure at the start with its value now, and the yellow panel puts the comparison into a sentence. The four starting datasets (symmetric, right-skewed, left-skewed, bimodal) come from a seeded generator, so they are the same on every visit.</p>
+<p>Moving one value far away changes the mean, because every value enters the sum. It usually leaves the median alone, because the median depends only on which value is in the middle. The mode changes only if the tallest stack changes.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Look at the symmetric starting data. The mean, the median, and the mode are all at 50.</li>
+<li>Press <strong>Add Outlier</strong>. A new value appears at 0 or 100, whichever is farther from the median. Read the Change column of the table to see which measures moved.</li>
+<li>Drag any dot left or right. Drag one dot slowly across the middle of the data and watch for the moment the median changes.</li>
+<li>Choose another starting dataset from the menu. For the skewed sets, note the order of the mode, the median, and the mean. For the bimodal set, ask whether 50 is a typical value.</li>
+<li>Press <strong>Add Point</strong> to add a value at the median, then drag it where you want it. Press <strong>Reset</strong> to return to the starting data.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/central-tendency-comparison-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/central-tendency-comparison-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"542"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Adding and dividing to find an average, and sorting a list of numbers.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain why an outlier changes the mean but leaves the median and the mode almost unchanged.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): Before pressing <strong>Add Outlier</strong> on the symmetric data, students predict which of the three measures will move and by roughly how much, then check with the table.</li>
+<li><strong>Explore</strong> (6 min): Students drag dots to complete three challenges: make the mean at least 5 above the median, make data with two modes, and make data with no mode.</li>
+<li><strong>Explain</strong> (4 min): Students load the right-skewed data and write two sentences that explain why the mean is above the median, using the positions of the dots as evidence.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given the scores 72, 85, 90, 78, 88 and then the same scores with an added value of 250, students compute the mean and the median of both sets and explain which measure better describes a typical score.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Central_tendency">Central tendency</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Median">Median</a>.</li>
+<li>McKinney, Wes. <em>Python for Data Analysis</em>, 3rd ed. O'Reilly Media, 2022. Chapter 5, Getting Started with pandas.</li>
 </ol>
 
 

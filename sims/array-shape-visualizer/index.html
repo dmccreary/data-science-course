@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for array shape visualizer.">
+        <meta name="description" content="Type a new shape for an array of up to 12 numbers and see the same numbers laid out as a row, a table, or a stack of tables, with the NumPy error when the shape is impossible.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Array Shape Visualizer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for array shape visualizer." >
+        <meta  property="og:description"  content="Type a new shape for an array of up to 12 numbers and see the same numbers laid out as a row, a table, or a stack of tables, with the NumPy error when the shape is impossible." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/array-shape-visualizer/array-shape-visualizer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Array Shape Visualizer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for array shape visualizer." >
+        <meta  name="twitter:description"  content="Type a new shape for an array of up to 12 numbers and see the same numbers laid out as a row, a table, or a stack of tables, with the NumPy error when the shape is impossible." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/array-shape-visualizer/array-shape-visualizer.png">
       
@@ -1074,6 +1074,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/array-shape-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/array-shape-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="array-shape-visualizer">Array Shape Visualizer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Array Shape Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The <strong>shape</strong> of a NumPy array says how many elements lie along each axis. This MicroSim starts with the flat array <code>a = np.arange(n)</code> and shows what <code>b = a.reshape(...)</code> produces for the shape you type.</p>
+<ul>
+<li>One size, such as <code>12</code>, gives a row. Two sizes, such as <code>3, 4</code>, give a table with 3 rows and 4 columns. Three sizes, such as <code>2, 2, 3</code>, give a stack of 2 tables.</li>
+<li>The panel reports <code>b.shape</code>, <code>b.ndim</code> (the number of axes) and <code>b.size</code> (the number of elements).</li>
+<li>Brackets under the flat array show how it is cut into runs. Each run fills the last axis of <code>b</code>, so the numbers keep their order.</li>
+<li>One element has a red frame in both views. The panel gives its index in <code>b</code> and the arithmetic behind it, for example <span class="arithmatex">\(7 = 1 \times 4 + 3\)</span> for <code>b[1, 3]</code>.</li>
+</ul>
+<p>A reshape only works when the sizes multiply to <code>a.size</code>. One size may be <code>-1</code>, which tells NumPy to work that size out. When the request is impossible the MicroSim shows the message NumPy raises, for example <code>ValueError: cannot reshape array of size 12 into shape (5,3)</code>, and draws the requested grid with its empty slots so you can see the mismatch.</p>
+<p>Not included: the rotating 3-D view and the animated transition in the original specification. A stack of tables is drawn side by side, which is how NumPy prints a 3-D array.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Look at the default, <code>a.reshape(3, 4)</code>. Match each bracket under the flat array to a row of the table.</li>
+<li>Type a new shape in the <strong>a.reshape( )</strong> box, for example <code>4, 3</code>, <code>2, 6</code> or <code>2, 2, 3</code>. Separate the sizes with commas.</li>
+<li>Click any cell to follow that element. Read where it lands and check the arithmetic.</li>
+<li>Try <code>4, -1</code> and <code>-1, 1</code>, then read how NumPy worked out the missing size.</li>
+<li>Try <code>5, 3</code> and <code>5, -1</code> and read the error message. Count the empty slots.</li>
+<li>Drag <strong>Elements in a</strong> to 7 or 11 and find every shape that still works. The <strong>Examples</strong> menu jumps to cases from the chapter.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/array-shape-visualizer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/array-shape-visualizer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Creating arrays with <code>np.arange</code>, and multiplying whole numbers to find factor pairs.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to use <code>reshape</code> to rearrange an array into a given number of dimensions, predict the resulting <code>shape</code>, <code>ndim</code> and <code>size</code>, and determine whether a requested shape is possible.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): Students list every 2-D shape they think 12 numbers can take, then test each one in the reshape box.</li>
+<li><strong>Follow an element</strong> (5 min): Students pick a position such as 10 and predict its index in shapes (3, 4), (4, 3) and (2, 2, 3) before clicking it to check.</li>
+<li><strong>Break it</strong> (5 min): Students find three requests that fail, copy each error message, and explain in a sentence what went wrong. They then set the slider to 7 and explain why so few shapes work.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Without the MicroSim, students state the result of <code>np.arange(24).reshape(4, -1).shape</code>, give the index of the value 17 in that array, and say whether <code>np.arange(24).reshape(5, -1)</code> works and why.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/reference/generated/numpy.reshape.html">numpy.reshape</a>.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/user/absolute_beginners.html">NumPy: the absolute basics for beginners</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order">Row- and column-major order</a>.</li>
 </ol>
 
 

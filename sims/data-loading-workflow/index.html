@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for data loading workflow.">
+        <meta name="description" content="Step through what pd.read_csv() does to a small CSV file, from raw text on disk to a typed DataFrame in memory, with the common error at each stage.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Data Loading Workflow - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for data loading workflow." >
+        <meta  property="og:description"  content="Step through what pd.read_csv() does to a small CSV file, from raw text on disk to a typed DataFrame in memory, with the common error at each stage." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/data-loading-workflow/data-loading-workflow.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Data Loading Workflow - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for data loading workflow." >
+        <meta  name="twitter:description"  content="Step through what pd.read_csv() does to a small CSV file, from raw text on disk to a typed DataFrame in memory, with the common error at each stage." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/data-loading-workflow/data-loading-workflow.png">
       
@@ -1368,6 +1368,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/data-loading-workflow/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/data-loading-workflow/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,57 @@
 
 
 <h1 id="data-loading-workflow">Data Loading Workflow</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="527" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Data Loading Workflow MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The flowchart at the top has five stages: a CSV file on disk, the call to <code>pd.read_csv()</code>, parsing, the finished DataFrame, and analysis. Parsing is split into the four jobs the chapter lists (delimiter, header row, data types, missing values), so there are eight steps in all.</p>
+<p>For every step the left panel shows the data as it looks at that moment: raw lines of text, the same lines with each comma marked, a grid of fields, the grid with a data type under each column, and finally the DataFrame with its index. The right panel says what pandas is doing, and the red box names the most common thing that goes wrong at that stage, such as <code>FileNotFoundError</code> or <code>ParserError</code>.</p>
+<p>The file is the chapter's <code>students.csv</code> with one score left blank, so that the missing-value step has something to handle. The text is really parsed: the field count, the data types, the <code>NaN</code>, the shape, and the two results on the last step are all computed from it. Because of the blank, <code>score</code> is <code>float64</code> and prints as <code>85.0</code>, where the chapter's complete file gives <code>85</code>.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Press <strong>Next</strong> to move forward one step and <strong>Previous</strong> to go back. The dots in the Parsing box show which of its four steps you are on.</li>
+<li>Click any stage of the flowchart to jump to it.</li>
+<li>Before each press of Next, predict what the left panel will look like after the step.</li>
+<li>Read the red box for the common error at each stage. Uncheck <strong>Show common errors</strong> to hide it.</li>
+<li>Press <strong>Reset</strong> to return to step 1.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/data-loading-workflow/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/data-loading-workflow/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"527"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>What a DataFrame is, how to import pandas, and how files are found by name and folder.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain, in order, the stages that turn a CSV file into a pandas DataFrame, including how the delimiter, the header row, data types, and missing values are handled.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (4 min): Looking only at step 1, students write down what the column names and data types will be, then step through to check.</li>
+<li><strong>Step through</strong> (6 min): Students press Next through all eight steps and state in one sentence what changed in the left panel at each step.</li>
+<li><strong>Diagnose</strong> (5 min): With Show common errors on, students match four situations (a misspelled file name, a line with an extra comma, a word in a number column, a file larger than memory) to the stage where each one shows up.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are given a five-line CSV file on paper in which one numeric column has a blank field and another numeric column contains the word unknown. They write the column names, the dtype pandas will infer for each column with a reason, and where NaN will appear.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">pandas.read_csv</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html">How do I read and write tabular data?</a></li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma-separated values</a>.</li>
 </ol>
 
 

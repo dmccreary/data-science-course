@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for regression assumptions checker microsim.">
+        <meta name="description" content="Examine four coordinated diagnostic plots for five data sets, decide which regression assumption each one violates, and then reveal traffic-light checks for linearity, homoscedasticity, and normality of residuals.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Regression Assumptions Checker MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for regression assumptions checker microsim." >
+        <meta  property="og:description"  content="Examine four coordinated diagnostic plots for five data sets, decide which regression assumption each one violates, and then reveal traffic-light checks for linearity, homoscedasticity, and normality of residuals." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/regression-assumptions-checker-microsim/regression-assumptions-checker-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Regression Assumptions Checker MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for regression assumptions checker microsim." >
+        <meta  name="twitter:description"  content="Examine four coordinated diagnostic plots for five data sets, decide which regression assumption each one violates, and then reveal traffic-light checks for linearity, homoscedasticity, and normality of residuals." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/regression-assumptions-checker-microsim/regression-assumptions-checker-microsim.png">
       
@@ -2466,6 +2466,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/regression-assumptions-checker-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/regression-assumptions-checker-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,71 @@
 
 
 <h1 id="regression-assumptions-checker-microsim">Regression Assumptions Checker MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Regression Assumptions Checker MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Regression Assumptions Checker MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Each data set has 90 points and is fitted with a least-squares line. Four plots show the same fit from different angles:</p>
+<ul>
+<li><strong>Data and fitted line</strong>: the scatter plot with the regression line</li>
+<li><strong>Residuals vs fitted values</strong>: each residual <span class="arithmatex">\(y - \hat{y}\)</span> against its fitted value, with a dashed line at zero</li>
+<li><strong>Histogram of residuals</strong>: the standardized residuals with a normal curve for comparison</li>
+<li><strong>Normal Q-Q plot</strong>: the sorted standardized residuals against the quantiles a normal distribution would give</li>
+</ul>
+<p>Five data sets are available: one that meets the assumptions, one with a curved relationship, one whose spread grows with <span class="arithmatex">\(x\)</span> (heteroscedastic), one with right-skewed errors, and one with two outliers. <strong>New Sample</strong> draws another sample of the same kind.</p>
+<p>With <strong>Show diagnosis</strong> checked, each assumption gets a green, yellow, or red light and the plots are annotated: an orange curve for a missed bend, purple boxes for the middle half of the residuals in the left, middle, and right third of the residual plot, and red rings around residuals more than 3 standard deviations from zero. The rules behind the lights are:</p>
+<ul>
+<li><strong>Linearity</strong>: the share of the residual variation that an added <span class="arithmatex">\(x^2\)</span> term would explain. Green below 10%, yellow below 25%, red otherwise.</li>
+<li><strong>Independence</strong>: no light. It cannot be judged from these plots. It depends on how the data were collected.</li>
+<li><strong>Homoscedasticity</strong>: the interquartile range of the residuals in the right third divided by the interquartile range in the left third. Green when the larger spread is less than 2 times the smaller, yellow when it is less than 2.5 times, red otherwise.</li>
+<li><strong>Normality</strong>: the Jarque-Bera statistic <span class="arithmatex">\(\frac{n}{6}\left(S^2 + \frac{K^2}{4}\right)\)</span>, where <span class="arithmatex">\(S\)</span> is the skewness and <span class="arithmatex">\(K\)</span> the excess kurtosis of the residuals. Green below 9.21, yellow below 25, red otherwise.</li>
+</ul>
+<p>These thresholds are rules of thumb chosen for this MicroSim, not formal tests. The data are random samples, so a light sometimes disagrees with the name of the data set. In particular, strong heteroscedasticity also stretches the tails of the residual histogram, so the heteroscedastic data set turns the normality light yellow or red in about four samples out of ten.</p>
+<p>Not included: a custom mode with draggable points.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start with <strong>Good data</strong> and study the four plots. This is what a healthy fit looks like.</li>
+<li>Choose another data set. Before checking anything, decide which plot looks different from the good one and which assumption that points to.</li>
+<li>Check <strong>Show diagnosis</strong> to see the lights, the statistic behind each one, and the annotations on the plots.</li>
+<li>Press <strong>New Sample</strong> several times to see how much the plots change from sample to sample for the same kind of data.</li>
+<li>Uncheck <strong>Show diagnosis</strong>, switch to another data set, and repeat.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/regression-assumptions-checker-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/regression-assumptions-checker-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Fitting a regression line, residuals, histograms, and the shape of the normal distribution.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to diagnose violations of the linearity, homoscedasticity, and normality assumptions from a residual plot, a residual histogram, and a Q-Q plot.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Establish the baseline</strong> (3 min): Students describe each of the four plots for <strong>Good data</strong> in one sentence and draw three new samples to see ordinary sample-to-sample variation.</li>
+<li><strong>Diagnose</strong> (8 min): For each of the other four data sets students record which plot shows the problem, what the pattern looks like, and which assumption fails, then check with <strong>Show diagnosis</strong>.</li>
+<li><strong>Compare</strong> (5 min): Students compare <strong>Non-normal residuals</strong> with <strong>Outliers present</strong>. Both usually turn the normality light red. They explain how the histogram and the Q-Q plot tell the two apart.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given printed residual-versus-fitted and Q-Q plots from three unknown data sets, students name the assumption that is violated in each (or state that none is), point to the feature of the plot that shows it, and explain why independence cannot be checked this way.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot">Q–Q plot</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Jarque%E2%80%93Bera_test">Jarque–Bera test</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 3, Linear Regression.</li>
 </ol>
 
 

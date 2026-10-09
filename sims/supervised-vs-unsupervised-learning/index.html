@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for supervised vs unsupervised learning.">
+        <meta name="description" content="Step through training data, training, and new data for a spam classifier and a customer clustering model side by side, and compare what each kind of learning is given, what it learns, and what it outputs.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Supervised vs Unsupervised Learning - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for supervised vs unsupervised learning." >
+        <meta  property="og:description"  content="Step through training data, training, and new data for a spam classifier and a customer clustering model side by side, and compare what each kind of learning is given, what it learns, and what it outputs." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/supervised-vs-unsupervised-learning/supervised-vs-unsupervised-learning.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Supervised vs Unsupervised Learning - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for supervised vs unsupervised learning." >
+        <meta  name="twitter:description"  content="Step through training data, training, and new data for a spam classifier and a customer clustering model side by side, and compare what each kind of learning is given, what it learns, and what it outputs." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/supervised-vs-unsupervised-learning/supervised-vs-unsupervised-learning.png">
       
@@ -2634,6 +2634,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/supervised-vs-unsupervised-learning/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/supervised-vs-unsupervised-learning/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="supervised-vs-unsupervised-learning">Supervised vs Unsupervised Learning</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Supervised vs Unsupervised Learning MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Two panels run the same three stages on two small data sets.</p>
+<ul>
+<li><strong>Supervised learning (green):</strong> 40 emails, each described by two features (percent of words in ALL CAPS and exclamation marks per 100 words) and each carrying a label, <em>spam</em> or <em>not spam</em>. A logistic regression model is trained on the labels and draws the boundary where <span class="arithmatex">\(P(\text{spam}) = 0.5\)</span>.</li>
+<li><strong>Unsupervised learning (blue):</strong> 42 customers described by annual spending and visits per month, with no labels at all. K-Means with <span class="arithmatex">\(k = 3\)</span> groups the customers that sit close together and marks each group center.</li>
+</ul>
+<p>The table under the panels lines up the difference stage by stage: the training data (<span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(y\)</span>, or <span class="arithmatex">\(X\)</span> only), what is learned (a rule from <span class="arithmatex">\(X\)</span> to <span class="arithmatex">\(y\)</span>, or groups of similar rows), and the output (a predicted label, or a group number that a person still has to interpret). The row for the current stage is highlighted.</p>
+<p>Both models are really fit to the seeded data on screen, so the numbers in the status lines (training emails on the correct side of the boundary, customers in each group, the probability for the new email) are computed, not typed in.</p>
+<p>Not included: the quiz mode from the original specification.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read stage 1, <strong>Training data</strong>. Both plots have two features per row, but only the emails are colored by a label.</li>
+<li>Press <strong>Next</strong> to train both models. Compare the boundary learned from the labels with the three groups K-Means finds without any.</li>
+<li>Press <strong>Next</strong> again. A new email and a new customer appear as diamonds. Click inside either plot to move the diamond and watch the predicted label and <span class="arithmatex">\(P(\text{spam})\)</span>, or the nearest group, change.</li>
+<li>Point at (or tap) a use case under the table to read why it belongs to that kind of learning.</li>
+<li>Check <strong>Show math notation</strong> to see the same three table rows written formally.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/supervised-vs-unsupervised-learning/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/supervised-vs-unsupervised-learning/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Features and labels (X and y), scatter plots, and fitting a model with <code>model.fit()</code>.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare supervised and unsupervised learning by explaining what data each one is given, what it learns, and what kind of output it produces.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Step through</strong> (4 min): Students go through the three stages and write one sentence per stage describing what differs between the two panels.</li>
+<li><strong>Move the new point</strong> (5 min): At stage 3 students click to place the new email on each side of the boundary and close to it, and record the predicted label and P(spam). They then place the new customer between two groups and note that the answer is only a group letter.</li>
+<li><strong>Sort scenarios</strong> (4 min): Students read the six use cases, then sort four new scenarios supplied by the teacher (for example predicting tomorrow's temperature, or grouping news articles) into supervised or unsupervised, and justify each choice by asking whether labeled answers exist.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a short description of a data set and a goal, students state whether the task is supervised or unsupervised, name what plays the role of X and (if present) y, and describe the form of the model's output.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/supervised_learning.html">Supervised learning</a> and <a href="https://scikit-learn.org/stable/unsupervised_learning.html">Unsupervised learning</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Supervised_learning">Supervised learning</a> and <a href="https://en.wikipedia.org/wiki/Unsupervised_learning">Unsupervised learning</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 2, Statistical Learning (supervised versus unsupervised learning).</li>
 </ol>
 
 

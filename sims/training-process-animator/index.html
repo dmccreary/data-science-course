@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for training process animator.">
+        <meta name="description" content="Step through gradient descent as it fits a line to study-hours data, and watch the weight, the bias, the gradients, and the training and validation error change at every iteration.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Training Process Animator - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for training process animator." >
+        <meta  property="og:description"  content="Step through gradient descent as it fits a line to study-hours data, and watch the weight, the bias, the gradients, and the training and validation error change at every iteration." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/training-process-animator/training-process-animator.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Training Process Animator - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for training process animator." >
+        <meta  name="twitter:description"  content="Step through gradient descent as it fits a line to study-hours data, and watch the weight, the bias, the gradients, and the training and validation error change at every iteration." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/training-process-animator/training-process-animator.png">
       
@@ -2718,6 +2718,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/training-process-animator/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/training-process-animator/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,63 @@
 
 
 <h1 id="training-process-animator">Training Process Animator</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="537" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Training Process Animator MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Each blue dot is one of 30 training rows: a student's study hours (standardized) and quiz score. The ten orange rings are validation rows that the training loop never uses. The model is a line, <span class="arithmatex">\(\hat{y} = wz + b\)</span>, and training repeats the loop from the chapter:</p>
+<ol>
+<li><strong>Predict</strong> with the current <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(b\)</span>.</li>
+<li><strong>Measure the error</strong>: <span class="arithmatex">\(J = \frac{1}{n}\sum(\hat{y}_i - y_i)^2\)</span>, the mean squared error on the training rows.</li>
+<li><strong>Compute the gradients</strong>: <span class="arithmatex">\(\frac{\partial J}{\partial w} = \frac{2}{n}\sum(\hat{y}_i - y_i)z_i\)</span> and <span class="arithmatex">\(\frac{\partial J}{\partial b} = \frac{2}{n}\sum(\hat{y}_i - y_i)\)</span>.</li>
+<li><strong>Update</strong>: <span class="arithmatex">\(w \leftarrow w - \eta\,\frac{\partial J}{\partial w}\)</span> and <span class="arithmatex">\(b \leftarrow b - \eta\,\frac{\partial J}{\partial b}\)</span>.</li>
+</ol>
+<p>Every press of <strong>Step</strong> runs that loop once on all 30 training rows. The line moves, the faint gray lines show where it was on earlier iterations, and the thin vertical segments are the residuals being squared. The line turns from red to green as its error approaches the lowest error possible. The chart plots the training MSE (blue) and the validation MSE (orange) after every iteration.</p>
+<p>Study hours are standardized with the training mean and standard deviation, <span class="arithmatex">\(z = (\text{hours} - \text{mean})/\text{sd}\)</span>, as the chapter's pipeline does with <code>StandardScaler</code>. Training stops when the gradient is nearly zero, and the status line then shows the answer from the least-squares formula for comparison. It also stops after 200 iterations, or if the error passes 1,000,000.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the starting state. With <span class="arithmatex">\(w = 0\)</span> and <span class="arithmatex">\(b = 0\)</span> the line lies along the bottom of the plot and the error is large.</li>
+<li>Press <strong>Step</strong> several times. After each press read the new <span class="arithmatex">\(w\)</span>, <span class="arithmatex">\(b\)</span>, and training MSE, and note how much the error dropped.</li>
+<li>Press <strong>Start</strong> to let training run until it converges, then compare the final <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(b\)</span> with the least-squares values in the status line.</li>
+<li>Press <strong>Reset</strong>, set the <strong>Learning rate</strong> to 0.02, and run again. Then try 0.5, 0.9, and 1.05.</li>
+<li>Choose a different starting line from the menu and check that training ends at the same <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(b\)</span>.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/training-process-animator/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/training-process-animator/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"537"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The equation of a line, residuals and mean squared error, and the gradient descent update rule.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how each iteration of training uses the error and its gradients to adjust a model's parameters, and predict how the learning rate changes the way training proceeds.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace the loop</strong> (5 min): Students press Step five times from the default start and record w, b, and the training MSE in a table, then describe how the size of the change in w and b relates to the size of the gradients.</li>
+<li><strong>Learning rate</strong> (5 min): Students run training to the end at learning rates 0.02, 0.1, 0.5, 0.9, and 1.05 and record the number of iterations and the outcome for each.</li>
+<li><strong>Same destination</strong> (4 min): Students train from each of the three starting lines and compare the final w, b, training MSE, and validation MSE.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are given w, b, both gradients, and a learning rate for one iteration, compute the updated w and b, and explain in two sentences why the validation MSE is tracked even though it is never used in the update.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/sgd.html">Stochastic Gradient Descent</a> and <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">StandardScaler</a>.</li>
+<li>Géron, A. <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em>. O'Reilly. Chapter 4, Training Models.</li>
 </ol>
 
 

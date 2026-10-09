@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for bias-variance dartboard.">
+        <meta name="description" content="Compare four reference dartboards for low and high bias and variance, then set a model complexity, throw darts, and read the bias, variance, and total error measured from where the darts land.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Bias-Variance Dartboard - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for bias-variance dartboard." >
+        <meta  property="og:description"  content="Compare four reference dartboards for low and high bias and variance, then set a model complexity, throw darts, and read the bias, variance, and total error measured from where the darts land." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/bias-variance-dartboard/bias-variance-dartboard.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Bias-Variance Dartboard - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for bias-variance dartboard." >
+        <meta  name="twitter:description"  content="Compare four reference dartboards for low and high bias and variance, then set a model complexity, throw darts, and read the bias, variance, and total error measured from where the darts land." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/bias-variance-dartboard/bias-variance-dartboard.png">
       
@@ -1116,6 +1116,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/bias-variance-dartboard/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/bias-variance-dartboard/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,65 @@
 
 
 <h1 id="bias-variance-dartboard">Bias-Variance Dartboard</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Bias-Variance Dartboard MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The bullseye is the true value and each dart is one prediction. The four small boards show the four combinations of bias and variance:</p>
+<ul>
+<li><strong>Low bias, low variance</strong>: tightly grouped on the bullseye</li>
+<li><strong>Low bias, high variance</strong>: centered on the bullseye on average, but scattered</li>
+<li><strong>High bias, low variance</strong>: tightly grouped, but off target in the same direction</li>
+<li><strong>High bias, high variance</strong>: off target and scattered</li>
+</ul>
+<p>On every board the gold ✕ is the average landing point, and the orange segment from the bullseye to the ✕ is the <strong>bias</strong>. The <strong>variance</strong> is the average squared distance of the darts from the ✕. Both are measured from the darts that are drawn, on a board whose radius is 10 units. For any set of darts, <span class="arithmatex">\(\text{total error} = \text{bias}^2 + \text{variance}\)</span>, where the total error is the average squared distance of the darts from the bullseye. That is why the third bar is the first two placed end to end.</p>
+<p>The <strong>Model complexity</strong> slider is an analogy, not a fitted model. A low setting moves the thrower's aim away from the bullseye and tightens the grouping, like a simple model with high bias and low variance. A high setting centers the aim and widens the scatter, like a complex model with low bias and high variance. The gray text under the heading gives the true bias and variance of the setting. The measured values differ from them because they come from a limited number of throws.</p>
+<p>No setting reaches the low-bias, low-variance board. Along this slider, lowering one error raises the other. That is the tradeoff.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Study the four reference boards and the bias and variance printed under each.</li>
+<li>Move the <strong>Model complexity</strong> slider. Ten darts are thrown at each new setting. When one kind of error is at least twice the other, the reference board that the darts resemble is outlined in gold.</li>
+<li>Read the three bars: bias squared (orange), variance (purple), and total error (the two stacked).</li>
+<li>Press <strong>Throw 10 Darts</strong> to add darts at the same setting, up to 200. Watch the measured bias and variance settle toward the true values of the setting.</li>
+<li>Step through the settings from 1 to 10 and note the total error at each one. Find the settings where it is smallest.</li>
+<li><strong>Clear Board</strong> removes the darts so you can start a setting again.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/bias-variance-dartboard/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/bias-variance-dartboard/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The mean of a set of values, squared distance, and the ideas of underfitting and overfitting.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to interpret a pattern of predictions as high or low bias and high or low variance, and explain how increasing model complexity trades bias for variance.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Describe</strong> (3 min): Students describe each reference board in their own words and match it to a thrower, for example a steady thrower with a bent dart for high bias and low variance.</li>
+<li><strong>Measure</strong> (5 min): Students set the complexity to 2, 5, and 9, throw 50 darts at each, and record bias², variance, and total error in a table. They check that the first two columns add up to the third.</li>
+<li><strong>Explain the tradeoff</strong> (5 min): Using the table, students explain which error falls and which rises as complexity increases, and identify the range of settings with the lowest total error.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown three unlabeled dart patterns. For each one they state whether the bias and the variance are high or low, name the modeling problem it stands for (underfitting, overfitting, or neither), and say whether a more complex or a simpler model would help.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias–variance tradeoff</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">Accuracy and precision</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 2, Statistical Learning.</li>
 </ol>
 
 

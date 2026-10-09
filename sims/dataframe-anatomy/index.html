@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for dataframe anatomy.">
+        <meta name="description" content="Point at or click the parts of a small pandas DataFrame to learn the names index, columns, row, column, cell, and values, and the code that returns each one.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="DataFrame Anatomy - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for dataframe anatomy." >
+        <meta  property="og:description"  content="Point at or click the parts of a small pandas DataFrame to learn the names index, columns, row, column, cell, and values, and the code that returns each one." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/dataframe-anatomy/dataframe-anatomy.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="DataFrame Anatomy - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for dataframe anatomy." >
+        <meta  name="twitter:description"  content="Point at or click the parts of a small pandas DataFrame to learn the names index, columns, row, column, cell, and values, and the code that returns each one." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/dataframe-anatomy/dataframe-anatomy.png">
       
@@ -1536,6 +1536,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/dataframe-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/dataframe-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,63 @@
 
 
 <h1 id="dataframe-anatomy">DataFrame Anatomy</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="507" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the DataFrame Anatomy MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>A DataFrame is a two-dimensional table with labeled rows and columns. This MicroSim draws the chapter's 4 × 3 example table and names its six parts with numbered, color-coded callouts:</p>
+<ul>
+<li><strong>Index</strong> (blue): the row labels. <code>df.index</code></li>
+<li><strong>Columns</strong> (green): the column names. <code>df.columns</code></li>
+<li><strong>Row</strong> (orange): one observation. <code>df.loc['row_1']</code> or <code>df.iloc[1]</code></li>
+<li><strong>Column</strong> (purple): one variable, returned as a Series. <code>df['Col_B']</code></li>
+<li><strong>Cell</strong> (red): one value. <code>df.loc['row_1', 'Col_B']</code></li>
+<li><strong>Values</strong> (gray): the data without its labels, a NumPy array. <code>df.values</code></li>
+</ul>
+<p>When a part is highlighted, the panel gives its name, a one-sentence meaning, the pandas expression that returns it, and the result laid out the way pandas prints it. The results are built from the table on screen.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the six callouts around the table and the matching list in the panel.</li>
+<li>Point at a part of the table, a callout, or a line of the list to highlight that part. Click to keep it selected. Click it again, or click empty space, to clear it.</li>
+<li>Use the <strong>Highlight</strong> menu to choose a part by name instead of pointing.</li>
+<li>Turn <strong>Show code</strong> off, say how you would access the highlighted part, then turn it back on to check.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/dataframe-anatomy/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/dataframe-anatomy/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"507"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Python lists and dictionaries, and the idea of a table with rows and columns.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Remember (L1)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to identify the index, the columns, a row, a column, a cell, and the values of a pandas DataFrame and recall the expression that accesses each one.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (4 min): Students point at each of the six parts in turn and read its name, meaning, and memory tip.</li>
+<li><strong>Recall</strong> (5 min): With Show code off, students write the access expression for each part from memory, then turn Show code on and check all six.</li>
+<li><strong>Transfer</strong> (4 min): Students label the same six parts on the chapter's table of Alice, Bob, and Charlie's grades and write the code that returns Bob's row and the Science column.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a printed DataFrame they have not seen, students label its index, columns, one row, one column, and one cell, and write the pandas expression that returns each part. All parts are named correctly and at least five of the six expressions are correct.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/user_guide/dsintro.html">Intro to data structures</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">pandas.DataFrame</a>.</li>
+<li>McKinney, Wes. <em>Python for Data Analysis</em>, 3rd ed. O'Reilly Media, 2022.</li>
 </ol>
 
 

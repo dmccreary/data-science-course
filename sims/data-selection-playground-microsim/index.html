@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for data selection playground microsim.">
+        <meta name="description" content="Practice four ways to select data from a pandas DataFrame (columns, rows by position, rows by label, and a Boolean filter) and see the code, the selected cells, and the result update together.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Data Selection Playground MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for data selection playground microsim." >
+        <meta  property="og:description"  content="Practice four ways to select data from a pandas DataFrame (columns, rows by position, rows by label, and a Boolean filter) and see the code, the selected cells, and the result update together." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/data-selection-playground-microsim/data-selection-playground-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Data Selection Playground MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for data selection playground microsim." >
+        <meta  name="twitter:description"  content="Practice four ways to select data from a pandas DataFrame (columns, rows by position, rows by label, and a Boolean filter) and see the code, the selected cells, and the result update together." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/data-selection-playground-microsim/data-selection-playground-microsim.png">
       
@@ -1473,6 +1473,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/data-selection-playground-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/data-selection-playground-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,63 @@
 
 
 <h1 id="data-selection-playground-microsim">Data Selection Playground MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="597" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Data Selection Playground MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Data Selection Playground MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The table <code>df</code> holds ten students. Their names are the index, so selecting by label (<code>loc</code>) and selecting by position (<code>iloc</code>) look different. Four selection methods from the chapter are available:</p>
+<ul>
+<li><strong>Columns</strong>, as in <code>df[["age", "score"]]</code>: click column names to build the list</li>
+<li><strong>Rows by position</strong>, as in <code>df.iloc[0:3]</code>: set the start and stop positions</li>
+<li><strong>Rows by label</strong>, as in <code>df.loc[["Alice", "Charlie"]]</code>: click names to build the list</li>
+<li><strong>Boolean filter</strong>, as in <code>df[df["score"] &gt;= 90]</code>: choose a column, a comparison, and a value</li>
+</ul>
+<p>Cells that end up in the result are gold in <code>df</code>. The second panel shows the exact pandas code, the DataFrame it returns, and the shape of that DataFrame. For a Boolean filter, an extra column shows the True or False the test gives for each row. An empty result is explained in a red note.</p>
+<p>Not included: combining two conditions with <code>&amp;</code> or <code>|</code>, and <code>isin()</code> filters on the city column.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Choose a method from the <strong>Select by</strong> menu.</li>
+<li><strong>Columns</strong> and <strong>Rows by label</strong>: click the blue-outlined column names or row labels in <code>df</code> to add them to the list or remove them. The result keeps the order in which you clicked.</li>
+<li><strong>Rows by position</strong>: drag <strong>start</strong> and <strong>stop</strong>. Notice that the stop position is not included.</li>
+<li><strong>Boolean filter</strong>: pick a column and a comparison in the <strong>Test</strong> row and drag <strong>value</strong>. Watch the True/False column and the gold rows.</li>
+<li>Try these: show only city and score, get the last three rows, get Diana and then Bob, find everyone who passed (score &gt;= 70), and find the youngest student.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/data-selection-playground-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/data-selection-playground-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"597"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The parts of a DataFrame, Python list and slice syntax, and comparison operators.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to apply column selection, iloc, loc, and Boolean filtering to extract a required subset of a DataFrame and predict the shape of the result.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict the shape</strong> (5 min): For each method's starting selection, students predict the shape of the result before reading it, then change one control and predict again.</li>
+<li><strong>Position versus label</strong> (5 min): Students produce the rows for Charlie, Diana, and Eve twice, once with iloc and once with loc, and write down both lines of code.</li>
+<li><strong>Answer with a filter</strong> (6 min): Students find who passed (score &gt;= 70), who is younger than 22, and the single youngest student, recording the code for each.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Without the MicroSim, students write one line of pandas for each task on the same table and give the shape of each result. The tasks are the city and score columns only, the first four rows, the rows for Grace and Ivy, and the students aged 28 or older.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/user_guide/indexing.html">Indexing and selecting data</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html">How do I select a subset of a DataFrame?</a></li>
+<li>VanderPlas, Jake. <em>Python Data Science Handbook</em>, 2nd ed. O'Reilly Media, 2023.</li>
 </ol>
 
 

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for numpy ecosystem map.">
+        <meta name="description" content="Click through a hub-and-spoke map with NumPy at the center to read how seven data science libraries use NumPy arrays and the code that moves data between them.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="NumPy Ecosystem Map - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for numpy ecosystem map." >
+        <meta  property="og:description"  content="Click through a hub-and-spoke map with NumPy at the center to read how seven data science libraries use NumPy arrays and the code that moves data between them." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/numpy-ecosystem-map/numpy-ecosystem-map.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="NumPy Ecosystem Map - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for numpy ecosystem map." >
+        <meta  name="twitter:description"  content="Click through a hub-and-spoke map with NumPy at the center to read how seven data science libraries use NumPy arrays and the code that moves data between them." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/numpy-ecosystem-map/numpy-ecosystem-map.png">
       
@@ -2256,6 +2256,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/numpy-ecosystem-map/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/numpy-ecosystem-map/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="numpy-ecosystem-map">NumPy Ecosystem Map</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="567" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the NumPy Ecosystem Map MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>NumPy sits in the middle of the Python data science tools. This map puts the NumPy array in the center and seven libraries around it. Two kinds of link are drawn.</p>
+<ul>
+<li><strong>Built on NumPy</strong> (solid line): NumPy is a required dependency and the library computes with arrays inside. These are pandas, SciPy, scikit-learn and Matplotlib.</li>
+<li><strong>Works with NumPy</strong> (dashed line): the library has its own engine or tensor type, and it accepts arrays or converts to and from them. These are Plotly, PyTorch and TensorFlow.</li>
+</ul>
+<p>An arrowhead at the library means arrays go in. A second arrowhead at NumPy means results come back as arrays. The two charting libraries have one arrowhead, because a picture comes out, not data.</p>
+<p>Selecting a library shows what it is for, how it uses NumPy, two lines of code that move data in each direction, and one thing worth remembering. For example, <code>torch.from_numpy(arr)</code> shares memory with the array on the CPU, so a change to one shows up in the other, and scikit-learn needs <code>X</code> to be 2-D, which is why <code>X.reshape(-1, 1)</code> appears so often.</p>
+<p>Not included: the animation of data moving along the spokes, from the original specification. Memory sharing is stated only where the library's documentation is explicit about it.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start with NumPy selected and read why it is in the middle.</li>
+<li>Click a library, or press <strong>Next</strong> and <strong>Previous</strong>, and read its panel. Say the two code lines out loud as array in and array out.</li>
+<li>Compare a solid link with a dashed link. Use the menu to show only one kind at a time.</li>
+<li>Find the libraries with one arrowhead and explain why nothing comes back to NumPy.</li>
+<li>For each library, name one place earlier in the course where you have already used it with an array.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/numpy-ecosystem-map/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/numpy-ecosystem-map/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"567"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Creating NumPy arrays, and some experience with at least one of pandas, Matplotlib or scikit-learn.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to describe how the main Python data science libraries depend on or exchange data with NumPy arrays, and give the call that converts between an array and each library's own data type.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Sort</strong> (4 min): Before using the menu, students sort the seven libraries into built on NumPy and works with NumPy, then check with the filter.</li>
+<li><strong>Read and record</strong> (6 min): For each library students copy the two code lines into a table with the columns library, array in, and array out.</li>
+<li><strong>Trace a workflow</strong> (4 min): Students trace one path through the map for a small project: load a table with pandas, convert to an array, fit a scikit-learn model, and plot the predictions.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students write the line of code that turns a DataFrame into a NumPy array, the line that turns an array into a PyTorch tensor, and one sentence explaining why a single well-understood array type makes it possible to use these libraries together.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/NumPy">NumPy</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html">pandas.DataFrame.to_numpy</a>.</li>
+<li>PyTorch documentation. <a href="https://pytorch.org/docs/stable/generated/torch.from_numpy.html">torch.from_numpy</a>.</li>
 </ol>
 
 

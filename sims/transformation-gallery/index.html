@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for transformation gallery.">
+        <meta name="description" content="Compare six common transformations on synthetic data, study the before and after plots of each one, tune the Box-Cox lambda, and add zeros and negative values to see where each transformation is undefined.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Transformation Gallery - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for transformation gallery." >
+        <meta  property="og:description"  content="Compare six common transformations on synthetic data, study the before and after plots of each one, tune the Box-Cox lambda, and add zeros and negative values to see where each transformation is undefined." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/transformation-gallery/transformation-gallery.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Transformation Gallery - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for transformation gallery." >
+        <meta  name="twitter:description"  content="Compare six common transformations on synthetic data, study the before and after plots of each one, tune the Box-Cox lambda, and add zeros and negative values to see where each transformation is undefined." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/transformation-gallery/transformation-gallery.png">
       
@@ -2739,6 +2739,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/transformation-gallery/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/transformation-gallery/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,98 @@
 
 
 <h1 id="transformation-gallery">Transformation Gallery</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="642" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Transformation Gallery MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Six tiles show the log, square root, reciprocal, square, Box-Cox, and standardizing transformations. Each tile has a small before and after plot of its own data set, so the six effects can be compared at a glance. Clicking a tile opens large <strong>Before</strong> and <strong>After</strong> plots with the formula, the kind of data the transformation is for, and statistics computed from the 200 values on screen.</p>
+<table>
+<thead>
+<tr>
+<th>Tile</th>
+<th>Data</th>
+<th>What the numbers show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log, <span class="arithmatex">\(y' = \ln y\)</span></td>
+<td>right-skewed incomes</td>
+<td>skewness falls to about 0</td>
+</tr>
+<tr>
+<td>Square root, <span class="arithmatex">\(y' = \sqrt{y}\)</span></td>
+<td>daily counts at five shops</td>
+<td>the spread within a shop stops growing with the mean</td>
+</tr>
+<tr>
+<td>Reciprocal, <span class="arithmatex">\(y' = 1/y\)</span></td>
+<td>driving time against speed</td>
+<td>a curve becomes a straight line (<span class="arithmatex">\(R^2\)</span> rises)</td>
+</tr>
+<tr>
+<td>Square, <span class="arithmatex">\(y' = y^2\)</span></td>
+<td>pendulum period against length</td>
+<td>a flattening curve becomes a straight line</td>
+</tr>
+<tr>
+<td>Box-Cox, <span class="arithmatex">\(y' = (y^\lambda - 1)/\lambda\)</span></td>
+<td>skewed waiting times</td>
+<td>skewness for the <span class="arithmatex">\(\lambda\)</span> on the slider, and the maximum-likelihood <span class="arithmatex">\(\lambda\)</span></td>
+</tr>
+<tr>
+<td>Standardize, <span class="arithmatex">\(z = (x - \mu)/\sigma\)</span></td>
+<td>income in dollars and age in years</td>
+<td>both features get mean 0 and SD 1, and the skewness does not change</td>
+</tr>
+</tbody>
+</table>
+<p>The checkbox adds 12 problem values (6 zeros and 6 negatives) to every data set. Values a transformation cannot take are drawn in red, counted on its tile, and left out of the After plot. The log and Box-Cox reject all 12, the square root rejects the negatives, the reciprocal rejects the zeros, and the square and standardizing accept everything. The statistics are computed from the 200 original values, except for standardizing, which uses every value it is given.</p>
+<p>Skewness and <span class="arithmatex">\(\sigma\)</span> use the population formulas (<code>ddof=0</code>), which is what <code>scipy.stats.skew</code> and <code>StandardScaler</code> compute. The maximum-likelihood <span class="arithmatex">\(\lambda\)</span> is found by a grid search on the same log-likelihood that <code>scipy.stats.boxcox</code> maximizes. Not included: uploading your own CSV file.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the six tiles. In each one the left plot is the data before the transformation and the right plot is the same data after it.</li>
+<li>Click a tile to open it. Compare the <strong>Before</strong> and <strong>After</strong> plots and read the green line of statistics computed from the data.</li>
+<li>Open <strong>Box-Cox</strong> and drag the <strong>Box-Cox λ</strong> slider. Try 1, 0.5, 0, and −1, and find the λ that brings the skewness closest to 0. Compare it with the maximum-likelihood λ on screen.</li>
+<li>Check <strong>Add zeros and negative values</strong>. The red count on each tile shows how many of the 12 added values that transformation cannot take. Open each tile to see where the added values go.</li>
+<li>Press <strong>New Data</strong> to draw new data sets and see which numbers change and which conclusions stay the same.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/transformation-gallery/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/transformation-gallery/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"642"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Histograms and scatter plots, skewness, mean and standard deviation, and the natural logarithm.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare the effects of the log, square root, reciprocal, square, Box-Cox, and standardizing transformations on the shape of data and state where each transformation is defined.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Survey</strong> (4 min): Students open each tile in turn and record the statistic it reports before and after (skewness, spread, or R² of a straight line). They sort the six into those that change the shape of the data and those that do not.</li>
+<li><strong>Tune Box-Cox</strong> (5 min): Students move the λ slider to 1, 0.5, 0, and −1 and record the skewness each time, then find the λ with skewness closest to 0 and compare it with the maximum-likelihood value. They press <strong>New Data</strong> and repeat once.</li>
+<li><strong>Find the limits</strong> (5 min): Students check <strong>Add zeros and negative values</strong> and make a table of how many of the 12 added values each transformation rejects, with the reason. They name one fix for a column with zeros that needs a log.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given three short descriptions (monthly sales that grow by a fixed percentage, counts of website errors per hour, and two features measured in dollars and in years that will go into a ridge model), students choose a transformation for each, justify it, and say what would happen if the column contained a zero.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)">Data transformation (statistics)</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Power_transform">Power transform</a> (Box-Cox and Yeo-Johnson).</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PowerTransformer.html">sklearn.preprocessing.PowerTransformer</a>.</li>
 </ol>
 
 

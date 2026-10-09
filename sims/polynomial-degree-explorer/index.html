@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for polynomial degree explorer.">
+        <meta name="description" content="Set the degree of a polynomial fit for five data shapes and several noise levels, watch the fitted curve and its uncertainty band, and judge which degree gives the lowest expected test error by reading how the error splits into noise, bias, and variance.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Polynomial Degree Explorer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for polynomial degree explorer." >
+        <meta  property="og:description"  content="Set the degree of a polynomial fit for five data shapes and several noise levels, watch the fitted curve and its uncertainty band, and judge which degree gives the lowest expected test error by reading how the error splits into noise, bias, and variance." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/polynomial-degree-explorer/polynomial-degree-explorer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Polynomial Degree Explorer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for polynomial degree explorer." >
+        <meta  name="twitter:description"  content="Set the degree of a polynomial fit for five data shapes and several noise levels, watch the fitted curve and its uncertainty band, and judge which degree gives the lowest expected test error by reading how the error splits into noise, bias, and variance." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/polynomial-degree-explorer/polynomial-degree-explorer.png">
       
@@ -2403,6 +2403,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/polynomial-degree-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/polynomial-degree-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,60 @@
 
 
 <h1 id="polynomial-degree-explorer">Polynomial Degree Explorer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="587" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Polynomial Degree Explorer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Twenty training points (blue) lie at evenly spaced <span class="arithmatex">\(x\)</span> values from 0 to 10, with <span class="arithmatex">\(y\)</span> equal to a true curve (dashed) plus random noise. A least-squares polynomial of the chosen degree is fit to them. Twenty test points (orange) come from the same curve and are not used in the fit.</p>
+<p>The gray band is the fitted curve plus and minus two standard deviations of the fit. It shows how far the curve would move if the noise were drawn again, which is what <strong>New Data</strong> does. A stiff curve has a narrow band even when it misses the true curve. A flexible curve has a wide band, widest near the ends.</p>
+<p>The panel reports <span class="arithmatex">\(R^2\)</span> on the training and test points and then splits the expected test error into three parts:</p>
+<div class="arithmatex">\[\text{expected test MSE} = \sigma^2 + \text{bias}^2 + \text{variance}\]</div>
+<p>Noise <span class="arithmatex">\(\sigma^2\)</span> is fixed by the slider. Bias<span class="arithmatex">\(^2\)</span> is how far the average fitted curve stays from the true curve, and it falls as the degree rises. Variance is how much the fitted curve moves from sample to sample, and it rises with the degree. These are computed exactly from the model, not estimated from one sample, so they do not jump when <strong>New Data</strong> is pressed. The black mark on the bar is the lowest total that any degree from 1 to 15 reaches. A degree within 5% of that mark is called a good trade-off.</p>
+<p>Not included from the original design: residual lines, a display of the individual coefficients, and a checkbox for the train and test split (the test points are always shown).</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start with the cubic data at degree 1. The line misses the dashed curve, and the bar is mostly blue (bias).</li>
+<li>Drag <strong>Polynomial degree</strong> upward one step at a time. Watch the blue part shrink and the orange part (variance) grow, and stop where the bar reaches the black mark.</li>
+<li>Go on to degree 12 and then 15. Press <strong>New Data</strong> a few times and watch how far the curve moves inside its gray band.</li>
+<li>Change <strong>Noise level (SD)</strong>. Find the best degree at noise 0, 2, and 6.</li>
+<li>Choose other shapes from the menu. Before moving the slider, predict the best degree for each one, then check.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/polynomial-degree-explorer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/polynomial-degree-explorer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"587"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Polynomial regression, R-squared, mean squared error, and the idea of training and test data.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to judge which polynomial degree gives the best trade-off between bias and variance for a given data shape and noise level, and justify the choice from the parts of the expected test error.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Find the trade-off</strong> (5 min): On the cubic data with noise 2, students record bias², variance, and expected test MSE for degrees 1, 2, 3, 6, 10, and 15, and mark the degree where the total is lowest.</li>
+<li><strong>Change the noise</strong> (5 min): Students repeat the search for the sine wave at noise 0.5, 2, and 4 and describe how the best degree moves as the noise grows. They then set the noise to 0 and explain why no degree overfits.</li>
+<li><strong>Predict, then check</strong> (6 min): For the linear, quadratic, and step shapes, students write down the degree they expect to be best and one sentence of reasoning before touching the slider, then compare with the verdict panel. They explain why no degree does well on the step.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown two fitted curves for the same data, one of degree 2 with a narrow band that misses the pattern and one of degree 14 with a wide band, and explain which has high bias, which has high variance, and what would happen to each if new data were collected.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias-variance tradeoff</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 2, Statistical Learning (the bias-variance trade-off).</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html">sklearn.preprocessing.PolynomialFeatures</a>.</li>
 </ol>
 
 

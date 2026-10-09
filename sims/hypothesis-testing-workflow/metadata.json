@@ -1,45 +1,68 @@
 {
   "title": "Hypothesis Testing Workflow",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for hypothesis testing workflow",
+  "subject": "Data Science",
+  "description": "Step through the flowchart of a hypothesis test with a coin-flip example, set the number of heads and the significance level, and see which decision the p-value leads to.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Hypothesis Testing Workflow",
+    "subjectArea": "Data Science",
+    "topic": "Hypothesis testing and p-values",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to apply the steps of a hypothesis test to coin-flip data and decide whether to reject the null hypothesis by comparing the p-value with the significance level."
     ],
     "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Probability basics",
+      "Population and sample",
+      "Probability distributions"
+    ],
+    "standards": [],
+    "bloomVerb": "Apply"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of a worked example with adjustable data and immediate feedback on the decision",
+    "keyQuestions": [
+      "What does a p-value of 0.0569 tell you, and what does it not tell you?",
+      "Why must α be chosen before looking at the data?",
+      "What is the difference between failing to reject H₀ and showing that H₀ is true?"
+    ],
+    "commonMisconceptions": [
+      "The p-value is the probability that the null hypothesis is true (it is the probability of data at least this extreme, calculated assuming the null hypothesis is true).",
+      "Failing to reject H₀ proves H₀ (it only means the evidence against it was not strong enough).",
+      "A statistically significant result is an important one (significance says nothing about the size of the effect).",
+      "α = 0.05 is a fixed rule (it is a convention, and the same data can lead to different decisions at different levels)."
+    ],
+    "assessmentOpportunities": [
+      "Students are told that a coin landed heads 38 times in 100 flips, with a two-sided p-value of 0.021. They state H₀ and H₁, make the decision at α = 0.05 and at α = 0.01, and write one sentence that interprets the p-value correctly."
+    ]
   },
-  "chapter": "06-statistical-foundations"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "hypothesis-testing-workflow",
+  "chapter": "06-statistical-foundations",
+  "completion_status": "implemented"
 }

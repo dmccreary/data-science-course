@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for feature importance explorer.">
+        <meta name="description" content="Rank five housing features by standardized coefficient, permutation importance, and drop-column importance, and find out why the three rankings disagree when features are correlated.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Feature Importance Explorer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for feature importance explorer." >
+        <meta  property="og:description"  content="Rank five housing features by standardized coefficient, permutation importance, and drop-column importance, and find out why the three rankings disagree when features are correlated." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/feature-importance-explorer/feature-importance-explorer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Feature Importance Explorer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for feature importance explorer." >
+        <meta  name="twitter:description"  content="Rank five housing features by standardized coefficient, permutation importance, and drop-column importance, and find out why the three rankings disagree when features are correlated." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/feature-importance-explorer/feature-importance-explorer.png">
       
@@ -1620,6 +1620,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/feature-importance-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/feature-importance-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="feature-importance-explorer">Feature Importance Explorer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="612" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Feature Importance Explorer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>One linear regression is fitted to 200 simulated training houses and scored on 100 test houses. The grid ranks its five features in three ways, one column per method, with the features lined up in rows.</p>
+<ul>
+<li><strong>Standardized coefficient.</strong> Each feature is scaled to mean 0 and standard deviation 1 before fitting, as <code>StandardScaler</code> does, so every coefficient is the price change in thousands of dollars for a change of one standard deviation. This is what feature importance means for a linear model. Raw coefficients cannot be compared, because their units differ.</li>
+<li><strong>Permutation importance.</strong> One column of the test data is shuffled and the drop in test <span class="arithmatex">\(R^2\)</span> is recorded. The bar is the mean of 30 shuffles and the error bar is their standard deviation.</li>
+<li><strong>Drop-column importance.</strong> The model is refitted without the feature and the drop in test <span class="arithmatex">\(R^2\)</span> is recorded.</li>
+</ul>
+<p>The number in each small box is the feature's rank under that method. A box is orange when the three methods do not give the feature the same rank. Clicking a row opens that feature below: a scatter plot against price with two lines, the fit that uses this feature alone (dashed) and the multiple regression's line with the other four features held constant (red), next to the feature's numbers.</p>
+<p>With the default correlated features, square_feet is first by standardized coefficient and by permutation but second by drop-column, because bedrooms and bathrooms carry part of the same information and can stand in for it when the model is refitted. No ranking is reliable when features are strongly correlated. Uncheck <strong>Correlated features</strong> and the three methods agree.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default view, sorted by standardized coefficient. Find the two features with orange rank boxes and read their ranks across the three columns.</li>
+<li>Change <strong>Sort by</strong> to <strong>Drop-column importance</strong>. The rows reorder and a different feature comes out on top.</li>
+<li>Click <strong>square_feet</strong>, then <strong>bedrooms</strong>. Compare the dashed line (the feature alone) with the red line (the other features held constant) and read the VIF.</li>
+<li>Press <strong>Run Permutation Test</strong> a few times. The purple bars move by about the length of their error bars. Check whether any rank changes.</li>
+<li>Uncheck <strong>Correlated features</strong>. The same kind of model is fitted to houses whose features are unrelated to each other. Look for orange boxes and compare the two lines in the scatter plot again.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/feature-importance-explorer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/feature-importance-explorer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"612"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Multiple linear regression, standardizing a feature, <span class="arithmatex">\(R^2\)</span> on a test set, and multicollinearity.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare standardized coefficients, permutation importance, and drop-column importance for one model, identify the features on which the methods disagree, and explain the disagreement in terms of correlation between features.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Compare rankings</strong> (5 min): Students copy the three rankings into a table and circle the features whose rank is not the same in every column. They sort by each method in turn to check the table.</li>
+<li><strong>Find the reason</strong> (5 min): Students inspect square_feet and bedrooms and record the slope of each line and the VIF. They then uncheck <strong>Correlated features</strong>, record the same numbers, and state what changed.</li>
+<li><strong>Judge</strong> (5 min): In pairs, students decide which feature they would call the most important in the correlated data and defend the choice, naming the method they relied on and its weakness.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students explain why a feature can have a large permutation importance and a small drop-column importance in the same model, and state what kind of data makes all three methods agree.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/permutation_importance.html">Permutation feature importance</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/auto_examples/inspection/plot_linear_model_coefficient_interpretation.html">Common pitfalls in the interpretation of coefficients of linear models</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Standardized_coefficient">Standardized coefficient</a>.</li>
 </ol>
 
 

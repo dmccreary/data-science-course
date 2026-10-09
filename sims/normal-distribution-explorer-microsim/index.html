@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for normal distribution explorer microsim.">
+        <meta name="description" content="Set the mean and standard deviation of a normal distribution and read the intervals that hold 68, 95, and 99.7 percent of the values.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Normal Distribution Explorer MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for normal distribution explorer microsim." >
+        <meta  property="og:description"  content="Set the mean and standard deviation of a normal distribution and read the intervals that hold 68, 95, and 99.7 percent of the values." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/normal-distribution-explorer-microsim/normal-distribution-explorer-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Normal Distribution Explorer MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for normal distribution explorer microsim." >
+        <meta  name="twitter:description"  content="Set the mean and standard deviation of a normal distribution and read the intervals that hold 68, 95, and 99.7 percent of the values." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/normal-distribution-explorer-microsim/normal-distribution-explorer-microsim.png">
       
@@ -2193,6 +2193,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/normal-distribution-explorer-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/normal-distribution-explorer-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,60 @@
 
 
 <h1 id="normal-distribution-explorer-microsim">Normal Distribution Explorer MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="597" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Normal Distribution Explorer MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Normal Distribution Explorer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The blue curve is the normal density</p>
+<div class="arithmatex">\[f(x) = \frac{1}{\sigma\sqrt{2\pi}}\, e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</div>
+<p>drawn on fixed axes, so moving a slider changes the curve and not the scale. The mean <span class="arithmatex">\(\mu\)</span> sets where the curve is centered. The standard deviation <span class="arithmatex">\(\sigma\)</span> sets how spread out it is. The total area under the curve is always 1, so a narrower curve has to be taller.</p>
+<p>The three shaded bands mark the values within 1, 2, and 3 standard deviations of the mean. The table lists each interval and the area under the curve inside it, calculated from the density by numerical integration: 68.27%, 95.45%, and 99.73%. These percentages are the same for every normal distribution, which is why the 68-95-99.7 rule works for any <span class="arithmatex">\(\mu\)</span> and <span class="arithmatex">\(\sigma\)</span>.</p>
+<p>The yellow panel shows the equation with the current values put in and the height of the peak. Pointing at the plot reads off the z-score <span class="arithmatex">\(z = (x - \mu)/\sigma\)</span> and the density at that <span class="arithmatex">\(x\)</span>. The density is a height, not a probability. Probabilities are areas under the curve.</p>
+<p>The standard deviation slider runs from 8 to 50 so that every curve fits on the fixed vertical axis.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Move the <strong>Mean</strong> slider and watch the curve slide left and right without changing shape.</li>
+<li>Move the <strong>Std. deviation</strong> slider and watch the curve widen and flatten, or narrow and grow taller. Read the three intervals in the table as they change.</li>
+<li>Choose a preset (IQ scores, test scores, or heights) and use the table to answer questions such as: between which two IQ scores do about 95% of people fall?</li>
+<li>Press <strong>Pin Curve</strong> to keep the current curve as a dashed outline, then change one slider and compare the two curves. Press <strong>Unpin Curve</strong> to remove it.</li>
+<li>Point at the plot to read the z-score and the density at any x. Uncheck <strong>68-95-99.7 regions</strong> to see the curve alone.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/normal-distribution-explorer-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/normal-distribution-explorer-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"597"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Mean and standard deviation of a dataset, and reading a histogram.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to use the mean and standard deviation of a normal distribution to find the intervals that contain about 68%, 95%, and 99.7% of the values.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (4 min): Students change each slider on its own and write one sentence for what μ does to the curve and one for what σ does.</li>
+<li><strong>Apply the rule</strong> (6 min): Students solve three problems with the sliders: find σ so that about 95% of values fall between 60 and 140 when μ = 100, find the interval that holds about 68% of test scores for μ = 75 and σ = 10, and find the height that is 2 standard deviations above the mean in the heights preset.</li>
+<li><strong>Compare</strong> (4 min): Students pin the IQ curve, make a curve with the same mean and twice the standard deviation, and explain why the new peak is half as high.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Without the MicroSim, students state the interval that holds about 95% of the values of a normal distribution with a given mean and standard deviation (for example μ = 500 and σ = 100) and sketch how the curve changes if σ is halved.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal distribution</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">68–95–99.7 rule</a>.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html">numpy.random.normal</a>.</li>
 </ol>
 
 

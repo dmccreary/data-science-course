@@ -38,10 +38,10 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of normal dice distribution",
-    "Explore normal dice distribution through interactive visualization",
-    "Apply knowledge of normal dice distribution to solve problems",
-    "Experiment with parameters to observe their effects on normal dice distribution"
+    "Explain why a single fair six-sided die follows a discrete uniform distribution with probability 1/6 for each face",
+    "Observe how the empirical histogram of roll counts converges toward the flat theoretical distribution as the number of rolls grows",
+    "Distinguish empirical (observed) frequencies from theoretical probabilities and explain why small samples show large deviations",
+    "Predict roughly how many of N rolls will land on a given face and compare the prediction with the simulated counts"
   ],
   "bloomsTaxonomy": [
     "Remember",

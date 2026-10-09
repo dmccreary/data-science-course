@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for feature engineering laboratory.">
+        <meta name="description" content="Build new features from five raw housing columns with a product, ratio, sum, difference, square, or log, preview each one, and see the real change in cross-validated R squared when it joins a linear regression model.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Feature Engineering Laboratory - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for feature engineering laboratory." >
+        <meta  property="og:description"  content="Build new features from five raw housing columns with a product, ratio, sum, difference, square, or log, preview each one, and see the real change in cross-validated R squared when it joins a linear regression model." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/feature-engineering-laboratory/feature-engineering-laboratory.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Feature Engineering Laboratory - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for feature engineering laboratory." >
+        <meta  name="twitter:description"  content="Build new features from five raw housing columns with a product, ratio, sum, difference, square, or log, preview each one, and see the real change in cross-validated R squared when it joins a linear regression model." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/feature-engineering-laboratory/feature-engineering-laboratory.png">
       
@@ -1599,6 +1599,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/feature-engineering-laboratory/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/feature-engineering-laboratory/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,73 @@
 
 
 <h1 id="feature-engineering-laboratory">Feature Engineering Laboratory</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Feature Engineering Laboratory MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The laboratory holds 300 simulated houses with five raw columns (<code>sqft</code>, <code>beds</code>, <code>age</code>, <code>lot</code>, <code>school</code>) and a <code>price</code> in thousands of dollars. A linear regression on the five raw columns is the <strong>baseline</strong>. Your job is to engineer features that lift the model's score toward the gold <strong>goal</strong> mark, which is the score of the formula that generated the prices.</p>
+<p>Two dropdowns choose the columns <strong>A</strong> and <strong>B</strong> and a third chooses the operation. The <strong>Preview</strong> panel shows what you have set up before you commit to it:</p>
+<ul>
+<li>the pandas expression and the first eight rows, with the new column in purple</li>
+<li>a histogram of column A and of the new feature, each with its skew</li>
+<li>the correlation <span class="arithmatex">\(r\)</span> of each column with price</li>
+<li>the cross-validated R² the model would have if the feature were added, also drawn as a purple outline on the score bar</li>
+</ul>
+<p><strong>Add Feature</strong> puts the feature into the model. The <strong>Model performance</strong> panel compares the baseline with your model: Train R² (fit and scored on all 300 rows) and CV R² (the mean of 5 folds, as <code>cross_val_score</code> with <code>cv=5</code> computes it). The list at the lower right gives each engineered feature's <strong>worth</strong>, which is the CV R² the model would lose if that one feature were removed. A feature worth less than 0.005 is flagged in red, and its ✕ removes it.</p>
+<p>Every number comes from a real least-squares fit in the browser. Things worth finding out:</p>
+<ul>
+<li>Train R² never goes down when a feature is added. CV R² can.</li>
+<li>A sum or a difference of two columns that are already in the model changes nothing, because a linear model can already weight them separately.</li>
+<li>A feature can have <span class="arithmatex">\(r\)</span> near zero with price and still be valuable next to the column it was built from (try <code>age²</code>).</li>
+<li>Two features that carry the same information each look nearly worthless while the other is in the model (add <code>sqft ÷ lot</code> and then <code>school ÷ lot</code>, which both stand in for <code>log(lot)</code>).</li>
+</ul>
+<p>Skew is the third moment divided by the 1.5 power of the second, the default of <code>scipy.stats.skew</code>. Large values are shown in millions with an M. On a narrow screen the preview drops the table and shows one histogram. Not included: binning, a text box for naming features (names are generated), and preset buttons. The lab holds at most six engineered features.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the baseline row of the <strong>Model performance</strong> panel and find the black baseline mark and the gold goal mark on the bar.</li>
+<li>The lab opens on <code>log(lot)</code>. Compare the two histograms and their skews, then read the <strong>If added</strong> line. Press <strong>Add Feature</strong>.</li>
+<li>Set up a product, such as <code>sqft</code> × <code>school</code>, and read the preview before you add it. Does the value of a square foot depend on the school rating?</li>
+<li>Try a sum or a difference of two columns and explain what the preview says.</li>
+<li>Keep adding features that you expect to help. Watch the <strong>Worth</strong> column, and remove any feature flagged as low with its red ✕.</li>
+<li>Try to reach the goal mark with four engineered features. <strong>Reset</strong> clears your features.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/feature-engineering-laboratory/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/feature-engineering-laboratory/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Multiple linear regression, R-squared on training data and under cross-validation, and the idea of interaction terms, polynomial terms, and log transforms.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Create (L6)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to construct new features from existing columns and use cross-validated R squared to decide which of them improve a linear regression model.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore one transform</strong> (5 min): Students preview the log, the square, and the product with school for each raw column and record which previews show a gain above 0.005.</li>
+<li><strong>Build a model</strong> (8 min): Students build a model of at most four engineered features that reaches the goal mark, recording CV R² after each addition and the worth of each feature at the end.</li>
+<li><strong>Explain the surprises</strong> (5 min): Students explain why <code>sqft + lot</code> adds nothing, why <code>age²</code> helps although its correlation with price is near zero, and why a feature's worth changed when another feature was added.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students propose one engineered feature for a new data set, justify it from domain knowledge, and state which number they would check to decide whether to keep it and why Train R² is not that number.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/preprocessing.html">Preprocessing data</a>.</li>
+<li>scikit-learn API Reference. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html">cross_val_score</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Feature_engineering">Feature engineering</a>.</li>
+<li>VanderPlas, J. <em>Python Data Science Handbook</em>. O'Reilly. Chapter 5, Machine Learning, section Feature Engineering.</li>
 </ol>
 
 

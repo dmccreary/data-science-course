@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for multiple regression anatomy.">
+        <meta name="description" content="Move sliders for square feet, bedrooms, and age and watch the intercept and each coefficient-times-feature term add up to a predicted house price.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Multiple Regression Anatomy - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for multiple regression anatomy." >
+        <meta  property="og:description"  content="Move sliders for square feet, bedrooms, and age and watch the intercept and each coefficient-times-feature term add up to a predicted house price." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/multiple-regression-anatomy/multiple-regression-anatomy.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Multiple Regression Anatomy - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for multiple regression anatomy." >
+        <meta  name="twitter:description"  content="Move sliders for square feet, bedrooms, and age and watch the intercept and each coefficient-times-feature term add up to a predicted house price." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/multiple-regression-anatomy/multiple-regression-anatomy.png">
       
@@ -2109,6 +2109,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/multiple-regression-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/multiple-regression-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,57 @@
 
 
 <h1 id="multiple-regression-anatomy">Multiple Regression Anatomy</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="607" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Multiple Regression Anatomy MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The equation <span class="arithmatex">\(\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3\)</span> is drawn across the top with five numbered parts: the intercept, one term for each feature, and the prediction. Under each symbol is the number it stands for right now, for example 150 × 1,500 for the square feet term.</p>
+<p>The chart below it is a waterfall. It starts with the intercept, adds each term where the last one ended, and finishes with a gold bar for the predicted price. Terms that raise the prediction are green and terms that lower it are red.</p>
+<p>The coefficients are not typed in. The MicroSim fits a least-squares regression to 40 simulated houses and shows the result with its <span class="arithmatex">\(R^2\)</span> and adjusted <span class="arithmatex">\(R^2\)</span>. The houses were built so that the fit comes out exactly as the chapter's model, Price = 50,000 + 150 × SqFt + 10,000 × Bedrooms − 1,000 × Age.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default view. A 1,500 square foot house with 3 bedrooms that is 20 years old is predicted at $285,000, which is 50,000 + 225,000 + 30,000 − 20,000.</li>
+<li>Drag the <strong>Square feet</strong> slider. Only the square feet term and the prediction change. The bedrooms and age terms hold still.</li>
+<li>Add one bedroom and check that the prediction rises by exactly $10,000. Repeat at a different square footage and confirm that the rise is the same.</li>
+<li>Drag <strong>Age</strong> to 0 and then to 60 and watch the red bar pull the running total back.</li>
+<li>Hover over a numbered part, in the equation or in the chart, to read what it means. Click to keep it selected and click again to release it.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/multiple-regression-anatomy/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/multiple-regression-anatomy/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"607"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Simple linear regression, the meaning of slope and intercept, and <span class="arithmatex">\(R^2\)</span>.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how the intercept and each coefficient-times-feature term combine into one prediction, and interpret a coefficient as the change in the prediction for a one-unit increase in its feature with the other features held constant.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (4 min): Students move each slider in turn and record which numbers on screen change. They state in one sentence what stays the same when only one feature moves.</li>
+<li><strong>One-unit changes</strong> (5 min): Students work out by hand the price change for 100 more square feet, 1 more bedroom, and 10 more years of age, then check each answer with the sliders.</li>
+<li><strong>Explain</strong> (4 min): In pairs, students click each numbered part and restate its explanation in their own words, including why the intercept is not the price of a real house.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given the model Price = 50,000 + 150 × SqFt + 10,000 × Bedrooms − 1,000 × Age, students compute the prediction for a 2,000 square foot, 4-bedroom, 10-year-old house and explain what the coefficient −1,000 means, using the phrase "holding the other features constant".</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Linear_regression">Linear regression</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">sklearn.linear_model.LinearRegression</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 3, Linear Regression.</li>
 </ol>
 
 

@@ -1,45 +1,68 @@
 {
   "title": "Correlation Visualizer MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for correlation visualizer microsim",
+  "subject": "Data Science",
+  "description": "Set the correlation of a scatter plot, switch to curved patterns, and drag points to see how Pearson r, R squared, and Spearman rank correlation respond.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Correlation Visualizer MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Pearson and Spearman correlation",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare Pearson and Spearman correlation across linear, curved, and outlier-affected scatter plots and explain what each number does and does not reveal about the relationship."
     ],
-    "bloomsTaxonomy": "Create",
+    "bloomsTaxonomy": "Analyze",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Scatter plots",
+      "Mean and standard deviation",
+      "Covariance"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 585
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Comparison of contrasting cases with direct manipulation of data points",
+    "keyQuestions": [
+      "Why can r be close to 0 when the points clearly follow a curve?",
+      "Why does one outlier change Pearson r more than Spearman ρ?",
+      "If r = 0.8, what fraction of the variance in y does the best-fit line account for?"
+    ],
+    "commonMisconceptions": [
+      "A correlation near 0 means the variables are unrelated (it only means there is no straight-line relationship).",
+      "r = 0.8 means 80% of the variance is explained (the share is r² = 0.64).",
+      "A strong correlation shows that x causes y (correlation alone cannot show causation).",
+      "The correlation tells you how steep the line is (r measures how closely the points follow a line, not its slope)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown three scatter plots (a tight falling line, a U shape, and a rising curve with one outlier). For each they decide whether Pearson r is positive, negative, or near zero, whether Spearman ρ would be noticeably different, and why."
+    ]
   },
-  "chapter": "06-statistical-foundations"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "correlation-visualizer-microsim",
+  "chapter": "06-statistical-foundations",
+  "completion_status": "implemented"
 }

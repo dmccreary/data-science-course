@@ -1,45 +1,68 @@
 {
   "title": "Visualization Library Comparison",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for visualization library comparison",
+  "subject": "Data Science",
+  "description": "Compare Matplotlib, Seaborn, and Plotly side by side, pick a need from a list to see which library fits and why, and view a typical chart of the same data in each library's default look.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Visualization Library Comparison",
+    "subjectArea": "Data Science",
+    "topic": "Choosing a Python visualization library",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare Matplotlib, Seaborn, and Plotly and explain which library suits a given visualization need."
     ],
-    "bloomsTaxonomy": "Analyze",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "bloomsTaxonomy": "Understand",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Scatter plots",
+      "Importing Python libraries",
+      "pandas DataFrames"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side comparison with a decision guide and a worked example on shared data",
+    "keyQuestions": [
+      "Why might you choose Matplotlib for a printed report even though it takes more code?",
+      "What did Seaborn add to the chart that the other two examples did not have?",
+      "What can a reader do with the Plotly chart that is impossible with a static image?"
+    ],
+    "commonMisconceptions": [
+      "One library is simply the best (each fits different needs, and they are often used together).",
+      "Seaborn replaces Matplotlib (Seaborn is built on Matplotlib and its charts can be adjusted with Matplotlib commands).",
+      "An interactive chart is always better (a printed page needs a static image).",
+      "Matplotlib charts can never be zoomed (they can in an interactive window, but a saved or inline figure is a static image)."
+    ],
+    "assessmentOpportunities": [
+      "Students are given three short project descriptions (a figure for a science fair poster, a first look at a survey dataset, and a chart for a class web page) and name the library they would use for each with a one-sentence reason."
+    ]
   },
-  "chapter": "05-data-visualization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "visualization-library-comparison",
+  "chapter": "05-data-visualization",
+  "completion_status": "implemented"
 }

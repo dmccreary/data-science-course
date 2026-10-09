@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for model selection dashboard.">
+        <meta name="description" content="Train polynomial models of different degrees, compare their cross-validation scores, declare a winner, and only then unlock the test set to check your choice.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Model Selection Dashboard - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for model selection dashboard." >
+        <meta  property="og:description"  content="Train polynomial models of different degrees, compare their cross-validation scores, declare a winner, and only then unlock the test set to check your choice." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/model-selection-dashboard/model-selection-dashboard.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Model Selection Dashboard - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for model selection dashboard." >
+        <meta  name="twitter:description"  content="Train polynomial models of different degrees, compare their cross-validation scores, declare a winner, and only then unlock the test set to check your choice." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/model-selection-dashboard/model-selection-dashboard.png">
       
@@ -2067,6 +2067,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/model-selection-dashboard/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/model-selection-dashboard/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="model-selection-dashboard">Model Selection Dashboard</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="717" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Model Selection Dashboard MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The dashboard runs model selection on one data set of 75 points: 60 training points and 15 test points that stay locked away. The slider sets the degree of a polynomial model, which is fit to the training points only. The line under the plot title gives that model's <strong>Train R²</strong> and its <strong>5-fold cross-validation R²</strong> as the mean ± the standard deviation of the five fold scores.</p>
+<p><strong>Add to Comparison</strong> records the model in the table. Each row has a bar for the CV mean on a scale from 0 to 1, with a whisker of one standard deviation on each side. An orange triangle marks a model whose Train R² is over 0.20 and more than 0.20 above its CV mean, which is a sign of overfitting. The Test R² column shows padlocks.</p>
+<p>When you have compared enough models, put your choice on the slider and press <strong>Declare Degree … the Winner</strong>. Only then are the test points drawn and the Test R² column filled in. The bars are recolored (green for the highest CV mean, gold for models within one standard deviation of it, red for the rest), a star marks the CV winner, and the verdict panel compares your pick with it. A simpler model within one standard deviation of the best counts as a sound choice. After the declaration the comparison is closed, because test scores that have been seen can no longer be used to choose a model. <strong>New Data</strong> starts a new problem.</p>
+<p>Every score comes from real least-squares fits computed in the browser, using the same definitions as scikit-learn's <code>cross_val_score</code> with <code>cv=5</code> and <code>scoring='r2'</code>. Scores can be negative, and with only 15 test points the test score is noisy too. Not included: a slider for the split ratio and a choice of the number of folds. They are fixed at 80/20 and 5 folds, as in the chapter's code.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>The table starts with degree 1 and degree 10. Compare their Train R² and their CV mean. Which column would mislead you?</li>
+<li>Move the <strong>Polynomial degree</strong> slider and watch the curve. Press <strong>Add to Comparison</strong> for each degree you want to consider.</li>
+<li>Look for a high CV mean with a short whisker, and note which rows have an orange triangle.</li>
+<li>Put your choice on the slider and press <strong>Declare Degree … the Winner</strong>.</li>
+<li>Read the verdict. Compare your pick's Test R² with its CV mean, and with the Test R² of the other models.</li>
+<li>Choose another <strong>Data set</strong> or press <strong>New Data</strong> and repeat. Either one clears the table, because scores from different data cannot be compared.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/model-selection-dashboard/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/model-selection-dashboard/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"717"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>R-squared, the train-test split, K-fold cross-validation, and the idea that a polynomial of higher degree is a more flexible model.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to select a model from several candidates using cross-validation scores and their variability, and justify the choice before confirming it on held-out test data.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Compare</strong> (5 min): On the Quadratic data set, students add at least five degrees to the table and record Train R², CV mean, and CV standard deviation for each.</li>
+<li><strong>Decide</strong> (5 min): Students write down their winner and one sentence of justification, then declare it and compare their reasoning with the verdict.</li>
+<li><strong>Generalize</strong> (8 min): Students repeat on the Sine wave and Noisy line data sets. They describe how the best degree and the size of the standard deviations change, and explain why Train R² would have chosen degree 10 every time.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a table of five models with Train R², CV mean, and CV standard deviation, students choose a model, justify the choice in terms of CV mean, variability, and simplicity, and explain why the test set was not used to make the choice.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/cross_validation.html">Cross-validation: evaluating estimator performance</a>.</li>
+<li>scikit-learn examples. <a href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 5, Resampling Methods.</li>
 </ol>
 
 

@@ -1,45 +1,70 @@
 {
   "title": "Model Evaluation Workflow",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for model evaluation workflow",
+  "subject": "Data Science",
+  "description": "Step through the ten-step model evaluation workflow on a real data set, see which scores exist at each step, and compare the honest order of operations with one that leaks the test data.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Model Evaluation Workflow",
+    "subjectArea": "Data Science",
+    "topic": "Model evaluation workflow and data leakage",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to place each step of the model evaluation workflow in the data subset it may use and compare an honest workflow with a leaky one, explaining why test data must not influence any choice."
     ],
     "bloomsTaxonomy": "Analyze",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Train-test split",
+      "K-fold cross-validation",
+      "Hyperparameters",
+      "Model selection",
+      "Residual analysis"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 650
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of a worked example with a contrasting incorrect case",
+    "keyQuestions": [
+      "Which steps are allowed to use the test data, and why only those?",
+      "Why can the leaky test score never be lower than the honest one?",
+      "After the final evaluation, why should you not go back and tune the model again?"
+    ],
+    "commonMisconceptions": [
+      "Looking at the test score during development is harmless as long as the model is not trained on the test rows (choosing a model by its test score fits the choice to those rows).",
+      "The model with the best training score should be selected (training scores always favor the most flexible model).",
+      "Cross-validation uses the test set (the folds are cut from the training data only).",
+      "If the leaky and honest workflows pick the same model, the leak did no harm (the reported score is still no longer an independent check)."
+    ],
+    "assessmentOpportunities": [
+      "Given a short description of a project in which the analyst scaled the features using all rows, tried eight models, and reported the best test score, students mark each point where test data leaked and rewrite the steps in an order that avoids it."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "model-evaluation-workflow",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

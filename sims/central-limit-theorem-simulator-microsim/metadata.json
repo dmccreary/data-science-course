@@ -1,45 +1,69 @@
 {
   "title": "Central Limit Theorem Simulator MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for central limit theorem simulator microsim",
+  "subject": "Data Science",
+  "description": "Draw repeated samples from a normal, uniform, right-skewed, or bimodal population and compare the histogram of sample means with the normal curve that the central limit theorem predicts.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Central Limit Theorem Simulator MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Central limit theorem and standard error",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare the distribution of sample means with the population distribution and analyze how the sample size changes its shape and spread."
     ],
     "bloomsTaxonomy": "Analyze",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Population and sample",
+      "Sample mean",
+      "Standard deviation",
+      "Normal distribution"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 585
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Simulation that compares a population with the distribution of its sample means on a shared axis",
+    "keyQuestions": [
+      "How does the shape of the histogram of sample means differ from the shape of the population?",
+      "What happens to the spread of the sample means when n goes from 10 to 100?",
+      "For which population does the bell shape need the largest sample size to appear, and why?"
+    ],
+    "commonMisconceptions": [
+      "The central limit theorem says the data become normal when the sample is large (the population keeps its shape, and it is the distribution of sample means that becomes normal).",
+      "Taking more samples makes the sample means less spread out (the spread depends on the sample size n, and more samples only fill in the histogram).",
+      "The standard error is the same as the standard deviation of the data (it is σ/√n, the standard deviation of the sample mean).",
+      "A sample size of 30 always guarantees a normal shape (strongly skewed populations need larger samples)."
+    ],
+    "assessmentOpportunities": [
+      "Students predict the mean and the standard deviation of the sample means for samples of size 25 from a population with μ = 80 and σ = 20, and explain whether the histogram of those sample means would look normal if the population were strongly skewed."
+    ]
   },
-  "chapter": "06-statistical-foundations"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "central-limit-theorem-simulator-microsim",
+  "chapter": "06-statistical-foundations",
+  "completion_status": "implemented"
 }

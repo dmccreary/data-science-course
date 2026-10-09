@@ -44,10 +44,11 @@
     "map"
   ],
   "learningObjectives": [
-    "Understand the mathematical concept of learning graph viewer",
-    "Apply learning graph viewer to solve problems",
-    "Visualize and interpret learning graph viewer relationships",
-    "Test understanding of learning graph viewer through interactive exercises"
+    "Locate a data science concept in the learning graph using type-ahead search and identify its taxonomy category",
+    "Trace directed dependency edges to determine which prerequisite concepts must be learned before an advanced topic like machine learning",
+    "Filter the graph by taxonomy categories (Python programming, statistical analysis, machine learning, NLP, generative AI) to isolate one topic area",
+    "Interpret the visible node, edge, and orphan counts in the statistics panel as category filters change",
+    "Plan a personal learning path from foundational concepts through Python libraries to a chosen specialization using the dependency structure"
   ],
   "pedagogical": {
     "pattern": "demonstration",

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for complexity curve explorer.">
+        <meta name="description" content="Set the degree of a polynomial fit to noisy data, compare its training and test error, and judge where the model moves from underfitting through a sweet spot to overfitting.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Complexity Curve Explorer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for complexity curve explorer." >
+        <meta  property="og:description"  content="Set the degree of a polynomial fit to noisy data, compare its training and test error, and judge where the model moves from underfitting through a sweet spot to overfitting." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/complexity-curve-explorer/complexity-curve-explorer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Complexity Curve Explorer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for complexity curve explorer." >
+        <meta  name="twitter:description"  content="Set the degree of a polynomial fit to noisy data, compare its training and test error, and judge where the model moves from underfitting through a sweet spot to overfitting." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/complexity-curve-explorer/complexity-curve-explorer.png">
       
@@ -1284,6 +1284,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/complexity-curve-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/complexity-curve-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="complexity-curve-explorer">Complexity Curve Explorer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="617" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Complexity Curve Explorer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Thirty points follow a cubic curve with random noise added. Twenty are <strong>training points</strong> (blue circles) and ten are <strong>test points</strong> (orange squares). The slider sets the degree of a polynomial that is fit by least squares to the training points only.</p>
+<p>The lower chart shows the mean squared error (MSE) for every degree from 1 to 15:</p>
+<ul>
+<li><strong>Training MSE</strong> (blue) is measured on the 20 points used for the fit. It never goes up as the degree rises.</li>
+<li><strong>Test MSE</strong> (orange) is measured on the 10 points the fit never saw. It falls while the model is learning the pattern and rises again when the extra flexibility is spent on noise. Orange arrows at the top mark values that are off the chart.</li>
+</ul>
+<p>The shading is computed from the test error. A degree is in the <strong>sweet spot</strong> when its test MSE is within 25% of the lowest test MSE. Degrees simpler than the first sweet-spot degree are <strong>underfitting</strong>, and the remaining degrees are <strong>overfitting</strong>. The panel beside the plot reports both errors, their gap, and a verdict for the chosen degree.</p>
+<p>Every curve and every error value comes from a real least-squares fit computed in the browser. At high degrees the curve swings far outside the plot between training points. That is what a polynomial of degree 12 to 15 does with 20 points, not a drawing error.</p>
+<p>With only ten test points the picture changes from sample to sample. <strong>New Data</strong> usually gives a sweet spot that starts at degree 3, the true shape, but now and then a much higher degree, or even a straight line, tests best by luck. That weakness of a single small test set is what cross-validation, the next topic in the chapter, is designed to reduce.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start at degree 1. The straight line misses the bends in the data, and both errors are high.</li>
+<li>Drag the <strong>Polynomial degree</strong> slider up one step at a time. Watch the curve in the top plot and the two large dots on the chart.</li>
+<li>Before going further, decide which degree you think is best and why. Then press <strong>Find Best Degree</strong> to jump to the degree with the lowest test MSE.</li>
+<li>Keep increasing the degree. Note what happens to the training MSE, the test MSE, and the gap between them.</li>
+<li>Uncheck <strong>Show test error</strong>. With only the training error visible, which degree looks best? Check the box again to see why that choice fails.</li>
+<li>Press <strong>New Data</strong> for a new random sample and repeat. Compare the best degree across several samples.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/complexity-curve-explorer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/complexity-curve-explorer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"617"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Mean squared error, the train-test split, and the idea that a polynomial of higher degree can bend more.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to judge whether a model is underfitting, well fit, or overfitting by comparing its training and test error, and justify a choice of model complexity.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): With <strong>Show test error</strong> unchecked, students step from degree 1 to degree 15 and choose the degree they would use from the training error and the look of the curve. They write down their choice and a reason.</li>
+<li><strong>Check</strong> (5 min): Students turn the test error back on, record the training MSE, test MSE, and gap for degrees 1, 3, 6, 10, and 15, and compare their choice with <strong>Find Best Degree</strong>.</li>
+<li><strong>Justify</strong> (5 min): Students press <strong>New Data</strong> four times, recording the degree with the lowest test error each time. They argue which degree they would use for this kind of data and explain why the answers are not always the same.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a table of training and test MSE for five models of increasing complexity, students label each model as underfitting, a good fit, or overfitting, choose one model, and justify the choice by referring to both errors and to model simplicity.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn examples. <a href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Overfitting">Overfitting</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 2, Statistical Learning.</li>
 </ol>
 
 

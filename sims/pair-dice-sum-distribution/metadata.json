@@ -41,9 +41,10 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of two-dice sum distribution",
-    "Explore two-dice sum distribution through interactive visualization",
-    "Apply knowledge of two-dice sum distribution to solve problems"
+    "Explain why 7 is the most likely two-dice sum (6 of 36 combinations) while 2 and 12 are the least likely (1 of 36 each)",
+    "Calculate the probability of any two-dice sum by counting the combinations that produce it out of 36 equally likely outcomes",
+    "Contrast the triangular distribution of a two-dice sum with the flat uniform distribution of a single die",
+    "Observe the law of large numbers as the simulated histogram converges to the theoretical triangular shape with more rolls"
   ],
   "bloomsTaxonomy": [
     "Remember",

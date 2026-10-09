@@ -1,45 +1,69 @@
 {
   "title": "Neural Network Architecture Builder",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for neural network architecture builder",
+  "subject": "Data Science",
+  "description": "Build a fully connected neural network by adding layers and setting their sizes, and watch the diagram, the PyTorch nn.Sequential code, and the parameter count change together.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Neural Network Architecture Builder",
+    "subjectArea": "Data Science",
+    "topic": "Network architecture and parameter counting",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to design a fully connected network that meets a stated input size, output size, and parameter budget, calculate its number of parameters layer by layer, and write it as a PyTorch nn.Sequential model."
     ],
     "bloomsTaxonomy": "Create",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Artificial neuron",
+      "Weights and biases",
+      "Input, hidden, and output layers"
+    ],
+    "standards": [],
+    "bloomVerb": "Design"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 630
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Constructive building task with a linked diagram, code listing, and parameter count",
+    "keyQuestions": [
+      "Why does changing one hidden layer change the parameter count of two Linear layers?",
+      "Which adds more parameters, one more small layer or a wider existing layer?",
+      "Why does a layer of n neurons have n biases whatever the size of its input?",
+      "What must the input size and the output size of a network match?"
+    ],
+    "commonMisconceptions": [
+      "The number of parameters equals the number of neurons (the network [4, 8, 4, 1] has 17 neurons and 81 parameters, because every connection carries its own weight).",
+      "The input layer has weights and biases of its own (it only passes the features in; the first parameters belong to the connections into the first hidden layer).",
+      "An activation function such as ReLU adds parameters (ReLU has none).",
+      "Depth alone decides the size of a network (width matters as much: [4, 128, 1] with one hidden layer has 769 parameters and [4, 32, 16, 8, 1] with three has 833)."
+    ],
+    "assessmentOpportunities": [
+      "Without the sim, students calculate the number of parameters of a network with layer sizes [10, 32, 16, 1], then decide which change adds more parameters, doubling the first hidden layer or doubling the second, and justify the answer with the formula."
+    ]
   },
-  "chapter": "13-neural-networks-pytorch"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "neural-network-architecture-builder",
+  "chapter": "13-neural-networks-pytorch",
+  "completion_status": "implemented"
 }

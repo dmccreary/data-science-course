@@ -1,45 +1,68 @@
 {
   "title": "NumPy Array vs Python List",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for numpy array vs python list",
+  "subject": "Data Science",
+  "description": "Step through doubling five numbers to see why a Python list of scattered objects is processed one element at a time while a NumPy array is one block of values handled in a single call.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "NumPy Array vs Python List",
+    "subjectArea": "Data Science",
+    "topic": "How Python lists and NumPy arrays store data",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how a Python list and a NumPy array store the same numbers and why that difference makes whole-array NumPy operations use less memory and run faster."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Python lists",
+      "Loops and list comprehensions",
+      "Creating a NumPy array with np.array"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 614
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side step-through of a worked example, with prediction before the first step",
+    "keyQuestions": [
+      "What does a Python list actually store in its slots?",
+      "Why can NumPy skip the type check that Python does for every list element?",
+      "Why are the addresses of the array values exactly 8 apart?",
+      "When would a NumPy array not be faster than a list?"
+    ],
+    "commonMisconceptions": [
+      "A Python list stores its numbers side by side (it stores pointers, and the numbers are separate objects).",
+      "NumPy is fast because it does less arithmetic (it does the same arithmetic, but in compiled code with no per-element overhead).",
+      "NumPy is always faster (on a handful of elements the fixed cost of the call can make it slower than a list)."
+    ],
+    "assessmentOpportunities": [
+      "Students draw their own picture of the list `[10, 20, 30]` and the array `np.array([10, 20, 30])` in memory and write two sentences explaining why `arr * 2` is faster than `[x * 2 for x in nums]` on a large array, and why the gain disappears on a tiny one."
+    ]
   },
-  "chapter": "10-numpy-computing"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "numpy-array-vs-python-list",
+  "chapter": "10-numpy-computing",
+  "completion_status": "implemented"
 }

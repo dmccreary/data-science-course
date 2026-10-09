@@ -41,10 +41,10 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of six-step data science workflow",
-    "Explore six-step data science workflow through interactive visualization",
-    "Apply knowledge of six-step data science workflow to solve problems",
-    "Experiment with parameters to observe their effects on six-step data science workflow"
+    "Identify the six steps of the data science workflow: define the problem, collect data, clean data, analyze data, visualize results, and communicate insights",
+    "Sequence the six workflow steps in correct order and explain why problem definition must precede data collection",
+    "Explain the purpose of each workflow step, such as why raw data must be cleaned before statistical analysis",
+    "Classify activities from a real-world data project (for example gathering survey responses or building a chart) into the correct workflow step"
   ],
   "bloomsTaxonomy": [
     "Remember",

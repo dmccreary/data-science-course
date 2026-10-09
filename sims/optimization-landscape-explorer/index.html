@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for optimization landscape explorer.">
+        <meta name="description" content="Predict where gradient descent will stop on a cost curve with several valleys, run it from starting points you choose, and compare how often plain descent and momentum reach the global minimum.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Optimization Landscape Explorer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for optimization landscape explorer." >
+        <meta  property="og:description"  content="Predict where gradient descent will stop on a cost curve with several valleys, run it from starting points you choose, and compare how often plain descent and momentum reach the global minimum." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/optimization-landscape-explorer/optimization-landscape-explorer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Optimization Landscape Explorer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for optimization landscape explorer." >
+        <meta  name="twitter:description"  content="Predict where gradient descent will stop on a cost curve with several valleys, run it from starting points you choose, and compare how often plain descent and momentum reach the global minimum." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/optimization-landscape-explorer/optimization-landscape-explorer.png">
       
@@ -2298,6 +2298,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/optimization-landscape-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/optimization-landscape-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,65 @@
 
 
 <h1 id="optimization-landscape-explorer">Optimization Landscape Explorer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Optimization Landscape Explorer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The blue curve is a cost function <span class="arithmatex">\(J(x)\)</span> of a single parameter, and the red ball is the optimizer. Each step moves the ball downhill by the learning rate times the slope, <span class="arithmatex">\(x \leftarrow x - \eta J'(x)\)</span>, and it stops where the slope is nearly zero. Triangles mark every minimum with its cost: green for the <strong>global minimum</strong> (the lowest point of the whole curve) and orange for each <strong>local minimum</strong> (lower than its neighbors, but not the lowest).</p>
+<p>Four landscapes are available:</p>
+<ul>
+<li><strong>Convex bowl</strong>, <span class="arithmatex">\(J = 0.5x^2\)</span>. There is one valley, so every start reaches the global minimum.</li>
+<li><strong>Two valleys</strong>, <span class="arithmatex">\(J = x^4 - 3x^2 + 0.5x\)</span>, the function plotted in the chapter. The global minimum is at <span class="arithmatex">\(x \approx -1.26\)</span> (<span class="arithmatex">\(J \approx -2.87\)</span>) and the local minimum at <span class="arithmatex">\(x \approx 1.18\)</span> (<span class="arithmatex">\(J \approx -1.65\)</span>).</li>
+<li><strong>Many valleys</strong>, <span class="arithmatex">\(J = 0.2x^2 - 0.7\cos(3(x - 0.4))\)</span>. It has five minima; the global one is at <span class="arithmatex">\(x \approx 0.38\)</span>.</li>
+<li><strong>Plateau</strong>, <span class="arithmatex">\(J = x^4/4 - 2x^3/3\)</span>. It has one minimum at <span class="arithmatex">\(x = 2\)</span> and a flat spot at <span class="arithmatex">\(x = 0\)</span>, where the slope is zero but the curve goes on down afterwards. On a curve this plays the part that a saddle point plays on a surface.</li>
+</ul>
+<p>With <strong>Add momentum</strong> checked the ball keeps 90% of its previous move: <span class="arithmatex">\(v \leftarrow 0.9v - \eta J'(x)\)</span>, then <span class="arithmatex">\(x \leftarrow x + v\)</span>. That lets it coast through shallow dips and across flat ground. It is not a guarantee: many starts still end in a local minimum.</p>
+<p>The two strips under the plot record where each finished run started, green if it reached the global minimum and orange if it did not, with one strip for plain descent and one for momentum. The result panel keeps the count.</p>
+<p>Not included: the learning rate and noise sliders from the original specification. Each landscape uses one fixed learning rate, shown under the title.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the prompt, predict where the ball will stop, then press <strong>Start</strong>. Use <strong>Step</strong> instead to advance one update at a time.</li>
+<li>Click the curve to choose a new starting point and run again. Repeat until the <em>plain</em> strip shows which starts reach the global minimum.</li>
+<li>Check <strong>Add momentum</strong> and press <strong>Start</strong> to repeat the same start with momentum. Compare the two strips.</li>
+<li>Choose <strong>Many valleys</strong> and look for starts that momentum rescues and starts that it does not.</li>
+<li>Choose <strong>Plateau</strong>, start on the left slope, and compare plain descent with momentum. <strong>Reset</strong> clears the strips.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/optimization-landscape-explorer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/optimization-landscape-explorer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Gradient descent, the learning rate, and reading the graph of a function.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to distinguish local minima from the global minimum and compare how the starting point and momentum affect which minimum gradient descent finds.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict and run</strong> (4 min): On the two valleys landscape students predict the stopping point for three starts of their choice, run each one, and record whether the prediction was right.</li>
+<li><strong>Map the starts</strong> (6 min): On the many valleys landscape students run at least eight starts spread across the curve with plain descent, repeat the same starts with momentum, and describe which starts changed outcome.</li>
+<li><strong>Flat is not a minimum</strong> (4 min): On the plateau students run plain descent from the left slope and read the slope and the cost above the global minimum where it stalls, then repeat with momentum and explain the difference.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Shown a sketch of a cost curve with three valleys and a marked starting point, students say where plain gradient descent will stop, whether that point is a local or the global minimum, and name one strategy from the chapter that could change the outcome.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Maxima_and_minima">Maxima and minima</a> (local and global minima).</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">Stochastic gradient descent</a> (section on momentum).</li>
+<li>Géron, A. <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em>. O'Reilly. Chapter 11, Training Deep Neural Networks (momentum optimization).</li>
 </ol>
 
 

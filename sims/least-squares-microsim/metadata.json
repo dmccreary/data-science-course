@@ -1,45 +1,68 @@
 {
   "title": "Least Squares MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for least squares microsim",
+  "subject": "Data Science",
+  "description": "Move a line with slope and intercept sliders and watch each residual, its square, and the sum of squared errors change, then reveal the least-squares line that makes the total area of the squares as small as possible.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Least Squares MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Least squares and the sum of squared errors",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how the least squares method chooses the regression line by minimizing the sum of squared errors."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Slope and intercept of a line",
+      "Residuals",
+      "Squaring a number"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 655
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Learner-moved sliders with concrete data, a residual table, and immediate numeric feedback",
+    "keyQuestions": [
+      "Why does one large residual raise SSE more than several small ones?",
+      "At the best-fit line, what do the positive and negative residuals add up to?",
+      "What happens to SSE if you raise the intercept by 5 points from the best-fit line, and why?"
+    ],
+    "commonMisconceptions": [
+      "The best line is the one that passes through the most points (the least-squares line may pass through none).",
+      "SSE adds up the residuals (it adds up their squares, so positive and negative errors cannot cancel).",
+      "The best-fit line has an SSE of zero (that happens only when every point lies exactly on one line).",
+      "Residuals are measured at right angles to the line (they are vertical distances)."
+    ],
+    "assessmentOpportunities": [
+      "Given five points and two candidate lines, students compute the residuals and SSE for each line, decide which line fits better, and explain why the sum of the plain residuals would be a poor measure of fit."
+    ]
   },
-  "chapter": "07-simple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "least-squares-microsim",
+  "chapter": "07-simple-linear-regression",
+  "completion_status": "implemented"
 }

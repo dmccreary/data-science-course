@@ -1,45 +1,68 @@
 {
   "title": "Interactive Regression Builder MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for interactive regression builder microsim",
+  "subject": "Data Science",
+  "description": "Build a data set by clicking, dragging, and double-clicking points and watch the least-squares line, its equation, the meaning of its slope and intercept, R squared, RMSE, a residual plot, and a prediction update after every change.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Interactive Regression Builder MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Building and interpreting a simple linear regression model",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to construct data sets with a required slope, strength of fit, or outlier, and interpret the fitted model's coefficients, R², RMSE, and predictions."
     ],
     "bloomsTaxonomy": "Create",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Regression equation",
+      "Residuals and the sum of squared errors",
+      "Correlation"
+    ],
+    "standards": [],
+    "bloomVerb": "Construct"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Open-ended construction with immediate model feedback",
+    "keyQuestions": [
+      "Where does an added point change the slope the most, near the middle of the x range or at the ends?",
+      "Can two very different data sets have the same regression line? Build an example.",
+      "Why is a prediction far outside the data range less trustworthy even when R² is high?"
+    ],
+    "commonMisconceptions": [
+      "A high R² means the predictions are reliable everywhere (the model is only supported inside the range of the data).",
+      "The intercept always has a real-world meaning (when x = 0 is far outside the data it is only where the line happens to cross the axis).",
+      "One unusual point cannot change the line much (a single point at the end of the x range can move the slope a lot).",
+      "An R² near 0 means the line was computed wrongly (it means x explains almost none of the variation in y)."
+    ],
+    "assessmentOpportunities": [
+      "Students build a data set of at least eight points whose fitted slope is between 2 and 3 and whose R² is above 0.8. They write the equation, interpret both coefficients, and explain whether a prediction at an x value of their choice is an interpolation or an extrapolation."
+    ]
   },
-  "chapter": "07-simple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "interactive-regression-builder-microsim",
+  "chapter": "07-simple-linear-regression",
+  "completion_status": "implemented"
 }

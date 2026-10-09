@@ -1,45 +1,69 @@
 {
   "title": "Visualization Design MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for visualization design microsim",
+  "subject": "Data Science",
+  "description": "Design your own chart of a restaurant tips dataset by choosing the chart type, the columns, a color grouping, and a title, and watch the preview, the Plotly Express code, and a design check update together.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Visualization Design MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Designing a chart with Plotly Express",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to design a chart for a question about a dataset by selecting a chart type, columns, color grouping, and title, and justify the design."
     ],
     "bloomsTaxonomy": "Create",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Scatter, line, bar, histogram, and box plots",
+      "Categorical and numeric columns",
+      "Calling px functions with x, y, and color"
+    ],
+    "standards": [],
+    "bloomVerb": "Design"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 570
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Open-ended design with a live preview, generated code, and rule-based feedback",
+    "keyQuestions": [
+      "Why does the line chart of tip against total_bill look like a scribble?",
+      "What does the height of a bar mean when x is day and y is tip?",
+      "How does adding a color column change both the chart and the code?",
+      "What makes a title useful to someone seeing the chart for the first time?"
+    ],
+    "commonMisconceptions": [
+      "Any chart type works for any pair of columns (the type has to match whether the columns are numeric or categorical).",
+      "A bar chart of tip by day shows the average tip (px.bar adds up the rows, so it shows the total).",
+      "A histogram needs a y column (it counts rows in bins of x).",
+      "A line chart is just a scatter plot with the dots connected (the connections claim an order that this data does not have)."
+    ],
+    "assessmentOpportunities": [
+      "Students write their own question about the tips data, build a chart that answers it with no warnings in the design check, and hand in the generated code with two sentences that justify the chart type and the title."
+    ]
   },
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "visualization-design-microsim",
+  "completion_status": "implemented",
   "chapter": "05-data-visualization"
 }

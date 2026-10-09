@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for k-fold cross-validation animator.">
+        <meta name="description" content="Step through the rounds of K-fold cross-validation on 50 rows of data, see which fold is held out each time, and compare the score of each round with the mean of all K.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="K-Fold Cross-Validation Animator - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for k-fold cross-validation animator." >
+        <meta  property="og:description"  content="Step through the rounds of K-fold cross-validation on 50 rows of data, see which fold is held out each time, and compare the score of each round with the mean of all K." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/k-fold-cross-validation-animator/k-fold-cross-validation-animator.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="K-Fold Cross-Validation Animator - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for k-fold cross-validation animator." >
+        <meta  name="twitter:description"  content="Step through the rounds of K-fold cross-validation on 50 rows of data, see which fold is held out each time, and compare the score of each round with the mean of all K." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/k-fold-cross-validation-animator/k-fold-cross-validation-animator.png">
       
@@ -1794,6 +1794,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/k-fold-cross-validation-animator/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/k-fold-cross-validation-animator/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="k-fold-cross-validation-animator">K-Fold Cross-Validation Animator</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the K-Fold Cross-Validation Animator MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Each row of the grid is one round of cross-validation, and each small bar is one of 50 rows of housing data (size and price). In a round, the blue fold is held out as the test set and the green folds are used to fit a least-squares line. The bar and the number at the right give that round's <span class="arithmatex">\(R^2\)</span> on the held-out fold. The dashed red line marks the mean of the rounds run so far.</p>
+<p>The scatter plot shows the highlighted round. Green dots are the training rows, blue squares are the test rows, the black line is the fit from the green dots only, and the short blue segments are the errors on the test rows that the score is built from.</p>
+<p>Every number is computed from the data on screen. The folds are cut the way scikit-learn's <code>KFold</code> cuts them (consecutive blocks of rows, in order), so with the rows in file order the scores equal what <code>cross_val_score(model, X, y, cv=K, scoring='r2')</code> returns for this data. The standard deviation divides by K, as <code>cv_scores.std()</code> does.</p>
+<p>Two details differ from the chapter text. The chapter's list holds out fold 5 first. scikit-learn, and this MicroSim, hold out fold 1 first; the scores are the same either way. <strong>Shuffle Rows</strong> reorders the rows with the MicroSim's own seeded shuffle before the folds are cut, which is what <code>KFold(K, shuffle=True, random_state=...)</code> does, but the rows will not match scikit-learn's for the same number.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read Round 1. Fold 1 (blue) is held out and the line is fit on the other 40 rows. Its score appears at the right.</li>
+<li>Press <strong>Next Fold</strong> to run the next round, or <strong>Start</strong> to play the remaining rounds. <strong>Start</strong> becomes <strong>Pause</strong> while it runs.</li>
+<li>Watch the blue block move one fold to the right each round. When all the rounds are done, every row has been a test row exactly once.</li>
+<li>Click any finished round to see its fit again in the scatter plot.</li>
+<li>Change <strong>Number of folds (K)</strong> to 3 or 10 and run the rounds again. With K = 10 each test fold has only 5 rows, so the single-fold scores vary much more.</li>
+<li>With all rounds finished, press <strong>Shuffle Rows</strong> several times. Compare how much the score of Round 1 changes with how much the mean changes. <strong>Reset</strong> returns to file order and Round 1.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/k-fold-cross-validation-animator/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/k-fold-cross-validation-animator/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Train-test split, fitting a regression line, and <span class="arithmatex">\(R^2\)</span> as a test score.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how K-fold cross-validation rotates the test fold through the data and why the mean of the fold scores is a more reliable estimate than the score from a single train-test split.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace the rotation</strong> (4 min): With K = 5 students press <strong>Next Fold</strong> four times, recording which fold is tested in each round and that round's R². They confirm that the five test folds cover all 50 rows with no overlap.</li>
+<li><strong>Calculate</strong> (4 min): Students compute the mean of the five fold scores by hand and compare it with the Mean R² shown. They name the lowest and highest fold score and state what a single split could have reported.</li>
+<li><strong>Compare estimates</strong> (5 min): With all rounds finished, students press <strong>Shuffle Rows</strong> six times, recording the score of Round 1 and the mean each time. They compare the spread of the two columns and explain the difference.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are given five fold scores (for example 0.62, 0.71, 0.55, 0.68, 0.74). They compute the mean, state how many models were trained to get it, and explain in two or three sentences why the mean is a better estimate of performance than the 0.55 or the 0.74 that a single split might have produced.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/cross_validation.html">Cross-validation: evaluating estimator performance</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html">sklearn.model_selection.KFold</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">Cross-validation (statistics)</a>.</li>
 </ol>
 
 

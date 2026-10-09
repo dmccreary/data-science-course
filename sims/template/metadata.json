@@ -38,10 +38,10 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of template",
-    "Explore template through interactive visualization",
-    "Apply knowledge of template to solve problems",
-    "Experiment with parameters to observe their effects on template"
+    "Identify the standard files of a MicroSim package (main.html, sketch JavaScript, metadata.json, index.md) and the role of each",
+    "Explain how the responsive-width pattern uses updateCanvasSize() and windowResized() to fit a p5.js canvas to its container",
+    "Trace the p5.js program flow from setup() creating the canvas to draw() rendering the drawing and controls regions each frame",
+    "Create a new MicroSim by copying the template directory, renaming it in kebab-case, and updating its metadata and documentation"
   ],
   "bloomsTaxonomy": [
     "Remember",

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for lambda tuning playground.">
+        <meta name="description" content="Tune the regularization strength of a degree-10 polynomial model fitted with ridge, lasso, or elastic net, read the training and cross-validation scores and the coefficient sizes, and check the choice against the cross-validation best.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Lambda Tuning Playground - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for lambda tuning playground." >
+        <meta  property="og:description"  content="Tune the regularization strength of a degree-10 polynomial model fitted with ridge, lasso, or elastic net, read the training and cross-validation scores and the coefficient sizes, and check the choice against the cross-validation best." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/lambda-tuning-playground/lambda-tuning-playground.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Lambda Tuning Playground - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for lambda tuning playground." >
+        <meta  name="twitter:description"  content="Tune the regularization strength of a degree-10 polynomial model fitted with ridge, lasso, or elastic net, read the training and cross-validation scores and the coefficient sizes, and check the choice against the cross-validation best." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/lambda-tuning-playground/lambda-tuning-playground.png">
       
@@ -1836,6 +1836,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/lambda-tuning-playground/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/lambda-tuning-playground/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,67 @@
 
 
 <h1 id="lambda-tuning-playground">Lambda Tuning Playground</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Lambda Tuning Playground MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Fifteen points follow the chapter's cubic curve (dashed) plus noise. The model is a degree-10 polynomial, so it has 10 coefficients and an intercept for 15 points and can bend far more than the data justify. The slider sets <span class="arithmatex">\(\lambda\)</span>, the strength of the penalty that holds it back.</p>
+<p>Four linked views update together:</p>
+<ul>
+<li><strong>Fit</strong>: the fitted curve at the current <span class="arithmatex">\(\lambda\)</span>. It turns red when <span class="arithmatex">\(\lambda\)</span> is too small, green in the sweet spot, and orange when <span class="arithmatex">\(\lambda\)</span> is too large.</li>
+<li><strong>Scores</strong>: training <span class="arithmatex">\(R^2\)</span>, 5-fold cross-validation <span class="arithmatex">\(R^2\)</span>, the number of non-zero coefficients, and a verdict. The panel title is the scikit-learn call that gives the same model.</li>
+<li><strong>Score against λ</strong>: both scores for every <span class="arithmatex">\(\lambda\)</span> from 0.0001 to 1000. Training <span class="arithmatex">\(R^2\)</span> is highest at the far left. The star marks the highest cross-validation <span class="arithmatex">\(R^2\)</span>.</li>
+<li><strong>Coefficient size</strong>: the size of each standardized coefficient on a log scale. A coefficient that lasso or elastic net has set to exactly 0 has no bar.</li>
+</ul>
+<p>Here <span class="arithmatex">\(\lambda\)</span> is scikit-learn's <code>alpha</code>. The pipeline rescales <span class="arithmatex">\(x\)</span> to <span class="arithmatex">\(t = (x - 5)/5\)</span>, builds the powers <span class="arithmatex">\(t, t^2, \dots, t^{10}\)</span>, standardizes them, and fits <code>Ridge(alpha=λ)</code>, <code>Lasso(alpha=λ)</code>, or <code>ElasticNet(alpha=λ, l1_ratio=0.5)</code>. The scaler is refit inside each fold. Coefficients and scores were checked against scikit-learn 1.8. The best <span class="arithmatex">\(\lambda\)</span> is not comparable between methods: the penalties differ, and scikit-learn divides the squared error by <span class="arithmatex">\(2n\)</span> for lasso and elastic net but not for ridge.</p>
+<p>The test <span class="arithmatex">\(R^2\)</span> (200 new points) appears only when <span class="arithmatex">\(\lambda\)</span> is at the cross-validation best. A test set is for the final check, not for tuning.</p>
+<p>Not included: sliders for the polynomial degree and for <code>l1_ratio</code> (fixed at 10 and 0.5), and an animated search (<strong>Find Best λ</strong> moves straight to the answer).</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the opening view. λ is very small, the curve wiggles through the points, and cross-validation R² is far below training R².</li>
+<li>Drag the <strong>λ (alpha)</strong> slider to the right. Watch the curve smooth out, the bars shrink, and the green cross-validation dot climb toward the star.</li>
+<li>Keep going past the star until the verdict changes to an underfitting warning and the curve flattens toward a horizontal line.</li>
+<li>Bring λ back to the sweet spot by eye, then press <strong>Find Best λ</strong> to see how close you were. Read the test R² that appears.</li>
+<li>Choose <strong>Lasso</strong> and then <strong>Elastic Net</strong> and tune each one. Count the non-zero coefficients at the best λ for each method.</li>
+<li>Press <strong>New Data</strong> and tune again. Compare the best λ with the one you found before.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/lambda-tuning-playground/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/lambda-tuning-playground/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Polynomial regression, overfitting and underfitting, ridge and lasso penalties, and k-fold cross-validation.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to use cross-validation scores, the fitted curve, and the coefficient sizes to tune the regularization strength of ridge, lasso, and elastic net models and to recognize a lambda that is too small or too large.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Tune by eye</strong> (5 min): With ridge selected, students move λ until they judge the fit to be best, write down their λ and its cross-validation R², then press <strong>Find Best λ</strong> and record the best λ, its cross-validation R², and the test R².</li>
+<li><strong>Read the warning signs</strong> (5 min): Students record training R², cross-validation R², and the largest coefficient size at λ = 0.0001, at the best λ, and at λ = 100, and describe in one sentence each what the curve looks like.</li>
+<li><strong>Compare methods</strong> (6 min): Students find the best λ for lasso and elastic net, record the number of non-zero coefficients and which powers survive, and explain why the best λ is not the same number for the three methods.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown a score-against-λ chart with the current λ marked far to the left of the star, state whether the model is overfitting or underfitting, say what they expect the fitted curve and the coefficient sizes to look like, and name the direction to move λ.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html">sklearn.linear_model.RidgeCV</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html">sklearn.linear_model.ElasticNet</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">Cross-validation (statistics)</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 6, Linear Model Selection and Regularization.</li>
 </ol>
 
 

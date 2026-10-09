@@ -1,45 +1,69 @@
 {
   "title": "Regression Assumptions Checker MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for regression assumptions checker microsim",
+  "subject": "Data Science",
+  "description": "Examine four coordinated diagnostic plots for five data sets, decide which regression assumption each one violates, and then reveal traffic-light checks for linearity, homoscedasticity, and normality of residuals.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Regression Assumptions Checker MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Checking the assumptions of linear regression",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to diagnose violations of the linearity, homoscedasticity, and normality assumptions from a residual plot, a residual histogram, and a Q-Q plot."
     ],
     "bloomsTaxonomy": "Analyze",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Residuals",
+      "Histograms",
+      "Normal distribution",
+      "Interquartile range"
+    ],
+    "standards": [],
+    "bloomVerb": "Diagnose"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Comparison of coordinated diagnostic plots across data sets, with the diagnosis hidden until the student has decided",
+    "keyQuestions": [
+      "Which plot shows a curved relationship more clearly, the scatter plot or the residual plot? Why?",
+      "Why can the heteroscedastic data set also set off the normality light?",
+      "What would you need to know about a data set to judge independence?"
+    ],
+    "commonMisconceptions": [
+      "The normality assumption is about x and y themselves (it is about the residuals).",
+      "A high R² shows that the assumptions hold (a curved relationship can still give a high R²).",
+      "Independence can be read off these four plots (it depends on how the data were collected).",
+      "Any point off the Q-Q line means the model is useless (small departures are common and linear regression tolerates them)."
+    ],
+    "assessmentOpportunities": [
+      "Given printed residual-versus-fitted and Q-Q plots from three unknown data sets, students name the assumption that is violated in each (or state that none is), point to the feature of the plot that shows it, and explain why independence cannot be checked this way."
+    ]
   },
-  "chapter": "07-simple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "regression-assumptions-checker-microsim",
+  "chapter": "07-simple-linear-regression",
+  "completion_status": "implemented"
 }

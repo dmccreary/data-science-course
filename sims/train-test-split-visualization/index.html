@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for train-test split visualization.">
+        <meta name="description" content="Move a slider to split 100 rows of housing data into a training set and a test set, see which rows land on each side of the wall, and compare the model's score on rows it has seen with its score on rows it has not.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Train-Test Split Visualization - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for train-test split visualization." >
+        <meta  property="og:description"  content="Move a slider to split 100 rows of housing data into a training set and a test set, see which rows land on each side of the wall, and compare the model's score on rows it has seen with its score on rows it has not." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/train-test-split-visualization/train-test-split-visualization.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Train-Test Split Visualization - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for train-test split visualization." >
+        <meta  name="twitter:description"  content="Move a slider to split 100 rows of housing data into a training set and a test set, see which rows land on each side of the wall, and compare the model's score on rows it has seen with its score on rows it has not." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/train-test-split-visualization/train-test-split-visualization.png">
       
@@ -2676,6 +2676,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/train-test-split-visualization/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/train-test-split-visualization/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,58 @@
 
 
 <h1 id="train-test-split-visualization">Train-Test Split Visualization</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Train-Test Split Visualization MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>One hundred squares stand for the rows of a housing data set (square feet and price). The top strip shows the rows in file order. Below it the rows have been shuffled and cut once. The green squares to the left of the wall are the <strong>training set</strong> and the blue squares to the right are the <strong>test set</strong>. The number in each square is the row's position in the original file, so you can see that the test rows come from all over the data set and not from the end of it.</p>
+<p>The eye marks the rows the model studies when <code>model.fit(X_train, y_train)</code> runs. The crossed-out eye marks the rows that stay hidden until the final check with <code>model.score(X_test, y_test)</code>.</p>
+<p>The two scores in the lower panel are computed, not typed in. A least-squares line (price from square feet) is fit on the training rows only, and <span class="arithmatex">\(R^2\)</span> is then measured twice: on the training rows the model has already seen and on the test rows it has never seen. Only the second number is a fair estimate of how the model will do on new houses. The advice panel warns when fewer than 60% of the rows are used for training (less to learn from) or more than 90% (too few test rows for a steady score).</p>
+<p>The shuffle uses the MicroSim's own seeded generator. The seed plays the role of <code>random_state</code>: the same seed always gives the same split, but the rows chosen will not match the rows scikit-learn picks for that number.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default view, an 80/20 split of 100 rows. There are 16 columns of five training rows to the left of the wall and 4 columns of five test rows to the right.</li>
+<li>Drag the <strong>Training share</strong> slider from 50% to 95%. The wall moves, the sample counts change, and so does <code>test_size</code> in the code line under the title.</li>
+<li>Hover over any square to read that row's square feet and price and to find the same row in the other picture.</li>
+<li>Press <strong>New Shuffle</strong> several times. Compare how much the training <span class="arithmatex">\(R^2\)</span> and the test <span class="arithmatex">\(R^2\)</span> change from one shuffle to the next.</li>
+<li>Set the slider to 95% and press <strong>New Shuffle</strong> again. With only 5 test rows, the test <span class="arithmatex">\(R^2\)</span> swings more widely than it did at 80%.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/train-test-split-visualization/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/train-test-split-visualization/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Rows and columns of a data set, fitting a regression line, and <span class="arithmatex">\(R^2\)</span> as a score for a fit.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how a train-test split divides a data set and why the test rows must stay hidden from the model until the final evaluation.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (4 min): Students move the slider across its range and record the number of training and testing samples at 50%, 70%, 80%, and 95%. They hover over three blue squares and note that the test rows come from different parts of the file.</li>
+<li><strong>Compare scores</strong> (5 min): At 80% students press <strong>New Shuffle</strong> five times and write down the training and test R² each time, then repeat at 95%. They describe which score is steadier and at which setting.</li>
+<li><strong>Explain</strong> (4 min): In pairs, students explain in two sentences why the score on the training rows cannot serve as the estimate for new data, and what would go wrong if test rows were used during fitting.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a data set of 500 rows and <code>test_size=0.3</code>, students state how many rows are in each set, say which set <code>fit</code> and <code>score</code> should each receive, and explain why a 99/1 split would give an unreliable test score.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">sklearn.model_selection.train_test_split</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">Training, validation, and test data sets</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 5, Resampling Methods.</li>
 </ol>
 
 

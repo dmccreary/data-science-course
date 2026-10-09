@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for data inspection command center.">
+        <meta name="description" content="Choose a pandas inspection command and read its output for an eight-row DataFrame, with the cells the command used highlighted.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Data Inspection Command Center - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for data inspection command center." >
+        <meta  property="og:description"  content="Choose a pandas inspection command and read its output for an eight-row DataFrame, with the cells the command used highlighted." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/data-inspection-command-center/data-inspection-command-center.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Data Inspection Command Center - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for data inspection command center." >
+        <meta  name="twitter:description"  content="Choose a pandas inspection command and read its output for an eight-row DataFrame, with the cells the command used highlighted." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/data-inspection-command-center/data-inspection-command-center.png">
       
@@ -1347,6 +1347,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/data-inspection-command-center/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/data-inspection-command-center/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="data-inspection-command-center">Data Inspection Command Center</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Data Inspection Command Center MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The left panel holds a DataFrame <code>df</code> of eight students with five columns. One age and one score are missing. The right panel is a notebook cell: the command you chose and the output pandas gives for it, with a note on how to read that output. Seven commands are available:</p>
+<ul>
+<li><code>df.head(n)</code> and <code>df.tail(n)</code>: the first or last n rows</li>
+<li><code>df.shape</code>: the pair (rows, columns)</li>
+<li><code>df.info()</code>: column names, non-null counts, data types, and memory use</li>
+<li><code>df.describe()</code>: summary statistics for the numeric columns</li>
+<li><code>df.columns</code> and <code>df.dtypes</code>: the column names, and the data type of each column</li>
+</ul>
+<p>The table is highlighted to show what each command looked at, for example the first n rows for <code>head</code>, the numeric columns for <code>describe</code>, and the <code>NaN</code> cells for <code>info</code>.</p>
+<p>Every output is computed from the table. <code>describe()</code> uses the sample standard deviation and linearly interpolated quartiles, as pandas does, and the outputs were checked against pandas 2.3. Text columns have the dtype <code>object</code>, as in the chapter. From pandas 3 on they are labeled <code>str</code> instead.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Pick a command from the <strong>Command</strong> menu. The notebook cell shows the code and its output.</li>
+<li>For <code>df.head(n)</code> and <code>df.tail(n)</code>, drag the <strong>Rows n</strong> slider from 1 to 8 and watch which rows are highlighted in <code>df</code>.</li>
+<li>Before choosing <code>df.shape</code>, <code>df.columns</code>, or <code>df.dtypes</code>, predict the output from the table, then check.</li>
+<li>Choose <code>df.info()</code> and find the two columns whose non-null count is below 8. Find the matching NaN cells in the table.</li>
+<li>Choose <code>df.describe()</code> and work out which columns are missing from the output, and why.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/data-inspection-command-center/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/data-inspection-command-center/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The parts of a DataFrame, loading a CSV file with read_csv, and the meaning of mean and quartiles.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to use head, tail, shape, info, describe, columns, and dtypes to inspect a DataFrame and interpret each output, including finding missing values from the non-null counts.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict and check</strong> (5 min): For shape, columns, and dtypes, students write the output they expect from the table before selecting the command.</li>
+<li><strong>Head and tail</strong> (4 min): Students set n to 3 and compare head with tail, then find the smallest n for which head shows a NaN.</li>
+<li><strong>Find the missing data</strong> (6 min): Using info() and describe(), students state how many values are missing in each column and explain why count is 7 rather than 8.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown the info() output from the chapter (1000 entries, four columns). They state the shape of the DataFrame, name the columns with missing values and how many are missing in each, and say which columns describe() would summarize.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/user_guide/basics.html">Essential basic functionality</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html">pandas.DataFrame.info</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html">pandas.DataFrame.describe</a>.</li>
 </ol>
 
 

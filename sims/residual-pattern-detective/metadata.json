@@ -1,45 +1,69 @@
 {
   "title": "Residual Pattern Detective",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for residual pattern detective",
+  "subject": "Data Science",
+  "description": "Study four unlabeled residual plots, decide what each one says about a linear model, and get feedback on your diagnosis.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Residual Pattern Detective",
+    "subjectArea": "Data Science",
+    "topic": "Residual analysis and regression diagnostics",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to judge from a residual plot whether a linear model is adequate, identify curved, funnel-shaped, and clustered patterns, and recommend a fix for each."
     ],
     "bloomsTaxonomy": "Evaluate",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Simple linear regression",
+      "Residuals",
+      "Scatter plots",
+      "Standard deviation"
+    ],
+    "standards": [],
+    "bloomVerb": "Judge"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 635
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Judgment first, then corrective feedback with evidence",
+    "keyQuestions": [
+      "What should a residual plot look like when a linear model fits well?",
+      "Why does a curved residual pattern mean the model is missing something, even if R-squared is high?",
+      "Which fix matches each pattern: polynomial features, a log transformation of the target, or an added group variable?"
+    ],
+    "commonMisconceptions": [
+      "A high R-squared means the model is fine (a model can score well and still leave a clear pattern in its residuals).",
+      "Residuals that average to zero show the model is unbiased everywhere (least squares makes the overall mean zero, but the mean can be far from zero in parts of the plot).",
+      "Any spread in the residuals is a problem (even spread around zero is what a good model leaves, and the problem is a pattern in the spread).",
+      "A funnel shape means the slope is wrong (the line can be right on average while the size of the errors changes with the prediction)."
+    ],
+    "assessmentOpportunities": [
+      "Shown a residual plot they have not seen before, students name the pattern, state what it implies about the model, and recommend a next step, citing what they see in the plot as evidence."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "residual-pattern-detective",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

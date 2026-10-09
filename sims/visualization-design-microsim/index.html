@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for visualization design microsim.">
+        <meta name="description" content="Design your own chart of a restaurant tips dataset by choosing the chart type, the columns, a color grouping, and a title, and watch the preview, the Plotly Express code, and a design check update together.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Visualization Design MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for visualization design microsim." >
+        <meta  property="og:description"  content="Design your own chart of a restaurant tips dataset by choosing the chart type, the columns, a color grouping, and a title, and watch the preview, the Plotly Express code, and a design check update together." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/visualization-design-microsim/visualization-design-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Visualization Design MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for visualization design microsim." >
+        <meta  name="twitter:description"  content="Design your own chart of a restaurant tips dataset by choosing the chart type, the columns, a color grouping, and a title, and watch the preview, the Plotly Express code, and a design check update together." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/visualization-design-microsim/visualization-design-microsim.png">
       
@@ -2865,6 +2865,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/visualization-design-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/visualization-design-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,63 @@
 
 
 <h1 id="visualization-design-microsim">Visualization Design MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="572" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Visualization Design MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Visualization Design MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>This playground lets you design a chart and see three things update together.</p>
+<ul>
+<li><strong>The preview</strong> draws your chart from 60 sample rows shaped like Plotly's built-in tips dataset (<code>total_bill</code>, <code>tip</code>, <code>size</code>, <code>day</code>, <code>time</code>, <code>smoker</code>).</li>
+<li><strong>The code panel</strong> shows the Plotly Express call that makes the same chart. You can type it into a notebook. It loads the real 244-row tips dataset, so the chart you get has more points than the preview.</li>
+<li><strong>The design check</strong> comments on your choices. A green tick means the choice suits the data. An orange mark is a warning with a suggestion.</li>
+</ul>
+<p>The preview follows what Plotly Express really does with each combination, including the ones that do not work well. A bar chart stacks rows that share an x value, so each bar is a total. A histogram counts rows and ignores y. A line chart joins the rows in table order, which gives a meaningless zigzag here because the rows have no time order. A box plot with a numeric x gives every row its own box. Box plots use quartiles with whiskers that reach the last point within 1.5 IQR, and points beyond that are drawn as outliers.</p>
+<p>Not included: marker size, line width, a grid toggle, and file downloads. Zoom and hover are covered in the Plotly Interactive Features MicroSim.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start with the default scatter plot of <code>tip</code> against <code>total_bill</code>. Read the code panel and match each argument to something in the preview.</li>
+<li>Change <strong>Chart</strong> to each type in turn and read the first line of the design check each time.</li>
+<li>Change <strong>x</strong> to <code>day</code> and try Bar, Box, and Scatter. Decide which one tells you the most.</li>
+<li>Use <strong>Color</strong> to split the data by <code>time</code> or <code>smoker</code>, and look for the legend and the new <code>color=</code> argument.</li>
+<li>Type your own <strong>Title</strong>. A good title says what the reader should notice. Delete the title and see what the design check says.</li>
+<li>Build a chart with three green ticks that answers a question of your own, then type the code into a notebook and run it.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/visualization-design-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/visualization-design-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"572"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The basic plot types from this chapter and a first look at Plotly Express.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Create (L6)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to design a chart for a question about a dataset by selecting a chart type, columns, color grouping, and title, and justify the design.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore the options</strong> (5 min): Students try every chart type with the default columns and record which ones earn a warning and why.</li>
+<li><strong>Design to a brief</strong> (8 min): Students build a chart for each brief and write down the code. (1) Do people tip more at dinner than at lunch? (2) Which day brings in the most money? (3) How are bill sizes distributed?</li>
+<li><strong>Critique</strong> (5 min): Partners compare their charts for one brief, discuss whose title and chart type make the answer easier to see, and revise.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students write their own question about the tips data, build a chart that answers it with no warnings in the design check, and hand in the generated code with two sentences that justify the chart type and the title.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/plotly-express/">Plotly Express in Python</a>.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/box-plots/">Box plots in Python</a>.</li>
+<li>McKinney, Wes. <em>Python for Data Analysis</em>, 3rd ed. O'Reilly Media, 2022. Chapter 9, Plotting and Visualization.</li>
 </ol>
 
 

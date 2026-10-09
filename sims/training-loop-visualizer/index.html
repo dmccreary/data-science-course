@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for training loop visualizer.">
+        <meta name="description" content="Step through the five lines of a PyTorch training loop on a one-neuron model and watch the weight, bias, gradients, and loss change after each line.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Training Loop Visualizer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for training loop visualizer." >
+        <meta  property="og:description"  content="Step through the five lines of a PyTorch training loop on a one-neuron model and watch the weight, bias, gradients, and loss change after each line." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/training-loop-visualizer/training-loop-visualizer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Training Loop Visualizer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for training loop visualizer." >
+        <meta  name="twitter:description"  content="Step through the five lines of a PyTorch training loop on a one-neuron model and watch the weight, bias, gradients, and loss change after each line." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/training-loop-visualizer/training-loop-visualizer.png">
       
@@ -2697,6 +2697,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/training-loop-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/training-loop-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,65 @@
 
 
 <h1 id="training-loop-visualizer">Training Loop Visualizer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Training Loop Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The model is a single neuron, <code>nn.Linear(1, 1)</code>, which predicts <span class="arithmatex">\(wx + b\)</span>. It is trained on 8 points that lie near the line <span class="arithmatex">\(y = 2x + 1\)</span>, all 8 in one batch, with <code>nn.MSELoss</code> and <code>optim.SGD</code>. Every number on screen is computed the way PyTorch computes it:</p>
+<ol>
+<li><strong>Zero gradients</strong>, <code>optimizer.zero_grad()</code>, clears the stored gradients. <code>backward()</code> adds each new gradient to whatever is already in <code>.grad</code>, so without this line the gradients of earlier iterations pile up.</li>
+<li><strong>Forward pass</strong>, <code>pred = model(x)</code>, computes <span class="arithmatex">\(wx + b\)</span> for every point.</li>
+<li><strong>Compute loss</strong>, <code>loss = criterion(pred, y)</code>, averages the squared errors <span class="arithmatex">\((\text{pred} - y)^2\)</span>.</li>
+<li><strong>Backward pass</strong>, <code>loss.backward()</code>, stores the slopes of the loss: the mean of <span class="arithmatex">\(2(\text{pred} - y)x\)</span> in <code>w.grad</code> and the mean of <span class="arithmatex">\(2(\text{pred} - y)\)</span> in <code>b.grad</code>. The weight and bias do not change.</li>
+<li><strong>Update weights</strong>, <code>optimizer.step()</code>, replaces <code>w</code> with <code>w - lr * w.grad</code> and <code>b</code> with <code>b - lr * b.grad</code>.</li>
+</ol>
+<p>The panels show the line that just ran, an explanation with the actual numbers, the batch as a table, the model state, the data with the model's line, and the loss in every iteration. The dashed line on the loss plot is the lowest loss any straight line can reach on these points (the least-squares fit, 0.0706). The loss curve can approach it but cannot go below it.</p>
+<p>After <code>zero_grad()</code> the sim shows <code>None</code> for the gradients, which is what PyTorch 2 stores (earlier versions stored zeros). The chapter's loop takes mini-batches from a data loader. Here one batch holds all the data, so one iteration is also one epoch.</p>
+<p>Not included: animated data flow, mini-batches, a running-average loss, and an animation speed control. Nothing moves until a button is pressed.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Press <strong>Step</strong> five times. After each press read which line ran, the explanation, and the highlighted rows of the Model state panel.</li>
+<li>Check the result of step 5 by hand: new w = old w − lr × w.grad.</li>
+<li>Press <strong>Run 10 Iterations</strong> twice. The model line turns to fit the points and the loss curve falls toward the dashed line.</li>
+<li>Press <strong>Reset</strong>, set the <strong>Learning rate</strong> to 0.01, and run 20 iterations. Repeat with 0.50, 0.70, and 0.80 and compare the loss curves. At 0.80 keep running until the sim stops.</li>
+<li>Press <strong>Reset</strong>, set the learning rate back to 0.10, check <strong>Skip zero_grad()</strong>, and run 30 iterations. Then step through one iteration and read how w.grad is built in step 4.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/training-loop-visualizer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/training-loop-visualizer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Simple linear regression, mean squared error, and gradient descent as repeated steps downhill on the loss.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to trace the five steps of a PyTorch training loop, state what each step changes, and analyze how the learning rate and a missing zero_grad() call affect the loss curve.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace</strong> (5 min): Students step through the first iteration and fill in a table of w, b, w.grad, b.grad, and loss after each of the five lines, marking the values each line changed.</li>
+<li><strong>Compare</strong> (7 min): Students run 20 iterations at learning rates 0.01, 0.10, 0.50, and 0.70, pressing Reset between runs. They record the last loss of each run and describe the shape of each loss curve.</li>
+<li><strong>Diagnose</strong> (5 min): Students check Skip zero_grad(), run 30 iterations, and use the result lines of step 4 to explain why the loss rises and falls instead of settling.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown a training loop whose loss swings up and down and never settles although the learning rate is small. They name the missing line, explain what PyTorch does with gradients when it is missing, and write the five steps in a correct order.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>PyTorch Tutorials. <a href="https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html">Optimizing Model Parameters</a>.</li>
+<li>PyTorch documentation. <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.Optimizer.zero_grad.html">torch.optim.Optimizer.zero_grad</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">Stochastic gradient descent</a>.</li>
 </ol>
 
 

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for duplicate handling decision tree.">
+        <meta name="description" content="Examine seven small tables that contain duplicates, follow a decision tree to the right strategy, and see what each pandas strategy does to the same rows.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Duplicate Handling Decision Tree - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for duplicate handling decision tree." >
+        <meta  property="og:description"  content="Examine seven small tables that contain duplicates, follow a decision tree to the right strategy, and see what each pandas strategy does to the same rows." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/duplicate-handling-decision-tree/duplicate-handling-decision-tree.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Duplicate Handling Decision Tree - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for duplicate handling decision tree." >
+        <meta  name="twitter:description"  content="Examine seven small tables that contain duplicates, follow a decision tree to the right strategy, and see what each pandas strategy does to the same rows." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/duplicate-handling-decision-tree/duplicate-handling-decision-tree.png">
       
@@ -1557,6 +1557,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/duplicate-handling-decision-tree/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/duplicate-handling-decision-tree/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,65 @@
 
 
 <h1 id="duplicate-handling-decision-tree">Duplicate Handling Decision Tree</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="627" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Duplicate Handling Decision Tree MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Not every duplicate should be removed, and not every duplicate should be removed the same way. This MicroSim draws the decision tree for the chapter's duplicate-handling strategies and lets you test it on seven cases.</p>
+<p>The questions run down the left side of the tree. Is the duplication intentional? Are the rows exactly identical? Which columns identify a record? Do the other columns differ in a way that matters? Which version is correct? The answers lead to seven strategies. Green boxes are safe actions, yellow boxes need investigation, and red boxes call for care.</p>
+<p>Clicking a strategy applies it to the case table the way pandas would, so you can compare strategies on the same rows:</p>
+<ul>
+<li><strong>drop_duplicates()</strong> drops a row only when every column matches an earlier row.</li>
+<li><strong>subset=keys</strong> and <strong>keep='first'</strong> give the same table, because <code>keep="first"</code> is the default.</li>
+<li><strong>keep='last'</strong> keeps the last row for each key.</li>
+<li><strong>groupby().agg()</strong> is shown as <code>df.groupby(key, as_index=False).first()</code>, which takes the first non-missing value in each column.</li>
+<li><strong>Manual review</strong> uses <code>df.duplicated(subset=key, keep=False)</code> to flag every copy without removing anything.</li>
+</ul>
+<p>The feedback says whether the choice fits the case. Case A opens with its path shown as a worked example. The third question is worded more carefully than in the chapter outline. Once rows are known not to be identical, their other columns always differ in some way, so the real question is whether the difference matters.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read case A with <strong>Show the path</strong> on. Follow the green path through the tree and compare the Before and After tables.</li>
+<li>Choose another case from the menu. The path is hidden again.</li>
+<li>Read the story and the rows, then answer the questions of the tree from the top.</li>
+<li>Click the strategy at the end of your path. Read the After table and the feedback.</li>
+<li>Click other strategies to see what they would do to the same rows, then turn on <strong>Show the path</strong> to check your reasoning.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/duplicate-handling-decision-tree/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/duplicate-handling-decision-tree/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"627"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Detecting duplicate rows with duplicated() and removing them with drop_duplicates().</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to analyze a table that contains duplicate records and select the handling strategy that fits it, justifying the choice with the decision tree.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Worked example</strong> (3 min): Students trace the highlighted path for case A and explain why an exact copy is safe to drop.</li>
+<li><strong>Solve the cases</strong> (10 min): Students work through cases B to G. For each one they write down their path through the tree before clicking a strategy.</li>
+<li><strong>Compare strategies</strong> (5 min): For case D and case F students apply every strategy and record what each one loses or keeps, then explain why only one is acceptable.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a new table with duplicates and a one-line description of where it came from, students name the strategy they would use, write the pandas call, and justify each answer they gave on the way down the tree.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html">pandas.DataFrame.drop_duplicates</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html">pandas.DataFrame.duplicated</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Record_linkage">Record linkage</a>.</li>
 </ol>
 
 

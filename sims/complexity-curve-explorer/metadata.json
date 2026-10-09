@@ -1,45 +1,69 @@
 {
   "title": "Complexity Curve Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for complexity curve explorer",
+  "subject": "Data Science",
+  "description": "Set the degree of a polynomial fit to noisy data, compare its training and test error, and judge where the model moves from underfitting through a sweet spot to overfitting.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Complexity Curve Explorer",
+    "subjectArea": "Data Science",
+    "topic": "Model complexity, underfitting, and overfitting",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to judge whether a model is underfitting, well fit, or overfitting by comparing its training and test error, and justify a choice of model complexity."
     ],
     "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Mean squared error",
+      "Train-test split",
+      "Polynomial regression",
+      "Underfitting and overfitting"
+    ],
+    "standards": [],
+    "bloomVerb": "Judge"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 615
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided judgment with immediate feedback from training and test error",
+    "keyQuestions": [
+      "Why does the training error never increase when the degree goes up?",
+      "What do the training and test errors look like for an underfit model? For an overfit model?",
+      "If two degrees have nearly the same test error, which should you choose, and why?"
+    ],
+    "commonMisconceptions": [
+      "The model with the lowest training error is the best model (training error keeps falling even after the model starts fitting noise).",
+      "A more complex model is always more accurate (past the sweet spot, the test error rises).",
+      "A curve that passes close to every training point has learned the pattern (it may have memorized the noise and will predict new points badly).",
+      "The best degree is a fixed property of the data (with a small test set it changes from sample to sample)."
+    ],
+    "assessmentOpportunities": [
+      "Given a table of training and test MSE for five models of increasing complexity, students label each model as underfitting, a good fit, or overfitting, choose one model, and justify the choice by referring to both errors and to model simplicity."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "complexity-curve-explorer",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

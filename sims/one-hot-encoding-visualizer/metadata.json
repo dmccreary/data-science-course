@@ -1,45 +1,69 @@
 {
   "title": "One-Hot Encoding Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for one-hot encoding visualizer",
+  "subject": "Data Science",
+  "description": "See what pd.get_dummies returns for a categorical column, switch drop_first and dtype, add a new category, and trace each row to the column that marks it.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "One-Hot Encoding Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "One-hot encoding and dummy variables",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how one-hot encoding turns a categorical column into True/False columns, predict the columns `pd.get_dummies` creates with and without `drop_first=True`, and explain why dropping one column avoids the dummy variable trap."
     ],
-    "bloomsTaxonomy": "Create",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "pandas DataFrame",
+      "Categorical variables",
+      "Multiple linear regression",
+      "Multicollinearity"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Before-and-after tables with switches for the encoder's options and row-by-row tracing",
+    "keyQuestions": [
+      "Why does every row sum to 1 when all the columns are kept?",
+      "How can you tell which category a row belongs to when it is False in every column?",
+      "What decides which category pandas drops, and how could that surprise you?"
+    ],
+    "commonMisconceptions": [
+      "Categories can simply be replaced by the numbers 1, 2, 3 (that invents an order and equal spacing that the categories do not have).",
+      "drop_first=True throws away the information about one category (that category is still identified by the rows that are False in every remaining column).",
+      "pandas drops the last category, or the least common one (it drops the first label in sorted order).",
+      "get_dummies returns 1s and 0s (current pandas returns True and False unless dtype=int is passed; both behave the same way in arithmetic)."
+    ],
+    "assessmentOpportunities": [
+      "Given a column `size` with the values Small, Medium, Large, Medium, students write the column names and the first two rows returned by `pd.get_dummies(df, columns=['size'], drop_first=True)`, name the reference category, and explain why it is Large and not Small."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "one-hot-encoding-visualizer",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

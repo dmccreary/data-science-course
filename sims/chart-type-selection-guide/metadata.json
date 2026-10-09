@@ -1,45 +1,68 @@
 {
   "title": "Chart Type Selection Guide",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for chart type selection guide",
+  "subject": "Data Science",
+  "description": "Follow a decision tree from what you want to show to the chart that fits your data, then practice on ten short data scenarios with immediate feedback.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Chart Type Selection Guide",
+    "subjectArea": "Data Science",
+    "topic": "Choosing a chart type",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to choose an appropriate chart type for a dataset by identifying the goal of the visualization and the structure of the data."
     ],
-    "bloomsTaxonomy": "Analyze",
+    "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Line, scatter, bar, histogram, box, and pie charts",
+      "Categorical and numeric variables",
+      "Basic Matplotlib plotting calls"
+    ],
+    "standards": [],
+    "bloomVerb": "Choose"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 593
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Decision tree with worked examples, followed by scenario practice with immediate feedback",
+    "keyQuestions": [
+      "What is the difference between showing a comparison and showing a composition?",
+      "Why does the number of categories change which bar chart to use?",
+      "When is a pie chart acceptable, and what should replace it when it is not?"
+    ],
+    "commonMisconceptions": [
+      "The chart type depends only on the data (the same data can need different charts for different questions).",
+      "Pie charts work for any number of categories (beyond about five slices the angles are too hard to compare).",
+      "A histogram is a bar chart (a histogram bins one numeric variable, while a bar chart compares separate categories).",
+      "3D effects make a chart clearer (perspective distorts the sizes the reader is supposed to compare)."
+    ],
+    "assessmentOpportunities": [
+      "Given four new descriptions of data and a question about each, students name the goal, the chart type, and the reason, and identify one chart that would be a poor choice for each and why."
+    ]
   },
-  "chapter": "05-data-visualization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "chart-type-selection-guide",
+  "chapter": "05-data-visualization",
+  "completion_status": "implemented"
 }

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for error types visualizer.">
+        <meta name="description" content="Fit a polynomial of adjustable degree to training points, compare its training error with its error on unseen test points, judge whether it is underfitting or overfitting, and then reveal the diagnosis.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Error Types Visualizer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for error types visualizer." >
+        <meta  property="og:description"  content="Fit a polynomial of adjustable degree to training points, compare its training error with its error on unseen test points, judge whether it is underfitting or overfitting, and then reveal the diagnosis." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/error-types-visualizer/error-types-visualizer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Error Types Visualizer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for error types visualizer." >
+        <meta  name="twitter:description"  content="Fit a polynomial of adjustable degree to training points, compare its training error with its error on unseen test points, judge whether it is underfitting or overfitting, and then reveal the diagnosis." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/error-types-visualizer/error-types-visualizer.png">
       
@@ -1578,6 +1578,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/error-types-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/error-types-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,58 @@
 
 
 <h1 id="error-types-visualizer">Error Types Visualizer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="652" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Error Types Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The same fitted curve is drawn on two scatter plots. On the left are the <strong>training points</strong> the polynomial was fit to. On the right are 40 <strong>test points</strong> the fit never saw. Thin vertical lines are the residuals, and each panel reports its mean squared error, <span class="arithmatex">\(\text{MSE} = \frac{1}{n}\sum (y_i - \hat{y}_i)^2\)</span>.</p>
+<p>The data come from one cubic pattern (dashed gray) plus random noise. The bars compare the two errors at the current degree and mark the noise variance <span class="arithmatex">\(\sigma^2\)</span>, the error that even a perfect model would make on average on new data. As the degree rises the training error can only fall, because a more flexible curve can always get closer to its own points. The test error falls at first and then climbs when the curve starts to follow the noise.</p>
+<p>The diagnosis is hidden until you ask for it. Checking the box reveals the training and test MSE for every degree from 1 to 12 and a verdict computed from them: <strong>good fit</strong> when the test MSE is within 25% of the lowest test MSE any degree reaches, <strong>underfitting</strong> below that degree, and <strong>overfitting</strong> above it.</p>
+<p>The fits are ordinary least squares. Test errors above 1000 are shown as "over 1000": a degree 12 curve fit to 15 points can miss a test point by a very wide margin.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Start at degree 1. Compare the two MSE values and the bars, and decide: underfitting, good fit, or overfitting?</li>
+<li>Raise the <strong>Polynomial degree</strong> one step at a time. Watch the training MSE fall while the test MSE falls and then rises.</li>
+<li>Pick the degree you judge best, then check <strong>Show diagnosis and error curves</strong> to see the verdict and where the test error is lowest.</li>
+<li>Set the degree to 10 and move <strong>Training set size</strong> from 15 to 60. More training data pulls the wild curve back toward the pattern.</li>
+<li>Change the <strong>Noise level</strong> and press <strong>New Data</strong> to see how much the best degree and the two errors depend on the particular sample.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/error-types-visualizer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/error-types-visualizer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"652"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Scatter plots, residuals, mean squared error, polynomial regression, and the train-test split.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to judge whether a model is underfitting, well fit, or overfitting by comparing its training error with its test error.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Judge, then check</strong> (5 min): With the diagnosis hidden, students record the training and test MSE for degrees 1, 3, 6, and 10, label each as underfitting, good fit, or overfitting, then reveal the diagnosis and compare.</li>
+<li><strong>Find the pattern</strong> (5 min): With the curves revealed, students describe the shape of each curve in one sentence and explain why the training curve never rises.</li>
+<li><strong>More data, more noise</strong> (5 min): Students fix the degree at 10 and record the test MSE at training sizes 15, 30, and 60, then repeat at a higher noise level and state what each change did to the gap between the two errors.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a table of training and test MSE for five models of increasing complexity, students label each model as underfitting, good fit, or overfitting, choose the model to use, and justify the choice with the gap between the two errors.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Overfitting">Overfitting</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 2, Statistical Learning (assessing model accuracy).</li>
 </ol>
 
 

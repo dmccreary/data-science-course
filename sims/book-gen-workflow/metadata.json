@@ -37,18 +37,16 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of book generation workflow",
-    "Explore book generation workflow through interactive visualization",
-    "Apply knowledge of book generation workflow to solve problems",
-    "Test understanding of book generation workflow through interactive exercises"
+    "Sequence the pipeline stages for generating an intelligent textbook: course description, Bloom's Taxonomy alignment, concept enumeration, concept dependencies, and learning graph",
+    "Explain how a learning graph of concept dependencies orders content so foundational concepts precede advanced topics",
+    "Identify the book-level and chapter-level outputs (glossary, FAQ, chapters, figures, MicroSims, assessments) that a learning graph powers",
+    "Describe the role of the 2001 Bloom's Taxonomy in categorizing a course's learning objectives across six cognitive levels",
+    "Distinguish concept enumeration (listing what students must master) from concept dependency mapping (ordering how they learn it)"
   ],
   "bloomsTaxonomy": [
-    "Remember",
     "Understand",
     "Apply",
-    "Analyze",
-    "Evaluate",
-    "Create"
+    "Analyze"
   ],
   "pedagogical": {
     "pattern": "assessment",

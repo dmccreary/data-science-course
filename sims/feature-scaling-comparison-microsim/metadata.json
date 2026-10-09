@@ -1,45 +1,67 @@
 {
   "title": "Feature Scaling Comparison MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for feature scaling comparison microsim",
+  "subject": "Data Science",
+  "description": "Compare a histogram and its summary statistics before and after min-max, standard, robust, and log scaling to see which methods change only the numbers and which change the shape.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Feature Scaling Comparison MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Feature scaling and normalization",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how min-max, standard, robust, and log scaling each change the values and the shape of a distribution, and how outliers affect each method."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Histograms",
+      "Mean, median, and standard deviation",
+      "Quartiles and the interquartile range"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 550
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side comparison of a distribution before and after a learner-chosen transformation",
+    "keyQuestions": [
+      "Why do the bars look the same after min-max, standard, and robust scaling?",
+      "With outliers present, why is the middle 50% so narrow after min-max scaling?",
+      "Which method would you choose for incomes, and why?"
+    ],
+    "commonMisconceptions": [
+      "Standard scaling makes data normally distributed (it changes the mean and spread, not the shape).",
+      "Robust scaling removes outliers (the outliers stay in the data, but they barely affect the median and IQR used for scaling).",
+      "Scaling changes the relationships in the data (the three linear methods keep every value in the same relative position)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown an unlabeled before and after pair of histograms with their statistics and must name the scaling method used and give the evidence. They then recommend a method for a column with a few very large values and justify it."
+    ]
   },
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "feature-scaling-comparison-microsim",
+  "completion_status": "implemented",
   "chapter": "04-data-cleaning"
 }

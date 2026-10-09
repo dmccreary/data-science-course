@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for model evaluation workflow.">
+        <meta name="description" content="Step through the ten-step model evaluation workflow on a real data set, see which scores exist at each step, and compare the honest order of operations with one that leaks the test data.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Model Evaluation Workflow - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for model evaluation workflow." >
+        <meta  property="og:description"  content="Step through the ten-step model evaluation workflow on a real data set, see which scores exist at each step, and compare the honest order of operations with one that leaks the test data." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/model-evaluation-workflow/model-evaluation-workflow.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Model Evaluation Workflow - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for model evaluation workflow." >
+        <meta  name="twitter:description"  content="Step through the ten-step model evaluation workflow on a real data set, see which scores exist at each step, and compare the honest order of operations with one that leaks the test data." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/model-evaluation-workflow/model-evaluation-workflow.png">
       
@@ -2046,6 +2046,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/model-evaluation-workflow/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/model-evaluation-workflow/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="model-evaluation-workflow">Model Evaluation Workflow</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="652" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Model Evaluation Workflow MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The flowchart shows the ten steps of an honest model evaluation, arranged in four swimlanes by the data each step may touch: the full dataset, the training data, the validation or cross-validation folds inside the training data, and the test data. A dashed gray line carries the held-out test rows from the split straight to step 8, across a red <strong>point of no return</strong>. The padlock on the Test Data lane opens only at step 8.</p>
+<p>The workflow is run on a real data set of 100 rows (80 training, 20 test), with polynomial degrees 1 to 5 as the candidate models. That is the same grid as the chapter's <code>GridSearchCV</code> example. As you step through, the panel on the right says what the step computes on this data, and the table fills in with the scores that exist at that point: Train R² and cross-validation scores during development, and a single Test R², for the selected model only, at the end.</p>
+<p>The checkbox <strong>Use the test data to choose the model (a leak)</strong> switches to a leaky version of the same workflow. Red arrows show test rows flowing into the two steps where a choice is made, every candidate's Test R² appears early, and the model with the highest test score is selected. Step 10 then sets the leaky report beside the honest one.</p>
+<p>The leaky score can never be lower than the honest one, because it is the highest of the five test scores and the honest model is one of the five. With only five candidates the gap is small, and on some samples both routes pick the same model. The gap grows as more models and settings are compared. In every case the leaked score has stopped being an independent check, which is the reason for the rule.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Press <strong>Next</strong> to move through the steps, or click any step in the flowchart. For each step, note which lane it sits in.</li>
+<li>Watch the table under the description. At which step does each row first get a number?</li>
+<li>At step 7, note which degree is selected and which score decided it. At step 8, the padlock opens and one Test R² appears.</li>
+<li>Go back to step 1 and check <strong>Use the test data to choose the model (a leak)</strong>. Step through again and find where the red arrows and warning signs appear.</li>
+<li>At step 10 with the leak on, compare the leaky report with the honest one.</li>
+<li>Stay on step 10 and press <strong>New Data</strong> several times. Record both test scores each time.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/model-evaluation-workflow/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/model-evaluation-workflow/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"652"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The train-test split, K-fold cross-validation, R-squared, and hyperparameters such as polynomial degree.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to place each step of the model evaluation workflow in the data subset it may use and compare an honest workflow with a leaky one, explaining why test data must not influence any choice.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace</strong> (4 min): Students step through the honest workflow and list, for each of the ten steps, which rows of data it uses.</li>
+<li><strong>Find the leak</strong> (4 min): With the checkbox on, students identify the steps where test data enters, and state what would have to change in the code to remove the leak.</li>
+<li><strong>Measure the bias</strong> (5 min): Staying on step 10 with the leak on, students press <strong>New Data</strong> ten times and tally how often the leaky test score is higher than, equal to, or lower than the honest one. They explain the result.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a short description of a project in which the analyst scaled the features using all rows, tried eight models, and reported the best test score, students mark each point where test data leaked and rewrite the steps in an order that avoids it.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/common_pitfalls.html">Common pitfalls and recommended practices</a>.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/grid_search.html">Tuning the hyper-parameters of an estimator</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Leakage_(machine_learning)">Leakage (machine learning)</a>.</li>
 </ol>
 
 

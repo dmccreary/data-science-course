@@ -46,10 +46,11 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of bell curve emergence",
-    "Explore bell curve emergence through interactive visualization",
-    "Apply knowledge of bell curve emergence to solve problems",
-    "Experiment with parameters to observe their effects on bell curve emergence"
+    "Explain why the sampling distribution of the mean approaches a normal curve regardless of whether the base distribution is uniform, skewed, exponential, or Bernoulli",
+    "Predict how increasing the sample size n narrows the spread of the sampling distribution according to sigma divided by the square root of n",
+    "Distinguish the population distribution shown in the preview from the histogram of sample means that accumulates as the simulation runs",
+    "Interpret the overlaid theoretical normal curve and the shaded plus-or-minus 1 and 2 sigma regions using the 68-95-99.7 empirical rule",
+    "Compare how quickly the histogram converges to a bell shape for different base distributions and sample sizes"
   ],
   "bloomsTaxonomy": [
     "Remember",

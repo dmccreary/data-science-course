@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for metrics comparison microsim.">
+        <meta name="description" content="Drag data points or add outliers to a scatter plot and compare how MAE, MSE, RMSE, and R-squared respond to the same prediction errors.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Metrics Comparison MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for metrics comparison microsim." >
+        <meta  property="og:description"  content="Drag data points or add outliers to a scatter plot and compare how MAE, MSE, RMSE, and R-squared respond to the same prediction errors." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/metrics-comparison-microsim/metrics-comparison-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Metrics Comparison MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for metrics comparison microsim." >
+        <meta  name="twitter:description"  content="Drag data points or add outliers to a scatter plot and compare how MAE, MSE, RMSE, and R-squared respond to the same prediction errors." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/metrics-comparison-microsim/metrics-comparison-microsim.png">
       
@@ -1983,6 +1983,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/metrics-comparison-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/metrics-comparison-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="metrics-comparison-microsim">Metrics Comparison MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="582" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Metrics Comparison MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Metrics Comparison MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Ten points follow <span class="arithmatex">\(y = 2x + 1\)</span> with random noise, and a least-squares line is fit to them. Each point's <strong>residual</strong> (actual minus predicted) is drawn two ways: as a colored vertical segment, and as a square whose side is that segment. The color shows the size of the residual: green under 2, orange from 2 to 5, red over 5.</p>
+<ul>
+<li><strong>MAE</strong> is the average length of the segments.</li>
+<li><strong>MSE</strong> is the average area of the squares, in squared units.</li>
+<li><strong>RMSE</strong> is the square root of MSE, which brings it back to the units of <span class="arithmatex">\(y\)</span>.</li>
+</ul>
+<p>The panel on the right recomputes the fitted line, <span class="arithmatex">\(R^2\)</span>, adjusted <span class="arithmatex">\(R^2\)</span>, MAE, MSE, and RMSE every time a point moves. The two bars put MAE and RMSE on one scale, since both are in the units of <span class="arithmatex">\(y\)</span>. A black mark on each bar shows its value for the starting points, and the factor at the right says how many times larger it is now.</p>
+<p>Below the bars, one sentence reports how much of the absolute-error total and how much of the squared-error total comes from the single largest residual. The difference between those two percentages is why RMSE reacts more strongly than MAE to one large miss.</p>
+<p>The line is refit after every change, as it would be if you trained the model again. An outlier therefore pulls the line toward itself and changes the other residuals as well.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the starting values. <span class="arithmatex">\(R^2\)</span> is about 0.87, and RMSE is a little larger than MAE.</li>
+<li>Drag one point straight up until it is far from the line. Watch the two bars and the growth factors beside them.</li>
+<li>Press <strong>Reset to Default</strong>, then press <strong>Add Outlier</strong> once. Compare the largest residual's share of the absolute-error total with its share of the squared-error total.</li>
+<li>Add a second and a third outlier. Check whether the gap between the two growth factors keeps widening, and read the note at the bottom of the panel.</li>
+<li>Uncheck <strong>Show squared residuals</strong> or <strong>Show absolute residuals</strong> to study one picture at a time.</li>
+<li>Hover over any point to read its coordinates, its predicted value, its residual <span class="arithmatex">\(e\)</span>, and <span class="arithmatex">\(e^2\)</span>.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/metrics-comparison-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/metrics-comparison-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"582"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Scatter plots, the least-squares regression line, and the definition of a residual.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare how MAE, MSE, RMSE, and R-squared respond to the same set of prediction errors and explain why RMSE is more sensitive to outliers than MAE.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): Before touching the sim, students write down which of MAE and RMSE they expect to grow by the larger factor when one point is moved 10 units from the line, and why.</li>
+<li><strong>Measure</strong> (6 min): Students press <strong>Add Outlier</strong> once and record MAE, RMSE, <span class="arithmatex">\(R^2\)</span>, both growth factors, and the two percentages for the largest residual. They repeat with two and three outliers and describe how RMSE ÷ MAE changes.</li>
+<li><strong>Explain</strong> (5 min): After <strong>Reset to Default</strong>, students drag points so that every residual is about the same size and watch RMSE ÷ MAE move toward 1. They write two sentences on when they would report RMSE and when MAE.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given the residuals 1, −1, 2, −2, and 10, students compute MAE, MSE, and RMSE by hand, state which metric the largest residual affects most, and justify the answer using its share of each total.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics">Regression metrics</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Mean_absolute_error">Mean absolute error</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Root_mean_square_deviation">Root mean square deviation</a>.</li>
 </ol>
 
 

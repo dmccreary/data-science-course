@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for regularization decision tree.">
+        <meta name="description" content="Walk a decision tree with the facts of six modeling problems and choose between no penalty, ridge, lasso, and elastic net, with feedback on each choice.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Regularization Decision Tree - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for regularization decision tree." >
+        <meta  property="og:description"  content="Walk a decision tree with the facts of six modeling problems and choose between no penalty, ridge, lasso, and elastic net, with feedback on each choice." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/regularization-decision-tree/regularization-decision-tree.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Regularization Decision Tree - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for regularization decision tree." >
+        <meta  name="twitter:description"  content="Walk a decision tree with the facts of six modeling problems and choose between no penalty, ridge, lasso, and elastic net, with feedback on each choice." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/regularization-decision-tree/regularization-decision-tree.png">
       
@@ -2508,6 +2508,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/regularization-decision-tree/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/regularization-decision-tree/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,65 @@
 
 
 <h1 id="regularization-decision-tree">Regularization Decision Tree</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="627" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Regularization Decision Tree MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The tree on the left asks five questions in order and ends at one of four results: no penalty (<code>LinearRegression</code>), <code>Ridge</code>, <code>Lasso</code>, or <code>ElasticNet</code>. The panel on the right describes a modeling problem and gives its numbers: the samples <span class="arithmatex">\(n\)</span>, the features <span class="arithmatex">\(p\)</span>, and the training and validation <span class="arithmatex">\(R^2\)</span>. The two quantities the tree needs, <span class="arithmatex">\(p/n\)</span> and the gap between the two scores, are worked out from them.</p>
+<ol>
+<li><strong>Is the relationship a straight line?</strong> If not, add polynomial features first.</li>
+<li><strong>Does the model overfit?</strong> The tree calls a gap of more than 0.05 between training and validation <span class="arithmatex">\(R^2\)</span> overfitting. With no gap, no penalty is needed.</li>
+<li><strong>How many features for the number of samples?</strong> This sets how strong <span class="arithmatex">\(\lambda\)</span> should be to start with: strong when <span class="arithmatex">\(p/n\)</span> is above 0.5, moderate from 0.05 to 0.5, light below 0.05.</li>
+<li><strong>Should the model drop some features?</strong> If every feature is to be kept, use Ridge.</li>
+<li><strong>Are some features highly correlated?</strong> If not, Lasso can drop features safely. If so, Elastic Net keeps correlated features together.</li>
+</ol>
+<p>The path for each case is computed from its facts with these rules. The thresholds are rules of thumb for teaching. In practice the strength of <span class="arithmatex">\(\lambda\)</span> is always settled by cross-validation.</p>
+<p>Case A opens with its path shown as a worked example. For the other cases the path is hidden until you ask for it. The design's separate question about interpretability is folded into question 4, since a model that drops features is the one that is easier to explain.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read case A and follow the green path through the tree. Check each answer against the numbers in the panel.</li>
+<li>Choose case B from the menu. The path is now hidden. Answer the questions one at a time from the facts of the case.</li>
+<li>Click the result you would choose. Read the feedback, and if it is not the best fit, use the hint and try again.</li>
+<li>Click any blue question to read what it asks and why it matters. Click it again to close the explanation.</li>
+<li>Check <strong>Show the path</strong> to see the route the tree takes and the reason for it.</li>
+<li>Work through cases C to F the same way.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/regularization-decision-tree/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/regularization-decision-tree/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"627"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Overfitting, training and validation scores, and what the ridge, lasso, and elastic net penalties do to coefficients.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to choose between no penalty, ridge, lasso, and elastic net for a described modeling problem and justify the choice from the size of the data, the gap between training and validation scores, the goal, and the correlation among features.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Worked example</strong> (3 min): Students follow the highlighted path for case A and explain why a penalty is not needed when the two scores are almost equal.</li>
+<li><strong>Decide and check</strong> (8 min): For cases B to F students write down their answer to each question and their chosen method before clicking, then record whether the feedback agreed and what they missed.</li>
+<li><strong>Change one fact</strong> (4 min): Students pick one case and state one fact that would have to change for the tree to end at a different result, for example what would move case D from Elastic Net to Lasso.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a new description (500 patients, 40 lab measurements of which several are highly correlated, training R² 0.80 and validation R² 0.62, and a doctor who wants a short list of measurements to order), students name the method and the starting strength of λ and justify each step of the path.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/linear_model.html">Linear Models: Ridge regression, Lasso, and Elastic-Net</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Elastic_net_regularization">Elastic net regularization</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 6, Linear Model Selection and Regularization.</li>
 </ol>
 
 

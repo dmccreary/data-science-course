@@ -1,45 +1,67 @@
 {
   "title": "Data Type Conversion Guide Infographic",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for data type conversion guide infographic",
+  "subject": "Data Science",
+  "description": "A clickable reference card of nine pandas type conversions, grouped as numeric, datetime, categorical, and string, each with a worked example and a pitfall to remember.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Data Type Conversion Guide Infographic",
+    "subjectArea": "Data Science",
+    "topic": "Data type conversion in pandas",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to recall the pandas method that converts a column to a numeric, datetime, categorical, or string type, and one pitfall of each conversion."
     ],
     "bloomsTaxonomy": "Remember",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "df.dtypes",
+      "Strings, integers, and floats in Python",
+      "NaN as a missing value"
+    ],
+    "standards": [],
+    "bloomVerb": "Recall"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 630
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Click-to-reveal reference card with a hide-the-answer mode for recall practice",
+    "keyQuestions": [
+      "What does errors=\"coerce\" do with a value such as \"seven\"?",
+      "Why does a whole-number column that contains NaN show up as float64?",
+      "What is the difference between a category made with astype(\"category\") and an ordered one?"
+    ],
+    "commonMisconceptions": [
+      "astype(int) works on any numeric column (it fails when the column holds NaN, and the nullable type \"Int64\" is needed).",
+      "pd.to_datetime always guesses the format correctly (03/04/2024 is read month first unless told otherwise).",
+      "A category column behaves like a string column (its values are limited to the listed categories)."
+    ],
+    "assessmentOpportunities": [
+      "From memory, students write the conversion call for each of four situations (text to numbers with bad entries, text to dates, strings to an ordered category, numbers to formatted text) and state one thing that can go wrong with each."
+    ]
   },
-  "chapter": "04-data-cleaning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "data-type-conversion-guide-infographic",
+  "chapter": "04-data-cleaning",
+  "completion_status": "implemented"
 }

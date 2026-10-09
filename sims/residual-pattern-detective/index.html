@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for residual pattern detective.">
+        <meta name="description" content="Study four unlabeled residual plots, decide what each one says about a linear model, and get feedback on your diagnosis.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Residual Pattern Detective - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for residual pattern detective." >
+        <meta  property="og:description"  content="Study four unlabeled residual plots, decide what each one says about a linear model, and get feedback on your diagnosis." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/residual-pattern-detective/residual-pattern-detective.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Residual Pattern Detective - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for residual pattern detective." >
+        <meta  name="twitter:description"  content="Study four unlabeled residual plots, decide what each one says about a linear model, and get feedback on your diagnosis." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/residual-pattern-detective/residual-pattern-detective.png">
       
@@ -2529,6 +2529,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/residual-pattern-detective/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/residual-pattern-detective/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="residual-pattern-detective">Residual Pattern Detective</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="637" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Residual Pattern Detective MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>A <strong>residual plot</strong> shows what a model left unexplained. Each point is one row of data, placed at its predicted value (horizontal) and its residual, actual minus predicted (vertical). The dashed red line marks a residual of 0.</p>
+<p>The four plots come from four different data sets of 60 points, and a straight line was fit to each one by least squares. One data set really is a straight line with even noise. In the other three, the true relationship is curved, the noise grows with the size of the target, or a hidden group shifts some of the rows by a constant amount. The plots are unlabeled and appear in shuffled order.</p>
+<p>Select a plot, decide what it tells you about the model, and press one of the four diagnosis buttons. A wrong guess is answered with a description of what that diagnosis would look like, so you can compare it with the plot in front of you. A correct diagnosis labels the plot with its pattern name and icon and opens an explanation: what the pattern means, what to do about it, and numbers computed from the residuals that support it.</p>
+<p>When all four are solved, the grid is a reference chart of the four patterns from the chapter: healthy residuals, a curved pattern, a funnel shape, and clustered groups. <strong>New Cases</strong> draws new data and reshuffles the plots.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Case A is selected (blue border). Check two things: are the points balanced above and below the dashed line at every predicted value, and is the vertical spread the same from left to right?</li>
+<li>Press the diagnosis you think fits. The notes panel responds.</li>
+<li>After a wrong guess, read what that diagnosis would look like, look at the plot again, and choose another.</li>
+<li>After a correct diagnosis, read what the pattern means, what to do about it, and the evidence line. Then click another plot.</li>
+<li>Solve all four with as few wrong guesses as you can. The count is shown under the buttons.</li>
+<li>Press <strong>New Cases</strong> and try to solve the new set with no wrong guesses.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/residual-pattern-detective/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/residual-pattern-detective/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"637"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Simple linear regression and the definition of a residual as actual minus predicted.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to judge from a residual plot whether a linear model is adequate, identify curved, funnel-shaped, and clustered patterns, and recommend a fix for each.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Diagnose</strong> (5 min): Students solve the four cases, writing one sentence of evidence for each diagnosis before pressing a button.</li>
+<li><strong>Check the evidence</strong> (5 min): For each solved case, students read the evidence line and explain how the means or standard deviations of the three thirds support the diagnosis. They explain why the thirds cannot reveal the clustered case.</li>
+<li><strong>Transfer</strong> (5 min): Students press <strong>New Cases</strong> and solve the new set with no wrong guesses, then sketch the residual plot they would expect after applying each fix.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Shown a residual plot they have not seen before, students name the pattern, state what it implies about the model, and recommend a next step, citing what they see in the plot as evidence.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Errors_and_residuals">Errors and residuals</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Homoscedasticity_and_heteroscedasticity">Homoscedasticity and heteroscedasticity</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 3, Linear Regression.</li>
 </ol>
 
 

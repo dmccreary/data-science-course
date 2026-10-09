@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for visualization library comparison.">
+        <meta name="description" content="Compare Matplotlib, Seaborn, and Plotly side by side, pick a need from a list to see which library fits and why, and view a typical chart of the same data in each library's default look.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Visualization Library Comparison - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for visualization library comparison." >
+        <meta  property="og:description"  content="Compare Matplotlib, Seaborn, and Plotly side by side, pick a need from a list to see which library fits and why, and view a typical chart of the same data in each library's default look." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/visualization-library-comparison/visualization-library-comparison.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Visualization Library Comparison - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for visualization library comparison." >
+        <meta  name="twitter:description"  content="Compare Matplotlib, Seaborn, and Plotly side by side, pick a need from a list to see which library fits and why, and view a typical chart of the same data in each library's default look." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/visualization-library-comparison/visualization-library-comparison.png">
       
@@ -2886,6 +2886,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/visualization-library-comparison/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/visualization-library-comparison/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="visualization-library-comparison">Visualization Library Comparison</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Visualization Library Comparison MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Python has several plotting libraries, and this chapter uses three of them. This MicroSim puts them side by side.</p>
+<ul>
+<li><strong>Three cards</strong> list each library's strengths, what it is best for, its learning curve, and how interactive its charts are.</li>
+<li><strong>The "I need" list</strong> is the decision guide. Choose what you need, such as a figure for a printed paper or a chart people can explore on a web page. The library that fits is marked with a green bar and the strip at the bottom gives the reason.</li>
+<li><strong>The example panel</strong> shows a typical chart from the selected library together with the code that makes it. All three charts use the same data: 40 restaurant bills and tips.</li>
+</ul>
+<p>The three examples show what each library does with little effort. The Matplotlib chart is a plain static image where you set the title and the axis labels yourself. The Seaborn chart comes from a single <code>regplot</code> call that fits the regression line and shades its 95% confidence band. The band is computed here from the data with the usual formula for the confidence interval of a fitted line. The Plotly chart is interactive: point at a dot in the Plotly example and a tooltip appears, which does not happen in the other two.</p>
+<p>The libraries are not rivals. Seaborn is built on Matplotlib, so a Seaborn chart can be adjusted with Matplotlib commands, and many projects use all three.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the three cards and find one strength that only one library has.</li>
+<li>Open the <strong>I need</strong> list and choose a need. Note which card gets the green <strong>Fits what you need</strong> bar, then read the reason in the strip at the bottom.</li>
+<li>Click each library card in turn to see its example chart and code. Compare the number of lines of code and how the charts look.</li>
+<li>Click <strong>Plotly</strong> and move the mouse over the dots. Then click <strong>Matplotlib</strong> and try the same thing.</li>
+<li>Before you choose the next need, predict which library will be marked.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/visualization-library-comparison/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/visualization-library-comparison/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>10 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Knowing what a scatter plot shows and that Python libraries are imported before use.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare Matplotlib, Seaborn, and Plotly and explain which library suits a given visualization need.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Compare the cards</strong> (3 min): Students list one strength and one best use for each library in their own words.</li>
+<li><strong>Predict and check</strong> (4 min): For each of the five needs, students predict the library before selecting the need, then read the reason given.</li>
+<li><strong>Same data, three charts</strong> (4 min): Students view the three example charts and describe two differences in the code and two differences in the output.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are given three short project descriptions (a figure for a science fair poster, a first look at a survey dataset, and a chart for a class web page) and name the library they would use for each with a one-sentence reason.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Matplotlib documentation. <a href="https://matplotlib.org/stable/users/explain/quick_start.html">Quick start guide</a>.</li>
+<li>seaborn documentation. <a href="https://seaborn.pydata.org/tutorial/introduction.html">An introduction to seaborn</a>.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/plotly-express/">Plotly Express in Python</a>.</li>
 </ol>
 
 

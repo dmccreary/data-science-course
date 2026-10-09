@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for interactive regression builder microsim.">
+        <meta name="description" content="Build a data set by clicking, dragging, and double-clicking points and watch the least-squares line, its equation, the meaning of its slope and intercept, R squared, RMSE, a residual plot, and a prediction update after every change.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Interactive Regression Builder MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for interactive regression builder microsim." >
+        <meta  property="og:description"  content="Build a data set by clicking, dragging, and double-clicking points and watch the least-squares line, its equation, the meaning of its slope and intercept, R squared, RMSE, a residual plot, and a prediction update after every change." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/interactive-regression-builder-microsim/interactive-regression-builder-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Interactive Regression Builder MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for interactive regression builder microsim." >
+        <meta  name="twitter:description"  content="Build a data set by clicking, dragging, and double-clicking points and watch the least-squares line, its equation, the meaning of its slope and intercept, R squared, RMSE, a residual plot, and a prediction update after every change." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/interactive-regression-builder-microsim/interactive-regression-builder-microsim.png">
       
@@ -1773,6 +1773,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/interactive-regression-builder-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/interactive-regression-builder-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,66 @@
 
 
 <h1 id="interactive-regression-builder-microsim">Interactive Regression Builder MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Interactive Regression Builder MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Interactive Regression Builder MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The scatter plot is yours to edit. Click to add a point, drag a point to move it, and double-click a point to remove it. After every change the model is fitted again by ordinary least squares, the same calculation that scikit-learn's <code>LinearRegression</code> performs.</p>
+<p>The panel reports:</p>
+<ul>
+<li>the <strong>equation</strong> <span class="arithmatex">\(\hat{y} = \beta_0 + \beta_1 x\)</span> with the current coefficients</li>
+<li>the <strong>slope</strong> and the <strong>intercept</strong> in plain language with units, and a caution when <span class="arithmatex">\(x = 0\)</span> is far outside the data</li>
+<li><strong>R²</strong>, the share of the variation in <span class="arithmatex">\(y\)</span> that the line explains, <span class="arithmatex">\(R^2 = 1 - \text{SSE}/\text{SST}\)</span>, with a bar from 0 to 1</li>
+<li><strong>RMSE</strong>, <span class="arithmatex">\(\sqrt{\text{SSE}/n}\)</span>, the typical size of a prediction error (the value of <code>np.sqrt(mean_squared_error(y, y_pred))</code>)</li>
+<li>a <strong>prediction</strong> for the <span class="arithmatex">\(x\)</span> you type, with a warning when that <span class="arithmatex">\(x\)</span> is outside your data (extrapolation)</li>
+</ul>
+<p>The residual plot under the scatter plot shows <span class="arithmatex">\(y - \hat{y}\)</span> at each <span class="arithmatex">\(x\)</span> on the same horizontal scale.</p>
+<p>Four starting data sets are provided. <em>Study hours vs score</em> is the chapter's eight-student example, and its fit matches what scikit-learn returns for that data: <span class="arithmatex">\(\hat{y} = 47.04 + 5.71x\)</span> with <span class="arithmatex">\(R^2 = 0.997\)</span>. <em>House size vs price</em>, <em>Car age vs value</em>, and <em>Random</em> come from a seeded generator, so they are the same on every load. In the two money data sets the y-axis is in thousands of dollars.</p>
+<p>Not included: a confidence band, a confidence interval for the prediction, a noise slider, and assumption indicators. The residual plot uses <span class="arithmatex">\(x\)</span> on its horizontal axis. With one predictor this shows the same pattern as a plot against fitted values.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Choose a <strong>Data set</strong>. Read the equation and the two interpretation sentences.</li>
+<li>Drag one point far from the line and watch the slope, R², and RMSE change. Drag it back.</li>
+<li>Click empty space to add a point. Double-click a point to remove it. <strong>Clear All</strong> gives a blank plot for your own data.</li>
+<li>Type a value in <strong>Predict at x</strong> to see the predicted value as a green diamond on the line. Try a value outside your data to see the extrapolation warning.</li>
+<li>Uncheck <strong>Show residuals</strong> to hide the red residual segments in the scatter plot.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/interactive-regression-builder-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/interactive-regression-builder-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The regression equation, residuals, and the idea that least squares picks the line with the smallest sum of squared errors.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Create (L6)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to construct data sets with a required slope, strength of fit, or outlier, and interpret the fitted model's coefficients, R², RMSE, and predictions.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Interpret</strong> (4 min): Students load each data set and write the slope and intercept interpretations in their own words, noting where the intercept has no real meaning.</li>
+<li><strong>Build</strong> (8 min): Starting from <strong>Clear All</strong>, students build three data sets: one with R² above 0.9, one with a negative slope, and one with R² below 0.1. They sketch each one and record its equation.</li>
+<li><strong>Break</strong> (5 min): Students load the study-hours data, add one outlier, and record how far the slope, R², and RMSE move. They compare an outlier near the middle of the x range with one at the end.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students build a data set of at least eight points whose fitted slope is between 2 and 3 and whose R² is above 0.8. They write the equation, interpret both coefficients, and explain whether a prediction at an x value of their choice is an interpolation or an extrapolation.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">LinearRegression</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html">r2_score</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">Coefficient of determination</a>.</li>
 </ol>
 
 

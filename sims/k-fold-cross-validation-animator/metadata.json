@@ -1,45 +1,69 @@
 {
   "title": "K-Fold Cross-Validation Animator",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for k-fold cross-validation animator",
+  "subject": "Data Science",
+  "description": "Step through the rounds of K-fold cross-validation on 50 rows of data, see which fold is held out each time, and compare the score of each round with the mean of all K.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "K-Fold Cross-Validation Animator",
+    "subjectArea": "Data Science",
+    "topic": "K-fold cross-validation",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how K-fold cross-validation rotates the test fold through the data and why the mean of the fold scores is a more reliable estimate than the score from a single train-test split."
     ],
-    "bloomsTaxonomy": "Apply",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Train-test split",
+      "Simple linear regression",
+      "R-squared",
+      "Mean and standard deviation"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of a worked example in which every fold score comes from a real fit",
+    "keyQuestions": [
+      "How many models are trained in K-fold cross-validation, and how many rows does each one learn from?",
+      "Why does every row appear in a test fold exactly once?",
+      "On 50 rows, what happens to the size of each test fold and to the spread of the fold scores when K goes from 5 to 10?"
+    ],
+    "commonMisconceptions": [
+      "Cross-validation trains one model and tests it K times (it trains K separate models, each on a different set of K − 1 folds).",
+      "The same rows are used for fitting and for testing within a round (in each round the test fold is left out of the fit).",
+      "A larger K always gives a better estimate (on a small data set each test fold gets so few rows that the single-fold scores become erratic).",
+      "The cross-validation mean is the score of the final model (it estimates how the modeling procedure performs; the final model is usually refit on all the data)."
+    ],
+    "assessmentOpportunities": [
+      "Students are given five fold scores (for example 0.62, 0.71, 0.55, 0.68, 0.74). They compute the mean, state how many models were trained to get it, and explain in two or three sentences why the mean is a better estimate of performance than the 0.55 or the 0.74 that a single split might have produced."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "k-fold-cross-validation-animator",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

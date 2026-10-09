@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for broadcasting visualizer.">
+        <meta name="description" content="Choose the shapes of two arrays and an operation to see how NumPy stretches the smaller array to match the larger one, and which pairs of shapes cannot be combined.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Broadcasting Visualizer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for broadcasting visualizer." >
+        <meta  property="og:description"  content="Choose the shapes of two arrays and an operation to see how NumPy stretches the smaller array to match the larger one, and which pairs of shapes cannot be combined." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/broadcasting-visualizer/broadcasting-visualizer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Broadcasting Visualizer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for broadcasting visualizer." >
+        <meta  name="twitter:description"  content="Choose the shapes of two arrays and an operation to see how NumPy stretches the smaller array to match the larger one, and which pairs of shapes cannot be combined." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/broadcasting-visualizer/broadcasting-visualizer.png">
       
@@ -1179,6 +1179,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/broadcasting-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/broadcasting-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,66 @@
 
 
 <h1 id="broadcasting-visualizer">Broadcasting Visualizer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="552" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Broadcasting Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p><strong>Broadcasting</strong> is the rule NumPy uses when an operation involves two arrays of different shapes. This MicroSim shows array <code>A</code>, array <code>B</code>, and the result of <code>A + B</code>, <code>A - B</code>, <code>A * B</code> or <code>A / B</code>.</p>
+<p>The rule is checked in the table under the grids.</p>
+<ol>
+<li>Write the two shapes one above the other, lined up from the <strong>right</strong>.</li>
+<li>A missing size counts as 1. It is shown in the table as <em>(1)</em>.</li>
+<li>Each pair of sizes must be equal, or one of them must be 1. The result takes the larger size.</li>
+</ol>
+<p>An axis of size 1 is stretched: its single row or column is used again at every position. The stretched copies are drawn faded with dashed borders, and the title above the array says what shape it acts like. NumPy does not really build these copies in memory. It reuses the values as it loops.</p>
+<p>One cell has a red frame in all three grids, and the line under the grids spells out its calculation, such as <code>A[1, 2] + B[2] = 6 + 30 = 36</code>.</p>
+<p>If a pair of sizes fails the rule, there is no result, the failing column of the table turns red, and the panel shows the message NumPy raises: <code>ValueError: operands could not be broadcast together with shapes (3,4) (2,4)</code>.</p>
+<p>Not included: typing your own values and the animation from the original specification. The checkbox switches between the arrays as written and the arrays as stretched.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default, a (3, 3) matrix plus a (3,) row. Find the faded copies of the row and the <em>(1)</em> in the table.</li>
+<li>Untick <strong>Show stretched copies</strong> to see the arrays as they were written, then tick it again.</li>
+<li>Click any cell to move the red frame and read which element of <code>A</code> and which element of <code>B</code> it combines.</li>
+<li>Use the <strong>A</strong> and <strong>B</strong> menus to try other shapes. Predict the result shape before you look.</li>
+<li>Choose <strong>Column and row: both stretch</strong> from the examples and explain where the 3 by 4 result comes from.</li>
+<li>Choose the two <strong>Mismatch</strong> examples. Read the error message and find the red column that causes it.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/broadcasting-visualizer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/broadcasting-visualizer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"552"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Array shapes, and element-wise arithmetic on two arrays of the same shape.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to predict whether two array shapes can be broadcast together, state the shape of the result, and explain which array is stretched along which axis.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Rule check</strong> (4 min): Students copy the chapter's four-row table of shapes and use the MicroSim to confirm all four rows, noting which axis stretches in each.</li>
+<li><strong>Predict then test</strong> (6 min): For six pairs of shapes chosen by the teacher, students predict works or fails and the result shape on paper, then test each pair.</li>
+<li><strong>Explain the trap</strong> (4 min): Students explain why (3, 4) with (3,) fails although both contain a 3, and name a shape for B with three values that does work.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students decide, without the MicroSim, whether shapes (4, 3) and (3,), (4, 3) and (4,), and (4, 1) and (1, 5) can be broadcast, give each result shape, and write the error message NumPy would show for the pair that fails.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/user/basics.broadcasting.html">Broadcasting</a>.</li>
+<li>VanderPlas, Jake. <em>Python Data Science Handbook</em>, 2nd ed. O'Reilly Media, 2022. Part II, Introduction to NumPy. See the chapter Computation on Arrays: Broadcasting.</li>
+<li>McKinney, Wes. <em>Python for Data Analysis</em>, 3rd ed. O'Reilly Media, 2022. Appendix A, Advanced NumPy (Broadcasting).</li>
 </ol>
 
 

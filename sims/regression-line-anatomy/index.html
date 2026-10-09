@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for regression line anatomy.">
+        <meta name="description" content="Hover over or click the five numbered parts of a fitted regression line (intercept, slope, predicted value, actual value, and residual) to read what each one means and see its value for ten students.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Regression Line Anatomy - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for regression line anatomy." >
+        <meta  property="og:description"  content="Hover over or click the five numbered parts of a fitted regression line (intercept, slope, predicted value, actual value, and residual) to read what each one means and see its value for ten students." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/regression-line-anatomy/regression-line-anatomy.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Regression Line Anatomy - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for regression line anatomy." >
+        <meta  name="twitter:description"  content="Hover over or click the five numbered parts of a fitted regression line (intercept, slope, predicted value, actual value, and residual) to read what each one means and see its value for ten students." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/regression-line-anatomy/regression-line-anatomy.png">
       
@@ -2487,6 +2487,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/regression-line-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/regression-line-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="regression-line-anatomy">Regression Line Anatomy</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="587" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Regression Line Anatomy MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>A scatter plot shows hours studied and exam scores for ten students, with the least-squares regression line drawn through them. Five numbered callouts mark the parts of the model:</p>
+<ol>
+<li><strong>Intercept</strong> (<span class="arithmatex">\(\beta_0\)</span>): where the line crosses the y-axis, the predicted <span class="arithmatex">\(y\)</span> when <span class="arithmatex">\(x = 0\)</span></li>
+<li><strong>Slope</strong> (<span class="arithmatex">\(\beta_1\)</span>): rise over run, the change in the predicted <span class="arithmatex">\(y\)</span> for each one-unit increase in <span class="arithmatex">\(x\)</span></li>
+<li><strong>Predicted value</strong> (<span class="arithmatex">\(\hat{y}\)</span>): the model's answer for a given <span class="arithmatex">\(x\)</span>, always on the line</li>
+<li><strong>Actual value</strong> (<span class="arithmatex">\(y\)</span>): an observed data point, usually not on the line</li>
+<li><strong>Residual</strong> (<span class="arithmatex">\(y - \hat{y}\)</span>): the vertical distance from the actual value to the predicted value</li>
+</ol>
+<p>The panel explains the selected part and gives its value in this data. The equation under the plot, <span class="arithmatex">\(\hat{y} = 47.5 + 5.5x\)</span>, uses the same colors, so each number in the equation can be matched to a part of the picture. Selecting the residual keeps the actual and predicted values lit, because the residual is the gap between them.</p>
+<p>The slope and intercept are computed from the ten points by ordinary least squares. The points were chosen so that the line is exactly <span class="arithmatex">\(\hat{y} = 47.5 + 5.5x\)</span>, the model the chapter interprets. They are a separate data set from the chapter's eight-student example, whose least-squares line is <span class="arithmatex">\(\hat{y} = 47.04 + 5.71x\)</span>.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the plot first. Each dot is a student and the black line is the regression line.</li>
+<li>Hover over a numbered callout, a row of the list, or a colored number in the equation to highlight that part and read about it.</li>
+<li>Click a part to keep it selected. Click it again to release it.</li>
+<li>Check <strong>Show all residuals</strong> to draw the residual of every student, not only the featured one.</li>
+<li>Uncheck <strong>Show names</strong>, name each numbered part from memory, and hover or click to check.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/regression-line-anatomy/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/regression-line-anatomy/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"587"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>5-10 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Reading a scatter plot and the slope-intercept form of a line, <span class="arithmatex">\(y = mx + b\)</span>.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Remember (L1)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to identify the intercept, slope, predicted value, actual value, and residual on a regression plot and in the regression equation.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (3 min): Students hover over the five parts in order and write each name, symbol, and meaning in a table.</li>
+<li><strong>Connect to the equation</strong> (3 min): Students hover over each colored number in the equation and point to the same part in the plot. They compute the predicted score for 3 hours by hand and compare it with part 3.</li>
+<li><strong>Self-test</strong> (3 min): With <strong>Show names</strong> unchecked, students name each numbered part and click it to check. They then turn on <strong>Show all residuals</strong> and list the students whose scores the model predicted too high.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given an unlabeled scatter plot with a regression line and its equation, students label the intercept, the slope triangle, one predicted value, one actual value, and the residual between them, and state the sign of that residual.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Simple_linear_regression">Simple linear regression</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Errors_and_residuals">Errors and residuals</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 3, Linear Regression.</li>
 </ol>
 
 

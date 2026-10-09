@@ -1,45 +1,68 @@
 {
   "title": "Train-Test Split Visualization",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for train-test split visualization",
+  "subject": "Data Science",
+  "description": "Move a slider to split 100 rows of housing data into a training set and a test set, see which rows land on each side of the wall, and compare the model's score on rows it has seen with its score on rows it has not.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Train-Test Split Visualization",
+    "subjectArea": "Data Science",
+    "topic": "Train-test split",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to explain how a train-test split divides a data set and why the test rows must stay hidden from the model until the final evaluation."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Rows and columns of a DataFrame",
+      "Simple linear regression",
+      "R-squared"
+    ],
+    "standards": [],
+    "bloomVerb": "Explain"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Slider-driven diagram with concrete rows and scores computed from the current split",
+    "keyQuestions": [
+      "Why are the rows shuffled before the split?",
+      "Which of the two R² values would you report to someone who wants to use the model on new houses, and why?",
+      "What do you gain and what do you lose by moving the split from 80/20 to 95/5?"
+    ],
+    "commonMisconceptions": [
+      "The test set is the last rows of the file (by default the rows are shuffled first, so the test rows come from all over the data set).",
+      "A model's score on its training data shows how well it will predict new data (it has already seen those rows, so that score tends to be optimistic).",
+      "Using more of the data for training is always better (the fewer rows left for testing, the less the test score can be trusted).",
+      "`random_state` changes how good the model is (it only fixes which rows land in each set, so the result can be reproduced)."
+    ],
+    "assessmentOpportunities": [
+      "Given a data set of 500 rows and `test_size=0.3`, students state how many rows are in each set, say which set `fit` and `score` should each receive, and explain why a 99/1 split would give an unreliable test score."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "train-test-split-visualization",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

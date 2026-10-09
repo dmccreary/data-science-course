@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for box plot anatomy.">
+        <meta name="description" content="Hover over or click the seven numbered parts of a box plot of 21 quiz scores to read what each part means, its value in the data, and the pandas code that computes it.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Box Plot Anatomy - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for box plot anatomy." >
+        <meta  property="og:description"  content="Hover over or click the seven numbered parts of a box plot of 21 quiz scores to read what each part means, its value in the data, and the pandas code that computes it." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/box-plot-anatomy/box-plot-anatomy.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Box Plot Anatomy - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for box plot anatomy." >
+        <meta  name="twitter:description"  content="Hover over or click the seven numbered parts of a box plot of 21 quiz scores to read what each part means, its value in the data, and the pandas code that computes it." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/box-plot-anatomy/box-plot-anatomy.png">
       
@@ -1158,6 +1158,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/box-plot-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/box-plot-anatomy/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,66 @@
 
 
 <h1 id="box-plot-anatomy">Box Plot Anatomy</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="517" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Box Plot Anatomy MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>A box plot summarizes a set of numbers with five values and marks any outliers. This MicroSim draws the box plot of 21 quiz scores and numbers its parts:</p>
+<ol>
+<li><strong>Minimum</strong>: the end of the lower whisker, the smallest value that is not an outlier</li>
+<li><strong>Q1</strong>: the first quartile, the edge of the box on the low side</li>
+<li><strong>Median</strong>: the line inside the box</li>
+<li><strong>Q3</strong>: the third quartile, the edge of the box on the high side</li>
+<li><strong>Maximum</strong>: the end of the upper whisker, the largest value that is not an outlier</li>
+<li><strong>IQR</strong>: the interquartile range, the length of the box, <span class="arithmatex">\(Q3 - Q1\)</span></li>
+<li><strong>Outliers</strong>: values beyond the fences at <span class="arithmatex">\(Q1 - 1.5 \times IQR\)</span> and <span class="arithmatex">\(Q3 + 1.5 \times IQR\)</span></li>
+</ol>
+<p>The gray dots under the box are the 21 scores themselves, so each part can be checked against the data. The panel below the plot gives the meaning of the selected part, the calculation with the numbers of this data, and one line of pandas. Quartiles use linear interpolation, the default of <code>Series.quantile</code> and <code>np.percentile</code>.</p>
+<p>The whiskers follow the matplotlib and pandas convention: a whisker ends at the most extreme data value that is still inside the fence, not at the fence itself. Here the lower fence is at 28, but the whisker stops at 41, the smallest score that is not below 28. Selecting the minimum, the maximum, or the outliers draws both fences as dashed lines.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the summary panel, then hover over each numbered badge (or its name) to highlight that part and read about it.</li>
+<li>Click a part to keep its explanation on screen. Click it again, or click empty space, to return to the summary.</li>
+<li>Select <strong>Minimum</strong>, <strong>Maximum</strong>, or <strong>Outlier</strong> to see the two fences as dashed lines and compare them with the whisker ends.</li>
+<li>Check <strong>Vertical</strong> to turn the plot the way <code>df.boxplot()</code> draws it by default.</li>
+<li>Uncheck <strong>Show names</strong>, name each numbered part from memory, and click the badge to check yourself.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/box-plot-anatomy/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/box-plot-anatomy/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"517"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>5-10 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Sorting a list of numbers, the median, and the idea of a percentile.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Remember (L1)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to identify the seven parts of a box plot and recall what each one represents.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Explore</strong> (3 min): Students hover over the seven parts in order and write each name and its meaning in a table.</li>
+<li><strong>Check against the data</strong> (3 min): Students count the gray dots below Q1, below the median, and below Q3 and compare the counts with 25%, 50%, and 75% of 21.</li>
+<li><strong>Self-test</strong> (3 min): With <strong>Show names</strong> unchecked and the plot vertical, students name each numbered part and click it to check.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given an unlabeled box plot, students label the median, Q1, Q3, both whisker ends, the IQR, and any outliers, and write the two fence formulas.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Box_plot">Box plot</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html">pandas.DataFrame.boxplot</a>.</li>
+<li>Matplotlib documentation. <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html">matplotlib.pyplot.boxplot</a>.</li>
 </ol>
 
 

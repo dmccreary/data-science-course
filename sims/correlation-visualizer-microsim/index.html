@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for correlation visualizer microsim.">
+        <meta name="description" content="Set the correlation of a scatter plot, switch to curved patterns, and drag points to see how Pearson r, R squared, and Spearman rank correlation respond.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Correlation Visualizer MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for correlation visualizer microsim." >
+        <meta  property="og:description"  content="Set the correlation of a scatter plot, switch to curved patterns, and drag points to see how Pearson r, R squared, and Spearman rank correlation respond." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/correlation-visualizer-microsim/correlation-visualizer-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Correlation Visualizer MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for correlation visualizer microsim." >
+        <meta  name="twitter:description"  content="Set the correlation of a scatter plot, switch to curved patterns, and drag points to see how Pearson r, R squared, and Spearman rank correlation respond." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/correlation-visualizer-microsim/correlation-visualizer-microsim.png">
       
@@ -1305,6 +1305,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/correlation-visualizer-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/correlation-visualizer-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="correlation-visualizer-microsim">Correlation Visualizer MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="587" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Correlation Visualizer MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Correlation Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The scatter plot shows 40 points. The panel beside it reports three numbers calculated from the points:</p>
+<ul>
+<li><strong>Pearson r</strong> measures the strength and direction of a straight-line relationship: <span class="arithmatex">\(r = \dfrac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}\)</span></li>
+<li><strong>R²</strong> is <span class="arithmatex">\(r^2\)</span>, the share of the variance in <span class="arithmatex">\(y\)</span> that the best-fit line accounts for</li>
+<li><strong>Spearman ρ</strong> is Pearson r calculated on the ranks of <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>. It measures whether <span class="arithmatex">\(y\)</span> rises or falls steadily with <span class="arithmatex">\(x\)</span>, whether or not the path is straight.</li>
+</ul>
+<p>Both correlations are marked on a scale from −1 to +1. The blue triangle is Pearson r and the orange ring is Spearman ρ.</p>
+<p>Four patterns are available. The <strong>linear cloud</strong> is built so that its Pearson r equals the slider value exactly. <strong>Line with one outlier</strong> adds a single point far from the trend. The <strong>U-shaped curve</strong> has a strong relationship and an r near 0. The <strong>steady curved rise</strong> climbs along a curve, so Spearman ρ is close to +1 while Pearson r is lower. Any point can be dragged, and all three numbers update as it moves.</p>
+<p>The words used for the size of r (weak, moderate, strong) follow a common rule of thumb with cut points at 0.1, 0.4, and 0.7. Other books draw the lines elsewhere.</p>
+<p>Not included: the p-value, the confidence band, and a slider for the number of points.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Move the <strong>Target r</strong> slider from −1 to +1 and watch the cloud tighten around a falling line, spread into a round cloud near 0, and tighten around a rising line.</li>
+<li>Choose <strong>Line with one outlier</strong> and compare both correlations with the linear cloud at the same slider value.</li>
+<li>Choose <strong>U-shaped curve</strong> and <strong>Steady curved rise</strong>. For each, compare Pearson r with Spearman ρ and with what your eyes tell you.</li>
+<li>Drag one point of a linear cloud to a far corner. Note how much r changes, then drag it back.</li>
+<li>Press <strong>New Sample</strong> for a different set of points with the same settings. Uncheck <strong>Best-fit line</strong> to judge the pattern without it.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/correlation-visualizer-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/correlation-visualizer-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"587"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Reading a scatter plot, and the mean and standard deviation of a variable.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare Pearson and Spearman correlation across linear, curved, and outlier-affected scatter plots and explain what each number does and does not reveal about the relationship.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Estimate</strong> (4 min): A partner sets the slider while the panel is covered. Students estimate r from the plot alone, then uncover the panel and compare.</li>
+<li><strong>Break the correlation</strong> (5 min): Starting from a linear cloud with r = 0.8, students drag a single point to change r by at least 0.2 and record the change in Spearman ρ for the same move.</li>
+<li><strong>Compare patterns</strong> (6 min): Students record Pearson r, R², and Spearman ρ for all four patterns in a table and explain each case where the two correlations disagree, or where r is near 0 although a pattern is visible.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are shown three scatter plots (a tight falling line, a U shape, and a rising curve with one outlier). For each they decide whether Pearson r is positive, negative, or near zero, whether Spearman ρ would be noticeably different, and why.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Pearson correlation coefficient</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman's rank correlation coefficient</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html">pandas.DataFrame.corr</a>.</li>
 </ol>
 
 

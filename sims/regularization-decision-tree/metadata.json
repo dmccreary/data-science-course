@@ -1,45 +1,68 @@
 {
   "title": "Regularization Decision Tree",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for regularization decision tree",
+  "subject": "Data Science",
+  "description": "Walk a decision tree with the facts of six modeling problems and choose between no penalty, ridge, lasso, and elastic net, with feedback on each choice.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Regularization Decision Tree",
+    "subjectArea": "Data Science",
+    "topic": "Choosing a regularization method",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to choose between no penalty, ridge, lasso, and elastic net for a described modeling problem and justify the choice from the size of the data, the gap between training and validation scores, the goal, and the correlation among features."
     ],
     "bloomsTaxonomy": "Evaluate",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Overfitting",
+      "Training and validation scores",
+      "Ridge, lasso, and elastic net",
+      "Polynomial features"
+    ],
+    "standards": [],
+    "bloomVerb": "Justify"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 625
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Case-based decision making with a decision tree, hidden answers, and feedback",
+    "keyQuestions": [
+      "What in the data tells you that a penalty is needed at all?",
+      "When is a model that keeps every feature the better choice?",
+      "Why is lasso a risky way to choose among highly correlated features?"
+    ],
+    "commonMisconceptions": [
+      "Regularization always improves a model (with no overfitting it only adds bias).",
+      "Lasso is always the best choice because it gives the simplest model (with groups of correlated features its selection is unstable).",
+      "The number of features decides the method (it guides the strength of λ, while the goal and the correlations decide the method)."
+    ],
+    "assessmentOpportunities": [
+      "Given a new description (500 patients, 40 lab measurements of which several are highly correlated, training R² 0.80 and validation R² 0.62, and a doctor who wants a short list of measurements to order), students name the method and the starting strength of λ and justify each step of the path."
+    ]
   },
-  "chapter": "11-nonlinear-models-regularization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "regularization-decision-tree",
+  "chapter": "11-nonlinear-models-regularization",
+  "completion_status": "implemented"
 }

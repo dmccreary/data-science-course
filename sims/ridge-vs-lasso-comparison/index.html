@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for ridge vs lasso comparison.">
+        <meta name="description" content="Move one lambda for ridge and lasso models fitted to the same standardized data, compare their coefficient paths and bar charts, and judge which penalty suits each of three data sets with the help of cross-validation.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Ridge vs Lasso Comparison - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for ridge vs lasso comparison." >
+        <meta  property="og:description"  content="Move one lambda for ridge and lasso models fitted to the same standardized data, compare their coefficient paths and bar charts, and judge which penalty suits each of three data sets with the help of cross-validation." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/ridge-vs-lasso-comparison/ridge-vs-lasso-comparison.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Ridge vs Lasso Comparison - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for ridge vs lasso comparison." >
+        <meta  name="twitter:description"  content="Move one lambda for ridge and lasso models fitted to the same standardized data, compare their coefficient paths and bar charts, and judge which penalty suits each of three data sets with the help of cross-validation." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/ridge-vs-lasso-comparison/ridge-vs-lasso-comparison.png">
       
@@ -2550,6 +2550,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/ridge-vs-lasso-comparison/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/ridge-vs-lasso-comparison/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="ridge-vs-lasso-comparison">Ridge vs Lasso Comparison</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="602" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Ridge vs Lasso Comparison MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Two models are fit to the same 50 rows and 8 features. The top plots are <strong>coefficient paths</strong>: each colored line is one coefficient, traced as <span class="arithmatex">\(\lambda\)</span> grows from 0.1 to 10,000 on a log scale. The dashed vertical line marks the <span class="arithmatex">\(\lambda\)</span> on the slider, and the bar chart below compares the two sets of coefficients at that <span class="arithmatex">\(\lambda\)</span>. The black line over each pair of bars is the coefficient with no penalty (ordinary least squares).</p>
+<ul>
+<li><strong>Ridge</strong> shrinks every coefficient smoothly toward 0 and never reaches it.</li>
+<li><strong>Lasso</strong> bends each path to exactly 0 at some <span class="arithmatex">\(\lambda\)</span> and keeps it there. Those features have left the model. They are marked with a hollow dot and a gray name.</li>
+</ul>
+<p>Both models use the chapter's form of the loss, the residual sum of squares plus <span class="arithmatex">\(\lambda\)</span> times the penalty, on features and a target that are standardized. That lets one slider drive both. In scikit-learn the same fits are <code>Ridge(alpha=λ)</code> and <code>Lasso(alpha=λ/(2n))</code> with <span class="arithmatex">\(n = 50\)</span>, because scikit-learn's Lasso divides the residual sum of squares by <span class="arithmatex">\(2n\)</span>. Ridge is solved from <span class="arithmatex">\((X^TX + \lambda I)\beta = X^Ty\)</span> and Lasso by coordinate descent with soft-thresholding. Both were checked against scikit-learn 1.8.</p>
+<p>The three data sets are synthetic and built to differ. <strong>Housing</strong> has three size features that rise and fall together, and three features (beds, door number, and listing day) with no effect of their own. <strong>Synthetic (sparse)</strong> has three real effects and five noise features. <strong>Medical</strong> has three nearly identical body measurements and a real effect for every feature. The checkbox marks the <span class="arithmatex">\(\lambda\)</span> with the lowest 5-fold cross-validation error for each method and reports which method predicts better.</p>
+<p>Not included: the contour picture of the L1 diamond and the L2 circle.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the two path plots from left to right. Find a ridge path that is still above 0 at λ = 1000 and a lasso path that has already reached 0 by λ = 100.</li>
+<li>Drag the <strong>λ</strong> slider slowly to the right. Watch the lasso bars vanish one at a time while the ridge bars only get shorter.</li>
+<li>Read the panel on the right. It counts the coefficients lasso has set to 0 and reports how far each method has shrunk the largest coefficient.</li>
+<li>Choose <strong>Synthetic (sparse)</strong> and then <strong>Medical</strong> from the menu. In the medical data, compare what ridge and lasso do with weight, BMI, and waist.</li>
+<li>Check <strong>Show cross-validation best λ</strong>. For each data set, decide which method you expect to predict better before you read the green line.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/ridge-vs-lasso-comparison/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/ridge-vs-lasso-comparison/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"602"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Multiple regression coefficients, standardized features, the idea of a penalty on coefficient size, and cross-validation.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to compare how the ridge and lasso penalties change regression coefficients as lambda grows and judge which penalty suits a data set with few important features or with correlated features.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace the paths</strong> (5 min): On the housing data students record, at λ = 1, 10, 31.6, and 100, how many lasso coefficients are exactly 0 and the percentage by which ridge has shrunk sq ft. They state the difference between the two shapes of path in one sentence.</li>
+<li><strong>Correlated features</strong> (5 min): On the medical data students compare the no-penalty coefficients of weight, BMI, and waist with the ridge and lasso coefficients at λ = 31.6 and describe what each method does with three features that measure nearly the same thing.</li>
+<li><strong>Judge the method</strong> (6 min): For each data set students predict whether ridge or lasso will have the lower cross-validation error, give a reason from the description of the data, and then check the box to compare.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Students are given a coefficient path plot without a title in which several lines sit exactly on 0 for large λ, identify the method, and explain what a manager should conclude about the features whose lines reached 0 first.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/linear_model.html">Linear Models: Ridge regression and Lasso</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Lasso (statistics)</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 6, Linear Model Selection and Regularization.</li>
 </ol>
 
 

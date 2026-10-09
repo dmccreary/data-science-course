@@ -41,18 +41,15 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of ten basic statistics s",
-    "Explore ten basic statistics s through interactive visualization",
-    "Apply knowledge of ten basic statistics s to solve problems",
-    "Experiment with parameters to observe their effects on ten basic statistics s"
+    "Trace the prerequisite dependencies among ten core statistics topics, from data points and histograms through correlation and regression to hypothesis testing and confidence intervals",
+    "Identify which concepts must be mastered before others, such as least-squares fitting requiring correlation and central tendency first",
+    "Distinguish the color-coded topic groups (fundamentals, distributions, relationships, regression, evaluation, sampling, inference) in the network map",
+    "Plan a valid learning pathway through the ten statistics MicroSims by following the directed edges of the progression graph"
   ],
   "bloomsTaxonomy": [
-    "Remember",
     "Understand",
     "Apply",
-    "Analyze",
-    "Evaluate",
-    "Create"
+    "Analyze"
   ],
   "pedagogical": {
     "pattern": "demonstration",

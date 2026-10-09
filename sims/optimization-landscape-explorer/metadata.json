@@ -1,45 +1,69 @@
 {
   "title": "Optimization Landscape Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for optimization landscape explorer",
+  "subject": "Data Science",
+  "description": "Predict where gradient descent will stop on a cost curve with several valleys, run it from starting points you choose, and compare how often plain descent and momentum reach the global minimum.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Optimization Landscape Explorer",
+    "subjectArea": "Data Science",
+    "topic": "Local and global minima",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to distinguish local minima from the global minimum and compare how the starting point and momentum affect which minimum gradient descent finds."
     ],
-    "bloomsTaxonomy": "Evaluate",
+    "bloomsTaxonomy": "Analyze",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Gradient descent",
+      "Learning rate",
+      "Minimum of a function"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Predict, run, and compare outcomes across many starting points and two optimizers",
+    "keyQuestions": [
+      "Why can gradient descent not tell a local minimum from the global minimum?",
+      "Which starting points on the two valleys curve lead to the local minimum, and what marks the boundary?",
+      "How does momentum get the ball past a shallow dip or a flat stretch?",
+      "Does momentum help from every start? Find one where it makes no difference."
+    ],
+    "commonMisconceptions": [
+      "Gradient descent always finds the best parameters (it stops at the first place the slope is nearly zero, which may be a local minimum).",
+      "A slope of zero means a minimum has been reached (on the plateau the slope is zero at a point that is not a minimum).",
+      "Momentum guarantees the global minimum (it helps with shallow dips and flat regions, but the outcome still depends on the start).",
+      "Every model has local minima to worry about (a convex cost, such as the mean squared error of linear regression, has only one minimum)."
+    ],
+    "assessmentOpportunities": [
+      "Shown a sketch of a cost curve with three valleys and a marked starting point, students say where plain gradient descent will stop, whether that point is a local or the global minimum, and name one strategy from the chapter that could change the outcome."
+    ]
   },
-  "chapter": "12-intro-to-machine-learning"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "optimization-landscape-explorer",
+  "chapter": "12-intro-to-machine-learning",
+  "completion_status": "implemented"
 }

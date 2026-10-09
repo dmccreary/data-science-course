@@ -1,45 +1,68 @@
 {
   "title": "Polynomial Degree Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for polynomial degree explorer",
+  "subject": "Data Science",
+  "description": "Set the degree of a polynomial fit for five data shapes and several noise levels, watch the fitted curve and its uncertainty band, and judge which degree gives the lowest expected test error by reading how the error splits into noise, bias, and variance.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Polynomial Degree Explorer",
+    "subjectArea": "Data Science",
+    "topic": "Polynomial degree and the bias-variance trade-off",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to judge which polynomial degree gives the best trade-off between bias and variance for a given data shape and noise level, and justify the choice from the parts of the expected test error."
     ],
     "bloomsTaxonomy": "Evaluate",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Polynomial regression",
+      "R-squared and mean squared error",
+      "Training and test sets",
+      "Overfitting and underfitting"
+    ],
+    "standards": [],
+    "bloomVerb": "Judge"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 585
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Parameter exploration with a target to reach and a computed verdict on each choice",
+    "keyQuestions": [
+      "Why does a higher degree always raise the training R² but not the test R²?",
+      "What does the width of the gray band tell you that the fitted curve alone does not?",
+      "How does the best degree change when the noise level rises, and why?"
+    ],
+    "commonMisconceptions": [
+      "The best model is the one with the highest training R² (training R² never falls as the degree rises).",
+      "A narrow uncertainty band means the curve is right (a stiff curve can be steady and wrong, which is bias).",
+      "High-degree polynomials always overfit (with no noise, or with a shape that needs the flexibility, a higher degree is the better choice)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown two fitted curves for the same data, one of degree 2 with a narrow band that misses the pattern and one of degree 14 with a wide band, and explain which has high bias, which has high variance, and what would happen to each if new data were collected."
+    ]
   },
-  "chapter": "11-nonlinear-models-regularization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "polynomial-degree-explorer",
+  "chapter": "11-nonlinear-models-regularization",
+  "completion_status": "implemented"
 }

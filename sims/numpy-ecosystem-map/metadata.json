@@ -1,45 +1,69 @@
 {
   "title": "NumPy Ecosystem Map",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for numpy ecosystem map",
+  "subject": "Data Science",
+  "description": "Click through a hub-and-spoke map with NumPy at the center to read how seven data science libraries use NumPy arrays and the code that moves data between them.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "NumPy Ecosystem Map",
+    "subjectArea": "Data Science",
+    "topic": "NumPy as the foundation of the Python data science ecosystem",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to describe how the main Python data science libraries depend on or exchange data with NumPy arrays, and give the call that converts between an array and each library's own data type."
     ],
     "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "NumPy arrays",
+      "pandas DataFrames",
+      "Fitting a scikit-learn model"
+    ],
+    "standards": [],
+    "bloomVerb": "Describe"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 565
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Click-to-reveal concept map with classification of the links",
+    "keyQuestions": [
+      "What does it mean for a library to be built on NumPy?",
+      "Which libraries have their own data type, and how do you convert to it?",
+      "Why do the charting libraries have an arrow in only one direction?",
+      "What could go wrong when a tensor and an array share the same memory?"
+    ],
+    "commonMisconceptions": [
+      "Every data science library stores its data in NumPy arrays (PyTorch and TensorFlow have their own tensors and convert to and from arrays).",
+      "Converting between a library's type and an array always makes a copy (some conversions, such as torch.from_numpy, share memory).",
+      "pandas replaces NumPy (a DataFrame keeps its numeric columns in NumPy arrays and adds labels on top).",
+      "scikit-learn accepts only NumPy arrays (it also takes lists and DataFrames, and converts them to arrays)."
+    ],
+    "assessmentOpportunities": [
+      "Students write the line of code that turns a DataFrame into a NumPy array, the line that turns an array into a PyTorch tensor, and one sentence explaining why a single well-understood array type makes it possible to use these libraries together."
+    ]
   },
-  "chapter": "10-numpy-computing"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "numpy-ecosystem-map",
+  "chapter": "10-numpy-computing",
+  "completion_status": "implemented"
 }

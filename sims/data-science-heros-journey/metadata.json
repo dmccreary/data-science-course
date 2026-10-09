@@ -83,10 +83,10 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of data science hero's journey",
-    "Explore data science hero's journey through interactive visualization",
-    "Apply knowledge of data science hero's journey to solve problems",
-    "Experiment with parameters to observe their effects on data science hero's journey"
+    "Understand the seven stages of the data science workflow",
+    "Recognize that data science is an iterative process",
+    "Connect each stage to real-world examples",
+    "Appreciate the narrative structure of data science projects"
   ],
   "bloomsTaxonomy": [
     "Remember",

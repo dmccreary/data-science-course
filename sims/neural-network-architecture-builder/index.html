@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for neural network architecture builder.">
+        <meta name="description" content="Build a fully connected neural network by adding layers and setting their sizes, and watch the diagram, the PyTorch nn.Sequential code, and the parameter count change together.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Neural Network Architecture Builder - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for neural network architecture builder." >
+        <meta  property="og:description"  content="Build a fully connected neural network by adding layers and setting their sizes, and watch the diagram, the PyTorch nn.Sequential code, and the parameter count change together." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/neural-network-architecture-builder/neural-network-architecture-builder.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Neural Network Architecture Builder - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for neural network architecture builder." >
+        <meta  name="twitter:description"  content="Build a fully connected neural network by adding layers and setting their sizes, and watch the diagram, the PyTorch nn.Sequential code, and the parameter count change together." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/neural-network-architecture-builder/neural-network-architecture-builder.png">
       
@@ -2151,6 +2151,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/neural-network-architecture-builder/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/neural-network-architecture-builder/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="neural-network-architecture-builder">Neural Network Architecture Builder</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="632" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Neural Network Architecture Builder MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The diagram shows a fully connected network: an input layer (green), one to five hidden layers (blue), and an output layer (orange). Every neuron is joined to every neuron in the next layer. A layer too large to draw is shown with a gap of three dots, and the number above it gives its true size.</p>
+<p>Each set of connections between two layers is one <code>nn.Linear(n_in, n_out)</code> layer. It has one weight for every connection and one bias for every neuron that receives them, so its parameter count is <span class="arithmatex">\(n_{in} \times n_{out} + n_{out}\)</span>. The number under each set of connections is that count, the code panel writes the same arithmetic as a comment on each line, and the bars compare the layers. The total is the sum over all layers, which is the value <code>sum(p.numel() for p in model.parameters())</code> returns for the code shown.</p>
+<p>The default network is the chapter's example with layer sizes [4, 8, 4, 1] and <span class="arithmatex">\(40 + 36 + 5 = 81\)</span> parameters. The code puts ReLU after every hidden layer and no activation after the output layer. ReLU has no parameters, so it does not change the count.</p>
+<p>Not included: the forward-pass animation, line thickness for trained weights, and a separate activation menu for each layer. The sim draws and counts architectures and does not train them.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default network [4, 8, 4, 1] and check one line of the code by hand, for example <span class="arithmatex">\(4 \times 8 + 8 = 40\)</span>.</li>
+<li>Click a layer in the diagram to select it. The <strong>Neurons</strong> slider then sets the size of that layer, from 1 to 128.</li>
+<li>Change the size of a hidden layer and watch two blue numbers, two highlighted code lines, and two blue bars change. A hidden layer is the output of one <code>nn.Linear</code> and the input of the next.</li>
+<li>Press <strong>Add Layer</strong> to insert a hidden layer of 8 neurons after the selected layer, and <strong>Remove Layer</strong> to delete the selected hidden layer. A network can have one to five hidden layers.</li>
+<li>Use the preset menu to load the Simple, Deep, Wide, and Classification networks and compare their totals.</li>
+<li>Select the Input or Output layer and change its size to match a data set with a different number of features or classes.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/neural-network-architecture-builder/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/neural-network-architecture-builder/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"632"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The artificial neuron with its weights and bias, and the roles of the input, hidden, and output layers.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Create (L6)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to design a fully connected network that meets a stated input size, output size, and parameter budget, calculate its number of parameters layer by layer, and write it as a PyTorch nn.Sequential model.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Calculate</strong> (4 min): Students load the Deep preset [4, 32, 16, 8, 1], compute the parameters of each layer on paper, and check their numbers against the comments in the code panel.</li>
+<li><strong>Compare</strong> (5 min): Students compare Wide [4, 128, 1] with Deep [4, 32, 16, 8, 1]. They record which has more parameters, which layer holds the most in each, and why.</li>
+<li><strong>Design</strong> (6 min): Students build a network for 10 input features and 3 classes that has at least two hidden layers and fewer than 500 parameters, then copy its nn.Sequential code.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Without the sim, students calculate the number of parameters of a network with layer sizes [10, 32, 16, 1], then decide which change adds more parameters, doubling the first hidden layer or doubling the second, and justify the answer with the formula.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>PyTorch documentation. <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">torch.nn.Linear</a>.</li>
+<li>PyTorch documentation. <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Sequential.html">torch.nn.Sequential</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">Multilayer perceptron</a>.</li>
 </ol>
 
 

@@ -1,45 +1,69 @@
 {
   "title": "Broadcasting Visualizer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for broadcasting visualizer",
+  "subject": "Data Science",
+  "description": "Choose the shapes of two arrays and an operation to see how NumPy stretches the smaller array to match the larger one, and which pairs of shapes cannot be combined.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Broadcasting Visualizer",
+    "subjectArea": "Data Science",
+    "topic": "Broadcasting rules for arrays of different shapes",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to predict whether two array shapes can be broadcast together, state the shape of the result, and explain which array is stretched along which axis."
     ],
-    "bloomsTaxonomy": "Apply",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Array shape",
+      "Element-wise operations",
+      "Adding a scalar to an array"
+    ],
+    "standards": [],
+    "bloomVerb": "Predict"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 550
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Predict, test, and explain with concrete arrays and a rule-checking table",
+    "keyQuestions": [
+      "Why are the shapes compared from the right and not from the left?",
+      "What does NumPy do with an axis of size 1?",
+      "Why does (3, 4) with (3,) fail while (3, 4) with (4,) works?",
+      "How can a column and a row produce a full table?"
+    ],
+    "commonMisconceptions": [
+      "Shapes are compared from the left (they are lined up from the right).",
+      "The smaller array is copied in memory to make it bigger (the values are reused without building the copies).",
+      "Any two arrays with a size in common can be combined (every pair of lined-up sizes must be equal or contain a 1).",
+      "Only one of the two arrays can be stretched (a column and a row are both stretched)."
+    ],
+    "assessmentOpportunities": [
+      "Students decide, without the MicroSim, whether shapes (4, 3) and (3,), (4, 3) and (4,), and (4, 1) and (1, 5) can be broadcast, give each result shape, and write the error message NumPy would show for the pair that fails."
+    ]
   },
-  "chapter": "10-numpy-computing"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "broadcasting-visualizer",
+  "chapter": "10-numpy-computing",
+  "completion_status": "implemented"
 }

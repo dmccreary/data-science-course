@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for matrix multiplication visualizer.">
+        <meta name="description" content="Step through the cells of a matrix product to see each one built from a row of A and a column of B, and compare it with element-wise multiplication.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Matrix Multiplication Visualizer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for matrix multiplication visualizer." >
+        <meta  property="og:description"  content="Step through the cells of a matrix product to see each one built from a row of A and a column of B, and compare it with element-wise multiplication." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/matrix-multiplication-visualizer/matrix-multiplication-visualizer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Matrix Multiplication Visualizer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for matrix multiplication visualizer." >
+        <meta  name="twitter:description"  content="Step through the cells of a matrix product to see each one built from a row of A and a column of B, and compare it with element-wise multiplication." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/matrix-multiplication-visualizer/matrix-multiplication-visualizer.png">
       
@@ -1941,6 +1941,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/matrix-multiplication-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/matrix-multiplication-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,61 @@
 
 
 <h1 id="matrix-multiplication-visualizer">Matrix Multiplication Visualizer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="472" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Matrix Multiplication Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>For a matrix <span class="arithmatex">\(A\)</span> of shape <span class="arithmatex">\((m, n)\)</span> and a matrix <span class="arithmatex">\(B\)</span> of shape <span class="arithmatex">\((n, p)\)</span>, the product <code>C = A @ B</code> has shape <span class="arithmatex">\((m, p)\)</span>, and every cell is a dot product:</p>
+<div class="arithmatex">\[C_{ij} = \sum_{k} A_{ik} B_{kj}\]</div>
+<p>This MicroSim shows <code>A</code>, <code>B</code> and <code>C</code> as grids. For the current cell of <code>C</code> (gold), row <span class="arithmatex">\(i\)</span> of <code>A</code> is blue and column <span class="arithmatex">\(j\)</span> of <code>B</code> is green. Small circled numbers mark the pairs that are multiplied, and the panel writes the calculation term by term, for example <code>C[1, 2] = 3×9 + 4×12 = 27 + 48 = 75</code>. The default matrices are the chapter's example, so the finished <code>C</code> is <code>[[27 30 33] [61 68 75] [95 106 117]]</code>.</p>
+<p>The line under the title shows the shape rule. The two <strong>inner</strong> sizes, the columns of <code>A</code> and the rows of <code>B</code>, must be equal. The two <strong>outer</strong> sizes give the shape of <code>C</code>. When the inner sizes differ there is no result, and the panel shows the error that NumPy raises for <code>A @ B</code> together with a plain explanation.</p>
+<p>The operator menu switches to <code>A * B</code>. This is element-wise multiplication: each cell uses only the two numbers in the same position, and the shapes must be the same or broadcast to the same shape. It is a different operation from the matrix product, which is a common source of mistakes.</p>
+<p>Not included: the size sliders, Play button and speed control from the original specification. Shapes are chosen from two menus so that mismatched shapes can be shown, and the student steps through the cells.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the shape line for the default, (3, 2) @ (2, 3). Find the two inner sizes and the two outer sizes.</li>
+<li>Look at the gold cell <code>C[0, 0]</code>. Match the circled numbers in the blue row and the green column to the terms in the calculation.</li>
+<li>Predict the next cell, then press <strong>Next</strong>. Use <strong>Previous</strong> to go back, or click any cell of <code>C</code>.</li>
+<li>Change the <strong>A</strong> and <strong>B</strong> shapes. Find a pair whose inner sizes differ and read the error.</li>
+<li>Set both shapes to (2, 2), switch the operator menu to element-wise <code>*</code>, and compare the result with the matrix product.</li>
+<li>Set both shapes to (3, 2) and try both operators. One fails and one works. Explain why.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/matrix-multiplication-visualizer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/matrix-multiplication-visualizer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"472"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The dot product of two vectors, array shapes, and element-wise multiplication of two arrays.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how each cell of a matrix product is computed from a row and a column, determine from two shapes whether <code>A @ B</code> is defined and what shape it has, and distinguish it from element-wise multiplication.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict a cell</strong> (4 min): With the chapter's matrices, students compute <code>C[0, 0]</code> and <code>C[2, 1]</code> by hand before stepping to those cells to check.</li>
+<li><strong>Shape rule</strong> (5 min): Students test all the shape pairs the menus allow, sort them into works and fails for <code>@</code>, and state the rule in their own words.</li>
+<li><strong>Two kinds of multiply</strong> (5 min): Using two (2, 2) matrices, students record <code>A @ B</code> and <code>A * B</code> side by side and explain why the two results differ.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given <code>A = [[1, 2], [3, 4]]</code> and <code>B = [[5, 6], [7, 8]]</code>, students compute <code>A @ B</code> and <code>A * B</code> by hand. They then state whether a (4, 3) matrix can be multiplied by a (4, 3) matrix with <code>@</code>, and what transposing the second matrix changes.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html">numpy.matmul</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">Matrix multiplication</a>.</li>
+<li>McKinney, Wes. <em>Python for Data Analysis</em>, 3rd ed. O'Reilly Media, 2022. Chapter 4, NumPy Basics: Arrays and Vectorized Computation. See the section Linear Algebra.</li>
 </ol>
 
 

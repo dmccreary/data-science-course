@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for multicollinearity detector microsim.">
+        <meta name="description" content="Raise the correlation between square feet and rooms, read the correlation matrix and each feature's variance inflation factor, and watch the coefficient confidence intervals widen while R-squared barely moves.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Multicollinearity Detector MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for multicollinearity detector microsim." >
+        <meta  property="og:description"  content="Raise the correlation between square feet and rooms, read the correlation matrix and each feature's variance inflation factor, and watch the coefficient confidence intervals widen while R-squared barely moves." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/multicollinearity-detector-microsim/multicollinearity-detector-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Multicollinearity Detector MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for multicollinearity detector microsim." >
+        <meta  name="twitter:description"  content="Raise the correlation between square feet and rooms, read the correlation matrix and each feature's variance inflation factor, and watch the coefficient confidence intervals widen while R-squared barely moves." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/multicollinearity-detector-microsim/multicollinearity-detector-microsim.png">
       
@@ -2088,6 +2088,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/multicollinearity-detector-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/multicollinearity-detector-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,58 @@
 
 
 <h1 id="multicollinearity-detector-microsim">Multicollinearity Detector MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="632" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Multicollinearity Detector MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Multicollinearity Detector MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Sixty simulated houses have three features, square feet, rooms, and age, and a price that depends on all three. The slider sets how closely rooms follows square feet. Age is unrelated to both.</p>
+<p>The left panel is a scatter plot matrix. The cells below the diagonal plot each pair of features. The cells above it give the correlation <span class="arithmatex">\(r\)</span> of the same pair, shaded by strength and flagged when it is beyond ±0.7.</p>
+<p>The upper right panel shows each feature's <strong>variance inflation factor</strong>, <span class="arithmatex">\(\text{VIF}_j = 1 / (1 - R_j^2)\)</span>, where <span class="arithmatex">\(R_j^2\)</span> comes from regressing feature <span class="arithmatex">\(j\)</span> on the other features. The bars are green below 5, orange from 5 to 10, and red above 10, the thresholds used in the chapter. The panel under it shows each fitted coefficient with its 95% confidence interval, as the change in price (in thousands of dollars) for a fixed step of the feature: 500 more square feet, 2 more rooms, or 15 more years. The black triangle marks the true value, which is known only because the data are simulated.</p>
+<p>Everything is computed from the 60 houses on screen: the correlations, the least-squares fit, the standard errors, the VIFs, <span class="arithmatex">\(R^2\)</span>, and adjusted <span class="arithmatex">\(R^2\)</span>. A VIF of 16 means the variance of that coefficient is 16 times what it would be if the feature were uncorrelated with the others, so its standard error is 4 times as large.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default view. The correlation setting is 0.97, the VIFs of square feet and rooms are above 10, and their intervals are several times as wide as the interval for age.</li>
+<li>Drag the correlation slider down to 0. The VIF bars shrink toward 1 and the two wide intervals narrow, while <span class="arithmatex">\(R^2\)</span> changes only a little.</li>
+<li>Return the slider to 0.97 and press <strong>New Sample</strong> several times. The square feet and rooms coefficients swing from sample to sample, and sometimes one has the wrong sign. The age coefficient moves much less.</li>
+<li>Press <strong>Resample ×100</strong> to refit the model to 100 new samples. Each faint tick is one estimate. Compare the spread of the ticks (SD) with the standard error (SE) from the single sample.</li>
+<li>Uncheck <strong>Rooms in the model</strong> to try one remedy, removing a correlated feature. Read what happens to the VIFs, to the interval, and to the value of the square feet coefficient.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/multicollinearity-detector-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/multicollinearity-detector-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"632"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Multiple linear regression, the correlation coefficient, <span class="arithmatex">\(R^2\)</span>, and the idea of a confidence interval.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Evaluate (L5)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to diagnose multicollinearity from a correlation matrix and variance inflation factors, judge whether individual coefficients can be trusted, and evaluate the trade-off in removing a correlated feature.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Find the thresholds</strong> (5 min): Students lower the correlation slider from 0.99 in steps and record the correlation <span class="arithmatex">\(r\)</span> and the VIF of square feet at each step. They report the correlation at which the VIF first falls below 10 and below 5.</li>
+<li><strong>Stability test</strong> (5 min): At a setting of 0.97 and again at 0.30, students press <strong>New Sample</strong> five times and write down the rooms coefficient each time, then press <strong>Resample ×100</strong> and compare the SD values. They describe the difference in one sentence.</li>
+<li><strong>Judge the remedy</strong> (5 min): Students remove rooms from the model at a setting of 0.97 and list what improved and what was lost. They decide whether they would keep or drop rooms if the goal were prediction, and again if the goal were to explain the effect of square feet.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Shown a correlation matrix and a table of VIFs for a new set of features, students identify the features with a multicollinearity problem, state what a VIF of 9 implies about the standard error of that coefficient (it is 3 times as large), and recommend one remedy together with its cost.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Variance_inflation_factor">Variance inflation factor</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Multicollinearity">Multicollinearity</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 3, Linear Regression.</li>
 </ol>
 
 

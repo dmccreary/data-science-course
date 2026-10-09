@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for least squares microsim.">
+        <meta name="description" content="Move a line with slope and intercept sliders and watch each residual, its square, and the sum of squared errors change, then reveal the least-squares line that makes the total area of the squares as small as possible.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Least Squares MicroSim - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for least squares microsim." >
+        <meta  property="og:description"  content="Move a line with slope and intercept sliders and watch each residual, its square, and the sum of squared errors change, then reveal the least-squares line that makes the total area of the squares as small as possible." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/least-squares-microsim/least-squares-microsim.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Least Squares MicroSim - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for least squares microsim." >
+        <meta  name="twitter:description"  content="Move a line with slope and intercept sliders and watch each residual, its square, and the sum of squared errors change, then reveal the least-squares line that makes the total area of the squares as small as possible." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/least-squares-microsim/least-squares-microsim.png">
       
@@ -1899,6 +1899,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/least-squares-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/least-squares-microsim/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,60 @@
 
 
 <h1 id="least-squares-microsim">Least Squares MicroSim</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="657" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Least Squares MicroSim MicroSim Fullscreen</a>
+<p><a class="md-button md-button--primary" href="main.html">Run the Least Squares MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The plot shows hours studied and exam scores for ten students, with a blue line that you control. A red segment joins each point to the line (its residual), and a square is drawn on each segment. The side of a square is the size of the residual, so its area is the squared error for that point.</p>
+<p>The table lists every point with its predicted value <span class="arithmatex">\(\hat{y}\)</span>, its residual <span class="arithmatex">\(y - \hat{y}\)</span>, and the squared residual. The last column adds up to the <strong>sum of squared errors</strong>:</p>
+<div class="arithmatex">\[\text{SSE} = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</div>
+<p>The meter under the plot shows SSE as a number and as a bar that turns from red to green as the line improves. <strong>Show Best Fit</strong> moves the sliders to the ordinary least squares solution, <span class="arithmatex">\(\hat{y} = 47.5 + 5.5x\)</span>, where SSE reaches its minimum of 161.50. No other straight line gives a smaller total area. The dashed green line stays on the plot afterward so you can compare your own line with it.</p>
+<p>The data are the same ten students as in the Regression Line Anatomy MicroSim. Not included: dragging the line with the mouse and an animated move to the best fit. The sliders and the button do both jobs.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Look at the starting line (slope 2.0, intercept 60.0). Find the largest square and the row of the table it belongs to.</li>
+<li>Move the <strong>Slope</strong> slider and watch the squares grow and shrink.</li>
+<li>Move the <strong>Intercept</strong> slider to raise or lower the whole line.</li>
+<li>Make SSE as small as you can. The black marker on the meter remembers the lowest value you have reached.</li>
+<li>Press <strong>Show Best Fit</strong> to see the least-squares line and the minimum SSE, then move the sliders away and read how far above the minimum you are.</li>
+<li>Uncheck <strong>Show squares</strong> to see only the residuals. <strong>Reset</strong> returns to the starting line and hides the best fit.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/least-squares-microsim/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/least-squares-microsim/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"657"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The regression equation <span class="arithmatex">\(\hat{y} = \beta_0 + \beta_1 x\)</span> and residuals as actual minus predicted.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how the least squares method chooses the regression line by minimizing the sum of squared errors.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): Before moving anything, students say whether the starting line is too steep or too flat and which students have the largest squared errors, then check the table.</li>
+<li><strong>Minimize</strong> (6 min): Students adjust both sliders to get SSE as low as they can and record their best slope, intercept, and SSE. They then press <strong>Show Best Fit</strong> and compare.</li>
+<li><strong>Explain</strong> (4 min): Students find a line for which every residual is positive and explain why its SSE is large. They explain in one sentence why the squares, not the residuals themselves, are added.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given five points and two candidate lines, students compute the residuals and SSE for each line, decide which line fits better, and explain why the sum of the plain residuals would be a poor measure of fit.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">Ordinary least squares</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Residual_sum_of_squares">Residual sum of squares</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 3, Linear Regression.</li>
 </ol>
 
 

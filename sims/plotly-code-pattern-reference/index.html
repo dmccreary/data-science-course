@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for plotly code pattern reference.">
+        <meta name="description" content="A clickable Plotly Express reference card covering chart functions, essential parameters, layout settings, saving options, and templates, with a quiz mode for recall practice.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Plotly Code Pattern Reference - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for plotly code pattern reference." >
+        <meta  property="og:description"  content="A clickable Plotly Express reference card covering chart functions, essential parameters, layout settings, saving options, and templates, with a quiz mode for recall practice." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/plotly-code-pattern-reference/plotly-code-pattern-reference.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Plotly Code Pattern Reference - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for plotly code pattern reference." >
+        <meta  name="twitter:description"  content="A clickable Plotly Express reference card covering chart functions, essential parameters, layout settings, saving options, and templates, with a quiz mode for recall practice." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/plotly-code-pattern-reference/plotly-code-pattern-reference.png">
       
@@ -2361,6 +2361,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/plotly-code-pattern-reference/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/plotly-code-pattern-reference/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,64 @@
 
 
 <h1 id="plotly-code-pattern-reference">Plotly Code Pattern Reference</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="647" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Plotly Code Pattern Reference MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>This reference card collects the Plotly Express patterns used in this chapter in one place. It has four panels and a strip.</p>
+<ul>
+<li><strong>Common Chart Functions</strong>: the eight <code>px</code> functions you will use most, from <code>px.line()</code> to <code>px.violin()</code>.</li>
+<li><strong>Essential Parameters</strong>: the arguments that most <code>px</code> functions share, such as <code>color</code>, <code>hover_data</code>, and <code>facet_col</code>.</li>
+<li><strong>Layout Customization</strong>: settings passed to <code>fig.update_layout()</code>.</li>
+<li><strong>Saving Options</strong>: <code>fig.write_html()</code>, <code>fig.write_image()</code>, and <code>fig.show()</code>.</li>
+<li><strong>Templates</strong>: six built-in themes. Each swatch is drawn with that template's real background, grid, and first two colors.</li>
+</ul>
+<p>Clicking an entry opens it in the panel at the bottom, which gives the meaning, one line of example code, and a note about how it behaves. Some of the notes are easy to get wrong from memory: <code>px.bar()</code> stacks rows that share an x value, <code>px.pie()</code> takes <code>names</code> and <code>values</code> in place of <code>x</code> and <code>y</code>, and <code>fig.write_image()</code> needs the <code>kaleido</code> package.</p>
+<p><strong>Quiz me</strong> hides the meanings so you can test your recall. Not included: copying a snippet to the clipboard. Type the code yourself, which helps you remember it.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Scan the four panels and the templates strip to see what the card covers.</li>
+<li>Click any entry, or press <strong>Next</strong> and <strong>Previous</strong>, to read its meaning, its example code, and the note.</li>
+<li>Click each template swatch and compare the backgrounds, grid lines, and colors.</li>
+<li>Tick <strong>Quiz me</strong>. The meanings are replaced by question marks.</li>
+<li>Pick an entry, say what it does and how you would write it, then press <strong>Reveal</strong> to check.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/plotly-code-pattern-reference/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/plotly-code-pattern-reference/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"647"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>10 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Creating a first Plotly Express chart with <code>px.line()</code> or <code>px.scatter()</code> and a pandas DataFrame.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Remember (L1)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to recall the common Plotly Express chart functions, their essential parameters, the main layout settings, and the ways to save a figure.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Read the card</strong> (3 min): Students click through one entry in each panel and one template, reading the note for each.</li>
+<li><strong>Quiz in pairs</strong> (5 min): With Quiz me ticked, one student picks an entry and the partner says what it does before Reveal is pressed. They swap after five entries.</li>
+<li><strong>Use it</strong> (4 min): Students write one px call from memory that uses color, title, and labels, then check each argument against the card.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Without the card, students match eight px functions to chart types, name the parameter for each of five tasks (color by a column, extra tooltip columns, small multiples, rename an axis, animate), and write the line that saves a figure as an HTML file.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/plotly-express/">Plotly Express in Python</a>.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/templates/">Theming and templates in Python</a>.</li>
+<li>Plotly documentation. <a href="https://plotly.com/python/static-image-export/">Static image export in Python</a>.</li>
 </ol>
 
 

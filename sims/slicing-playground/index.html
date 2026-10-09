@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for slicing playground.">
+        <meta name="description" content="Type a row slice and a column slice for a 6 by 8 array to see which elements are selected, what shape the result has, and how a slice shares memory with the original array.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Slicing Playground - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for slicing playground." >
+        <meta  property="og:description"  content="Type a row slice and a column slice for a 6 by 8 array to see which elements are selected, what shape the result has, and how a slice shares memory with the original array." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/slicing-playground/slicing-playground.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Slicing Playground - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for slicing playground." >
+        <meta  name="twitter:description"  content="Type a row slice and a column slice for a 6 by 8 array to see which elements are selected, what shape the result has, and how a slice shares memory with the original array." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/slicing-playground/slicing-playground.png">
       
@@ -2613,6 +2613,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/slicing-playground/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/slicing-playground/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,65 @@
 
 
 <h1 id="slicing-playground">Slicing Playground</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="592" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Slicing Playground MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Slicing picks out part of an array with <code>start:stop:step</code> notation, one slice per axis. This MicroSim shows <code>a = np.arange(48).reshape(6, 8)</code> and lets you type both parts of <code>b = a[rows, columns]</code>.</p>
+<ul>
+<li>The selected elements turn blue in <code>a</code>. The result <code>b</code> and its shape are drawn in the panel.</li>
+<li>Each slice is explained as a start, a stop that is not included, and a step, with the missing values and negative numbers filled in. <code>-2:</code> on 6 rows, for example, becomes start 4, stop before 6.</li>
+<li>The gray labels on the right and bottom edges show every position counted from the end, which is what a negative index means.</li>
+<li>A single number such as <code>-1</code> is an index, not a slice. It selects one row or column and removes that axis, so <code>a[:, -1]</code> has shape <code>(6,)</code> while <code>a[:, -1:]</code> has shape <code>(6, 1)</code>.</li>
+</ul>
+<p>A slice is a <strong>view</strong>: <code>b</code> uses the same memory as <code>a</code>. Press <strong>b[:] = 0</strong> to write zeros through the slice and watch <code>a</code> change. Use <code>a[...].copy()</code> when you need an independent array.</p>
+<p>Slices never raise an error for being out of range, they are clipped, and an empty result is allowed. A single index that is out of range raises <code>IndexError</code>, and a step of 0 raises <code>ValueError: slice step cannot be zero</code>. The MicroSim shows these messages as NumPy words them.</p>
+<p>Not included: selecting by dragging on the grid, from the original specification. The three challenges replace the separate Check Answer buttons.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default <code>a[1:4, ::2]</code>. Match the blue cells to the two explanations in the panel.</li>
+<li>Change the two boxes. Try <code>:3</code>, <code>2:</code>, <code>::-1</code>, <code>-2:</code> and <code>1:6:2</code> for the rows, and watch the start, stop and step that NumPy uses.</li>
+<li>Type a single index such as <code>2</code> or <code>-1</code> in one box and compare <code>b.shape</code> with the slice <code>2:3</code>.</li>
+<li>Press <strong>b[:] = 0</strong> and look at <code>a</code>. Press <strong>Reset a</strong> to restore the numbers.</li>
+<li>Choose a <strong>Challenge</strong> from the menu. The target cells get orange frames. Type slices until the panel says the challenge is solved.</li>
+<li>Try a step of 0 and an index of 9 to see the two error messages.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/slicing-playground/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/slicing-playground/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"592"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Indexing a 2-D array with <code>a[row, column]</code> and slicing a Python list with <code>start:stop</code>.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to apply <code>start:stop:step</code> slicing along both axes of a 2-D array to select a required set of elements, predict the shape of the result, and explain why changing a slice changes the original array.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): For <code>a[2:5, 1:4]</code>, <code>a[:, ::3]</code> and <code>a[::-1, 0]</code>, students write the shape and the first value of the result before typing each one.</li>
+<li><strong>Challenges</strong> (7 min): Students solve the three challenges and write down the slices they used. Pairs compare answers, since more than one slice can select the same cells.</li>
+<li><strong>Views</strong> (4 min): Students select a block, press b[:] = 0, and explain what happened to <code>a</code>. They then describe how <code>.copy()</code> would change the outcome.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given <code>m = np.arange(20).reshape(4, 5)</code> from the chapter, students write the slices that return <code>[[7 8 9] [12 13 14]]</code>, the last row reversed, and every other column, and state the shape of each result. They also explain what <code>m[1:3, 2:5][:] = 0</code> does to <code>m</code>.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/user/basics.indexing.html">Indexing on ndarrays</a>.</li>
+<li>NumPy documentation. <a href="https://numpy.org/doc/stable/user/basics.copies.html">Copies and views</a>.</li>
+<li>McKinney, Wes. <em>Python for Data Analysis</em>, 3rd ed. O'Reilly Media, 2022. Chapter 4, NumPy Basics: Arrays and Vectorized Computation.</li>
 </ol>
 
 

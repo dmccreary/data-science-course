@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for one-hot encoding visualizer.">
+        <meta name="description" content="See what pd.get_dummies returns for a categorical column, switch drop_first and dtype, add a new category, and trace each row to the column that marks it.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="One-Hot Encoding Visualizer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for one-hot encoding visualizer." >
+        <meta  property="og:description"  content="See what pd.get_dummies returns for a categorical column, switch drop_first and dtype, add a new category, and trace each row to the column that marks it." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/one-hot-encoding-visualizer/one-hot-encoding-visualizer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="One-Hot Encoding Visualizer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for one-hot encoding visualizer." >
+        <meta  name="twitter:description"  content="See what pd.get_dummies returns for a categorical column, switch drop_first and dtype, add a new category, and trace each row to the column that marks it." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/one-hot-encoding-visualizer/one-hot-encoding-visualizer.png">
       
@@ -2277,6 +2277,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/one-hot-encoding-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/one-hot-encoding-visualizer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,59 @@
 
 
 <h1 id="one-hot-encoding-visualizer">One-Hot Encoding Visualizer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="622" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the One-Hot Encoding Visualizer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The left table is one categorical column of a small DataFrame. The right table is what <code>pd.get_dummies</code> makes from it, and the exact call is printed above the tables. There is one new column per category, named <code>column_value</code>, and each row is <code>True</code> in exactly one of them. pandas sorts the category labels, so the new columns are in alphabetical order whatever order the values first appear in.</p>
+<p>The dashed <strong>row sum</strong> column is not part of the DataFrame. It is a check. With every column kept, each row sums to 1, the same as the column of ones a linear model uses for its intercept. One column is therefore redundant and the model's coefficients are not uniquely determined. This is the dummy variable trap.</p>
+<p>With <code>drop_first=True</code> pandas removes the column of the first label in sorted order (drawn faded). That category becomes the <strong>reference category</strong>. A row that is <code>False</code> in every remaining column must belong to it, so no information is lost, and the note shows the formula that rebuilds the dropped column.</p>
+<p>Two details differ from the chapter's hand-made table. Current pandas returns <code>True</code> and <code>False</code>, not 1 and 0, unless you pass <code>dtype=int</code>. And the reference category is the first label alphabetically, so for Downtown, Rural, and Suburbs it is Downtown, and the new columns are <code>neighborhood_Rural</code> and <code>neighborhood_Suburbs</code>.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default view. Six rows of <code>color</code> become three columns, <code>color_Blue</code>, <code>color_Green</code>, and <code>color_Red</code>. Find the single <code>True</code> in each row.</li>
+<li>Hover over a row in either table. The same row is outlined in both tables and the note says which column it marks. Click to keep a row selected.</li>
+<li>Check <strong>drop_first=True</strong>. One column fades out and the note names the reference category. Find the rows that are now <code>False</code> in every column.</li>
+<li>Compare the <strong>row sum</strong> column with the box checked and unchecked.</li>
+<li>Check <strong>dtype=int</strong> to see the same table as 1s and 0s.</li>
+<li>Press <strong>Add a Category</strong> to append a row whose value has not appeared before, and see where its new column lands. Use the <strong>Column</strong> menu to try <code>neighborhood</code> and <code>fuel</code>. <strong>Reset</strong> restores the starting rows.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/one-hot-encoding-visualizer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/one-hot-encoding-visualizer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"622"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>DataFrame columns, the difference between categorical and numerical variables, and the multiple regression equation with an intercept.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to explain how one-hot encoding turns a categorical column into True/False columns, predict the columns <code>pd.get_dummies</code> creates with and without <code>drop_first=True</code>, and explain why dropping one column avoids the dummy variable trap.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace</strong> (4 min): Students hover over each of the six rows of <code>color</code> and say which new column is <code>True</code> before reading the note. They then predict the column order for <code>neighborhood</code> and check it with the menu.</li>
+<li><strong>Drop first</strong> (5 min): Students check <strong>drop_first=True</strong> for all three columns and record which category becomes the reference each time. They write down the rule pandas uses to choose it.</li>
+<li><strong>Explain the trap</strong> (4 min): Using the row sum column, students explain in two sentences why keeping all k columns is a problem for a linear model with an intercept and why k − 1 columns still identify every category.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a column <code>size</code> with the values Small, Medium, Large, Medium, students write the column names and the first two rows returned by <code>pd.get_dummies(df, columns=['size'], drop_first=True)</code>, name the reference category, and explain why it is Large and not Small.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html">pandas.get_dummies</a>.</li>
+<li>scikit-learn documentation. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">sklearn.preprocessing.OneHotEncoder</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Dummy_variable_(statistics)">Dummy variable (statistics)</a>.</li>
 </ol>
 
 

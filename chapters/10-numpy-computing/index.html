@@ -2535,7 +2535,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/chapters/10-numpy-computing/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/chapters/10-numpy-computing/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2594,7 +2594,7 @@ version: 0.03</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Check your version</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
@@ -2622,12 +2622,12 @@ version: 0.03</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Create a simple 1D array</span>
 <span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">temperatures</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;numpy.ndarray&#39;&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">temperatures</span><span class="p">))</span>  <span class="c1"># &lt;class 'numpy.ndarray'&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>The difference between a NumPy array and a Python list might seem subtle at first, but watch what happens when we do math:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2636,7 +2636,7 @@ version: 0.03</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Python list: can&#39;t do this directly!</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Python list: can't do this directly!</span>
 <span class="n">python_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="c1"># python_list * 2  # This gives [1, 2, 3, 4, 5, 1, 2, 3, 4, 5] - not what we want!</span>
 
@@ -2646,6 +2646,8 @@ version: 0.03</p>
 </code></pre></div></td></tr></table></div>
 <p>This is the magic of NumPy: mathematical operations work <em>element by element</em> automatically.</p>
 <h4 id="diagram-numpy-array-vs-python-list">Diagram: NumPy Array vs Python List</h4>
+<iframe src="../../sims/numpy-array-vs-python-list/main.html" width="100%" height="616px" scrolling="no"></iframe>
+<p><a href="../../sims/numpy-array-vs-python-list/main.html">Run NumPy Array vs Python List Fullscreen</a></p>
 <details>
 <summary>NumPy Array vs Python List</summary>
 <p>Type: infographic</p>
@@ -2731,7 +2733,7 @@ version: 0.03</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Like Python&#39;s range, but returns an array</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Like Python's range, but returns an array</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># start, stop, step</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>  <span class="c1"># [0 2 4 6 8]</span>
 
@@ -2760,7 +2762,7 @@ version: 0.03</p>
 
 <span class="c1"># Random numbers from normal distribution</span>
 <span class="n">normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># mean=0, std=1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean: </span><span class="si">{</span><span class="n">normal</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, Std: </span><span class="si">{</span><span class="n">normal</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean: </span><span class="si">{</span><span class="n">normal</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, Std: </span><span class="si">{</span><span class="n">normal</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <table>
 <thead>
@@ -2879,6 +2881,8 @@ version: 0.03</p>
 <p>When reshaping, you can use -1 for one dimension, and NumPy will automatically calculate it. This is super handy when you know one dimension but not the other: <code>array.reshape(-1, 3)</code> gives you 3 columns with however many rows are needed.</p>
 </div>
 <h4 id="diagram-array-shape-visualizer">Diagram: Array Shape Visualizer</h4>
+<iframe src="../../sims/array-shape-visualizer/main.html" width="100%" height="582px" scrolling="no"></iframe>
+<p><a href="../../sims/array-shape-visualizer/main.html">Run Array Shape Visualizer Fullscreen</a></p>
 <details>
 <summary>Array Shape Visualizer</summary>
 <p>Type: microsim</p>
@@ -3068,6 +3072,8 @@ version: 0.03</p>
 <p>Slicing in NumPy creates a <em>view</em> of the original array, not a copy. Changes to the slice affect the original! Use <code>.copy()</code> if you need an independent copy: <code>my_copy = arr[2:5].copy()</code>.</p>
 </div>
 <h4 id="diagram-slicing-playground">Diagram: Slicing Playground</h4>
+<iframe src="../../sims/slicing-playground/main.html" width="100%" height="592px" scrolling="no"></iframe>
+<p><a href="../../sims/slicing-playground/main.html">Run Slicing Playground Fullscreen</a></p>
 <details>
 <summary>Slicing Playground</summary>
 <p>Type: microsim</p>
@@ -3125,7 +3131,7 @@ version: 0.03</p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># Create a million random numbers</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)</span>
@@ -3134,15 +3140,15 @@ version: 0.03</p>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">result_slow</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 <span class="n">slow_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python loop: </span><span class="si">{</span><span class="n">slow_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Python loop: </span><span class="si">{</span><span class="n">slow_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 
 <span class="c1"># Fast way: NumPy vectorized</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">result_fast</span> <span class="o">=</span> <span class="n">data</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">fast_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy vectorized: </span><span class="si">{</span><span class="n">fast_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"NumPy vectorized: </span><span class="si">{</span><span class="n">fast_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy is </span><span class="si">{</span><span class="n">slow_time</span><span class="o">/</span><span class="n">fast_time</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">x faster!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"NumPy is </span><span class="si">{</span><span class="n">slow_time</span><span class="o">/</span><span class="n">fast_time</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">x faster!"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Typical output: NumPy is <strong>50-100x faster</strong> than the Python loop. That's not a typo—NumPy really is that much faster.</p>
 <h3 id="common-vectorized-operations">Common Vectorized Operations</h3>
@@ -3245,7 +3251,7 @@ version: 0.03</p>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># [11 12 13 14 15]</span>
 
-<span class="c1"># The scalar 10 is &quot;broadcast&quot; to [10, 10, 10, 10, 10]</span>
+<span class="c1"># The scalar 10 is "broadcast" to [10, 10, 10, 10, 10]</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="broadcasting-with-different-shapes">Broadcasting with Different Shapes</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3339,6 +3345,8 @@ version: 0.03</p>
 </tbody>
 </table>
 <h4 id="diagram-broadcasting-visualizer">Diagram: Broadcasting Visualizer</h4>
+<iframe src="../../sims/broadcasting-visualizer/main.html" width="100%" height="552px" scrolling="no"></iframe>
+<p><a href="../../sims/broadcasting-visualizer/main.html">Run Broadcasting Visualizer Fullscreen</a></p>
 <details>
 <summary>Broadcasting Visualizer</summary>
 <p>Type: microsim</p>
@@ -3401,11 +3409,11 @@ version: 0.03</p>
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original shape:&quot;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 3)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Original shape:"</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 3)</span>
 
 <span class="n">A_T</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Transpose</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A_T</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Transposed shape:&quot;</span><span class="p">,</span> <span class="n">A_T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (3, 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Transposed shape:"</span><span class="p">,</span> <span class="n">A_T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (3, 2)</span>
 
 <span class="c1"># Original:</span>
 <span class="c1"># [[1 2 3]</span>
@@ -3490,6 +3498,8 @@ version: 0.03</p>
 <p>For A @ B to work, the number of columns in A must equal the number of rows in B. Shape (m, <strong>n</strong>) @ (<strong>n</strong>, p) = (m, p). If shapes don't match, you'll get an error.</p>
 </div>
 <h4 id="diagram-matrix-multiplication-visualizer">Diagram: Matrix Multiplication Visualizer</h4>
+<iframe src="../../sims/matrix-multiplication-visualizer/main.html" width="100%" height="472px" scrolling="no"></iframe>
+<p><a href="../../sims/matrix-multiplication-visualizer/main.html">Run Matrix Multiplication Visualizer Fullscreen</a></p>
 <details>
 <summary>Matrix Multiplication Visualizer</summary>
 <p>Type: microsim</p>
@@ -3562,7 +3572,7 @@ version: 0.03</p>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">la</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">la</span>
 
 <span class="c1"># Create a square matrix</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -3572,27 +3582,27 @@ version: 0.03</p>
 
 <span class="c1"># Determinant</span>
 <span class="n">det</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Determinant: </span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 10.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Determinant: </span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 10.0</span>
 
 <span class="c1"># Inverse (A^-1 such that A @ A^-1 = I)</span>
 <span class="n">A_inv</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inverse:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Inverse:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A_inv</span><span class="p">)</span>
 
 <span class="c1"># Verify: A @ A^-1 should equal identity</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A @ A_inv:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A @ A_inv:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">A_inv</span><span class="p">)</span>  <span class="c1"># [[1, 0], [0, 1]] (approximately)</span>
 
 <span class="c1"># Eigenvalues and eigenvectors</span>
 <span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenvalues: </span><span class="si">{</span><span class="n">eigenvalues</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenvectors:</span><span class="se">\n</span><span class="si">{</span><span class="n">eigenvectors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Eigenvalues: </span><span class="si">{</span><span class="n">eigenvalues</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Eigenvectors:</span><span class="se">\n</span><span class="si">{</span><span class="n">eigenvectors</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Solve linear system Ax = b</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Solution to Ax = b: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Verification A @ x: </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Should equal b</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Solution to Ax = b: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Verification A @ x: </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Should equal b</span>
 </code></pre></div></td></tr></table></div>
 <p>These operations are foundational for:</p>
 <ul>
@@ -3677,8 +3687,8 @@ version: 0.03</p>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># Compare approaches for a common operation:</span>
 <span class="c1"># Normalize a dataset (subtract mean, divide by std)</span>
@@ -3687,14 +3697,14 @@ version: 0.03</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)</span>
 
 <span class="c1"># Method 1: Pure Python</span>
-<span class="k">def</span> <span class="nf">normalize_python</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_python</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">variance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">std</span> <span class="o">=</span> <span class="n">variance</span> <span class="o">**</span> <span class="mf">0.5</span>
     <span class="k">return</span> <span class="p">[(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 
 <span class="c1"># Method 2: NumPy</span>
-<span class="k">def</span> <span class="nf">normalize_numpy</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_numpy</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 
 <span class="c1"># Time Python version</span>
@@ -3707,9 +3717,9 @@ version: 0.03</p>
 <span class="n">result_numpy</span> <span class="o">=</span> <span class="n">normalize_numpy</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">numpy_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python: </span><span class="si">{</span><span class="n">python_time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy: </span><span class="si">{</span><span class="n">numpy_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Speedup: </span><span class="si">{</span><span class="n">python_time</span><span class="o">/</span><span class="n">numpy_time</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">x&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Python: </span><span class="si">{</span><span class="n">python_time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"NumPy: </span><span class="si">{</span><span class="n">numpy_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Speedup: </span><span class="si">{</span><span class="n">python_time</span><span class="o">/</span><span class="n">numpy_time</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">x"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Typical result: NumPy is <strong>100-500x faster</strong> for this operation!</p>
 <h3 id="memory-efficiency">Memory Efficiency</h3>
@@ -3726,7 +3736,7 @@ version: 0.03</p>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="c1"># Python list of 1 million integers</span>
 <span class="n">python_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">))</span>
@@ -3736,9 +3746,9 @@ version: 0.03</p>
 <span class="n">numpy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)</span>
 <span class="n">numpy_size</span> <span class="o">=</span> <span class="n">numpy_array</span><span class="o">.</span><span class="n">nbytes</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python list: </span><span class="si">{</span><span class="n">python_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy array: </span><span class="si">{</span><span class="n">numpy_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memory savings: </span><span class="si">{</span><span class="n">python_size</span><span class="o">/</span><span class="n">numpy_size</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">x&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Python list: </span><span class="si">{</span><span class="n">python_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"NumPy array: </span><span class="si">{</span><span class="n">numpy_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Memory savings: </span><span class="si">{</span><span class="n">python_size</span><span class="o">/</span><span class="n">numpy_size</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">x"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>NumPy typically uses <strong>4-8x less memory</strong> than equivalent Python lists.</p>
 <h3 id="why-scikit-learn-and-pandas-use-numpy">Why Scikit-learn and Pandas Use NumPy</h3>
@@ -3751,6 +3761,8 @@ version: 0.03</p>
 </ul>
 <p>When you call <code>df.values</code> on a pandas DataFrame, you get a NumPy array. When you call <code>model.fit(X, y)</code> in scikit-learn, X and y are NumPy arrays. Understanding NumPy means understanding the foundation of modern data science.</p>
 <h4 id="diagram-numpy-ecosystem-map">Diagram: NumPy Ecosystem Map</h4>
+<iframe src="../../sims/numpy-ecosystem-map/main.html" width="100%" height="567px" scrolling="no"></iframe>
+<p><a href="../../sims/numpy-ecosystem-map/main.html">Run NumPy Ecosystem Map Fullscreen</a></p>
 <details>
 <summary>NumPy Ecosystem Map</summary>
 <p>Type: infographic</p>
@@ -3828,7 +3840,7 @@ Whenever you write a <code>for</code> loop over array elements, stop and ask: "I
 </code></pre></div></td></tr></table></div>
 <p><strong>Use Broadcasting Intentionally</strong>
 Broadcasting is powerful but can be confusing. When shapes don't match as expected, print them:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A shape: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, B shape: </span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A shape: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, B shape: </span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Be Careful with Views</strong>
 Remember that slices create views, not copies. If you need an independent array, use <code>.copy()</code>:</p>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for multiple regression pipeline.">
+        <meta name="description" content="Step through the ten stages of a multiple regression workflow on 500 simulated houses, follow the shape of the data from stage to stage, and read the real result and the most common mistake at each stage.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Multiple Regression Pipeline - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for multiple regression pipeline." >
+        <meta  property="og:description"  content="Step through the ten stages of a multiple regression workflow on 500 simulated houses, follow the shape of the data from stage to stage, and read the real result and the most common mistake at each stage." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/multiple-regression-pipeline/multiple-regression-pipeline.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Multiple Regression Pipeline - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for multiple regression pipeline." >
+        <meta  name="twitter:description"  content="Step through the ten stages of a multiple regression workflow on 500 simulated houses, follow the shape of the data from stage to stage, and read the real result and the most common mistake at each stage." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/multiple-regression-pipeline/multiple-regression-pipeline.png">
       
@@ -2130,6 +2130,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/multiple-regression-pipeline/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/multiple-regression-pipeline/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,71 @@
 
 
 <h1 id="multiple-regression-pipeline">Multiple Regression Pipeline</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="627" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Multiple Regression Pipeline MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The flowchart shows a complete multiple regression workflow as ten stages. Each box carries the shape of the data that leaves the stage (rows × feature columns), so you can watch the columns grow from 8 to 10 in feature engineering and to 12 in preprocessing, then shrink to 11 after the multicollinearity check and to 7 after feature selection.</p>
+<p>Below the flowchart, the left panel explains the selected stage, shows the Python that carries it out, and names the mistake that most often goes wrong there. The right panel shows the <strong>result on this data</strong>. Nothing in it is typed in. The page generates 500 houses and runs the whole pipeline in the browser:</p>
+<ol>
+<li><strong>Raw data</strong>: 6 numeric and 2 categorical columns, with gaps in <code>lot_size</code>.</li>
+<li><strong>Feature engineering</strong>: <code>log_lot</code> and <code>is_new</code>, two row-by-row formulas.</li>
+<li><strong>Train/test split</strong>: a shuffled 80/20 split into 400 and 100 rows.</li>
+<li><strong>Preprocessing</strong>: median imputation, standardization, and one-hot encoding, all learned from the 400 training rows.</li>
+<li><strong>Multicollinearity</strong>: <span class="arithmatex">\(\text{VIF} = 1 / (1 - R^2)\)</span> for each numeric column. <code>rooms</code> is nearly <code>bedrooms + bathrooms + 2</code>, so it is dropped.</li>
+<li><strong>Feature selection</strong>: forward selection on 5-fold cross-validated R², with a gain of 0.005 required.</li>
+<li><strong>Model training</strong>: ordinary least squares on the selected columns.</li>
+<li><strong>Cross-validation</strong>: the five fold scores, their mean, and their spread.</li>
+<li><strong>Final evaluation</strong>: R² and RMSE on the 100 test rows, with a plot of predicted against actual price.</li>
+<li><strong>Feature importance</strong>: the coefficients ranked by size.</li>
+</ol>
+<p>The scores of stages 8 and 9 appear in the flowchart only when you reach those stages, because the test set is looked at once, at the end.</p>
+<p>The workflow differs from the chapter's code in two places, on purpose. The chapter's listing computes <code>price_per_sqft</code> from the target. Stage 2 lists a feature like that as its mistake, because it hands the model the answer. The chapter also engineers <code>age_squared</code>, which is strongly correlated with <code>age</code> by construction and would dominate the VIF check, so this pipeline engineers a log and a flag instead. VIF is computed on the standardized training columns, where it equals <span class="arithmatex">\(1 / (1 - R^2)\)</span> with an intercept.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read stage 1, then press <strong>Next</strong> to move through the pipeline. You can also click any box in the flowchart.</li>
+<li>At each stage, compare the shape in its box with the shape in the box before it and say what added or removed rows or columns.</li>
+<li>Read the <strong>Result on this data</strong> panel. At stages 3, 5, 6, 7, 8, and 10 read the bars, and at stage 9 read the plot.</li>
+<li>Read <strong>What can go wrong</strong> for the stage. Untick the checkbox if you want to try naming the mistake before you see it.</li>
+<li>At stage 9, compare the test R² with the cross-validation estimate from stage 8 and the training R² from stage 7.</li>
+<li>At stage 10, compare the ranking with the order in which forward selection added the features at stage 6.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/multiple-regression-pipeline/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/multiple-regression-pipeline/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"627"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Multiple linear regression, the train-test split, standardization and one-hot encoding, VIF, feature selection, and cross-validation, each of which appears earlier in the chapter.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to carry out the stages of a multiple regression workflow in order, explain how each stage changes the shape of the data, and identify the mistake each stage must avoid.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Trace the shapes</strong> (5 min): Students step through the ten stages and fill in a table of rows and feature columns after each stage, with one phrase for what caused each change.</li>
+<li><strong>Name the mistake</strong> (5 min): With the checkbox unticked, students write down what could go wrong at stages 2, 3, 4, and 9, then tick the box and compare.</li>
+<li><strong>Order matters</strong> (8 min): Students explain what would be wrong with three reorderings: scaling before the split, selecting features after looking at the test score, and computing the test score before cross-validation.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given a short script that scales all rows before splitting and chooses features by test score, students identify both leaks, rewrite the order of the steps, and state which reported number can no longer be trusted.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/compose.html">Pipelines and composite estimators</a>.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/common_pitfalls.html">Common pitfalls and recommended practices</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Variance_inflation_factor">Variance inflation factor</a>.</li>
 </ol>
 
 

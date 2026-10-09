@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for feature selection race.">
+        <meta name="description" content="Step forward selection, backward elimination, and stepwise selection through the same data, predict each next move from the cross-validated scores, and compare the features, score, and work of the three results.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Feature Selection Race - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for feature selection race." >
+        <meta  property="og:description"  content="Step forward selection, backward elimination, and stepwise selection through the same data, predict each next move from the cross-validated scores, and compare the features, score, and work of the three results." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/feature-selection-race/feature-selection-race.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Feature Selection Race - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for feature selection race." >
+        <meta  name="twitter:description"  content="Step forward selection, backward elimination, and stepwise selection through the same data, predict each next move from the cross-validated scores, and compare the features, score, and work of the three results." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/feature-selection-race/feature-selection-race.png">
       
@@ -1662,6 +1662,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/feature-selection-race/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/feature-selection-race/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,66 @@
 
 
 <h1 id="feature-selection-race">Feature Selection Race</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="712" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Feature Selection Race MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Three feature selection methods work on the same data at the same time: 200 simulated rows with 8 candidate features. Each method has a track of eight chips. A colored chip is a feature that is in that method's model, and a gray chip is a feature that is left out.</p>
+<p>Every score is a 5-fold cross-validated R² (CV R²) from real least-squares fits computed in the browser, the same number that <code>cross_val_score(LinearRegression(), X[features], y, cv=5, scoring='r2').mean()</code> returns. The number on a chip is the change in CV R² if that method flipped the chip. One rule decides every move: a feature has to earn 0.005 of CV R².</p>
+<ul>
+<li><strong>Forward selection</strong> starts empty and adds the feature with the largest gain. It stops when no addition gains more than 0.005.</li>
+<li><strong>Backward elimination</strong> starts with all 8 features and removes the one whose removal costs the least. It stops when every removal would cost more than 0.005.</li>
+<li><strong>Stepwise selection</strong> starts empty and makes the single addition or removal that is best under the same rule, so it can undo an earlier choice.</li>
+</ul>
+<p>The chip with the black outline is the move a method makes next. Under the chips is the path so far, with the score after each move. The table compares the features in each model, the CV R², and the number of models each method has had to score, which stands in for running time. When all three have stopped, the winner is named: the highest CV R², where scores within 0.005 count as a tie that goes to fewer features and then to fewer models scored. Because the data is simulated, the features the target was really built from are known. They are revealed at the finish with gold bars, and the last table column says whether each method found them.</p>
+<p>The four data sets show where the methods differ. In <strong>Few useful features</strong> and <strong>Most features useful</strong> all three usually agree, and the difference is the work. In <strong>A redundant stand-in</strong>, <code>rooms</code> is close to <code>beds + baths</code>, so it looks strong on its own and stops helping once both are in the model. In <strong>A pair that works together</strong>, profit depends on <code>sales − costs</code>, two columns that are almost perfectly correlated, so neither one helps alone.</p>
+<p>Nothing is scripted. <strong>New Data</strong> draws a new sample, and the paths and the winner can change. The empty model starts slightly below zero because a model that only predicts the mean of its training folds does a little worse than the mean of the fold it is scored on.</p>
+<p>The chapter describes backward elimination with p-values. Here all three methods use the same CV R² rule, as the chapter's forward selection code does, so that their results can be compared. Not included: a speed slider (the race advances one move every 1.4 seconds, or one move per press of Next Step).</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the numbers on the chips of each track. For each method, find the move it will make and check it against the chip with the black outline.</li>
+<li>Press <strong>Next Step</strong>. All three methods make one move. Read the new path line and the new numbers on the chips.</li>
+<li>Keep stepping, or press <strong>Start Race</strong> to let the methods run. A method that has no move worth 0.005 stops.</li>
+<li>When all three have stopped, compare the rows of the table and read the result panel. Check each method's features against the gold bars.</li>
+<li>Choose another <strong>Data</strong> set and repeat. Before you step, predict which method will need the fewest models and which will end with the best model.</li>
+<li>Press <strong>New Data</strong> a few times on the last two data sets. Note when the outcome changes and when it does not.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/feature-selection-race/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/feature-selection-race/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"712"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
-<p>10-15 minutes</p>
+<p>15-20 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Multiple linear regression, R-squared, K-fold cross-validation, and the definitions of forward selection, backward elimination, and stepwise selection.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to carry out forward selection, backward elimination, and stepwise selection one move at a time and compare the feature sets, scores, and amount of work they produce on the same data.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict and step</strong> (5 min): On Few useful features, students write down each method's next move before every press of Next Step and record how many models each method scored by the finish.</li>
+<li><strong>Compare the work</strong> (5 min): Students run Most features useful and explain, from the two model counts, why backward elimination is cheaper there and forward selection is cheaper on the first data set.</li>
+<li><strong>Explain the disagreement</strong> (8 min): Students run A redundant stand-in and A pair that works together. For each, they explain in two sentences why forward selection ends with a different model than backward elimination, using the numbers on the chips as evidence.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>Given the chip values of one track at one step, students state the method's next move or explain why it stops. They also describe one kind of data on which forward selection keeps a feature it does not need and one on which it misses features that backward elimination keeps.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Stepwise_regression">Stepwise regression</a>.</li>
+<li>scikit-learn User Guide. <a href="https://scikit-learn.org/stable/modules/feature_selection.html#sequential-feature-selection">Feature selection, Sequential Feature Selection</a>.</li>
+<li>James, G., Witten, D., Hastie, T., and Tibshirani, R. <em>An Introduction to Statistical Learning</em>. Springer. Chapter 6, Linear Model Selection and Regularization.</li>
 </ol>
 
 

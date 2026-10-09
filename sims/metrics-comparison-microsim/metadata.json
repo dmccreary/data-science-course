@@ -1,45 +1,68 @@
 {
   "title": "Metrics Comparison MicroSim",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for metrics comparison microsim",
+  "subject": "Data Science",
+  "description": "Drag data points or add outliers to a scatter plot and compare how MAE, MSE, RMSE, and R-squared respond to the same prediction errors.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Metrics Comparison MicroSim",
+    "subjectArea": "Data Science",
+    "topic": "Regression error metrics (MAE, MSE, RMSE, R-squared)",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare how MAE, MSE, RMSE, and R-squared respond to the same set of prediction errors and explain why RMSE is more sensitive to outliers than MAE."
     ],
-    "bloomsTaxonomy": "Create",
+    "bloomsTaxonomy": "Analyze",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "Simple linear regression",
+      "Residuals",
+      "Mean and square root"
+    ],
+    "standards": [],
+    "bloomVerb": "Compare"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Direct manipulation of data with immediate numeric and visual feedback",
+    "keyQuestions": [
+      "Why does one large residual raise RMSE by a larger factor than MAE?",
+      "RMSE is never smaller than MAE. When are the two equal?",
+      "What happens to the fitted line, and to the other residuals, when an outlier is added?"
+    ],
+    "commonMisconceptions": [
+      "MAE and RMSE always tell the same story (they agree when the errors are similar in size and move apart when a few errors are much larger than the rest).",
+      "Positive and negative errors cancel out in these metrics (absolute values and squares are never negative, so every miss adds to the total).",
+      "MSE is in the same units as the target (it is in squared units, and RMSE converts it back).",
+      "An outlier changes only its own residual (the least-squares line moves toward it, so the other residuals change as well)."
+    ],
+    "assessmentOpportunities": [
+      "Given the residuals 1, −1, 2, −2, and 10, students compute MAE, MSE, and RMSE by hand, state which metric the largest residual affects most, and justify the answer using its share of each total."
+    ]
   },
-  "chapter": "08-model-evaluation"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "metrics-comparison-microsim",
+  "chapter": "08-model-evaluation",
+  "completion_status": "implemented"
 }

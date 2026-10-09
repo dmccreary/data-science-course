@@ -1,45 +1,68 @@
 {
   "title": "Plotly Code Pattern Reference",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for plotly code pattern reference",
+  "subject": "Data Science",
+  "description": "A clickable Plotly Express reference card covering chart functions, essential parameters, layout settings, saving options, and templates, with a quiz mode for recall practice.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Plotly Code Pattern Reference",
+    "subjectArea": "Data Science",
+    "topic": "Plotly Express functions and parameters",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to recall the common Plotly Express chart functions, their essential parameters, the main layout settings, and the ways to save a figure."
     ],
     "bloomsTaxonomy": "Remember",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "10 minutes",
+    "prerequisites": [
+      "pandas DataFrames and column names",
+      "Importing plotly.express as px",
+      "Calling a function with keyword arguments"
+    ],
+    "standards": [],
+    "bloomVerb": "Recall"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 645
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Reference card with click-to-reveal detail and self-quizzing for retrieval practice",
+    "keyQuestions": [
+      "Which px function would you use for each of the six basic plot types?",
+      "What is the difference between a parameter of a px function and a setting in fig.update_layout()?",
+      "When would you save a figure with write_html() and when with write_image()?"
+    ],
+    "commonMisconceptions": [
+      "px.bar() draws one bar per row (rows that share an x value are stacked into one bar).",
+      "px.pie() takes x and y (it takes names and values).",
+      "write_image() works with nothing else installed (static export needs the kaleido package).",
+      "A template only changes the background color (it also sets grid lines, fonts, and the color sequence)."
+    ],
+    "assessmentOpportunities": [
+      "Without the card, students match eight px functions to chart types, name the parameter for each of five tasks (color by a column, extra tooltip columns, small multiples, rename an axis, animate), and write the line that saves a figure as an HTML file."
+    ]
   },
-  "chapter": "05-data-visualization"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "plotly-code-pattern-reference",
+  "chapter": "05-data-visualization",
+  "completion_status": "implemented"
 }

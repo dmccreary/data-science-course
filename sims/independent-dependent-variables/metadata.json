@@ -41,10 +41,11 @@
     "map"
   ],
   "learningObjectives": [
-    "Understand the mathematical concept of independent vs dependent variables",
-    "Apply independent vs dependent variables to solve problems",
-    "Visualize and interpret independent vs dependent variables relationships",
-    "Experiment with parameters to observe their effects on independent vs dependent variables"
+    "Identify the independent variable (hours studied, controlled) and the dependent variable (test score, measured) in a study-time scenario",
+    "Explain why the independent variable is plotted on the x-axis and the dependent variable on the y-axis of a scatter plot",
+    "Predict a student's approximate test score from study hours using the trend line and hover prediction feature",
+    "Observe how lowering the relationship-strength slider increases scatter around the trend line and weakens the correlation indicator",
+    "Recognize that a correlation shows a tendency rather than a guarantee by locating outlier students who beat or missed expectations"
   ],
   "pedagogical": {
     "pattern": "assessment",

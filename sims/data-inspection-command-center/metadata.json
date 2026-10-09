@@ -1,45 +1,68 @@
 {
   "title": "Data Inspection Command Center",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for data inspection command center",
+  "subject": "Data Science",
+  "description": "Choose a pandas inspection command and read its output for an eight-row DataFrame, with the cells the command used highlighted.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Data Inspection Command Center",
+    "subjectArea": "Data Science",
+    "topic": "Inspecting a DataFrame with head, tail, shape, info, and describe",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to use head, tail, shape, info, describe, columns, and dtypes to inspect a DataFrame and interpret each output, including finding missing values from the non-null counts."
     ],
     "bloomsTaxonomy": "Apply",
     "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "prerequisites": [
+      "DataFrame structure (index, columns, rows)",
+      "Loading data with read_csv",
+      "Mean and quartiles"
+    ],
+    "standards": [],
+    "bloomVerb": "Use"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 580
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Guided practice with immediate feedback, where the student chooses a command and reads the computed output",
+    "keyQuestions": [
+      "Why is the age column float64 when every age is a whole number?",
+      "Which of the seven commands need parentheses, which do not, and why?",
+      "Why does describe() report a count of 7 for a table with 8 rows?"
+    ],
+    "commonMisconceptions": [
+      "shape is a method and needs parentheses (it is an attribute, written df.shape).",
+      "head() shows the whole dataset (it shows 5 rows unless you ask for more).",
+      "describe() summarizes every column (by default it covers only the numeric ones).",
+      "count in describe() is the number of rows (it is the number of non-missing values)."
+    ],
+    "assessmentOpportunities": [
+      "Students are shown the info() output from the chapter (1000 entries, four columns). They state the shape of the DataFrame, name the columns with missing values and how many are missing in each, and say which columns describe() would summarize."
+    ]
   },
-  "chapter": "03-python-data-structures"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "data-inspection-command-center",
+  "chapter": "03-python-data-structures",
+  "completion_status": "implemented"
 }

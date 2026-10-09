@@ -46,10 +46,11 @@
     "simulation"
   ],
   "learningObjectives": [
-    "Understand the key concepts of least squares",
-    "Explore least squares through interactive visualization",
-    "Apply knowledge of least squares to solve problems",
-    "Experiment with parameters to observe their effects on least squares"
+    "Explain how a residual is the vertical distance between a data point and the fitted line, and why least squares minimizes the sum of squared residuals",
+    "Adjust the slope and intercept sliders to reduce the total squared error and find a best-fit line for the plotted points",
+    "Interpret the colored squares drawn on each residual as the geometric meaning of squared error",
+    "Describe how changing slope m and intercept b in y = mx + b moves the line relative to the data",
+    "Evaluate whether a manually fitted line is close to optimal by comparing its total squared error to the minimum achieved"
   ],
   "bloomsTaxonomy": [
     "Remember",

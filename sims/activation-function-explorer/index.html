@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for activation function explorer.">
+        <meta name="description" content="Choose an activation function, move the input along its curve, and read the output and gradient to see where gradients vanish or die and why a network needs a non-linear activation.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Activation Function Explorer - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for activation function explorer." >
+        <meta  property="og:description"  content="Choose an activation function, move the input along its curve, and read the output and gradient to see where gradients vanish or die and why a network needs a non-linear activation." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/activation-function-explorer/activation-function-explorer.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Activation Function Explorer - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for activation function explorer." >
+        <meta  name="twitter:description"  content="Choose an activation function, move the input along its curve, and read the output and gradient to see where gradients vanish or die and why a network needs a non-linear activation." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/activation-function-explorer/activation-function-explorer.png">
       
@@ -1053,6 +1053,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/activation-function-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/activation-function-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,67 @@
 
 
 <h1 id="activation-function-explorer">Activation Function Explorer</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="592" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Activation Function Explorer MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>The graph shows one activation function <span class="arithmatex">\(f(x)\)</span> as a solid curve and its derivative <span class="arithmatex">\(f'(x)\)</span> as a dashed curve for inputs from −5 to 5. Both axes are fixed, so all six functions are drawn to the same scale. A dot marks the output at the chosen input and a ring marks the gradient there.</p>
+<ul>
+<li><strong>Sigmoid:</strong> <span class="arithmatex">\(f(x) = 1/(1 + e^{-x})\)</span>, <span class="arithmatex">\(f'(x) = f(x)(1 - f(x))\)</span>, range <span class="arithmatex">\((0, 1)\)</span></li>
+<li><strong>Tanh:</strong> <span class="arithmatex">\(f(x) = \tanh(x)\)</span>, <span class="arithmatex">\(f'(x) = 1 - f(x)^2\)</span>, range <span class="arithmatex">\((-1, 1)\)</span></li>
+<li><strong>ReLU:</strong> <span class="arithmatex">\(f(x) = \max(0, x)\)</span>, <span class="arithmatex">\(f'(x) = 1\)</span> for <span class="arithmatex">\(x &gt; 0\)</span> and <span class="arithmatex">\(0\)</span> otherwise, range <span class="arithmatex">\([0, \infty)\)</span></li>
+<li><strong>Leaky ReLU:</strong> <span class="arithmatex">\(f(x) = x\)</span> for <span class="arithmatex">\(x &gt; 0\)</span> and <span class="arithmatex">\(0.1x\)</span> otherwise, so <span class="arithmatex">\(f'(x)\)</span> is <span class="arithmatex">\(1\)</span> or <span class="arithmatex">\(0.1\)</span></li>
+<li><strong>Step:</strong> <span class="arithmatex">\(1\)</span> for <span class="arithmatex">\(x &gt; 0\)</span> and <span class="arithmatex">\(0\)</span> otherwise, the original perceptron; its derivative is 0 wherever it exists</li>
+<li><strong>Linear:</strong> <span class="arithmatex">\(f(x) = x\)</span>, <span class="arithmatex">\(f'(x) = 1\)</span></li>
+</ul>
+<p>Shading marks the inputs where learning stalls: orange where the gradient is below 0.05 (a vanishing gradient) and red where it is exactly 0. The yellow panel gives <span class="arithmatex">\(f(x)\)</span> and <span class="arithmatex">\(f'(x)\)</span> at the chosen input, says what that gradient means, and multiplies it through 10 layers the way backpropagation does. For the sigmoid at <span class="arithmatex">\(x = 0\)</span> this is <span class="arithmatex">\(0.25^{10} \approx 0.000001\)</span>, the number quoted in the chapter.</p>
+<p>The small plot shows the output of a network with two hidden neurons, <span class="arithmatex">\(y = f(x + 2) - f(2x - 2)\)</span>. With any non-linear activation the output bends. With the linear activation it collapses to the single straight line <span class="arithmatex">\(y = 4 - x\)</span>, which is why stacking linear layers adds nothing.</p>
+<p>Not included: softmax, which acts on a whole vector of outputs and cannot be drawn as one curve. The Leaky ReLU slope is 0.1 so that the leak can be seen (PyTorch's default is 0.01). At <span class="arithmatex">\(x = 0\)</span> the slope of ReLU is undefined, and the sim reports 0 as PyTorch does.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Read the default view: the sigmoid, its dashed derivative, and the orange bands where the gradient is below 0.05.</li>
+<li>Drag the <strong>Input x</strong> slider, or click the graph, to move into an orange band. Read <span class="arithmatex">\(f'(x)\)</span> and the 10-layer product in the yellow panel.</li>
+<li>Choose <strong>ReLU</strong> in the first menu. Move x below 0 and then above 0 and compare the gradient.</li>
+<li>Set the second menu to <strong>vs Leaky ReLU</strong> to draw both curves and read both sets of values at the same input.</li>
+<li>Choose <strong>Linear</strong> and read the two-neuron network panel, then switch back to another function and compare the shape.</li>
+<li>Uncheck <strong>Show derivative</strong> to see the function alone.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/activation-function-explorer/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/activation-function-explorer/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"592"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>The artificial neuron (a weighted sum plus a bias), reading the graph of a function, and the derivative as the slope of a curve.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to determine the output and gradient of an activation function at a given input, identify the inputs where its gradient vanishes or is zero, and explain why a network needs a non-linear activation.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Predict</strong> (3 min): Before moving the slider, students sketch where they expect the sigmoid's gradient to be largest and where it is close to zero, then check their sketch against the dashed curve and the orange bands.</li>
+<li><strong>Measure</strong> (6 min): Students record <span class="arithmatex">\(f(x)\)</span>, <span class="arithmatex">\(f'(x)\)</span>, and the 10-layer product at x = −4, 0, and 4 for Sigmoid, Tanh, ReLU, and Leaky ReLU, and mark each entry as healthy, vanishing, or zero.</li>
+<li><strong>Explain</strong> (5 min): Students select Linear, read the two-neuron network panel, and write two sentences on why a network whose activations are all linear can do no more than a single linear layer.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>For the input x = −3, students state without the sim which of Sigmoid, ReLU, and Leaky ReLU passes back the largest gradient and which passes back none, then explain why ReLU is still the usual choice for deep hidden layers.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Activation_function">Activation function</a>.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">Vanishing gradient problem</a>.</li>
+<li>PyTorch documentation. <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.LeakyReLU.html">torch.nn.LeakyReLU</a>.</li>
 </ol>
 
 

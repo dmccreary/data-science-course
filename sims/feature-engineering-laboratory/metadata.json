@@ -1,45 +1,71 @@
 {
   "title": "Feature Engineering Laboratory",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for feature engineering laboratory",
+  "subject": "Data Science",
+  "description": "Build new features from five raw housing columns with a product, ratio, sum, difference, square, or log, preview each one, and see the real change in cross-validated R squared when it joins a linear regression model.",
   "date": "2026-02-22",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Feature Engineering Laboratory",
+    "subjectArea": "Data Science",
+    "topic": "Feature engineering for linear regression",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to construct new features from existing columns and use cross-validated R squared to decide which of them improve a linear regression model."
     ],
     "bloomsTaxonomy": "Create",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Multiple linear regression",
+      "R-squared",
+      "K-fold cross-validation",
+      "Interaction terms",
+      "Polynomial features",
+      "Log transformation"
+    ],
+    "standards": [],
+    "bloomVerb": "Construct"
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 620
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Open-ended construction with an immediate preview and a validation score",
+    "keyQuestions": [
+      "Why does a linear model gain nothing from A + B when A and B are already features?",
+      "Why does taking the log of a right-skewed column often help a linear model?",
+      "Why is CV R², and not Train R², the number that decides whether a feature stays?"
+    ],
+    "commonMisconceptions": [
+      "Any new feature improves the model (Train R² always rises a little, but CV R² falls when the feature carries no new information).",
+      "A feature with a low correlation with the target is useless (a squared term can have almost no correlation with price and still let the model fit a curve).",
+      "Adding the sum of two columns gives the model new information (the model could already form any weighted sum of its features).",
+      "Each feature has a fixed importance (what a feature is worth depends on which other features are in the model)."
+    ],
+    "assessmentOpportunities": [
+      "Students propose one engineered feature for a new data set, justify it from domain knowledge, and state which number they would check to decide whether to keep it and why Train R² is not that number."
+    ]
   },
-  "chapter": "09-multiple-linear-regression"
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "feature-engineering-laboratory",
+  "chapter": "09-multiple-linear-regression",
+  "completion_status": "implemented"
 }

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive p5.js MicroSim for data type conversion guide infographic.">
+        <meta name="description" content="A clickable reference card of nine pandas type conversions, grouped as numeric, datetime, categorical, and string, each with a worked example and a pitfall to remember.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Data Type Conversion Guide Infographic - AI Based Data Science with Python" >
       
-        <meta  property="og:description"  content="Interactive p5.js MicroSim for data type conversion guide infographic." >
+        <meta  property="og:description"  content="A clickable reference card of nine pandas type conversions, grouped as numeric, datetime, categorical, and string, each with a worked example and a pitfall to remember." >
       
         <meta property="og:image" content="https://dmccreary.github.io/data-science-course/sims/data-type-conversion-guide-infographic/data-type-conversion-guide-infographic.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Data Type Conversion Guide Infographic - AI Based Data Science with Python" >
       
-        <meta  name="twitter:description"  content="Interactive p5.js MicroSim for data type conversion guide infographic." >
+        <meta  name="twitter:description"  content="A clickable reference card of nine pandas type conversions, grouped as numeric, datetime, categorical, and string, each with a worked example and a pitfall to remember." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/data-science-course/sims/data-type-conversion-guide-infographic/data-type-conversion-guide-infographic.png">
       
@@ -1515,6 +1515,24 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
     </span>
   </a>
   
@@ -3329,6 +3347,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
       Activities
@@ -3375,7 +3411,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/data-science-course/blob/master/docs/sims/data-type-conversion-guide-infographic/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/data-science-course/blob/main/docs/sims/data-type-conversion-guide-infographic/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3384,43 +3420,62 @@
 
 
 <h1 id="data-type-conversion-guide-infographic">Data Type Conversion Guide Infographic</h1>
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="632" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Data Type Conversion Guide Infographic MicroSim Fullscreen</a>
 <br/>
 <a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>TODO: Describe what this MicroSim demonstrates.</p>
+<p>Columns often load with the wrong type: numbers stored as text, dates stored as text, repeated labels stored as plain strings. This reference card collects the nine conversions from the chapter in four color-coded groups.</p>
+<ul>
+<li><strong>Blue, to numeric</strong>: <code>pd.to_numeric(col)</code>, <code>pd.to_numeric(col, errors="coerce")</code>, <code>col.astype(float)</code></li>
+<li><strong>Green, to datetime</strong>: <code>pd.to_datetime(col)</code>, <code>pd.to_datetime(col, format="%Y-%m-%d")</code></li>
+<li><strong>Purple, to categorical</strong>: <code>col.astype("category")</code>, <code>pd.Categorical(col, categories=[...], ordered=True)</code></li>
+<li><strong>Orange, to string</strong>: <code>col.astype(str)</code>, <code>col.map("{:.2f}".format)</code></li>
+</ul>
+<p>Selecting a method opens a panel that says when to use it and what to watch out for, and shows a small column before and after the conversion with its dtype. A "Now you can" line shows one thing the new type makes possible, such as <code>col.sum()</code> or <code>col.dt.day_name()</code>. The example results are computed by the MicroSim following the pandas rules. Text columns are labeled <code>object</code>, as pandas 2 reports them.</p>
+<p>Not included: copying a code snippet to the clipboard.</p>
 <h2 id="how-to-use">How to Use</h2>
-<p>TODO: Describe how students should interact with this MicroSim.</p>
+<ol>
+<li>Click a method on any card, or use <strong>Next</strong> and <strong>Previous</strong> to go through all nine in order.</li>
+<li>Read <strong>When to use it</strong> and <strong>Watch out</strong>, then compare the Before and After columns and their dtypes.</li>
+<li>Turn on <strong>Quiz me</strong>. The result is hidden. Say what the values and the dtype will be, then turn it off to check.</li>
+<li>Go through all nine methods in Quiz mode until you can predict each result.</li>
+</ol>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/data-science-course/sims/data-type-conversion-guide-infographic/main.html&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span>
-        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/data-science-course/sims/data-type-conversion-guide-infographic/main.html"</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">"632"</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level">Grade Level</h3>
-<p>9-12 (High School Geometry)</p>
+<p>High School (11-12) and College Freshman</p>
 <h3 id="duration">Duration</h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>TODO: List prerequisites.</p>
+<p>Checking column types with df.dtypes and knowing the difference between text, numbers, and dates.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level</h3>
+<p>Remember (L1)</p>
+<h3 id="learning-objective">Learning Objective</h3>
+<p>Students will be able to recall the pandas method that converts a column to a numeric, datetime, categorical, or string type, and one pitfall of each conversion.</p>
 <h3 id="activities">Activities</h3>
 <ol>
-<li><strong>Exploration</strong> (5 min): TODO</li>
-<li><strong>Guided Practice</strong> (5 min): TODO</li>
-<li><strong>Assessment</strong> (5 min): TODO</li>
+<li><strong>Tour</strong> (5 min): Students step through the nine methods with Next and read each panel.</li>
+<li><strong>Self-test</strong> (6 min): With Quiz me on, students predict the After column and dtype for every method and keep a tally of correct predictions.</li>
+<li><strong>Match</strong> (4 min): Given four messy columns described in words (prices with a stray word, dates as text, letter grades, ZIP codes read as numbers), students name the conversion for each and its pitfall.</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
-<p>TODO: List assessment criteria.</p>
+<p>From memory, students write the conversion call for each of four situations (text to numbers with bad entries, text to dates, strings to an ordered category, numbers to formatted text) and state one thing that can go wrong with each.</p>
 <h2 id="references">References</h2>
 <ol>
-<li>TODO: Add references.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html">pandas.to_numeric</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html">pandas.to_datetime</a>.</li>
+<li>pandas documentation. <a href="https://pandas.pydata.org/docs/user_guide/categorical.html">Categorical data</a>.</li>
 </ol>
 
 
