@@ -1,7 +1,7 @@
 {
   "title": "Notebook Cell Types Interactive Demo",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "AI Based Data Science with Python",
   "description": "Interactive MicroSim for notebook cell types interactive demo",
   "date": "2026-02-22",
   "educational": {
@@ -9,9 +9,10 @@
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Undergraduate"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Computer Science",
     "topic": "Notebook Cell Types Interactive Demo",
     "learningObjectives": [
       "TODO: Add learning objectives"
